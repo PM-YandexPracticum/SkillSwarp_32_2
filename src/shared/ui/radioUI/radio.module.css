@@ -1,0 +1,39 @@
+/* TODO: Обновить, когда появятся глобальные стили */
+
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.label {
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  color: #253017;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  padding-left: 8px;
+}
+
+.marker {
+  width: 20px;
+  height: 20px;
+  background-image: url('../../../assets/radio-inactive.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+input:checked + .marker {
+  background-image: url('../../../assets/radio-active.svg');
+}
