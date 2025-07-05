@@ -1,7 +1,12 @@
-/* TODO: Обновить, когда появятся глобальные стили */
-
+/* TODO: Удалить глобальные стили и добавить переменные, когда появятся глобальные стили */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --button-pressed-color: #508826;
 }
 
 .hidden {
@@ -15,25 +20,16 @@
 }
 
 .label {
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  color: #253017;
-  font-size: 16px;
-  line-height: 24px;
   display: flex;
   align-items: center;
+  color: #253017;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
   letter-spacing: 0.02em;
-  padding-left: 8px;
-}
-
-.marker {
-  width: 20px;
-  height: 20px;
-  background-image: url('../../../assets/radio-inactive.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-input:checked + .marker {
-  background-image: url('../../../assets/radio-active.svg');
 }
