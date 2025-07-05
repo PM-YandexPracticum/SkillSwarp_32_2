@@ -39,6 +39,7 @@ export default [
       ...reactRefresh.configs.recommended.rules,
       
       // Кастомные правила
+      'eol-last': ['error', 'always'], 
       'react/react-in-jsx-scope': 'off', // не требуется с React 17+
       'react/jsx-uses-react': 'off', // не требуется с React 17+
       '@typescript-eslint/explicit-function-return-type': 'off',
