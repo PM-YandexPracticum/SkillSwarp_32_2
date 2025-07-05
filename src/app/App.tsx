@@ -3,6 +3,7 @@ import reactLogo from '../assets/react.svg';
 import viteLogo from '../../public/vite.svg';
 import './App.css';
 import { Card } from '@/widgets';
+import { UserCard } from '@/widgets/user-card/user-card';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,10 @@ function App() {
       <p className='read-the-docs'>
         Click on the Vite and React logos to learn more
       </p>
+      {/*сделал временное окно для просмотра результата. в pr его не будет*/}
+      <div className='card-window'>
+        <UserCard />
+      </div>
     </>
   );
 }
