@@ -1,0 +1,35 @@
+/* TODO: Удалить глобальные стили и добавить переменные, когда появятся глобальные стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --button-pressed-color: #508826;
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  color: #253017;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+}
