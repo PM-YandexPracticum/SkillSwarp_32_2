@@ -1,5 +1,9 @@
 import './App.css';
-import { ProfileMenu } from '@/shared/ui/ProfileMenuUI/ProfileMenu';
+
+// import { useState } from 'react';
+// import reactLogo from '../assets/react.svg';
+// import viteLogo from '../../public/vite.svg';
+import './App.css';
 // import { Card } from '@/widgets';
 import { Route, Routes, useLocation /*useNavigate*/ } from 'react-router-dom';
 import { Main } from '@/pages/main';

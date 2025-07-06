@@ -1,40 +1,46 @@
-import './styles.css';
-import avatar from '../../../images/profile-example.png';
+import styles from './styles.module.css';
+import { Link } from 'react-router-dom';
+import type { ProfileMenuProps } from './types';
 
-export const ProfileMenu = () => {
+export const ProfileMenu = ({ profileUserInfo, profileMenuItems }: ProfileMenuProps) => {
   return (
-    <aside className='profile-menu'>
-      <div className='profile-menu__info'>
-        {/* ToDo: Данные - хардкод заглушка. Позже, заменить на данные с сервера */}
-        <img src={avatar} alt='Изображение: аватар пользователя' className='profile-menu__avatar' />
-        <div className='profile-menu__rating'>
-          <span className='profile-manu__rating-item'>★</span>
-          <span className='profile-manu__rating-item'>★</span>
-          <span className='profile-manu__rating-item'>★</span>
-          <span className='profile-manu__rating-item'>★</span>
+    <aside className={styles['profile-menu']}>
+      <div className={styles['profile-menu__info']}>
+        <img
+          src={profileUserInfo.avatar}
+          alt='Изображение: аватар пользователя'
+          className={styles['profile-menu__avatar']}
+        />
+
+        <div className={styles['profile-menu__rating']}>
+          {Array(profileUserInfo.rating)
+            .fill(0)
+            .map((_, i) => (
+              <span key={i} className={styles['profile-menu__rating-item']}>
+                ★
+              </span>
+            ))}
         </div>
-        <h2 className='profile-menu__user-name'>Иван Иванов</h2>
-        <div className='profile-menu__user-data'>Москва, 19 лет</div>
-        <p className='profile-menu__description'>Краткая информация о себе здесь</p>
+
+        <h2 className={styles['profile-menu__user-name']}>{profileUserInfo.user}</h2>
+        <div className={styles['profile-menu__user-data']}>{profileUserInfo.userData}</div>
+        <p className={styles['profile-menu__description']}>{profileUserInfo.description}</p>
       </div>
 
-      <div className='profile-menu__nav'>
-        <ul className='profile-menu__nav-menu'>
-          <a className='profile-menu__nav-link' href='#'>
-            <li className='profile-menu__nav-item'>Личные данные</li>
-          </a>
-          <a className='profile-menu__nav-link' href='#'>
-            <li className='profile-menu__nav-item'>Заявки</li>
-          </a>
-          <a className='profile-menu__nav-link' href='#'>
-            <li className='profile-menu__nav-item profile-menu__nav-item--active'>Мои навыки</li>
-          </a>
-          <a className='profile-menu__nav-link' href='#'>
-            <li className='profile-menu__nav-item'>Сессии</li>
-          </a>
-          <a className='profile-menu__nav-link' href='#'>
-            <li className='profile-menu__nav-item'>Избранное</li>
-          </a>
+      <div className={styles['profile-menu__nav']}>
+        <ul className={styles['profile-menu__nav-menu']}>
+          {profileMenuItems.map(({ label, href, active }, index) => (
+            <li
+              key={index}
+              className={`${styles['profile-menu__nav-item']} ${
+                active ? styles['profile-menu__nav-item--active'] : ''
+              }`}
+            >
+              <Link className={styles['profile-menu__nav-link']} to={href}>
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </aside>
