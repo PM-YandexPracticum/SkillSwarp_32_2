@@ -1,4 +1,6 @@
 import './App.css';
+import { ProfileMenu } from '@/shared/ui/ProfileMenuUI/ProfileMenu';
+// import { Card } from '@/widgets';
 import { Route, Routes, useLocation /*useNavigate*/ } from 'react-router-dom';
 import { Main } from '@/pages/main';
 import { Login } from '@/pages/login';
