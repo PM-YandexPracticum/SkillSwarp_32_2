@@ -3,6 +3,7 @@ import { formatAge } from '../../lib/helpers/helpers';
 import heart from '../../../assets/react.svg';
 import type { skill, UserCardUIProps } from './types';
 import './user-card.scss';
+import { SkillItemUI } from '../skill-item/skill-item';
 
 export const UserCardUI: FC<UserCardUIProps> = ({
   skills,
@@ -13,6 +14,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({
   setLike,
 }) => {
   // метод по созданию списка навыков. Будет лучше если он будет лежать здесь
+  // решил что сам метод останется тут, но сам компонент навыка я сделал отдельным компонентом
   const renderSkills = (skills: skill[], limit = 2) => {
     const firstSkills = skills.slice(0, limit);
     const restCount = skills.length - limit;
@@ -20,10 +22,9 @@ export const UserCardUI: FC<UserCardUIProps> = ({
     return (
       <>
         {firstSkills.map((skill, index) => (
-          // пока непонятно, как будет задан цвет для каждого скила, нужно будет обсудить это. за ранее добавил тип под каждый цвет(см. в фигме)
-          <li key={index} className='user_card__skill'>
+          <SkillItemUI type={skill.type} key={index} className={'user_card__skill'}>
             {skill.title}
-          </li>
+          </SkillItemUI>
         ))}
 
         {restCount > 0 && <div className='user_card__skill'>{`+${restCount}`}</div>}
