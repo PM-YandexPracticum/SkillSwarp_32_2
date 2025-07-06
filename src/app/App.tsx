@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, useLocation, /*useNavigate*/ } from 'react-router-dom';
+import { Route, Routes, useLocation /*useNavigate*/ } from 'react-router-dom';
 import { Main } from '@/pages/main';
 import { Login } from '@/pages/login';
 import { Register } from '@/pages/register';
