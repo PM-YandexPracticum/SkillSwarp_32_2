@@ -12,16 +12,11 @@ const meta: Meta = {
   }
 };
 
-// Экспортируем метаданные как дефолтный объект
 export default meta;
-
-// Определим общий тип для каждой истории
 type Story = StoryObj<typeof meta>;
 
-// Первая история с названием "DefaultOrderCard"
 export const DefaultOrderCard: Story = {
   args: {
-    // Аргументы, передаваемые компоненту
     skills: [{ title: 'Английский язык', type: 'art' }],
     desired: [ 
         {title: 'Медитация',
@@ -36,7 +31,7 @@ export const DefaultOrderCard: Story = {
         {title: 'aawdwad',
         type: 'art'
         }
-      ],                                // Список пожеланий
+      ],
     user: {
       name: 'Илона',
       age: 33,
@@ -44,8 +39,8 @@ export const DefaultOrderCard: Story = {
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       description: 'Всем Привет! Рада знакомству. Расскажу все о медитации!'                         // Описание пользователя
     },
-    type: 'short',                              // Вид карточки
-    buttonClick: () => {},                      // Обработчик кликов
-    setLike: () => {}                           // Метод для обработки лайков
+    type: 'short', 
+    buttonClick: () => {},
+    setLike: () => {}
   },
 };
