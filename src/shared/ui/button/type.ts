@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from 'react';
 
 // Сделал такие интерфейсы для того, чтобы не было коллизий между типами: 
 // onClick обязателен если type === button
@@ -10,7 +10,7 @@ interface ButtonAsButton {
   children: ReactNode
   className?: string
   to?: never
-}
+};
 
 interface ButtonAsLink {
   type: 'link'
@@ -18,6 +18,6 @@ interface ButtonAsLink {
   children: ReactNode
   className?: string
   onClick?: never
-}
+};
 
-export type ButtonUIProps = ButtonAsButton | ButtonAsLink
+export type ButtonUIProps = ButtonAsButton | ButtonAsLink;
