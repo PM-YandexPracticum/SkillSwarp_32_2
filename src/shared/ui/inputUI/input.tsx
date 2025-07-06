@@ -41,18 +41,20 @@ export const InputUI = ({ type, label, placeholder, onChange, value, name, tip, 
           onChange={onChange}
           className={error ? `${styles.input} ${styles['error-input']}` : styles.input}
         />
-        {isPassword && (
-          <button 
-            aria-label='Показать или скрыть пароль'
-            aria-controls={name}
-            aria-pressed={inputType === 'password' ? false : true} 
-            onClick={passwordToggle} 
-            className={styles['icon-button']}
-          >
-            <PasswordIcon />
-          </button>
-        )}
-        {icon && !isPassword && iconTypes[icon]()}
+        <div className={styles.icon}>
+          {isPassword && (
+            <button 
+              aria-label='Показать или скрыть пароль'
+              aria-controls={name}
+              aria-pressed={inputType === 'password' ? false : true} 
+              onClick={passwordToggle} 
+              className={styles['icon-button']}
+            >
+              <PasswordIcon />
+            </button>
+          )}
+          {icon && !isPassword && iconTypes[icon]()}
+        </div>
       </div>
       {tip && !error && <span className={`${styles.subtext} ${styles['tip-text']}`}>{tip}</span>}
       {error && <span className={`${styles.subtext} ${styles['error-text']}`}>{errorText}</span>}
