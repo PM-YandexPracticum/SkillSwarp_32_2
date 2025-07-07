@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+/* Чёрный фон, просто чтобы удобнее было смотреть результат. Фон приложения - #f9faf7 */
+
+.footer {
+  width: 100vw;
+  background-color: #fff;
+  padding: 32px 36px;
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: clamp(50px, calc((150 / 1120) * (100vw - 320px) + 50px), 200px);
+  justify-content: flex-start;
+  box-sizing: border-box;
+  height: 232px;
+  overflow: hidden;
+}
+
+.footer__branding {
+  display: flex;
+  flex-direction: column;
+  row-gap: 108px;
+  font-size: 12px;
+  line-height: 133%;
+  flex: 0 0 auto;
+}
+
+.footer__logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer__copyright {
+  color: #69735d;
+}
+
+.footer__nav {
+  margin-top: 42px;
+  font-size: 16px;
+  line-height: 150%;
+  flex: 1 1 auto;
+}
+
+.footer__nav-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 12px;
+  padding-left: 0;
+  list-style: none;
+  position: relative;
+}
+
+.footer__nav-item {
+  position: relative;
+  padding-left: 14px;
+}
+
+.footer__nav-link {
+  transition: color 0.3s ease;
+  color: #253017;
+  text-decoration: none;
+}
+
+.footer__nav-link:hover {
+  color: blue;
+}
+
+.footer__nav-item::before {
+  content: none;
+}
+
+@media (min-width: 769px) {
+  .footer__nav-item:nth-child(3n + 1)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 4px;
+    height: 4px;
+    background-color: #253017;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__nav {
+    margin-top: 20px;
+  }
+
+  .footer__nav-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__nav-item:nth-child(2n + 1)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 4px;
+    height: 4px;
+    background-color: #253017;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 619px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 24px 16px;
+    height: auto;
+  }
+
+  .footer__branding,
+  .footer__nav {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .footer__branding {
+    row-gap: 40px;
+  }
+
+  .footer__nav {
+    margin-top: 24px;
+  }
+
+  .footer__nav-list {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .footer__nav-item {
+    padding-left: 14px;
+  }
+
+  .footer__nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 4px;
+    height: 4px;
+    background-color: #253017;
+    border-radius: 50%;
+  }
+}

@@ -11,12 +11,12 @@ function App() {
   // решил скопировать работу модалок из бургерной :)
 
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const state = location.state as { backgroundLocation?: Location };
   const backgroundLocation = state?.backgroundLocation;
 
-  const handleCloseModal = () => navigate(-1);
+  // const handleCloseModal = () => navigate(-1);
 
   return (
     <>
