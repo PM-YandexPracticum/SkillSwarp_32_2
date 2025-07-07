@@ -1,7 +1,9 @@
 import { ButtonUI } from '../buttonUI';
 import styles from './search-field.module.css';
 export const SearchFieldUI = () => {
-  const resetSearchField = () => {/* Здесь будет функция очистки поля */}
+  const resetSearchField = () => {
+    /* Здесь будет функция очистки поля */
+  };
   return (
     /* Пока что строка поиска находится в div со свойcтвом display: flex, но потом это свойство должно быть у хедера, 
        а div можно будет убрать */
