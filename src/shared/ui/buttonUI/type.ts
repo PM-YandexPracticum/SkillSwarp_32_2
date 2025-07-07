@@ -10,7 +10,7 @@ interface ButtonAsButton {
   children?: ReactNode
   className?: string
   to?: never
-}
+};
 
 interface ButtonAsLink {
   type: 'link'
@@ -18,6 +18,6 @@ interface ButtonAsLink {
   children?: ReactNode
   className?: string
   to: string
-}
+};
 
-export type ButtonUIProps = ButtonAsButton | ButtonAsLink
+export type ButtonUIProps = ButtonAsButton | ButtonAsLink;
