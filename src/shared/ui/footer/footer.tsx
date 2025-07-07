@@ -1,12 +1,13 @@
 import styles from './footer.module.css';
-import footerLogo from '../../../assets/svg/footer-logo.svg';
+import footerLogo from '../../../assets/svg/logo.svg';
 
 export const Footer = () => {
   return (
     <footer className={styles['footer']}>
       <div className={styles['footer__branding']}>
         <div className={styles['footer__logo']}>
-          <img src={footerLogo} alt='Логотип компании' />
+          <img className={styles['footer__logo-img']} src={footerLogo} alt='Логотип компании' />
+          <div className={styles['footer__logo-text']}>SkillSwap</div>
         </div>
         <div className={styles['footer__copyright']}>SkillSwap – 2025</div>
       </div>

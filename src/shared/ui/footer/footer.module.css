@@ -4,9 +4,9 @@
 
 body {
   margin: 0;
-  background-color: black;
+  /* background-color: black; */
 }
-/* Чёрный фон, просто чтобы удобнее было смотреть результат. Фон приложения - #f9faf7 */
+/* Чёрный фон, чтобы удобнее было смотреть результат. Фон приложения - #f9faf7 */
 
 .footer {
   width: 100vw;
@@ -19,23 +19,39 @@ body {
   box-sizing: border-box;
   height: 232px;
   overflow: hidden;
+  font-family: 'Jost', Arial, Helvetica, sans-serif;
 }
 
 .footer__branding {
   display: flex;
   flex-direction: column;
-  row-gap: 108px;
-  font-size: 12px;
+  row-gap: 110px;
   line-height: 133%;
   flex: 0 0 auto;
 }
 
-.footer__logo img {
-  max-width: 100%;
-  height: auto;
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo-img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.footer__logo-text {
+  font-size: 25px;
+  line-height: 32px;
+  font-weight: bold;
+  color: #253017;
+  letter-spacing: -1.6px;
 }
 
 .footer__copyright {
+  font-size: 12px;
   color: #69735d;
 }
 
@@ -44,6 +60,7 @@ body {
   font-size: 16px;
   line-height: 150%;
   flex: 1 1 auto;
+  letter-spacing: 0.6px;
 }
 
 .footer__nav-list {
