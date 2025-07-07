@@ -1,1 +1,1 @@
-export {SkillPage} from './skill-page'
+export {SkillPage} from './skill-page';
