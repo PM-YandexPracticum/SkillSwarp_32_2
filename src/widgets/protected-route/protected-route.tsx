@@ -27,5 +27,6 @@ export function ProtectedRoute({ children, isPublic = false }: TProtectedRoute) 
   }
 
   return children;
-}
+};
+
 
