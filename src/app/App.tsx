@@ -1,40 +1,38 @@
-import { useState } from 'react';
-import reactLogo from '../assets/react.svg';
-import viteLogo from '../../public/vite.svg';
 import './App.css';
-import { Card } from '@/widgets';
-import { UserCard } from '@/widgets/user-card/user-card';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Main } from '@/pages/main';
+import { Login } from '@/pages/login';
+import { Register } from '@/pages/register';
+import { Error404 } from '@/pages/404-error';
+import { SkillPage } from '@/pages/skill-page';
+import { Test } from '@/pages/test';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // решил скопировать работу модалок из бургерной :)
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const state = location.state as { backgroundLocation?: Location };
+  const backgroundLocation = state?.backgroundLocation;
+
+  const handleCloseModal = () => navigate(-1);
 
   return (
     <>
-      <div>
-        <Card/>
-        <a href='https://vite.dev' target='_blank' rel='noreferrer'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-      {/*сделал временное окно для просмотра результата. в pr его не будет*/}
-      <div className='card-window'>
-        <UserCard />
-      </div>
+      <Routes location={backgroundLocation || location}>
+        {/* пока смог выдеить только эти роуты. если найду еще - добавлю */}
+        <Route path='/' element={<Main />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<Error404 />} />
+        <Route path='/skill/:userId' element={<SkillPage />} />
+        {/* сюда добавляйте компоненты для тестирования */}
+        <Route path='/test' element={<Test />} />
+      </Routes>
+
+      {/* роуты модалок. будут добавляться по мере разрастания приложения */}
+      {backgroundLocation ?? <Routes location={location}></Routes>}
     </>
   );
 }
