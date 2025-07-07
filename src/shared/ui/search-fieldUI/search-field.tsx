@@ -1,5 +1,7 @@
+import { ButtonUI } from '../buttonUI';
 import styles from './search-field.module.css';
 export const SearchFieldUI = () => {
+  const resetSearchField = () => {/* Здесь будет функция очистки поля */}
   return (
     /* Пока что строка поиска находится в div со свойcтвом display: flex, но потом это свойство должно быть у хедера, 
        а div можно будет убрать */
@@ -22,7 +24,7 @@ export const SearchFieldUI = () => {
 
         {/* Крестик должен будет появляться, когда в поле есть текст, пока что он тут постоянно */}
 
-        <button type='button' className={styles.clear_button}>
+        <ButtonUI type='button' onClick={resetSearchField} className={styles.clear_button}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -39,7 +41,7 @@ export const SearchFieldUI = () => {
               d='M16.744 16.773a.754.754 0 0 1-1.06 0L7.197 8.288a.755.755 0 0 1 0-1.061c.29-.29.77-.29 1.06 0l8.486 8.485c.29.29.29.77 0 1.06'
             />
           </svg>
-        </button>
+        </ButtonUI>
       </label>
     </div>
   );
