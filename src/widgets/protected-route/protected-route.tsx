@@ -7,7 +7,7 @@ type TProtectedRoute = {
   children: React.ReactNode;
 };
 
-function ProtectedRoute({ children, isPublic = false }: TProtectedRoute) {
+export function ProtectedRoute({ children, isPublic = false }: TProtectedRoute) {
   const isAuthCheck = '';
   const userRequest  = '';
 
@@ -29,4 +29,3 @@ function ProtectedRoute({ children, isPublic = false }: TProtectedRoute) {
   return children;
 }
 
-export default ProtectedRoute;
