@@ -1,5 +1,5 @@
-import type { skill, UserData } from '@/shared/ui/user-card/type';
-import { UserCardUI } from '@/shared/ui/user-card/user-card';
+import type { skill, UserData } from '@/shared/ui/user-cardUI/types';
+import { UserCardUI } from '@/shared/ui/user-cardUI/user-card';
 import type { FC } from 'react';
 
 export const UserCard: FC = () => {
