@@ -1,5 +1,5 @@
 // Import компонента и типов
-import { UserCardUI } from '@/shared/ui/user-card/user-card';
+import { UserCardUI } from '@/shared/ui/user-cardUI';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // Метаданные истории
