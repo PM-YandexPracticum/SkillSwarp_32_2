@@ -1,0 +1,28 @@
+:root {
+  --text-color: #69735D;
+  --input-padding-block: 12px;
+  --input-padding-inline: 20px;
+}
+
+.dropdown {
+  inline-size: 100%;
+  line-height: 24px;
+  border: 1px solid currentColor;
+  border-radius: 12px;
+  background: none;
+  color: currentColor;
+  outline: none;
+}
+
+.title {
+  padding: var(--input-padding-block) var(--input-padding-inline);
+  border-bottom: 1px solid currentColor;
+}
+
+.title:last-child {
+  border: none;
+}
+
+.list {
+  padding: var(--input-padding-block) var(--input-padding-inline);
+}
