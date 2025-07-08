@@ -6,3 +6,5 @@ export * from './skill-itemUI';
 export * from './user-cardUI';
 export * from './card-list';
 export * from './inputUI';
+export * from './preloaderUI';
+export * from './search-fieldUI';
