@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { formatAge } from '../../lib/helpers/helpers';
 import heart from '../../../assets/react.svg';
-import type { skill, UserCardUIProps } from './types';
+import type { skill, UserCardUIProps } from './type';
 import './user-card.scss';
-import { SkillItemUI } from '../skill-item/skill-item';
+import { SkillItemUI } from '../skill-itemUI/skill-item';
 
 export const UserCardUI: FC<UserCardUIProps> = ({
   skills,

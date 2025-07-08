@@ -7,17 +7,17 @@ import type { ReactNode } from 'react';
 interface ButtonAsButton {
   type: 'button'
   onClick: () => void
-  children: ReactNode
+  children?: ReactNode
   className?: string
   to?: never
-}
+};
 
 interface ButtonAsLink {
   type: 'link'
-  to: string
-  children: ReactNode
-  className?: string
   onClick?: never
-}
+  children?: ReactNode
+  className?: string
+  to: string
+};
 
-export type ButtonUIProps = ButtonAsButton | ButtonAsLink
+export type ButtonUIProps = ButtonAsButton | ButtonAsLink;
