@@ -8,7 +8,9 @@
 }
 
 .dropdown {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
   inline-size: 100%;
   line-height: 24px;
   border: 1px solid currentColor;
@@ -16,46 +18,58 @@
   background: none;
   color: var(--text-color);
   outline: none;
-  max-height: 400px;
+  max-block-size: 100%;
   overflow: hidden;
 }
 
+.title-wrapper {
+  position: relative;
+}
+
 .title {
+  cursor: pointer;
   display: block;
   text-align: left;
   padding: var(--input-padding-block) var(--input-padding-inline);
 }
 
-.title:last-child {
-  border: none;
+.title-wrapper:has(+ ul) {
+  border-bottom: 1px solid hsl(87, 11%, 41%, 50%);
+  border-radius: 12px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
-  padding: 18px 20px;
+  gap: 12px;
+  padding: 12px;
   list-style-type: none;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #E4E8DF transparent;
+  flex-grow: 1;
+  border-top: none;
+  min-block-size: 0;
 }
 
-.icon {
+.icon-button {
   position: absolute;
   inline-size: 24px;
   block-size: 24px;
   inset-inline-end: var(--input-padding-inline);
   inset-block-start: var(--input-padding-block);
-}
 
-.icon-button {
   background: none;
   border: none;
   padding: 0;
+  z-index: 10;
 }
 
 .icon-button:focus {
   outline: none;
+}
+
+.dropdown input {
+  border: none;
 }

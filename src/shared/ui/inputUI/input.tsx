@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import styles from './input.module.css'; 
 import { EditIcon, PasswordIcon } from './inputIcons';
 import type { InputUIProps } from './type';
@@ -19,7 +19,8 @@ const iconTypes = {
 // icon = password | edit 
 //    Тип иконки в правой части инпута 
 //    Если тип инпута password, игнорируется и устанвливается PasswordIcon
-export const InputUI = ({ type, label, placeholder, onChange, value, name, tip, error, errorText, icon }: InputUIProps) => {
+export const InputUI = forwardRef<HTMLInputElement, InputUIProps>(
+  ({ type, label, placeholder, onChange, value, name, tip, error, errorText, icon }, ref) => {
   const isPassword = type === 'password';
 
   const [inputType, setInputType] = useState(type);
@@ -40,6 +41,7 @@ export const InputUI = ({ type, label, placeholder, onChange, value, name, tip, 
           id={name}
           onChange={onChange}
           className={error ? `${styles.input} ${styles['error-input']}` : styles.input}
+          ref={ref}
         />
         <div className={styles.icon}>
           {isPassword && (
@@ -60,4 +62,6 @@ export const InputUI = ({ type, label, placeholder, onChange, value, name, tip, 
       {error && <span className={`${styles.subtext} ${styles['error-text']}`}>{errorText}</span>}
     </div>
   );
-};
+});
+
+InputUI.displayName = 'InputUI';
