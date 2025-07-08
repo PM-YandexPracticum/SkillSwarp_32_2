@@ -11,10 +11,8 @@ export const UserCard: FC = () => {
     { title: 'aawdwad', type: 'art' },
   ];
   const buttonClick = () => {
-    console.log('button clicked');
   };
   const setLike = () => {
-    console.log('like');
   };
   const user: UserData = {
     name: 'Илона',
@@ -25,13 +23,16 @@ export const UserCard: FC = () => {
     description: 'Умный человек фото',
   };
   return (
-    <UserCardUI
-      skills={skills}
-      desired={desired}
-      buttonClick={buttonClick}
-      user={user}
-      type={'short'}
-      setLike={setLike}
-    />
+    // завернул карточку в список. тау будет правильней
+    <li>
+      <UserCardUI
+        skills={skills}
+        desired={desired}
+        buttonClick={buttonClick}
+        user={user}
+        type={'short'}
+        setLike={setLike}
+      />
+    </li>
   );
 };
