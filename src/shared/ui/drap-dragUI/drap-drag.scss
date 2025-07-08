@@ -1,0 +1,77 @@
+//стили нужно будет поменять когда добавят константы, глбальные стили, шрифты
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: start;
+}
+
+.drap_drag {  
+  width: 436px;
+  padding: 16px 20px;  
+  border-radius: 12px;
+  background-color: white;
+  border: 1px dashed #000000;
+
+  &__active {
+    background-color: #F0FFF0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #69735d;
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #abd27a;
+  }
+
+  &__view {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__file_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__file_list li {
+	color: #69735d;
+  }
+
+  &__gallery {
+    align-self: self-end;
+  }
+
+  &__gallery_edit {
+    text-align: right;
+  }
+
+}
