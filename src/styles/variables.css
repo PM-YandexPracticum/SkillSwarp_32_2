@@ -12,21 +12,24 @@
 
 @font-face {
   font-family: 'Product Sans';
-  src: url('../assets/fonts/Product Sans/productsans.ttf') format('truetype');
+  src: url('../assets/fonts/ProductSans/productsans.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PT Root UI';
+  src: url('../assets/fonts/PTRootUI/PT-Root-UI_Regular.ttf') format('truetype');
   font-weight: 400;
 }
 
 :root {
   /* Цвета текста */
-  --text: #253017;
-  --caption: #69735d;
-  --toggle: #b2b9a9;
-  --disabled-text: #9ca197;
-  --disabled: #e4e8df;
-  --text-link: #508826;
-  --button-pressed: #508826;
-  --accent: #abd27a;
-  --button-hover: #deebc5;
+  --text-redesigned: #253017;
+  --caption-redesigned: #69735d;
+  --toggle-redesigned: #b2b9a9;
+  --disabled-text-redesigned: #9ca197;
+  --disabled-redesigned: #e4e8df;
+  --accent-redesigned: #abd27a;
 
   /* Теги */
   --tag-biznes-i-karera: #eee7f7;
@@ -38,22 +41,21 @@
   --tag-plus: #e8ecf7;
 
   /* Фоновые цвета */
-  --background: #f9faf7;
-  --bckgrd: #f9faf7;
-  --card: #fff;
-  --input: #fff;
+  --bg-color: #f9faf7;
 
   /* Состояния */
-  --alarm: #e0796e;
-  --error: #bf3920;
-  --button-hover: #deebc5;
-  --disabled: #e4e8df;
+  --alarm-color: #e0796e;
+  --error-color: #bf3920;
+  --disabled-color: #e4e8df;
+  --interaction-color: #508826;
 
   /* Прочее */
-  --black: #0c0c0c;
-  --white: #fff;
-  --gold: #ffc11c;
-  --grey-staff: #d9d9d9;
-  --grey-deep: #8e8e93;
-  --yellow: #fde277;
+  --black-color: #0c0c0c;
+  --white-color: #fff;
+  --gold-color: #ffc11c;
+  --grey-staff-color: #d9d9d9;
+  --grey-deep-color: #8e8e93;
+  --yellow-color: #fde277;
+  --button-hover-color: #deebc5;
+
 }

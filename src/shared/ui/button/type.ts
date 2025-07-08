@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from 'react';
 
 // Сделал такие интерфейсы для того, чтобы не было коллизий между типами: 
 // onClick обязателен если type === button
