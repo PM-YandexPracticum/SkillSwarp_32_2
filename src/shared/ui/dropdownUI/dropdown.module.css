@@ -1,22 +1,29 @@
 :root {
   --text-color: #69735D;
+  --error: #BF3920;
   --input-padding-block: 12px;
   --input-padding-inline: 20px;
+  --font-size-main: 16px;
+  --font-size-sm: 12px;
 }
 
 .dropdown {
+  position: relative;
   inline-size: 100%;
   line-height: 24px;
   border: 1px solid currentColor;
   border-radius: 12px;
   background: none;
-  color: currentColor;
+  color: var(--text-color);
   outline: none;
+  max-height: 400px;
+  overflow: hidden;
 }
 
 .title {
+  display: block;
+  text-align: left;
   padding: var(--input-padding-block) var(--input-padding-inline);
-  border-bottom: 1px solid currentColor;
 }
 
 .title:last-child {
@@ -24,5 +31,31 @@
 }
 
 .list {
-  padding: var(--input-padding-block) var(--input-padding-inline);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 18px 20px;
+  list-style-type: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #E4E8DF transparent;
+}
+
+.icon {
+  position: absolute;
+  inline-size: 24px;
+  block-size: 24px;
+  inset-inline-end: var(--input-padding-inline);
+  inset-block-start: var(--input-padding-block);
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.icon-button:focus {
+  outline: none;
 }
