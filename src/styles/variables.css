@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Jost';
+  src: url('../assets/fonts/Jost/Jost-VariableFont_wght.ttf') format('truetype');
+  font-weight: 500 600;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 400 500;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('../assets/fonts/ProductSans/productsans.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PT Root UI';
+  src: url('../assets/fonts/PTRootUI/PT-Root-UI_Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+:root {
+  /* Цвета текста */
+  --text-redesigned: #253017;
+  --caption-redesigned: #69735d;
+  --toggle-redesigned: #b2b9a9;
+  --disabled-text-redesigned: #9ca197;
+  --disabled-redesigned: #e4e8df;
+  --accent-redesigned: #abd27a;
+
+  /* Теги */
+  --tag-biznes-i-karera: #eee7f7;
+  --tag-tvorchestvo-i-iskusstvo: #f7e7f2;
+  --tag-inostrannye-yazyki: #ebe5c5;
+  --tag-obrazovanie-i-razvitie: #e7f2f6;
+  --tag-dom-i-uyut: #f7ebe5;
+  --tag-zdorove-i-layfstayl: #e9f7e7;
+  --tag-plus: #e8ecf7;
+
+  /* Фоновые цвета */
+  --bg-color: #f9faf7;
+
+  /* Состояния */
+  --alarm-color: #e0796e;
+  --error-color: #bf3920;
+  --disabled-color: #e4e8df;
+  --interaction-color: #508826;
+
+  /* Прочее */
+  --black-color: #0c0c0c;
+  --white-color: #fff;
+  --gold-color: #ffc11c;
+  --grey-staff-color: #d9d9d9;
+  --grey-deep-color: #8e8e93;
+  --yellow-color: #fde277;
+  --button-hover-color: #deebc5;
+
+}

@@ -1,0 +1,49 @@
+/* div нужно будет убрать, когда строку поиска поместят в хедер, но у хедера должно быть свойство display: flex */
+.div {
+  display: flex;
+  width: 517px;
+}
+
+.input_wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+/* Сюда нужно будет добавить font-family, когда появятся шрифты*/
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  padding-left: 44px;
+  color: #253017; /* Заменить на переменную цвета */
+  font-size: 16px;
+  caret-color: #508826; /* Заменить на переменную цвета */
+}
+
+.input::placeholder {
+  color: #69735d; /* Заменить на переменную цвета */
+}
+
+.input:focus {
+  outline: none;
+}
+
+.search_icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  cursor: pointer;
+}
+
+.clear_button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
