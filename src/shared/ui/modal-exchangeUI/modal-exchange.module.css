@@ -1,0 +1,44 @@
+@import '../../styles/variables.css';
+
+.iconWrapper {
+  width: 100px;
+  height: 100px;
+  margin: 80px auto 52px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-redesigned);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.text {
+  font-size: 16px;
+  color: var(--text-redesigned);
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.button {
+  width: 100%;
+  background: var(--accent-redesigned);
+  color: var(--text-redesigned);
+  border: none;
+  border-radius: 12px;
+  /* padding: 14px 0; */
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: var(--button-hover-color);
+}
