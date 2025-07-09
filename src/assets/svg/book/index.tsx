@@ -1,0 +1,1 @@
+export { BookSVG } from './book';
