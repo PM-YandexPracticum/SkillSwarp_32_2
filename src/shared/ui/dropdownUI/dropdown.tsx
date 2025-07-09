@@ -54,6 +54,8 @@ export const DropdownUI = ({
       setFilter('');
       setIsOpen(false);
     }
+
+    if (!isMultiSelect) setIsOpen(false);
   }, [isMultiSelect, value, withFilter]);
 
   // Автофокус на инпут при нажатии на дропдаун

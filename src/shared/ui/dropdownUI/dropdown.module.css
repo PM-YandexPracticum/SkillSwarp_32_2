@@ -1,13 +1,19 @@
 @import '../../../styles/variables.css';
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --input-padding-block: 12px;
   --input-padding-inline: 20px;
   --font-size-main: 16px;
   --font-size-sm: 12px;
+  --background: #FFF;
 }
 
 .dropdown {
+  position: relative;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
@@ -15,15 +21,25 @@
   line-height: 24px;
   border: 1px solid currentColor;
   border-radius: 12px;
-  background: none;
+  background: var(--background);
   color: var(--caption-redesigned);
   outline: none;
   max-block-size: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.dropdown:has(ul) {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .title-wrapper {
   position: relative;
+}
+
+.title-wrapper:has(+ ul) {
+  border-bottom: 1px solid hsl(87, 11%, 41%, 50%);
+  border-radius: 12px;
 }
 
 .title {
@@ -33,27 +49,33 @@
   padding: var(--input-padding-block) var(--input-padding-inline);
 }
 
-.title-wrapper:has(+ ul) {
-  border-bottom: 1px solid hsl(87, 11%, 41%, 50%);
-  border-radius: 12px;
-}
-
 .list {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  z-index: 1000;
+
+  border: 1px solid currentColor;
+  border-top: none;
+  border-radius: 12px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
   padding: 12px;
-  list-style-type: none;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #E4E8DF transparent;
-  flex-grow: 1;
-  border-top: none;
+  inline-size: calc(100% + 2px);
   min-block-size: 0;
   /* Не нашел другого решения. Можно заменить на vh или что-нибудь другое.
   Либо так, либо жестко устанавливать высоту контейнера, что еще хуже */
   max-block-size: 200px;
+  background-color: var(--background) ;
+  scrollbar-width: thin;
+  scrollbar-color: #E4E8DF transparent;
+  list-style-type: none;
 }
 
 .icon-button {
