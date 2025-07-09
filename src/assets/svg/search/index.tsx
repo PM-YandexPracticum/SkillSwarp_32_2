@@ -1,0 +1,1 @@
+export { SearchSVG } from './search';

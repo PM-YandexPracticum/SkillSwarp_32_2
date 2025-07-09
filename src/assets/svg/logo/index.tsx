@@ -1,0 +1,1 @@
+export { MoonSVG } from './logo';
