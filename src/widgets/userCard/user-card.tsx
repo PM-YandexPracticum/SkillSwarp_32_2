@@ -1,5 +1,5 @@
-import type { skill, UserData } from '@/shared/ui/user-cardUI/types';
-import { UserCardUI } from '@/shared/ui/user-cardUI/user-card';
+import type { skill, UserData } from '@/shared/ui/userCardUI/types';
+import { UserCardUI } from '@/shared/ui/userCardUI/user-card';
 import type { FC } from 'react';
 
 export const UserCard: FC = () => {
@@ -10,12 +10,8 @@ export const UserCard: FC = () => {
     { title: 'aawdwad', type: 'art' },
     { title: 'aawdwad', type: 'art' },
   ];
-  const buttonClick = () => {
-    console.log('button clicked');
-  };
-  const setLike = () => {
-    console.log('like');
-  };
+  const buttonClick = () => {};
+  const setLike = () => {};
   const user: UserData = {
     name: 'Илона',
     age: 33,
@@ -25,13 +21,16 @@ export const UserCard: FC = () => {
     description: 'Умный человек фото',
   };
   return (
-    <UserCardUI
-      skills={skills}
-      desired={desired}
-      buttonClick={buttonClick}
-      user={user}
-      type={'short'}
-      setLike={setLike}
-    />
+    // завернул карточку в список. тау будет правильней
+    <li>
+      <UserCardUI
+        skills={skills}
+        desired={desired}
+        buttonClick={buttonClick}
+        user={user}
+        type={'short'}
+        setLike={setLike}
+      />
+    </li>
   );
 };
