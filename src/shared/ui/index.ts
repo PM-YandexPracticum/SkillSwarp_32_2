@@ -5,3 +5,5 @@ export * from './radioUI';
 export * from './skill-itemUI';
 export * from './user-cardUI';
 export * from './search-fieldUI';
+export * from './modalUI';
+export * from './modal-exchangeUI';
