@@ -10,8 +10,8 @@ type genderType = null | 'male' | 'female';
 
 type cityType = string
 
-type skilltype = {
-  title: string,
+interface Tskill {
+  skillTitle: string
   type: filterType
   subType: subFilterType
 }
@@ -21,13 +21,14 @@ type skilltype = {
 export interface TCard {
   id: string
   userId: string
-  teachSkill: skilltype[]
-  learnSkill: skilltype[]
+  teachSkill: Tskill[]
+  learnSkill: Tskill[]
   name: string
   city: string
   age: number
   description: string
   gender: genderType
+  createdAt: number
   src: string
 }
 
