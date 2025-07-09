@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { DropdownUIProps } from './type';
 import styles from './dropdown.module.css';
 import { InputUI } from '../inputUI';
@@ -23,6 +23,11 @@ export const DropdownUI = ({
   const [filter, setFilter] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Является ли значение массивом (несколько чекбоксов)
+  const valueIsArray = Array.isArray(value);
+
+  const renderChildren = useMemo(() => children({ filter }), [children, filter]);
 
   const openToggleHandler = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -56,13 +61,15 @@ export const DropdownUI = ({
     if (isOpen && withFilter) setTimeout(() => inputRef.current?.focus(), 0);
   }, [isOpen, withFilter]);
 
-  // Является ли значение массивом (несколько чекбоксов)
-  const valueIsArray = Array.isArray(value);
-
   return (
     <div className={styles.dropdown} ref={dropdownRef}>
       <div className={styles['title-wrapper']}>     
-        <button className={styles['icon-button']} onClick={openToggleHandler}>
+        <button 
+          className={styles['icon-button']} 
+          onClick={openToggleHandler}
+          aria-label='Открыть или закрыть список'
+          aria-pressed={isOpen ? true : false} 
+        >
           {isOpen ? <ArrowUp /> : <ArrowDown />}
         </button>
         {withFilter ? (
@@ -85,20 +92,20 @@ export const DropdownUI = ({
             </span>
           )
         ) : (
-          <div className={styles.title} onClick={openToggleHandler}>
+          <span className={styles.title} onClick={openToggleHandler}>
             {valueIsArray && !value.length && placeholder}
             {!valueIsArray && !value.name && placeholder}
             {isMultiSelect && valueIsArray && value.length > 0
               ? `Выбрано: ${value.length}`
               : null}
             {!isMultiSelect && !valueIsArray && value.name ? value.name : null}
-          </div>
+          </span>
         )}
       </div>
 
       {isOpen && (
         <ul className={styles.list} onClick={(event) => event.stopPropagation()}>
-          {children({ filter })}
+          {renderChildren}
         </ul>
       )}
     </div>
