@@ -2,110 +2,82 @@
 
 type filterType = 'business' | 'art' | 'languages' | 'education' | 'home' | 'lifestyle' | 'other';
 
-type SubFilterType = string;
+type subFilterType = string;
+
+type filterStatus = 'partial' | 'full' | 'empty'
 
 type genderType = null | 'male' | 'female';
 
-// типы для карточек
-interface TSkill {
-  title: string;
-  type: filterType;
+type cityType = string
+
+type skilltype = {
+  title: string,
+  type: filterType
+  subType: subFilterType
 }
 
-interface TCard {
-  id: string;
-  userId: string;
-  skills: TSkill[];
-  desired: TSkill[];
-  name: string;
-  city: string;
-  age: string;
-  description: string;
-  isLiked: boolean;
-  likes: string[];
-  gender: genderType;
+// типы карточек 
+
+export interface TCard {
+  id: string
+  userId: string
+  teachSkill: skilltype[]
+  learnSkill: skilltype[]
+  name: string
+  city: string
+  age: number
+  description: string
+  gender: genderType
+  src: string
 }
 
-type cards = TCard[];
+// типы компонентов скилла
 
-//типы для списка фильтров
-
-interface SubFilter {
-  title: string;
-  id: string;
+export interface TSkillCard {
+  id: string
+  userId: string
+  title: string
+  description: string
+  images: string[]
+  filterType: filterType
+  subFilterType: subFilterType
 }
 
-interface TFilter {
-  subfilters: SubFilter[];
-  id: string;
-  type: filterType;
-  title: string;
+// типы фильтров
+
+interface TSubFilter {
+  id: string
+  title: string
+  isSelected: boolean
+  type: subFilterType
 }
 
-type filters = TFilter[];
-
-//типы для расширенной карточки
-
-type imageSrc = string;
-
-interface skillCard {
-  id: string;
-  userId: string;
-  title: string;
-  description: string;
-  images: imageSrc[];
-  filterType: filterType;
-  subFilterType: SubFilterType;
+export interface TFilter {
+  id: string
+  type: filterType
+  title: string
+  status: filterStatus
+  subFilters: TSubFilter[]
 }
 
-type skillCards = skillCard[];
+// тип профиля юзера
 
-//тип для аккаунта пользователя. Решил жобавить и его
-
-interface TUserProfile {
-  gender: genderType;
-  id: string;
-  name: string;
-  city: string;
-  age: number;
-  mail: string;
-  password: string;
-  description: string;
-  image: string;
+export interface TUser {
+  gender: genderType
+  id: string
+  name: string
+  city: cityType
+  age: number
+  mail: string
+  password: string
+  description: string
+  image: string
+  likes: string[]
 }
 
-//список городов
+// тип города
 
-type CityTitle =
-  | 'Москва'
-  | 'Санкт-Петербург'
-  | 'Новосибирск'
-  | 'Екатеринбург'
-  | 'Казань'
-  | 'Нижний Новгород'
-  | 'Челябинск'
-  | 'Самара'
-  | 'Ростов-на-Дону'
-  | 'Уфа'
-  | 'Красноярск'
-  | 'Пермь'
-  | 'Воронеж'
-  | 'Волгоград'
-  | 'Краснодар'
-  | 'Тюмень'
-  | 'Ижевск'
-  | 'Барнаул'
-  | 'Ульяновск'
-  | 'Иркутск'
-  | 'Хабаровск'
-  | 'Ярославль'
-  | 'Владивосток'
-  | 'Томск'
-  | 'Омск';
-
-interface TCity {
-  title: CityTitle;
-  id: string;
+export interface TCity {
+  id: string
+  title: cityType
 }
-
-type cities = TCity[];
