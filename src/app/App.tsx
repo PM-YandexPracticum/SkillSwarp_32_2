@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, useLocation, /*useNavigate*/ } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { Main } from '@/pages/main';
 import { Login } from '@/pages/login';
 import { Register } from '@/pages/register';
@@ -11,12 +11,8 @@ function App() {
   // решил скопировать работу модалок из бургерной :)
 
   const location = useLocation();
-  //const navigate = useNavigate();
-
   const state = location.state as { backgroundLocation?: Location };
   const backgroundLocation = state?.backgroundLocation;
-
-  //const handleCloseModal = () => navigate(-1);
 
   return (
     <>

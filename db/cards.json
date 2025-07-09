@@ -1,0 +1,482 @@
+[
+  {
+    "id": "card-0",
+    "userId": "user-0",
+    "teachSkill": [{ "title": "Менеджмент команды", "type": "business" }],
+    "learnSkill": [
+      { "title": "внимательность", "type": "lifestyle" },
+      { "title": "project-менеджмент", "type": "business" }
+    ],
+    "name": "Алексей",
+    "city": "Москва",
+    "age": "29",
+    "description": "Привет! Люблю джаз по пятницам, крепкий эспрессо и амбициозных людей рядом.",
+    "gender": "male",
+    "createdAt": 1752065629156,
+    "src": "/#"
+  },
+  {
+    "id": "card-1",
+    "userId": "user-1",
+    "teachSkill": [{ "title": "видеомонтаж", "type": "art" }],
+    "learnSkill": [
+      { "title": "фотограф", "type": "art" },
+      { "title": "личный брендинг", "type": "business" }
+    ],
+    "name": "Марина",
+    "city": "Санкт-Петербург",
+    "age": "25",
+    "description": "Привет! Обожаю рассветы на Неве, питерский дождь и креатив во всём.",
+    "gender": "female",
+    "createdAt": 1752065679448,
+    "src": "/#"
+  },
+  {
+    "id": "card-2",
+    "userId": "user-2",
+    "teachSkill": [{ "title": "испанский язык", "type": "languages" }],
+    "learnSkill": [
+      { "title": "английский язык", "type": "languages" },
+      { "title": "digital‑маркетинг", "type": "business" }
+    ],
+    "name": "Иван",
+    "city": "Новосибирск",
+    "age": "32",
+    "description": "Привет! Люблю сноуборд, латте и людей, которые делают мир чуть ярче.",
+    "gender": "male",
+    "createdAt": 1752065691824,
+    "src": "/#"
+  },
+  {
+    "id": "card-3",
+    "userId": "user-3",
+    "teachSkill": [{ "title": "ментальное здоровье", "type": "lifestyle" }],
+    "learnSkill": [
+      { "title": "инструктор йоги", "type": "lifestyle" },
+      { "title": "сценарист", "type": "art" }
+    ],
+    "name": "Екатерина",
+    "city": "Екатеринбург",
+    "age": "27",
+    "description": "Привет! Люблю горы, утренний ом на коврике и творческих экспериментаторов.",
+    "gender": "female",
+    "createdAt": 1752065701827,
+    "src": "/#"
+  },
+  {
+    "id": "card-4",
+    "userId": "user-4",
+    "teachSkill": [{ "title": "карьерный консультант", "type": "business" }],
+    "learnSkill": [
+      { "title": "стартап‑менеджмент", "type": "business" },
+      { "title": "китайский язык", "type": "languages" }
+    ],
+    "name": "Дмитрий",
+    "city": "Казань",
+    "age": "35",
+    "description": "Привет! Люблю ночные брейнштормы, турецкий кофе и смелые идеи.",
+    "gender": "male",
+    "createdAt": 1752065708418,
+    "src": "/#"
+  },
+  {
+    "id": "card-5",
+    "userId": "user-5",
+    "teachSkill": [{ "title": "саунд‑дизайн", "type": "art" }],
+    "learnSkill": [
+      { "title": "иллюстратор", "type": "art" },
+      { "title": "менеджмент команды", "type": "business" }
+    ],
+    "name": "Светлана",
+    "city": "Нижний Новгород",
+    "age": "28",
+    "description": "Привет! Люблю электрогрув, тёплый шоколад и людей, что горят своим делом.",
+    "gender": "female",
+    "createdAt": 1752065716843,
+    "src": "/#"
+  },
+  {
+    "id": "card-6",
+    "userId": "user-6",
+    "teachSkill": [{ "title": "карьерный коуч", "type": "education" }],
+    "learnSkill": [
+      { "title": "коуч личного роста", "type": "education" },
+      { "title": "фитнес‑тренер", "type": "lifestyle" }
+    ],
+    "name": "Антон",
+    "city": "Челябинск",
+    "age": "40",
+    "description": "Привет! Люблю тяжёлый рок, утренние пробежки и любознательных собеседников.",
+    "gender": "male",
+    "createdAt": 1752065728703,
+    "src": "/#"
+  },
+  {
+    "id": "card-7",
+    "userId": "user-7",
+    "teachSkill": [{ "title": "организация пространства", "type": "home" }],
+    "learnSkill": [
+      { "title": "домашняя кулинария", "type": "home" },
+      { "title": "управление временем", "type": "business" }
+    ],
+    "name": "Ольга",
+    "city": "Самара",
+    "age": "31",
+    "description": "Привет! Люблю аромат корицы, уютные кухни и идеи, от которых мурашки.",
+    "gender": "female",
+    "createdAt": 1752065736583,
+    "src": "/#"
+  },
+  {
+    "id": "card-8",
+    "userId": "user-8",
+    "teachSkill": [{ "title": "work‑life баланс", "type": "lifestyle" }],
+    "learnSkill": [
+      { "title": "фитнес‑тренер", "type": "lifestyle" },
+      { "title": "видеомонтаж", "type": "art" }
+    ],
+    "name": "Роман",
+    "city": "Ростов-на-Дону",
+    "age": "26",
+    "description": "Привет! Люблю горный воздух, крепкий американо и быстрые результаты.",
+    "gender": "male",
+    "createdAt": 1752065745242,
+    "src": "/#"
+  },
+  {
+    "id": "card-9",
+    "userId": "user-9",
+    "teachSkill": [{ "title": "digital‑маркетинг", "type": "business" }],
+    "learnSkill": [
+      { "title": "французский язык", "type": "languages" },
+      { "title": "семейный бюджет", "type": "home" }
+    ],
+    "name": "Людмила",
+    "city": "Уфа",
+    "age": "34",
+    "description": "Привет! Люблю багеты, настольные игры и людей, что учатся каждый день.",
+    "gender": "female",
+    "createdAt": 1752065752361,
+    "src": "/#"
+  },
+  {
+    "id": "card-10",
+    "userId": "user-10",
+    "teachSkill": [{ "title": "менеджмент команды", "type": "business" }],
+    "learnSkill": [
+      { "title": "b2b продажи", "type": "business" },
+      { "title": "методист обучения", "type": "education" }
+    ],
+    "name": "Георгий",
+    "city": "Красноярск",
+    "age": "30",
+    "description": "Привет! Люблю горные лыжи, хороший хмурый день и честные переговоры.",
+    "gender": "male",
+    "createdAt": 1752065761799,
+    "src": "/#"
+  },
+  {
+    "id": "card-11",
+    "userId": "user-11",
+    "teachSkill": [{ "title": "когнитивный тренер", "type": "education" }],
+    "learnSkill": [
+      { "title": "педагогика", "type": "education" },
+      { "title": "нутрициология", "type": "lifestyle" }
+    ],
+    "name": "Наталья",
+    "city": "Пермь",
+    "age": "38",
+    "description": "Привет! Люблю книги с запахом типографии, зелёный чай и любопытные умы.",
+    "gender": "female",
+    "createdAt": 1752065773622,
+    "src": "/#"
+  },
+  {
+    "id": "card-12",
+    "userId": "user-12",
+    "teachSkill": [{ "title": "актёрская игра", "type": "art" }],
+    "learnSkill": [
+      { "title": "сценарист", "type": "art" },
+      { "title": "личный брендинг", "type": "business" }
+    ],
+    "name": "Степан",
+    "city": "Воронеж",
+    "age": "24",
+    "description": "Привет! Люблю ночные съёмки, горячий рамен и смех до слёз.",
+    "gender": "male",
+    "createdAt": 1752065779877,
+    "src": "/#"
+  },
+  {
+    "id": "card-13",
+    "userId": "user-13",
+    "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+    "learnSkill": [
+      { "title": "уход за растениями", "type": "home" },
+      { "title": "иллюстратор", "type": "art" }
+    ],
+    "name": "Дарья",
+    "city": "Волгоград",
+    "age": "28",
+    "description": "Привет! Люблю аромат лаванды, уютные балконы и творческий беспорядок.",
+    "gender": "female",
+    "createdAt": 1752065786439,
+    "src": "/#"
+  },
+  {
+    "id": "card-14",
+    "userId": "user-14",
+    "teachSkill": [{ "title": "project-менеджмент", "type": "business" }],
+    "learnSkill": [
+      { "title": "work‑life баланс", "type": "lifestyle" },
+      { "title": "гигиена сна", "type": "lifestyle" }
+    ],
+    "name": "Тимур",
+    "city": "Краснодар",
+    "age": "33",
+    "description": "Привет! Люблю ранние тренировки, манго‑смузи и ясные дедлайны.",
+    "gender": "male",
+    "createdAt": 1752065792574,
+    "src": "/#"
+  },
+  {
+    "id": "card-15",
+    "userId": "user-15",
+    "teachSkill": [{ "title": "тренер скорочтения", "type": "education" }],
+    "learnSkill": [
+      { "title": "английский язык", "type": "languages" },
+      { "title": "карьерный консультант", "type": "business" }
+    ],
+    "name": "Елена",
+    "city": "Тюмень",
+    "age": "27",
+    "description": "Привет! Люблю яркие стикеры, молочный улун и людей с целями.",
+    "gender": "female",
+    "createdAt": 1752065822136,
+    "src": "/#"
+  },
+  {
+    "id": "card-16",
+    "userId": "user-16",
+    "teachSkill": [{ "title": "ментальное здоровье", "type": "lifestyle" }],
+    "learnSkill": [
+      { "title": "арт‑терапевт", "type": "art" },
+      { "title": "домашняя кулинария", "type": "home" }
+    ],
+    "name": "Павел",
+    "city": "Ижевск",
+    "age": "42",
+    "description": "Привет! Люблю спокойные вечера, тёплый хлеб и умные разговоры.",
+    "gender": "male",
+    "createdAt": 1752065833159,
+    "src": "/#"
+  },
+  {
+    "id": "card-17",
+    "userId": "user-17",
+    "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+    "learnSkill": [
+      { "title": "DIY‑ремонт", "type": "home" },
+      { "title": "саунд‑дизайн", "type": "art" }
+    ],
+    "name": "Сергей",
+    "city": "Барнаул",
+    "age": "36",
+    "description": "Привет! Люблю запах древесины, горячий чай и людей, что делают руками.",
+    "gender": "male",
+    "createdAt": 1752065841585,
+    "src": "/#"
+  },
+  {
+    "id": "card-18",
+    "userId": "user-18",
+    "teachSkill": [{ "title": "личный брендинг", "type": "business" }],
+    "learnSkill": [
+      { "title": "digital‑маркетинг", "type": "business" },
+      { "title": "инструктор йоги", "type": "lifestyle" }
+    ],
+    "name": "Вероника",
+    "city": "Ульяновск",
+    "age": "30",
+    "description": "Привет! Люблю кинза‑латте, хюгге‑вечера и идеи, что меняют мир.",
+    "gender": "female",
+    "createdAt": 1752065849878,
+    "src": "/#"
+  },
+  {
+    "id": "card-19",
+    "userId": "user-19",
+    "teachSkill": [{ "title": "гигиена сна", "type": "lifestyle" }],
+    "learnSkill": [
+      { "title": "фитнес‑тренер", "type": "lifestyle" },
+      { "title": "методист обучения", "type": "education" }
+    ],
+    "name": "Владимир",
+    "city": "Иркутск",
+    "age": "41",
+    "description": "Привет! Люблю холодное утро Байкала, крепкий зелёный чай и системность.",
+    "gender": "male",
+    "createdAt": 1752065857251,
+    "src": "/#"
+  },
+  {
+    "id": "card-20",
+    "userId": "user-20",
+    "teachSkill": [{ "title": "тренер скорочтения", "type": "education" }],
+    "learnSkill": [
+      { "title": "когнитивный тренер", "type": "education" },
+      { "title": "японский язык", "type": "languages" }
+    ],
+    "name": "Кирилл",
+    "city": "Хабаровск",
+    "age": "23",
+    "description": "Привет! Люблю аниме‑марафоны, матча и быстрые идеи.",
+    "gender": "male",
+    "createdAt": 1752065865674,
+    "src": "/#"
+  },
+  {
+    "id": "card-21",
+    "userId": "user-21",
+    "teachSkill": [{ "title": "управление временем", "type": "business" }],
+    "learnSkill": [
+      { "title": "фотограф", "type": "art" },
+      { "title": "уход за растениями", "type": "home" }
+    ],
+    "name": "Татьяна",
+    "city": "Ярославль",
+    "age": "29",
+    "description": "Привет! Люблю туманы над Волгой, крепкий фильтр‑кофе и зелёные окна.",
+    "gender": "female",
+    "createdAt": 1752065872619,
+    "src": "/#"
+  },
+  {
+    "id": "card-22",
+    "userId": "user-22",
+    "teachSkill": [{ "title": "подготовка к IELTS", "type": "languages" }],
+    "learnSkill": [
+      { "title": "стартап‑менеджмент", "type": "business" },
+      { "title": "work‑life баланс", "type": "lifestyle" }
+    ],
+    "name": "Олег",
+    "city": "Владивосток",
+    "age": "37",
+    "description": "Привет! Люблю шум прибоя, морской бриз и чёткие бизнес‑планы.",
+    "gender": "male",
+    "createdAt": 1752065879925,
+    "src": "/#"
+  },
+  {
+    "id": "card-23",
+    "userId": "user-23",
+    "teachSkill": [{ "title": "видеомонтаж", "type": "art" }],
+    "learnSkill": [
+      { "title": "саунд‑дизайн", "type": "art" },
+      { "title": "digital‑маркетинг", "type": "business" }
+    ],
+    "name": "Алиса",
+    "city": "Томск",
+    "age": "22",
+    "description": "Привет! Люблю винил, ламповый свет и креативные коллаборации.",
+    "gender": "female",
+    "createdAt": 1752065889065,
+    "src": "/#"
+  },
+  {
+    "id": "card-24",
+    "userId": "user-24",
+    "teachSkill": [{ "title": "внимательность", "type": "lifestyle" }],
+    "learnSkill": [
+      { "title": "семейный бюджет", "type": "home" },
+      { "title": "b2b продажи", "type": "business" }
+    ],
+    "name": "Юлия",
+    "city": "Омск",
+    "age": "35",
+    "description": "Привет! Люблю долгие прогулки, горячий морс и честные решения.",
+    "gender": "female",
+    "createdAt": 1752065897568,
+    "src": "/#"
+  },
+  {
+    "id": "card-25",
+    "userId": "user-25",
+    "teachSkill": [{ "title": "ментальное здоровье", "type": "lifestyle" }],
+    "learnSkill": [
+      { "title": "менеджмент команды", "type": "business" },
+      { "title": "карьерный коуч", "type": "education" }
+    ],
+    "name": "Игорь",
+    "city": "Москва",
+    "age": "39",
+    "description": "Привет! Люблю живые встречи, крепкий раф и людей с искрой в глазах.",
+    "gender": "male",
+    "createdAt": 1752065906447,
+    "src": "/#"
+  },
+  {
+    "id": "card-26",
+    "userId": "user-26",
+    "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+    "learnSkill": [
+      { "title": "японский язык", "type": "languages" },
+      { "title": "DIY‑декор", "type": "art" }
+    ],
+    "name": "Евгения",
+    "city": "Краснодар",
+    "age": "27",
+    "description": "Привет! Люблю сакуру, бумажные дневники и минимализм в вещах.",
+    "gender": "female",
+    "createdAt": 1752065915294,
+    "src": "/#"
+  },
+  {
+    "id": "card-27",
+    "userId": "user-27",
+    "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+    "learnSkill": [
+      { "title": "нутрициология", "type": "lifestyle" },
+      { "title": "digital‑маркетинг", "type": "business" }
+    ],
+    "name": "Максим",
+    "city": "Пермь",
+    "age": "31",
+    "description": "Привет! Люблю аромат корицы, яркие овощи и честные истории.",
+    "gender": "male",
+    "createdAt": 1752065923044,
+    "src": "/#"
+  },
+  {
+    "id": "card-28",
+    "userId": "user-28",
+    "teachSkill": [{ "title": "b2b продажи", "type": "business" }],
+    "learnSkill": [
+      { "title": "project-менеджмент", "type": "business" },
+      { "title": "арт‑терапевт", "type": "art" }
+    ],
+    "name": "Арина",
+    "city": "Екатеринбург",
+    "age": "34",
+    "description": "Привет! Люблю дождливые вечера, плейлисты lo‑fi и честный фидбек.",
+    "gender": "female",
+    "createdAt": 1752065948491,
+    "src": "/#"
+  },
+  {
+    "id": "card-29",
+    "userId": "user-29",
+    "teachSkill": [{ "title": "видеомонтаж", "type": "art" }],
+    "learnSkill": [
+      { "title": "немецкий язык", "type": "languages" },
+      { "title": "инструктор йоги", "type": "lifestyle" }
+    ],
+    "name": "Рита",
+    "city": "Санкт-Петербург",
+    "age": "28",
+    "description": "Привет! Люблю утренний дождь, ароматный фильтр и вдохновляющие путешествия.",
+    "gender": "female",
+    "createdAt": 1752065959913,
+    "src": "/#"
+  }
+]
