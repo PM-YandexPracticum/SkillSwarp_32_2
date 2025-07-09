@@ -1,5 +1,3 @@
-//стили нужно будет поменять когда добавят константы, глбальные стили, шрифты
-
 *,
 *::after,
 *::before {
@@ -17,18 +15,19 @@
   border-radius: 12px;
   background-color: white;
   border: 1px dashed #000000;
+}
 
-  &__active {
+.drap_drag__active {
     background-color: #F0FFF0;
   }
 
-  &__form {
+.drap_drag__form {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
 
-  &__text {
+.drap_drag__text {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -37,7 +36,7 @@
     color: #69735d;
   }
 
-  &__link {
+.drap_drag__link {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -45,33 +44,33 @@
     color: #abd27a;
   }
 
-  &__view {
+.drap_drag__view {
     display: flex;
     flex-direction: row;
     gap: 5px;
     justify-content: center;
   }
 
-  &__input {
+.drap_drag__input {
     display: none;
   }
 
-  &__file_list {
+.drap_drag__file_list {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__file_list li {
+.drap_drag__file_list li {
 	color: #69735d;
   }
 
-  &__gallery {
+.drap_drag__gallery {
     align-self: self-end;
   }
 
-  &__gallery_edit {
+.drap_drag__gallery_edit {
     text-align: right;
   }
 
-}
+

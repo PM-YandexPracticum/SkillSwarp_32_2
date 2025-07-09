@@ -3,13 +3,13 @@ import { useState,
     type DragEvent, 
     type FC 
 } from 'react';
-import './drap-drag.scss';
+import styles from './drop-drag.module.css'; 
 
 //надо доработать цвета изображений
-import gallery_add from '../../../assets/svg/gallery_add.svg';
-import gallery_edit from '../../../assets/svg/gallery_edit.svg';
+import gallery_add from '../../assets/svg/gallery_add.svg';
+import gallery_edit from '../../assets/svg/gallery_edit.svg';
 
-export const DrapDragUI: FC = () => {
+export const DropDrag: FC = () => {
     const [files, setFiles] = useState<FileList | null>(null);
     const [dragActive, setDragActive] = useState(false);
 
@@ -54,8 +54,8 @@ export const DrapDragUI: FC = () => {
     );
 
     return (
-        <div className={`drap_drag ${dragActive ? 'drap_drag__active':''}`}>
-            <form className='drap_drag__form'
+        <div className={`${styles.drap_drag} ${dragActive ? styles.drap_drag__active :''}`}>
+            <form className={styles.drap_drag__form}
                 onDragEnter={handleDrag}
                 onDragOver={handleDrag}
                 onDragLeave={handleLeave}
@@ -63,40 +63,40 @@ export const DrapDragUI: FC = () => {
                 onReset={handleReset}
             >
                 {hasFile ? (
-                    <div className='drap_drag__gallery'>
-                        <label className='drap_drag__gallery_edit'>
+                    <div className={styles.drap_drag__gallery}>
+                        <label className={styles.drap_drag__gallery_edit}>
                             <img src={gallery_edit} alt='кнопка' width={24} height={24} />
                             <input type='file'
-                                className='drap_drag__input' 
+                                className={styles.drap_drag__input}
                                 multiple
                                 onChange={handleChange}          
                             />   
                         </label>
-                        <label className='drap_drag__gallery_edit'>
+                        <label className={styles.drap_drag__gallery_edit}>
                             <ResetGallery />
                             <input type='reset'
-                                className='drap_drag__input' 
+                                className={styles.drap_drag__input}
                                 multiple
                                 onChange={handleChange}          
                             />
                         </label>
                     </div>                
                     ) : (
-                    <div className='drap_drag__form'>
-                        <h1 className='drap_drag__text'>
+                    <div className={styles.drap_drag__form}>
+                        <h1 className={styles.drap_drag__text}>
                             Перетащите или выберите изображения навыка
                         </h1>
-                        <label className='drap_drag__label'>
-                            <div className='drap_drag__view'>
+                        <label className={styles.drap_drag__label}>
+                            <div className={styles.drap_drag__view}>
                                 <img src={gallery_add}
                                     alt='кнопка выбора файлов'
                                     width={24}
                                     height={24}
                                     />                        
-                                <p className='drap_drag__link'>Выбрать изображения</p>
+                                <p className={styles.drap_drag__link}>Выбрать изображения</p>
                             </div>               
                             <input type='file'
-                                className='drap_drag__input' 
+                                className={styles.drap_drag__input}
                                 multiple
                                 onChange={handleChange}          
                                 />                   
@@ -106,7 +106,7 @@ export const DrapDragUI: FC = () => {
                 }
                 {hasFile
                     &&
-                    <ul className='drap_drag__file_list'>
+                    <ul className={styles.drap_drag__file_list}>
                         {Array.from(files).map((file, id) => <li key={id}>{file.name}</li>)}
                     </ul>
                 }            
