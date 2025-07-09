@@ -1,1 +1,1 @@
-export { ArrowSquareRightSVG } from './arrow-square-right';
+export { ArrowSquareLeftSVG } from './arrow-square-left';

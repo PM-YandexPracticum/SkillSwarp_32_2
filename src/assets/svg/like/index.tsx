@@ -1,0 +1,1 @@
+export { LikeSVG } from './like';

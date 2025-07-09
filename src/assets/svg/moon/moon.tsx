@@ -1,4 +1,7 @@
-export const MoonSVG = ({ color = 'black', size = 24 }) => (
+import type { FC } from 'react';
+import type { SVGType } from '../svg.type';
+
+export const MoonSVG: FC<SVGType> = ({ color = 'var(--text-redesigned)', size = 24 }) => (
   <svg
     width={size}
     height={size}
