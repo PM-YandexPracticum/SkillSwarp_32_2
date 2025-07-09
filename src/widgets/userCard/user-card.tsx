@@ -1,5 +1,5 @@
-import type { skill, UserData } from '@/shared/ui/user-cardUI/types';
-import { UserCardUI } from '@/shared/ui/user-cardUI/user-card';
+import type { skill, UserData } from '@/shared/ui/userCardUI/types';
+import { UserCardUI } from '@/shared/ui/userCardUI/user-card';
 import type { FC } from 'react';
 
 export const UserCard: FC = () => {
@@ -10,10 +10,8 @@ export const UserCard: FC = () => {
     { title: 'aawdwad', type: 'art' },
     { title: 'aawdwad', type: 'art' },
   ];
-  const buttonClick = () => {
-  };
-  const setLike = () => {
-  };
+  const buttonClick = () => {};
+  const setLike = () => {};
   const user: UserData = {
     name: 'Илона',
     age: 33,
