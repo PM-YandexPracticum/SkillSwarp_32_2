@@ -1,0 +1,26 @@
+[
+  {
+    "gender": "male",
+    "id": "user-1",
+    "name": "Владислав",
+    "city": "Владивосток",
+    "age": 30,
+    "mail": "vlad@mail.ru",
+    "password": "Wasd321",
+    "description": "Описание",
+    "image": "./#",
+    "likes": ["card-0", "card-5"]
+  },
+  {
+    "gender": "feemale",
+    "id": "user-2",
+    "name": "Екатерина",
+    "city": "Москва",
+    "age": 24,
+    "mail": "katya@mail.ru",
+    "password": "Qwerty123!",
+    "description": "Описание",
+    "image": "./#",
+    "likes": ["card-3", "card-24", "card-25"]
+  }
+]

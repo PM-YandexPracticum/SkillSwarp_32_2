@@ -1,0 +1,272 @@
+[
+  {
+    "id": "skill-card-0",
+    "userId": "user-0",
+    "title": "Менеджмент команды",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "team-management"
+  },
+  {
+    "id": "skill-card-1",
+    "userId": "user-1",
+    "title": "видеомонтаж",
+    "description": "Описание",
+    "images": [],
+    "filterType": "art",
+    "subFilterType": "mounting"
+  },
+  {
+    "id": "skill-card-2",
+    "userId": "user-2",
+    "title": "испанский язык",
+    "description": "Описание",
+    "images": [],
+    "filterType": "languages",
+    "subFilterType": "spanish"
+  },
+  {
+    "id": "skill-card-3",
+    "userId": "user-3",
+    "title": "ментальное здоровье",
+    "description": "Описание",
+    "images": [],
+    "filterType": "lifestyle",
+    "subFilterType": "mental-health"
+  },
+  {
+    "id": "skill-card-4",
+    "userId": "user-4",
+    "title": "карьерный консультант",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "resume"
+  },
+  {
+    "id": "skill-card-5",
+    "userId": "user-5",
+    "title": "саунд‑дизайн",
+    "description": "Описание",
+    "images": [],
+    "filterType": "art",
+    "subFilterType": "music"
+  },
+  {
+    "id": "skill-card-6",
+    "userId": "user-6",
+    "title": "карьерный коуч",
+    "description": "Описание",
+    "images": [],
+    "filterType": "education",
+    "subFilterType": "coaching"
+  },
+  {
+    "id": "skill-card-7",
+    "userId": "user-7",
+    "title": "организация пространства",
+    "description": "Описание",
+    "images": [],
+    "filterType": "home",
+    "subFilterType": "cleaning"
+  },
+  {
+    "id": "skill-card-8",
+    "userId": "user-8",
+    "title": "work‑life баланс",
+    "description": "Описание",
+    "images": [],
+    "filterType": "lifestyle",
+    "subFilterType": "life-balance"
+  },
+  {
+    "id": "skill-card-9",
+    "userId": "user-9",
+    "title": "digital‑маркетинг",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "marketing"
+  },
+  {
+    "id": "skill-card-10",
+    "userId": "user-10",
+    "title": "когнитивный тренер",
+    "description": "Описание",
+    "images": [],
+    "filterType": "education",
+    "subFilterType": "cognitive-skills"
+  },
+  {
+    "id": "skill-card-11",
+    "userId": "user-11",
+    "title": "актёрская игра",
+    "description": "Описание",
+    "images": [],
+    "filterType": "art",
+    "subFilterType": "acting"
+  },
+  {
+    "id": "skill-card-12",
+    "userId": "user-12",
+    "title": "домашняя кулинария",
+    "description": "Описание",
+    "images": [],
+    "filterType": "home",
+    "subFilterType": "cooking"
+  },
+  {
+    "id": "skill-card-13",
+    "userId": "user-13",
+    "title": "project-менеджмент",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "project-management"
+  },
+  {
+    "id": "skill-card-14",
+    "userId": "user-14",
+    "title": "тренер скорочтения",
+    "description": "Описание",
+    "images": [],
+    "filterType": "education",
+    "subFilterType": "speed-reading"
+  },
+  {
+    "id": "skill-card-15",
+    "userId": "user-15",
+    "title": "личный брендинг",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "brand"
+  },
+  {
+    "id": "skill-card-16",
+    "userId": "user-16",
+    "title": "гигиена сна",
+    "description": "Описание",
+    "images": [],
+    "filterType": "lifestyle",
+    "subFilterType": "recovery"
+  },
+  {
+    "id": "skill-card-17",
+    "userId": "user-17",
+    "title": "управление временем",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "time-management"
+  },
+  {
+    "id": "skill-card-18",
+    "userId": "user-18",
+    "title": "подготовка к IELTS",
+    "description": "Описание",
+    "images": [],
+    "filterType": "languages",
+    "subFilterType": "exams"
+  },
+  {
+    "id": "skill-card-19",
+    "userId": "user-19",
+    "title": "внимательность",
+    "description": "Описание",
+    "images": [],
+    "filterType": "lifestyle",
+    "subFilterType": "mindfulness"
+  },
+  {
+    "id": "skill-card-20",
+    "userId": "user-20",
+    "title": "b2b продажи",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "sales"
+  },
+  {
+    "id": "skill-card-21",
+    "userId": "user-21",
+    "title": "управление временем",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "time-management"
+  },
+  {
+    "id": "skill-card-22",
+    "userId": "user-22",
+    "title": "подготовка к IELTS",
+    "description": "Описание",
+    "images": [],
+    "filterType": "languages",
+    "subFilterType": "exams"
+  },
+  {
+    "id": "skill-card-23",
+    "userId": "user-23",
+    "title": "видеомонтаж",
+    "description": "Описание",
+    "images": [],
+    "filterType": "art",
+    "subFilterType": "mounting"
+  },
+  {
+    "id": "skill-card-24",
+    "userId": "user-24",
+    "title": "внимательность",
+    "description": "Описание",
+    "images": [],
+    "filterType": "lifestyle",
+    "subFilterType": "mindfulness"
+  },
+  {
+    "id": "skill-card-25",
+    "userId": "user-25",
+    "title": "ментальное здоровье",
+    "description": "Описание",
+    "images": [],
+    "filterType": "lifestyle",
+    "subFilterType": "mental-health"
+  },
+  {
+    "id": "skill-card-26",
+    "userId": "user-26",
+    "title": "домашняя кулинария",
+    "description": "Описание",
+    "images": [],
+    "filterType": "home",
+    "subFilterType": "cooking"
+  },
+  {
+    "id": "skill-card-27",
+    "userId": "user-27",
+    "title": "домашняя кулинария",
+    "description": "Описание",
+    "images": [],
+    "filterType": "home",
+    "subFilterType": "cooking"
+  },
+  {
+    "id": "skill-card-28",
+    "userId": "user-28",
+    "title": "b2b продажи",
+    "description": "Описание",
+    "images": [],
+    "filterType": "business",
+    "subFilterType": "sales"
+  },
+  {
+    "id": "skill-card-29",
+    "userId": "user-29",
+    "title": "видеомонтаж",
+    "description": "Описание",
+    "images": [],
+    "filterType": "art",
+    "subFilterType": "mounting"
+  }
+]
