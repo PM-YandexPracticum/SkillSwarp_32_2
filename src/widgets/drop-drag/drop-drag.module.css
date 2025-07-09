@@ -1,0 +1,76 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: start;
+}
+
+.drap_drag {  
+  width: 436px;
+  padding: 16px 20px;  
+  border-radius: 12px;
+  background-color: white;
+  border: 1px dashed #000000;
+}
+
+.drap_drag__active {
+    background-color: #F0FFF0;
+  }
+
+.drap_drag__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+.drap_drag__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #69735d;
+  }
+
+.drap_drag__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #abd27a;
+  }
+
+.drap_drag__view {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+  }
+
+.drap_drag__input {
+    display: none;
+  }
+
+.drap_drag__file_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.drap_drag__file_list li {
+	color: #69735d;
+  }
+
+.drap_drag__gallery {
+    align-self: self-end;
+  }
+
+.drap_drag__gallery_edit {
+    text-align: right;
+  }
+
+

@@ -1,6 +1,7 @@
 export type CheckboxUIProps = {
   label: string;
   value: string; 
-  isChecked: boolean;
-  handleChange: () => void;
+  checked: boolean;
+  ariaChecked?: 'true' | 'false' | 'mixed';
+  onChange: (value: string) => void;
 };

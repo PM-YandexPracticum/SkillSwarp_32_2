@@ -1,0 +1,39 @@
+.dropdown {
+  position: relative;
+  background-color: #fff;
+}
+
+.dropdownTitle {
+  display: flex;
+}
+
+.chevron {
+  position: relative;
+  top: 50%;
+  left: 40px;
+  width: 24px;
+  opacity: 0;
+  transition:
+    transform 0.2s ease-in-out,
+    opacity 0.5s ease-in-out;
+}
+
+.dropdown:hover .chevron {
+  opacity: 1;
+}
+
+.dropdown[data-is-active='true'] .chevron {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+.dropdownContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  padding: 12px 12px 12px 32px;
+  margin: 2px 0;
+  z-index: 1;
+}
