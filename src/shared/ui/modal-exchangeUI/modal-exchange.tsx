@@ -27,4 +27,5 @@ export const ModalExchange: React.FC<ModalExchangeProps> = ({ isOpen, onClose })
       </div>
     </div>
   );
-}; 
+};
+
