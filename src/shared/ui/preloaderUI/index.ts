@@ -1,1 +1,1 @@
-export { Preloader } from './preloader';
+export { PreloaderUI } from './preloader';

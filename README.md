@@ -12,6 +12,12 @@ npm run dev
 # Проверяем ошибки
 npm run lint
 
+#запускаем бекенд
+npx json-server --watch db.json --port 3001
+
+#проверяем что билд собрался
+npm run build
+
 # Включаем запрет на пуш в ветки
 chmod +x .git/hooks/pre-push 
 
