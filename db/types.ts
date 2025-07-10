@@ -2,11 +2,11 @@
 
 type filterType = 'business' | 'art' | 'languages' | 'education' | 'home' | 'lifestyle' | 'other';
 
-type subFilterType = string;
+export type subFilterType = string;
 
-type filterStatus = 'partial' | 'full' | 'empty'
+export type filterStatus = 'partial' | 'full' | 'empty'
 
-type genderType = null | 'male' | 'female';
+export type genderType = null | 'male' | 'female';
 
 type cityType = string
 
