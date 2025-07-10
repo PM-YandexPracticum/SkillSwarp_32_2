@@ -1,9 +1,12 @@
-// @ts-expect-error asdasd adsasd asdasd
-import eslint from 'vite-plugin-eslint';
-import svgr from 'vite-plugin-svgr';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
+import svgr from 'vite-plugin-svgr';
+// @ts-expect-error Почему ошибка не понятно
+import eslint from 'vite-plugin-eslint';
+import { fileURLToPath } from 'node:url'; // Современная альтернатива path
+
+// Современный аналог __dirname
+// const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   plugins: [
@@ -16,7 +19,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   build: {
