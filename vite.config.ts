@@ -1,4 +1,4 @@
-// @ts-expect-ignore
+// @ts-expect-error asdasd adsasd asdasd
 import eslint from 'vite-plugin-eslint';
 import svgr from 'vite-plugin-svgr';
 import { defineConfig } from 'vite';
@@ -18,5 +18,8 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+  },
+  build: {
+    outDir: 'dist',
   },
 });

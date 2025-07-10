@@ -1,1 +1,1 @@
-export { MoonSVG } from './logo';
+export { LogoVG } from './logo';

@@ -12,7 +12,7 @@ export const NotificationSVG: FC<SVGType> = ({ color = 'var(--text-redesigned)',
     />
     <path
       d='M8.45 18.3c.412 1.552 1.869 2.7 3.6 2.7 1.733 0 3.187-1.148 3.6-2.7'
-      stroke='#253017'
+      stroke={color}
       strokeWidth='1.5'
       strokeLinecap='round'
       strokeLinejoin='round'

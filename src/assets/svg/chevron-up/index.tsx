@@ -1,1 +1,1 @@
-export { CrossSVG } from './chevron-up';
+export { ShevronUpSVG } from './chevron-up';
