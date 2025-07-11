@@ -15,11 +15,11 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultRadioButton: Story = {
+export const DefaultCheckbox: Story = {
   args:{
     label: '',
     value: '',
-    isChecked: 'false',
+    checked: 'false',
     onChange: () => {},
   }
 };

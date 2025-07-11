@@ -1,0 +1,142 @@
+/* ToDo: когда появятся глобальные стили, дочерние компоненты убрать лишние стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: var(--text-redesigned);
+}
+
+.nav {
+  display: flex;
+  padding: 36px 36px 20px 36px;
+  gap: 32px;
+}
+
+.header_part_left {
+  display: flex;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo span {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  padding-right: 14px;
+}
+
+.button {
+  display: flex;
+  text-wrap: nowrap;
+  gap: 4px;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: inherit;
+}
+
+.header_search {
+  flex-grow: 1;
+
+}
+
+.header_part_right {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  background-color: var(--bg-color);
+}
+
+.header_part_right:has(.header_logged_in) {
+  gap: 24px;
+}
+
+.header_logged_in {
+  display: flex;
+  gap: 24px;
+}
+
+.header_logged_in .button {
+  gap: 8px;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.profile__image {
+  width: 48px;
+  height: 48px;
+}
+
+.profile__image img {
+  min-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.header_logged_out {
+  display: flex;
+  gap: 8px;
+}
+
+.button_primary {
+  border: 1px solid var(--accent-redesigned);
+  border-radius: 12px;
+  padding-inline: 27px;
+}
+
+.button_primary:hover {
+  border-color: var(--button-hover-color);
+}
+
+.button_primary:active {
+  border-color: var(--interaction-color);
+}
+
+.button_secondary {
+  border-radius: 12px;
+  padding-inline: 23.5px;
+  background-color: var(--accent-redesigned);
+}
+
+.button_secondary:hover{
+  background-color: var(--button-hover-color);
+}
+
+.button_secondary:active{
+  background-color: var(--interaction-color);
+}
