@@ -1,8 +1,6 @@
 import { PreloaderUI } from '@/shared/ui';
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { Preloader } from '@/shared/ui';
-
 type TProtectedRoute = {
   isPublic?: boolean;
   children: React.ReactNode;
@@ -16,7 +14,7 @@ export function ProtectedRoute({ children, isPublic = false }: TProtectedRoute) 
   const from = location.state?.from || { pathname: '/' };
 
   if (!isAuthCheck && userRequest) {
-    return <Preloader />;
+    return <PreloaderUI />;
   }
 
   if (!isAuthCheck && !isPublic) {
