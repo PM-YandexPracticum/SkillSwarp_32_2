@@ -8,6 +8,7 @@ export * from './cardListUI';
 export * from './inputUI';
 export * from './preloaderUI';
 export * from './search-fieldUI';
+<<<<<<< HEAD
 export * from './registerUI';
 export * from './loginUI';
 export * from './registerAboutYouUI';
@@ -15,3 +16,7 @@ export * from './registerYouOfferUI';
 export * from './checkbox-dropdown-groupUI';
 export * from './radio-button-groupUI';
 export * from './skill-image-galleryUI';
+=======
+export * from './modalUI';
+
+>>>>>>> 3bff831 (обновление модальных окон)
