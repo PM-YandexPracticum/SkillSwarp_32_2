@@ -3,12 +3,10 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin: 0 auto;
   padding-top: 124px;
   padding-bottom: 21px;
-  color: var(--text-redesigned);
-  font-family: 'Roboto', sans-serif; /* Нужно убрать, когда будут глобальные стили */
   font-size: 17px;
-  background-color: var(--bg-color); /* И это тоже */
 }
 
 .img_container {
@@ -26,36 +24,36 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 36px;
+  max-width: 460px;
 }
 
 .text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 9px;
+}
+
+.text p {
+  text-align: center;
 }
 
 .title {
-  font-family: 'Jost', sans-serif;
-  font-weight: 500;
   font-size: 24px;
 }
 
 .buttons {
   display: flex;
+  justify-content: center;
   gap: 24px;
 }
 
 .button {
   width: 218px;
   border-radius: 12px;
-  padding: 12px 24px;
-  color: currentColor;
-  font-family: 'Roboto', sans-serif;
+  padding: 15px 24px;
   font-size: 16px;
-  text-align: center;
-  cursor: pointer;
 }
 
 .message_btn {
