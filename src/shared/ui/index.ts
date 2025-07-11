@@ -14,6 +14,8 @@ export * from './registerAboutYouUI';
 export * from './registerYouOfferUI';
 export * from './checkbox-dropdown-groupUI';
 export * from './radio-button-groupUI';
+export * from './profileMenuUI';
+export * from './allSkills';
 export * from './skill-image-galleryUI';
 export * from './modalUI';
 export * from './popoverUi';
