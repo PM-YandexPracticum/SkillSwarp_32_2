@@ -1,7 +1,7 @@
 /* div нужно будет убрать, когда строку поиска поместят в хедер, но у хедера должно быть свойство display: flex */
 .div {
   display: flex;
-  width: 517px;
+  min-width: 517px;
 }
 
 .input_wrapper {
