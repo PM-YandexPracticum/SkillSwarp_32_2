@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import userIcon from '@/assets/svg/user-square.svg';
+import userIcon from '@assets/svg/huge-user/huge-user.svg';
 import { ButtonUI } from '@/shared/ui/buttonUI/button';
 import styles from './modalBlock.module.css';
 
