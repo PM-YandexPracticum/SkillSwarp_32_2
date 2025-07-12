@@ -8,4 +8,6 @@ export * from './cardListUI';
 export * from './inputUI';
 export * from './preloaderUI';
 export * from './search-fieldUI';
+export * from './registerUI';
+export * from './loginUI';
 
