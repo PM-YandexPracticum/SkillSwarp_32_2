@@ -1,0 +1,1 @@
+export { BriefcaseSVG } from './briefcase';

@@ -1,0 +1,1 @@
+export { DoneSVG } from './done';

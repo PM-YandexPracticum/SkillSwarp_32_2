@@ -1,0 +1,1 @@
+export { SunSVG } from './sun';

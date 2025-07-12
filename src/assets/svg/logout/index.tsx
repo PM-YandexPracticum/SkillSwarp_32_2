@@ -1,0 +1,1 @@
+export { LogoutSVG } from './logout';
