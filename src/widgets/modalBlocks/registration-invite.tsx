@@ -10,14 +10,14 @@ interface RegistrationInviteProps {
 
 export const RegistrationInvite: FC<RegistrationInviteProps> = ({ onRegister, onCancel }) => (
   <>
-    <img src={userIcon} alt="Пользователь" className={styles.icon} />
+    <img src={userIcon} alt='Пользователь' className={styles.icon} />
     <h3 className={styles.heading}>Пожалуйста зарегистрируйтесь в SkillSwap!</h3>
     <p className={styles.text}>Присоединяйтесь к SkillSwap и обменивайтесь знаниями и навыками с другими пользователями</p>
     <div className={styles.actions}>
-      <ButtonUI type="button" onClick={onCancel} className={styles.cancel}>
+      <ButtonUI type='button' onClick={onCancel} className={styles.cancel}>
         Отмена
       </ButtonUI>
-      <ButtonUI type="button" onClick={onRegister} className={styles.confirm}>
+      <ButtonUI type='button' onClick={onRegister} className={styles.confirm}>
         Регистрация
       </ButtonUI>
     </div>

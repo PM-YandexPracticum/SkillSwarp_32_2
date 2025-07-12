@@ -9,10 +9,10 @@ interface RegistrationSuccessProps {
 
 export const RegistrationSuccess: FC<RegistrationSuccessProps> = ({ onDone }) => (
   <>
-    <img src={doneIcon} alt="Успех" className={styles.icon} />
+    <img src={doneIcon} alt='Успех' className={styles.icon} />
     <h3 className={styles.heading}>Вы успешно зарегистрировались</h3>
     <p className={styles.text}>Теперь можете предложить обмен</p>
-    <ButtonUI type="button" onClick={onDone} className={styles.confirm}>
+    <ButtonUI type='button' onClick={onDone} className={styles.confirm}>
       Готово
     </ButtonUI>
   </>
