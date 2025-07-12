@@ -1,0 +1,1 @@
+export { EditSVG } from './edit';
