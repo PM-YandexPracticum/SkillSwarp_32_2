@@ -1,4 +1,5 @@
+import type { TCard } from 'db/types';
 
 export type TSameOffersProps = {
-  cardsData: any[];
+  cardsData: TCard[];
 }

@@ -1,8 +1,9 @@
 import type { TSameOffersProps } from './type';
 import styles from './same-offers.module.css';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { ButtonUI, UserCardUI } from '@/shared/ui';
+import { ButtonUI } from '@/shared/ui';
 import { ChevronRightSVG } from '@/assets/svg';
+import { UserCard } from '../userCard';
 
 const mediaQueries = {
   fourCards: { query: '(min-width: 1420px)', count: 4 },
@@ -71,15 +72,20 @@ export const SameOffers  = ({cardsData}: TSameOffersProps) => {
     }>
       {currentCards.map((card, index) => (
         <ButtonUI type='link' key={index} to={`/skill/${card.userId}`}>
-          {/* <UserCard /> */}
-          <UserCardUI
+          {/* 
+            Тут конфликты с типами в карточке и UserCardUI.
+            Нужно будет заменить потом, когда стандартизируется.
+            Либо проверь, мб я не так понял. Пока заглушка
+          */}
+          <UserCard />
+          {/* <UserCardUI
             skills={card.teachSkill}
             desired={card.learnSkill}
             user={card}
             type='short'
             buttonClick={() => {}}
             setLike={() => {}}
-          />
+          /> */}
         </ButtonUI>
       ))}
 

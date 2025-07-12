@@ -18,6 +18,10 @@
   width: fit-content;
 }
 
+.container:not(:has(.button-next)) {
+  justify-content: flex-start;
+}
+
 .button {
   position: absolute;
   display: flex;
