@@ -35,9 +35,15 @@ button {
 
 @media (max-width: 900px) {
   .content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
     display: flex;
     flex-direction: column;
-    gap: 25px;
   }
 }
 
@@ -88,6 +94,10 @@ button {
   justify-content: space-between;
 }
 
+.buttons-container:not(:has(button:nth-child(2))) {
+  grid-template-columns: 1fr;
+}
+
 .button {
   display: flex;
   align-items: center;
@@ -113,6 +123,7 @@ button {
 
 .button:disabled {
   background-color: var(--disabled-redesigned);
+  cursor: not-allowed;
 }
 
 .button:hover {
@@ -123,31 +134,29 @@ button {
   background-color: var(--interaction-color);
 }
 
-.button-edit {
+.button-transparent {
   background-color: transparent;
   border: 1px solid var(--accent-redesigned)
 }
 
-.button-edit:hover {
+.button-transparent:hover {
   background-color: transparent;
   color: var(--caption-redesigned);
   border-color: var(--button-hover-color);
 }
 
-.button-edit:active {
+.button-transparent:active {
   background-color: transparent;
   border-color: var(--interaction-color);
 }
 
-.button-edit:disabled {
+.button-transparent:disabled {
   border-color: var(--disabled-redesigned);
 }
 
 /* Заглушка */
 .content-gallery {
-  width: 100%;
-  height: 100%;
-  padding-left: 440px;
-  padding-top: 324px;
+  max-width: 100%;
+  max-height: 100%;
   border: 4px dotted red;
 }

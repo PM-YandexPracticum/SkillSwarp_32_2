@@ -1,90 +1,55 @@
-import { ButtonUI } from '@/shared/ui';
 import styles from './skill-card.module.css';
 import type { TSkillCardProps } from './types';
-// import { EditSVG } from '@/assets/svg/edit';
-// import { LikeSVG } from '@/assets/svg/like';
-// import { ShareSVG } from '@/assets/svg/share';
-// import { MoreSquareSVG } from '@/assets/svg/more-square';
+import { useCallback, useMemo } from 'react';
+import { SkillCardMenu } from './skill-card-menu';
+import { SkillCardButtons } from './skill-card-buttons';
+import { SkillCardContent } from './skill-card-content';
 
 export const SkillCard = ({
     card, 
     liked = false,
-    edit = false, 
-    offered = false,
-    likeHandler
+    type = 'offer',
+    likeHandler,
   }: TSkillCardProps) => {
-  const tradeButtonHandler = () => {
-    return;
-  };
-
-  const shareHandler = () => {
+  const shareHandler = useCallback(() => {
     const url = location.href;
     navigator.clipboard.writeText(url);
-  };
+  }, []);
 
-  const editHandler = () => {
-    return;
-  };
+  const offerHandler = useCallback(() => {}, []);
 
-  const saveHandler = () => {
-    return;
-  };
+  const editHandler = useCallback(() => {}, []);
+
+  const saveHandler = useCallback(() => {}, []);
+
+  const acceptHandler = useCallback(() => {}, []);
+
+  const declineHandler = useCallback(() => {}, []);
+
+  const actionButtons = useMemo(() => (
+    <SkillCardButtons
+      type={type}
+      handlers={{
+        offer: offerHandler,
+        edit: editHandler,
+        save: saveHandler,
+        accept: acceptHandler,
+        decline: declineHandler,
+      }}
+    />
+  ), [acceptHandler, declineHandler, editHandler, offerHandler, saveHandler, type]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.menu}>
-        <ButtonUI 
-          className={styles['button-share']} 
-          type='button' 
-          onClick={likeHandler}>
-            <LikeSVG contour='currentColor' color={liked ? 'currentColor' : 'transparent'} />
-        </ButtonUI>
-        <ButtonUI 
-          className={styles['button-share']} 
-          type='button' 
-          onClick={shareHandler}>
-            <ShareSVG color='currentColor' />
-        </ButtonUI>
-        <ButtonUI 
-          className={styles['button-share']} 
-          type='button' 
-          onClick={() => {}}>
-            <MoreSquareSVG color='currentColor' />
-        </ButtonUI>
-      </div>
+      <SkillCardMenu 
+        liked={liked} 
+        likeHandler={likeHandler} 
+        shareHandler={shareHandler}
+      />
       <div className={styles.content}>
-        <div className={styles['content-info']}>
-          <h2 className={styles.title}>{card.title}</h2>
-          <span className={styles.breadcrumbs}>
-            <span className={styles.test}>
-              {card.filterType}
-            </span> / <span>
-              {card.subFilterType}
-            </span>
-          </span>
-          <p className={styles.description}>{card.description}</p>
-          { edit ? 
-            <div className={styles['buttons-container']}>
-              <ButtonUI 
-                type='button' 
-                className={`${styles.button} ${styles['button-edit']}`} 
-                onClick={editHandler}
-              >Редактировать <EditSVG color={'currentColor'} /></ButtonUI>
-              <ButtonUI 
-                type='button' 
-                className={`${styles.button} ${styles['button-save']}`} 
-                onClick={saveHandler}
-              >Готово</ButtonUI>
-            </div> 
-              : 
-            <ButtonUI 
-              type='button' 
-              className={`${styles.button} ${styles['button-trade']}`} 
-              onClick={tradeButtonHandler}
-            >Предложить обмен</ButtonUI>
-            }
-        </div>
-        {/* Заглушка */}
+        <SkillCardContent card={card} buttons={actionButtons} />
+
+        {/* Заглушка галлереи */}
         <div className={styles['content-gallery']}></div>
       </div>
     </div>
