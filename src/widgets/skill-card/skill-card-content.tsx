@@ -7,7 +7,7 @@ export const SkillCardContent = React.memo(({ card, buttons }: TSkillCardContent
     <div className={styles['content-info']}>
       <h2 className={styles.title}>{card.title}</h2>
       <span className={styles.breadcrumbs}>
-        <span className={styles.test}>{card.filterType}</span> /{' '}
+        <span>{card.filterType}</span> /{' '}
         <span>{card.subFilterType}</span>
       </span>
       <p className={styles.description}>{card.description}</p>
