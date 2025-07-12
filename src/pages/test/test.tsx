@@ -10,7 +10,7 @@ import { LikeSVG } from '@/assets/svg/like';
 import { NotificationSVG } from '@/assets/svg/notification';
 // import { MoonButton } from '@/widgets';
 import { addUser, getUserById } from '../../api/skill-swap-api';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import { ButtonUI } from '@/shared/ui';
 import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
 
@@ -20,6 +20,15 @@ export const Test: FC = () => {
       alert(data.name);
     });
   }
+
+  const options = [
+    { id: '1', title: 'Рисование и иллюстрация' },
+    { id: '2', title: 'Фотография' },
+    { id: '3', title: 'Видеомонтаж' },
+    { id: '4', title: 'Музыка и звук' },
+    { id: '5', title: 'Рисование и иллюстрация' },
+  ];
+  const [selected, setSelected] = useState<string[]>([]);
 
   return (
     <>

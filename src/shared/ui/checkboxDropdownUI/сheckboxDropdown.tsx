@@ -1,9 +1,9 @@
 import { useRef, useState, type MouseEventHandler } from 'react';
 import styles from './checkboxDropdown.module.css';
 import { CheckboxUI } from '../checkboxUI';
-import type { CheckboxDropdownUIProps } from './type';
+import type { CheckboxDropdownUIProps, OptionProps } from './type';
 import { useOutsideClickClose } from './hooks/useOutsideClickClose';
-import chevronDown from '../../../assets/svg/chevron-down.svg';
+import chevronDown from '@/assets/svg/chevron-down/chevron-down.svg';
 
 export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
   const { label, options, selectedOptions, onSelect, onClose } = props;
@@ -23,15 +23,16 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
       setLocalSelected([]);
       onSelect([]);
     } else {
-      setLocalSelected(options);
-      onSelect(options);
+      const allIds = options.map((option) => option.id);
+      setLocalSelected(allIds);
+      onSelect(allIds);
     }
   };
 
-  const handleCheckboxChange = (option: string) => {
-    const newSelected = localSelected.includes(option)
-      ? localSelected.filter((o) => o !== option)
-      : [...localSelected, option];
+  const handleCheckboxChange = (option: OptionProps) => {
+    const newSelected = localSelected.includes(option.id)
+      ? localSelected.filter((o) => o !== option.id)
+      : [...localSelected, option.id];
     setLocalSelected(newSelected);
     onSelect(newSelected);
   };
@@ -40,7 +41,7 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
     setIsOpen((isOpen) => !isOpen);
   };
 
-  const isAllChecked = options.every((option) => localSelected.includes(option));
+  const isAllChecked = options.every((option) => localSelected.includes(option.id));
   const isPartialChecked = localSelected.length > 0 && !isAllChecked;
   const ariaChecked = isAllChecked ? 'true' : isPartialChecked ? 'mixed' : 'false';
 
@@ -66,10 +67,10 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
         <div className={styles.dropdownContent}>
           {options.map((option) => (
             <CheckboxUI
-              key={option}
-              label={option}
-              value={option}
-              checked={localSelected.includes(option)}
+              key={option.id}
+              label={option.title}
+              value={option.id}
+              checked={localSelected.includes(option.id)}
               onChange={() => handleCheckboxChange(option)}
             />
           ))}
