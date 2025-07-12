@@ -49,6 +49,11 @@ export default [
       'eol-last': ['error', 'always'],
       'react/react-in-jsx-scope': 'off', // не требуется с React 17+
       'react/jsx-uses-react': 'off', // не требуется с React 17+
+
+      'react/display-name': 'off', // отключаем для TypeScript проектов
+      'react/prop-types': 'off', // отключаем для TypeScript проектов
+
+      
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       'no-console': 'warn',
