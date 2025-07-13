@@ -12,15 +12,15 @@
   justify-content: space-between;
 }
 
-.title {
-  font-family: sans-serif;
-  font-weight: 700;
+.title { /* эти стили можно убрать, поскольку за это отвечают глобальные */
+  /*font-family: sans-serif;
+  font-weight: 700;*/
   font-size: 32px;
 }
 
 .button {
   background-color: white;
-  padding: 12px 24px;
+  padding: 12px 26px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -30,10 +30,10 @@
   cursor: pointer;
 }
 
-.button_text {
-  font-family: sans-serif;
+.button_text { /* и здесь так же */
+  /*font-family: sans-serif;*/
   font-size: 16px;
-  font-weight: 500;
+  /*font-weight: 500;*/
 }
 
 .button_image {
