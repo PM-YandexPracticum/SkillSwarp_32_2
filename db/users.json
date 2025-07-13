@@ -8,11 +8,26 @@
     "mail": "vlad@mail.ru",
     "password": "Wasd321",
     "description": "Описание",
-    "image": "./#",
-    "likes": ["card-0", "card-5"]
+    "incoming": [
+      {
+        "userId": "user-3",
+        "status": "pending"
+      },
+      {
+        "userId": "user-4",
+        "status": "pending"
+      }
+    ],
+    "outgoing": [
+      {
+        "userId": "user-5",
+        "status": "pending"
+      }
+    ],
+    "image": "./#"
   },
   {
-    "gender": "feemale",
+    "gender": "female",
     "id": "user-2",
     "name": "Екатерина",
     "city": "Москва",
@@ -20,7 +35,26 @@
     "mail": "katya@mail.ru",
     "password": "Qwerty123!",
     "description": "Описание",
-    "image": "./#",
-    "likes": ["card-3", "card-24", "card-25"]
+    "incoming": [
+      {
+        "userId": "user-0",
+        "status": "pending"
+      }
+    ],
+    "outgoing": [
+      {
+        "userId": "user-12",
+        "status": "pending"
+      },
+      {
+        "userId": "user-20",
+        "status": "pending"
+      },
+      {
+        "userId": "user-28",
+        "status": "pending"
+      }
+    ],
+    "image": "./#"
   }
 ]

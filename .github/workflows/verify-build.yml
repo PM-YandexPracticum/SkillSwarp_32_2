@@ -1,0 +1,32 @@
+name: Verify Build
+
+on:
+  push:
+    branches: [dev]  # Запускать при пуше в эти ветки
+  pull_request:           # И при создании PR
+    branches: [dev]
+
+jobs:
+  verify-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'  # Используйте вашу версию Node
+          cache: 'npm'        # Кэшируем node_modules для скорости
+
+      - name: Install dependencies
+        run: npm ci        # Чистая установка зависимостей
+
+      - run: npm run build # Ключевой шаг - проверка сборки
+        env:
+          NODE_ENV: production
+          NODE_OPTIONS: '--experimental-vm-modules'   
+
+      - name: Verify build output
+        run: |
+          ls -la dist/       # Проверяем, что файлы созданы

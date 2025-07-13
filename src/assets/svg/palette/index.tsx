@@ -1,0 +1,1 @@
+export { PaletteSVG } from './palette';

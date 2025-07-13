@@ -10,6 +10,18 @@ export type genderType = null | 'male' | 'female';
 
 type cityType = string
 
+type status = 'penging' | 'rejected' | 'fullfiled'
+
+interface incomingType {
+  userId: string
+  status: status
+}
+
+interface outgoingType {
+  userId: string
+  status: status
+}
+
 interface Tskill {
   skillTitle: string
   type: filterType
@@ -29,6 +41,7 @@ export interface TCard {
   description: string
   gender: genderType
   createdAt: number
+  likes: string[]
   src: string
 }
 
@@ -72,8 +85,9 @@ export interface TUser {
   mail: string
   password: string
   description: string
+  incoming: incomingType[]
+  outgoing: outgoingType[]
   image: string
-  likes: string[]
 }
 
 // тип города

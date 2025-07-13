@@ -1,0 +1,128 @@
+.img_container {
+  width: 150px;
+  height: 150px;
+  align-self: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.general {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.general_column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 566px;
+  padding: 60px;
+}
+
+.general_column_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;  
+  padding: 60px;
+  width: 566px;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: var(--black-color);
+  margin-top: 16px;
+}
+
+.line_text {
+  display: inline-block;
+  padding: 0 4px;
+  font-size: 16px;
+  text-transform: lowercase;
+  color: var(--black-color);
+  line-height: 1em;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: var(--white-color); 
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.text p {
+  text-align: center;
+}
+
+.title {
+  /* stylelint-disable-next-line font-family-name-quotes */
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.button {
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: currentColor;
+  /* stylelint-disable-next-line font-family-name-quotes */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.message_btn {
+  border: 1px solid var(--text-redesigned);
+  background-color: var(--white-color);
+}
+
+.message_btn:hover {
+  border-color: var(--button-hover-color);
+  color: var(--caption-redesigned);
+}
+
+.message_btn:active {
+  border-color: var(--interaction-color);
+  color: var(--text-redesigned);
+}
+
+.link_btn {
+  border: none;
+  background-color: var(--accent-redesigned);
+}
+
+.link_btn:hover {
+  background-color: var(--button-hover-color);
+}
+
+.link_btn:active {
+  background-color: var(--interaction-color);
+}

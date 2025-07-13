@@ -1,0 +1,1 @@
+export { HomeSVG } from './home';

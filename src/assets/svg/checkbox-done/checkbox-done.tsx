@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { SVGType } from '../svg.type';
 
-export const CheckboxDoneSVG: FC<SVGType> = ({ color = 'var(--text-redesigned)', size = 24 }) => (
+export const CheckboxDoneSVG: FC<SVGType> = ({ color = 'var(--accent-redesigned)', size = 24 }) => (
   <svg
     width={size}
     height={size}

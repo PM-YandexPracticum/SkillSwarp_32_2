@@ -6,8 +6,8 @@ import { useState,
 import styles from './drop-drag.module.css'; 
 
 //надо доработать цвета изображений
-import gallery_add from '../../assets/svg/gallery_add.svg';
-import gallery_edit from '../../assets/svg/gallery_edit.svg';
+import { GalleryAddSVG } from '@/assets/svg/gallery_add';
+import { GalleryEditSVG } from '@/assets/svg/gallery_edit';
 
 export const DropDrag: FC = () => {
     const [files, setFiles] = useState<FileList | null>(null);
@@ -65,7 +65,7 @@ export const DropDrag: FC = () => {
                 {hasFile ? (
                     <div className={styles.drap_drag__gallery}>
                         <label className={styles.drap_drag__gallery_edit}>
-                            <img src={gallery_edit} alt='кнопка' width={24} height={24} />
+                            <GalleryEditSVG width='24px' height='24px'/>
                             <input type='file'
                                 className={styles.drap_drag__input}
                                 multiple
@@ -88,11 +88,8 @@ export const DropDrag: FC = () => {
                         </h1>
                         <label className={styles.drap_drag__label}>
                             <div className={styles.drap_drag__view}>
-                                <img src={gallery_add}
-                                    alt='кнопка выбора файлов'
-                                    width={24}
-                                    height={24}
-                                    />                        
+
+                                <GalleryAddSVG width='24px' height='24px'/>                       
                                 <p className={styles.drap_drag__link}>Выбрать изображения</p>
                             </div>               
                             <input type='file'

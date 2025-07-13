@@ -4,9 +4,13 @@ import { MoonSVG } from '@/assets/svg';
 import { ButtonUI } from '@/shared/ui';
 import type { FC } from 'react';
 
-export const MoonButton:FC = () => {
+type MoonButtonType = {
+  onClick: () => void
+}
+
+export const MoonButton:FC<MoonButtonType> = ({onClick}) => {
   return (
-    <ButtonUI type='button' onClick={() => {alert('Я кнопка смены темы');}}>
+    <ButtonUI type='button' onClick={onClick}>
       <MoonSVG color='purple'/>
     </ButtonUI>
   );

@@ -1,7 +1,7 @@
 import { ButtonUI } from '@/shared/ui';
 import type { FC } from 'react';
 import error404 from '../../assets/images/error-404.png';
-import styles from './error-404.module.css';
+import styles from './404-error.module.css';
 import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 
