@@ -66,12 +66,9 @@ const cardsSlice = createSlice({
       }
     },
   },
-  extraReducers: (builder) => {
-    builder
-        // здесь будут санки. я их добавлю когда будет готов API
-  }
+  // здесь будут санки. я их добавлю когда будет готов API
 });
 
 export const { addCard, changeCard, removeCard } = cardsSlice.actions;
-export const  cardsReducer = cardsSlice.reducer
+export const  cardsReducer = cardsSlice.reducer;
 
