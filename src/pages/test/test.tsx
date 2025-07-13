@@ -45,7 +45,8 @@ export const Test: FC = () => {
             password: 'Qwerty123!',
             description: 'Описание',
             image: './#',
-            likes: ['card-3', 'card-24', 'card-25'],
+            incoming: [],
+            outgoing: []
           })
         }
       >
