@@ -1,4 +1,4 @@
-import type { filterStatus, genderType, subFilterType, TCard } from '../../../../db/types';
+import type { genderType, subFilterType, TCard } from '../../../../db/types';
 //файл для хранения вспомогательных функций для сокращения кода
 
 export const formatAge = (age: number) => {
@@ -36,19 +36,9 @@ interface filterStore {
 // вспомогательные функции
 
 export const filterByCities = (cards: TCard[], cities: string[]) => {
-  const filteredCards: TCard[] = [];
+  if (cities.length === 0) return [...cards];
 
-  if (cities.length === 0) {
-    filteredCards.push(...cards);
-  } else {
-    cards.forEach((card) => {
-      cities.forEach((city) => {
-        card.city === city && filteredCards.push(card);
-      });
-    });
-  }
-
-  return filteredCards;
+  return cards.filter((card) => cities.includes(card.city));
 };
 
 export const filterByGender = (cards: TCard[], gender: genderType) => {
@@ -68,7 +58,6 @@ const filterByCathegories = (
     return skills.some((skill) => cathegories.includes(skill.subType));
   });
 };
-
 
 // сама функция
 
@@ -90,4 +79,3 @@ export const filterCards = (cards: TCard[], filterStore: filterStore) => {
 
   return filteredCards;
 };
-
