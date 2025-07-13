@@ -3,7 +3,7 @@ import styles from './checkboxDropdown.module.css';
 import { CheckboxUI } from '../checkboxUI';
 import type { CheckboxDropdownUIProps, OptionProps } from './type';
 import { useOutsideClickClose } from './hooks/useOutsideClickClose';
-import chevronDown from '@/assets/svg/chevron-down/chevron-down.svg';
+import { ChevronDownSVG } from '@/assets/svg';
 
 export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
   const { label, options, selectedOptions, onSelect, onClose } = props;
@@ -55,13 +55,9 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
           ariaChecked={ariaChecked}
           onChange={toogleSelectAll}
         />
-        <img
-          src={chevronDown}
-          alt='иконка стрелочки'
-          className={styles.chevron}
-          role='button'
-          onClick={handleDropdownToggle}
-        />
+        <span className={styles.chevron} role='button' onClick={handleDropdownToggle}>
+          <ChevronDownSVG />
+        </span>
       </div>
       {isOpen && (
         <div className={styles.dropdownContent}>
