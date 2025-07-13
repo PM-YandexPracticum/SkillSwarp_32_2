@@ -31,9 +31,7 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({
           <ChevronDownSVG />
         </ButtonUI>
       </div>
-      <div className={styles.header_search}>
-        <SearchFieldUI onReset={onClearButtonClick} />
-      </div>
+      <SearchFieldUI onReset={onClearButtonClick} />
       <div className={styles.header_part_right}>
         <ButtonUI
           type='button'

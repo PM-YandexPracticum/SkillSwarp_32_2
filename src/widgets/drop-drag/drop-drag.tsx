@@ -88,6 +88,7 @@ export const DropDrag: FC = () => {
                         </h1>
                         <label className={styles.drap_drag__label}>
                             <div className={styles.drap_drag__view}>
+
                                 <GalleryAddSVG width='24px' height='24px'/>                       
                                 <p className={styles.drap_drag__link}>Выбрать изображения</p>
                             </div>               

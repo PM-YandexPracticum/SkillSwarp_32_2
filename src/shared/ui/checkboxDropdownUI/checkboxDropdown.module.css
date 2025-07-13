@@ -10,8 +10,7 @@
 .chevron {
   position: relative;
   top: 50%;
-  left: 40px;
-  width: 24px;
+  left: 39px;
   opacity: 0;
   transition:
     transform 0.2s ease-in-out,
