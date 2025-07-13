@@ -1,0 +1,8 @@
+.radio_button_group {
+    display: flex;
+    flex-direction: column;
+    /* min-width: 284px; */
+    width: inherit;
+    /* max-width: 300px; */
+    gap: 20px;
+}

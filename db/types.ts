@@ -4,7 +4,7 @@ type filterType = 'business' | 'art' | 'languages' | 'education' | 'home' | 'lif
 
 type subFilterType = string;
 
-type filterStatus = 'partial' | 'full' | 'empty'
+// type filterStatus = 'partial' | 'full' | 'empty'
 
 type genderType = null | 'male' | 'female';
 
@@ -62,7 +62,7 @@ export interface TSkillCard {
 interface TSubFilter {
   id: string
   title: string
-  isSelected: boolean
+  // isSelected: boolean
   type: subFilterType
 }
 
@@ -70,7 +70,7 @@ export interface TFilter {
   id: string
   type: filterType
   title: string
-  status: filterStatus
+  // status: filterStatus
   subFilters: TSubFilter[]
 }
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import React from 'react';
 
 type UseOutsideClickClose = {
-  isOpen: boolean;
+  isOpen: boolean | string | null;
   onChange: (newValue: boolean) => void;
   onClose?: () => void;
   rootRef: React.RefObject<HTMLDivElement | null>;

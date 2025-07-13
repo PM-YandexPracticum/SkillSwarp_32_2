@@ -1,47 +1,54 @@
-import { useRef, useState, type MouseEventHandler } from 'react';
+import { useRef, useState } from 'react';
 import styles from './checkboxDropdown.module.css';
 import { CheckboxUI } from '../checkboxUI';
-import type { CheckboxDropdownUIProps, OptionProps } from './type';
-import { useOutsideClickClose } from './hooks/useOutsideClickClose';
+import type { CheckboxDropdownUIProps, TSubFilter } from './type';
+// import { useOutsideClickClose } from './hooks/useOutsideClickClose';
+import { ButtonUI } from '../buttonUI';
 import { ChevronDownSVG } from '@/assets/svg';
 
+interface DropdownState {
+  [label: string]: boolean;
+}
+
 export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
-  const { label, options, selectedOptions, onSelect, onClose } = props;
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { label, options, selectedOptions, onSelect } = props;
+  const [isOpen, setIsOpen] = useState<DropdownState>({});
   const rootRef = useRef<HTMLDivElement | null>(null);
   const [localSelected, setLocalSelected] = useState(selectedOptions);
 
-  useOutsideClickClose({
-    isOpen,
-    rootRef,
-    onClose,
-    onChange: setIsOpen,
-  });
+  // useOutsideClickClose({
+  //   isOpen,
+  //   rootRef,
+  //   onClose,
+  //   onChange: setIsOpen,
+  // });
 
-  const toogleSelectAll = () => {
+  const toggleSelectAll = () => {
     if (isAllChecked) {
       setLocalSelected([]);
       onSelect([]);
     } else {
-      const allIds = options.map((option) => option.id);
-      setLocalSelected(allIds);
-      onSelect(allIds);
+      setLocalSelected(options);
+      onSelect(options);
     }
   };
 
-  const handleCheckboxChange = (option: OptionProps) => {
-    const newSelected = localSelected.includes(option.id)
-      ? localSelected.filter((o) => o !== option.id)
-      : [...localSelected, option.id];
+  const handleCheckboxChange = (option: TSubFilter) => {
+    const newSelected = localSelected.includes(option)
+      ? localSelected.filter((o) => o !== option)
+      : [...localSelected, option];
     setLocalSelected(newSelected);
     onSelect(newSelected);
   };
 
-  const handleDropdownToggle: MouseEventHandler<HTMLSpanElement> = () => {
-    setIsOpen((isOpen) => !isOpen);
+  const handleDropdownToggle = () => {
+    setIsOpen((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
   };
 
-  const isAllChecked = options.every((option) => localSelected.includes(option.id));
+  const isAllChecked = options.every((option) => localSelected.includes(option));
   const isPartialChecked = localSelected.length > 0 && !isAllChecked;
   const ariaChecked = isAllChecked ? 'true' : isPartialChecked ? 'mixed' : 'false';
 
@@ -49,24 +56,28 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
     <div className={styles.dropdown} ref={rootRef} data-is-active={isOpen}>
       <div className={styles.dropdownTitle}>
         <CheckboxUI
+        key={label}
           label={label}
           value='all'
           checked={isAllChecked}
           ariaChecked={ariaChecked}
-          onChange={toogleSelectAll}
-        />
-        <span className={styles.chevron} role='button' onClick={handleDropdownToggle}>
-          <ChevronDownSVG />
-        </span>
+          onChange={toggleSelectAll}
+        >
+          <ButtonUI className={styles.chevron} type='button' onClick={handleDropdownToggle}>
+            <ChevronDownSVG />
+          </ButtonUI>
+        </CheckboxUI>
       </div>
-      {isOpen && (
+
+{/* Здесь можно заменить на CheckboxGroupUI */}
+      {isOpen[label] && (
         <div className={styles.dropdownContent}>
           {options.map((option) => (
             <CheckboxUI
-              key={option.id}
+            key={option.id}
               label={option.title}
-              value={option.id}
-              checked={localSelected.includes(option.id)}
+              value={option.title}
+              checked={localSelected.includes(option)}
               onChange={() => handleCheckboxChange(option)}
             />
           ))}
