@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { CardListProps } from './type';
 import styles from './card-list.module.css';
 import { ButtonUI } from '../buttonUI';
+import { ChevronRightSVG } from '@/assets/svg';
 
 export const CardListUI: FC<CardListProps> = ({ title, children, handleOpen }) => {
   return (
@@ -14,7 +15,8 @@ export const CardListUI: FC<CardListProps> = ({ title, children, handleOpen }) =
           <ButtonUI className={styles.button} type='button' onClick={handleOpen}>
             <span className={styles.button_text}>Смотреть все</span>
             <div className={styles.button_image}>
-              <img src='' alt='стрелка вправо' />
+              {/*<img src='' alt='стрелка вправо' />*/}
+              <ChevronRightSVG />
             </div>
           </ButtonUI>
         )}
