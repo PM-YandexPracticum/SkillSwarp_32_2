@@ -23,11 +23,11 @@ export const CheckboxUI = ({
         {...rest}
       />
       {checked ? (
-        <CheckboxDoneSVG color='var(--accent-redesigned)'/>
+        <CheckboxDoneSVG />
       ) : ariaChecked === 'mixed' ? (
-        <CheckboxRemoveSVG color='var(--accent-redesigned)'/>
+        <CheckboxRemoveSVG />
       ) : (
-        <CheckboxEmptySVG color='currentColor'/>
+        <CheckboxEmptySVG />
       )}
       <span className={styles.text}>{label}</span>
     </label>
