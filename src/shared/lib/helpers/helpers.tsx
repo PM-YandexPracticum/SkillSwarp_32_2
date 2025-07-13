@@ -59,27 +59,35 @@ const filterByCathegories = (
   cards: TCard[],
   cathegories: subFilterType[],
   filterStatus: filterStatusType
-) => {
-  
+): TCard[] => {
+  if (cathegories.length === 0 || filterStatus === 'all') return cards;
+
+  return cards.filter((card) => {
+    const skills = filterStatus === 'teach' ? card.teachSkill : card.learnSkill;
+
+    return skills.some((skill) => cathegories.includes(skill.subType));
+  });
 };
+
 
 // сама функция
 
 export const filterCards = (cards: TCard[], filterStore: filterStore) => {
-  let filteredCards: TCard[] = [];
+  let filteredCards: TCard[] = [...cards];
 
-  if (
-    filterStore.cities.length === 0 &&
-    filterStore.subCathegories.length === 0 &&
-    filterStore.filterStatus === 'all' &&
-    filterStore.gender === null
-  ) {
-    filteredCards.push(...cards);
-  }
+  // Фильтр по городам
+  filteredCards = filterByCities(filteredCards, filterStore.cities);
 
-  filteredCards.push(...filterByCities(cards, filterStore.cities));
-
+  // Фильтр по полу
   filteredCards = filterByGender(filteredCards, filterStore.gender);
+
+  // Фильтр по категориям
+  filteredCards = filterByCathegories(
+    filteredCards,
+    filterStore.subCathegories,
+    filterStore.filterStatus
+  );
 
   return filteredCards;
 };
+
