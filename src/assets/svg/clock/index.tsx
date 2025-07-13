@@ -1,0 +1,1 @@
+export { ClockSVG } from './clock';
