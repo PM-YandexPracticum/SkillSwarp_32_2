@@ -1,13 +1,14 @@
 import { useState, type FC } from 'react';
 import { CheckboxUI } from '../checkboxUI';
-import type { TSubFilter } from '../checkboxDropdownUI/type';
 import styles from './checkbox-group.module.css';
+import type { TSkillSubFilter } from '@/shared/global-types';
+
 
 type CheckboxUIGroupProps = {
   title?: string;
-  filters: TSubFilter[];
-  selectedOptions: TSubFilter[];
-  onSelect: (selected: TSubFilter[]) => void;
+  filters: TSkillSubFilter[];
+  selectedOptions: TSkillSubFilter[];
+  onSelect: (selected: TSkillSubFilter[]) => void;
 };
 
 export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
@@ -16,12 +17,25 @@ export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
   onSelect,
   title,
 }) => {
+  // const [localSelected, setLocalSelected] = useState(selectedOptions);
+
+  // const handleCheckboxChange = (option: TSubFilter) => {
+  //   const newSelected = localSelected.includes(option)
+  //     ? localSelected.filter((o) => o !== option)
+  //     : [...localSelected, option];
+  //   setLocalSelected(newSelected);
+  //   onSelect(newSelected);
+  // };
+
   const [localSelected, setLocalSelected] = useState(selectedOptions);
 
-  const handleCheckboxChange = (option: TSubFilter) => {
+
+  const handleCheckboxChange = (option: TSkillSubFilter) => {
+    option.status = !option.status;
     const newSelected = localSelected.includes(option)
       ? localSelected.filter((o) => o !== option)
       : [...localSelected, option];
+
     setLocalSelected(newSelected);
     onSelect(newSelected);
   };
@@ -29,13 +43,13 @@ export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
   return (
     <div className={styles.container}>
       {title && <h3>{title}</h3>}
-      <div>
+      <div className={styles.checkbox_list}>
         {filters.map((filter) => (
           <CheckboxUI
           key={filter.id}
             label={filter.title}
             value={filter.title}
-            checked={localSelected.includes(filter)}
+            checked={filter.status}
             onChange={() => handleCheckboxChange(filter)}
           />
         ))}

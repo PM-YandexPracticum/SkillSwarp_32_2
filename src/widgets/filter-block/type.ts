@@ -1,9 +1,9 @@
-import type { TSubFilter } from '@/shared/ui/checkboxDropdownUI/type';
-import type { filtersType } from '@/shared/ui/radio-button-groupUI/type';
+import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
+
 
 export type FilterBlockProps = {
-  onEducationChange: (selectedValue: filtersType[]) => void;
-  onGenderChange: (selectedValue: filtersType[]) => void;
-  onSkillChange: (selectedValue: TSubFilter[]) => void;
-  onCityChange: (selectedValue: TSubFilter[]) => void;
+  onEducationChange: (selectedValue: commonFilterType[]) => void;
+  onGenderChange: (selectedValue: commonFilterType[]) => void;
+  onSkillChange: (selectedValue: TSkillSubFilter[]) => void;
+  onCityChange: (selectedValue: TSkillSubFilter[]) => void;
 };

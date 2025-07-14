@@ -1,39 +1,9 @@
-export type OptionProps = {
-  id: string;
-  title: string;
-};
+import type { TSkillSubFilter } from '@/shared/global-types';
 
 export type CheckboxDropdownUIProps = {
   label: string;
-  options: TSubFilter[];
-  selectedOptions: TSubFilter[];
-  onSelect: (selected: TSubFilter[]) => void;
+  options: TSkillSubFilter[];
+  selectedOptions: TSkillSubFilter[];
+  onSelect: (selected: TSkillSubFilter[]) => void;
   onClose?: () => void;
 };
-
-type filterType = 'business' | 'art' | 'languages' | 'education' | 'home' | 'lifestyle' | 'other';
-
-type subFilterType = string;
-
-type filterStatus = 'partial' | 'full' | 'empty';
-
-type cityType = string;
-
-export interface TSubFilter {
-  id: string;
-  title: string;
-  type: subFilterType;
-}
-
-export interface TFilter {
-  id: string;
-  type: filterType;
-  title: string;
-  status: filterStatus;
-  subFilters: TSubFilter[];
-}
-
-export interface TCity {
-  id: string;
-  title: cityType;
-}

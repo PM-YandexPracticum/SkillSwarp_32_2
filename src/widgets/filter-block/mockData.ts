@@ -1,7 +1,6 @@
-import type { filterType } from '@/shared/ui/checkbox-dropdown-groupUI/type';
-import type { TFilter } from 'db/types';
+import type { TMainSkillFilter } from '@/shared/global-types';
 
-export const mainFilters:TFilter[] = [
+export const mainFilters: TMainSkillFilter[] = [
   {
     id: '0',
     type: 'business',
@@ -12,23 +11,26 @@ export const mainFilters:TFilter[] = [
         id: '0-0',
 
         type: 'team-management',
+        status: false,
       },
-      { title: 'Маркетинг и реклама', id: '0-1', type: 'marketing' },
-      { title: 'Продажи и переговоры', id: '0-2', type: 'sales' },
-      { title: 'Личный бренд', id: '0-3', type: 'brand' },
-      { title: 'Резюме и собеседования', id: '0-4', type: 'resume' },
-      { title: 'Тайм-менеджмент', id: '0-5', type: 'time-management' },
+      { title: 'Маркетинг и реклама', id: '0-1', type: 'marketing', status: false },
+      { title: 'Продажи и переговоры', id: '0-2', type: 'sales', status: false },
+      { title: 'Личный бренд', id: '0-3', type: 'brand', status: false },
+      { title: 'Резюме и собеседования', id: '0-4', type: 'resume', status: false },
+      { title: 'Тайм-менеджмент', id: '0-5', type: 'time-management', status: false },
       {
         title: 'Проектное управление',
         id: '0-6',
 
         type: 'project-management',
+        status: false,
       },
       {
         title: 'Предпринимательство',
         id: '0-7',
 
         type: 'entrepreneurship',
+        status: false,
       },
     ],
   },
@@ -37,19 +39,20 @@ export const mainFilters:TFilter[] = [
     type: 'art',
     title: 'Творчество и искусство',
     subFilters: [
-      { title: 'Рисование и иллюстрация', id: '1-0', type: 'drawing' },
-      { title: 'Фотография', id: '1-1', type: 'photo' },
-      { title: 'Монтаж', id: '1-2', type: 'mounting' },
-      { title: 'Музыка и звук', id: '1-3', type: 'music' },
-      { title: 'Актерское мастерство', id: '1-4', type: 'acting' },
+      { title: 'Рисование и иллюстрация', id: '1-0', type: 'drawing', status: false },
+      { title: 'Фотография', id: '1-1', type: 'photo', status: false },
+      { title: 'Монтаж', id: '1-2', type: 'mounting', status: false },
+      { title: 'Музыка и звук', id: '1-3', type: 'music', status: false },
+      { title: 'Актерское мастерство', id: '1-4', type: 'acting', status: false },
       {
         title: 'Креативное письмо',
         id: '1-5',
 
         type: 'creative-writing',
+        status: false,
       },
-      { title: 'Арт-терапия', id: '1-6', type: 'art-therapy' },
-      { title: 'Декор и DIY', id: '1-7', type: 'diy' },
+      { title: 'Арт-терапия', id: '1-6', type: 'art-therapy', status: false },
+      { title: 'Декор и DIY', id: '1-7', type: 'diy', status: false },
     ],
   },
   {
@@ -57,16 +60,17 @@ export const mainFilters:TFilter[] = [
     type: 'languages',
     title: 'Иностранные языки',
     subFilters: [
-      { title: 'Английский', id: '2-0', type: 'english' },
-      { title: 'Французский', id: '2-1', type: 'french' },
-      { title: 'Испанский', id: '2-2', type: 'spanish' },
-      { title: 'Немецкий', id: '2-3', type: 'german' },
-      { title: 'Китайский', id: '2-4', type: 'chinese' },
-      { title: 'Японский', id: '2-5', type: 'japanese' },
+      { title: 'Английский', id: '2-0', type: 'english', status: false },
+      { title: 'Французский', id: '2-1', type: 'french', status: false },
+      { title: 'Испанский', id: '2-2', type: 'spanish', status: false },
+      { title: 'Немецкий', id: '2-3', type: 'german', status: false },
+      { title: 'Китайский', id: '2-4', type: 'chinese', status: false },
+      { title: 'Японский', id: '2-5', type: 'japanese', status: false },
       {
         title: 'Подготовка к экзаменам (IELTS, TOEFL)',
         id: '2-6',
         type: 'exams',
+        status: false,
       },
     ],
   },
@@ -80,17 +84,19 @@ export const mainFilters:TFilter[] = [
         id: '3-0',
 
         type: 'personal-development',
+        status: false,
       },
-      { title: 'Навыки обучения', id: '3-1', type: 'training' },
+      { title: 'Навыки обучения', id: '3-1', type: 'training', status: false },
       {
         title: 'Когнитивные навыки',
         id: '3-2',
 
         type: 'cognitive-skills',
+        status: false,
       },
-      { title: 'Скорочтение', id: '3-3', type: 'speed-reading' },
-      { title: 'Навыки преподавания', id: '3-4', type: 'teaching' },
-      { title: 'Коучинг', id: '3-5', type: 'coaching' },
+      { title: 'Скорочтение', id: '3-3', type: 'speed-reading', status: false },
+      { title: 'Навыки преподавания', id: '3-4', type: 'teaching', status: false },
+      { title: 'Коучинг', id: '3-5', type: 'coaching', status: false },
     ],
   },
   {
@@ -98,12 +104,12 @@ export const mainFilters:TFilter[] = [
     type: 'home',
     title: 'Дом и уют',
     subFilters: [
-      { title: 'Уборки и организация', id: '4-0', type: 'cleaning ' },
-      { title: 'Домашние финансы', id: '4-1', type: 'home-finances' },
-      { title: 'Приготовление еды', id: '4-2', type: 'cooking' },
-      { title: 'Домашние растения', id: '4-3', type: 'house-plants' },
-      { title: 'Ремонт', id: '4-4', type: 'repair' },
-      { title: 'Хранение вещей', id: '4-5', type: 'storing-things' },
+      { title: 'Уборки и организация', id: '4-0', type: 'cleaning ', status: false },
+      { title: 'Домашние финансы', id: '4-1', type: 'home-finances', status: false },
+      { title: 'Приготовление еды', id: '4-2', type: 'cooking', status: false },
+      { title: 'Домашние растения', id: '4-3', type: 'house-plants', status: false },
+      { title: 'Ремонт', id: '4-4', type: 'repair', status: false },
+      { title: 'Хранение вещей', id: '4-5', type: 'storing-things', status: false },
     ],
   },
   {
@@ -111,23 +117,20 @@ export const mainFilters:TFilter[] = [
     type: 'lifestyle',
     title: 'Здоровье и лайфстайл',
     subFilters: [
-      { title: 'Йога и медитация', id: '5-0', type: 'yoga' },
-      { title: 'Питание и ЗОЖ', id: '5-1', type: 'nutrition' },
-      { title: 'Ментальное здоровье', id: '5-2', type: 'mental-health' },
-      { title: 'Осознанность', id: '5-3', type: 'mindfulness' },
+      { title: 'Йога и медитация', id: '5-0', type: 'yoga', status: false },
+      { title: 'Питание и ЗОЖ', id: '5-1', type: 'nutrition', status: false },
+      { title: 'Ментальное здоровье', id: '5-2', type: 'mental-health', status: false },
+      { title: 'Осознанность', id: '5-3', type: 'mindfulness', status: false },
       {
         title: 'Физические тренировки',
         id: '5-4',
 
         type: 'physical-training',
+        status: false,
       },
-      { title: 'Сон и восстановление', id: '5-5', type: 'recovery' },
-      { title: 'Баланс жизни и работы', id: '5-6', type: 'life-balance' },
+      { title: 'Сон и восстановление', id: '5-5', type: 'recovery', status: false },
+      { title: 'Баланс жизни и работы', id: '5-6', type: 'life-balance', status: false },
     ],
   },
 ];
 
-
-export const cityFilters:filterType[] = [
-
-];

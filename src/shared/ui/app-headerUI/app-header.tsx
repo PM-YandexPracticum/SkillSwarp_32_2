@@ -9,7 +9,7 @@ import { SearchFieldUI } from '../search-fieldUI';
 
 export const AppHeaderUI: FC<TAppHeaderUIProps> = ({
   onSkillsClick,
-  onToogleTheme,
+  onToggleTheme: onToogleTheme,
   onNotificationClick,
   onLikeClick,
   onClearButtonClick,

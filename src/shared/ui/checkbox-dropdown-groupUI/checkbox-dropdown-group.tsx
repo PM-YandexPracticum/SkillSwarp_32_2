@@ -1,12 +1,13 @@
 import { CheckboxDropdownUI } from '@/shared/ui/checkboxDropdownUI';
 import { useEffect, useState, type FC } from 'react';
 import styles from './checkbox-dropdown-group.module.css';
-import type { CheckBoxGroupProps, filterType, TSubFilter } from './type';
+import type { parentSkillFilterType, TSkillSubFilter } from '@/shared/global-types';
+import type { CheckBoxGroupProps } from './type';
 
 export const CheckBoxDropDownGroupUI: FC<CheckBoxGroupProps> = ({ filters, onChange, title }) => {
-  const [selectedValues, setSelectedValues] = useState<TSubFilter[]>([]);
+  const [selectedValues, setSelectedValues] = useState<TSkillSubFilter[]>([]);
 
-  const handleSelect = (mainFilter: filterType, newSelections: TSubFilter[]) => {
+  const handleSelect = (mainFilter: parentSkillFilterType, newSelections: TSkillSubFilter[]) => {
     setSelectedValues((prev) => {
       // Удаляем все значения данного типа
       const filtered = prev.filter(
@@ -24,7 +25,7 @@ export const CheckBoxDropDownGroupUI: FC<CheckBoxGroupProps> = ({ filters, onCha
   return (
     <div className={styles.container}>
       <h3> {title} </h3>
-      <div>
+      <div className={styles.checkbox_dropdown_list}>
       {filters.map((filter) => (
         <CheckboxDropdownUI
         key={filter.id}

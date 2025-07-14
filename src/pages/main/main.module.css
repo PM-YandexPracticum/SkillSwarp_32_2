@@ -8,11 +8,6 @@
   padding: 20px 36px;
 }
 
-.filters {
-  height: 200px;
-  background-color: lightgreen;
-}
-
 .card_blocks {
   display: flex;
   flex-direction: column;

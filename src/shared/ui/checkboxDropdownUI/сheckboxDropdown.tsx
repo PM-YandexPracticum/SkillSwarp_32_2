@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react';
 import styles from './checkboxDropdown.module.css';
 import { CheckboxUI } from '../checkboxUI';
-import type { CheckboxDropdownUIProps, TSubFilter } from './type';
+import type { CheckboxDropdownUIProps } from './type';
 // import { useOutsideClickClose } from './hooks/useOutsideClickClose';
 import { ButtonUI } from '../buttonUI';
 import { ChevronDownSVG } from '@/assets/svg';
+import type { TSkillSubFilter } from '@/shared/global-types';
 
 interface DropdownState {
   [label: string]: boolean;
@@ -33,7 +34,7 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
     }
   };
 
-  const handleCheckboxChange = (option: TSubFilter) => {
+  const handleCheckboxChange = (option: TSkillSubFilter) => {
     const newSelected = localSelected.includes(option)
       ? localSelected.filter((o) => o !== option)
       : [...localSelected, option];
@@ -77,7 +78,7 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
             key={option.id}
               label={option.title}
               value={option.title}
-              checked={localSelected.includes(option)}
+              checked={option.status}
               onChange={() => handleCheckboxChange(option)}
             />
           ))}

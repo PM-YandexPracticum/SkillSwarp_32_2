@@ -7,10 +7,7 @@ import { Error404 } from '@/pages/404-error';
 import { SkillPage } from '@/pages/skill-page';
 import { Test } from '@/pages/test';
 import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
-<<<<<<< HEAD
 import { Footer } from '@/shared/ui/footer';
-=======
->>>>>>> c940b63 (Added RadioButtonGroup, ChecboxGroup, FilterBlock)
 
 function App() {
   // решил скопировать работу модалок из бургерной :)
@@ -21,13 +18,9 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
-=======
-      {' '}
->>>>>>> c940b63 (Added RadioButtonGroup, ChecboxGroup, FilterBlock)
       <AppHeaderUI
         onSkillsClick={() => {}}
-        onToogleTheme={() => {}}
+        onToggleTheme={() => {}}
         onNotificationClick={() => {}}
         onLikeClick={() => {}}
         onClearButtonClick={() => {}}
