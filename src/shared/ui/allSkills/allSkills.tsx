@@ -1,9 +1,8 @@
 import type { FC } from 'react';
 import styles from './allSkills.module.css';
 import { ButtonUI } from '../buttonUI';
-import { BookSVG } from '@/assets/svg';
+import { BriefcaseSVG, BookSVG, HomeSVG, PaletteSVG, GlobalSVG, HealthSVG } from '@/assets/svg';
 import type { SVGType } from '@/assets/svg/svg.type';
-
 export const AllSkills: FC = () => {
   const categories = [
     {
@@ -87,12 +86,12 @@ export const AllSkills: FC = () => {
   ];
 
   const iconsMap: Record<string, FC<SVGType>> = {
-    bissnes: BookSVG,
-    art: BookSVG,
-    languages: BookSVG,
+    bissnes: BriefcaseSVG,
+    art: PaletteSVG,
+    languages: GlobalSVG,
     education: BookSVG,
-    home: BookSVG,
-    health: BookSVG,
+    home: HomeSVG,
+    health: HealthSVG,
   };
 
   return (
