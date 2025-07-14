@@ -1,6 +1,6 @@
 .dropdown {
   position: relative;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .dropdownTitle {
@@ -8,9 +8,10 @@
 }
 
 .chevron {
-  position: relative;
+  /* position: relative;
   top: 50%;
-  left: 39px;
+  left: 39px; */
+  margin-right: auto;
   opacity: 0;
   transition:
     transform 0.2s ease-in-out,

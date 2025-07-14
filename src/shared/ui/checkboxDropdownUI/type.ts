@@ -1,12 +1,9 @@
-export type OptionProps = {
-  id: string;
-  title: string;
-};
+import type { TSkillSubFilter } from '@/shared/global-types';
 
 export type CheckboxDropdownUIProps = {
   label: string;
-  options: OptionProps[];
-  selectedOptions: string[];
-  onSelect: (selected: string[]) => void;
+  options: TSkillSubFilter[];
+  selectedOptions: TSkillSubFilter[];
+  onSelect: (selected: TSkillSubFilter[]) => void;
   onClose?: () => void;
 };
