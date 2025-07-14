@@ -1,4 +1,4 @@
-import type { TCard, TCity, TMainSkillFilter, TSkillCard, TUser } from '@/shared/global-types';
+import type { TCard, TCity, TMainSkillFilter, TUser } from '@/shared/global-types';
 
 const API_URL = 'http://localhost:3001';
 
@@ -46,7 +46,7 @@ export const fetchCardsData = () => fetchData<TCard>('cards');
 
 // запрос на получение списка карточки навыка
 
-export const fetchSkillCardsData = () => fetchData<TSkillCard>('skill-cards');
+// export const fetchSkillCardsData = () => fetchData<TSkillCard>('skill-cards');
 
 // запрос на получение лайкнутых карточек
 
@@ -112,8 +112,8 @@ export const postCard = (cardData: Omit<TCard, 'id'>) => postData<TCard>(cardDat
 
 // POST карточки навыка
 
-export const postSkillCard = (skillCardData: Omit<TSkillCard, 'id'>) =>
-  postData<TSkillCard>(skillCardData, 'skill-cards');
+// export const postSkillCard = (skillCardData: Omit<TSkillCard, 'id'>) =>
+//   postData<TSkillCard>(skillCardData, 'skill-cards');
 
 //PATCH - запросы
 
@@ -227,7 +227,7 @@ export async function loginUser(mail: string, password: string) {
   if (data.length === 0) {
     return null;
   }
-  localStorage.setItem('current-user', JSON.stringify(data[0].id));
+  localStorage.setItem('current-user', JSON.stringify(data[0].userId));
   return data[0];
 }
 
@@ -264,7 +264,7 @@ export async function editUserData(userdata: Omit<TUser, 'id'>, userId: string) 
   }
 
   const data: TUser = await response.json();
-  localStorage.setItem('current-user', data.id);
+  localStorage.setItem('current-user', data.userId);
   return data;
 }
 
@@ -343,7 +343,7 @@ export const deleteCard = (id: string) => deleteData<TCard>('cards', id);
 
 //DELETE карточки навыка
 
-export const deleteSkillCard = (id: string) => deleteData<TSkillCard>('skill-cards', id);
+// export const deleteSkillCard = (id: string) => deleteData<TSkillCard>('skill-cards', id);
 
 // Это лишь примеры, надо все переписать
 export async function addUser(userData: Omit<TUser, 'id'>): Promise<TUser> {
@@ -387,22 +387,22 @@ export async function getUserById(id: string): Promise<TUser> {
   }
 }
 
-export async function getSkillCardById(id: string) {
-  try {
-    const response = await fetch(`${API_URL}/skill-cards/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
+// export async function getSkillCardById(id: string) {
+//   try {
+//     const response = await fetch(`${API_URL}/skill-cards/${id}`, {
+//       method: 'GET',
+//       headers: {
+//         'Content-type': 'application/json',
+//       },
+//     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data: TSkillCard = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Ошибка при получении карточки навыка ', error);
-    throw error;
-  }
-}
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     const data: TSkillCard = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error('Ошибка при получении карточки навыка ', error);
+//     throw error;
+//   }
+// }

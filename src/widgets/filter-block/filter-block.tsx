@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import type { FilterBlockProps } from './type';
 import { CheckBoxDropDownGroupUI, RadioButtonGroupUI } from '@/shared/ui';
-import { mainFilters } from './mockData';
 import { CheckboxGroupUI } from '@/shared/ui/checkbox-group/checkbox-group';
 import styles from './filter-block.module.css';
 import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
+import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 
 export const FilterBlock: FC<FilterBlockProps> = ({
   onEducationChange,
@@ -115,7 +115,7 @@ const cityFilters: TSkillSubFilter[] = [
     <div className={styles.container}>
       <h2>Фильтры</h2>
       <RadioButtonGroupUI filters={educationFilters} onChangeAction={onEducationChange}/>
-      <CheckBoxDropDownGroupUI filters={mainFilters} onChange={onSkillChange}  title='Навыки'/>
+      <CheckBoxDropDownGroupUI filters={MAIN_FILTERS_MOCK} onChange={onSkillChange}  title='Навыки'/>
       <RadioButtonGroupUI filters={genderFilters} onChangeAction={onGenderChange} title='Пол автора'/>
       <CheckboxGroupUI filters={cityFilters} onSelect={onCityChange} title= 'Город'/>
     </div>

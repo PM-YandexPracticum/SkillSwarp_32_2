@@ -28,11 +28,11 @@ export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
       ? localSelected.filter((o) => o.status === true )
       : [...localSelected, option];
 
-    let updatedLocalSelected = newSelected.filter((o) => o.status !== false);
-    // if (option.status) updatedLocalSelected.push(option)
-    
+    // let updatedLocalSelected = newSelected.filter((o) => o.status !== false);
+
     setLocalSelected(newSelected);
-    onSelect(updatedLocalSelected);
+    // выдаем наверх актуальное состояние фильтра
+    onSelect(filters);
   };
 
   return (

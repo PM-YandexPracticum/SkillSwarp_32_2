@@ -26,6 +26,7 @@ const cardsSlice = createSlice({
         city: action.payload.city,
         createdAt: Date.now(),
         description: action.payload.description,
+        fullDescription: action.payload.fullDescription,
         gender: action.payload.gender,
         learnSkill: action.payload.learnSkill,
         teachSkill: action.payload.teachSkill,

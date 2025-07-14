@@ -10,6 +10,24 @@ export type parentSkillFilterType =
   | 'lifestyle'
   | 'other';
 
+export type BusinessSubType = 'team-management' | 'marketing' | 'sales' | 'brand';
+export type ArtSubType = 'drawing' | 'photo' | 'mounting' | 'music';
+export type LanguagesSubType = 'english' | 'french' | 'spanish' | 'german' | 'chinese' | 'japanese';
+export type EducationSubType = 'personal-development' | 'training' | 'cognitive-skills';
+export type HomeSubType = 'cleaning' | 'home-finances' | 'cooking';
+export type LifestyleSubType = 'yoga' | 'nutrition' | 'mental-health' | 'mindfulness';
+export type OtherSubType = string; // если нужно расширить
+
+export type SubFilterTypeMap = {
+  business: BusinessSubType;
+  art: ArtSubType;
+  languages: LanguagesSubType;
+  education: EducationSubType;
+  home: HomeSubType;
+  lifestyle: LifestyleSubType;
+  other: OtherSubType; // если есть
+};
+
 export type genderType = null | 'male' | 'female';
 
 export type educationType = null | 'teach' | 'learn';
@@ -20,48 +38,34 @@ export type commonFilterType = {
   status: boolean;
 };
 
-export type filterStatus = 'empty' | 'full' | 'partial';
 
-export interface TSkillSubFilter {
+export interface TSkillSubFilter<T extends parentSkillFilterType = parentSkillFilterType> {
   id: string;
   title: string;
-  type: string;
+  type: SubFilterTypeMap[T]; // тип зависит от родительского `type`
   status: boolean;
 }
 
-export interface TMainSkillFilter {
+export interface TMainSkillFilter<T extends parentSkillFilterType = parentSkillFilterType> {
   id: string;
-  type: parentSkillFilterType;
+  type: T; // родительский тип (например, 'business')
   title: string;
-  status: filterStatus;
   src: string;
-  subFilters: TSkillSubFilter[];
+  subFilters: TSkillSubFilter<T>[]; // подфильтры с соответствующим `type`
 }
 
 // Типы со скиллами
 
-export interface TSkill {
-  skillTitle: string;
-  skillType: parentSkillFilterType;
-  skillSubType: string;
-}
-
-export interface TSkillCard extends TSkill {
-  id: string
-  userId: string
-  description: string
-  images: string[]
+export interface TSkill<T extends parentSkillFilterType = parentSkillFilterType> {
+  title: string;
+  type: parentSkillFilterType;
+  subType: SubFilterTypeMap[T];
 }
 
 // типы с заявками
 export type offerStatus = 'pending' | 'rejected' | 'fulfilled';
 
-export interface incomingType {
-  userId: string;
-  status: offerStatus;
-}
-
-export interface outgoingType {
+export interface offerSkillType {
   userId: string;
   status: offerStatus;
 }
@@ -77,6 +81,7 @@ export interface TCard {
   city: string;
   age: number;
   description: string;
+  fullDescription: string;
   gender: genderType;
   createdAt: number;
   likes: string[];
@@ -86,15 +91,15 @@ export interface TCard {
 // тип профиля юзера
 export interface TUser {
   gender: genderType;
-  id: string;
+  userId: string;
   name: string;
   city: string;
   age: number;
   mail: string;
   password: string;
   description: string;
-  incoming: incomingType[];
-  outgoing: outgoingType[];
+  incoming: offerSkillType[];
+  outgoing: offerSkillType[];
   image: string;
   likes: string[];
 }
