@@ -1,4 +1,4 @@
-import type { TSkillCard } from 'db/types';
+import type { TSkillCard } from '@/shared/global-types';
 import type { ReactNode } from 'react';
 
 export type TSkillCardProps = {
@@ -27,5 +27,5 @@ export type TSkillCardButtonsProps = {
 
 export type TSkillCardContentProps = {
   card: TSkillCardProps['card'];
-  buttons: ReactNode;
+  children: ReactNode;
 }

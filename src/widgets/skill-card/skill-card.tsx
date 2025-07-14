@@ -47,7 +47,7 @@ export const SkillCard = ({
         shareHandler={shareHandler}
       />
       <div className={styles.content}>
-        <SkillCardContent card={card} buttons={actionButtons} />
+        <SkillCardContent card={card}>{actionButtons}</SkillCardContent>
 
         {/* Заглушка галлереи */}
         <div className={styles['content-gallery']}></div>
