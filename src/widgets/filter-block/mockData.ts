@@ -5,6 +5,8 @@ export const mainFilters: TMainSkillFilter[] = [
     id: '0',
     type: 'business',
     title: 'Бизнес и карьера',
+    src: '/#',
+    status: 'empty',
     subFilters: [
       {
         title: 'Управление командой',
@@ -38,6 +40,8 @@ export const mainFilters: TMainSkillFilter[] = [
     id: '1',
     type: 'art',
     title: 'Творчество и искусство',
+    src: '/#',
+    status: 'empty',
     subFilters: [
       { title: 'Рисование и иллюстрация', id: '1-0', type: 'drawing', status: false },
       { title: 'Фотография', id: '1-1', type: 'photo', status: false },
@@ -59,6 +63,8 @@ export const mainFilters: TMainSkillFilter[] = [
     id: '2',
     type: 'languages',
     title: 'Иностранные языки',
+    src: '/#',
+    status: 'empty',
     subFilters: [
       { title: 'Английский', id: '2-0', type: 'english', status: false },
       { title: 'Французский', id: '2-1', type: 'french', status: false },
@@ -78,6 +84,8 @@ export const mainFilters: TMainSkillFilter[] = [
     id: '3',
     type: 'education',
     title: 'Образование и развитие',
+    src: '/#',
+    status: 'empty',
     subFilters: [
       {
         title: 'Личное развитие',
@@ -103,6 +111,8 @@ export const mainFilters: TMainSkillFilter[] = [
     id: '4',
     type: 'home',
     title: 'Дом и уют',
+    src: '/#',
+    status: 'empty',
     subFilters: [
       { title: 'Уборки и организация', id: '4-0', type: 'cleaning ', status: false },
       { title: 'Домашние финансы', id: '4-1', type: 'home-finances', status: false },
@@ -116,6 +126,8 @@ export const mainFilters: TMainSkillFilter[] = [
     id: '5',
     type: 'lifestyle',
     title: 'Здоровье и лайфстайл',
+    src: '/#',
+    status: 'empty',
     subFilters: [
       { title: 'Йога и медитация', id: '5-0', type: 'yoga', status: false },
       { title: 'Питание и ЗОЖ', id: '5-1', type: 'nutrition', status: false },
