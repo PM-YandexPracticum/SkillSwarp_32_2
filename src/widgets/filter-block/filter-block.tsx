@@ -53,7 +53,7 @@ const cityFilters: TSkillSubFilter[] = [
     title: 'Москва',
     id: 'city-1',
     type: 'city',
-    status: false
+    status: true
   },
   {
     title: 'Санкт-Петербург',
@@ -71,7 +71,7 @@ const cityFilters: TSkillSubFilter[] = [
     title: 'Екатеринбург',
     id: 'city-4',
     type: 'city',
-    status: false
+    status: true
   },
   {
     title: 'Казань',
@@ -117,7 +117,7 @@ const cityFilters: TSkillSubFilter[] = [
       <RadioButtonGroupUI filters={educationFilters} onChangeAction={onEducationChange}/>
       <CheckBoxDropDownGroupUI filters={mainFilters} onChange={onSkillChange}  title='Навыки'/>
       <RadioButtonGroupUI filters={genderFilters} onChangeAction={onGenderChange} title='Пол автора'/>
-      <CheckboxGroupUI filters={cityFilters} selectedOptions={[]} onSelect={onCityChange} title= 'Город'/>
+      <CheckboxGroupUI filters={cityFilters} onSelect={onCityChange} title= 'Город'/>
     </div>
   );
 };

@@ -32,7 +32,7 @@ export const mainFilters: TMainSkillFilter[] = [
         id: '0-7',
 
         type: 'entrepreneurship',
-        status: false,
+        status: true,
       },
     ],
   },

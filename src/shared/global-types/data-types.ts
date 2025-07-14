@@ -46,14 +46,11 @@ export interface TSkill {
   skillSubType: string;
 }
 
-export interface TSkillCard {
-  id: string;
-  userId: string;
-  title: string;
-  description: string;
-  images: string[];
-  skillType: parentSkillFilterType;
-  skillSubType: string;
+export interface TSkillCard extends TSkill {
+  id: string
+  userId: string
+  description: string
+  images: string[]
 }
 
 // типы с заявками
