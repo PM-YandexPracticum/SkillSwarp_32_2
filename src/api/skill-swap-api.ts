@@ -50,24 +50,24 @@ export const fetchSkillCardsData = () => fetchData<TSkillCard>('skill-cards');
 
 // запрос на получение лайкнутых карточек
 
-export async function fetchLikedCardsByUser(userId: string): Promise<TCard[]> {
-  const API_URI = 'cards';
-  const API_URL = 'http://localhost:3001';
+// export async function fetchLikedCardsByUser(userId: string): Promise<TCard[]> {
+//   const API_URI = 'cards';
+//   const API_URL = 'http://localhost:3001';
 
-  const response = await fetch(`${API_URL}/${API_URI}`, {
-    method: 'GET',
-    headers: {
-      'Content-type': 'application/json',
-    },
-  });
-  if (!response.ok) {
-    throw new Error(`Ошибка HTTP: ${response.status}`);
-  }
+//   const response = await fetch(`${API_URL}/${API_URI}`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-type': 'application/json',
+//     },
+//   });
+//   if (!response.ok) {
+//     throw new Error(`Ошибка HTTP: ${response.status}`);
+//   }
 
-  const allCards: TCard[] = await response.json();
+//   const allCards: TCard[] = await response.json();
 
-  return allCards.filter((card) => card.likes?.includes(userId));
-}
+//   return allCards.filter((card) => card.likes?.includes(userId));
+// }
 
 // Общая функция конструктор на POST запросы
 
@@ -118,20 +118,51 @@ export const postSkillCard = (skillCardData: Omit<TSkillCard, 'id'>) =>
 //PATCH - запросы
 
 // лайк карточки
-export async function toggleLike(cardId: string, userId: string): Promise<void> {
+export async function postLikeCard(cardId: string, userId: string): Promise<void> {
   const API_URI = 'cards';
 
-  const response = await fetch(`http://localhost:3001/${API_URI}/${cardId}`);
+  const response = await fetch(`${API_URL}/${API_URI}/${cardId}`);
   if (!response.ok) throw new Error('Ошибка при получении карточки');
 
   const card = await response.json();
   const currentLikes: string[] = card.likes || [];
 
-  const updatedLikes = currentLikes.includes(userId)
-    ? currentLikes.filter((id) => id !== userId)
-    : [...currentLikes, userId];
+  const updatedLikes = [...currentLikes, userId]
 
-  const updateRes = await fetch(`http://localhost:3001/${API_URI}/${cardId}`, {
+  const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ likes: updatedLikes }),
+  });
+
+  if (!updateRes.ok) throw new Error('Ошибка при обновлении лайков');
+
+  const cachedDataRaw = sessionStorage.getItem(API_URI);
+  if (cachedDataRaw) {
+    try {
+      const cachedData: TCard[] = JSON.parse(cachedDataRaw);
+      const updatedData = cachedData.map((card) =>
+        card.id === cardId ? { ...card, likes: updatedLikes } : card
+      );
+      sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
+    } catch (error) {
+      console.warn('Ошибка при парсинге sessionStorage:', error);
+    }
+  }
+}
+
+//дизлайк карточки
+export async function postDislikeCard(cardId: string, userId: string): Promise<void> {
+  const API_URI = 'cards';
+
+  const response = await fetch(`${API_URL}/${API_URI}/${cardId}`);
+  if (!response.ok) throw new Error('Ошибка при получении карточки');
+
+  const card: TCard = await response.json();
+
+  const updatedLikes = card.likes.filter(like => like !== userId);
+
+  const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ likes: updatedLikes }),
@@ -283,22 +314,22 @@ async function deleteData<T extends { id: string | number }>(
 ): Promise<void> {
   try {
     const response = await fetch(`${API_URL}/${API_URI}/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  if (!response.ok) {
-    throw new Error(`Ошибка HTTP: ${response.status}`);
-  }
+    if (!response.ok) {
+      throw new Error(`Ошибка HTTP: ${response.status}`);
+    }
 
-  const dataRaw = sessionStorage.getItem(API_URI);
-  if (dataRaw) {
-    const data: T[] = JSON.parse(dataRaw);
-    const updatedData = data.filter((el) => el.id !== id);
-    sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
-  }
+    const dataRaw = sessionStorage.getItem(API_URI);
+    if (dataRaw) {
+      const data: T[] = JSON.parse(dataRaw);
+      const updatedData = data.filter((el) => el.id !== id);
+      sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
+    }
   } catch (error) {
     console.error('Ошибка при удалении данных ', error);
     throw error;
