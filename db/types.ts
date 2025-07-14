@@ -1,84 +1,99 @@
-//вспомогательные типы
+// //вспомогательные типы
 
-type filterType = 'business' | 'art' | 'languages' | 'education' | 'home' | 'lifestyle' | 'other';
+// type filterType = 'business' | 'art' | 'languages' | 'education' | 'home' | 'lifestyle' | 'other';
 
-type subFilterType = string;
+// type subFilterType = string;
 
-type filterStatus = 'partial' | 'full' | 'empty'
+// // type filterStatus = 'partial' | 'full' | 'empty'
 
-type genderType = null | 'male' | 'female';
+// type genderType = null | 'male' | 'female';
 
-type cityType = string
+// type cityType = string
 
-interface Tskill {
-  skillTitle: string
-  type: filterType
-  subType: subFilterType
-}
+// type status = 'penging' | 'rejected' | 'fullfiled'
 
-// типы карточек 
+// interface incomingType {
+//   userId: string
+//   status: status
+// }
 
-export interface TCard {
-  id: string
-  userId: string
-  teachSkill: Tskill[]
-  learnSkill: Tskill[]
-  name: string
-  city: string
-  age: number
-  description: string
-  gender: genderType
-  createdAt: number
-  src: string
-}
+// interface outgoingType {
+//   userId: string
+//   status: status
+// }
 
-// типы компонентов скилла
+// interface Tskill {
+//   skillTitle: string
+//   type: filterType
+//   subType: subFilterType
+// }
 
-export interface TSkillCard {
-  id: string
-  userId: string
-  title: string
-  description: string
-  images: string[]
-  filterType: filterType
-  subFilterType: subFilterType
-}
+// // типы карточек 
 
-// типы фильтров
+// export interface TCard {
+//   id: string
+//   userId: string
+//   teachSkill: Tskill[]
+//   learnSkill: Tskill[]
+//   name: string
+//   city: string
+//   age: number
+//   description: string
+//   gender: genderType
+//   createdAt: number
+//   likes: string[]
+//   src: string
+// }
 
-interface TSubFilter {
-  id: string
-  title: string
-  isSelected: boolean
-  type: subFilterType
-}
+// // типы компонентов скилла
 
-export interface TFilter {
-  id: string
-  type: filterType
-  title: string
-  status: filterStatus
-  subFilters: TSubFilter[]
-}
+// export interface TSkillCard {
+//   id: string
+//   userId: string
+//   title: string
+//   description: string
+//   images: string[]
+//   filterType: filterType
+//   subFilterType: subFilterType
+// }
 
-// тип профиля юзера
+// // типы фильтров
 
-export interface TUser {
-  gender: genderType
-  id: string
-  name: string
-  city: cityType
-  age: number
-  mail: string
-  password: string
-  description: string
-  image: string
-  likes: string[]
-}
+// interface TSubFilter {
+//   id: string
+//   title: string
+//   // isSelected: boolean
+//   type: subFilterType
+//   status:false
+// }
 
-// тип города
+// export interface TFilter {
+//   id: string
+//   type: filterType
+//   title: string
+//   // status: filterStatus
+//   subFilters: TSubFilter[]
+// }
 
-export interface TCity {
-  id: string
-  title: cityType
-}
+// // тип профиля юзера
+
+// export interface TUser {
+//   gender: genderType
+//   id: string
+//   name: string
+//   city: cityType
+//   age: number
+//   mail: string
+//   password: string
+//   description: string
+//   incoming: incomingType[]
+//   outgoing: outgoingType[]
+//   image: string
+// }
+
+// // тип города
+
+// export interface TCity {
+//   id: string
+//   title: cityType
+// }

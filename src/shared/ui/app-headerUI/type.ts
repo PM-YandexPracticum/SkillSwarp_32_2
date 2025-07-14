@@ -5,7 +5,7 @@ export type HeaderUserData = {
 
 export type TAppHeaderUIProps = {
   onSkillsClick: () => void;
-  onToogleTheme: () => void;
+  onToggleTheme: () => void;
   onNotificationClick: () => void;
   onLikeClick: () => void;
   onClearButtonClick: () => void;

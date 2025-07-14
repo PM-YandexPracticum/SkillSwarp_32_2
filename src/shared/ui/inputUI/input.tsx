@@ -22,6 +22,7 @@ const iconTypes = {
 // rows = количество строк для многострочного поля
 export const InputUI = forwardRef<HTMLInputElement, InputUIProps>(
   ({ type, label, placeholder, onChange, value, name, tip, error, errorText, icon, rows }, ref) => {
+    
   const isPassword = type === 'password';
 
   const [inputType, setInputType] = useState(type);

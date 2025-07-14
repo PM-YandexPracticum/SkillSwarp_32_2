@@ -1,4 +1,4 @@
-import type { TSkillCard, TUser } from '../../db/types';
+import type { TSkillCard, TUser } from '@/shared/global-types';
 
 const API_URL = 'http://localhost:3001';
 

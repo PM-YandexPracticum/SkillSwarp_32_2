@@ -1,6 +1,6 @@
 export type RadioButtonUIProps = {
   label: string;
-  value: string;
+  value: any;
   checked: boolean;
-  onChange: (value: string) => void;
+  onChange: (value: any) => void;
 };

@@ -1,0 +1,11 @@
+.container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: var(--accent-background);
+  border-radius: 25px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
