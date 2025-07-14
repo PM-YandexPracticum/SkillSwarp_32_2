@@ -44,6 +44,7 @@
   background: none;
   color: currentColor;
   outline: none;
+  resize: none;
 }
 
 .input:focus::placeholder {

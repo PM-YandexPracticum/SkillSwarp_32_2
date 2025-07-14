@@ -1,14 +1,17 @@
 .img_container {
-  width: 150px;
-  height: 150px;
   align-self: center;
 }
 
-.img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.img_profile {
+  align-self: center;
+  position: relative;
+}
+
+.img_Plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(10%, 35%);
 }
 
 .wrapper {
@@ -34,6 +37,12 @@
   background-color: var(--white-color); 
 }
 
+.gentwo {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
 .general_column_img {
   display: flex;
   flex-direction: column;
@@ -41,29 +50,6 @@
   gap: 40px;  
   padding: 60px;
   width: 566px;
-  background-color: var(--white-color); 
-}
-
-.line {
-  position: relative;
-  width: 100%;
-  height: 1px;
-  background-color: var(--black-color);
-  margin-top: 16px;
-}
-
-.line_text {
-  display: inline-block;
-  padding: 0 4px;
-  font-size: 16px;
-  text-transform: lowercase;
-  color: var(--black-color);
-  line-height: 1em;
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
   background-color: var(--white-color); 
 }
 
@@ -104,6 +90,7 @@
 
 .message_btn {
   border: 1px solid var(--text-redesigned);
+  background-color: var(--white-redesigned);
 }
 
 .message_btn:hover {

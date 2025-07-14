@@ -20,29 +20,43 @@ const iconTypes = {
 //    Тип иконки в правой части инпута 
 //    Если тип инпута password, игнорируется и устанвливается PasswordIcon
 export const InputUI = forwardRef<HTMLInputElement, InputUIProps>(
-  ({ type, label, placeholder, onChange, value, name, tip, error, errorText, icon }, ref) => {
-  const isPassword = type === 'password';
+  ({ type, label, placeholder, onChange, value, name, tip, error, errorText, icon, rows }, ref) => {
+    const isPassword = type === 'password';
 
   const [inputType, setInputType] = useState(type);
   const passwordToggle = () => {
     if (inputType === 'password') setInputType('text');
     if (inputType === 'text') setInputType('password');
+    if (inputType === 'textarea') setInputType('textarea');
   };
   
   return (
     <div className={styles.container}>
       {label && <label className={styles.label} htmlFor={name}>{label}</label>}
       <div className={styles['input-wrapper']}>
-        <input 
-          type={inputType} 
-          placeholder={placeholder}
-          value={value}
-          name={name}
-          id={name}
-          onChange={onChange}
-          className={error ? `${styles.input} ${styles['error-input']}` : styles.input}
-          ref={ref}
-        />
+        {inputType === 'textarea' && (
+          <textarea 
+            rows={rows} 
+            placeholder={placeholder}
+            value={value}
+            name={name}
+            id={name}
+            onChange={onChange}
+            className={error ? `${styles.input} ${styles['error-input']}` : styles.input}
+          />
+        )}
+        {inputType !== 'textarea' && (
+          <input 
+            type={inputType} 
+            placeholder={placeholder}
+            value={value}
+            name={name}
+            id={name}
+            onChange={onChange}
+            className={error ? `${styles.input} ${styles['error-input']}` : styles.input}
+            ref={ref}
+          />
+        )}
         <div className={styles.icon}>
           {isPassword && (
             <button 
