@@ -127,7 +127,7 @@ export async function postLikeCard(cardId: string, userId: string): Promise<void
   const card = await response.json();
   const currentLikes: string[] = card.likes || [];
 
-  const updatedLikes = [...currentLikes, userId]
+  const updatedLikes = [...currentLikes, userId];
 
   const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
     method: 'PATCH',
