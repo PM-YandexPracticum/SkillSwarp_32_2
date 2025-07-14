@@ -8,7 +8,7 @@ const iconTypes = {
   'edit': () => <EditIcon />
 };
 
-// type = text | password | email
+// type = text | password | email | textarea
 // onChange = передаем event в колбэк, например:
 //    onChange={(event) => setUsername(event.target.value)}
 // value = значение поля, получаемое из стейта
@@ -19,9 +19,11 @@ const iconTypes = {
 // icon = password | edit 
 //    Тип иконки в правой части инпута 
 //    Если тип инпута password, игнорируется и устанвливается PasswordIcon
+// rows = количество строк для многострочного поля
 export const InputUI = forwardRef<HTMLInputElement, InputUIProps>(
   ({ type, label, placeholder, onChange, value, name, tip, error, errorText, icon, rows }, ref) => {
-    const isPassword = type === 'password';
+    
+  const isPassword = type === 'password';
 
   const [inputType, setInputType] = useState(type);
   const passwordToggle = () => {
