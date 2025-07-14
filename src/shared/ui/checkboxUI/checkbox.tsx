@@ -8,6 +8,7 @@ export const CheckboxUI = ({
   checked,
   ariaChecked = 'false',
   onChange,
+  children,
   ...rest
 }: CheckboxUIProps) => {
   return (
@@ -30,6 +31,7 @@ export const CheckboxUI = ({
         <CheckboxEmptySVG />
       )}
       <span className={styles.text}>{label}</span>
+      {children}
     </label>
   );
 };

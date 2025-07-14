@@ -8,12 +8,9 @@ import {
 } from '@/assets/svg';
 import { LikeSVG } from '@/assets/svg/like';
 import { NotificationSVG } from '@/assets/svg/notification';
-// import { MoonButton } from '@/widgets';
 import { addUser, getUserById } from '../../api/skill-swap-api';
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { ButtonUI } from '@/shared/ui';
-import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
-import { CheckboxDropdownUI } from '@/shared/ui/checkboxDropdownUI';
 
 export const Test: FC = () => {
   async function alertUser(id: string) {
@@ -21,15 +18,6 @@ export const Test: FC = () => {
       alert(data.name);
     });
   }
-
-  const options = [
-    { id: '1', title: 'Рисование и иллюстрация' },
-    { id: '2', title: 'Фотография' },
-    { id: '3', title: 'Видеомонтаж' },
-    { id: '4', title: 'Музыка и звук' },
-    { id: '5', title: 'Рисование и иллюстрация' },
-  ];
-  const [selected, setSelected] = useState<string[]>([]);
 
   return (
     <>
@@ -46,7 +34,8 @@ export const Test: FC = () => {
             description: 'Описание',
             image: './#',
             incoming: [],
-            outgoing: []
+            outgoing: [],
+            likes: ['card-3', 'card-24'],
           })
         }
       >
@@ -64,21 +53,6 @@ export const Test: FC = () => {
       <NotificationSVG />
       <SearchSVG />
       <RadiobuttonActiveSVG />
-      <AppHeaderUI
-        onSkillsClick={() => {}}
-        onToogleTheme={() => {}}
-        onNotificationClick={() => {}}
-        onLikeClick={() => {}}
-        onClearButtonClick={() => {}}
-        user={undefined}
-        // user={{ name: 'Мария', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}
-      />
-      <CheckboxDropdownUI
-        label='Творчество и искусство'
-        options={options}
-        selectedOptions={selected}
-        onSelect={(newSelected) => setSelected(newSelected)}
-      />
     </>
   );
 };

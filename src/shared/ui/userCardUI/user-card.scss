@@ -1,6 +1,6 @@
 //стили нужно будет поменять когда добавят константы, глбальные стили, шрифты
 
-*,
+/**,
 *::after,
 *::before {
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   margin: 0;
   font-family: sans-serif;
   text-align: start;
-}
+}*/
 
 .user_card {
   display: flex;
