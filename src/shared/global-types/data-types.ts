@@ -13,6 +13,8 @@ export type commonFilterType = {
   status: boolean;
 };
 
+export type filterStatus = 'empty' | 'full' | 'partial'
+
 export interface TSkillSubFilter {
   id: string
   title: string
@@ -24,7 +26,8 @@ export interface TMainSkillFilter {
   id: string
   type: parentSkillFilterType
   title: string
-  // status: filterStatus
+  status: filterStatus
+  src: string
   subFilters: TSkillSubFilter[]
 }
 
