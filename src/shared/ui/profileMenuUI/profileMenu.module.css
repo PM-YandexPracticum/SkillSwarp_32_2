@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -6,16 +6,15 @@
 }
 
 a {
-  color: #000;
-}
+  color: var(--black-color);
+} */
 
-/* ToDo: когда будет подключен файл со шрифтами и цветом, перевести код на них */
 .profile-menu {
   display: flex;
   flex-direction: column;
   text-align: start;
   max-width: 440px;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .profile-menu__avatar {
@@ -86,11 +85,11 @@ a {
   transform: translateY(-50%);
   width: 3px;
   height: 3px;
-  border: 2px solid black;
+  border: 2px solid var(--black-color);
   border-radius: 50%;
   background-color: transparent;
 }
 
 .profile-menu__nav-item--active {
-  background-color: #d9d9d9;
+  background-color: var(--grey-staff-color);
 }
