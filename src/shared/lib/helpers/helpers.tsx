@@ -1,4 +1,4 @@
-import type { genderType, TCard, TSkillSubFilter } from "@/shared/global-types";
+import type { genderType, TCard, TSkillSubFilter } from '@/shared/global-types';
 
 ;
 //файл для хранения вспомогательных функций для сокращения кода
