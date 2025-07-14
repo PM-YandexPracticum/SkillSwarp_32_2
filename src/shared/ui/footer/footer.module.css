@@ -1,17 +1,13 @@
-* {
-  box-sizing: border-box;
+.footer-wrapper {
+  width: 100%;
+  background-color: #fff;
 }
-
-body {
-  margin: 0;
-  /* background-color: black; */
-}
-/* Чёрный фон, чтобы удобнее было смотреть результат. Фон приложения - #f9faf7 */
 
 .footer {
-  width: 100vw;
+  max-width: 1440px;
+  margin: 40px auto 0;
   background-color: #fff;
-  padding: 32px 36px;
+  padding: 32px 35.5px;
   display: flex;
   flex-wrap: nowrap;
   column-gap: clamp(50px, calc((150 / 1120) * (100vw - 320px) + 50px), 200px);
@@ -28,12 +24,13 @@ body {
   row-gap: 110px;
   line-height: 133%;
   flex: 0 0 auto;
+  /* font-family: 'Jost', sans-serif; */
 }
 
 .footer__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer__logo-img {
@@ -43,20 +40,21 @@ body {
 }
 
 .footer__logo-text {
-  font-size: 25px;
+  font-size: 23px;
   line-height: 32px;
   font-weight: bold;
-  color: #253017;
-  letter-spacing: -1.6px;
+  color: var(--text-redesigned);
+  letter-spacing: 0.02em;
 }
 
 .footer__copyright {
   font-size: 12px;
   color: #69735d;
+  letter-spacing: 0.03em;
 }
 
 .footer__nav {
-  margin-top: 42px;
+  margin-top: 60px;
   font-size: 16px;
   line-height: 150%;
   flex: 1 1 auto;
@@ -67,6 +65,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 12px;
+  column-gap: 0px;
   padding-left: 0;
   list-style: none;
   position: relative;
@@ -79,7 +78,7 @@ body {
 
 .footer__nav-link {
   transition: color 0.3s ease;
-  color: #253017;
+  color: var(--text-redesigned);
   text-decoration: none;
 }
 
@@ -96,11 +95,17 @@ body {
     content: '';
     position: absolute;
     left: 0;
-    top: 0.7em;
+    top: 0.5em;
     width: 4px;
     height: 4px;
-    background-color: #253017;
+    background-color: var(--text-redesigned);
     border-radius: 50%;
+  }
+  .footer__nav-list > :nth-child(3n + 2) {
+    transform: translateX(-12.5px);
+  }
+  .footer__nav-list > :nth-child(3n + 3) {
+    letter-spacing: 0.02em;
   }
 }
 
@@ -120,12 +125,12 @@ body {
     top: 0.7em;
     width: 4px;
     height: 4px;
-    background-color: #253017;
+    background-color: var(--text-redesigned);
     border-radius: 50%;
   }
 }
 
-@media (max-width: 619px) {
+@media (max-width: 640px) {
   .footer {
     flex-direction: column;
     align-items: center;
@@ -166,7 +171,7 @@ body {
     top: 0.7em;
     width: 4px;
     height: 4px;
-    background-color: #253017;
+    background-color: var(--text-redesigned);
     border-radius: 50%;
   }
 }
