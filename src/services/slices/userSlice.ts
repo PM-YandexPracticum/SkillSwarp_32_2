@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { TSkillCard, TUser } from '../../shared/global-types';
+import type { TSkillCard, TUser } from '@/shared/global-types';
 
 interface UserState {
   user: TUser | null;
