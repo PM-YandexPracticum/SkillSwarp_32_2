@@ -34,7 +34,8 @@ export const Test: FC = () => {
             description: 'Описание',
             image: './#',
             incoming: [],
-            outgoing: []
+            outgoing: [],
+            likes: ['card-3', 'card-24'],
           })
         }
       >

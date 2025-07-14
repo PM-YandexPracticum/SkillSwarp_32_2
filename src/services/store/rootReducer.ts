@@ -1,7 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { cardsReducer } from '../slices';
+import userReducer from '../slices/userSlice';
 
 export const rootReducer = combineReducers({
-  // Сюда добавлять готовые редьюсеры
-  cardsReducer: cardsReducer
+  user: userReducer,
+  cardsReducer: cardsReducer,
 });
