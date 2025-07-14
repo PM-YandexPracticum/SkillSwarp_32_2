@@ -20,7 +20,7 @@ function App() {
     <>
       <AppHeaderUI
         onSkillsClick={() => {}}
-        onToogleTheme={() => {}}
+        onToggleTheme={() => {}}
         onNotificationClick={() => {}}
         onLikeClick={() => {}}
         onClearButtonClick={() => {}}
@@ -37,7 +37,6 @@ function App() {
         {/* сюда добавляйте компоненты для тестирования */}
         <Route path='/test' element={<Test />} />
       </Routes>
-
       {/* роуты модалок. будут добавляться по мере разрастания приложения */}
       {backgroundLocation ?? <Routes location={location}></Routes>}
       <Footer />
