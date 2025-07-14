@@ -335,10 +335,21 @@
     {
       "id": "card-0",
       "userId": "user-0",
-      "teachSkill": [{ "title": "Менеджмент команды", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "Менеджмент команды",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "внимательность", "type": "lifestyle" },
-        { "title": "project-менеджмент", "type": "business" }
+        {
+          "title": "внимательность",
+          "type": "lifestyle"
+        },
+        {
+          "title": "project-менеджмент",
+          "type": "business"
+        }
       ],
       "name": "Алексей",
       "city": "Москва",
@@ -352,10 +363,21 @@
     {
       "id": "card-1",
       "userId": "user-1",
-      "teachSkill": [{ "title": "видеомонтаж", "type": "art" }],
+      "teachSkill": [
+        {
+          "title": "видеомонтаж",
+          "type": "art"
+        }
+      ],
       "learnSkill": [
-        { "title": "фотограф", "type": "art" },
-        { "title": "личный брендинг", "type": "business" }
+        {
+          "title": "фотограф",
+          "type": "art"
+        },
+        {
+          "title": "личный брендинг",
+          "type": "business"
+        }
       ],
       "name": "Марина",
       "city": "Санкт-Петербург",
@@ -369,10 +391,21 @@
     {
       "id": "card-2",
       "userId": "user-2",
-      "teachSkill": [{ "title": "испанский язык", "type": "languages" }],
+      "teachSkill": [
+        {
+          "title": "испанский язык",
+          "type": "languages"
+        }
+      ],
       "learnSkill": [
-        { "title": "английский язык", "type": "languages" },
-        { "title": "digital‑маркетинг", "type": "business" }
+        {
+          "title": "английский язык",
+          "type": "languages"
+        },
+        {
+          "title": "digital‑маркетинг",
+          "type": "business"
+        }
       ],
       "name": "Иван",
       "city": "Новосибирск",
@@ -386,10 +419,21 @@
     {
       "id": "card-3",
       "userId": "user-3",
-      "teachSkill": [{ "title": "ментальное здоровье", "type": "lifestyle" }],
+      "teachSkill": [
+        {
+          "title": "ментальное здоровье",
+          "type": "lifestyle"
+        }
+      ],
       "learnSkill": [
-        { "title": "инструктор йоги", "type": "lifestyle" },
-        { "title": "сценарист", "type": "art" }
+        {
+          "title": "инструктор йоги",
+          "type": "lifestyle"
+        },
+        {
+          "title": "сценарист",
+          "type": "art"
+        }
       ],
       "name": "Екатерина",
       "city": "Екатеринбург",
@@ -403,10 +447,21 @@
     {
       "id": "card-4",
       "userId": "user-4",
-      "teachSkill": [{ "title": "карьерный консультант", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "карьерный консультант",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "стартап‑менеджмент", "type": "business" },
-        { "title": "китайский язык", "type": "languages" }
+        {
+          "title": "стартап‑менеджмент",
+          "type": "business"
+        },
+        {
+          "title": "китайский язык",
+          "type": "languages"
+        }
       ],
       "name": "Дмитрий",
       "city": "Казань",
@@ -420,10 +475,21 @@
     {
       "id": "card-5",
       "userId": "user-5",
-      "teachSkill": [{ "title": "саунд‑дизайн", "type": "art" }],
+      "teachSkill": [
+        {
+          "title": "саунд‑дизайн",
+          "type": "art"
+        }
+      ],
       "learnSkill": [
-        { "title": "иллюстратор", "type": "art" },
-        { "title": "менеджмент команды", "type": "business" }
+        {
+          "title": "иллюстратор",
+          "type": "art"
+        },
+        {
+          "title": "менеджмент команды",
+          "type": "business"
+        }
       ],
       "name": "Светлана",
       "city": "Нижний Новгород",
@@ -437,10 +503,21 @@
     {
       "id": "card-6",
       "userId": "user-6",
-      "teachSkill": [{ "title": "карьерный коуч", "type": "education" }],
+      "teachSkill": [
+        {
+          "title": "карьерный коуч",
+          "type": "education"
+        }
+      ],
       "learnSkill": [
-        { "title": "коуч личного роста", "type": "education" },
-        { "title": "фитнес‑тренер", "type": "lifestyle" }
+        {
+          "title": "коуч личного роста",
+          "type": "education"
+        },
+        {
+          "title": "фитнес‑тренер",
+          "type": "lifestyle"
+        }
       ],
       "name": "Антон",
       "city": "Челябинск",
@@ -454,10 +531,21 @@
     {
       "id": "card-7",
       "userId": "user-7",
-      "teachSkill": [{ "title": "организация пространства", "type": "home" }],
+      "teachSkill": [
+        {
+          "title": "организация пространства",
+          "type": "home"
+        }
+      ],
       "learnSkill": [
-        { "title": "домашняя кулинария", "type": "home" },
-        { "title": "управление временем", "type": "business" }
+        {
+          "title": "домашняя кулинария",
+          "type": "home"
+        },
+        {
+          "title": "управление временем",
+          "type": "business"
+        }
       ],
       "name": "Ольга",
       "city": "Самара",
@@ -471,10 +559,21 @@
     {
       "id": "card-8",
       "userId": "user-8",
-      "teachSkill": [{ "title": "work‑life баланс", "type": "lifestyle" }],
+      "teachSkill": [
+        {
+          "title": "work‑life баланс",
+          "type": "lifestyle"
+        }
+      ],
       "learnSkill": [
-        { "title": "фитнес‑тренер", "type": "lifestyle" },
-        { "title": "видеомонтаж", "type": "art" }
+        {
+          "title": "фитнес‑тренер",
+          "type": "lifestyle"
+        },
+        {
+          "title": "видеомонтаж",
+          "type": "art"
+        }
       ],
       "name": "Роман",
       "city": "Ростов-на-Дону",
@@ -488,10 +587,21 @@
     {
       "id": "card-9",
       "userId": "user-9",
-      "teachSkill": [{ "title": "digital‑маркетинг", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "digital‑маркетинг",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "французский язык", "type": "languages" },
-        { "title": "семейный бюджет", "type": "home" }
+        {
+          "title": "французский язык",
+          "type": "languages"
+        },
+        {
+          "title": "семейный бюджет",
+          "type": "home"
+        }
       ],
       "name": "Людмила",
       "city": "Уфа",
@@ -505,10 +615,21 @@
     {
       "id": "card-10",
       "userId": "user-10",
-      "teachSkill": [{ "title": "менеджмент команды", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "менеджмент команды",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "b2b продажи", "type": "business" },
-        { "title": "методист обучения", "type": "education" }
+        {
+          "title": "b2b продажи",
+          "type": "business"
+        },
+        {
+          "title": "методист обучения",
+          "type": "education"
+        }
       ],
       "name": "Георгий",
       "city": "Красноярск",
@@ -522,10 +643,21 @@
     {
       "id": "card-11",
       "userId": "user-11",
-      "teachSkill": [{ "title": "когнитивный тренер", "type": "education" }],
+      "teachSkill": [
+        {
+          "title": "когнитивный тренер",
+          "type": "education"
+        }
+      ],
       "learnSkill": [
-        { "title": "педагогика", "type": "education" },
-        { "title": "нутрициология", "type": "lifestyle" }
+        {
+          "title": "педагогика",
+          "type": "education"
+        },
+        {
+          "title": "нутрициология",
+          "type": "lifestyle"
+        }
       ],
       "name": "Наталья",
       "city": "Пермь",
@@ -539,10 +671,21 @@
     {
       "id": "card-12",
       "userId": "user-12",
-      "teachSkill": [{ "title": "актёрская игра", "type": "art" }],
+      "teachSkill": [
+        {
+          "title": "актёрская игра",
+          "type": "art"
+        }
+      ],
       "learnSkill": [
-        { "title": "сценарист", "type": "art" },
-        { "title": "личный брендинг", "type": "business" }
+        {
+          "title": "сценарист",
+          "type": "art"
+        },
+        {
+          "title": "личный брендинг",
+          "type": "business"
+        }
       ],
       "name": "Степан",
       "city": "Воронеж",
@@ -556,10 +699,21 @@
     {
       "id": "card-13",
       "userId": "user-13",
-      "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+      "teachSkill": [
+        {
+          "title": "домашняя кулинария",
+          "type": "home"
+        }
+      ],
       "learnSkill": [
-        { "title": "уход за растениями", "type": "home" },
-        { "title": "иллюстратор", "type": "art" }
+        {
+          "title": "уход за растениями",
+          "type": "home"
+        },
+        {
+          "title": "иллюстратор",
+          "type": "art"
+        }
       ],
       "name": "Дарья",
       "city": "Волгоград",
@@ -573,10 +727,21 @@
     {
       "id": "card-14",
       "userId": "user-14",
-      "teachSkill": [{ "title": "project-менеджмент", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "project-менеджмент",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "work‑life баланс", "type": "lifestyle" },
-        { "title": "гигиена сна", "type": "lifestyle" }
+        {
+          "title": "work‑life баланс",
+          "type": "lifestyle"
+        },
+        {
+          "title": "гигиена сна",
+          "type": "lifestyle"
+        }
       ],
       "name": "Тимур",
       "city": "Краснодар",
@@ -590,10 +755,21 @@
     {
       "id": "card-15",
       "userId": "user-15",
-      "teachSkill": [{ "title": "тренер скорочтения", "type": "education" }],
+      "teachSkill": [
+        {
+          "title": "тренер скорочтения",
+          "type": "education"
+        }
+      ],
       "learnSkill": [
-        { "title": "английский язык", "type": "languages" },
-        { "title": "карьерный консультант", "type": "business" }
+        {
+          "title": "английский язык",
+          "type": "languages"
+        },
+        {
+          "title": "карьерный консультант",
+          "type": "business"
+        }
       ],
       "name": "Елена",
       "city": "Тюмень",
@@ -607,10 +783,21 @@
     {
       "id": "card-16",
       "userId": "user-16",
-      "teachSkill": [{ "title": "ментальное здоровье", "type": "lifestyle" }],
+      "teachSkill": [
+        {
+          "title": "ментальное здоровье",
+          "type": "lifestyle"
+        }
+      ],
       "learnSkill": [
-        { "title": "арт‑терапевт", "type": "art" },
-        { "title": "домашняя кулинария", "type": "home" }
+        {
+          "title": "арт‑терапевт",
+          "type": "art"
+        },
+        {
+          "title": "домашняя кулинария",
+          "type": "home"
+        }
       ],
       "name": "Павел",
       "city": "Ижевск",
@@ -624,10 +811,21 @@
     {
       "id": "card-17",
       "userId": "user-17",
-      "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+      "teachSkill": [
+        {
+          "title": "домашняя кулинария",
+          "type": "home"
+        }
+      ],
       "learnSkill": [
-        { "title": "DIY‑ремонт", "type": "home" },
-        { "title": "саунд‑дизайн", "type": "art" }
+        {
+          "title": "DIY‑ремонт",
+          "type": "home"
+        },
+        {
+          "title": "саунд‑дизайн",
+          "type": "art"
+        }
       ],
       "name": "Сергей",
       "city": "Барнаул",
@@ -641,10 +839,21 @@
     {
       "id": "card-18",
       "userId": "user-18",
-      "teachSkill": [{ "title": "личный брендинг", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "личный брендинг",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "digital‑маркетинг", "type": "business" },
-        { "title": "инструктор йоги", "type": "lifestyle" }
+        {
+          "title": "digital‑маркетинг",
+          "type": "business"
+        },
+        {
+          "title": "инструктор йоги",
+          "type": "lifestyle"
+        }
       ],
       "name": "Вероника",
       "city": "Ульяновск",
@@ -658,10 +867,21 @@
     {
       "id": "card-19",
       "userId": "user-19",
-      "teachSkill": [{ "title": "гигиена сна", "type": "lifestyle" }],
+      "teachSkill": [
+        {
+          "title": "гигиена сна",
+          "type": "lifestyle"
+        }
+      ],
       "learnSkill": [
-        { "title": "фитнес‑тренер", "type": "lifestyle" },
-        { "title": "методист обучения", "type": "education" }
+        {
+          "title": "фитнес‑тренер",
+          "type": "lifestyle"
+        },
+        {
+          "title": "методист обучения",
+          "type": "education"
+        }
       ],
       "name": "Владимир",
       "city": "Иркутск",
@@ -675,10 +895,21 @@
     {
       "id": "card-20",
       "userId": "user-20",
-      "teachSkill": [{ "title": "тренер скорочтения", "type": "education" }],
+      "teachSkill": [
+        {
+          "title": "тренер скорочтения",
+          "type": "education"
+        }
+      ],
       "learnSkill": [
-        { "title": "когнитивный тренер", "type": "education" },
-        { "title": "японский язык", "type": "languages" }
+        {
+          "title": "когнитивный тренер",
+          "type": "education"
+        },
+        {
+          "title": "японский язык",
+          "type": "languages"
+        }
       ],
       "name": "Кирилл",
       "city": "Хабаровск",
@@ -692,10 +923,21 @@
     {
       "id": "card-21",
       "userId": "user-21",
-      "teachSkill": [{ "title": "управление временем", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "управление временем",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "фотограф", "type": "art" },
-        { "title": "уход за растениями", "type": "home" }
+        {
+          "title": "фотограф",
+          "type": "art"
+        },
+        {
+          "title": "уход за растениями",
+          "type": "home"
+        }
       ],
       "name": "Татьяна",
       "city": "Ярославль",
@@ -709,10 +951,21 @@
     {
       "id": "card-22",
       "userId": "user-22",
-      "teachSkill": [{ "title": "подготовка к IELTS", "type": "languages" }],
+      "teachSkill": [
+        {
+          "title": "подготовка к IELTS",
+          "type": "languages"
+        }
+      ],
       "learnSkill": [
-        { "title": "стартап‑менеджмент", "type": "business" },
-        { "title": "work‑life баланс", "type": "lifestyle" }
+        {
+          "title": "стартап‑менеджмент",
+          "type": "business"
+        },
+        {
+          "title": "work‑life баланс",
+          "type": "lifestyle"
+        }
       ],
       "name": "Олег",
       "city": "Владивосток",
@@ -726,10 +979,21 @@
     {
       "id": "card-23",
       "userId": "user-23",
-      "teachSkill": [{ "title": "видеомонтаж", "type": "art" }],
+      "teachSkill": [
+        {
+          "title": "видеомонтаж",
+          "type": "art"
+        }
+      ],
       "learnSkill": [
-        { "title": "саунд‑дизайн", "type": "art" },
-        { "title": "digital‑маркетинг", "type": "business" }
+        {
+          "title": "саунд‑дизайн",
+          "type": "art"
+        },
+        {
+          "title": "digital‑маркетинг",
+          "type": "business"
+        }
       ],
       "name": "Алиса",
       "city": "Томск",
@@ -743,10 +1007,21 @@
     {
       "id": "card-24",
       "userId": "user-24",
-      "teachSkill": [{ "title": "внимательность", "type": "lifestyle" }],
+      "teachSkill": [
+        {
+          "title": "внимательность",
+          "type": "lifestyle"
+        }
+      ],
       "learnSkill": [
-        { "title": "семейный бюджет", "type": "home" },
-        { "title": "b2b продажи", "type": "business" }
+        {
+          "title": "семейный бюджет",
+          "type": "home"
+        },
+        {
+          "title": "b2b продажи",
+          "type": "business"
+        }
       ],
       "name": "Юлия",
       "city": "Омск",
@@ -760,10 +1035,21 @@
     {
       "id": "card-25",
       "userId": "user-25",
-      "teachSkill": [{ "title": "ментальное здоровье", "type": "lifestyle" }],
+      "teachSkill": [
+        {
+          "title": "ментальное здоровье",
+          "type": "lifestyle"
+        }
+      ],
       "learnSkill": [
-        { "title": "менеджмент команды", "type": "business" },
-        { "title": "карьерный коуч", "type": "education" }
+        {
+          "title": "менеджмент команды",
+          "type": "business"
+        },
+        {
+          "title": "карьерный коуч",
+          "type": "education"
+        }
       ],
       "name": "Игорь",
       "city": "Москва",
@@ -777,10 +1063,21 @@
     {
       "id": "card-26",
       "userId": "user-26",
-      "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+      "teachSkill": [
+        {
+          "title": "домашняя кулинария",
+          "type": "home"
+        }
+      ],
       "learnSkill": [
-        { "title": "японский язык", "type": "languages" },
-        { "title": "DIY‑декор", "type": "art" }
+        {
+          "title": "японский язык",
+          "type": "languages"
+        },
+        {
+          "title": "DIY‑декор",
+          "type": "art"
+        }
       ],
       "name": "Евгения",
       "city": "Краснодар",
@@ -794,10 +1091,21 @@
     {
       "id": "card-27",
       "userId": "user-27",
-      "teachSkill": [{ "title": "домашняя кулинария", "type": "home" }],
+      "teachSkill": [
+        {
+          "title": "домашняя кулинария",
+          "type": "home"
+        }
+      ],
       "learnSkill": [
-        { "title": "нутрициология", "type": "lifestyle" },
-        { "title": "digital‑маркетинг", "type": "business" }
+        {
+          "title": "нутрициология",
+          "type": "lifestyle"
+        },
+        {
+          "title": "digital‑маркетинг",
+          "type": "business"
+        }
       ],
       "name": "Максим",
       "city": "Пермь",
@@ -811,10 +1119,21 @@
     {
       "id": "card-28",
       "userId": "user-28",
-      "teachSkill": [{ "title": "b2b продажи", "type": "business" }],
+      "teachSkill": [
+        {
+          "title": "b2b продажи",
+          "type": "business"
+        }
+      ],
       "learnSkill": [
-        { "title": "project-менеджмент", "type": "business" },
-        { "title": "арт‑терапевт", "type": "art" }
+        {
+          "title": "project-менеджмент",
+          "type": "business"
+        },
+        {
+          "title": "арт‑терапевт",
+          "type": "art"
+        }
       ],
       "name": "Арина",
       "city": "Екатеринбург",
@@ -828,10 +1147,21 @@
     {
       "id": "card-29",
       "userId": "user-29",
-      "teachSkill": [{ "title": "видеомонтаж", "type": "art" }],
+      "teachSkill": [
+        {
+          "title": "видеомонтаж",
+          "type": "art"
+        }
+      ],
       "learnSkill": [
-        { "title": "немецкий язык", "type": "languages" },
-        { "title": "инструктор йоги", "type": "lifestyle" }
+        {
+          "title": "немецкий язык",
+          "type": "languages"
+        },
+        {
+          "title": "инструктор йоги",
+          "type": "lifestyle"
+        }
       ],
       "name": "Рита",
       "city": "Санкт-Петербург",
@@ -844,31 +1174,106 @@
     }
   ],
   "cities": [
-    { "id": "0", "title": "Москва" },
-    { "id": "1", "title": "Санкт-Петербург" },
-    { "id": "2", "title": "Новосибирск" },
-    { "id": "3", "title": "Екатеринбург" },
-    { "id": "4", "title": "Казань" },
-    { "id": "5", "title": "Нижний Новгород" },
-    { "id": "6", "title": "Челябинск" },
-    { "id": "7", "title": "Самара" },
-    { "id": "8", "title": "Ростов-на-Дону" },
-    { "id": "9", "title": "Уфа" },
-    { "id": "10", "title": "Красноярск" },
-    { "id": "11", "title": "Пермь" },
-    { "id": "12", "title": "Воронеж" },
-    { "id": "13", "title": "Волгоград" },
-    { "id": "14", "title": "Краснодар" },
-    { "id": "15", "title": "Тюмень" },
-    { "id": "16", "title": "Ижевск" },
-    { "id": "17", "title": "Барнаул" },
-    { "id": "18", "title": "Ульяновск" },
-    { "id": "19", "title": "Иркутск" },
-    { "id": "20", "title": "Хабаровск" },
-    { "id": "21", "title": "Ярославль" },
-    { "id": "22", "title": "Владивосток" },
-    { "id": "23", "title": "Томск" },
-    { "id": "24", "title": "Омск" }
+    {
+      "id": "0",
+      "title": "Москва"
+    },
+    {
+      "id": "1",
+      "title": "Санкт-Петербург"
+    },
+    {
+      "id": "2",
+      "title": "Новосибирск"
+    },
+    {
+      "id": "3",
+      "title": "Екатеринбург"
+    },
+    {
+      "id": "4",
+      "title": "Казань"
+    },
+    {
+      "id": "5",
+      "title": "Нижний Новгород"
+    },
+    {
+      "id": "6",
+      "title": "Челябинск"
+    },
+    {
+      "id": "7",
+      "title": "Самара"
+    },
+    {
+      "id": "8",
+      "title": "Ростов-на-Дону"
+    },
+    {
+      "id": "9",
+      "title": "Уфа"
+    },
+    {
+      "id": "10",
+      "title": "Красноярск"
+    },
+    {
+      "id": "11",
+      "title": "Пермь"
+    },
+    {
+      "id": "12",
+      "title": "Воронеж"
+    },
+    {
+      "id": "13",
+      "title": "Волгоград"
+    },
+    {
+      "id": "14",
+      "title": "Краснодар"
+    },
+    {
+      "id": "15",
+      "title": "Тюмень"
+    },
+    {
+      "id": "16",
+      "title": "Ижевск"
+    },
+    {
+      "id": "17",
+      "title": "Барнаул"
+    },
+    {
+      "id": "18",
+      "title": "Ульяновск"
+    },
+    {
+      "id": "19",
+      "title": "Иркутск"
+    },
+    {
+      "id": "20",
+      "title": "Хабаровск"
+    },
+    {
+      "id": "21",
+      "title": "Ярославль"
+    },
+    {
+      "id": "22",
+      "title": "Владивосток"
+    },
+    {
+      "id": "23",
+      "title": "Томск"
+    },
+    {
+      "id": "24",
+      "title": "Омск"
+    }
   ],
   "categories": [
     {
@@ -881,24 +1286,41 @@
         {
           "title": "Управление командой",
           "id": "0-0",
-
           "type": "team-management"
         },
-        { "title": "Маркетинг и реклама", "id": "0-1", "type": "marketing" },
-        { "title": "Продажи и переговоры", "id": "0-2", "type": "sales" },
-        { "title": "Личный бренд", "id": "0-3", "type": "brand" },
-        { "title": "Резюме и собеседования", "id": "0-4", "type": "resume" },
-        { "title": "Тайм-менеджмент", "id": "0-5", "type": "time-management" },
+        {
+          "title": "Маркетинг и реклама",
+          "id": "0-1",
+          "type": "marketing"
+        },
+        {
+          "title": "Продажи и переговоры",
+          "id": "0-2",
+          "type": "sales"
+        },
+        {
+          "title": "Личный бренд",
+          "id": "0-3",
+          "type": "brand"
+        },
+        {
+          "title": "Резюме и собеседования",
+          "id": "0-4",
+          "type": "resume"
+        },
+        {
+          "title": "Тайм-менеджмент",
+          "id": "0-5",
+          "type": "time-management"
+        },
         {
           "title": "Проектное управление",
           "id": "0-6",
-
           "type": "project-management"
         },
         {
           "title": "Предпринимательство",
           "id": "0-7",
-
           "type": "entrepreneurship"
         }
       ]
@@ -910,19 +1332,46 @@
       "filterStatus": "empty",
       "src": "/#",
       "subfilters": [
-        { "title": "Рисование и иллюстрация", "id": "1-0", "type": "drawing" },
-        { "title": "Фотография", "id": "1-1", "type": "photo" },
-        { "title": "Монтаж", "id": "1-2", "type": "mounting" },
-        { "title": "Музыка и звук", "id": "1-3", "type": "music" },
-        { "title": "Актерское мастерство", "id": "1-4", "type": "acting" },
+        {
+          "title": "Рисование и иллюстрация",
+          "id": "1-0",
+          "type": "drawing"
+        },
+        {
+          "title": "Фотография",
+          "id": "1-1",
+          "type": "photo"
+        },
+        {
+          "title": "Монтаж",
+          "id": "1-2",
+          "type": "mounting"
+        },
+        {
+          "title": "Музыка и звук",
+          "id": "1-3",
+          "type": "music"
+        },
+        {
+          "title": "Актерское мастерство",
+          "id": "1-4",
+          "type": "acting"
+        },
         {
           "title": "Креативное письмо",
           "id": "1-5",
-
           "type": "creative-writing"
         },
-        { "title": "Арт-терапия", "id": "1-6", "type": "art-therapy" },
-        { "title": "Декор и DIY", "id": "1-7", "type": "diy" }
+        {
+          "title": "Арт-терапия",
+          "id": "1-6",
+          "type": "art-therapy"
+        },
+        {
+          "title": "Декор и DIY",
+          "id": "1-7",
+          "type": "diy"
+        }
       ]
     },
     {
@@ -932,12 +1381,36 @@
       "filterStatus": "empty",
       "src": "/#",
       "subfilters": [
-        { "title": "Английский", "id": "2-0", "type": "english" },
-        { "title": "Французский", "id": "2-1", "type": "french" },
-        { "title": "Испанский", "id": "2-2", "type": "spanish" },
-        { "title": "Немецкий", "id": "2-3", "type": "german" },
-        { "title": "Китайский", "id": "2-4", "type": "chinese" },
-        { "title": "Японский", "id": "2-5", "type": "japanese" },
+        {
+          "title": "Английский",
+          "id": "2-0",
+          "type": "english"
+        },
+        {
+          "title": "Французский",
+          "id": "2-1",
+          "type": "french"
+        },
+        {
+          "title": "Испанский",
+          "id": "2-2",
+          "type": "spanish"
+        },
+        {
+          "title": "Немецкий",
+          "id": "2-3",
+          "type": "german"
+        },
+        {
+          "title": "Китайский",
+          "id": "2-4",
+          "type": "chinese"
+        },
+        {
+          "title": "Японский",
+          "id": "2-5",
+          "type": "japanese"
+        },
         {
           "title": "Подготовка к экзаменам (IELTS, TOEFL)",
           "id": "2-6",
@@ -955,19 +1428,33 @@
         {
           "title": "Личное развитие",
           "id": "3-0",
-
           "type": "personal-development"
         },
-        { "title": "Навыки обучения", "id": "3-1", "type": "training" },
+        {
+          "title": "Навыки обучения",
+          "id": "3-1",
+          "type": "training"
+        },
         {
           "title": "Когнитивные навыки",
           "id": "3-2",
-
           "type": "cognitive-skills"
         },
-        { "title": "Скорочтение", "id": "3-3", "type": "speed-reading" },
-        { "title": "Навыки преподавания", "id": "3-4", "type": "teaching" },
-        { "title": "Коучинг", "id": "3-5", "type": "coaching" }
+        {
+          "title": "Скорочтение",
+          "id": "3-3",
+          "type": "speed-reading"
+        },
+        {
+          "title": "Навыки преподавания",
+          "id": "3-4",
+          "type": "teaching"
+        },
+        {
+          "title": "Коучинг",
+          "id": "3-5",
+          "type": "coaching"
+        }
       ]
     },
     {
@@ -977,12 +1464,36 @@
       "filterStatus": "empty",
       "src": "/#",
       "subfilters": [
-        { "title": "Уборки и организация", "id": "4-0", "type": "cleaning " },
-        { "title": "Домашние финансы", "id": "4-1", "type": "home-finances" },
-        { "title": "Приготовление еды", "id": "4-2", "type": "cooking" },
-        { "title": "Домашние растения", "id": "4-3", "type": "house-plants" },
-        { "title": "Ремонт", "id": "4-4", "type": "repair" },
-        { "title": "Хранение вещей", "id": "4-5", "type": "storing-things" }
+        {
+          "title": "Уборки и организация",
+          "id": "4-0",
+          "type": "cleaning "
+        },
+        {
+          "title": "Домашние финансы",
+          "id": "4-1",
+          "type": "home-finances"
+        },
+        {
+          "title": "Приготовление еды",
+          "id": "4-2",
+          "type": "cooking"
+        },
+        {
+          "title": "Домашние растения",
+          "id": "4-3",
+          "type": "house-plants"
+        },
+        {
+          "title": "Ремонт",
+          "id": "4-4",
+          "type": "repair"
+        },
+        {
+          "title": "Хранение вещей",
+          "id": "4-5",
+          "type": "storing-things"
+        }
       ]
     },
     {
@@ -992,18 +1503,41 @@
       "filterStatus": "empty",
       "src": "/#",
       "subfilters": [
-        { "title": "Йога и медитация", "id": "5-0", "type": "yoga" },
-        { "title": "Питание и ЗОЖ", "id": "5-1", "type": "nutrition" },
-        { "title": "Ментальное здоровье", "id": "5-2", "type": "mental-health" },
-        { "title": "Осознанность", "id": "5-3", "type": "mindfulness" },
+        {
+          "title": "Йога и медитация",
+          "id": "5-0",
+          "type": "yoga"
+        },
+        {
+          "title": "Питание и ЗОЖ",
+          "id": "5-1",
+          "type": "nutrition"
+        },
+        {
+          "title": "Ментальное здоровье",
+          "id": "5-2",
+          "type": "mental-health"
+        },
+        {
+          "title": "Осознанность",
+          "id": "5-3",
+          "type": "mindfulness"
+        },
         {
           "title": "Физические тренировки",
           "id": "5-4",
-
           "type": "physical-training"
         },
-        { "title": "Сон и восстановление", "id": "5-5", "type": "recovery" },
-        { "title": "Баланс жизни и работы", "id": "5-6", "type": "life-balance" }
+        {
+          "title": "Сон и восстановление",
+          "id": "5-5",
+          "type": "recovery"
+        },
+        {
+          "title": "Баланс жизни и работы",
+          "id": "5-6",
+          "type": "life-balance"
+        }
       ]
     }
   ]

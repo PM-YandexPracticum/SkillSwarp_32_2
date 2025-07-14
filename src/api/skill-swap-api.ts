@@ -31,7 +31,6 @@ async function fetchData<T>(API_URI: string): Promise<T[]> {
   }
 }
 
-
 // GET - запросы
 // запрос на получение списка городов
 
@@ -49,6 +48,27 @@ export const fetchCardsData = () => fetchData<TCard>('cards');
 
 export const fetchSkillCardsData = () => fetchData<TSkillCard>('skill-cards');
 
+// запрос на получение лайкнутых карточек
+
+export async function fetchLikedCardsByUser(userId: string): Promise<TCard[]> {
+  const API_URI = 'cards';
+  const API_URL = 'http://localhost:3001';
+
+  const response = await fetch(`${API_URL}/${API_URI}`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`Ошибка HTTP: ${response.status}`);
+  }
+
+  const allCards: TCard[] = await response.json();
+
+  return allCards.filter((card) => card.likes?.includes(userId));
+}
+
 // Общая функция конструктор на POST запросы
 
 async function postData<T>(elementData: Omit<T, 'id'>, API_URI: string): Promise<T> {
@@ -61,14 +81,14 @@ async function postData<T>(elementData: Omit<T, 'id'>, API_URI: string): Promise
       body: JSON.stringify(elementData),
     });
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error(`Ошибка HTTP: ${response.status}`);
     }
     const dataRaw = sessionStorage.getItem(API_URI);
     const data: T = await response.json();
     let dataArray: T[] = [];
 
-     if (dataRaw) {
+    if (dataRaw) {
       try {
         dataArray = JSON.parse(dataRaw) as T[];
       } catch (e) {
@@ -80,7 +100,6 @@ async function postData<T>(elementData: Omit<T, 'id'>, API_URI: string): Promise
     sessionStorage.setItem(API_URI, JSON.stringify(dataArray));
 
     return data;
-
   } catch (error) {
     console.error('Возникла ошибка ', error);
     throw error;
@@ -93,8 +112,46 @@ export const postCard = (cardData: Omit<TCard, 'id'>) => postData<TCard>(cardDat
 
 // POST карточки навыка
 
-export const postSkillCard = (skillCardData: Omit<TSkillCard, 'id'>) => postData<TSkillCard>(skillCardData, 'skill-cards');
+export const postSkillCard = (skillCardData: Omit<TSkillCard, 'id'>) =>
+  postData<TSkillCard>(skillCardData, 'skill-cards');
 
+//PATCH - запросы
+
+// лайк карточки
+export async function toggleLike(cardId: string, userId: string): Promise<void> {
+  const API_URI = 'cards';
+
+  const response = await fetch(`http://localhost:3001/${API_URI}/${cardId}`);
+  if (!response.ok) throw new Error('Ошибка при получении карточки');
+
+  const card = await response.json();
+  const currentLikes: string[] = card.likes || [];
+
+  const updatedLikes = currentLikes.includes(userId)
+    ? currentLikes.filter((id) => id !== userId)
+    : [...currentLikes, userId];
+
+  const updateRes = await fetch(`http://localhost:3001/${API_URI}/${cardId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ likes: updatedLikes }),
+  });
+
+  if (!updateRes.ok) throw new Error('Ошибка при обновлении лайков');
+
+  const cachedDataRaw = sessionStorage.getItem(API_URI);
+  if (cachedDataRaw) {
+    try {
+      const cachedData: TCard[] = JSON.parse(cachedDataRaw);
+      const updatedData = cachedData.map((card) =>
+        card.id === cardId ? { ...card, likes: updatedLikes } : card
+      );
+      sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
+    } catch (error) {
+      console.warn('Ошибка при парсинге sessionStorage:', error);
+    }
+  }
+}
 
 // отдельные операции с юзером
 
@@ -117,7 +174,6 @@ export async function registerUser(userData: Omit<TUser, 'id'>): Promise<TUser> 
 
     localStorage.setItem('current-user', JSON.stringify(data));
     return data;
-
   } catch (error) {
     console.error('Ошибка при решистрации пользователя ', error);
     throw error;
@@ -126,7 +182,7 @@ export async function registerUser(userData: Omit<TUser, 'id'>): Promise<TUser> 
 
 //логин
 export async function loginUser(mail: string, password: string) {
-  const response= await fetch(`${API_URL}/users?mail=${mail}&password=${password}`, {
+  const response = await fetch(`${API_URL}/users?mail=${mail}&password=${password}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -137,14 +193,14 @@ export async function loginUser(mail: string, password: string) {
     throw new Error(`Ошибка HTTP: ${response.status}`);
   }
   const data: TUser[] = await response.json();
-  if(data.length === 0) {
+  if (data.length === 0) {
     return null;
   }
-  localStorage.setItem('current-user', JSON.stringify(data[0]));
+  localStorage.setItem('current-user', JSON.stringify(data[0].id));
   return data[0];
 }
 
-// логаут 
+// логаут
 export async function logoutUser() {
   localStorage.removeItem('current-user');
   return null;
@@ -156,7 +212,7 @@ export async function editUserData(userdata: Omit<TUser, 'id'>, userId: string) 
   const response = await fetch(`${API_URL}/users/${userId}`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       name: userdata.name,
@@ -168,7 +224,7 @@ export async function editUserData(userdata: Omit<TUser, 'id'>, userId: string) 
       gender: userdata.gender,
       image: userdata.image,
       incoming: userdata.incoming,
-      outgoing: userdata.outgoing
+      outgoing: userdata.outgoing,
     }),
   });
 
@@ -177,29 +233,75 @@ export async function editUserData(userdata: Omit<TUser, 'id'>, userId: string) 
   }
 
   const data: TUser = await response.json();
-  localStorage.setItem('current-user', JSON.stringify(data));
+  localStorage.setItem('current-user', data.id);
   return data;
 }
 
+//вспомогательная функция для получения данных юзера
+
+async function getUser(id: string): Promise<TUser> {
+  try {
+    const response = await fetch(`${API_URL}/users/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Ошибка HTTP: ${response.status}`);
+    }
+
+    const data: TUser = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Ошибка при получени данных пользователя ', error);
+    throw error;
+  }
+}
+
+// Проверка авторизации
+
+export const checkUserAuth = async (): Promise<TUser | null> => {
+  const id = localStorage.getItem('current-user');
+  if (id) {
+    try {
+      const user = await getUser(id);
+      return user;
+    } catch {
+      localStorage.removeItem('current-user');
+      return null;
+    }
+  }
+  return null;
+};
+
 // общая функция на DELETE запросы
 
-async function deleteData<T extends { id: string | number }>(API_URI: string, id: string): Promise<void> {
-  const response = await fetch(`${API_URL}/${API_URI}/${id}`, {
+async function deleteData<T extends { id: string | number }>(
+  API_URI: string,
+  id: string
+): Promise<void> {
+  try {
+    const response = await fetch(`${API_URL}/${API_URI}/${id}`, {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   });
-  
-  if(!response.ok) {
+
+  if (!response.ok) {
     throw new Error(`Ошибка HTTP: ${response.status}`);
   }
 
   const dataRaw = sessionStorage.getItem(API_URI);
-  if(dataRaw) {
+  if (dataRaw) {
     const data: T[] = JSON.parse(dataRaw);
-    const updatedData = data.filter(el => el.id !== id);
+    const updatedData = data.filter((el) => el.id !== id);
     sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
+  }
+  } catch (error) {
+    console.error('Ошибка при удалении данных ', error);
+    throw error;
   }
 }
 
