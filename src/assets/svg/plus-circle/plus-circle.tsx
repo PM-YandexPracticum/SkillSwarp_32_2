@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import type { SVGType } from '../svg.type';
 
-export const PlusCircleSVG: FC<SVGType> = ({ color = 'var(--text-redesigned)', size = 24 }) => (
+export const PlusCircleSVG: FC<SVGType> = ({ color = 'var(--accent-redesigned)', size = 24 }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    fill='none'
+    fill={color}
     width={size}
     height={size}
     viewBox='0 0 24 24'

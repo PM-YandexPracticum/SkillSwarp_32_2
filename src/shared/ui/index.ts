@@ -10,4 +10,6 @@ export * from './preloaderUI';
 export * from './search-fieldUI';
 export * from './registerUI';
 export * from './loginUI';
+export * from './registerAboutYouUI';
+export * from './registerYouOfferUI';
 
