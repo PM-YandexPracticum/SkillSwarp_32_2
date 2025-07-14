@@ -1,4 +1,6 @@
-import type { genderType, subFilterType, TCard } from '../../../../db/types';
+import type { genderType, TCard, TSkillSubFilter } from "@/shared/global-types";
+
+;
 //файл для хранения вспомогательных функций для сокращения кода
 
 export const formatAge = (age: number) => {
@@ -29,7 +31,7 @@ type filterStatusType = 'all' | 'learn' | 'teach';
 interface filterStore {
   cities: string[];
   gender: genderType;
-  subCathegories: subFilterType[];
+  subCathegories: TSkillSubFilter[];
   filterStatus: filterStatusType;
 }
 
@@ -45,9 +47,9 @@ export const filterByGender = (cards: TCard[], gender: genderType) => {
   return !gender ? cards.filter((card) => card.gender === gender) : cards;
 };
 
-const filterByCathegories = (
+const filterByCategories = (
   cards: TCard[],
-  cathegories: subFilterType[],
+  cathegories: TSkillSubFilter[],
   filterStatus: filterStatusType
 ): TCard[] => {
   if (cathegories.length === 0 || filterStatus === 'all') return cards;
@@ -55,7 +57,9 @@ const filterByCathegories = (
   return cards.filter((card) => {
     const skills = filterStatus === 'teach' ? card.teachSkill : card.learnSkill;
 
-    return skills.some((skill) => cathegories.includes(skill.subType));
+    return skills.some((skill) =>
+      cathegories.some((cat) => cat.id === skill.skillSubType)
+    );
   });
 };
 
@@ -71,7 +75,7 @@ export const filterCards = (cards: TCard[], filterStore: filterStore) => {
   filteredCards = filterByGender(filteredCards, filterStore.gender);
 
   // Фильтр по категориям
-  filteredCards = filterByCathegories(
+  filteredCards = filterByCategories(
     filteredCards,
     filterStore.subCathegories,
     filterStore.filterStatus
