@@ -23,3 +23,4 @@ export const PlusCircleSVG: FC<SVGType> = ({ color = 'var(--accent-redesigned)',
     />
   </svg>
 );
+

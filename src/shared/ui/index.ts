@@ -12,4 +12,4 @@ export * from './registerUI';
 export * from './loginUI';
 export * from './registerAboutYouUI';
 export * from './registerYouOfferUI';
-
+export * from './skill-image-galleryUI';
