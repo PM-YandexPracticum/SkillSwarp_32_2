@@ -1,5 +1,5 @@
+import type { TCard } from '@/shared/global-types';
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { TCard } from 'db/types';
 
 interface TInitialState {
   cards: TCard[];
