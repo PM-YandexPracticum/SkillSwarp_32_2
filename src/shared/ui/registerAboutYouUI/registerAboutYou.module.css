@@ -37,9 +37,15 @@
   background-color: var(--white-color); 
 }
 
-.gentwo {
+.dropdownBlock {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gentwo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
