@@ -5,6 +5,7 @@
     { "path": "./tsconfig.node.json" }
   ],
     "compilerOptions": {
+      
     "target": "ES2022",
     "useDefineForClassFields": true,
     "module": "NodeNext",
@@ -14,6 +15,9 @@
     "moduleResolution": "NodeNext",
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@data-types/*": ["src/shared/global-types/data-types/*"],
+      "@data-types": ["src/shared/global-types/data-types"]
+    }
   }
 }
