@@ -6,13 +6,13 @@ import { ButtonUI } from '../buttonUI';
 import classNames from 'classnames';
 import { DropDrag, ProgressBar } from '@/widgets';
 import { HugeTeachingSVG } from '@/assets/svg/huge-teaching';
-import { DropdownUI } from '../dropdownUI';
+// import { DropdownUI } from '../dropdownUI';
 
 export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
   offer,
   setOffer,
-  category,
-  setCategory,
+  // category,
+  // setCategory,
   description,
   setDescription,
   handleSubmit
@@ -52,7 +52,7 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
             />
             <div className={styles.drohdownBlock}>
               <p>Выберите категорию</p>
-              <DropdownUI 
+              {/* <DropdownUI 
                 withFilter={true} 
                 isMultiSelect={true}
                 options={category} 
@@ -76,7 +76,7 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
                   );
                 })
               }
-              </DropdownUI>
+              </DropdownUI> */}
             </div>
             <InputUI
               label='Опишите, что вы предлагаете'
