@@ -18,7 +18,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1672531200000,
     likes: ['user-5', 'user-12'],
-    src: '/user-1.jpg',
+    src: 'https://s0.rbk.ru/v6_top_pics/media/img/6/57/756781333421576.webp',
   },
   {
     id: 'card-2',
