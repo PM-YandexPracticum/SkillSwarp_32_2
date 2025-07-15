@@ -6,8 +6,9 @@ import { Register } from '@/pages/register';
 import { Error404 } from '@/pages/404-error';
 import { SkillPage } from '@/pages/skill-page';
 import { Test } from '@/pages/test';
-import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
+// import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
 import { Footer } from '@/shared/ui/footer';
+import { AppHeader } from '@/widgets/app-header';
 
 function App() {
   // решил скопировать работу модалок из бургерной :)
@@ -18,7 +19,8 @@ function App() {
 
   return (
     <>
-      <AppHeaderUI
+      <AppHeader />
+      {/* <AppHeaderUI
         onSkillsClick={() => {}}
         onToggleTheme={() => {}}
         onNotificationClick={() => {}}
@@ -26,7 +28,7 @@ function App() {
         onClearButtonClick={() => {}}
         user={undefined}
         // user={{ name: 'Мария', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}
-      />
+      /> */}
       <Routes location={backgroundLocation || location}>
         {/* пока смог выдеить только эти роуты. если найду еще - добавлю */}
         <Route path='/' element={<Main />} />
