@@ -1,8 +1,7 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from './checkboxDropdown.module.css';
 import { CheckboxUI } from '../checkboxUI';
 import type { CheckboxDropdownUIProps } from './type';
-// import { useOutsideClickClose } from './hooks/useOutsideClickClose';
 import { ButtonUI } from '../buttonUI';
 import { ChevronDownSVG } from '@/assets/svg';
 import type { TSkillSubFilter } from '@/shared/global-types';
@@ -12,55 +11,63 @@ interface DropdownState {
 }
 
 export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
-  const { label, options, onSelect } = props;
+  const { label, options, onSelect, selectedOptions = [] } = props;
   const [isOpen, setIsOpen] = useState<DropdownState>({});
   const rootRef = useRef<HTMLDivElement | null>(null);
-  const [localSelected, setLocalSelected] = useState(options);
+  const [localOptions, setLocalOptions] = useState<TSkillSubFilter[]>(() => {
+    // Инициализируем состояние, объединяя props.options и selectedOptions
+    return options.map(option => {
+      const selected = selectedOptions.find(o => o.id === option.id);
+      return selected ? { ...option, status: selected.status } : option;
+    });
+  });
 
-  // useOutsideClickClose({
-  //   isOpen,
-  //   rootRef,
-  //   onClose,
-  //   onChange: setIsOpen,
-  // });
+  // Синхронизируем с внешними изменениями options
+  useEffect(() => {
+    setLocalOptions(prev => 
+      options.map(option => {
+        const existing = prev.find(o => o.id === option.id);
+        return existing || option;
+      })
+    );
+  }, [options]);
 
   const toggleSelectAll = () => {
-    if (isAllChecked) {
-      options.forEach((option) => (option.status = false));
-      setLocalSelected([]);
-      onSelect([]);
-    } else {
-      options.forEach((option) => (option.status = true));
-      setLocalSelected(options);
-      onSelect(options);
-    }
+    const allChecked = localOptions.every(option => option.status);
+    const updatedOptions = localOptions.map(option => ({
+      ...option,
+      status: !allChecked
+    }));
+    
+    setLocalOptions(updatedOptions);
+    onSelect(updatedOptions);
   };
 
   const handleCheckboxChange = (option: TSkillSubFilter) => {
-    option.status = !option.status;
-    const newSelected = localSelected.includes(option)
-      ? localSelected.filter((o) => o.status === true)
-      : [...localSelected, option];
-
-    setLocalSelected(newSelected);
-    onSelect(newSelected);
+    const updatedOptions = localOptions.map(item => 
+      item.id === option.id 
+        ? { ...item, status: !item.status } 
+        : item
+    );
     
+    setLocalOptions(updatedOptions);
+    onSelect(updatedOptions);
   };
 
   const handleDropdownToggle = () => {
-    setIsOpen((prev) => ({
+    setIsOpen(prev => ({
       ...prev,
       [label]: !prev[label],
     }));
   };
 
-  const checkedCount = options.filter((option) => option.status === true).length;
-  const isAllChecked = options.every((option) => option.status === true);
+  const checkedCount = localOptions.filter(option => option.status).length;
+  const isAllChecked = localOptions.every(option => option.status);
   const isPartialChecked = checkedCount > 0 && !isAllChecked;
   const ariaChecked = isAllChecked ? 'true' : isPartialChecked ? 'mixed' : 'false';
 
   return (
-    <div className={styles.dropdown} ref={rootRef} data-is-active={isOpen}>
+    <div className={styles.dropdown} ref={rootRef} data-is-active={isOpen[label]}>
       <div className={styles.dropdownTitle}>
         <CheckboxUI
           key={label}
@@ -70,16 +77,20 @@ export const CheckboxDropdownUI = (props: CheckboxDropdownUIProps) => {
           ariaChecked={ariaChecked}
           onChange={toggleSelectAll}
         >
-          <ButtonUI className={styles.chevron} type='button' onClick={handleDropdownToggle}>
+          <ButtonUI 
+            className={styles.chevron} 
+            type='button' 
+            onClick={handleDropdownToggle}
+            aria-expanded={isOpen[label]}
+          >
             <ChevronDownSVG />
           </ButtonUI>
         </CheckboxUI>
       </div>
 
-      {/* Здесь можно заменить на CheckboxGroupUI */}
       {isOpen[label] && (
         <div className={styles.dropdownContent}>
-          {options.map((option) => (
+          {localOptions.map((option) => (
             <CheckboxUI
               key={option.id}
               label={option.title}

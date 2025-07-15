@@ -8,6 +8,10 @@ import { useEffect } from 'react';
 import {
   addEducationFilter,
   addGenderFilter,
+  addSkillsFilter,
+  // addEducationFilter,
+  // addGenderFilter,
+  // addSkillsFilter,
   setMockFilters,
 } from '@/services/slices';
 
@@ -23,14 +27,17 @@ export const Main: FC = () => {
   }*/
 
   function getSkillFilterValue(data: TSkillSubFilter[]) {
-    console.log(data);
+    console.log('Диспатч addSkillsFilter:', data);
+    dispatch(addSkillsFilter(data));
+    // console.log(data);
   }
   const onEducationChange = (filters: commonFilterType[]) => {
+    //Можно же все состояние забирать? Можно не фильтроват ьили я ошибаюсь?
     const activeFilter = filters.find((f) => f.status);
     if (activeFilter) {
       dispatch(addEducationFilter(activeFilter));
       console.log('Диспатч addEducationFilter:', activeFilter);
-      console.log(filters);
+      // console.log(filters);
     }
   };
 
@@ -39,7 +46,7 @@ export const Main: FC = () => {
     if (activeFilter) {
       dispatch(addGenderFilter(activeFilter));
       console.log('Диспатч addGenderFilter:', activeFilter);
-      console.log(filters);
+      // console.log(filters);
     }
   };
 
