@@ -29,3 +29,5 @@ export const Modal: FC<ModalProps> = memo(({ title, onClose, children }) => {
     modalRoot
   );
 }); 
+
+Modal.displayName = 'Modal';
