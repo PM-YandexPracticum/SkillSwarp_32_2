@@ -1,0 +1,112 @@
+// На эти значения надо завязать цвета
+
+// Типы фильтров
+export type parentSkillFilterType =
+  | 'business'
+  | 'art'
+  | 'languages'
+  | 'education'
+  | 'home'
+  | 'lifestyle'
+  | 'other';
+
+export type BusinessSubType = 'team-management' | 'marketing' | 'sales' | 'brand';
+export type ArtSubType = 'drawing' | 'photo' | 'mounting' | 'music';
+export type LanguagesSubType = 'english' | 'french' | 'spanish' | 'german' | 'chinese' | 'japanese';
+export type EducationSubType = 'personal-development' | 'training' | 'cognitive-skills';
+export type HomeSubType = 'cleaning' | 'home-finances' | 'cooking';
+export type LifestyleSubType = 'yoga' | 'nutrition' | 'mental-health' | 'mindfulness';
+export type OtherSubType = string; // если нужно расширить
+
+export type SubFilterTypeMap = {
+  business: BusinessSubType;
+  art: ArtSubType;
+  languages: LanguagesSubType;
+  education: EducationSubType;
+  home: HomeSubType;
+  lifestyle: LifestyleSubType;
+  other: OtherSubType; // если есть
+};
+
+export type genderType = null | 'male' | 'female';
+
+export type educationType = null | 'teach' | 'learn';
+
+export type commonFilterType = {
+  title: string;
+  value: genderType | educationType;
+  status: boolean;
+};
+
+
+export interface TSkillSubFilter<T extends parentSkillFilterType = parentSkillFilterType> {
+  id: string;
+  title: string;
+  type: SubFilterTypeMap[T]; // тип зависит от родительского `type`
+  status: boolean;
+}
+
+export interface TMainSkillFilter<T extends parentSkillFilterType = parentSkillFilterType> {
+  id: string;
+  type: T; // родительский тип (например, 'business')
+  title: string;
+  src: string;
+  subFilters: TSkillSubFilter<T>[]; // подфильтры с соответствующим `type`
+}
+
+// Типы со скиллами
+
+export interface TSkill<T extends parentSkillFilterType = parentSkillFilterType> {
+  title: string;
+  type: parentSkillFilterType;
+  subType: SubFilterTypeMap[T];
+}
+
+// типы с заявками
+export type offerStatus = 'pending' | 'rejected' | 'fulfilled';
+
+export interface offerSkillType {
+  userId: string;
+  status: offerStatus;
+}
+
+// тип Карточки пользователя
+
+export interface TCard {
+  id: string;
+  userId: string;
+  teachSkill: TSkill[];
+  learnSkill: TSkill[];
+  name: string;
+  city: string;
+  age: number;
+  description: string;
+  fullDescription: string;
+  gender: genderType;
+  createdAt: number;
+  likes: string[];
+  src: string;
+}
+
+// тип профиля юзера
+export interface TUser {
+  gender: genderType;
+  userId: string;
+  name: string;
+  city: string;
+  age: number;
+  mail: string;
+  password: string;
+  description: string;
+  incoming: offerSkillType[];
+  outgoing: offerSkillType[];
+  image: string;
+  likes: string[];
+}
+
+// тип города
+
+export interface TCity {
+  id: string;
+  title: string;
+}

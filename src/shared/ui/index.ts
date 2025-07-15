@@ -12,4 +12,7 @@ export * from './registerUI';
 export * from './loginUI';
 export * from './registerAboutYouUI';
 export * from './registerYouOfferUI';
+export * from './checkbox-dropdown-groupUI';
+export * from './radio-button-groupUI';
 export * from './skill-image-galleryUI';
+
