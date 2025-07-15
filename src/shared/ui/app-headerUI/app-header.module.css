@@ -1,21 +1,15 @@
 /* ToDo: когда появятся глобальные стили, дочерние компоненты убрать лишние стили */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 .header {
+  position: fixed;
   max-width: 1440px;
   margin: 0 auto;
   background-color: var(--bg-color);
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
-  color: var(--text-redesigned);
+  z-index: 1;
 }
 
 .nav {
@@ -52,17 +46,9 @@
   text-wrap: nowrap;
   gap: 4px;
   align-items: center;
-  border: none;
-  background-color: inherit;
   position: relative;
   transition: color 0.3s ease;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  color: inherit;
 }
 
 .header_part_right {
@@ -112,6 +98,7 @@
   border-radius: 12px;
   padding-inline: 27px;
   transition: border-color 0.3s ease;
+  background-color: var(--accent-background);
 }
 
 .button_primary:hover {
