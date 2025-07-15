@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react';
+import type { TCard } from '@/shared/global-types';
 
 export interface CardListProps {
-  children: ReactNode;
+  cards: TCard[];
   title: string;
   handleOpen?: () => void;
 }

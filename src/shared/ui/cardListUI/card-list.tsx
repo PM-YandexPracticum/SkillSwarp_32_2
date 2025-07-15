@@ -3,8 +3,9 @@ import type { CardListProps } from './type';
 import styles from './card-list.module.css';
 import { ButtonUI } from '../buttonUI';
 import { ChevronRightSVG } from '@/assets/svg';
+import { UserCard } from '@/widgets';
 
-export const CardListUI: FC<CardListProps> = ({ title, children, handleOpen }) => {
+export const CardListUI: FC<CardListProps> = ({ title, cards, handleOpen }) => {
   return (
     <div className={styles.list}>
       {/* Правильно ли было использовать тут h3? в любом случае его легко можно будет поменять на другой тег */}
@@ -22,7 +23,7 @@ export const CardListUI: FC<CardListProps> = ({ title, children, handleOpen }) =
         )}
       </div>
       {/* нужно будет исправить немного кнопку */}
-      <ul className={styles.container}>{children}</ul>
+      <ul className={styles.container}>{cards.map((card, index) => <UserCard type='short' key={index} card={card} />)}</ul>
     </div>
   );
 };

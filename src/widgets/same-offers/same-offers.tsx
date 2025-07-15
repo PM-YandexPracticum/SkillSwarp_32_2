@@ -77,7 +77,7 @@ export const SameOffers  = ({cardsData}: TSameOffersProps) => {
             Нужно будет заменить потом, когда стандартизируется.
             Либо проверь, мб я не так понял. Пока заглушка
           */}
-          <UserCard />
+          <UserCard card={card} type='short'/>
           {/* <UserCardUI
             skills={card.teachSkill}
             desired={card.learnSkill}
