@@ -23,7 +23,7 @@ export const CardListUI: FC<CardListProps> = ({ title, cards, handleOpen }) => {
         )}
       </div>
       {/* нужно будет исправить немного кнопку */}
-      <ul className={styles.container}>{cards.map(card => <UserCard type='short' card={card} />)}</ul>
+      <ul className={styles.container}>{cards.map((card, index) => <UserCard type='short' key={index} card={card} />)}</ul>
     </div>
   );
 };

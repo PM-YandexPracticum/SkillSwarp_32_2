@@ -1,4 +1,3 @@
-import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 import { UserCardUI } from '@/shared/ui/userCardUI/user-card';
 import type { FC } from 'react';
 import type { UserCardProps } from './type';
