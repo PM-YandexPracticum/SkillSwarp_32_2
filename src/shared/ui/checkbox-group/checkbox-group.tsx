@@ -1,13 +1,13 @@
 import { useEffect, useState, type FC } from 'react';
 import { CheckboxUI } from '../checkboxUI';
 import styles from './checkbox-group.module.css';
-import type { TSkillSubFilter } from '@/shared/global-types';
+import type { TCityFilter, TSkillSubFilter } from '@/shared/global-types';
 
 type CheckboxUIGroupProps = {
   title?: string;
-  filters: TSkillSubFilter[];
-  selectedOptions?: TSkillSubFilter[];
-  onSelect: (selected: TSkillSubFilter[]) => void;
+  filters: TSkillSubFilter[] | TCityFilter[];
+  selectedOptions?: TSkillSubFilter[] | TCityFilter[];
+  onSelect: (selected: TSkillSubFilter[] | TCityFilter[]) => void;
 };
 
 export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({

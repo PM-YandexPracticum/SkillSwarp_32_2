@@ -1,5 +1,5 @@
 import { fetchCategoriesData, fetchCitiesData } from '@/api';
-import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
+import type { commonFilterType, TCityFilter, TSkillSubFilter } from '@/shared/global-types';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
@@ -11,7 +11,7 @@ export type FilterState = {
   education: commonFilterType[];
   gender: commonFilterType[];
   skills: TSkillSubFilter[];
-  cities: TSkillSubFilter[];
+  cities: TCityFilter[];
 };
 
 export const initialState: FilterState = {
@@ -55,14 +55,17 @@ export const initialState: FilterState = {
 
 export const ALL_SUBFILTERS = MAIN_FILTERS_MOCK.reduce(
   (acc, filter) => [...acc, ...filter.subFilters],
-  [] as TSkillSubFilter[] // Укажите правильный тип для subFilters
+  [] as TSkillSubFilter[]
 );
 
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   selectors: {
-    getFilterState: (state) => state,
+    getEducationState: (state) => state.education,
+    getGenderState: (state) => state.gender,
+    getSkillsState: (state) => state.skills,
+    getCitiesState: (state) => state.cities,
   },
   reducers: {
     setMockFilters: (state) => {
@@ -93,6 +96,7 @@ export const filterSlice = createSlice({
       state.cities = state.cities.map((city) =>
         city.id === action.payload.id ? { ...city, status: true } : city
       );
+      //state.cities = action.payload;
     },
     removeEducationFilter: (state) => {
       state.education = state.education.map((item) => ({
@@ -106,44 +110,37 @@ export const filterSlice = createSlice({
         status: item.value === null,
       }));
     },
-    // Тут дальше ругаться будет на типы
-    // removeSkillsFilter: (state, action: PayloadAction<string>) => {
-    //   state.skills = state.skills.map((category) => ({
-    //     ...category,
-    //     subFilters: category.subFilters.map((subFilter) =>
-    //       subFilter.id === action.payload ? { ...subFilter, status: false } : subFilter
-    //     ),
-    //   }));
-    // },
-    // removeCitiesFilter: (state, action: PayloadAction<string>) => {
-    //   state.cities = state.cities.map((city) =>
-    //     city.id === action.payload ? { ...city, status: false } : city
-    //   );
-    // },
-    // resetAllFilters: (state) => {
-    //   state.education = state.education.map((item) => ({
-    //     ...item,
-    //     status: item.value === null,
-    //   }));
-    //   state.gender = state.gender.map((item) => ({
-    //     ...item,
-    //     status: item.value === null,
-    //   }));
-      // просто достаточно список пустым сделать попробовать
-      // state.skills = state.skills.map((category) => ({
-      //   ...category,
-      //   subFilters: category.subFilters.map((subFilter) => ({
-      //     ...subFilter,
-      //     status: false,
-      //   })),
-      // }));
-      //
-  //     state.cities = state.cities.map((city) => ({
-  //       ...city,
-  //       status: false,
-  //     }));
-  //   },
-  // },
+    removeSkillsFilter: (state, action: PayloadAction<string>) => {
+      state.skills = state.skills.map((skill) =>
+        skill.id === action.payload ? { ...skill, status: false } : skill
+      );
+    },
+    removeCitiesFilter: (state, action: PayloadAction<string>) => {
+      state.cities = state.cities.map((city) =>
+        city.id === action.payload ? { ...city, status: false } : city
+      );
+    },
+    resetAllFilters: (state) => {
+      state.education = state.education.map((item) => ({
+        ...item,
+        status: item.value === null,
+      }));
+      state.gender = state.gender.map((item) => ({
+        ...item,
+        status: item.value === null,
+      }));
+      //просто достаточно список пустым сделать попробовать
+      state.skills = state.skills.map((city) => ({
+        ...city,
+        status: false,
+      }));
+
+      state.cities = state.cities.map((city) => ({
+        ...city,
+        status: false,
+      }));
+    },
+  },
   // extraReducers: (builder) => {
   //   builder
   //     .addCase(getCategories.fulfilled, (state, action) => {
@@ -157,7 +154,6 @@ export const filterSlice = createSlice({
   //         status: false,
   //       }));
   //     });
-  },
 });
 
 export const {
@@ -170,7 +166,8 @@ export const {
   // removeGenderFilter,
   // removeSkillsFilter,
   // removeCitiesFilter,
-  // resetAllFilters,
+  resetAllFilters,
 } = filterSlice.actions;
-export const { getFilterState } = filterSlice.selectors;
+export const { getEducationState, getGenderState, getSkillsState, getCitiesState } =
+  filterSlice.selectors;
 export default filterSlice.reducer;

@@ -1,43 +1,51 @@
 import type { FC } from 'react';
 import styles from './main.module.css';
-import { CardListUI } from '@/shared/ui';
+import { ButtonUI, CardListUI } from '@/shared/ui';
 import { FilterBlock, UserCard } from '@/widgets';
-import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
-import { useDispatch } from '@/services/store';
+import type { commonFilterType, TCityFilter, TSkillSubFilter } from '@/shared/global-types';
+import { useDispatch, useSelector } from '@/services/store';
 import { useEffect } from 'react';
 import {
+  addCitiesFilter,
   addEducationFilter,
   addGenderFilter,
   addSkillsFilter,
-  // addEducationFilter,
-  // addGenderFilter,
-  // addSkillsFilter,
+  getEducationState,
+  resetAllFilters,
   setMockFilters,
 } from '@/services/slices';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
+  const educationState = useSelector(getEducationState);
+  const genderState = useSelector((state) => state.filter.gender);
+  const skillsState = useSelector((state) => state.filter.skills);
+  const citiesState = useSelector((state) => state.filter.cities);
 
   useEffect(() => {
     dispatch(setMockFilters());
   }, [dispatch]);
 
-  /*function getCommonFilterValue(data: commonFilterType[]) {
-    console.log(data);
-  }*/
+  useEffect(() => {
+    console.log('Обновлён educationState:', educationState);
+  }, [educationState]);
 
-  function getSkillFilterValue(data: TSkillSubFilter[]) {
-    console.log('Диспатч addSkillsFilter:', data);
-    dispatch(addSkillsFilter(data));
-    // console.log(data);
-  }
+  useEffect(() => {
+    console.log('Обновлён genderState:', genderState);
+  }, [genderState]);
+
+  useEffect(() => {
+    console.log('Обновлён skillsState:', skillsState);
+  }, [skillsState]);
+
+  useEffect(() => {
+    console.log('Обновлён citiesState:', citiesState);
+  }, [citiesState]);
+
   const onEducationChange = (filters: commonFilterType[]) => {
-    //Можно же все состояние забирать? Можно не фильтроват ьили я ошибаюсь?
     const activeFilter = filters.find((f) => f.status);
     if (activeFilter) {
       dispatch(addEducationFilter(activeFilter));
-      console.log('Диспатч addEducationFilter:', activeFilter);
-      // console.log(filters);
     }
   };
 
@@ -45,18 +53,28 @@ export const Main: FC = () => {
     const activeFilter = filters.find((f) => f.status);
     if (activeFilter) {
       dispatch(addGenderFilter(activeFilter));
-      console.log('Диспатч addGenderFilter:', activeFilter);
-      // console.log(filters);
     }
   };
 
+  const getSkillFilterValue = (data: TSkillSubFilter[]) => {
+    //dispatch(addSkillsFilter(data));
+  }
+
+  // const onCityChange = (data: TSkillSubFilter[]) => {
+  //   dispatch(addCitiesFilter(data));
+  //   //console.log(data);
+  // }
+  const kek = () => {
+    dispatch(resetAllFilters())
+  }
+
   return (
     <main className={styles.main}>
+      <ButtonUI type='button' onClick={kek}>zsfhalsifhaksjf</ButtonUI>
       <div>
         <FilterBlock
-          /*onEducationChange={getCommonFilterValue}
-          onGenderChange={getCommonFilterValue}*/
           onSkillChange={getSkillFilterValue}
+          //onCityChange={onCityChange}
           onCityChange={getSkillFilterValue}
           onEducationChange={onEducationChange}
           onGenderChange={onGenderChange}

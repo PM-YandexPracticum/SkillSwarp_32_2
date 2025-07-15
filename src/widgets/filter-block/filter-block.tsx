@@ -5,6 +5,8 @@ import { CheckboxGroupUI } from '@/shared/ui/checkbox-group/checkbox-group';
 import styles from './filter-block.module.css';
 import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
+import { useSelector } from '@/services/store';
+import { getEducationState } from '@/services/slices';
 
 export const FilterBlock: FC<FilterBlockProps> = ({
   onEducationChange,
@@ -13,23 +15,23 @@ export const FilterBlock: FC<FilterBlockProps> = ({
   onCityChange,
 }) => {
 
-  const educationFilters: commonFilterType[] = [
-    {
-      title: 'Всё',
-      value: null,
-      status: true,
-    },
-    {
-      title: 'Хочу научиться',
-      value: 'learn',
-      status: false,
-    },
-    {
-      title: 'Могу научить',
-      value: 'teach',
-      status: false,
-    },
-  ];
+  // const educationFilters: commonFilterType[] = [
+  //   {
+  //     title: 'Всё',
+  //     value: null,
+  //     status: true,
+  //   },
+  //   {
+  //     title: 'Хочу научиться',
+  //     value: 'learn',
+  //     status: false,
+  //   },
+  //   {
+  //     title: 'Могу научить',
+  //     value: 'teach',
+  //     status: false,
+  //   },
+  // ];
   const genderFilters: commonFilterType[] = [
     {
       title: 'Не имеет значения',
@@ -47,6 +49,7 @@ export const FilterBlock: FC<FilterBlockProps> = ({
       status: false,
     },
   ];
+  const educationFilter = useSelector(getEducationState);
 
 const cityFilters: TSkillSubFilter[] = [
   {
@@ -114,7 +117,7 @@ const cityFilters: TSkillSubFilter[] = [
   return (
     <div className={styles.container}>
       <h2>Фильтры</h2>
-      <RadioButtonGroupUI filters={educationFilters} onChangeAction={onEducationChange}/>
+      <RadioButtonGroupUI filters={educationFilter} onChangeAction={onEducationChange}/>
       <CheckBoxDropDownGroupUI filters={MAIN_FILTERS_MOCK} onChange={onSkillChange}  title='Навыки'/>
       <RadioButtonGroupUI filters={genderFilters} onChangeAction={onGenderChange} title='Пол автора'/>
       <CheckboxGroupUI filters={cityFilters} onSelect={onCityChange} title= 'Город'/>
