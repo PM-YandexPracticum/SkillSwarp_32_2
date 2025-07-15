@@ -11,14 +11,10 @@
   gap: 4px;
   align-items: center;
   justify-content: start;
-  /* top: 50%; */
   color: var(--grey-deep-color);
-  /* font-family: var(--font-family); */
-  /* font-weight: 400;*/
   font-size: 12px;
   line-height: 133%;
   letter-spacing: 0.02em;
-  /* padding-bottom: 20px; */
 }
 
 .skill_content {
