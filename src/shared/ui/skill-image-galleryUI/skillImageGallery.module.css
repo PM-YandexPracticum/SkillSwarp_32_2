@@ -1,0 +1,36 @@
+.image_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  position: relative;
+  row-gap: 12px;
+  column-gap: 8px;
+}
+
+.image_grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+}
+
+.image_grid img:first-child {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+}
+
+.blurred {
+  filter:  sepia(80%) contrast(110%);
+}
+
+.remaining_count {
+  position: absolute;
+  top: 90%;
+  left: 85%;
+  color: var(--text-redesigned);
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: 400;
+  z-index: 1;
+}
