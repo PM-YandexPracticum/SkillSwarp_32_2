@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Main } from '@/pages/main';
 import { Login } from '@/pages/login';
-import { Register } from '@/pages/register';
+import { Register, RegisterAboutYou, RegisterYouOffer } from '@/pages/register';
 import { Error404 } from '@/pages/404-error';
 import { SkillPage } from '@/pages/skill-page';
 import { Test } from '@/pages/test';
@@ -32,6 +32,8 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/registerAboutYou' element={<RegisterAboutYou />} />
+        <Route path='/registerYouOffer' element={<RegisterYouOffer />} />
         <Route path='*' element={<Error404 />} />
         <Route path='/skill/:userId' element={<SkillPage />} />
         {/* сюда добавляйте компоненты для тестирования */}
