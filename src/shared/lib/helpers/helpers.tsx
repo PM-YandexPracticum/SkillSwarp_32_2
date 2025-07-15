@@ -1,4 +1,4 @@
-import type { genderType, TCard, TSkillSubFilter } from '@/shared/global-types';
+import type { commonFilterType, TCard, TSkillSubFilter } from '@/shared/global-types';
 
 ;
 //файл для хранения вспомогательных функций для сокращения кода
@@ -26,59 +26,56 @@ export const formatAge = (age: number) => {
 
 //временный интерфейс для типизпции
 
-type filterStatusType = 'all' | 'learn' | 'teach';
-
-interface filterStore {
-  cities: string[];
-  gender: genderType;
-  subCathegories: TSkillSubFilter[];
-  filterStatus: filterStatusType;
-}
-
-// вспомогательные функции
-
-export const filterByCities = (cards: TCard[], cities: string[]) => {
-  if (cities.length === 0) return [...cards];
-
-  return cards.filter((card) => cities.includes(card.city));
+type FilterState = {
+  education: commonFilterType[];
+  gender: commonFilterType[];
+  skills: TSkillSubFilter[];
+  cities: TSkillSubFilter[];
 };
 
-export const filterByGender = (cards: TCard[], gender: genderType) => {
-  return !gender ? cards.filter((card) => card.gender === gender) : cards;
+
+// Фильтрация по городам
+export const filterByCities = (cards: TCard[], cities: TSkillSubFilter[]) => {
+  const selectedCityIds = cities.filter(ccity => ccity.status).map(ccity => ccity.id);
+  if (selectedCityIds.length === 0) return cards;
+
+  return cards.filter((card) => selectedCityIds.includes(card.city));
 };
 
-const filterByCategories = (
+// Фильтрация по полу
+export const filterByGender = (cards: TCard[], genderFilters: commonFilterType[]) => {
+  const selected = genderFilters.find(filter => filter.status);
+  if (!selected || !selected.value) return cards;
+
+  return cards.filter((card) => card.gender === selected.value);
+};
+
+// Фильтрация по категориям и образованию
+export const filterByCategories = (
   cards: TCard[],
-  cathegories: TSkillSubFilter[],
-  filterStatus: filterStatusType
+  skillFilters: TSkillSubFilter[],
+  educationFilters: commonFilterType[]
 ): TCard[] => {
-  if (cathegories.length === 0 || filterStatus === 'all') return cards;
+  const selectedEducation = educationFilters.find(filter => filter.status)?.value;
+  const activeSkills = skillFilters.filter(skill => skill.status);
+  if (!selectedEducation || activeSkills.length === 0) return cards;
 
-  return cards.filter((card) => {
-    const skills = filterStatus === 'teach' ? card.teachSkill : card.learnSkill;
-
-    return skills.some((skill) =>
-      cathegories.some((cat) => cat.id === skill.skillSubType)
-    );
+  return cards.filter(card => {
+    const skills = selectedEducation === 'teach' ? card.teachSkill : card.learnSkill;
+    return skills.some(skill => activeSkills.some(filter => filter.id === skill.subType));
   });
 };
 
-// сама функция
+// Главная функция
+export const filterCards = (cards: TCard[], filterStore: FilterState): TCard[] => {
+  let filteredCards = [...cards];
 
-export const filterCards = (cards: TCard[], filterStore: filterStore) => {
-  let filteredCards: TCard[] = [...cards];
-
-  // Фильтр по городам
   filteredCards = filterByCities(filteredCards, filterStore.cities);
-
-  // Фильтр по полу
   filteredCards = filterByGender(filteredCards, filterStore.gender);
-
-  // Фильтр по категориям
   filteredCards = filterByCategories(
     filteredCards,
-    filterStore.subCathegories,
-    filterStore.filterStatus
+    filterStore.skills,
+    filterStore.education
   );
 
   return filteredCards;
