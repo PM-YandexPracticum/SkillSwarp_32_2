@@ -71,7 +71,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
           <div className={styles.buttons}>
             <ButtonUI 
               type='link' 
-              to='/registerAboutYou'
+              to='/register/about'
               className={classNames(styles.button, styles.link_btn)}
               >
               Далее

@@ -9,6 +9,7 @@ import { HugeTeachingSVG } from '@/assets/svg/huge-teaching';
 import { DropdownUI } from '../dropdownUI';
 import type { DropdownOption } from '../dropdownUI/type';
 import { CheckboxUI } from '../checkboxUI';
+import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 
 export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
   offer,
@@ -20,15 +21,10 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
   handleSubmit
 }) => {
   
-const options: DropdownOption[] = [
-  { id: '1', name: 'JavaScript' },
-  { id: '2', name: 'TypeScript' },
-  { id: '3', name: 'React' },
-  { id: '4', name: 'Vue' },
-  { id: '5', name: 'Angular' },
-  { id: '6', name: 'Node.js' },
-  { id: '7', name: 'Python' },
-];
+const options: DropdownOption[] = MAIN_FILTERS_MOCK.map(option => ({
+      id: option.id,
+      name: option.title,
+    }));
 
 const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
 
@@ -111,7 +107,7 @@ const renderCheckboxes = (options: DropdownOption[]) => {
             <div className={styles.buttons}>
               <ButtonUI 
                 type='link' 
-                to='/registerAboutYou'
+                to='/register/about'
                 className={classNames(styles.button, styles.message_btn)}
                 >
                 Назад

@@ -13,6 +13,8 @@ import { HugeUserAccountSVG } from '@/assets/svg/huge-user-account';
 import type { DropdownOption } from '../dropdownUI/type';
 import { DropdownUI } from '../dropdownUI';
 import { CheckboxUI } from '../checkboxUI';
+import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
+import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 
 export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   name,
@@ -29,9 +31,36 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
 }) => {
   
   const ages: DropdownOption[] = [
+    {id: '16', name: '16'},
+    {id: '17', name: '17'},
+    {id: '18', name: '18'},
+    {id: '19', name: '19'},
     {id: '20', name: '20'},
     {id: '21', name: '21'},
-    {id: '22', name: '22'}
+    {id: '22', name: '22'},
+    {id: '23', name: '23'},
+    {id: '24', name: '24'},
+    {id: '25', name: '25'},
+    {id: '26', name: '26'},
+    {id: '27', name: '27'},
+    {id: '28', name: '28'},
+    {id: '29', name: '29'},
+    {id: '30', name: '30'},
+    {id: '31', name: '31'},
+    {id: '32', name: '32'},
+    {id: '33', name: '33'},
+    {id: '34', name: '34'},
+    {id: '35', name: '35'},
+    {id: '36', name: '36'},
+    {id: '37', name: '37'},
+    {id: '38', name: '38'},
+    {id: '39', name: '39'},
+    {id: '40', name: '40'},
+    {id: '41', name: '41'},
+    {id: '42', name: '42'},
+    {id: '43', name: '43'},
+    {id: '44', name: '44'},
+    {id: '45', name: '45'},
   ];
 
   const [age, setAge] = useState<DropdownOption>({id: '', name: ''});
@@ -45,14 +74,14 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   };
 
  const genders: DropdownOption[] = [
-  {id: 'gender_male', name: 'Мужской'},
-  {id: 'gender_female', name: 'Женский'},
-  {id: 'gender_unknown', name: 'Не указан'}
-];
+    {id: 'male', name: 'Мужской'},
+    {id: 'female', name: 'Женский'},
+    {id: 'unknown', name: 'Не указан'}
+  ];
 
-const [gender, setGender] = useState<DropdownOption>({id: '', name: ''});
+  const [gender, setGender] = useState<DropdownOption>({id: '', name: ''});
 
-const renderGenderOptions = () => {
+  const renderGenderOptions = () => {
     return genders.map(gender => (
       <li key={gender.id} onClick={() => setGender(gender)}>
         {gender.name}
@@ -60,33 +89,27 @@ const renderGenderOptions = () => {
     ));
   };
 
-   const cities: DropdownOption[] = [
-    {id: '1', name: 'Москва'},
-    {id: '22', name: 'Барнаул'},
-    {id: '22', name: 'барнаул'},
-    {id: '3', name: 'Уфа'},
-    { id: '4', name: 'JavaScript' },
-  ];
+   const cities: DropdownOption[] = CITIES_MOCK.map(city => ({
+      id: city.id,
+      name: city.title,
+    }));
 
   const [city, setCity] = useState<DropdownOption>({id: '', name: ''});
 
-  const renderCityOptions = () => {
-    return cities.map(city => (
+  const renderCityOptions = (filteredCities: DropdownOption[]) => {
+    return filteredCities.map(city => (
       <li key={city.id} onClick={() => setCity(city)}>
         {city.name}
       </li>
     ));
   };
 
-  const options: DropdownOption[] = [
-    { id: '1', name: 'JavaScript' },
-    { id: '2', name: 'TypeScript' },
-    { id: '3', name: 'React' },
-    { id: '4', name: 'Vue' },
-    { id: '5', name: 'Angular' },
-    { id: '6', name: 'Node.js' },
-    { id: '7', name: 'Python' },
-  ];
+  const options: DropdownOption[] = MAIN_FILTERS_MOCK.flatMap(filter =>
+      filter.subFilters.map(subFilter => ({
+        id: subFilter.id,
+        name: subFilter.title
+      }))
+    );
 
   const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
 
@@ -115,7 +138,7 @@ const renderGenderOptions = () => {
       )
     );
   };
-
+  
   return (
     <main className={styles.container}>
       <div className={styles.wrapper}>
@@ -189,12 +212,18 @@ const renderGenderOptions = () => {
             <div className={styles.dropdownBlock}>
               <p>Город</p>
               <DropdownUI 
-                  withFilter={true} 
-                  isMultiSelect={false} 
-                  value={city}
-                  placeholder='Выберите ваш город'
-                >
-                {() => renderCityOptions()}
+                withFilter={true} 
+                isMultiSelect={false} 
+                value={city}
+                placeholder='Выберите ваш город'
+              >
+                {({ filter }) => {
+                  const filteredOptions = cities.filter((city) =>
+                    city.name.toLowerCase().includes(filter.toLowerCase())
+                  );
+
+                  return <>{renderCityOptions(filteredOptions)}</>;
+                }}
               </DropdownUI>
             </div>
             <div className={styles.buttons}>
@@ -207,7 +236,7 @@ const renderGenderOptions = () => {
               </ButtonUI>
               <ButtonUI 
                 type='link' 
-                to='/registerYouOffer'
+                to='/register/offer'
                 className={classNames(styles.button, styles.link_btn)}
                 >
                 Продолжить

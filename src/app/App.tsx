@@ -32,8 +32,8 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/registerAboutYou' element={<RegisterAboutYou />} />
-        <Route path='/registerYouOffer' element={<RegisterYouOffer />} />
+        <Route path='/register/about' element={<RegisterAboutYou />} />
+        <Route path='/register/offer' element={<RegisterYouOffer />} />
         <Route path='*' element={<Error404 />} />
         <Route path='/skill/:userId' element={<SkillPage />} />
         {/* сюда добавляйте компоненты для тестирования */}
