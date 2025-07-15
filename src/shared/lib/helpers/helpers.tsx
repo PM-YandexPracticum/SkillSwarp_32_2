@@ -30,16 +30,33 @@ export const sortByPopular = (cards: TCard[]) => {
 // сортировка по новизне
 
 export const sortByNewest = (cards: TCard[]) => {
-  return cards.sort((a,b) => b.createdAt - a.createdAt);
+  return cards.sort((a, b) => b.createdAt - a.createdAt);
 };
 
 // сортировка для рекомендаций
 
-export const sorByRecomended = (cards: TCard[]) => {
+// хаотичная
+export const sorByRecomendedChaos = (cards: TCard[]) => {
   const result = [...cards];
   for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[result[i], result[j]] = [result[j], result[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
   }
   return result;
+};
+
+// по скиллам
+
+export const sortByRecommendedSkills = (cards: TCard[], userCard: TCard): TCard[] => {
+  return cards.sort((first, second) => {
+    const countMatches = (card: TCard) => {
+      return card.teachSkill.filter((skill) =>
+        userCard.learnSkill.some(
+          (userSkill) => skill.type === userSkill.type && skill.subType === userSkill.subType
+        )
+      ).length;
+    };
+
+    return countMatches(second) - countMatches(first);
+  });
 };
