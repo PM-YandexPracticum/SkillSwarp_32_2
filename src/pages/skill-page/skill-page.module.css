@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0px 36px;
+}
+
+.button {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content:start;
+  /* top: 50%; */
+  color: var(--grey-deep-color);
+  /* cursor: pointer; */
+  /* font-family: var(--font-family); */
+  /* font-weight: 400;
+  font-size: 12px; */
+  line-height: 133%;
+  letter-spacing: 0.02em;
+}
+
+.skill_content {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+}
