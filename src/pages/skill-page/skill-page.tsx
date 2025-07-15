@@ -31,7 +31,7 @@ export const SkillPage: FC = () => {
           Главная / Творчество и искусство / Музыка и звук / Игра на барабанах
         </ButtonUI>
         <div className={styles.skill_content}>
-          <UserCard card={card} type='full'/>
+          <UserCard card={card} type='full' />
           <SkillCard card={sameOffers[0]} type='offer' likeHandler={() => {}} />
         </div>
         <div className={styles.same_offers}>
