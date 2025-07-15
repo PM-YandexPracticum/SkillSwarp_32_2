@@ -1,11 +1,4 @@
-export interface UserData {
-  name: string;
-  age: number;
-  city: string;
-  //будет ссылка на картинку?
-  image: string;
-  description: string;
-}
+import type { TCard } from '@/shared/global-types';
 
 export interface skill {
   title: string;
@@ -13,10 +6,7 @@ export interface skill {
 }
 
 export interface UserCardUIProps {
-  skills: skill[];
-  desired: skill[];
-  buttonClick: () => void;
   setLike: () => void;
-  user: UserData;
+  card: TCard;
   type: 'full' | 'short';
 }

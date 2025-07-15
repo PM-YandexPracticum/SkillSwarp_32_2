@@ -6,7 +6,6 @@ export type DropdownOption = {
 }
 
 export type DropdownUIProps = {
-  options: DropdownOption[];
   value: DropdownOption | DropdownOption[];
   withFilter?: boolean;
   isMultiSelect?: boolean;

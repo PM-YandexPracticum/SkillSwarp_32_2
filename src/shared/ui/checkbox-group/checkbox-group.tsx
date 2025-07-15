@@ -7,37 +7,32 @@ import type { TSkillSubFilter } from '@/shared/global-types';
 type CheckboxUIGroupProps = {
   title?: string;
   filters: TSkillSubFilter[];
-  selectedOptions: TSkillSubFilter[];
+  selectedOptions?: TSkillSubFilter[];
   onSelect: (selected: TSkillSubFilter[]) => void;
 };
 
 export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
   filters,
-  selectedOptions,
   onSelect,
   title,
 }) => {
-  // const [localSelected, setLocalSelected] = useState(selectedOptions);
 
-  // const handleCheckboxChange = (option: TSubFilter) => {
-  //   const newSelected = localSelected.includes(option)
-  //     ? localSelected.filter((o) => o !== option)
-  //     : [...localSelected, option];
-  //   setLocalSelected(newSelected);
-  //   onSelect(newSelected);
-  // };
 
-  const [localSelected, setLocalSelected] = useState(selectedOptions);
+  const [localSelected, setLocalSelected] = useState(filters);
 
 
   const handleCheckboxChange = (option: TSkillSubFilter) => {
+
     option.status = !option.status;
     const newSelected = localSelected.includes(option)
-      ? localSelected.filter((o) => o !== option)
+      ? localSelected.filter((o) => o.status === true )
       : [...localSelected, option];
 
+    // let updatedLocalSelected = newSelected.filter((o) => o.status !== false);
+
     setLocalSelected(newSelected);
-    onSelect(newSelected);
+    // выдаем наверх актуальное состояние фильтра
+    onSelect(filters);
   };
 
   return (
@@ -48,7 +43,7 @@ export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
           <CheckboxUI
           key={filter.id}
             label={filter.title}
-            value={filter.title}
+            value={filter.id}
             checked={filter.status}
             onChange={() => handleCheckboxChange(filter)}
           />

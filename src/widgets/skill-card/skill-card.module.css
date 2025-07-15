@@ -1,0 +1,162 @@
+@import '../../styles/variables.css';
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+}
+
+.container {
+  background-color: transparent;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.button-share:hover {
+  color: var(--caption-redesigned);
+}
+
+.button-share:active {
+  color: inherit;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4%;
+}
+
+@media (max-width: 900px) {
+  .content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.content-info {
+  font-family: 'Roboto', sans-serif;
+}
+
+.title {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+}
+
+.title::first-letter {
+  text-transform: uppercase;
+}
+
+.breadcrumbs {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.02em;
+  color: var(--caption-redesigned);
+  margin-bottom: 20px;
+}
+
+.breadcrumbs span {
+  display: inline-block;
+}
+
+.breadcrumbs span::first-letter {
+  text-transform: capitalize;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  margin-bottom: 52px;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12px;
+  justify-content: space-between;
+}
+
+.buttons-container:not(:has(button:nth-child(2))) {
+  grid-template-columns: 1fr;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  width: 100%;
+  flex-grow: 1;
+  letter-spacing: 0.02em;
+  border-radius: 12px;
+  background-color: var(--accent-redesigned);
+}
+
+@media (max-width: 400px) {
+  .buttons-container {
+    flex-direction: column;
+  }
+
+  .button {
+    max-width: 100%;
+  }
+}
+
+.button:disabled {
+  background-color: var(--disabled-redesigned);
+  cursor: not-allowed;
+}
+
+.button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.button:active {
+  background-color: var(--interaction-color);
+}
+
+.button-transparent {
+  background-color: transparent;
+  border: 1px solid var(--accent-redesigned)
+}
+
+.button-transparent:hover {
+  background-color: transparent;
+  color: var(--caption-redesigned);
+  border-color: var(--button-hover-color);
+}
+
+.button-transparent:active {
+  background-color: transparent;
+  border-color: var(--interaction-color);
+}
+
+.button-transparent:disabled {
+  border-color: var(--disabled-redesigned);
+}
+
+/* Заглушка */
+.content-gallery {
+  max-width: 100%;
+  max-height: 100%;
+  border: 4px dotted red;
+}
