@@ -8,7 +8,7 @@ import {
 } from '@/assets/svg';
 import { LikeSVG } from '@/assets/svg/like';
 import { NotificationSVG } from '@/assets/svg/notification';
-import { addUser, getUserById } from '../../api/skill-swap-api';
+import { getUserById } from '../../api/skill-swap-api';
 import { type FC } from 'react';
 import { ButtonUI } from '@/shared/ui';
 
@@ -21,27 +21,6 @@ export const Test: FC = () => {
 
   return (
     <>
-      <ButtonUI
-        type='button'
-        onClick={() =>
-          addUser({
-            gender: 'female',
-            name: 'Екатерина',
-            city: 'Москва',
-            age: 24,
-            mail: 'katya@mail.ru',
-            password: 'Qwerty123!',
-            description: 'Описание',
-            image: './#',
-            incoming: [],
-            outgoing: [],
-            likes: ['card-3', 'card-24'],
-          })
-        }
-      >
-        <NotificationSVG color='red' />
-      </ButtonUI>
-
       <ButtonUI type='button' onClick={() => alertUser('4574')}>
         <AddSVG color='purple' />
       </ButtonUI>

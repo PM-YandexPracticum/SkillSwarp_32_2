@@ -1,12 +1,12 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { TSkillCard, TUser } from '@/shared/global-types';
+import type { TCard, TUser } from '@/shared/global-types';
 
 interface UserState {
   user: TUser | null;
   isAuth: boolean;
   likedCards: string[];
-  skill: TSkillCard | null;
-  offer: TSkillCard | null;
+  skill: TCard | null;
+  offer: TCard | null;
   offersSent: { userId: string; status: string }[];
   offersReceived: { userId: string; status: string }[];
 }
@@ -41,10 +41,10 @@ const userSlice = createSlice({
       state.offersSent = [];
       state.offersReceived = [];
     },
-    setSkill(state, action: PayloadAction<TSkillCard>) {
+    setSkill(state, action: PayloadAction<TCard>) {
       state.skill = action.payload;
     },
-    setOffer(state, action: PayloadAction<TSkillCard>) {
+    setOffer(state, action: PayloadAction<TCard>) {
       state.offer = action.payload;
     },
     addLikedCard(state, action: PayloadAction<string>) {
