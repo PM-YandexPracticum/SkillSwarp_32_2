@@ -28,7 +28,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({
           </SkillItemUI>
         ))}
 
-        {restCount > 0 && <div className={clsx(styles.skill_item, styles.other)}>{`+${restCount}`}</div>}
+        {restCount > 0 && <div className={clsx(styles.skill_item, styles.other, styles.plus)}>{`+${restCount}`}</div>}
       </>
     );
   };
