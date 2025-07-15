@@ -1,8 +1,8 @@
-// import type { TSkillCard } from '@/shared/global-types';
+import type { TCard } from '@/shared/global-types';
 import type { ReactNode } from 'react';
 
 export type TSkillCardProps = {
-  card: any //TskillCard;
+  card: TCard;
   type: 'edit' | 'received' | 'sent' | 'offer';
   liked?: boolean;
   likeHandler: () => void;
