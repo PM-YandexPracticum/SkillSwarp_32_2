@@ -1,0 +1,132 @@
+@import '../../../styles/variables.css';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 324px;
+  padding: 20px;
+  gap: 22px;
+  border-radius: 12px;
+  background-color: var(--accent-background);
+}
+
+.info {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.profile_image_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.profile_image {
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.user_data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.data_name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.data_other {
+  font-size: 12px;
+}
+
+.button_like {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.user_description {
+  color: var(--text-redesigned);
+}
+
+.skills_section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skills_container {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.skills_text {
+  font-weight: 500;
+}
+
+.skills_list {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.skill_item {
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.button_link {
+  font-size: 16px;
+  text-align: center;
+  padding: 14px 99px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: var(--accent-redesigned);
+}
+
+.business {
+  background-color: var(--tag-biznes-i-karera);
+}
+
+.art {
+  background-color: var(--tag-tvorchestvo-i-iskusstvo);
+}
+
+.language {
+  background-color: var(--tag-inostrannye-yazyki);
+}
+
+.education {
+  background-color: var(--tag-obrazovanie-i-razvitie);
+}
+
+.comfort {
+  background-color: var(--tag-dom-i-uyut);
+}
+
+.lifestyle {
+  background-color: var(--tag-zdorove-i-layfstayl);
+}
+
+.other {
+  background-color: var(--tag-plus);
+}
+
