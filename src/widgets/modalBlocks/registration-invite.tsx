@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import userIcon from '@assets/svg/huge-user/huge-user.svg';
 import { ButtonUI } from '@/shared/ui/buttonUI/button';
-import styles from './modalBlock.module.css';
+import styles from './modal-block.module.css';
 
 interface RegistrationInviteProps {
   onRegister: () => void;

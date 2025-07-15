@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import doneIcon from '@/assets/svg/done.svg';
+import doneIcon from '@/assets/svg/done/done.svg';
 import { ButtonUI } from '@/shared/ui/buttonUI/button';
-import styles from './modalBlock.module.css';
+import styles from './modal-block.module.css';
 
 interface RegistrationSuccessProps {
   onDone: () => void;

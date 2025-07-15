@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import bellIcon from '@/assets/svg/notification/notification.svg';
 import { ButtonUI } from '@/shared/ui/buttonUI/button';
-import styles from './modalBlock.module.css';
+import styles from './modal-block.module.css';
 
 interface ExchangeProposedProps {
   onDone: () => void;
