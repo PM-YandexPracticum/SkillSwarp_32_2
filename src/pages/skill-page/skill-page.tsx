@@ -14,8 +14,9 @@ export const SkillPage: FC = () => {
   // const user = useSelector(userSelectors.userDataSelector); // поиск юзера в виджете юзеркард
   // const dispatch = useDispatch();
 
-  // Заглушка. Надо будет осуществить фильтрацию /db/skill-cards.json по card.teachSkill
+  // Заглушки. Надо будет осуществить фильтрацию /db/skill-cards.json по card.teachSkill
   const sameOffers = CARDS_DATA;
+  const card = CARDS_DATA[0];
 
   const prevPageHandler = useCallback(() => {
     if (currentPage > 0) setCurrentPage(currentPage - 1);
@@ -30,11 +31,8 @@ export const SkillPage: FC = () => {
           Главная / Творчество и искусство / Музыка и звук / Игра на барабанах
         </ButtonUI>
         <div className={styles.skill_content}>
-          <UserCard />
-          <SkillCard 
-            card={sameOffers[0]}
-            type = 'offer'
-            likeHandler={()=>{}}/> 
+          <UserCard card={card} type='full' />
+          <SkillCard card={sameOffers[0]} type='offer' likeHandler={() => {}} />
         </div>
         <div className={styles.same_offers}>
           <h1>Похожие предложения</h1>

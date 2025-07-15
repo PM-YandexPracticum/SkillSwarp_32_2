@@ -1,8 +1,7 @@
-/* ToDo: когда появятся глобальные стили, дочерние компоненты убрать лишние стили */
-
 .header {
   position: fixed;
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   background-color: var(--bg-color);
   text-decoration: none;
