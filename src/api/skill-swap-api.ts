@@ -34,7 +34,7 @@ async function fetchData<T>(API_URI: string): Promise<T[]> {
 // GET - запросы
 // запрос на получение списка городов
 
-export const FetchCitiesData = () => fetchData<TCity>('cities');
+export const fetchCitiesData = () => fetchData<TCity>('cities');
 
 // Запрос на получение списка категорий
 

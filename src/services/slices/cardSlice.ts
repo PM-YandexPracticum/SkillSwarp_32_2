@@ -32,7 +32,7 @@ const cardsSlice = createSlice({
         teachSkill: action.payload.teachSkill,
         name: action.payload.name,
         src: action.payload.src,
-        likes: []
+        likes: [],
       };
       state.cards.push(newCard);
     },
@@ -71,5 +71,5 @@ const cardsSlice = createSlice({
 });
 
 export const { addCard, changeCard, removeCard } = cardsSlice.actions;
-export const  cardsReducer = cardsSlice.reducer;
-
+//export const  cardsReducer = cardsSlice.reducer;
+export default cardsSlice.reducer;

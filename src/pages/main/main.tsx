@@ -3,24 +3,56 @@ import styles from './main.module.css';
 import { CardListUI } from '@/shared/ui';
 import { FilterBlock, UserCard } from '@/widgets';
 import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
+import { useDispatch } from '@/services/store';
+import { useEffect } from 'react';
+import {
+  addEducationFilter,
+  addGenderFilter,
+  setMockFilters,
+} from '@/services/slices';
 
 export const Main: FC = () => {
-  function getCommonFilterValue(data: commonFilterType[]) {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setMockFilters());
+  }, [dispatch]);
+
+  /*function getCommonFilterValue(data: commonFilterType[]) {
     console.log(data);
-  }
+  }*/
 
   function getSkillFilterValue(data: TSkillSubFilter[]) {
     console.log(data);
   }
+  const onEducationChange = (filters: commonFilterType[]) => {
+    const activeFilter = filters.find((f) => f.status);
+    if (activeFilter) {
+      dispatch(addEducationFilter(activeFilter));
+      console.log('Диспатч addEducationFilter:', activeFilter);
+      console.log(filters);
+    }
+  };
+
+  const onGenderChange = (filters: commonFilterType[]) => {
+    const activeFilter = filters.find((f) => f.status);
+    if (activeFilter) {
+      dispatch(addGenderFilter(activeFilter));
+      console.log('Диспатч addGenderFilter:', activeFilter);
+      console.log(filters);
+    }
+  };
 
   return (
     <main className={styles.main}>
       <div>
         <FilterBlock
-          onEducationChange={getCommonFilterValue}
-          onGenderChange={getCommonFilterValue}
+          /*onEducationChange={getCommonFilterValue}
+          onGenderChange={getCommonFilterValue}*/
           onSkillChange={getSkillFilterValue}
           onCityChange={getSkillFilterValue}
+          onEducationChange={onEducationChange}
+          onGenderChange={onGenderChange}
         />
       </div>
       <div className={styles.card_blocks}>

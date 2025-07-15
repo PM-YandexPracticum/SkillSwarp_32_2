@@ -42,7 +42,7 @@ export const FilterBlock: FC<FilterBlockProps> = ({
       status: false,
     },
     {
-      title: 'Женской',
+      title: 'Женский',
       value: 'female',
       status: false,
     },
