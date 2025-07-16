@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import styles from './main.module.css';
 import { CardListUI } from '@/shared/ui';
 import { FilterBlock } from '@/widgets';
-import type { commonFilterType, TMainSkillFilter } from '@/shared/global-types';
+import type { commonFilterType, TCard, TMainSkillFilter } from '@/shared/global-types';
 import { useDispatch, useSelector } from '@/services/store';
 import { useEffect } from 'react';
 import {
@@ -17,6 +17,7 @@ import {
   toggleCityFilter,
 } from '@/services/slices';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
+import { checkAllActiveFilters, filterCards } from '@/shared/lib/helpers/helpers';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,20 @@ export const Main: FC = () => {
   const genderState = useSelector(getGenderState);
   const skillsState = useSelector(getSkillsState);
   const citiesState = useSelector(getCitiesState);
+
+  const cards = filterCards(CARDS_DATA, {
+    education: educationState,
+    gender: genderState,
+    skills: skillsState,
+    cities: citiesState,
+  });
+
+  const checkFiltersState = checkAllActiveFilters(
+    skillsState,
+    genderState,
+    educationState,
+    citiesState
+  );
 
   useEffect(() => {
     dispatch(setMockFilters());
@@ -41,9 +56,14 @@ export const Main: FC = () => {
     if (activeFilter) {
       dispatch(toggleGenderFilter(activeFilter));
     }
+    // console.log(cards);
+    // console.log(checkFiltersState);
   };
 
   const getSkillFilterValue = (data: TMainSkillFilter[]) => {
+    // console.log(cards);
+    // console.log(checkFiltersState);
+
     dispatch(toggleSkillsFilter(data));
   };
 
@@ -53,7 +73,7 @@ export const Main: FC = () => {
 
   // Веременно оставлю тут массивы карточек для отображения
 
-  const cardsPopular = CARDS_DATA.filter((__, index) => index < 3 );
+  const cardsPopular = CARDS_DATA.filter((__, index) => index < 3);
   const cardsNew = CARDS_DATA.filter((__, index) => index >= 3 && index < 6);
   const cardsRecomended = CARDS_DATA.filter((__, index) => index >= 6);
 
@@ -71,11 +91,15 @@ export const Main: FC = () => {
           onGenderChange={onGenderChange}
         />
       </div>
-      <div className={styles.card_blocks}>
-        <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
-        <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
-        <CardListUI title='Рекомендуем' cards={cardsRecomended} />
-      </div>
+      {checkFiltersState ? (
+        <CardListUI cards={cards} title={''} />
+      ) : (
+        <div className={styles.card_blocks}>
+          <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
+          <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
+          <CardListUI title='Рекомендуем' cards={cardsRecomended} />
+        </div>
+      )}
     </main>
   );
 };
