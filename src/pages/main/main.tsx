@@ -17,7 +17,7 @@ import {
   toggleCityFilter,
 } from '@/services/slices';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
-import { checkAllActiveFilters, filterCards } from '@/shared/lib/helpers/helpers';
+import { checkAllActiveFilters, filterByCategories, filterByCities, filterCards } from '@/shared/lib/helpers/helpers';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -68,6 +68,8 @@ export const Main: FC = () => {
   };
 
   const onCityChange = (data: string) => {
+    const kek = filterByCategories(CARDS_DATA, skillsState, educationState)
+    console.log(kek, citiesState,educationState)
     dispatch(toggleCityFilter(data));
   };
 

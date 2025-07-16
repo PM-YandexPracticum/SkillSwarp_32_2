@@ -28,10 +28,10 @@ export const formatAge = (age: number) => {
 
 // Фильтрация по городам
 export const filterByCities = (cards: TCard[], cities: TCityFilter[]) => {
-  const selectedCityIds = cities.filter((ccity) => ccity.status).map((ccity) => ccity.id);
-  if (selectedCityIds.length === 0) return cards;
+  const selectedCityTitles = cities.filter((city) => city.status).map((city) => city.title);
+  if (selectedCityTitles.length === 0) return cards;
 
-  return cards.filter((card) => selectedCityIds.includes(card.city));
+  return cards.filter((card) => selectedCityTitles.includes(card.city));
 };
 
 // Фильтрация по полу
