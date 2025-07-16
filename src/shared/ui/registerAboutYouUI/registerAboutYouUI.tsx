@@ -27,7 +27,8 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   //setCity,
   //skill,
   //setSkill,
-  handleSubmit
+  handleSubmit,
+  handleBack
 }) => {
   
   const ages: DropdownOption[] = [
@@ -228,15 +229,14 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
             </div>
             <div className={styles.buttons}>
               <ButtonUI 
-                type='link' 
-                to='/register'
+                type='button' 
+                onClick={handleBack}
                 className={classNames(styles.button, styles.message_btn)}
                 >
                 Назад
               </ButtonUI>
               <ButtonUI 
-                type='link' 
-                to='/register/offer'
+                type='submit' 
                 className={classNames(styles.button, styles.link_btn)}
                 >
                 Продолжить

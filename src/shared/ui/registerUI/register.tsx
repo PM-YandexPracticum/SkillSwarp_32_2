@@ -70,9 +70,8 @@ export const RegisterUI: FC<RegisterUIProps> = ({
           />
           <div className={styles.buttons}>
             <ButtonUI 
-              type='link' 
-              to='/register/about'
-              className={classNames(styles.button, styles.link_btn)}
+              type='submit' 
+              className={classNames(styles.button, styles.submit_btn)}
               >
               Далее
             </ButtonUI>
