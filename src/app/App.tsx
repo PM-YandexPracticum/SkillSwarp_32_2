@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <AppHeader />
+      {/* <AppHeader /> */}
       <Routes location={backgroundLocation || location}>
         {/* пока смог выдеить только эти роуты. если найду еще - добавлю */}
         <Route path='/' element={<Main />} />
