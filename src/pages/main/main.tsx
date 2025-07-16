@@ -4,7 +4,6 @@ import { CardListUI } from '@/shared/ui';
 import { FilterBlock } from '@/widgets';
 import type { commonFilterType, TMainSkillFilter } from '@/shared/global-types';
 import { useDispatch, useSelector } from '@/services/store';
-import { useEffect } from 'react';
 import {
   toggleEducationFilter,
   toggleGenderFilter,
@@ -13,10 +12,16 @@ import {
   getEducationState,
   getGenderState,
   getSkillsState,
-  setMockFilters,
   toggleCityFilter,
 } from '@/services/slices';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
+import {
+  checkAllActiveFilters,
+  filterCards,
+  sorByRecommendedChaos,
+  sortByNewest,
+  sortByPopular,
+} from '@/shared/lib/helpers/helpers';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -25,9 +30,19 @@ export const Main: FC = () => {
   const skillsState = useSelector(getSkillsState);
   const citiesState = useSelector(getCitiesState);
 
-  useEffect(() => {
-    dispatch(setMockFilters());
-  }, [dispatch]);
+  const cards = filterCards(CARDS_DATA, {
+    education: educationState,
+    gender: genderState,
+    skills: skillsState,
+    cities: citiesState,
+  });
+
+  const checkFiltersState = checkAllActiveFilters(
+    skillsState,
+    genderState,
+    educationState,
+    citiesState
+  );
 
   const onEducationChange = (filters: commonFilterType[]) => {
     const activeFilter = filters.find((f) => f.status);
@@ -53,9 +68,9 @@ export const Main: FC = () => {
 
   // Веременно оставлю тут массивы карточек для отображения
 
-  const cardsPopular = CARDS_DATA.filter((__, index) => index < 3 );
-  const cardsNew = CARDS_DATA.filter((__, index) => index >= 3 && index < 6);
-  const cardsRecomended = CARDS_DATA.filter((__, index) => index >= 6);
+  const cardsPopular = sortByPopular(CARDS_DATA, 3);
+  const cardsNew = sortByNewest(CARDS_DATA, 3);
+  const cardsRecommendedChaos = sorByRecommendedChaos(CARDS_DATA);
 
   return (
     <main className={styles.main}>
@@ -71,11 +86,23 @@ export const Main: FC = () => {
           onGenderChange={onGenderChange}
         />
       </div>
-      <div className={styles.card_blocks}>
-        <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
-        <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
-        <CardListUI title='Рекомендуем' cards={cardsRecomended} />
-      </div>
+      {checkFiltersState ? (
+        cards.length > 0 ? (
+          <div className={styles.card_blocks}>
+            <CardListUI cards={cards} title={''} />
+          </div>
+        ) : (
+          <div className={styles.card_blocks}>
+            <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
+          </div>
+        )
+      ) : (
+        <div className={styles.card_blocks}>
+          <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
+          <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
+          <CardListUI title='Рекомендуем' cards={cardsRecommendedChaos} />
+        </div>
+      )}
     </main>
   );
 };

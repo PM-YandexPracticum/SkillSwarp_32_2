@@ -7,6 +7,13 @@ import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/tool
 export const getCategories = createAsyncThunk('categories/get', fetchCategoriesData);
 export const getCities = createAsyncThunk('cities/get', fetchCitiesData);
 
+export type allFilterStatuses = {
+  educationChecked: boolean;
+  genderChecked: boolean;
+  skillsChecked: boolean;
+  citiesChecked: boolean;
+};
+
 export type FilterState = {
   education: commonFilterType[];
   gender: commonFilterType[];
@@ -117,7 +124,7 @@ export const filterSlice = createSlice({
         city.id === action.payload ? { ...city, status: false } : city
       );
     },
-    
+
     // Для кнопки сброса всех фильтров
     resetAllFilters: (state) => {
       state.education = state.education.map((item) => ({
