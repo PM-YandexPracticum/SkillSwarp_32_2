@@ -1,5 +1,8 @@
 .header {
   position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
