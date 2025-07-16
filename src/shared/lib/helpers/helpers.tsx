@@ -1,4 +1,5 @@
-import type { commonFilterType, TCard, TSkillSubFilter } from '@/shared/global-types';
+import type { FilterState } from '@/services/slices';
+import type { commonFilterType, TCard, TCityFilter, TMainSkillFilter } from '@/shared/global-types';
 
 //файл для хранения вспомогательных функций для сокращения кода
 
@@ -25,16 +26,9 @@ export const formatAge = (age: number) => {
 
 //временный интерфейс для типизпции
 
-type FilterState = {
-  education: commonFilterType[];
-  gender: commonFilterType[];
-  skills: TSkillSubFilter[];
-  cities: TSkillSubFilter[];
-};
-
 
 // Фильтрация по городам
-export const filterByCities = (cards: TCard[], cities: TSkillSubFilter[]) => {
+export const filterByCities = (cards: TCard[], cities: TCityFilter[]) => {
   const selectedCityIds = cities.filter(ccity => ccity.status).map(ccity => ccity.id);
   if (selectedCityIds.length === 0) return cards;
 
@@ -52,18 +46,26 @@ export const filterByGender = (cards: TCard[], genderFilters: commonFilterType[]
 // Фильтрация по категориям и образованию
 export const filterByCategories = (
   cards: TCard[],
-  skillFilters: TSkillSubFilter[],
+  skillFilters: TMainSkillFilter[],
   educationFilters: commonFilterType[]
 ): TCard[] => {
   const selectedEducation = educationFilters.find(filter => filter.status)?.value;
-  const activeSkills = skillFilters.filter(skill => skill.status);
-  if (!selectedEducation || activeSkills.length === 0) return cards;
+
+  // Собираем все активные sub-фильтры
+  const activeSubSkills = skillFilters
+    .flatMap(main => main.subFilters)
+    .filter(sub => sub.status);
+
+  if (!selectedEducation || activeSubSkills.length === 0) return cards;
 
   return cards.filter(card => {
     const skills = selectedEducation === 'teach' ? card.teachSkill : card.learnSkill;
-    return skills.some(skill => activeSkills.some(filter => filter.id === skill.subType));
+    return skills.some(skill =>
+      activeSubSkills.some(filter => filter.id === skill.subType)
+    );
   });
 };
+
 
 // Главная функция
 export const filterCards = (cards: TCard[], filterStore: FilterState): TCard[] => {
