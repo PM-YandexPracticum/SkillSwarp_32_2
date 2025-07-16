@@ -125,19 +125,18 @@ export const Main: FC = () => {
       </div>
       {checkFiltersState ? (
         cards.length > 0 ? (
-//           <div className={styles.card_blocks}>
-//             <CardListUI cards={cards} title={''} />
-//           </div>
-          {activeFilters.length > 0 && (
-            <>
-              <EnabledFiltersBlock filters={activeFilters} />
-              <CardListUI
-                title={`Подходящие предложения: ${cardsRecommendedChaos.length}`}
-                handleSort={() => {}} // пока заглушка
-                cards={cardsRecommendedChaos}
-              />
-            </>
-          )}
+          <div className={styles.card_blocks}>
+            {activeFilters.length > 0 && (
+              <>
+                <EnabledFiltersBlock filters={activeFilters} />
+                <CardListUI
+                  title={`Подходящие предложения: ${cards.length}`}
+                  handleSort={() => {}} // пока заглушка
+                  cards={cards}
+                />
+              </>
+            )}
+          </div>
         ) : (
           <div className={styles.card_blocks}>
             <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
