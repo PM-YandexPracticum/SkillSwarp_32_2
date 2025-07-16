@@ -1,10 +1,12 @@
 import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
 import { /*useEffect,*/ useState } from 'react';
 import { RegisterYouOfferUI } from '@/shared/ui';
+import store from '@/services/store/store';
+import { useDispatch, useSelector } from '@/services/store';
+import { useNavigate } from 'react-router-dom';
+import { clearRegistrationData, registerUserThunk, selectRegistrationData, setRegistrationStepData } from '@/services/slices';
+import type { TUser } from '@/shared/global-types';
 import type { setStateProps } from '../type';
-// import type { setStateProps } from '../type';
-//import { useDispatch, useSelector } from '../../services/store';
-//import { useLocation, useNavigate } from 'react-router-dom';
 
 //дописать взаимодействие и дополнить тип
 
@@ -13,9 +15,11 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   const [description, setDescription] = useState('');
   const [file, setFile] = useState('');
 
+  const registrationData = useSelector(selectRegistrationData);
+
   //раскоментить когда будет взаимодействие с апи
-  //const dispatch = useDispatch();
-  //const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   //const location = useLocation();
   //const from = location.state?.from || { pathname: '/' };
 
@@ -26,7 +30,26 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     setCurrentPage((current) => current + 1);
-    setCurrentPage((current) => current + 1);
+
+
+    dispatch(setRegistrationStepData({ description, image: file }));
+
+    const completeRegistrationData = {
+      ...registrationData,
+      description,
+      image: file,
+    } as TUser;
+    console.log(store.getState());
+
+    dispatch(registerUserThunk(completeRegistrationData)).then((resultAction) => {
+      if (registerUserThunk.fulfilled.match(resultAction)) {
+        dispatch(clearRegistrationData());
+        navigate('/');
+      } else {
+        console.error('Регистрация не удалась');
+      }
+    });
+
   };
   /*
   useEffect(() => {

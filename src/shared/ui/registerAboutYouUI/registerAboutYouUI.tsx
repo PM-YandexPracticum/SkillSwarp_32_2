@@ -16,56 +16,59 @@ import { CheckboxUI } from '../checkboxUI';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 
+const ages: DropdownOption[] = [
+  {id: '16', name: '16'},
+  {id: '17', name: '17'},
+  {id: '18', name: '18'},
+  {id: '19', name: '19'},
+  {id: '20', name: '20'},
+  {id: '21', name: '21'},
+  {id: '22', name: '22'},
+  {id: '23', name: '23'},
+  {id: '24', name: '24'},
+  {id: '25', name: '25'},
+  {id: '26', name: '26'},
+  {id: '27', name: '27'},
+  {id: '28', name: '28'},
+  {id: '29', name: '29'},
+  {id: '30', name: '30'},
+  {id: '31', name: '31'},
+  {id: '32', name: '32'},
+  {id: '33', name: '33'},
+  {id: '34', name: '34'},
+  {id: '35', name: '35'},
+  {id: '36', name: '36'},
+  {id: '37', name: '37'},
+  {id: '38', name: '38'},
+  {id: '39', name: '39'},
+  {id: '40', name: '40'},
+  {id: '41', name: '41'},
+  {id: '42', name: '42'},
+  {id: '43', name: '43'},
+  {id: '44', name: '44'},
+  {id: '45', name: '45'},
+];
+
+const genders: DropdownOption[] = [
+  {id: 'male', name: 'Мужской'},
+  {id: 'female', name: 'Женский'},
+  {id: 'unknown', name: 'Не указан'}
+];
+
 export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   name,
   setName,
-  //gender,
-  //setGender,
-  //age,
-  //setAge,
-  //city,
-  //setCity,
-  //skill,
-  //setSkill,
+  gender,
+  setGender,
+  age,
+  setAge,
+  city,
+  setCity,
+  skill,
+  setSkill,
   handleSubmit,
   handleBack
 }) => {
-  
-  const ages: DropdownOption[] = [
-    {id: '16', name: '16'},
-    {id: '17', name: '17'},
-    {id: '18', name: '18'},
-    {id: '19', name: '19'},
-    {id: '20', name: '20'},
-    {id: '21', name: '21'},
-    {id: '22', name: '22'},
-    {id: '23', name: '23'},
-    {id: '24', name: '24'},
-    {id: '25', name: '25'},
-    {id: '26', name: '26'},
-    {id: '27', name: '27'},
-    {id: '28', name: '28'},
-    {id: '29', name: '29'},
-    {id: '30', name: '30'},
-    {id: '31', name: '31'},
-    {id: '32', name: '32'},
-    {id: '33', name: '33'},
-    {id: '34', name: '34'},
-    {id: '35', name: '35'},
-    {id: '36', name: '36'},
-    {id: '37', name: '37'},
-    {id: '38', name: '38'},
-    {id: '39', name: '39'},
-    {id: '40', name: '40'},
-    {id: '41', name: '41'},
-    {id: '42', name: '42'},
-    {id: '43', name: '43'},
-    {id: '44', name: '44'},
-    {id: '45', name: '45'},
-  ];
-
-  const [age, setAge] = useState<DropdownOption>({id: '', name: ''});
-
   const renderAgeOptions = () => {
     return ages.map(age => (
       <li key={age.id} onClick={() => setAge(age)}>
@@ -73,14 +76,6 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
       </li>
     ));
   };
-
- const genders: DropdownOption[] = [
-    {id: 'male', name: 'Мужской'},
-    {id: 'female', name: 'Женский'},
-    {id: 'unknown', name: 'Не указан'}
-  ];
-
-  const [gender, setGender] = useState<DropdownOption>({id: '', name: ''});
 
   const renderGenderOptions = () => {
     return genders.map(gender => (
@@ -90,12 +85,10 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
     ));
   };
 
-   const cities: DropdownOption[] = CITIES_MOCK.map(city => ({
-      id: city.id,
-      name: city.title,
-    }));
-
-  const [city, setCity] = useState<DropdownOption>({id: '', name: ''});
+  const cities: DropdownOption[] = CITIES_MOCK.map(city => ({
+    id: city.id,
+    name: city.title,
+  }));
 
   const renderCityOptions = (filteredCities: DropdownOption[]) => {
     return filteredCities.map(city => (
