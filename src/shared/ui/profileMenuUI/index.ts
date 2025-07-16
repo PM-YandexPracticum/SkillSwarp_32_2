@@ -1,2 +1,2 @@
 export { ProfileMenu } from './profileMenu';
-export type { ProfileUserInfo, ProfileMenuItem, ProfileMenuProps } from './types';
+export type { ProfileMenuItem, ProfileMenuProps } from './types';

@@ -1,95 +1,29 @@
-/* * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-a {
-  color: var(--black-color);
-} */
-
-.profile-menu {
+.profile-menu__list {
   display: flex;
   flex-direction: column;
-  text-align: start;
-  max-width: 440px;
-  background-color: var(--white-color);
+  row-gap: 8px;
+  width: 244px;
+  height: 272px;
 }
 
-.profile-menu__avatar {
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.profile-menu__rating {
+.profile-menu__item {
   display: flex;
   flex-direction: row;
-  gap: 1px;
-  color: #c0bcbc;
-  margin: 14px 10px;
-}
-
-.profile-manu__rating-item {
-  height: 12px;
-  width: 12px;
-}
-
-.profile-menu__user-name {
-  font-size: 20px;
-}
-
-.profile-menu__description,
-.profile-menu__user-data {
-  opacity: 0.5;
-  font-family: 'Poppins', 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.profile-menu__user-data {
-  margin-top: 6px;
-  margin-bottom: 30px;
-  font-size: 15px;
-}
-
-.profile-menu__description {
+  column-gap: 12px;
+  border-radius: 12px;
+  padding: 12px 20px;
+  width: 244px;
+  height: 48px;
+  font-weight: 400;
   font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
 }
 
-.profile-menu__nav {
-  font-family: 'Ubuntu', 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 20px;
-  line-height: 24px;
-  max-width: 259px;
+.profile-menu__item:hover {
+  color: var(--interaction-color);
 }
 
-.profile-menu__nav-menu {
-  display: flex;
-  margin: 102px 0;
-  max-width: 259px;
-  flex-direction: column;
-  row-gap: 20px;
-}
-
-.profile-menu__nav-item {
-  position: relative;
-  padding: 13.5px 0 13.5px 58px;
-  list-style-type: none;
-  cursor: pointer;
-}
-
-.profile-menu__nav-item::before {
-  content: '';
-  position: absolute;
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3px;
-  height: 3px;
-  border: 2px solid var(--black-color);
-  border-radius: 50%;
-  background-color: transparent;
-}
-
-.profile-menu__nav-item--active {
-  background-color: var(--grey-staff-color);
+.active {
+  background-color: var(--button-hover-color);
 }

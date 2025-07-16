@@ -7,6 +7,9 @@ import { Error404 } from '@/pages/404-error';
 import { SkillPage } from '@/pages/skill-page';
 import { Test } from '@/pages/test';
 import { Footer } from '@/shared/ui/footer';
+import { ProfilePage } from '@/pages/profile-page';
+import { ProfileIncoming } from '@/pages/profile-incoming-page';
+import { ProfileOutgoing } from '@/pages/profile-outgoing-page';
 import { AppHeader } from '@/widgets/app-header';
 
 function App() {
@@ -26,12 +29,16 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='*' element={<Error404 />} />
         <Route path='/skill/:userId' element={<SkillPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/profile/incoming' element={<ProfileIncoming />} />
+        <Route path='/profile/outgoing' element={<ProfileOutgoing />} />
         {/* сюда добавляйте компоненты для тестирования */}
         <Route path='/test' element={<Test />} />
       </Routes>
       {/* роуты модалок. будут добавляться по мере разрастания приложения */}
       {backgroundLocation ?? <Routes location={location}></Routes>}
       <Footer />
+      {/* По макету Footer не на всех страницах - так что его нужно вставлять вручную, там где он есть */}
     </>
   );
 }
