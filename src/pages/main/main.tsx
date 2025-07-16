@@ -14,10 +14,9 @@ import {
   getSkillsState,
   toggleCityFilter,
   getCardsState,
-  getLoadingState,
+  // getLoadingState,
 } from '@/services/slices';
-// import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
-import { EnabledFiltersBlock } from '@/widgets/enabled-filters-block';
+import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 import {
   checkAllActiveFilters,
   filterCards,
@@ -33,7 +32,7 @@ export const Main: FC = () => {
   const skillsState = useSelector(getSkillsState);
   const citiesState = useSelector(getCitiesState);
   const cardsState = useSelector(getCardsState);
-  const loading = useSelector(getLoadingState);
+  // const loading = useSelector(getLoadingState);
 
   // const cards = filterCards(CARDS_DATA, {
   //   education: educationState,
@@ -68,14 +67,9 @@ export const Main: FC = () => {
     if (activeFilter) {
       dispatch(toggleGenderFilter(activeFilter));
     }
-    // console.log(cards);
-    // console.log(checkFiltersState);
   };
 
   const getSkillFilterValue = (data: TMainSkillFilter[]) => {
-    // console.log(cards);
-    // console.log(checkFiltersState);
-
     dispatch(toggleSkillsFilter(data));
   };
 
@@ -85,13 +79,9 @@ export const Main: FC = () => {
 
   // Веременно оставлю тут массивы карточек для отображения
 
-  // const cardsPopular = sortByPopular(CARDS_DATA, 3);
-  // const cardsNew = sortByNewest(CARDS_DATA, 3);
-  // const cardsRecommendedChaos = sorByRecommendedChaos(CARDS_DATA);
-
-  const cardsPopular = sortByPopular(cardsState, 3);
-  const cardsNew = sortByNewest(cardsState, 3);
-  const cardsRecommendedChaos = sorByRecommendedChaos(cardsState);
+  const cardsPopular = sortByPopular(CARDS_DATA, 3);
+  const cardsNew = sortByNewest(CARDS_DATA, 3);
+  const cardsRecommendedChaos = sorByRecommendedChaos(CARDS_DATA);
 
   const activeFilters = [
     ...educationState
@@ -145,28 +135,20 @@ export const Main: FC = () => {
         />
       </div>
       {checkFiltersState ? (
-        <div className={styles.card_blocks}>
-          {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
-          {cards.length > 0 ? (
-            <CardListUI
-              title={`Подходящие предложения: ${cards.length}`}
-              handleSort={() => {}} // пока заглушка
-              cards={cards}
-            />
-          ) : (
+        cards.length > 0 ? (
+          <div className={styles.card_blocks}>
+            <CardListUI cards={cards} title={''} />
+          </div>
+        ) : (
+          <div className={styles.card_blocks}>
             <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
-          )}
-        </div>
+          </div>
+        )
       ) : (
         <div className={styles.card_blocks}>
-          <CardListUI
-            title='Популярное'
-            handleOpen={() => {}}
-            cards={cardsPopular}
-            loading={loading}
-          />
-          <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} loading={loading} />
-          <CardListUI title='Рекомендуем' cards={cardsRecommendedChaos} loading={loading} />
+          <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
+          <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
+          <CardListUI title='Рекомендуем' cards={cardsRecommendedChaos} />
         </div>
       )}
     </main>
