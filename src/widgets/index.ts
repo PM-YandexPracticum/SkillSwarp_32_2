@@ -5,3 +5,7 @@ export * from './userCard';
 export * from './drop-drag';
 export * from './progressBar';
 export * from './filter-block';
+export * from './modalBlocks';
+
+
+
