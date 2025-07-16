@@ -1,0 +1,18 @@
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 17px;
+  background-color: var(--accent-background);
+  cursor: pointer;
+}

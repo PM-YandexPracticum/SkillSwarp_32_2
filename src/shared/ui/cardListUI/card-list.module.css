@@ -12,9 +12,7 @@
   justify-content: space-between;
 }
 
-.title { /* эти стили можно убрать, поскольку за это отвечают глобальные */
-  /*font-family: sans-serif;
-  font-weight: 700;*/
+.title { 
   font-size: 32px;
 }
 
@@ -30,10 +28,8 @@
   cursor: pointer;
 }
 
-.button_text { /* и здесь так же */
-  /*font-family: sans-serif;*/
+.button_text {
   font-size: 16px;
-  /*font-weight: 500;*/
 }
 
 .button_image {

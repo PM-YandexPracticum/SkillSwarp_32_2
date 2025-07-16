@@ -31,7 +31,7 @@ export const CheckboxGroupUI: FC<CheckboxGroupUIProps> = ({
 
   return (
     <div className={styles.container}>
-      {title && <h3>{title}</h3>}
+      {title && <h3 className={styles.title}>{title}</h3>}
       <div className={styles.checkbox_list}>
         {filters.map((filter) => (
           <CheckboxUI

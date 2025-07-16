@@ -17,11 +17,13 @@ export const FilterBlock: FC<FilterBlockProps> = ({
 
   return (
     <div className={styles.container}>
-      <h2>Фильтры</h2>
-      <RadioButtonGroupUI filters={educationFilters} onChangeAction={onEducationChange}/>
-      <CheckBoxDropDownGroupUI filters={skillFilters} onChange={onSkillChange}  title='Навыки'/>
-      <RadioButtonGroupUI filters={genderFilters} onChangeAction={onGenderChange} title='Пол автора'/>
-      <CheckboxGroupUI filters={cityFilters} onSelect={onCityChange} title= 'Город'/>
+      <h2 className={styles.title}>Фильтры</h2>
+      <div className={styles.groups_container}>
+        <RadioButtonGroupUI filters={educationFilters} onChangeAction={onEducationChange}/>
+        <CheckBoxDropDownGroupUI filters={skillFilters} onChange={onSkillChange}  title='Навыки'/>
+        <RadioButtonGroupUI filters={genderFilters} onChangeAction={onGenderChange} title='Пол автора'/>
+        <CheckboxGroupUI filters={cityFilters} onSelect={onCityChange} title= 'Город'/>
+      </div>
     </div>
   );
 };
