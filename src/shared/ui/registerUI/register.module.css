@@ -117,15 +117,15 @@
   color: var(--text-redesigned);
 }
 
-.link_btn {
+.submit_btn {
   border: none;
   background-color: var(--accent-redesigned);
 }
 
-.link_btn:hover {
+.submit_btn:hover {
   background-color: var(--button-hover-color);
 }
 
-.link_btn:active {
+.submit_btn:active {
   background-color: var(--interaction-color);
 }

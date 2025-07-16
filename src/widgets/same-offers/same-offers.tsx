@@ -71,22 +71,21 @@ export const SameOffers  = ({cardsData}: TSameOffersProps) => {
       : styles.container
     }>
       {currentCards.map((card, index) => (
-        <ButtonUI type='link' key={index} to={`/skill/${card.userId}`}>
-          {/* 
-            Тут конфликты с типами в карточке и UserCardUI.
-            Нужно будет заменить потом, когда стандартизируется.
-            Либо проверь, мб я не так понял. Пока заглушка
-          */}
-          <UserCard card={card} type='short'/>
-          {/* <UserCardUI
-            skills={card.teachSkill}
-            desired={card.learnSkill}
-            user={card}
-            type='short'
-            buttonClick={() => {}}
-            setLike={() => {}}
-          /> */}
-        </ButtonUI>
+          <UserCard card={card} type='short' key={index}/>
+          
+          //   Тут конфликты с типами в карточке и UserCardUI.
+          //   Нужно будет заменить потом, когда стандартизируется.
+          //   Либо проверь, мб я не так понял. Пока заглушка
+        
+
+          // <UserCardUI
+          //   skills={card.teachSkill}
+          //   desired={card.learnSkill}
+          //   user={card}
+          //   type='short'
+          //   buttonClick={() => {}}
+          //   setLike={() => {}}
+          // /> 
       ))}
 
       { currentPage > 0 && (

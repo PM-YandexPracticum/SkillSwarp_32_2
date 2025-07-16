@@ -7,6 +7,13 @@ import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/tool
 export const getCategories = createAsyncThunk('categories/get', fetchCategoriesData);
 export const getCities = createAsyncThunk('cities/get', fetchCitiesData);
 
+export type allFilterStatuses = {
+  educationChecked: boolean;
+  genderChecked: boolean;
+  skillsChecked: boolean;
+  citiesChecked: boolean;
+};
+
 export type FilterState = {
   education: commonFilterType[];
   gender: commonFilterType[];
