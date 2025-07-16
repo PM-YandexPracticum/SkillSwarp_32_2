@@ -1,0 +1,1 @@
+export { WayUI } from './wayUI';
