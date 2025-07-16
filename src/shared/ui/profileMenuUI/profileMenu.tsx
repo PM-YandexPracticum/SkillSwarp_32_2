@@ -1,74 +1,67 @@
 import styles from './profileMenu.module.css';
-import { Link } from 'react-router-dom';
-import type { ProfileMenuProps } from './types';
+import { IdeaSVG, IncomingSVG, LikeSVG, OutgoingSVG, StarSVG, UserFramedSVG } from '@/assets/svg';
+import { NavLink, useLocation } from 'react-router-dom';
 
-export const ProfileMenu = ({ profileUserInfo, profileMenuItems }: ProfileMenuProps) => {
-  // Добавил простые проверки, чтобы сайт не падал, если с сервера придут некоректные данные
-  // Проверка - нет данных пользователя или они неполные
-  if (!profileUserInfo) {
-    return (
-      <aside className={styles['profile-menu']}>
-        <div className={styles['profile-menu__info']}>
-          <p className={styles['profile-menu__error']}>Ошибка загрузки профиля</p>
-        </div>
-      </aside>
-    );
-  }
-  // Проверка - меню пришло пустое
-  const hasMenuItems = Array.isArray(profileMenuItems) && profileMenuItems.length > 0;
+export const ProfileMenu = () => {
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <aside className={styles['profile-menu']}>
-      <div className={styles['profile-menu__info']}>
-        <img
-          src={profileUserInfo.avatar}
-          alt='Изображение: аватар пользователя'
-          className={styles['profile-menu__avatar']}
-        />
+    <div className={styles['profile-menu']}>
+      <ul className={styles['profile-menu__list']}>
+        <li
+          className={`${styles['profile-menu__item']} ${
+            isActive('/profile/incoming') ? styles.active : ''
+          }`}
+        >
+          <IncomingSVG />
+          <NavLink to='/profile/incoming' className={styles.button}>
+            Входящие заявки
+          </NavLink>
+        </li>
 
-        <div className={styles['profile-menu__rating']}>
-          {Array(profileUserInfo.rating || 0)
-            .fill(0)
-            .map((_, i) => (
-              <span key={i} className={styles['profile-menu__rating-item']}>
-                ★
-              </span>
-            ))}
-        </div>
+        <li
+          className={`${styles['profile-menu__item']} ${
+            isActive('/profile/outgoing') ? styles.active : ''
+          }`}
+        >
+          <OutgoingSVG />
+          <NavLink to='/profile/outgoing' className={styles.button}>
+            Исходящие заявки
+          </NavLink>
+        </li>
 
-        <h2 className={styles['profile-menu__user-name']}>
-          {profileUserInfo.user || 'Имя не указано'}
-        </h2>
+        <li className={styles['profile-menu__item']}>
+          <StarSVG />
+          <NavLink to='#' className={styles.button}>
+            Активные сессии
+          </NavLink>
+        </li>
 
-        <div className={styles['profile-menu__user-data']}>
-          {profileUserInfo.userData || 'Данные отсутствуют'}
-        </div>
+        <li className={styles['profile-menu__item']}>
+          <IdeaSVG />
+          <NavLink to='#' className={styles.button}>
+            Мои навыки
+          </NavLink>
+        </li>
 
-        <p className={styles['profile-menu__description']}>
-          {profileUserInfo.description || 'Описание отсутствует'}
-        </p>
-      </div>
+        <li
+          className={`${styles['profile-menu__item']} ${isActive('/profile') ? styles.active : ''}`}
+        >
+          <UserFramedSVG />
+          <NavLink to='/profile' className={styles.button}>
+            Личные данные
+          </NavLink>
+        </li>
 
-      <div className={styles['profile-menu__nav']}>
-        {hasMenuItems ? (
-          <ul className={styles['profile-menu__nav-menu']}>
-            {profileMenuItems.map(({ label, href, active }, index) => (
-              <li
-                key={index}
-                className={`${styles['profile-menu__nav-item']} ${
-                  active ? styles['profile-menu__nav-item--active'] : ''
-                }`}
-              >
-                <Link className={styles['profile-menu__nav-link']} to={href}>
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className={styles['profile-menu__nav-empty']}>Навигация недоступна</p>
-        )}
-      </div>
-    </aside>
+        <li className={styles['profile-menu__item']}>
+          <LikeSVG />
+          <NavLink to='#' className={styles.button}>
+            Избранное
+          </NavLink>
+        </li>
+      </ul>
+    </div>
   );
 };

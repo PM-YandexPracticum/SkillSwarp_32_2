@@ -1,13 +1,8 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import styles from './modalUI.module.css';
+import type { TModalProps } from './type';
 
-interface ModalUIProps {
-  title?: string;
-  onClose: () => void;
-  children: ReactNode;
-}
-
-export const ModalUI: FC<ModalUIProps> = ({ title, onClose, children }) => (
+export const ModalUI: FC<TModalProps> = ({ title, onClose, children }) => (
   <div className={styles.overlay}>
     <div className={styles.modal}>
       <button className={styles.close} onClick={onClose} aria-label='Закрыть модальное окно'>×</button>

@@ -2,17 +2,54 @@ import type { FC } from 'react';
 import styles from './main.module.css';
 import { CardListUI } from '@/shared/ui';
 import { FilterBlock } from '@/widgets';
-import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
+import type { commonFilterType, TMainSkillFilter } from '@/shared/global-types';
+import { useDispatch, useSelector } from '@/services/store';
+import { useEffect } from 'react';
+import {
+  toggleEducationFilter,
+  toggleGenderFilter,
+  toggleSkillsFilter,
+  getCitiesState,
+  getEducationState,
+  getGenderState,
+  getSkillsState,
+  setMockFilters,
+  toggleCityFilter,
+} from '@/services/slices';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 
 export const Main: FC = () => {
-  function getCommonFilterValue(data: commonFilterType[]) {
-    console.log(data);
-  }
+  const dispatch = useDispatch();
+  const educationState = useSelector(getEducationState);
+  const genderState = useSelector(getGenderState);
+  const skillsState = useSelector(getSkillsState);
+  const citiesState = useSelector(getCitiesState);
 
-  function getSkillFilterValue(data: TSkillSubFilter[]) {
-    console.log(data);
-  }
+  useEffect(() => {
+    dispatch(setMockFilters());
+  }, [dispatch]);
+
+  const onEducationChange = (filters: commonFilterType[]) => {
+    const activeFilter = filters.find((f) => f.status);
+    if (activeFilter) {
+      dispatch(toggleEducationFilter(activeFilter));
+    }
+  };
+
+  const onGenderChange = (filters: commonFilterType[]) => {
+    const activeFilter = filters.find((f) => f.status);
+    if (activeFilter) {
+      dispatch(toggleGenderFilter(activeFilter));
+    }
+  };
+
+  const getSkillFilterValue = (data: TMainSkillFilter[]) => {
+    dispatch(toggleSkillsFilter(data));
+  };
+
+  const onCityChange = (data: string) => {
+    dispatch(toggleCityFilter(data));
+  };
 
   // Веременно оставлю тут массивы карточек для отображения
 
@@ -24,10 +61,14 @@ export const Main: FC = () => {
     <main className={styles.main}>
       <div>
         <FilterBlock
-          onEducationChange={getCommonFilterValue}
-          onGenderChange={getCommonFilterValue}
+          educationFilters={educationState}
+          cityFilters={citiesState}
+          skillFilters={skillsState}
+          genderFilters={genderState}
           onSkillChange={getSkillFilterValue}
-          onCityChange={getSkillFilterValue}
+          onCityChange={onCityChange}
+          onEducationChange={onEducationChange}
+          onGenderChange={onGenderChange}
         />
       </div>
       <div className={styles.card_blocks}>
