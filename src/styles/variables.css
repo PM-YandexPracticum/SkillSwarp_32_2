@@ -58,3 +58,32 @@
   --yellow-color: #fde277;
   --button-hover-color: #deebc5;
 }
+
+/* Темная тема */
+[data-theme="dark"] {
+  /* Цвета текста */
+  --text-redesigned: #e8f5dc;
+  --caption-redesigned: #a8b89c;
+  --toggle-redesigned: #5d6b51;
+  --disabled-text-redesigned: #6b7663;
+  --disabled-redesigned: #3a4234;
+  --accent-redesigned: #8bb85a;
+
+  /* Фоновые цвета */
+  --bg-color: #1a1f16;
+  --accent-background: #2a2f26;
+
+  /* Состояния */
+  --alarm-color: #ff6b5b;
+  --error-color: #ff4436;
+  --disabled-color: #3a4234;
+  --interaction-color: #a8d478;
+
+  /* Прочее */
+  --black-color: #f3f3f3;
+  --gold-color: #ffdb4c;
+  --grey-staff-color: #404040;
+  --grey-deep-color: #8e8e93;
+  --yellow-color: #ffe588;
+  --button-hover-color: #6b8f42;
+}

@@ -1,0 +1,24 @@
+/* src/widgets/theme-button/theme-button.module.css */
+.theme_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: inherit;
+}
+
+.theme_button:hover {
+  color: var(--caption-redesigned);
+}
+
+.theme_button:active {
+  color: var(--interaction-color);
+}
+
+.theme_button:focus {
+  outline: none;
+}

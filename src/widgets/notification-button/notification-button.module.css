@@ -1,0 +1,42 @@
+/* src/widgets/notification-button/notification-button.module.css */
+.notification_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: inherit;
+}
+
+.notification_button:hover {
+  color: var(--caption-redesigned);
+}
+
+.notification_button:active {
+  color: var(--interaction-color);
+}
+
+.notification_button:focus {
+  outline: none;
+}
+
+.icon_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification_dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--alarm-color);
+  border-radius: 50%;
+  border: 1px solid var(--bg-color);
+}

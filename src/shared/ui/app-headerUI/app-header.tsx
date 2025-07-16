@@ -2,16 +2,14 @@ import type { FC } from 'react';
 import styles from './app-header.module.css';
 import type { TAppHeaderUIProps } from './type';
 import { ButtonUI } from '../buttonUI';
-import { LikeSVG } from '@/assets/svg/like';
-import { ChevronDownSVG, CrossSVG, LogoVG, MoonSVG } from '@/assets/svg';
-import { NotificationSVG } from '@/assets/svg/notification';
+import { ChevronDownSVG, CrossSVG, LogoVG } from '@/assets/svg';
 import { SearchFieldUI } from '../search-fieldUI';
+import { ThemeButton, NotificationButton, LikeButton } from '@/widgets';
 
 export const AppHeaderUI: FC<TAppHeaderUIProps> = ({
   onSkillsClick,
-  onToggleTheme: onToogleTheme,
+  onToggleTheme,
   onNotificationClick,
-  onLikeClick,
   onClearButtonClick,
   user,
   isLoginOrRegister,
@@ -36,23 +34,23 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({
           </div>
           <SearchFieldUI onReset={onClearButtonClick} />
           <div className={styles.header_part_right}>
-            <ButtonUI
-              type='button'
-              onClick={onToogleTheme}
-              className={styles.button}
-              aria-label='Переключение цветовой темы'
-            >
-              <MoonSVG />
-            </ButtonUI>
+            <ThemeButton
+              onClick={onToggleTheme} 
+              className={styles.button} 
+            />
             {user ? (
               <div className={`${styles.header_logged_in}`}>
                 <div className={styles.icons}>
-                  <ButtonUI type='button' onClick={onNotificationClick} className={styles.button}>
-                    <NotificationSVG />
-                  </ButtonUI>
-                  <ButtonUI type='button' onClick={onLikeClick} className={styles.button}>
-                    <LikeSVG />
-                  </ButtonUI>
+                  <NotificationButton 
+                    onClick={onNotificationClick}
+                    className={styles.button}
+                    hasNotifications={true}
+                  />
+                  <LikeButton 
+                    type="link"
+                    to="/favorites"
+                    className={styles.button}
+                  />
                 </div>
                 <ButtonUI type='link' className={styles.button} to='/profile'>
                   <p>{user.name}</p>
