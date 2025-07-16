@@ -7,8 +7,7 @@ import type { setStateProps } from '../type';
 
 //дописать взаимодействие и дополнить тип
 
-export const RegisterYouOffer: FC<setStateProps> = ({setCurrentPage}) => {
-
+export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   const [offer, setOffer] = useState('');
   const [description, setDescription] = useState('');
   const [file, setFile] = useState('');
@@ -19,11 +18,15 @@ export const RegisterYouOffer: FC<setStateProps> = ({setCurrentPage}) => {
   //const location = useLocation();
   //const from = location.state?.from || { pathname: '/' };
 
+  const handleBack = () => {
+    setCurrentPage((current) => current - 1);
+  };
+
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     setCurrentPage((current) => current + 1);
   };
-/*
+  /*
   useEffect(() => {
     dispatch(clearErrorMessage());
   }, []);
@@ -34,9 +37,10 @@ export const RegisterYouOffer: FC<setStateProps> = ({setCurrentPage}) => {
       setOffer={setOffer}
       description={description}
       setDescription={setDescription}
-      handleSubmit={handleSubmit} 
-      file={file} 
-      setFile={setFile}      
-      />
+      handleSubmit={handleSubmit}
+      file={file}
+      setFile={setFile}
+      handleBack={handleBack}
+    />
   );
 };

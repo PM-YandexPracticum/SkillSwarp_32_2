@@ -15,6 +15,10 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
   //const location = useLocation();
   //const from = location.state?.from || { pathname: '/' };
 
+  const handleBack = () => {
+    setCurrentPage((current) => current - 1);
+  };
+
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     setCurrentPage((current) => current + 1);
@@ -30,5 +34,5 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
     dispatch(clearErrorMessage());
   }, []);
 */
-  return <RegisterAboutYouUI name={name} setName={setName} handleSubmit={handleSubmit} />;
+  return <RegisterAboutYouUI name={name} setName={setName} handleSubmit={handleSubmit} handleBack={handleBack} />;
 };

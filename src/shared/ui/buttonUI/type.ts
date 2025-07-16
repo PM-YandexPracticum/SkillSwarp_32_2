@@ -20,4 +20,12 @@ interface ButtonAsLink {
   to: string;
 }
 
-export type ButtonUIProps = ButtonAsButton | ButtonAsLink;
+interface ButtonAsSubmit {
+  type: 'submit';
+  onClick?: never;
+  children?: ReactNode;
+  className?: string;
+  to?: string;
+}
+
+export type ButtonUIProps = ButtonAsButton | ButtonAsLink | ButtonAsSubmit;
