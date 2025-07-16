@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-  margin-top: 24px;
+  margin-top: 10px;
 }
 
 .button {

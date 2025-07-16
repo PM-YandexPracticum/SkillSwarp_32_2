@@ -10,4 +10,5 @@ export type FilterBlockProps = {
   onGenderChange: (selectedValue: commonFilterType[]) => void;
   onSkillChange: (selectedValue: TMainSkillFilter[]) => void;
   onCityChange: (selectedValue: string) => void;
+  activeFiltersCount: number;
 };
