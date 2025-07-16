@@ -8,7 +8,6 @@ import { SkillPage } from '@/pages/skill-page';
 import { Test } from '@/pages/test';
 import { Footer } from '@/shared/ui/footer';
 import { AppHeader } from '@/widgets/app-header';
-import { ServerError } from '@/pages/server-error';
 
 function App() {
   // решил скопировать работу модалок из бургерной :)
@@ -25,7 +24,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='*' element={<ServerError />} />
+        <Route path='*' element={<Error404 />} />
         <Route path='/skill/:userId' element={<SkillPage />} />
         {/* сюда добавляйте компоненты для тестирования */}
         <Route path='/test' element={<Test />} />
