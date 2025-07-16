@@ -4,6 +4,8 @@ export type CheckboxDropdownUIProps = {
   label: string;
   options: TSkillSubFilter[];
   selectedOptions: TSkillSubFilter[];
+  isOpen: boolean;
   onSelect: (selected: TSkillSubFilter[]) => void;
-  onClose?: () => void;
+  onToggle: () => void;
+  className?: string;
 };

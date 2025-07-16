@@ -1,7 +1,8 @@
-import type { TMainSkillFilter, TSkillSubFilter } from '@/shared/global-types';
+import type { TMainSkillFilter } from '@/shared/global-types';
 
 export type CheckBoxDropDownGroupProps = {
   title: string;
   filters: TMainSkillFilter[];
-  onChange:(selectedValues: TSkillSubFilter[]) => void;
-}
+  onChange: (updatedFilters: TMainSkillFilter[]) => void;
+  className?: string;
+};

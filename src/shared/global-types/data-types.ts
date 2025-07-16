@@ -110,3 +110,8 @@ export interface TCity {
   id: string;
   title: string;
 }
+
+export interface TCityFilter extends TCity {
+  type: string;
+  status: boolean;
+}
