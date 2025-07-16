@@ -1,9 +1,13 @@
-import type { commonFilterType, TSkillSubFilter } from '@/shared/global-types';
+import type { commonFilterType, TCityFilter, TMainSkillFilter } from '@/shared/global-types';
 
 
 export type FilterBlockProps = {
+  educationFilters: commonFilterType[];
+  cityFilters: TCityFilter[];
+  skillFilters: TMainSkillFilter[];
+  genderFilters: commonFilterType[];
   onEducationChange: (selectedValue: commonFilterType[]) => void;
   onGenderChange: (selectedValue: commonFilterType[]) => void;
-  onSkillChange: (selectedValue: TSkillSubFilter[]) => void;
-  onCityChange: (selectedValue: TSkillSubFilter[]) => void;
+  onSkillChange: (selectedValue: TMainSkillFilter[]) => void;
+  onCityChange: (selectedValue: string) => void;
 };

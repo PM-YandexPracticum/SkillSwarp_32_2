@@ -1,5 +1,5 @@
 import { fetchCategoriesData, fetchCitiesData } from '@/api';
-import type { commonFilterType, TCityFilter, TSkillSubFilter } from '@/shared/global-types';
+import type { commonFilterType, TCityFilter, TMainSkillFilter, TSkillSubFilter } from '@/shared/global-types';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
@@ -10,7 +10,7 @@ export const getCities = createAsyncThunk('cities/get', fetchCitiesData);
 export type FilterState = {
   education: commonFilterType[];
   gender: commonFilterType[];
-  skills: TSkillSubFilter[];
+  skills: TMainSkillFilter[];
   cities: TCityFilter[];
 };
 
@@ -69,10 +69,10 @@ export const filterSlice = createSlice({
   },
   reducers: {
     setMockFilters: (state) => {
-      state.skills = ALL_SUBFILTERS;
+      state.skills = MAIN_FILTERS_MOCK;
       state.cities = CITIES_MOCK.map((city) => ({
-        id: city.id,
         title: city.title,
+        id: city.id,
         type: 'city',
         status: false,
       }));
@@ -89,15 +89,16 @@ export const filterSlice = createSlice({
         status: item.value === action.payload.value,
       }));
     },
-    addSkillsFilter: (state, action: PayloadAction<TSkillSubFilter[]>) => {
+    addSkillsFilter: (state, action: PayloadAction<TMainSkillFilter[]>) => {
       state.skills = action.payload;
     },
-    addCitiesFilter: (state, action: PayloadAction<TSkillSubFilter>) => {
-      state.cities = state.cities.map((city) =>
-        city.id === action.payload.id ? { ...city, status: true } : city
-      );
-      //state.cities = action.payload;
-    },
+toggleCityFilter: (state, action: PayloadAction<string>) => {
+  state.cities = state.cities.map(city => 
+    city.id === action.payload
+      ? { ...city, status: !city.status }
+      : city
+  );
+},
     removeEducationFilter: (state) => {
       state.education = state.education.map((item) => ({
         ...item,
@@ -130,13 +131,16 @@ export const filterSlice = createSlice({
         status: item.value === null,
       }));
       //просто достаточно список пустым сделать попробовать
-      state.skills = state.skills.map((city) => ({
-        ...city,
-        status: false,
+      state.skills = state.skills.map(mainFilter => ({
+        ...mainFilter,
+        subFilters: mainFilter.subFilters.map(sub => ({
+          ...sub,
+          status: false
+        }))
       }));
 
-      state.cities = state.cities.map((city) => ({
-        ...city,
+      state.cities = state.cities.map((item) => ({
+        ...item,
         status: false,
       }));
     },
@@ -161,7 +165,7 @@ export const {
   addEducationFilter,
   addGenderFilter,
   addSkillsFilter,
-  addCitiesFilter,
+  toggleCityFilter,
   // removeEducationFilter,
   // removeGenderFilter,
   // removeSkillsFilter,

@@ -1,50 +1,45 @@
-import { useEffect, useState, type FC } from 'react';
+import { type FC } from 'react';
 import { CheckboxUI } from '../checkboxUI';
 import styles from './checkbox-group.module.css';
-import type { TCityFilter, TSkillSubFilter } from '@/shared/global-types';
+import type { TSkillSubFilter } from '@/shared/global-types';
 
-type CheckboxUIGroupProps = {
-  title?: string;
-  filters: TSkillSubFilter[] | TCityFilter[];
-  selectedOptions?: TSkillSubFilter[] | TCityFilter[];
-  onSelect: (selected: TSkillSubFilter[] | TCityFilter[]) => void;
+export type TCityFilter = {
+  id: string;
+  title: string;
+  type: string;
+  status: boolean;
 };
 
-export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
-  filters,
-  onSelect,
-  title,
-  selectedOptions = [],
+type CheckboxGroupUIProps = {
+  title?: string;
+  filters: TCityFilter[] | TSkillSubFilter[];
+  onSelect: (id: string) => void; // Теперь передаем только ID измененного элемента
+};
+
+export const CheckboxGroupUI: FC<CheckboxGroupUIProps> = ({ 
+  title, 
+  filters, 
+  onSelect 
 }) => {
-  const [allOptions, setAllOptions] = useState<TSkillSubFilter[]>(() => {
-    return filters.map((filter) => {
-      const selected = selectedOptions.find((o) => o.id === filter.id);
-      return selected ? { ...filter, status: selected.status } : filter;
-    });
-  });
+  // Полностью убрали локальное состояние
+  // Работаем напрямую с переданными фильтрами из стора
 
-  const handleCheckboxChange = (option: TSkillSubFilter) => {
-    setAllOptions((prev) =>
-      prev.map((item) => (item.id === option.id ? { ...item, status: !item.status } : item))
-    );
+  const handleCheckboxChange = (id: string) => {
+    // Просто передаем ID измененного элемента
+    onSelect(id);
   };
-
-  // Передаем все опции при каждом изменении
-  useEffect(() => {
-    onSelect(allOptions);
-  }, [allOptions, onSelect]);
 
   return (
     <div className={styles.container}>
       {title && <h3>{title}</h3>}
       <div className={styles.checkbox_list}>
-        {allOptions.map((option) => (
+        {filters.map((filter) => (
           <CheckboxUI
-            key={option.id}
-            label={option.title}
-            value={option.id}
-            checked={option.status}
-            onChange={() => handleCheckboxChange(option)}
+            key={filter.id}
+            label={filter.title}
+            value={filter.id}
+            checked={filter.status}
+            onChange={() => handleCheckboxChange(filter.id)}
           />
         ))}
       </div>
