@@ -4,6 +4,7 @@ import { ProfileMenu } from '@/shared/ui/profileMenuUI';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { UserCard } from '@/widgets';
 import { USERS_DATA } from '@/shared/global-types/data-users-example';
+import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 
 export const ProfileOutgoing = () => {
   return (
@@ -31,8 +32,8 @@ export const ProfileOutgoing = () => {
         <div
           className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-menu--applications']}`}
         >
-          <UserCard />
-          <UserCard />
+          <UserCard card={CARDS_DATA[10]} type={'short'} />
+          <UserCard card={CARDS_DATA[20]} type={'short'} />
         </div>
       </div>
     </main>
