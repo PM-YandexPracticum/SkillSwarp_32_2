@@ -6,6 +6,7 @@
     flex-direction: column;
     padding: 60px;
     border: 1px solid var(--caption-redesigned);
+    border-radius: 12px;
 }
 
 .not_visible {
