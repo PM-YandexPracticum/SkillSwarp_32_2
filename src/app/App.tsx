@@ -18,7 +18,6 @@ import { useDispatch } from '@/services/store';
 function App() {
   // решил скопировать работу модалок из бургерной :)
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getCities());
