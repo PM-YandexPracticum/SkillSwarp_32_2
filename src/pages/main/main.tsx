@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import styles from './main.module.css';
 import { CardListUI } from '@/shared/ui';
-import { FilterBlock, UserCard } from '@/widgets';
+import { FilterBlock } from '@/widgets';
 import type { commonFilterType, TMainSkillFilter } from '@/shared/global-types';
 import { useDispatch, useSelector } from '@/services/store';
 import { useEffect } from 'react';
