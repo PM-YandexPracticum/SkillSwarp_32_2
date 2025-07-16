@@ -23,32 +23,39 @@ export const formatAge = (age: number) => {
 
 // сортировка по популярности
 
-export const sortByPopular = (cards: TCard[]) => {
-  return cards.sort((a, b) => b.likes.length - a.likes.length);
+export const sortByPopular = (cards: TCard[], count?: number): TCard[] => {
+  const sorted = cards.sort((a, b) => b.likes.length - a.likes.length)
+  if(!count) return sorted
+  return sorted.filter((__, index) => index < count)
 };
 
 // сортировка по новизне
 
-export const sortByNewest = (cards: TCard[]) => {
-  return cards.sort((a, b) => b.createdAt - a.createdAt);
+export const sortByNewest = (cards: TCard[], count?: number): TCard[] => {
+  const sorted = cards.sort((a, b) => b.createdAt - a.createdAt)
+  if(!count) return sorted;
+  return sorted.filter((__, index) => index < count )
 };
 
 // сортировка для рекомендаций
 
 // хаотичная
-export const sorByRecomendedChaos = (cards: TCard[]) => {
-  const result = [...cards];
-  for (let i = result.length - 1; i > 0; i--) {
+export const sorByRecomendedChaos = (cards: TCard[], count?: number): TCard[] => {
+  const sorted = [...cards];
+  for (let i = sorted.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [result[i], result[j]] = [result[j], result[i]];
+    [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
   }
-  return result;
+
+  if(!count) return sorted;
+
+  return sorted.filter((__, index) => index < count)
 };
 
 // по скиллам
 
-export const sortByRecommendedSkills = (cards: TCard[], userCard: TCard): TCard[] => {
-  return cards.sort((first, second) => {
+export const sortByRecommendedSkills = (cards: TCard[], userCard: TCard, count?: number): TCard[] => {
+  const sorted = cards.sort((first, second) => {
     const countMatches = (card: TCard) => {
       return card.teachSkill.filter((skill) =>
         userCard.learnSkill.some(
@@ -59,4 +66,8 @@ export const sortByRecommendedSkills = (cards: TCard[], userCard: TCard): TCard[
 
     return countMatches(second) - countMatches(first);
   });
+
+  if(!count) return sorted
+
+  return sorted.filter((__, index) => index < count)
 };
