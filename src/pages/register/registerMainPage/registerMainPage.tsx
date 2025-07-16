@@ -1,37 +1,39 @@
-import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
-import { /*useEffect,*/ useState } from 'react';
+import type { FC, SyntheticEvent } from 'react';
+import { useEffect, useState } from 'react';
 import { RegisterUI } from '@/shared/ui/registerUI';
 import type { setStateProps } from '../type';
-//import { useDispatch, useSelector } from '../../services/store';
-//import { useLocation, useNavigate } from 'react-router-dom';
-
-//дописать взаимодействие и дополнить тип
+import store, { useDispatch, useSelector } from '@/services/store/store';
+import { useNavigate } from 'react-router-dom';
+import { clearErrorMessage, selectError, setError, setRegistrationStepData } from '@/services/slices/userSlice';
 
 export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  //раскоментить когда будет взаимодействие с апи
-  //const dispatch = useDispatch();
-  const error = ''; //useSelector(selectError);
-  //const navigate = useNavigate();
-  //const location = useLocation();
-  //const from = location.state?.from || { pathname: '/' };
+
+  const dispatch = useDispatch();
+  const error = useSelector(selectError);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     setCurrentPage((current) => current + 1);
-    /*  const data = { email, password };
 
-    dispatch(fetchLoginUser(data)).then(() => {
-      navigate(from);
-    });
-    */
+
+    if (!email.trim() || !password.trim()) {
+      dispatch(setError('Введите email и пароль'));
+      return;
+    }
+
+    dispatch(setRegistrationStepData({ mail: email, password }));
+    console.log(store.getState());
+
+    navigate('/register/about');
   };
-  /*
+
   useEffect(() => {
     dispatch(clearErrorMessage());
   }, []);
-*/
+ 
   return (
     <RegisterUI
       errorText={error}

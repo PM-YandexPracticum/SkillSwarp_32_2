@@ -9,7 +9,6 @@ export const Login: FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  //раскоментить когда будет взаимодействие с апи
   const dispatch = useDispatch();
   const error = useSelector(selectError);
   const navigate = useNavigate();
