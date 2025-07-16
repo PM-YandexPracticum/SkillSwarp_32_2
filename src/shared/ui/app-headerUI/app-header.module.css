@@ -1,32 +1,24 @@
-/* ToDo: когда появятся глобальные стили, дочерние компоненты убрать лишние стили */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   background-color: var(--bg-color);
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
-  color: var(--text-redesigned);
+  z-index: 1;
 }
 
 .nav {
   display: flex;
+  justify-content: space-between;
   padding: 36px 36px 20px 36px;
   gap: 32px;
-}
-
-.header_part_left {
-  display: flex;
-  gap: 24px;
 }
 
 .logo {
@@ -43,7 +35,12 @@
   font-size: 24px;
   line-height: 133%;
   letter-spacing: -0.01em;
-  padding-right: 14px;
+  padding-right: 7px;
+}
+
+.header_part_left {
+  display: flex;
+  gap: 24px;
 }
 
 .button {
@@ -51,23 +48,9 @@
   text-wrap: nowrap;
   gap: 4px;
   align-items: center;
-  border: none;
-  background-color: inherit;
   position: relative;
   transition: color 0.3s ease;
   text-decoration: none;
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  color: inherit;
-}
-
-.header_search {
-  flex-grow: 1;
-
 }
 
 .header_part_right {
@@ -75,11 +58,10 @@
   display: flex;
   flex-direction: row;
   gap: 32px;
-  background-color: var(--bg-color);
 }
 
 .header_part_right:has(.header_logged_in) {
-  gap: 24px;
+  gap: 20px;
 }
 
 .header_logged_in {
@@ -117,6 +99,8 @@
   border: 1px solid var(--accent-redesigned);
   border-radius: 12px;
   padding-inline: 27px;
+  transition: border-color 0.3s ease;
+  background-color: var(--accent-background);
 }
 
 .button_primary:hover {
@@ -131,12 +115,32 @@
   border-radius: 12px;
   padding-inline: 23.5px;
   background-color: var(--accent-redesigned);
+  transition: background-color 0.3s ease;
 }
 
-.button_secondary:hover{
+.button_secondary:hover {
   background-color: var(--button-hover-color);
 }
 
-.button_secondary:active{
+.button_secondary:active {
   background-color: var(--interaction-color);
+}
+
+.close_button {
+  gap: 8px;
+  background-color: var(--accent-background);
+  border-radius: 12px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.close_button:hover {
+  color: rgba(37, 48, 23, 0.75);
+  border-color: rgba(37, 48, 23, 0.75);
+}
+
+.close_button:active {
+  color: inherit;
+  border-color: inherit;
 }
