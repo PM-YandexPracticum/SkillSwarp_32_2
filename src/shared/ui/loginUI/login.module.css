@@ -17,6 +17,7 @@
   gap: 32px;
   align-items: center;
   padding-block-end: 50px;
+  margin-top: 104px; /* На высоту фиксированной шапки */
 }
 
 .general {

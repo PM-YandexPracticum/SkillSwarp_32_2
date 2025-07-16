@@ -16,6 +16,7 @@ import {
   setMockFilters,
   toggleCityFilter,
 } from '@/services/slices';
+import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -50,6 +51,12 @@ export const Main: FC = () => {
     dispatch(toggleCityFilter(data));
   };
 
+  // Веременно оставлю тут массивы карточек для отображения
+
+  const cardsPopular = CARDS_DATA.filter((__, index) => index < 3 );
+  const cardsNew = CARDS_DATA.filter((__, index) => index >= 3 && index < 6);
+  const cardsRecomended = CARDS_DATA.filter((__, index) => index >= 6);
+
   return (
     <main className={styles.main}>
       <div>
@@ -65,21 +72,9 @@ export const Main: FC = () => {
         />
       </div>
       <div className={styles.card_blocks}>
-        <CardListUI title='Популярное' handleOpen={() => {}}>
-          {[...Array(3)].map((_, index) => (
-            <UserCard key={index} />
-          ))}
-        </CardListUI>
-        <CardListUI title='Новое' handleOpen={() => {}}>
-          {[...Array(3)].map((_, index) => (
-            <UserCard key={index} />
-          ))}
-        </CardListUI>
-        <CardListUI title='Рекомендуем'>
-          {[...Array(9)].map((_, index) => (
-            <UserCard key={index} />
-          ))}
-        </CardListUI>
+        <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
+        <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
+        <CardListUI title='Рекомендуем' cards={cardsRecomended} />
       </div>
     </main>
   );

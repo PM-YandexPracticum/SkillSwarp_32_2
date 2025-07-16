@@ -4,7 +4,7 @@ export interface UserData {
   city: string;
   //будет ссылка на картинку?
   image: string;
-  description: string;
+  description?: string;
 }
 
 export interface skill {
