@@ -24,6 +24,7 @@ import {
   sortByNewest,
   sortByPopular,
 } from '@/shared/lib/helpers/helpers';
+import { EnabledFiltersBlock } from '@/widgets/enabled-filters-block';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -137,7 +138,16 @@ export const Main: FC = () => {
       {checkFiltersState ? (
         cards.length > 0 ? (
           <div className={styles.card_blocks}>
-            <CardListUI cards={cards} title={''} />
+            {activeFilters.length > 0 && (
+              <>
+                <EnabledFiltersBlock filters={activeFilters} />
+                <CardListUI
+                  title={`Подходящие предложения: ${cards.length}`}
+                  handleSort={() => {}} // пока заглушка
+                  cards={cards}
+                />
+              </>
+            )}
           </div>
         ) : (
           <div className={styles.card_blocks}>
