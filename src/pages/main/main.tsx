@@ -1,16 +1,18 @@
 import type { FC } from 'react';
 import styles from './main.module.css';
-import { ButtonUI, CardListUI } from '@/shared/ui';
+import { CardListUI } from '@/shared/ui';
 import { FilterBlock, UserCard } from '@/widgets';
-import type { commonFilterType, TMainSkillFilter} from '@/shared/global-types';
+import type { commonFilterType, TMainSkillFilter } from '@/shared/global-types';
 import { useDispatch, useSelector } from '@/services/store';
 import { useEffect } from 'react';
 import {
-  addEducationFilter,
-  addGenderFilter,
-  addSkillsFilter,
+  toggleEducationFilter,
+  toggleGenderFilter,
+  toggleSkillsFilter,
+  getCitiesState,
   getEducationState,
-  resetAllFilters,
+  getGenderState,
+  getSkillsState,
   setMockFilters,
   toggleCityFilter,
 } from '@/services/slices';
@@ -18,57 +20,38 @@ import {
 export const Main: FC = () => {
   const dispatch = useDispatch();
   const educationState = useSelector(getEducationState);
-  const genderState = useSelector((state) => state.filter.gender);
-  const skillsState = useSelector((state) => state.filter.skills);
-  const citiesState = useSelector((state) => state.filter.cities);
+  const genderState = useSelector(getGenderState);
+  const skillsState = useSelector(getSkillsState);
+  const citiesState = useSelector(getCitiesState);
+
   useEffect(() => {
     dispatch(setMockFilters());
   }, [dispatch]);
 
-  useEffect(() => {
-  }, [educationState]);
-
-  useEffect(() => {
-  }, [genderState]);
-
-  useEffect(() => {
-  }, [skillsState]);
-
-  useEffect(() => {
-  }, [citiesState]);
-
   const onEducationChange = (filters: commonFilterType[]) => {
     const activeFilter = filters.find((f) => f.status);
     if (activeFilter) {
-      dispatch(addEducationFilter(activeFilter));
+      dispatch(toggleEducationFilter(activeFilter));
     }
   };
 
   const onGenderChange = (filters: commonFilterType[]) => {
     const activeFilter = filters.find((f) => f.status);
     if (activeFilter) {
-      dispatch(addGenderFilter(activeFilter));
+      dispatch(toggleGenderFilter(activeFilter));
     }
   };
 
   const getSkillFilterValue = (data: TMainSkillFilter[]) => {
-    console.log(data);
-    dispatch(addSkillsFilter(data));
+    dispatch(toggleSkillsFilter(data));
   };
 
   const onCityChange = (data: string) => {
     dispatch(toggleCityFilter(data));
-
-  };
-  const kek = () => {
-    dispatch(resetAllFilters());
   };
 
   return (
     <main className={styles.main}>
-      <ButtonUI type='button' onClick={kek}>
-        zsfhalsifhaksjf
-      </ButtonUI>
       <div>
         <FilterBlock
           educationFilters={educationState}

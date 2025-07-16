@@ -15,8 +15,6 @@ export const FilterBlock: FC<FilterBlockProps> = ({
   onCityChange,
 }) => {
 
-
-  
   return (
     <div className={styles.container}>
       <h2>Фильтры</h2>
