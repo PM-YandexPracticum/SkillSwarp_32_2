@@ -11,6 +11,7 @@ import { NotificationSVG } from '@/assets/svg/notification';
 import { getUserById } from '../../api/skill-swap-api';
 import { type FC } from 'react';
 import { ButtonUI } from '@/shared/ui';
+import { SkillPage } from '../skill-page';
 
 export const Test: FC = () => {
   async function alertUser(id: string) {
@@ -32,6 +33,7 @@ export const Test: FC = () => {
       <NotificationSVG />
       <SearchSVG />
       <RadiobuttonActiveSVG />
+      <SkillPage />
     </>
   );
 };
