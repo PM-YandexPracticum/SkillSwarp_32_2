@@ -6,7 +6,7 @@
 .footer {
   max-width: 1440px;
   margin: 40px auto 0;
-  background-color: var(--white-color);
+  background-color: var(--accent-background);
   padding: 32px 35.5px;
   display: flex;
   flex-wrap: nowrap;
@@ -83,7 +83,7 @@
 }
 
 .footer__nav-link:hover {
-  color: blue;
+  color: var(--interaction-color);
 }
 
 .footer__nav-item::before {
