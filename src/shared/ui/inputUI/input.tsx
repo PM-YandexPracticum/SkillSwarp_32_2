@@ -106,3 +106,5 @@ export const InputUI = forwardRef<HTMLInputElement, InputUIProps>(
     );
   }
 );
+
+InputUI.displayName = 'InputUI';
