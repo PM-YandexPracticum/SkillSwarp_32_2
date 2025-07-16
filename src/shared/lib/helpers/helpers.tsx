@@ -24,17 +24,17 @@ export const formatAge = (age: number) => {
 // сортировка по популярности
 
 export const sortByPopular = (cards: TCard[], count?: number): TCard[] => {
-  const sorted = cards.sort((a, b) => b.likes.length - a.likes.length)
-  if(!count) return sorted
-  return sorted.filter((__, index) => index < count)
+  const sorted = cards.sort((a, b) => b.likes.length - a.likes.length);
+  if(!count) return sorted;
+  return sorted.filter((__, index) => index < count);
 };
 
 // сортировка по новизне
 
 export const sortByNewest = (cards: TCard[], count?: number): TCard[] => {
-  const sorted = cards.sort((a, b) => b.createdAt - a.createdAt)
+  const sorted = cards.sort((a, b) => b.createdAt - a.createdAt);
   if(!count) return sorted;
-  return sorted.filter((__, index) => index < count )
+  return sorted.filter((__, index) => index < count );
 };
 
 // сортировка для рекомендаций
@@ -49,7 +49,7 @@ export const sorByRecomendedChaos = (cards: TCard[], count?: number): TCard[] =>
 
   if(!count) return sorted;
 
-  return sorted.filter((__, index) => index < count)
+  return sorted.filter((__, index) => index < count);
 };
 
 // по скиллам
@@ -67,7 +67,7 @@ export const sortByRecommendedSkills = (cards: TCard[], userCard: TCard, count?:
     return countMatches(second) - countMatches(first);
   });
 
-  if(!count) return sorted
+  if(!count) return sorted;
 
-  return sorted.filter((__, index) => index < count)
+  return sorted.filter((__, index) => index < count);
 };
