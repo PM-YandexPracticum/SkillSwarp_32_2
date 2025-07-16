@@ -11,17 +11,23 @@ import { ProfilePage } from '@/pages/profile-page';
 import { ProfileIncoming } from '@/pages/profile-incoming-page';
 import { ProfileOutgoing } from '@/pages/profile-outgoing-page';
 import { AppHeader } from '@/widgets/app-header';
+import { setMockFilters } from '@/services/slices';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 function App() {
   // решил скопировать работу модалок из бургерной :)
-
+    const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setMockFilters());
+  }, [dispatch]);
   const location = useLocation();
   const state = location.state as { backgroundLocation?: Location };
   const backgroundLocation = state?.backgroundLocation;
 
   return (
     <>
-      {/* <AppHeader /> */}
+      <AppHeader />
       <Routes location={backgroundLocation || location}>
         {/* пока смог выдеить только эти роуты. если найду еще - добавлю */}
         <Route path='/' element={<Main />} />

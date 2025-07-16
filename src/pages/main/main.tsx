@@ -2,9 +2,8 @@ import type { FC } from 'react';
 import styles from './main.module.css';
 import { CardListUI } from '@/shared/ui';
 import { FilterBlock } from '@/widgets';
-import type { commonFilterType, TCard, TMainSkillFilter } from '@/shared/global-types';
+import type { commonFilterType, TMainSkillFilter } from '@/shared/global-types';
 import { useDispatch, useSelector } from '@/services/store';
-import { useEffect } from 'react';
 import {
   toggleEducationFilter,
   toggleGenderFilter,
@@ -13,11 +12,16 @@ import {
   getEducationState,
   getGenderState,
   getSkillsState,
-  setMockFilters,
   toggleCityFilter,
 } from '@/services/slices';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
-import { checkAllActiveFilters, filterByCategories, filterByCities, filterCards } from '@/shared/lib/helpers/helpers';
+import {
+  checkAllActiveFilters,
+  filterCards,
+  sorByRecommendedChaos,
+  sortByNewest,
+  sortByPopular,
+} from '@/shared/lib/helpers/helpers';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -40,10 +44,6 @@ export const Main: FC = () => {
     citiesState
   );
 
-  useEffect(() => {
-    dispatch(setMockFilters());
-  }, [dispatch]);
-
   const onEducationChange = (filters: commonFilterType[]) => {
     const activeFilter = filters.find((f) => f.status);
     if (activeFilter) {
@@ -56,28 +56,21 @@ export const Main: FC = () => {
     if (activeFilter) {
       dispatch(toggleGenderFilter(activeFilter));
     }
-    // console.log(cards);
-    // console.log(checkFiltersState);
   };
 
   const getSkillFilterValue = (data: TMainSkillFilter[]) => {
-    // console.log(cards);
-    // console.log(checkFiltersState);
-
     dispatch(toggleSkillsFilter(data));
   };
 
   const onCityChange = (data: string) => {
-    const kek = filterByCategories(CARDS_DATA, skillsState, educationState)
-    console.log(kek, citiesState,educationState)
     dispatch(toggleCityFilter(data));
   };
 
   // Веременно оставлю тут массивы карточек для отображения
 
-  const cardsPopular = CARDS_DATA.filter((__, index) => index < 3);
-  const cardsNew = CARDS_DATA.filter((__, index) => index >= 3 && index < 6);
-  const cardsRecomended = CARDS_DATA.filter((__, index) => index >= 6);
+  const cardsPopular = sortByPopular(CARDS_DATA, 3);
+  const cardsNew = sortByNewest(CARDS_DATA, 3);
+  const cardsRecommendedChaos = sorByRecommendedChaos(CARDS_DATA);
 
   return (
     <main className={styles.main}>
@@ -94,12 +87,20 @@ export const Main: FC = () => {
         />
       </div>
       {checkFiltersState ? (
-        <CardListUI cards={cards} title={''} />
+        cards.length > 0 ? (
+          <div className={styles.card_blocks}>
+            <CardListUI cards={cards} title={''} />
+          </div>
+        ) : (
+          <div className={styles.card_blocks}>
+            <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
+          </div>
+        )
       ) : (
         <div className={styles.card_blocks}>
           <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
           <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
-          <CardListUI title='Рекомендуем' cards={cardsRecomended} />
+          <CardListUI title='Рекомендуем' cards={cardsRecommendedChaos} />
         </div>
       )}
     </main>

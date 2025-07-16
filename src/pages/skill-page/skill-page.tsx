@@ -1,7 +1,7 @@
 import styles from './skill-page.module.css';
 import { Footer } from '@/shared/ui/footer';
 import { UserCard } from '@/widgets';
-import { useCallback, useState, type FC } from 'react';
+import { type FC } from 'react';
 import { ArrowLeftSVG } from '@/assets/svg';
 import { ButtonUI } from '@/shared/ui';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';

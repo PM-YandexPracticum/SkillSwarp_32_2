@@ -28,7 +28,7 @@ export type SubFilterTypeMap = {
   other: OtherSubType; // если есть
 };
 
-export type genderType = null | 'male' | 'female';
+export type genderType = null | 'male' | 'female'; // Надо поменять на "none", поправить функции фильтрации и стор из за этого
 
 export type educationType = null | 'teach' | 'learn';
 
