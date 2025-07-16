@@ -38,6 +38,32 @@ export const LikeButton: FC<LikeButtonProps> = ({
   const buttonClass = `${styles.like_button} ${isLiked ? styles.liked : ''} ${className || ''}`;
   const ariaLabel = type === 'link' ? 'Избранное' : isLiked ? 'Убрать из избранного' : 'Добавить в избранное';
 
+  const content = (
+    <div className={styles.content}>
+      <LikeSVG 
+        contour={isLiked ? 'var(--alarm-color)' : 'currentColor'}
+        color={isLiked ? 'var(--alarm-color)' : 'transparent'}
+      />
+      {showCount && count > 0 && (
+        <span className={styles.count}>{count}</span>
+      )}
+    </div>
+  );
+
+  // Использую условный рендеринг для правильной типизации
+  if (type === 'link') {
+    return (
+      <ButtonUI
+        type='link'
+        to={to}
+        className={buttonClass}
+        aria-label={ariaLabel}
+      >
+        {content}
+      </ButtonUI>
+    );
+  }
+
   return (
     <ButtonUI
       type={type}
@@ -46,15 +72,7 @@ export const LikeButton: FC<LikeButtonProps> = ({
       className={buttonClass}
       aria-label={ariaLabel}
     >
-      <div className={styles.content}>
-        <LikeSVG 
-          contour={isLiked ? 'var(--alarm-color)' : 'currentColor'}
-          color={isLiked ? 'var(--alarm-color)' : 'transparent'}
-        />
-        {showCount && count > 0 && (
-          <span className={styles.count}>{count}</span>
-        )}
-      </div>
+      {content}
     </ButtonUI>
   );
 };
