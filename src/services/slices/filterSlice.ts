@@ -115,9 +115,12 @@ export const filterSlice = createSlice({
       }));
     },
     removeSkillsFilter: (state, action: PayloadAction<string>) => {
-      state.skills = state.skills.map((skill) =>
-        skill.id === action.payload ? { ...skill, status: false } : skill
-      );
+      state.skills = state.skills.map((category) => ({
+        ...category,
+        subFilters: category.subFilters.map((subFilter) =>
+          subFilter.id === action.payload ? { ...subFilter, status: false } : subFilter
+        ),
+      }));
     },
     removeCitiesFilter: (state, action: PayloadAction<string>) => {
       state.cities = state.cities.map((city) =>

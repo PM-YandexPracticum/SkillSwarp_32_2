@@ -4,8 +4,9 @@ import styles from './card-list.module.css';
 import { ButtonUI } from '../buttonUI';
 import { ChevronRightSVG } from '@/assets/svg';
 import { UserCard } from '@/widgets';
+import { SortSVG } from '@/assets/svg/sort';
 
-export const CardListUI: FC<CardListProps> = ({ title, cards, handleOpen }) => {
+export const CardListUI: FC<CardListProps> = ({ title, cards, handleOpen, handleSort }) => {
   return (
     <div className={styles.list}>
       {/* Правильно ли было использовать тут h3? в любом случае его легко можно будет поменять на другой тег */}
@@ -16,9 +17,17 @@ export const CardListUI: FC<CardListProps> = ({ title, cards, handleOpen }) => {
           <ButtonUI className={styles.button} type='button' onClick={handleOpen}>
             <span className={styles.button_text}>Смотреть все</span>
             <div className={styles.button_image}>
-              {/*<img src='' alt='стрелка вправо' />*/}
               <ChevronRightSVG />
             </div>
+          </ButtonUI>
+        )}
+        {/* реализация кнопки :) можно конечно вынести в отдельный компонент, но не вижу в этом смысла */}
+        {handleSort && (
+          <ButtonUI className={styles.button} type='button' onClick={handleSort}>
+            <div className={styles.button_image}>
+              <SortSVG />
+            </div>
+            <span className={styles.button_text}>Сначала новые</span>
           </ButtonUI>
         )}
       </div>

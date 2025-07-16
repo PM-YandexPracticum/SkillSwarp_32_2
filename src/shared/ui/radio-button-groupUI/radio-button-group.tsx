@@ -18,7 +18,7 @@ export const RadioButtonGroupUI: FC<RadioButtonGroupProps> = ({
 
   return (
     <div className={styles.radio_button_group}>
-      {title && <h3>{title}</h3>}
+      {title && <h3 className={styles.title}>{title}</h3>}
       <div className={styles.buttons_list}>
         {filters.map((filter, index) => (
           <RadioButtonUI

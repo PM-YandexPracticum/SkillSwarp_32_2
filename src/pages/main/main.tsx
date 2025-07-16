@@ -15,6 +15,7 @@ import {
   toggleCityFilter,
 } from '@/services/slices';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
+import { EnabledFiltersBlock } from '@/widgets/enabled-filters-block';
 import {
   checkAllActiveFilters,
   filterCards,
@@ -72,6 +73,42 @@ export const Main: FC = () => {
   const cardsNew = sortByNewest(CARDS_DATA, 3);
   const cardsRecommendedChaos = sorByRecommendedChaos(CARDS_DATA);
 
+  const activeFilters = [
+    ...educationState
+      .filter((f) => f.status && f.value !== null)
+      .map((f) => ({
+        id: f.value!,
+        title: f.title,
+        type: 'education',
+      })),
+
+    ...genderState
+      .filter((f) => f.status && f.value !== null)
+      .map((f) => ({
+        id: f.value!,
+        title: f.title,
+        type: 'gender',
+      })),
+
+    ...skillsState.flatMap((skill) =>
+      skill.subFilters
+        .filter((sf) => sf.status)
+        .map((sf) => ({
+          id: sf.id,
+          title: sf.title,
+          type: 'skill',
+        }))
+    ),
+
+    ...citiesState
+      .filter((city) => city.status)
+      .map((city) => ({
+        id: city.id,
+        title: city.title,
+        type: 'city',
+      })),
+  ];
+
   return (
     <main className={styles.main}>
       <div>
@@ -89,7 +126,16 @@ export const Main: FC = () => {
       {checkFiltersState ? (
         cards.length > 0 ? (
           <div className={styles.card_blocks}>
-            <CardListUI cards={cards} title={''} />
+            {activeFilters.length > 0 && (
+              <>
+                <EnabledFiltersBlock filters={activeFilters} />
+                <CardListUI
+                  title={`Подходящие предложения: ${cards.length}`}
+                  handleSort={() => {}} // пока заглушка
+                  cards={cards}
+                />
+              </>
+            )}
           </div>
         ) : (
           <div className={styles.card_blocks}>
