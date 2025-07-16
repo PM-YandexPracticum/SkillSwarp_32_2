@@ -4,6 +4,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0px 36px;
+  margin-top: 104px; /* На высоту фиксированной шапки */
 }
 
 .button {

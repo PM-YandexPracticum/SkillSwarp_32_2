@@ -6,6 +6,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px 36px;
+  margin-top: 104px; /* На высоту фиксированной шапки */
 }
 
 .card_blocks {
