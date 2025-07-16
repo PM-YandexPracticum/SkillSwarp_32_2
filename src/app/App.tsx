@@ -11,16 +11,19 @@ import { ProfilePage } from '@/pages/profile-page';
 import { ProfileIncoming } from '@/pages/profile-incoming-page';
 import { ProfileOutgoing } from '@/pages/profile-outgoing-page';
 import { AppHeader } from '@/widgets/app-header';
-import { setMockFilters } from '@/services/slices';
+import { getCards, setMockFilters } from '@/services/slices';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from '@/services/store';
 
 function App() {
   // решил скопировать работу модалок из бургерной :)
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(setMockFilters());
+    dispatch(getCards());
   }, [dispatch]);
+
   const location = useLocation();
   const state = location.state as { backgroundLocation?: Location };
   const backgroundLocation = state?.backgroundLocation;

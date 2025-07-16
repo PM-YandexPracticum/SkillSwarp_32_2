@@ -7,8 +7,20 @@
   background-color: var(--accent-background);
 }
 
+.title_container {
+  display: flex;
+  gap: 49px;
+}
+
 .title {
   font-size: 24px;
+}
+
+.button_reset {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--interaction-color);
 }
 
 .groups_container {

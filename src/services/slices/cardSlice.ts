@@ -1,5 +1,8 @@
+import { fetchCardsData } from '@/api';
 import type { TCard } from '@/shared/global-types';
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
+
+export const getCards = createAsyncThunk('categories/get', fetchCardsData);
 
 interface TInitialState {
   cards: TCard[];
@@ -12,8 +15,11 @@ const initialState: TInitialState = {
 };
 
 const cardsSlice = createSlice({
-  name: 'card-slice',
+  name: 'cards',
   initialState,
+  selectors: {
+    getCardsState: (state) => state.cards,
+  },
   reducers: {
     removeCard: (state, action: PayloadAction<string>) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
@@ -67,9 +73,13 @@ const cardsSlice = createSlice({
       }
     },
   },
-  // здесь будут санки. я их добавлю когда будет готов API
+  extraReducers: (builder) => {
+    builder.addCase(getCards.fulfilled, (state, action) => {
+      state.cards = action.payload;
+    });
+  },
 });
 
+export const { getCardsState } = cardsSlice.selectors;
 export const { addCard, changeCard, removeCard } = cardsSlice.actions;
-//export const  cardsReducer = cardsSlice.reducer;
 export default cardsSlice.reducer;
