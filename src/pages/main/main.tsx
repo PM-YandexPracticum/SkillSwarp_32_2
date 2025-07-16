@@ -68,9 +68,14 @@ export const Main: FC = () => {
     if (activeFilter) {
       dispatch(toggleGenderFilter(activeFilter));
     }
+    // console.log(cards);
+    // console.log(checkFiltersState);
   };
 
   const getSkillFilterValue = (data: TMainSkillFilter[]) => {
+    // console.log(cards);
+    // console.log(checkFiltersState);
+
     dispatch(toggleSkillsFilter(data));
   };
 
