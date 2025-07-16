@@ -47,8 +47,8 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({
                     hasNotifications={true}
                   />
                   <LikeButton 
-                    type="link"
-                    to="/favorites"
+                    type='link'
+                    to='/favorites'
                     className={styles.button}
                   />
                 </div>
