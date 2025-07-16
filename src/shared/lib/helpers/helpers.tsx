@@ -36,7 +36,6 @@ export const filterByCities = (cards: TCard[], cities: TCityFilter[]) => {
 
 // Фильтрация по полу
 export const filterByGender = (cards: TCard[], genderFilters: commonFilterType[]) => {
-  if (genderFilters[0].status) return cards
   const selected = genderFilters.find((filter) => filter.status);
   if (!selected || !selected.value) return cards;
 
@@ -49,7 +48,6 @@ export const filterByCategories = (
   skillFilters: TMainSkillFilter[],
   educationFilters: commonFilterType[]
 ): TCard[] => {
-  if (educationFilters[0].status) return cards
   const selectedEducation = educationFilters.find((filter) => filter.status)?.value;
 
   // Собираем все активные sub-фильтры
