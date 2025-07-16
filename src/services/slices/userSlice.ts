@@ -1,5 +1,6 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TCard, TUser } from '@/shared/global-types';
+import { loginUser } from '@/api/skill-swap-api';
 
 interface UserState {
   user: TUser | null;
@@ -9,6 +10,7 @@ interface UserState {
   offer: TCard | null;
   offersSent: { userId: string; status: string }[];
   offersReceived: { userId: string; status: string }[];
+  errorMessage: string | null;
 }
 
 const initialState: UserState = {
@@ -19,7 +21,28 @@ const initialState: UserState = {
   offer: null,
   offersSent: [],
   offersReceived: [],
+  errorMessage: null,
 };
+
+export const loginUserThunk = createAsyncThunk<
+  TUser,
+  { email: string; password: string },
+  { rejectValue: string }
+>(
+  'loginUser',
+  async ({ email, password }, { dispatch, rejectWithValue }) => {
+    try {
+      const user = await loginUser(email, password);
+      if (!user) {
+        return rejectWithValue('Неверный email или пароль');
+      }
+      dispatch(setUser(user));
+      return user;
+    } catch (error) {
+      return rejectWithValue(`Ошибка при входе: ${error}`);
+    }
+  }
+);
 
 const userSlice = createSlice({
   name: 'user',
@@ -68,7 +91,29 @@ const userSlice = createSlice({
     addReceivedOffer(state, action: PayloadAction<{ userId: string; status: string }>) {
       state.offersReceived.push(action.payload);
     },
+    setError(state, action: PayloadAction<string>) {
+      state.errorMessage = action.payload;
+    },
+    clearErrorMessage(state) {
+      state.errorMessage = null;
+    }
   },
+  selectors: {
+    selectError: (state) => state.errorMessage,
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginUserThunk.pending, (state) => {
+        state.errorMessage = null;
+      })
+      .addCase(loginUserThunk.rejected, (state, action) => {
+        state.errorMessage = action.payload || 'Что-то пошло не так';
+      })
+      .addCase(loginUserThunk.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isAuth = true;
+      });
+    }
 });
 
 export const {
@@ -80,6 +125,12 @@ export const {
   removeLikedCard,
   addSentOffer,
   addReceivedOffer,
+  setError,
+  clearErrorMessage
 } = userSlice.actions;
+
+export const {
+  selectError
+} = userSlice.selectors;
 
 export default userSlice.reducer;
