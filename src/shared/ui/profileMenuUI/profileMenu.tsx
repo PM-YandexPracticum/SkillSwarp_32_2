@@ -88,8 +88,13 @@ export const ProfileMenu = () => {
             onClick={() => {
               {
                 /* Вписать сюда логику разлогина, когда таковая появится */
+                // Логика должна быть обёрнута в проверку в духе:
+                // if (логика разлогина === 'success') {
+                // navigate('/login');
+                // smoothScrolling();
+                // }
               }
-              navigate('/');
+              navigate('/login');
               smoothScrolling();
             }}
           >
