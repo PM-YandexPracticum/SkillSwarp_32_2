@@ -41,6 +41,7 @@ export const Main: FC = () => {
   // });
 
   const cards = filterCards(cardsState, {
+
       education: educationState,
       gender: genderState,
       skills: skillsState,
