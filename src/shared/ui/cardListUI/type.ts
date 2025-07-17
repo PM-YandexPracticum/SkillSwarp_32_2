@@ -5,4 +5,5 @@ export interface CardListProps {
   title: string;
   handleOpen?: () => void;
   handleSort?: () => void;
+  loading?: boolean;
 }

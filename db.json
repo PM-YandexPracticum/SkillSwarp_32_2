@@ -1631,25 +1631,25 @@
     },
     {
       "id": "4",
-      "type": "home",
-      "title": "Дом и уют",
-      "src": "/#",
-      "subFilters": [
-        { "title": "Уборки и организация", "id": "4-0", "type": "cleaning ", "status": false },
-        { "title": "Домашние финансы", "id": "4-1", "type": "home-finances", "status": false },
-        { "title": "Приготовление еды", "id": "4-2", "type": "cooking", "status": false }
-      ]
-    },
-    {
-      "id": "5",
       "type": "lifestyle",
       "title": "Здоровье и лайфстайл",
       "src": "/#",
       "subFilters": [
-        { "title": "Йога и медитация", "id": "5-0", "type": "yoga", "status": false },
-        { "title": "Питание и ЗОЖ", "id": "5-1", "type": "nutrition", "status": false },
-        { "title": "Ментальное здоровье", "id": "5-2", "type": "mental-health", "status": false },
-        { "title": "Осознанность", "id": "5-3", "type": "mindfulness", "status": false }
+        { "title": "Йога и медитация", "id": "4-0", "type": "yoga", "status": false },
+        { "title": "Питание и ЗОЖ", "id": "4-1", "type": "nutrition", "status": false },
+        { "title": "Ментальное здоровье", "id": "4-2", "type": "mental-health", "status": false },
+        { "title": "Осознанность", "id": "4-3", "type": "mindfulness", "status": false }
+      ]
+    },
+    {
+      "id": "5",
+      "type": "home",
+      "title": "Дом и уют",
+      "src": "/#",
+      "subFilters": [
+        { "title": "Уборки и организация", "id": "5-0", "type": "cleaning ", "status": false },
+        { "title": "Домашние финансы", "id": "5-1", "type": "home-finances", "status": false },
+        { "title": "Приготовление еды", "id": "5-2", "type": "cooking", "status": false }
       ]
     }
   ]
