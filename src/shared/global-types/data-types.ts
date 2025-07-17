@@ -68,6 +68,7 @@ export type offerStatus = 'pending' | 'rejected' | 'fulfilled';
 export interface offerSkillType {
   userId: string;
   status: offerStatus;
+  createdAt: number;
 }
 
 export type TImage = {

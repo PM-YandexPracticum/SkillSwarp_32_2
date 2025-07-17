@@ -14,6 +14,7 @@ import { type FC } from 'react';
 import { ButtonUI } from '@/shared/ui';
 // import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
 import { SkillPage } from '../skill-page';
+import { NotificationUI } from '@/shared/ui/notificationUI';
 
 export const Test: FC = () => {
   async function alertUser(id: string) {
@@ -65,6 +66,21 @@ export const Test: FC = () => {
       /> */}
       {/* <AllSkills /> */}
       <SkillPage />
+      <NotificationUI 
+        offer = {{
+          userId: 'user-3',
+          // status: 'pending',
+          status: 'fulfilled',
+          // status: 'rejected',
+          createdAt: 1752065629156
+        }}
+        isRead = {false}
+        partnerName = 'Татьяна'
+        // typeOfExchange = 'incoming'
+        typeOfExchange = 'outgoing'
+        // partnerGender ='male' 
+        partnerGender = 'female'
+        />
     </>
   );
 };
