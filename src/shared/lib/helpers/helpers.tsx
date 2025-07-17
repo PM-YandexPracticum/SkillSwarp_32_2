@@ -43,7 +43,7 @@ export const filterByCities = (cards: TCard[], cities: TCityFilter[]) => {
 // Фильтрация по полу
 export const filterByGender = (cards: TCard[], genderFilters: commonFilterType[]) => {
   const selected = genderFilters.find((filter) => filter.status);
-  if (!selected || !selected.value) return cards;
+  if (!selected || selected.value === 'empty') return cards;
 
   return cards.filter((card) => card.gender === selected.value);
 };
@@ -72,7 +72,7 @@ export const filterByCategories = (
       toggledSubSkills.some((subSkill) => subSkill.type === skill.subType)
     );
 
-  if (!toggledEducationStatus) {
+  if (toggledEducationStatus === 'empty') {
     return cards.filter((card) => matchSkill(card.teachSkill) || matchSkill(card.learnSkill));
   }
 

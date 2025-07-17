@@ -89,7 +89,7 @@ export const Main: FC = () => {
 
   const activeFilters = [
     ...educationState
-      .filter((f) => f.status && f.value !== null)
+      .filter((f) => f.status && f.value !== 'empty')
       .map((f) => ({
         id: f.value!,
         title: f.title,
@@ -97,7 +97,7 @@ export const Main: FC = () => {
       })),
 
     ...genderState
-      .filter((f) => f.status && f.value !== null)
+      .filter((f) => f.status && f.value !== 'empty')
       .map((f) => ({
         id: f.value!,
         title: f.title,
