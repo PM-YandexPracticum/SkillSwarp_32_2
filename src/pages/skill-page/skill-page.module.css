@@ -18,6 +18,10 @@
   letter-spacing: 0.02em;
 }
 
+.button span::first-letter {
+  text-transform: capitalize;
+}
+
 .skill_content {
   width: 100%;
   display: grid;

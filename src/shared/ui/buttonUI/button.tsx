@@ -6,12 +6,16 @@ import { Link } from 'react-router-dom';
 
 export const ButtonUI: FC<ButtonUIProps> = ({ type, onClick, children, className, to }) => {
   return type === 'button' ? (
-    <button className={className} onClick={onClick} type='button'>
+    <button  className={className} onClick={onClick} type='button'>
       {children}
     </button>
-  ) : (
+  ) : type === 'link' ? (
     <Link to={to || '#'} className={className}>
       {children}
     </Link>
+  ) : (
+    <button className={className} type='submit'>
+      {children}
+    </button>
   );
 };

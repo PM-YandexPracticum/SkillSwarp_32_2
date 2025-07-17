@@ -10,4 +10,5 @@ export type registerYouOfferUIProps =  {
   file: string;
   setFile: Dispatch<SetStateAction<string>>;
   handleSubmit: (e: SyntheticEvent) => void;
+  handleBack: () => void
 };

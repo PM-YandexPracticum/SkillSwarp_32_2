@@ -18,7 +18,8 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
  // setCategory,
   description,
   setDescription,
-  handleSubmit
+  handleSubmit,
+  handleBack
 }) => {
   
 const options: DropdownOption[] = MAIN_FILTERS_MOCK.map(option => ({
@@ -106,15 +107,14 @@ const renderCheckboxes = (options: DropdownOption[]) => {
             </div>
             <div className={styles.buttons}>
               <ButtonUI 
-                type='link' 
-                to='/register/about'
+                type='button' 
+                onClick={handleBack}
                 className={classNames(styles.button, styles.message_btn)}
                 >
                 Назад
               </ButtonUI>
               <ButtonUI 
-                type='button' 
-                onClick={()=>{}}
+                type='submit' 
                 className={classNames(styles.button, styles.link_btn)}
                 >
                 Продолжить

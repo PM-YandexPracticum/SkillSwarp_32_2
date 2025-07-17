@@ -13,4 +13,5 @@ export type registerAboutYouUIProps =  {
  // skill: string;
   //setSkill: Dispatch<SetStateAction<string>>;
   handleSubmit: (e: SyntheticEvent) => void;
+  handleBack: () => void;
 };

@@ -19,27 +19,22 @@ export const DropDrag: FC = () => {
         };
     };
 
-    const handleDrag = (e: DragEvent<HTMLFormElement>) => {
+    const handleDrag = (e: DragEvent<HTMLInputElement>) => {
         e.preventDefault();
         setDragActive(true);
     };
 
-    const handleLeave = (e: DragEvent<HTMLFormElement>)  => {
+    const handleLeave = (e: DragEvent<HTMLInputElement>)  => {
         e.preventDefault();
         setDragActive(false);
     };
     
-    const handleDrop = (e: DragEvent<HTMLFormElement>)  => {
+    const handleDrop = (e: DragEvent<HTMLInputElement>)  => {
         e.preventDefault();
         setDragActive(false);
         if(e.dataTransfer.files && e.dataTransfer.files[0]) {
             setFiles(e.dataTransfer.files);
         };
-    };
-    
-    const handleReset = (e: DragEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setFiles(null);
     };
 
     const hasFile = (files && files.length > 0);
@@ -54,12 +49,11 @@ export const DropDrag: FC = () => {
 
     return (
         <div className={`${styles.drap_drag} ${dragActive ? styles.drap_drag__active :''}`}>
-            <form className={styles.drap_drag__form}
+            <div className={styles.drap_drag__form}
                 onDragEnter={handleDrag}
                 onDragOver={handleDrag}
                 onDragLeave={handleLeave}
                 onDrop={handleDrop}
-                onReset={handleReset}
             >
                 {hasFile ? (
                     <div className={styles.drap_drag__gallery}>
@@ -73,10 +67,11 @@ export const DropDrag: FC = () => {
                         </label>
                         <label className={styles.drap_drag__gallery_edit}>
                             <ResetGallery />
-                            <input type='reset'
+                            <input type='button'
+                            value='Очистить'
                                 className={styles.drap_drag__input}
-                                multiple
                                 onChange={handleChange}          
+                                onClick={() => setFiles(null)}
                             />
                         </label>
                     </div>                
@@ -108,7 +103,7 @@ export const DropDrag: FC = () => {
                         {Array.from(files).map((file, id) => <li key={id}>{file.name}</li>)}
                     </ul>
                 }            
-            </form>
+            </div>
         </div>
     );
 };

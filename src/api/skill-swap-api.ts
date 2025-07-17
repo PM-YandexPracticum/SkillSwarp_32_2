@@ -6,9 +6,9 @@ const API_URL = 'http://localhost:3001';
 
 async function fetchData<T>(API_URI: string): Promise<T[]> {
   try {
-    const citiesRaw = sessionStorage.getItem(API_URI);
+    // const citiesRaw = sessionStorage.getItem(API_URI);
 
-    if (!citiesRaw) {
+    // if (!citiesRaw) {
       const response = await fetch(`${API_URL}/${API_URI}`, {
         method: 'GET',
         headers: {
@@ -22,9 +22,9 @@ async function fetchData<T>(API_URI: string): Promise<T[]> {
       const data: T[] = await response.json();
       sessionStorage.setItem(API_URI, JSON.stringify(data));
       return data;
-    }
+    // }
 
-    return JSON.parse(citiesRaw) as T[];
+    // return JSON.parse(citiesRaw) as T[];
   } catch (error) {
     console.error('Ошибка при получении списка городов ', error);
     throw error;

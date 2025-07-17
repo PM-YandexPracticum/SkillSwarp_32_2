@@ -1,7 +1,7 @@
 import { fetchCategoriesData, fetchCitiesData } from '@/api';
 import type { commonFilterType, TCityFilter, TMainSkillFilter } from '@/shared/global-types';
-import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
-import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
+// import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
+// import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 export type FilterState = {
@@ -77,15 +77,15 @@ export const filterSlice = createSlice({
   },
   reducers: {
     // Нужен, пока нет api
-    setMockFilters: (state) => {
-      state.skills = MAIN_FILTERS_MOCK;
-      state.cities = CITIES_MOCK.map((city) => ({
-        title: city.title,
-        id: city.id,
-        type: 'city',
-        status: false,
-      }));
-    },
+    // setMockFilters: (state) => {
+    //   state.skills = MAIN_FILTERS_MOCK;
+    //   state.cities = CITIES_MOCK.map((city) => ({
+    //     title: city.title,
+    //     id: city.id,
+    //     type: 'city',
+    //     status: false,
+    //   }));
+    // },
     toggleEducationFilter: (state, action: PayloadAction<commonFilterType>) => {
       state.education = state.education.map((item) => ({
         ...item,
@@ -106,8 +106,6 @@ export const filterSlice = createSlice({
         city.id === action.payload ? { ...city, status: !city.status } : city
       );
     },
-
-    // Все remove-методы нужны для удаления фильтров, когда они появляются вверху стрницы
     removeEducationFilter: (state) => {
       state.education = state.education.map((item) => ({
         ...item,
@@ -121,9 +119,12 @@ export const filterSlice = createSlice({
       }));
     },
     removeSkillsFilter: (state, action: PayloadAction<string>) => {
-      state.skills = state.skills.map((skill) =>
-        skill.id === action.payload ? { ...skill, status: false } : skill
-      );
+      state.skills = state.skills.map((category) => ({
+        ...category,
+        subFilters: category.subFilters.map((subFilter) =>
+          subFilter.id === action.payload ? { ...subFilter, status: false } : subFilter
+        ),
+      }));
     },
     removeCitiesFilter: (state, action: PayloadAction<string>) => {
       state.cities = state.cities.map((city) =>
@@ -171,7 +172,7 @@ export const filterSlice = createSlice({
 });
 
 export const {
-  setMockFilters,
+  // setMockFilters,
   toggleEducationFilter,
   toggleGenderFilter,
   toggleSkillsFilter,
