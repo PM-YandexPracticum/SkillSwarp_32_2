@@ -1,0 +1,47 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 436px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  background-color: var(--accent-background);
+}
+
+.notification {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.message {
+  flex-grow: 1;
+}
+
+.note {
+  font-size: 12px;
+  line-height: 133%;
+  flex-grow: 1;
+}
+
+.date {
+  color: var(--text-color);
+}
+
+.button {
+  align-self: flex-start;
+  border-radius: 12px;
+  padding: 12px 24px;
+  background-color: var(--accent-redesigned);
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.button:active {
+  background-color: var(--interaction-color);
+}
