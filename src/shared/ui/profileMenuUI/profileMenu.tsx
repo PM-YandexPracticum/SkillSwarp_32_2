@@ -1,11 +1,30 @@
 import styles from './profileMenu.module.css';
-import { IdeaSVG, IncomingSVG, LikeSVG, OutgoingSVG, StarSVG, UserFramedSVG } from '@/assets/svg';
+import {
+  HomeSVG,
+  IdeaSVG,
+  IncomingSVG,
+  LikeSVG,
+  OutgoingSVG,
+  StarSVG,
+  UserFramedSVG,
+} from '@/assets/svg';
 import { NavLink, useLocation } from 'react-router-dom';
+import { ButtonUI } from '../buttonUI';
+import { useNavigate } from 'react-router-dom';
 
 export const ProfileMenu = () => {
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const navigate = useNavigate();
+
+  const smoothScrolling = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div className={styles['profile-menu']}>
@@ -16,7 +35,7 @@ export const ProfileMenu = () => {
           }`}
         >
           <IncomingSVG />
-          <NavLink to='/profile/incoming' className={styles.button}>
+          <NavLink to='/profile/incoming' className={styles.button} onClick={smoothScrolling}>
             Входящие заявки
           </NavLink>
         </li>
@@ -27,7 +46,7 @@ export const ProfileMenu = () => {
           }`}
         >
           <OutgoingSVG />
-          <NavLink to='/profile/outgoing' className={styles.button}>
+          <NavLink to='/profile/outgoing' className={styles.button} onClick={smoothScrolling}>
             Исходящие заявки
           </NavLink>
         </li>
@@ -60,6 +79,22 @@ export const ProfileMenu = () => {
           <NavLink to='#' className={styles.button}>
             Избранное
           </NavLink>
+        </li>
+
+        <li className={`${styles['profile-menu__item']} `}>
+          <HomeSVG />
+          <ButtonUI
+            type='button'
+            onClick={() => {
+              {
+                /* Вписать сюда логику разлогина, когда таковая появится */
+              }
+              navigate('/');
+              smoothScrolling();
+            }}
+          >
+            Выйти из аккаунта
+          </ButtonUI>
         </li>
       </ul>
     </div>
