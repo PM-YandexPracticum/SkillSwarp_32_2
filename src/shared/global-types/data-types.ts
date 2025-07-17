@@ -28,13 +28,13 @@ export type SubFilterTypeMap = {
   other: OtherSubType; // если есть
 };
 
-export type genderType = 'empty' | 'male' | 'female'; // Надо поменять на "none", поправить функции фильтрации и стор из за этого
+export type genderType =  'male' | 'female'; // Надо поменять на "none", поправить функции фильтрации и стор из за этого
 
-export type educationType = 'empty' | 'teach' | 'learn';
+export type educationType = 'teach' | 'learn';
 
 export type commonFilterType = {
   title: string;
-  value: genderType | educationType;
+  value: genderType | educationType | 'empty';
   status: boolean;
 };
 
