@@ -14,6 +14,7 @@ import {
   getSkillsState,
   toggleCityFilter,
   getCardsState,
+  getLoadingState,
 } from '@/services/slices';
 // import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 import { EnabledFiltersBlock } from '@/widgets/enabled-filters-block';
@@ -32,6 +33,7 @@ export const Main: FC = () => {
   const skillsState = useSelector(getSkillsState);
   const citiesState = useSelector(getCitiesState);
   const cardsState = useSelector(getCardsState);
+  const loading = useSelector(getLoadingState);
 
   // const cards = filterCards(CARDS_DATA, {
   //   education: educationState,
@@ -41,12 +43,11 @@ export const Main: FC = () => {
   // });
 
   const cards = filterCards(cardsState, {
-
-      education: educationState,
-      gender: genderState,
-      skills: skillsState,
-      cities: citiesState,
-    });
+    education: educationState,
+    gender: genderState,
+    skills: skillsState,
+    cities: citiesState,
+  });
 
   const checkFiltersState = checkAllActiveFilters(
     skillsState,
@@ -153,9 +154,14 @@ export const Main: FC = () => {
         </div>
       ) : (
         <div className={styles.card_blocks}>
-          <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
-          <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} />
-          <CardListUI title='Рекомендуем' cards={cardsRecommendedChaos} />
+          <CardListUI
+            title='Популярное'
+            handleOpen={() => {}}
+            cards={cardsPopular}
+            loading={loading}
+          />
+          <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} loading={loading} />
+          <CardListUI title='Рекомендуем' cards={cardsRecommendedChaos} loading={loading} />
         </div>
       )}
     </main>

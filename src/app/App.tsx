@@ -11,7 +11,7 @@ import { ProfilePage } from '@/pages/profile-page';
 import { ProfileIncoming } from '@/pages/profile-incoming-page';
 import { ProfileOutgoing } from '@/pages/profile-outgoing-page';
 import { AppHeader } from '@/widgets/app-header';
-import { getCards, setMockFilters } from '@/services/slices';
+import { getCards, getCategories, getCities } from '@/services/slices';
 import { useEffect } from 'react';
 import { useDispatch } from '@/services/store';
 
@@ -20,7 +20,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setMockFilters());
+    dispatch(getCategories());
+    dispatch(getCities());
     dispatch(getCards());
   }, [dispatch]);
 

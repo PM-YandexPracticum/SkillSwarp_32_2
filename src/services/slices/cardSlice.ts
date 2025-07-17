@@ -7,11 +7,15 @@ export const getCards = createAsyncThunk('cards/get', fetchCardsData);
 interface TInitialState {
   cards: TCard[];
   filtered: TCard[];
+  loading: boolean;
+  error: string | null;
 }
 
 const initialState: TInitialState = {
   cards: [],
   filtered: [],
+  loading: false,
+  error: null,
 };
 
 const cardsSlice = createSlice({
@@ -19,6 +23,7 @@ const cardsSlice = createSlice({
   initialState,
   selectors: {
     getCardsState: (state) => state.cards,
+    getLoadingState: (state) => state.loading,
   },
   reducers: {
     removeCard: (state, action: PayloadAction<string>) => {
@@ -74,12 +79,23 @@ const cardsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getCards.fulfilled, (state, action) => {
-      state.cards = action.payload;
-    });
+    builder
+      .addCase(getCards.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getCards.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message as string;
+      })
+      .addCase(getCards.fulfilled, (state, action) => {
+        state.cards = action.payload;
+        state.loading = false;
+        state.error = null;
+      });
   },
 });
 
-export const { getCardsState } = cardsSlice.selectors;
+export const { getCardsState, getLoadingState } = cardsSlice.selectors;
 export const { addCard, changeCard, removeCard } = cardsSlice.actions;
 export default cardsSlice.reducer;
