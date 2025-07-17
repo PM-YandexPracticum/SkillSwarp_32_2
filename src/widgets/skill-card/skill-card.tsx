@@ -4,6 +4,7 @@ import { useCallback, useMemo } from 'react';
 import { SkillCardMenu } from './skill-card-menu';
 import { SkillCardButtons } from './skill-card-buttons';
 import { SkillCardContent } from './skill-card-content';
+import { SkillImageGalleryUI } from '@/shared/ui';
 
 export const SkillCard = ({
     card, 
@@ -48,9 +49,10 @@ export const SkillCard = ({
       />
       <div className={styles.content}>
         <SkillCardContent card={card}>{actionButtons}</SkillCardContent>
-
-        {/* Заглушка галлереи */}
-        <div className={styles['content-gallery']}></div>
+   
+        <div className={styles['content-gallery']}>
+          <SkillImageGalleryUI images={card.skillImages || []} />
+        </div>
       </div>
     </div>
   );

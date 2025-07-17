@@ -1,8 +1,5 @@
-export interface image {
-  link: string;
-  name?: string;
-}
+import type { TImage } from "@/shared/global-types";
 
 export interface SkillImageGalleryUIProps {
-  images: image[];
+  images: TImage[];
 }
