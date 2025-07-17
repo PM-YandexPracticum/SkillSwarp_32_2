@@ -5,6 +5,8 @@
   position: relative;
   row-gap: 12px;
   column-gap: 8px;
+  max-width: 260px;
+  max-height: 400px;
 }
 
 .image_grid img {
