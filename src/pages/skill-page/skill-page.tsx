@@ -1,5 +1,4 @@
 import styles from './skill-page.module.css';
-import { Footer } from '@/shared/ui/footer';
 import { UserCard } from '@/widgets';
 import { type FC } from 'react';
 import { ArrowLeftSVG } from '@/assets/svg';
@@ -42,7 +41,6 @@ export const SkillPage: FC = () => {
           <SameOffers cardsData={sameOffers} />
         </div>
       </main>
-      <Footer />
     </>
   );
 };

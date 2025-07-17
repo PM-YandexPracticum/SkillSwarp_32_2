@@ -70,6 +70,11 @@ export interface offerSkillType {
   status: offerStatus;
 }
 
+export type TImage = {
+  link: string;
+  name?: string;
+}
+
 // тип Карточки пользователя
 
 export interface TCard {
@@ -86,6 +91,7 @@ export interface TCard {
   createdAt: number;
   likes: string[];
   src: string;
+  skillImages?: TImage[];
 }
 
 // тип профиля юзера
