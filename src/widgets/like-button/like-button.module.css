@@ -1,0 +1,48 @@
+/* src/widgets/like-button/like-button.module.css */
+.like_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+}
+
+.like_button:hover {
+  color: var(--caption-redesigned);
+  transform: scale(1.05);
+}
+
+.like_button:active {
+  color: var(--interaction-color);
+  transform: scale(0.95);
+}
+
+.like_button:focus {
+  outline: none;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.count {
+  font-size: 12px;
+  font-weight: 500;
+  color: inherit;
+}
+
+.liked {
+  color: var(--alarm-color);
+}
+
+.liked:hover {
+  color: var(--alarm-color);
+  opacity: 0.8;
+}

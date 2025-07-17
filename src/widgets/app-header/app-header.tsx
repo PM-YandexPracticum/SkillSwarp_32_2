@@ -24,12 +24,22 @@ export const AppHeader: FC = () => {
       'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   };
 
+  // Обработчики для новых компонентов
+  const handleThemeToggle = () => {
+    // console.log('Переключение темы');
+    // Здесь будет логика переключения темы
+  };
+
+  const handleNotificationClick = () => {
+    // console.log('Открыть уведомления');
+    // Здесь будет логика открытия уведомлений
+  };
+
   return (
     <AppHeaderUI
       onSkillsClick={() => {}}
-      onToggleTheme={() => {}}
-      onNotificationClick={() => {}}
-      onLikeClick={() => {}}
+      onToggleTheme={handleThemeToggle}  // Передаем обработчик
+      onNotificationClick={handleNotificationClick}  // Передаем обработчик
       onClearButtonClick={() => {}}
       // user={undefined} // Для проверки. В конце убрать
       user={user}
