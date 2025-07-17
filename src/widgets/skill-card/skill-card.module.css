@@ -9,7 +9,9 @@ button {
 }
 
 .container {
-  background-color: transparent;
+  background-color: var(--accent-background);
+  border-radius: 12px;
+  padding: 32px;
 }
 
 .menu {
@@ -29,7 +31,7 @@ button {
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   column-gap: 4%;
 }
 
