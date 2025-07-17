@@ -15,7 +15,7 @@ export const initialState: FilterState = {
   education: [
     {
       title: 'Всё',
-      value: null,
+      value: 'empty',
       status: true,
     },
     {
@@ -32,7 +32,7 @@ export const initialState: FilterState = {
   gender: [
     {
       title: 'Не имеет значения',
-      value: null,
+      value: 'empty',
       status: true,
     },
     {
@@ -136,11 +136,11 @@ export const filterSlice = createSlice({
     resetAllFilters: (state) => {
       state.education = state.education.map((item) => ({
         ...item,
-        status: item.value === null,
+        status: item.value === 'empty',
       }));
       state.gender = state.gender.map((item) => ({
         ...item,
-        status: item.value === null,
+        status: item.value === 'empty',
       }));
       state.skills = state.skills.map((mainFilter) => ({
         ...mainFilter,
