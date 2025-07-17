@@ -28,7 +28,7 @@ export type SubFilterTypeMap = {
   other: OtherSubType; // если есть
 };
 
-export type genderType = null | 'male' | 'female';
+export type genderType = null | 'male' | 'female'; // Надо поменять на "none", поправить функции фильтрации и стор из за этого
 
 export type educationType = null | 'teach' | 'learn';
 
@@ -70,6 +70,11 @@ export interface offerSkillType {
   status: offerStatus;
 }
 
+export type TImage = {
+  link: string;
+  name?: string;
+}
+
 // тип Карточки пользователя
 
 export interface TCard {
@@ -86,6 +91,7 @@ export interface TCard {
   createdAt: number;
   likes: string[];
   src: string;
+  skillImages?: TImage[];
 }
 
 // тип профиля юзера
@@ -109,4 +115,9 @@ export interface TUser {
 export interface TCity {
   id: string;
   title: string;
+}
+
+export interface TCityFilter extends TCity {
+  type: string;
+  status: boolean;
 }

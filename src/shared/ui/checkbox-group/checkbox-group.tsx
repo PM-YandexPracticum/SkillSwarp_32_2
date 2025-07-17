@@ -1,51 +1,45 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { CheckboxUI } from '../checkboxUI';
 import styles from './checkbox-group.module.css';
 import type { TSkillSubFilter } from '@/shared/global-types';
 
-
-type CheckboxUIGroupProps = {
-  title?: string;
-  filters: TSkillSubFilter[];
-  selectedOptions?: TSkillSubFilter[];
-  onSelect: (selected: TSkillSubFilter[]) => void;
+export type TCityFilter = {
+  id: string;
+  title: string;
+  type: string;
+  status: boolean;
 };
 
-export const CheckboxGroupUI: FC<CheckboxUIGroupProps> = ({
-  filters,
-  onSelect,
-  title,
+type CheckboxGroupUIProps = {
+  title?: string;
+  filters: TCityFilter[] | TSkillSubFilter[];
+  onSelect: (id: string) => void; // Теперь передаем только ID измененного элемента
+};
+
+export const CheckboxGroupUI: FC<CheckboxGroupUIProps> = ({ 
+  title, 
+  filters, 
+  onSelect 
 }) => {
+  // Полностью убрали локальное состояние
+  // Работаем напрямую с переданными фильтрами из стора
 
-
-  const [localSelected, setLocalSelected] = useState(filters);
-
-
-  const handleCheckboxChange = (option: TSkillSubFilter) => {
-
-    option.status = !option.status;
-    const newSelected = localSelected.includes(option)
-      ? localSelected.filter((o) => o.status === true )
-      : [...localSelected, option];
-
-    // let updatedLocalSelected = newSelected.filter((o) => o.status !== false);
-
-    setLocalSelected(newSelected);
-    // выдаем наверх актуальное состояние фильтра
-    onSelect(filters);
+  const handleCheckboxChange = (id: string) => {
+    // Просто передаем ID измененного элемента
+    onSelect(id);
   };
 
   return (
     <div className={styles.container}>
-      {title && <h3>{title}</h3>}
+      {title && <h3 className={styles.title}>{title}</h3>}
       <div className={styles.checkbox_list}>
         {filters.map((filter) => (
           <CheckboxUI
-          key={filter.id}
+            key={filter.id}
             label={filter.title}
             value={filter.id}
             checked={filter.status}
-            onChange={() => handleCheckboxChange(filter)}
+            onChange={() => handleCheckboxChange(filter.id)}
           />
         ))}
       </div>

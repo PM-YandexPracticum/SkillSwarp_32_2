@@ -61,7 +61,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({
         </div>
       </div>
       {type === 'short' && (
-        <ButtonUI type='link' to='/skill-page' className={styles.button_link}>
+        <ButtonUI type='link' to={`/skill/${card.userId}` }className={styles.button_link}>
           Подробнее
         </ButtonUI>
       )}

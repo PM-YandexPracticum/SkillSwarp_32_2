@@ -20,6 +20,7 @@
   gap: 32px;
   align-items: center;
   padding-block-end: 50px;
+  margin-top: 104px; /* На высоту фиксированной шапки */
 }
 
 .general {
@@ -34,12 +35,18 @@
   gap: 16px;
   width: 566px;
   padding: 60px;
-  background-color: var(--white-color); 
+  background-color: var(--accent-background); 
+}
+
+.dropdownBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .gentwo {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
@@ -50,7 +57,7 @@
   gap: 40px;  
   padding: 60px;
   width: 566px;
-  background-color: var(--white-color); 
+  background-color: var(--accent-background); 
 }
 
 .text {

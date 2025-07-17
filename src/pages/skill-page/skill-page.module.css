@@ -4,6 +4,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0px 36px;
+  margin-top: 104px; /* На высоту фиксированной шапки */
 }
 
 .button {
@@ -15,6 +16,10 @@
   font-size: 12px;
   line-height: 133%;
   letter-spacing: 0.02em;
+}
+
+.button span::first-letter {
+  text-transform: capitalize;
 }
 
 .skill_content {

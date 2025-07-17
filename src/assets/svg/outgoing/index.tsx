@@ -1,0 +1,1 @@
+export { OutgoingSVG } from './outgoing';

@@ -19,6 +19,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1672531200000,
     likes: ['user-5', 'user-12'],
     src: 'https://s0.rbk.ru/v6_top_pics/media/img/6/57/756781333421576.webp',
+    skillImages: [
+      {link: 'https://lmsdo.rea.ru/pluginfile.php/86406/course/overviewfiles/%D0%BA%D0%90%D0%A0%D0%A2%D0%98%D0%A0%D0%9D%D0%9A%D0%90.jpg'},
+      {link: 'https://avatars.mds.yandex.net/i?id=3ee84e9b8873a969042dfc2701bbc275_l-5221493-images-thumbs&n=13'},
+      {link: 'https://pics.rbc.ru/v2_companies_s3/resized/960xH/media/company_press_release_image/2dd4563b-d8a8-410b-8880-3a57ef1d99eb.jpg'},
+      {link: 'https://webcatcher.ru/wp-content/uploads/2019/07/1-pm.jpg'},
+    ]
   },
   {
     id: 'card-2',
@@ -38,6 +44,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1672617600000,
     likes: ['user-8', 'user-15'],
     src: '/user-2.jpg',
+    skillImages: [
+      {link: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4383d076526965.5c6c70a23dec6.jpg'},
+      {link: 'https://i.pinimg.com/originals/36/22/48/362248a6e89153763d6377bdd5ff9593.jpg'},
+      {link: 'https://media.licdn.com/dms/image/D4D12AQGhbKEvaWZyBg/article-cover_image-shrink_720_1280/0/1693215554687?e=2147483647&v=beta&t=ROQgoILrNpT9kR9CYULHyyYUKXvY671f-qS2P8IXW1o'},
+    ]
   },
   {
     id: 'card-3',
@@ -57,6 +68,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1672704000000,
     likes: ['user-10'],
     src: '/user-3.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=21a79cd8da681e37987b0c78508bdebd_l-4935356-images-thumbs&n=13'},
+      {link: 'https://smoleducentre.ru/wp-content/uploads/2023/09/a5npkrgr9q0.jpg'},
+      {link: 'https://avatars.mds.yandex.net/i?id=5b86581e81bdeed90d31131d4b32ae78b427fa60-4612093-images-thumbs&n=13'},
+      {link: 'https://avatars.mds.yandex.net/i?id=38ed517c45b4241623994e156576b627_l-3691581-images-thumbs&n=13'},
+      {link: 'https://avatars.mds.yandex.net/i?id=38ed517c45b4241623994e156576b627_l-3691581-images-thumbs&n=13'},
+    ]
   },
   {
     id: 'card-4',
@@ -76,6 +94,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1672790400000,
     likes: ['user-7', 'user-18'],
     src: '/user-4.jpg',
+    skillImages: [
+      {link: 'https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_677c087e60cfc04bcacaeff2_677c0934b998c46e089648c0/scale_1200'},
+      {link: 'https://static.insales-cdn.com/files/1/2368/5310784/original/77654556.jpg'},
+      {link: 'https://static36.tgcnt.ru/posts/_0/d8/d80f9d7e90e33284e0083b35828930ad.jpg'},
+    ]
   },
   {
     id: 'card-5',
@@ -95,6 +118,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1672876800000,
     likes: ['user-3', 'user-9', 'user-20'],
     src: '/user-5.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=e909447cb419ca0fd7096f0700ef4e2ec9537a67-9289753-images-thumbs&n=13'},
+      {link: 'https://avatars.mds.yandex.net/i?id=50472c4d235b3378910155b238b7cd98_sr-4825091-images-thumbs&n=13'},
+      {link: 'https://cdn1.ozone.ru/multimedia/1027110821.jpg'},
+      {link: 'https://cdn1.ozone.ru/s3/multimedia-1-k/7029959744.jpg'},
+      {link: 'https://cdn1.ozone.ru/s3/multimedia-1-k/7029959744.jpg'},
+    ]
   },
   {
     id: 'card-6',
@@ -114,6 +144,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1672963200000,
     likes: ['user-11', 'user-14'],
     src: '/user-6.jpg',
+    skillImages: [
+      {link: 'https://samokat-fitnes.ru/wp-content/uploads/2023/03/krugovye-trenirovki.jpg'},
+      {link: 'https://urgaps.ru/uplfile/news_image/iStock-927929836.jpg'},
+      {link: 'https://d39l2hkdp2esp1.cloudfront.net/img/photo/139243/139243_00_2x.jpg?20180124024514'},
+    ]
   },
   {
     id: 'card-7',
@@ -133,6 +168,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673049600000,
     likes: ['user-2', 'user-19'],
     src: '/user-7.jpg',
+    skillImages: [
+      {link: 'https://i.pinimg.com/originals/8a/7c/80/8a7c80222be5a495964019810c3f8259.jpg'},
+      {link: 'https://i.pinimg.com/originals/02/57/cf/0257cf546953e74b3cb3d3cd7f724a53.jpg'},
+      {link: 'https://i.pinimg.com/originals/b7/ac/60/b7ac60885dadff22ded80ba61f5d8371.jpg'},
+      {link: 'https://i.pinimg.com/originals/e1/bf/72/e1bf723db11eb2a27283787152c9366b.jpg'},
+      {link: 'https://i.pinimg.com/originals/b7/ac/60/b7ac60885dadff22ded80ba61f5d8371.jpg'},
+    ]
   },
   {
     id: 'card-8',
@@ -152,6 +194,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673136000000,
     likes: ['user-4', 'user-16'],
     src: '/user-8.jpg',
+    skillImages: [
+      {link: 'https://cf3.ppt-online.org/files3/slide/o/oyFTg7GZEp5HWtsRfDxnbqeaIzUj3lL0rmPV2S/slide-0.jpg'},
+      {link: 'https://russa.amaks-kurort.ru/upload/sanatoriy-staraya-russa/rest-programs/kanikuly/video.jpg'},
+      {link: 'https://frankfurt.apollo.olxcdn.com/v1/files/oj3a43mepuvj-KZ/image;s=1000x700'},
+      {link: 'https://i.pinimg.com/originals/81/00/42/81004291bf53a8f8d2df1831bcbca317.jpg'},
+      {link: 'https://frankfurt.apollo.olxcdn.com/v1/files/oj3a43mepuvj-KZ/image;s=1000x700'},
+    ]
   },
   {
     id: 'card-9',
@@ -171,6 +220,15 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673222400000,
     likes: ['user-13'],
     src: '/user-9.jpg',
+    skillImages: [
+      {link: 'https://sun1-97.userapi.com/s/v1/if1/TK_wql-fE_S4Ne3GfTySzkSPGJkAHlk0PBNIZXqmCy7jFYPfEuj-d_ZqD1Ct4h1dfcxMplC0.jpg?size=2160x2160&quality=96&crop=0,0,2160,2160&ava=1'},
+      {link: 'https://kaluga.rpa-mu.ru/Media/kaluga/novosti/2024/12_2024/deutsch-bersetzung-deutsch-deutsche-sprachhandgezogene-gekritzel-und-c-beschriften-137764738-1-1.jpg'},
+      {link: 'https://static.wixstatic.com/media/4fa500_ff2393e2f3504f5db4ed744b79dede4a~mv2.jpg/v1/fill/w_4800,h_3200,al_c,q_90/a%20chalkboard%20with%20the%20question%20sprechen%20sie%20deutsch_%20do%20you%20speak%20german_%20written%20in%20germa.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+    ]
   },
   {
     id: 'card-10',
@@ -190,6 +248,9 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673308800000,
     likes: ['user-1', 'user-17'],
     src: '/user-10.jpg',
+    skillImages: [
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQLXDzpL6u7jD0XVt71mkY3z4PXxONKo4DcNTTTCvetT9O6YCIf--NRHfZ69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
+    ]
   },
   // 11-20
   {
@@ -210,6 +271,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673395200000,
     likes: ['user-6', 'user-22'],
     src: '/user-11.jpg',
+    skillImages: [
+      {link: 'https://c1.35photo.pro/photos_temp/sizes/560/2801484_1500n.jpg'},
+      {link: 'https://wallpaper.forfun.com/fetch/80/805775d8c30b52a3f01d2ff6a0222c53.jpeg'},
+      {link: 'https://avatars.mds.yandex.net/get-shedevrum/13972232/img_a7bc161d558211efa4ec46f0d608bafb/orig'},
+      {link: 'https://35photo.pro/photos_main/741/3707166.jpg'},
+    ]
   },
   {
     id: 'card-12',
@@ -229,6 +296,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673481600000,
     likes: ['user-3', 'user-25'],
     src: '/user-12.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=eac6b101c24eb4b9137dde41c02d9f254575a441-5232282-images-thumbs&n=13'},
+      {link: 'https://careertest.ru/static/img/professions/brend-menedzher-og.jpg'},
+      {link: 'https://udpo.info/img/27605521_1200/og.jpg'},
+    ]
   },
   {
     id: 'card-13',
@@ -248,6 +320,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673568000000,
     likes: ['user-9', 'user-30'],
     src: '/user-13.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=38f4b1c313ff961bd97505d14b8c3462683bf9b3-9181142-images-thumbs&n=13'},
+      {link: 'https://i.ytimg.com/vi/UXM0O8ln564/maxresdefault.jpg'},
+      {link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Toshimana_playing_shamisen_02.jpg/1200px-Toshimana_playing_shamisen_02.jpg'},
+      {link: 'https://static.tildacdn.com/tild6438-6130-4133-a166-396261366330/luxurious-cherry-blo.jpeg'},
+      {link: 'https://i.pinimg.com/originals/ac/3b/86/ac3b86dfcabde337a010dfcd49bf8646.jpg'},
+    ]
   },
   {
     id: 'card-14',
@@ -267,6 +346,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673654400000,
     likes: ['user-5', 'user-21'],
     src: '/user-14.jpg',
+    skillImages: [
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQKSH_oLqq7jPwWQl61Wge328JVRWLeYpSc4WGGHvd4zFO6YCJfOuJSXbb69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
+      {link: 'https://i.pinimg.com/originals/ad/6f/6d/ad6f6daeee5b3c31623e20e17c072075.jpg'},
+      {link: 'https://i.pinimg.com/736x/11/20/d6/1120d6cad9f8461e313ededd21ea5585.jpg'},
+      {link: 'https://i.pinimg.com/736x/92/42/2e/92422e9a2b91260f706dff965b860328.jpg'},
+      {link: 'https://i.pinimg.com/originals/65/b3/a2/65b3a2ef1c08f5c2e085c905fc6bab0e.jpg'},
+    ]
   },
   {
     id: 'card-15',
@@ -286,6 +372,9 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673740800000,
     likes: ['user-12', 'user-24'],
     src: '/user-15.jpg',
+    skillImages: [
+      {link: 'https://beseller.by/assets/images/b2b-2024/b2b-03.jpg'},
+    ]
   },
   {
     id: 'card-16',
@@ -305,6 +394,10 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673827200000,
     likes: ['user-8', 'user-17'],
     src: '/user-16.jpg',
+    skillImages: [
+      {link: 'https://static.tildacdn.com/tild3730-3239-4039-b564-313434623039/15_1.jpg'},
+      {link: 'https://lavali.ru/wp-content/uploads/2/5/f/25f3cac6f579ed9d2739fd12d3e9893b.jpeg'},
+    ]
   },
   {
     id: 'card-17',
@@ -324,6 +417,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1673913600000,
     likes: ['user-10', 'user-16'],
     src: '/user-17.jpg',
+    skillImages: [
+      {link: 'https://imageproxy.wolt.com/venue/6710cf37efd86536b9432517/5aaf8432-8c67-11ef-9958-8aec63cdb56a_shutterstock_2261748829.jpg'},
+      {link: 'https://scdn.chibbis.ru/live/banners/8b19b2ec44f2ee572a77d5b6f1352dc4.png'},
+      {link: 'https://media.zenfs.com/en/kolr_springfield_articles_251/1164723e5228b07874d263fd2e97c7bf'},
+      {link: 'https://img.championat.com/i/23/69/1532012369592993080.jpg'},
+    ]
   },
   {
     id: 'card-18',
@@ -343,6 +442,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674000000000,
     likes: ['user-4', 'user-19'],
     src: '/user-18.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=302432c0d8a53e9b8710e696201f6fbf_l-5234556-images-thumbs&n=13'},
+      {link: 'https://avatars.mds.yandex.net/i?id=91d6d0a1784470e5ae43fd5428d2792b_l-5310620-images-thumbs&n=13'},
+      {link: 'https://cdn.sanity.io/images/cc7exehk/production/c003f01d2a995801659db509c89b6dc2572e850e-4767x3086.jpg?fit=crop&auto=format'},
+      {link: 'https://files.soniccdn.com/images/articles/original/42277.jpg'},
+    ]
   },
   {
     id: 'card-19',
@@ -362,6 +467,10 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674086400000,
     likes: ['user-7', 'user-18'],
     src: '/user-19.jpg',
+    skillImages: [
+      {link: 'https://avatars.dzeninfra.ru/get-zen_doc/9859611/pub_64b83b8786aede2bda85c5be_64b83b8f86aede2bda85c98c/scale_1200'},
+      {link: 'https://i.vuzopedia.ru/storage/app/uploads/public/677/a66/d1d/677a66d1d6636955205921.jpg'},
+    ]
   },
   {
     id: 'card-20',
@@ -381,6 +490,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674172800000,
     likes: ['user-5', 'user-15'],
     src: '/user-20.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=6f05e214253c7b255acc3cdba471638f_l-12932496-images-thumbs&n=13'},
+      {link: 'https://frankfurt.apollo.olxcdn.com/v1/files/2n2yjjytvt8h-UZ/image;s=1000x700'},
+      {link: 'https://i.ytimg.com/vi/VDmTHkXtOz8/maxresdefault.jpg'},
+    ]
   },
 
   // 21-30
@@ -402,6 +516,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674259200000,
     likes: ['user-14', 'user-23'],
     src: '/user-21.jpg',
+    skillImages: [
+      {link: 'https://i.pinimg.com/originals/7b/1e/55/7b1e553fe6e0af2ed9aa0e4964ea24a7.jpg'},
+      {link: 'https://i.vuzopedia.ru/storage/app/uploads/public/673/c55/afa/673c55afaf54a785114272.jpg'},
+      {link: 'https://www.vyatsu.ru/uploads/2021/12/02/seminar_kitay.png'},
+    ]
   },
   {
     id: 'card-22',
@@ -421,6 +540,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674345600000,
     likes: ['user-11', 'user-27'],
     src: '/user-22.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=271dfd9c098ee303322f7ba857363403_l-5257871-images-thumbs&n=13'},
+      {link: 'https://cs13.pikabu.ru/post_img/2023/02/05/2/og_og_167556032729852231.jpg'},
+      {link: 'https://avatars.mds.yandex.net/i?id=4261a334e06086c33f37ff7519c7c7b64e411ea5-5876025-images-thumbs&n=13'},
+      {link: 'https://www.noupe.com/wp-content/uploads/2023/08/ai-generated-8145415_1920.jpg'},
+      {link: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/620f8d82747929.5d26e94363e5d.jpg'},
+    ]
   },
   {
     id: 'card-23',
@@ -440,6 +566,10 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674432000000,
     likes: ['user-21'],
     src: '/user-23.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=9342d0d4e4e0b2689891edcb50b92a7b_l-5858292-images-thumbs&n=13'},
+      {link: 'https://shkolamoskva.ru/wp-content/uploads/2023/01/shutterstock_1049339822-scaled.jpg'},
+    ]
   },
   {
     id: 'card-24',
@@ -461,6 +591,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674518400000,
     likes: ['user-15', 'user-28'],
     src: '/user-24.jpg',
+    skillImages: [
+      {link: 'https://cf4.ppt-online.org/files4/slide/d/dBYDtSKTN28lVWsg1PJxvaXQyrUiMO5ku0Cec4/slide-0.jpg'},
+      {link: 'https://prezentacii.org/upload/cloud/19/06/152067/images/screen10.jpg'},
+      {link: 'https://goods-photos.static1-sima-land.com/items/4558491/0/1600.jpg?v=1600927098'},
+    ]
   },
   {
     id: 'card-25',
@@ -480,6 +615,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674604800000,
     likes: ['user-12', 'user-30'],
     src: '/user-25.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=d62ab61278189bc4b0527a11fd1fbc00_l-5221728-images-thumbs&n=13'},
+      {link: 'https://avatars.mds.yandex.net/i?id=afeddb40e59067a3c7294ede1c779367a96f82a3-5234033-images-thumbs&n=13'},
+      {link: 'https://avatars.mds.yandex.net/i?id=89195ef14b20117eb252a0ae0c33310b_l-3481291-images-thumbs&n=13'},
+      {link: 'https://storage.myseldon.com/news-pict-59/5928C2CEBA3CED5BCE0FCC21E82343E9'},
+    ]
   },
   {
     id: 'card-26',
@@ -499,6 +640,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674691200000,
     likes: ['user-17', 'user-29'],
     src: '/user-26.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=63394e3043c724767c201cca11b9ae92_l-5734795-images-thumbs&n=13'},
+      {link: 'https://i.pinimg.com/736x/25/1d/e8/251de86c432f498ae46857263079280c.jpg'},
+      {link: 'https://storage.googleapis.com/alami-prod-website-wp-stateless/2022/03/009ae358-18.jpg'},
+    ]
   },
   {
     id: 'card-27',
@@ -518,6 +664,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674777600000,
     likes: ['user-22', 'user-18'],
     src: '/user-27.jpg',
+    skillImages: [
+      {link: 'https://coddyschool.com/upload/iblock/83b/2_rus_min-_1_.jpg'},
+      {link: 'https://trashbox.ru/ifiles/2010550_eea656_logo/vk-vydelit-granty-dlya-podderzhki-otechestvennyh-blogerov-eto-pomozhet-konkurirovat-s-youtube-1.jpg'},
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45xcg7rs/5HaMWny23CM5Cv4fgIq072LKxdIa2OJBXZMXaj46b-5nKgQkNy021P2mkLUwndfYlScofQHnCL4Tdzt5SOebrYTHDa9d47hzfb6f6nCLpQ6yntYRyN7BUv7F9TmdjZ1s1Pj0INLYc6A8YqSDh5z1v1Gib0lEgj2aNgae_H6gO29wQtnZLOb_0qrIup2Q2iIuMmjmw0ttgTNcNfe5Te59fMdahpDRKmFwiOHXUUTL5wygc29JB3BsqhSkXXxMQiusUOBIyK10b6G4a1pfcCigzKOK5zCo_aIArcTEGB0Pr-7kGQYh8TmioIvAlqIGmFRugLENODXh_ItVNUz_zuIpzpCh2crMV-1B-JuLv5Np4U4D-0VBSk6xon6VJ_stjYzOBoi0gFCYQVEaI0RB9Mmnr0MA_nq14T74JPVPHu_Ryv7Cgqn4fcfNIEqI2n8BW5LfcLlFoMvdUFH-57Z6n8xPj9RaZtHQ2wOhqFNWkhUI1UwRUkxpZNK9iySGHD6_IbiOo_CY-Q30v8BJKWvMA4qSTMGLFsKIzmGSfBf2Sy7srm8GSYXR4goDY8vDBPInKcdf0pB-6PZQ75g0BmyOj9FZPyMDehqMdN7DSMqJjhBpU3xg60SzC_6AMdy1F1rsfc2v1EhW0AF6kwFYUUUyxkhVHyNgnusm4MzKFNesDA8Syp_xwLhY33bcQ9hrqI0DqCM-gUq1gxt9QTBcBUXqXC_N3Zbq12BRuMGB6SF1cUXKl49S0K06xhL9S8dWLA9-oike0LMYyS0mXdHa-Ym98tlAvILrZXKY_HEyXfS1mN4MXPwVCHdCUhqRcVvjxaLGCmce8FI-OPaTH3v2B95vfeC7DWDTess816wha4kJnjIL0x5ia7aTaSzg8ayWlAtMDj6fpVokEpEYsyKYsweBFclUXdJQf0k1Y_5bVteNb6-iS63x8Agan-b_U2h7qFxi2eGNUCrlIPs9owEeBvdZI'},
+      {link: 'https://piano.by/images/forNews/mic_for_audio_and_vlogging.jpg'},
+    ]
   },
   {
     id: 'card-28',
@@ -537,6 +689,10 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674864000000,
     likes: ['user-24', 'user-5'],
     src: '/user-28.jpg',
+    skillImages: [
+      {link: 'https://sun9-19.userapi.com/impg/dgkIvysNYcu62R9AXN0OfxOhuFK24Fdsz1szRg/4tQv4scYLZM.jpg?size=1000x525&quality=95&sign=0eb4b05e4b0b54a37e48a2fb31cc0d6c&type=album'},
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQJnKjpLz9vD6kCVRz2jtC3WwNBEfYLdxUIIOCGSiP5TNO6YCPeeePS3Hb69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
+    ]
   },
   {
     id: 'card-29',
@@ -556,6 +712,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1674950400000,
     likes: ['user-19', 'user-26'],
     src: '/user-29.jpg',
+    skillImages: [
+      {link: 'https://zhengazeta.ru/wp-content/uploads/2018/07/risovanie.jpg'},
+      {link: 'https://prostor31.ru/attachments/cf9b888940a2b885dfa15bc434083c1f3db20a7a/store/crop/0/0/535/380/800/0/0/0/70327664d47df4d11697199c61d464f43832055fd8f6f1744163bdefcf65/70327664d47df4d11697199c61d464f43832055fd8f6f1744163bdefcf65.jpeg.jpg'},
+      {link: 'https://api.vmuzey.com/static/event/E945522089871/ee17050bd28d1e0c-w820-h440.jpg'},
+    ]
   },
   {
     id: 'card-30',
@@ -575,6 +736,9 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675036800000,
     likes: ['user-13', 'user-25'],
     src: '/user-30.jpg',
+    skillImages: [
+      {link: 'https://departamentar.ucoz.ru/FOTO/2023/2/1646466317_74-kartinkin-net-p-kartinki-po-finansov.jpg'},
+    ]
   },
 
   // 31-40
@@ -596,6 +760,13 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675123200000,
     likes: ['user-21', 'user-33'],
     src: '/user-31.jpg',
+    skillImages: [
+      {link: 'https://smartprogress.do/uploadImages/001457169.jpg'},
+      {link: 'https://propokupki.ru/_files/a/0/a049ad56eae0745ed398ba57427170f3.png'},
+      {link: 'https://sh96-doneck-r897.gosweb.gosuslugi.ru/netcat_files/205/4279/sk_cht_01.png'},
+      {link: 'https://avatars.dzeninfra.ru/get-zen_doc/1245197/pub_611bd53bc8629d7f490a0292_611bd68133396a602a17b498/scale_1200'},      
+      {link: 'https://avatars.dzeninfra.ru/get-zen_doc/1245197/pub_611bd53bc8629d7f490a0292_611bd68133396a602a17b498/scale_1200'},
+    ]
   },
   {
     id: 'card-32',
@@ -615,6 +786,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675209600000,
     likes: ['user-12', 'user-22'],
     src: '/user-32.jpg',
+    skillImages: [
+      {link: 'https://freelance.boutique/portfolio/img/106624'},
+      {link: 'https://investstable.ru/wp-content/uploads/2020/05/09.png'},
+      {link: 'https://art-nto.ru/800/600/https/cf3.ppt-online.org/files3/slide/7/7eKw2INHx6AS4oPqWO85jY3ifhvLrt9U1kBsR0/slide-25.jpg'},      
+      {link: 'https://cdn-edge.kwork.ru/pics/t3/08/25551165-63fe1c70a2ed5.jpg'},
+    ]
   },
   {
     id: 'card-33',
@@ -634,6 +811,15 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675296000000,
     likes: ['user-31', 'user-35'],
     src: '/user-33.jpg',
+    skillImages: [
+      {link: 'https://sun1-97.userapi.com/s/v1/if1/TK_wql-fE_S4Ne3GfTySzkSPGJkAHlk0PBNIZXqmCy7jFYPfEuj-d_ZqD1Ct4h1dfcxMplC0.jpg?size=2160x2160&quality=96&crop=0,0,2160,2160&ava=1'},
+      {link: 'https://kaluga.rpa-mu.ru/Media/kaluga/novosti/2024/12_2024/deutsch-bersetzung-deutsch-deutsche-sprachhandgezogene-gekritzel-und-c-beschriften-137764738-1-1.jpg'},
+      {link: 'https://static.wixstatic.com/media/4fa500_ff2393e2f3504f5db4ed744b79dede4a~mv2.jpg/v1/fill/w_4800,h_3200,al_c,q_90/a%20chalkboard%20with%20the%20question%20sprechen%20sie%20deutsch_%20do%20you%20speak%20german_%20written%20in%20germa.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+      {link: 'https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg'},
+    ]
   },
   {
     id: 'card-34',
@@ -653,6 +839,14 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675382400000,
     likes: ['user-24', 'user-36'],
     src: '/user-34.jpg',
+    skillImages: [
+      {link: 'https://i.pinimg.com/736x/a4/46/cf/a446cf302c15fc01bda9d16e6cec4a5d.jpg'},
+      {link: 'https://cs.pikabu.ru/post_img/big/2013/07/28/1/1374961016_947049945.jpg'},
+      {link: 'https://i.pinimg.com/originals/b3/3c/66/b33c6615de7a10cddf50173a8cc7dbae.png'},
+      {link: 'https://i.pinimg.com/originals/9b/49/6c/9b496c4356a70aa745fa71e7501f61a1.jpg'},
+      {link: 'https://cdn.culture.ru/images/b0a812b1-f279-5d36-ae72-3da2dc07d196'},
+      {link: 'https://avatars.mds.yandex.net/get-mpic/12585941/2a00000195f6f9ccf1955b21189e8f4b74a5/orig'},
+    ]
   },
   {
     id: 'card-35',
@@ -672,6 +866,9 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675468800000,
     likes: ['user-33', 'user-38'],
     src: '/user-35.jpg',
+    skillImages: [
+      {link: 'https://neiros.ru/img/time-management/taym-menedzhment-pozvolyaet.png'},
+    ]
   },
   {
     id: 'card-36',
@@ -691,6 +888,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675555200000,
     likes: ['user-34', 'user-40'],
     src: '/user-36.jpg',
+    skillImages: [
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQeiP_9L39uGSlDVoi1D4f3WEOVkWMLt0EJo6BGH2N5mVO6YCId-aITXbb69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
+      {link: 'https://perform-better.com.au/wp-content/uploads/2018/01/FUNCTIONAL-TRAINING-WHAT-IS-IT-WHY-SHOULD-I-DO-IT.jpg'},
+      {link: 'https://fitness-place.ru/upload/iblock/c1e/7m8598ujh5uy7infybi350yl7gjpsfw4.jpg'},
+    ]
   },
   {
     id: 'card-37',
@@ -710,6 +912,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675641600000,
     likes: ['user-27', 'user-39'],
     src: '/user-37.jpg',
+    skillImages: [
+      {link: 'https://avatars.mds.yandex.net/i?id=ef301f93474dd5230aeb1dae9d30f8db_l-12168264-images-thumbs&n=13'},
+      {link: 'https://media.wavescdn.com/images/blog/1280/2024/what-is-mastering-why-is-it-important-in-music.jpg?fit=max&ixlib=imgixjs-3.6.1'},
+      {link: 'https://avatars.mds.yandex.net/get-znatoki/1368855/2a0000017c5a32b139414c9f12c8f92d859b/orig'},
+    ]
   },
   {
     id: 'card-38',
@@ -729,6 +936,11 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675728000000,
     likes: ['user-35'],
     src: '/user-38.jpg',
+    skillImages:  [
+      {link: 'https://wallpapers.com/images/hd/cancer-zodiac-sign-1920-x-1080-603n4noypvpm7m0k.jpg'},
+      {link: 'https://posta-magazine.ru/wp-content/uploads/old/images/stories/flexicontent2/03_solar_horoscope_2017_Posta-Magazine.jpg'},
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQfHT0rrv-ujXwWVQi2jsYjWwJXkCMKopVdI_WFnDZ6WdO6YCEfOuNTHTY69Rh1zWHr-LhBK0N7T7kV3nkkxUv7F9TmdjZ1s1Pj0INLYc6A8YqSDh5z1v1Gib0lEgj2aNgae_H6gO29wQtnZLOb_0qrIup2Q2iIuMmjmw0ttgTNcNfe5Te59fMdahpDRKmFwiOHXUUTL5wygc29JB3BsqhSkXXxMQiusUOBIyK10b6G4a1pfcCigzKOK5zCo_aIArcTEGB0Pr-7kGQYh8TmioIvAlqIGmFRugLENODXh_ItVNUz_zuIpzpCh2crMV-1B-JuLv5Np4U4D-0VBSk6xon6VJ_stjYzOBoi0gFCYQVEaI0RB9Mmnr0MA_nq14T74JPVPHu_Ryv7Cgqn4fcfNIEqI2n8BW5LfcLlFoMvdUFH-57Z6n8xPj9RaZtHQ2wOhqFNWkhUI1UwRUkxpZNK9iySGHD6_IbiOo_CY-Q30v8BJKWvMA4qSTMGLFsKIzmGSfBf2Sy7srm8GSYXR4goDY8vDBPInKcdf0pB-6PZQ75g0BmyOj9FZPyMDehqMdN7DSMqJjhBpU3xg60SzC_6AMdy1F1rsfc2v1EhW0AF6kwFYUUUyxkhVHyNgnusm4MzKFNesDA8Syp_xwLhY33bcQ9hrqI0DqCM-gUq1gxt9QTBcBUXqXC_N3Zbq12BRuMGB6SF1cUXKl49S0K06xhL9S8dWLA9-oike0LMYyS0mXdHa-Ym98tlAvILrZXKY_HEyXfS1mN4MXPwVCHdCUhqRcVvjxaLGCmce8FI-OPaTH3v2B95vfeC7DWDTess816wha4kJnjIL0x5ia7aTaSzg8ayWlAtMDj6fpVokEpEYsyKYsweBFclUXdJQf0k1Y_5bVteNb6-iS63x8Agan-b_U2h7qFxi2eGNUCrlIPs9owEeBvdZI'}
+    ]
   },
   {
     id: 'card-39',
@@ -748,6 +960,12 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675814400000,
     likes: ['user-37', 'user-20'],
     src: '/user-39.jpg',
+    skillImages: [
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQeyn19bKu7DDzXlVxhmhI3WxZXkDfft1QcdTWGHyJ5TEks86LfbqPS2rf84U_hGXW8ab4Db8F_GC2UTG4wjlWzHNh_fm2rrlZnnotAbwQKaEfdClfjnLdBzqZkloW4PFBXf3J_zu51xs1jL7XZuAeipa2_xuME-wGuncTs-wrCu9yeorC-_zyX4RVLSmxFhegHk4OdI5N_Cox0aVnOtWAamLg2f8_hvIIN6aS72XOP4akvNYKlArFAYtdLb_CJCLBW2Sq3cXF8Gy7Sj4TpBgKiTx6Nn-cTMAXMeOxeA7wu1xA7P_YLK_rCiO_g_dd5D-giLjPGrIY_S-PUiChzBA22XFjsPrb7sFWln8gLZcQKLsyUy1VhlbeKCj9jFYx1aRgXNfg7ASv5y0Uo4PJT_cBk42a-BmZAf8plHMVvcUzEeBmV5D0w_f_Sa54CTWMNDSPL34AcJ5S6gcj2o17D8mzTmnyy805vN8aJKS2-0r4BrSLjdsJjgLIB5RJDqb1HgHpXUS1wufGzFWWVw02lyY6kSJfPkCdf_oLBeOIXQzrom9VzujlIJT6OxWssfBJ9wivk4LlJ7YazhekVzCC1CA9-ldSsOX_9cJPrF0jJ4sPLK0vfyNwg0jzDSzarEEC_btLWtHm5R2f-A43oa34YfsxlZ6u2QOTKu4_rV0ikuUcKv55SK_2_v3-X7RWJgyACgyqC1ULa4ZE1iUnza9FOsWXYl3K5dgDkNsWKpm1-FbgP62MueMKjA_mJo10AIHqCzzGWXKy-ebF7V-USTkLqCg1uBNrIWmmfvMqLOGESAL5mGtH4szoIJjFNSmMqt5W1BaMt7_lKq0Q-TmGYwiD1gYV_Hd6v8f52ORDq18bEpEIE54obgRcqk7RDxDUiGo_xatfdcLo_zynyycjga_uW_A5hr6t0ge3I-wOplwin_MLNtVEXqo'},
+      {link: 'https://avatars.mds.yandex.net/i?id=1111d3e6dd29afa337d0b2ec490fd939fc393f82-12820356-images-thumbs&n=13'},
+      {link: 'https://www.thesun.co.uk/wp-content/uploads/2024/08/variety-cakes-pastries-boulangerie-patisserie-927262784.jpg?strip=all&w=960'},
+      {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQKXWg9bz77mD4XV110T4YjWtcVB7eeY8Bc4CGSnCM5TYitJ2PLuiOSWrb9IQ4hGXX7uL8AbkH6j7vTSygzSgDi3As96TUwMtHg2QjEaoYMqYhXAlCimSXEDfovw8O86liUvHK1ims2wUtgJDxZPwriKub5g-TGMEapHUlr-ImG-FLYaXv0trkR6tpJS-rGQiBClw2Y6dv3ycKxIp-Jcy0clL19fM6rvEpFYO-0GjOIaG6g_8mlCnrJKhbKofMDwXBVF-c7eHl-1SRfCsygjs8uQFON1-ab-0zFfCvRRPuuFR15tzqOLroOA27lNBO4iW4qqXtHrot5Cm2VR6T1CUC23NBt9zbyM5Kr08jELA1FaIrVC1BpXbzDjvPilov8oNLQc7c5h-N9DgzqYfufecHj6mO9By8NsUcqlw9tO0yNvt9Wa7ixPDJY7dUBwyEKDiPDkwpdYp91A8W8ZZNAcemYGDzz94ovfMNAayI6VrhEKy5mfcrkjb_B7FsEKTkCSXeS32f0djI5me0TxUCmiUZsT5PBGWGW-0KMPK0XCD7mkNI6uf7CYz7Cgqvh-dB-R-Sl6HvLYIG4TmVTS6Y9wMz22xlrN_C8uxJpVM8FKYoOawOUTNsgHLULiz8okUE9IVNSNfs-Tyu9hYCh4vee_QzrrOE3w2qD-srhXwSj_MtKcR_ZKTj0urnTI5YOTShDBOEFVQ_Sah5wy0oxJppLfOeTnXJ49oks84OArCQ0EPmJJS6m_oFsy_CCZZzBZnLDRPZcHyc8NLK-FOJcBsNsxQtrhd0BWyncu8GJfymZiTptmdF6uvEB7DbESSwpPli3SKSmrrlGqwk1QGUTwiw8SMb1E5jgfnO9e5xkEk7K5UvKIsieDVOgk7aCgfBmlUQ25ZDUvbUyhW61hQUvYDWaNQwpbeg1g-bBOoriGoFk9gQP8F1WqA'},
+    ]
   },
   {
     id: 'card-40',
@@ -767,5 +985,10 @@ export const CARDS_DATA: TCard[] = [
     createdAt: 1675900800000,
     likes: ['user-36', 'user-25'],
     src: '/user-40.jpg',
-  },
+    skillImages: [
+      {link: 'https://staroporubzhskoe-r64.gosweb.gosuslugi.ru/netcat_files/37/44/547a7b241083edaa7b3e981a928b2e9b.jpg'},
+      {link: 'https://vladimir.ruc.su/upload/medialibrary/7ed/3abffi3ejc7dotgumiv96smeyf1iwkb3.jpg'},
+      {link: 'https://sun1-21.userapi.com/impg/jxgx0W5tjTlQAoLm3zoJzQzOlmLIVzN_GTItXQ/GdETON2wgzo.jpg?size=520x0&quality=95&sign=f78132891d42c4ccaa3b06b03db127a1'},
+    ]
+  }
 ];

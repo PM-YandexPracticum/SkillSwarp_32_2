@@ -1,19 +1,30 @@
+import { fetchCardsData } from '@/api';
 import type { TCard } from '@/shared/global-types';
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
+
+export const getCards = createAsyncThunk('cards/get', fetchCardsData);
 
 interface TInitialState {
   cards: TCard[];
   filtered: TCard[];
+  loading: boolean;
+  error: string | null;
 }
 
 const initialState: TInitialState = {
   cards: [],
   filtered: [],
+  loading: false,
+  error: null,
 };
 
 const cardsSlice = createSlice({
-  name: 'card-slice',
+  name: 'cards',
   initialState,
+  selectors: {
+    getCardsState: (state) => state.cards,
+    getLoadingState: (state) => state.loading,
+  },
   reducers: {
     removeCard: (state, action: PayloadAction<string>) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
@@ -32,7 +43,7 @@ const cardsSlice = createSlice({
         teachSkill: action.payload.teachSkill,
         name: action.payload.name,
         src: action.payload.src,
-        likes: []
+        likes: [],
       };
       state.cards.push(newCard);
     },
@@ -67,9 +78,24 @@ const cardsSlice = createSlice({
       }
     },
   },
-  // здесь будут санки. я их добавлю когда будет готов API
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCards.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getCards.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message as string;
+      })
+      .addCase(getCards.fulfilled, (state, action) => {
+        state.cards = action.payload;
+        state.loading = false;
+        state.error = null;
+      });
+  },
 });
 
+export const { getCardsState, getLoadingState } = cardsSlice.selectors;
 export const { addCard, changeCard, removeCard } = cardsSlice.actions;
-export const  cardsReducer = cardsSlice.reducer;
-
+export default cardsSlice.reducer;

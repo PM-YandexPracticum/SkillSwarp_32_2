@@ -1,0 +1,6 @@
+.profile-menu__avatar {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 244px;
+  height: 244px;
+}

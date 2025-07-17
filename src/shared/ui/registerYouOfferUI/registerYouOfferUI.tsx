@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { useState, type FC } from 'react';
 import styles from './registerYouOffer.module.css';
 import type { registerYouOfferUIProps } from './type';
 import { InputUI } from '../inputUI';
@@ -6,29 +6,55 @@ import { ButtonUI } from '../buttonUI';
 import classNames from 'classnames';
 import { DropDrag, ProgressBar } from '@/widgets';
 import { HugeTeachingSVG } from '@/assets/svg/huge-teaching';
-// import { DropdownUI } from '../dropdownUI';
+import { DropdownUI } from '../dropdownUI';
+import type { DropdownOption } from '../dropdownUI/type';
+import { CheckboxUI } from '../checkboxUI';
+import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 
 export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
   offer,
   setOffer,
-  // category,
-  // setCategory,
+  //category,
+ // setCategory,
   description,
   setDescription,
-  handleSubmit
+  handleSubmit,
+  handleBack
 }) => {
-  /*
-  //для примера дропа, но над переделать скорее всего реаилизацию
-  скорее всего тут чекбокс дропдаун
-  const options = [
-    { name: 'Английский язык', id: '1' },
-    { name: 'Русский язык', id: '2' },
-    { name: 'Французский язык', id: '3' },
-  ];
+  
+const options: DropdownOption[] = MAIN_FILTERS_MOCK.map(option => ({
+      id: option.id,
+      name: option.title,
+    }));
 
-  const [selectedCategory, setSelectedCategory] = useState<DropdownOption | DropdownOption[]>([]);
-*/
+const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
 
+const handleCheckboxes = (id: string) => {
+    setCheckboxes((prev) => {
+      if (prev.some(item => item.id === id)) {
+        return prev.filter(item => item.id !== id);
+      };
+
+      const option = options.find(option => option.id === id);
+      if (!option) return prev;
+      return [...prev, option];
+    });
+  };
+
+const renderCheckboxes = (options: DropdownOption[]) => {
+    return options.map((option: DropdownOption) => (
+      <li key={option.id}>
+        <CheckboxUI
+          label={option.name}
+          value={option.id}
+          checked={checkboxes.some((item) => item.id === option.id)}
+          onChange={() => handleCheckboxes(option.id)}
+        />
+      </li>
+      )
+    );
+  };
+  
   return (
     <main className={styles.container}>
       <div className={styles.wrapper}>
@@ -50,33 +76,22 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
               value={offer}
               name='offer'
             />
-            <div className={styles.drohdownBlock}>
+            <div className={styles.dropdownBlock}>
               <p>Выберите категорию</p>
-              {/* <DropdownUI 
+              <DropdownUI 
                 withFilter={true} 
-                isMultiSelect={true}
-                options={category} 
-                value={category}
+                isMultiSelect={true} 
+                value={checkboxes} 
                 placeholder='Выберите категорию навыка'
               >
-               {category && (
-                ({ filter: currentFilter }) => {
-                  const filteredOptions = category.filter((option) =>
-                    option.name.toLowerCase().includes(currentFilter.toLowerCase())
+                {({ filter }) => {
+                  const filteredOptions = options.filter((option) =>
+                    option.name.toLowerCase().includes(filter.toLowerCase())
                   );
 
-                  return (
-                    <>
-                      {filteredOptions.map((option) => (
-                        <li key={option.id} className='dropdown-item'>
-                          <span onClick={() => setCategory(option)}>{option.name}</span>
-                        </li>
-                      ))}
-                    </>
-                  );
-                })
-              }
-              </DropdownUI> */}
+                  return <>{renderCheckboxes(filteredOptions)}</>;
+                }}
+              </DropdownUI>              
             </div>
             <InputUI
               label='Опишите, что вы предлагаете'
@@ -93,14 +108,13 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
             <div className={styles.buttons}>
               <ButtonUI 
                 type='button' 
-                onClick={()=>{}}
+                onClick={handleBack}
                 className={classNames(styles.button, styles.message_btn)}
                 >
                 Назад
               </ButtonUI>
               <ButtonUI 
-                type='button' 
-                onClick={()=>{}}
+                type='submit' 
                 className={classNames(styles.button, styles.link_btn)}
                 >
                 Продолжить

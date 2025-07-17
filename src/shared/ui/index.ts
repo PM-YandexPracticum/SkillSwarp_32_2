@@ -17,3 +17,4 @@ export * from './radio-button-groupUI';
 export * from './skill-image-galleryUI';
 export * from './modalUI';
 export * from './wayUI';
+export * from './popoverUi';
