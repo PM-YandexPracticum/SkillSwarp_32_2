@@ -32,12 +32,13 @@ export const formatAge = (age: number) => {
 
 //временный интерфейс для типизпции
 
+
 // Фильтрация по городам
 export const filterByCities = (cards: TCard[], cities: TCityFilter[]) => {
-  const selectedCityTitles = cities.filter((city) => city.status).map((city) => city.title);
-  if (selectedCityTitles.length === 0) return cards;
+  const selectedCityIds = cities.filter(ccity => ccity.status).map(ccity => ccity.id);
+  if (selectedCityIds.length === 0) return cards;
 
-  return cards.filter((card) => selectedCityTitles.includes(card.city));
+  return cards.filter((card) => selectedCityIds.includes(card.city));
 };
 
 // Фильтрация по полу
@@ -83,6 +84,8 @@ export const filterByCategories = (
   }
 };
 
+
+// Главная функция
 export const filterCards = (cards: TCard[], filterStore: FilterState): TCard[] => {
   let filteredCards = [...cards];
   filteredCards = filterByCities(filteredCards, filterStore.cities);

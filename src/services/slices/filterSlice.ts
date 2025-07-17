@@ -4,16 +4,6 @@ import type { commonFilterType, TCityFilter, TMainSkillFilter } from '@/shared/g
 // import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-export const getCategories = createAsyncThunk('categories/get', fetchCategoriesData);
-export const getCities = createAsyncThunk('cities/get', fetchCitiesData);
-
-export type allFilterStatuses = {
-  educationChecked: boolean;
-  genderChecked: boolean;
-  skillsChecked: boolean;
-  citiesChecked: boolean;
-};
-
 export type FilterState = {
   education: commonFilterType[];
   gender: commonFilterType[];
@@ -59,6 +49,22 @@ export const initialState: FilterState = {
   skills: [],
   cities: [],
 };
+
+export const getCategories = createAsyncThunk('fetch/skills', async (__, { rejectWithValue }) => {
+  try {
+    return fetchCategoriesData();
+  } catch (error) {
+    return rejectWithValue('ошибка в получении списка навыков, ' + error);
+  }
+});
+
+export const getCities = createAsyncThunk('fetch/cities', async (__, { rejectWithValue }) => {
+  try {
+    return fetchCitiesData();
+  } catch (error) {
+    return rejectWithValue('ошибка в получении списка навыков, ' + error);
+  }
+});
 
 export const filterSlice = createSlice({
   name: 'filter',
@@ -125,6 +131,8 @@ export const filterSlice = createSlice({
         city.id === action.payload ? { ...city, status: false } : city
       );
     },
+
+    // Для кнопки сброса всех фильтров
     resetAllFilters: (state) => {
       state.education = state.education.map((item) => ({
         ...item,
