@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import styles from './registerYouOffer.module.css';
 import type { registerYouOfferUIProps } from './type';
 import { InputUI } from '../inputUI';
@@ -10,44 +10,43 @@ import { DropdownUI } from '../dropdownUI';
 import type { DropdownOption } from '../dropdownUI/type';
 import { CheckboxUI } from '../checkboxUI';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
+import type { TMainSkillFilter } from '@/shared/global-types';
+
+const categories: DropdownOption<string, TMainSkillFilter>[] = MAIN_FILTERS_MOCK.map(option => ({
+  id: option.id,
+  name: option.title,
+  data: option,
+}));
 
 export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
   offer,
   setOffer,
-  //category,
- // setCategory,
+  category,
+  setCategory,
   description,
   setDescription,
   handleSubmit,
   handleBack
 }) => {
-  
-const options: DropdownOption[] = MAIN_FILTERS_MOCK.map(option => ({
-      id: option.id,
-      name: option.title,
-    }));
-
-const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
-
-const handleCheckboxes = (id: string) => {
-    setCheckboxes((prev) => {
+  const handleCheckboxes = (id: string) => {
+    setCategory((prev) => {
       if (prev.some(item => item.id === id)) {
         return prev.filter(item => item.id !== id);
       };
 
-      const option = options.find(option => option.id === id);
+      const option = categories.find(option => option.id === id);
       if (!option) return prev;
       return [...prev, option];
     });
   };
 
-const renderCheckboxes = (options: DropdownOption[]) => {
-    return options.map((option: DropdownOption) => (
+  const renderCategories = (options: DropdownOption<string, TMainSkillFilter>[]) => {
+    return options.map((option: DropdownOption<string, TMainSkillFilter>) => (
       <li key={option.id}>
         <CheckboxUI
           label={option.name}
           value={option.id}
-          checked={checkboxes.some((item) => item.id === option.id)}
+          checked={category.some((item) => item.id === option.id)}
           onChange={() => handleCheckboxes(option.id)}
         />
       </li>
@@ -78,18 +77,18 @@ const renderCheckboxes = (options: DropdownOption[]) => {
             />
             <div className={styles.dropdownBlock}>
               <p>Выберите категорию</p>
-              <DropdownUI 
+              <DropdownUI<string, TMainSkillFilter>
                 withFilter={true} 
                 isMultiSelect={true} 
-                value={checkboxes} 
+                value={category} 
                 placeholder='Выберите категорию навыка'
               >
                 {({ filter }) => {
-                  const filteredOptions = options.filter((option) =>
+                  const filteredOptions = categories.filter((option) =>
                     option.name.toLowerCase().includes(filter.toLowerCase())
                   );
 
-                  return <>{renderCheckboxes(filteredOptions)}</>;
+                  return <>{renderCategories(filteredOptions)}</>;
                 }}
               </DropdownUI>              
             </div>

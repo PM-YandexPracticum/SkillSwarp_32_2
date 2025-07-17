@@ -10,10 +10,10 @@ import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 
 export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
   const [name, setName] = useState(''); 
-  const [age, setAge] = useState<DropdownOption>({ id: '', name: '' });
-  const [gender, setGender] = useState<DropdownOption>({ id: '', name: '' });
-  const [city, setCity] = useState<DropdownOption>({ id: '', name: '' });
-  const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
+  const [age, setAge] = useState<DropdownOption<number | undefined>>({ id: undefined , name: '' });
+  const [gender, setGender] = useState<DropdownOption<genderType>>({ id: null, name: '' });
+  const [city, setCity] = useState<DropdownOption<string>>({ id: '', name: '' });
+  const [skills, setSkills] = useState<DropdownOption<string>[]>([]);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,10 +30,10 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
 
     const data = {
       name,
-      age: Number(age.name),
-      gender: gender.name as genderType,
+      age: age.id,
+      gender: gender.id,
       city: city.name,
-      checkboxes: checkboxes
+      skills: skills
     };
 
     dispatch(setRegistrationStepData(data));
@@ -45,17 +45,19 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
     dispatch(clearErrorMessage());
   }, []);
 */
-  return <RegisterAboutYouUI
-    name = {name}
-    setName = {setName}
-    gender = {gender}
-    setGender = {setGender}
-    age = {age}
-    setAge = {setAge}
-    city = {city}
-    setCity = {setCity}
-    skill = {checkboxes}
-    setSkill = {setCheckboxes}
-    handleSubmit={handleSubmit}
-    handleBack={handleBack} />;
+  return (
+    <RegisterAboutYouUI
+      name = {name}
+      setName = {setName}
+      gender = {gender}
+      setGender = {setGender}
+      age = {age}
+      setAge = {setAge}
+      city = {city}
+      setCity = {setCity}
+      skill = {skills}
+      setSkill = {setSkills}
+      handleSubmit={handleSubmit}
+      handleBack={handleBack} />
+  );
 };

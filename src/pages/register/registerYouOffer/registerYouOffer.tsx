@@ -1,21 +1,20 @@
 import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
 import { /*useEffect,*/ useState } from 'react';
 import { RegisterYouOfferUI } from '@/shared/ui';
-<<<<<<< HEAD
 import type { setStateProps } from '../type';
 //import { useDispatch, useSelector } from '../../services/store';
 //import { useLocation, useNavigate } from 'react-router-dom';
-=======
 import store from '@/services/store/store';
 import { useDispatch, useSelector } from '@/services/store';
 import { useNavigate } from 'react-router-dom';
 import { clearRegistrationData, registerUserThunk, selectRegistrationData, setRegistrationStepData } from '@/services/slices';
-import type { TUser } from '@/shared/global-types';
->>>>>>> 48b38c2 (working on registration pages. Registration works. Adding form fields into the registrationData)
+import type { TMainSkillFilter, TUser } from '@/shared/global-types';
+import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 
 //дописать взаимодействие и дополнить тип
 
 export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
+  const [category, setCategory] = useState<DropdownOption<string,TMainSkillFilter>[]>([]);
   const [offer, setOffer] = useState('');
   const [description, setDescription] = useState('');
   const [file, setFile] = useState('');
@@ -34,9 +33,7 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-<<<<<<< HEAD
     setCurrentPage((current) => current + 1);
-=======
 
     dispatch(setRegistrationStepData({ description, image: file }));
 
@@ -55,9 +52,6 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
         console.error('Регистрация не удалась');
       }
     });
-
-
->>>>>>> 48b38c2 (working on registration pages. Registration works. Adding form fields into the registrationData)
   };
   /*
   useEffect(() => {
@@ -66,6 +60,8 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
 */
   return (
     <RegisterYouOfferUI
+      category={category}
+      setCategory={setCategory}
       offer={offer}
       setOffer={setOffer}
       description={description}
