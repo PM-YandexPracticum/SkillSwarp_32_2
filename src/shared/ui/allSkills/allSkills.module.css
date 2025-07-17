@@ -1,5 +1,5 @@
 .allSkillsModal {
-  position: relative;
+  position: absolute;
   display: grid;
   grid-template-columns: 488px 488px;
   gap: 40px;
@@ -7,9 +7,12 @@
   padding: 56px 60px 60px 0;
   width: 1136px;
   height: 1040px;
-  background-color: #fff;
+  background-color: var(--accent-background);
   border: 1px solid var(--caption-redesigned);
   color: var(--text-redesigned);
+  z-index: 20;
+  top: 94px;
+  left: 36px;
 }
 
 .allSkillsModal__skill {
@@ -69,7 +72,7 @@
 }
 
 .allSkillsModal__btn:hover {
-  color: blue;
+  color: var(--interaction-color);
 }
 
 .allSkillsModal__btn:active {
@@ -100,6 +103,6 @@
   background-color: var(--tag-dom-i-uyut);
 }
 
-.health .allSkillsModal__iconWrapper {
+.lifestyle .allSkillsModal__iconWrapper {
   background-color: var(--tag-zdorove-i-layfstayl);
 }

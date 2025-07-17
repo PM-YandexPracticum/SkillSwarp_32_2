@@ -1,126 +1,61 @@
-import type { FC } from 'react';
+import { useEffect, useRef, type FC } from 'react';
 import styles from './allSkills.module.css';
 import { ButtonUI } from '../buttonUI';
 import { BriefcaseSVG, BookSVG, HomeSVG, PaletteSVG, GlobalSVG, HealthSVG } from '@/assets/svg';
 import type { SVGType } from '@/assets/svg/svg.type';
-export const AllSkills: FC = () => {
-  const categories = [
-    {
-      skillsGroup: 'Бизнес и карьера',
-      className: 'bissnes',
-      skills: [
-        'Управление командой',
-        'Маркетинг и реклама',
-        'Продажи и переговоры',
-        'Личный бренд',
-        'Резюме и собеседование',
-        'Тайм-менеджмент',
-        'Проектное управление',
-        'Предпринимательство',
-      ],
-    },
-    {
-      skillsGroup: 'Творчество и искусство',
-      className: 'art',
-      skills: [
-        'Рисование и иллюстрация',
-        'Фотография',
-        'Видеомонтаж',
-        'Музыка и звук',
-        'Актёрское мастерство',
-        'Креативное письмо',
-        'Арт-терапия',
-        'Декор и DIY',
-      ],
-    },
-    {
-      skillsGroup: 'Иностранные языки',
-      className: 'languages',
-      skills: [
-        'Английский',
-        'Французкий',
-        'Испанский',
-        'Немецкий',
-        'Китайский',
-        'Японский',
-        'Подготовка к экзаменам (IELTS, TOEFL)',
-      ],
-    },
-    {
-      skillsGroup: 'Образование и развитие',
-      className: 'education',
-      skills: [
-        'Личностное развитие',
-        'Навыки обучения',
-        'Когнитивные техники',
-        'Скорочтение',
-        'Навыки преподования',
-        'Коучинг',
-      ],
-    },
-    {
-      skillsGroup: 'Дом и уют',
-      className: 'home',
-      skills: [
-        'Уборка и организация',
-        'Домашние финансы',
-        'Приготовление еды',
-        'Домашние растения',
-        'Ремонт',
-        'Хранение вещей',
-      ],
-    },
-    {
-      skillsGroup: 'Здоровье и лайфстайл',
-      className: 'health',
-      skills: [
-        'Йога и медитация',
-        'Питание и ЗОЖ',
-        'Ментальное здоровье',
-        'Осознанность',
-        'Физические тренировки',
-        'Сон и восстановление',
-        'Баланс жизни и работы',
-      ],
-    },
-  ];
+import type { AllSkillsProps } from './type';
+
+export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(target) &&
+        headerRef?.current &&
+        !headerRef.current.contains(target)
+      ) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose, headerRef]);
 
   const iconsMap: Record<string, FC<SVGType>> = {
-    bissnes: BriefcaseSVG,
+    business: BriefcaseSVG,
     art: PaletteSVG,
     languages: GlobalSVG,
     education: BookSVG,
     home: HomeSVG,
-    health: HealthSVG,
+    lifestyle: HealthSVG,
   };
 
   return (
-    <div className={styles.allSkillsModal}>
-      {categories.map(({ className, skills, skillsGroup }) => {
-        const Icon = iconsMap[className];
+    <div ref={modalRef} className={styles.allSkillsModal}>
+      {mainFilters.map(({ type, title, subFilters }) => {
+        const Icon = iconsMap[type];
 
         return (
-          <div className={`${styles.allSkillsModal__skill} ${styles[className]}`} key={skillsGroup}>
+          <div className={`${styles.allSkillsModal__skill} ${styles[type]}`} key={type}>
             <h2 className={styles.allSkillsModal__title}>
-              <span className={styles.allSkillsModal__iconWrapper}>
-                <Icon />
-              </span>
-              {skillsGroup}
+              <span className={styles.allSkillsModal__iconWrapper}>{Icon && <Icon />}</span>
+              {title}
             </h2>
             <ul className={styles.allSkillsModal__group}>
-              {skills.map((skill, idx) =>
-                skill ? (
-                  <li key={idx} className={styles.allSkillsModal__item}>
-                    <ButtonUI
-                      type='button'
-                      onClick={() => {}}
-                      className={styles.allSkillsModal__btn}
-                    >
-                      {skill}
-                    </ButtonUI>
-                  </li>
-                ) : null
-              )}
+              {subFilters.map(({ title: skillTitle, id }) => (
+                <li key={id} className={styles.allSkillsModal__item}>
+                  <ButtonUI type='button' onClick={onClose} className={styles.allSkillsModal__btn}>
+                    {skillTitle}
+                  </ButtonUI>
+                </li>
+              ))}
             </ul>
           </div>
         );

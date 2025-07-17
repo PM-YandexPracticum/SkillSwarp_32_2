@@ -1,3 +1,8 @@
-// export type allSkillsProps = {
-//   allSkills: string[]; // или другой тип, соответствующий твоим данным
-// };
+import type { TMainSkillFilter } from '@/shared/global-types';
+import React from 'react';
+
+export interface AllSkillsProps {
+  onClose: () => void;
+  mainFilters: TMainSkillFilter[];
+  headerRef?: React.RefObject<HTMLElement | null>;
+}
