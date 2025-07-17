@@ -7,14 +7,15 @@ import type { setStateProps } from '../type';
 import store from '@/services/store/store';
 import { useDispatch, useSelector } from '@/services/store';
 import { clearRegistrationData, postCardThunk, registerUserThunk, selectRegistrationData, setRegistrationStepData } from '@/services/slices';
-import type { TMainSkillFilter, TUser } from '@/shared/global-types';
+import type { TCard, TUser } from '@/shared/global-types';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
+import { makeSkillsArray } from '../helpers';
 
 //дописать взаимодействие и дополнить тип
 
 export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
-  const [category, setCategory] = useState<DropdownOption<string,TMainSkillFilter>[]>([]);
   const [offer, setOffer] = useState('');
+  const [teachSkill, setTeachSkill] = useState<DropdownOption<string>[]>([]);
   const [description, setDescription] = useState('');
   const [file, setFile] = useState('');
 
@@ -32,45 +33,47 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
 
     dispatch(setRegistrationStepData({ description, image: file }));
 
+    const teachSkillsData = makeSkillsArray(teachSkill);
+    
+
     const { learnSkill, name, age, city, gender, mail, password } = registrationData;
 
     const userId = self.crypto.randomUUID();
-    const cardId = self.crypto.randomUUID();
 
-    if (
+     const isValidData =
       age &&
-      name !== '' && 
+      name &&
       gender &&
-      city !== '' &&
-      Array.isArray(learnSkill)
-    ) {
+      city &&
+      Array.isArray(learnSkill);
+
+    if (!isValidData) return;
 
     const userData = {
-       gender: gender,
-        userId: userId,
-        name: name,
-        city: city,
-        age: age,
-        mail: mail,
-        password: password,
-        description: description,
-        incoming: [],
-        outgoing: [],
-        image: '',
-        likes: [],
+      gender,
+      userId,
+      name,
+      city,
+      age,
+      mail,
+      password,
+      description,
+      incoming: [],
+      outgoing: [],
+      image: '',
+      likes: [],
     };
 
-    const cardData = {
-      id: cardId,
-      userId: userId,
-      teachSkill: [],
-      learnSkill: learnSkill,
-      name: name as string,
-      city: city as string,
-      age: age,
-      description: description,
+    const cardData: Omit<TCard, 'id'> = {
+      userId,
+      teachSkill: teachSkillsData,
+      learnSkill,
+      name,
+      city,
+      age,
+      description,
       fullDescription: '',
-      gender: gender,
+      gender,
       createdAt: Date.now(),
       likes: [],
       src: '',
@@ -91,19 +94,14 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
     console.log(cardData);
 
     setCurrentPage((current) => current + 1);
-    };
   };
-  /*
-  useEffect(() => {
-    dispatch(clearErrorMessage());
-  }, []);
-*/
+  
   return (
     <RegisterYouOfferUI
-      category={category}
-      setCategory={setCategory}
       offer={offer}
       setOffer={setOffer}
+      skill={teachSkill}
+      setSkill={setTeachSkill}
       description={description}
       setDescription={setDescription}
       handleSubmit={handleSubmit}
