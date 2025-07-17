@@ -27,31 +27,29 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
 
     const learnSkillsData = makeSkillsArray(learnSkills);
 
-    if (
-      age.id &&
+    const isValid =
       name.trim() !== '' &&
-      gender.id &&
+      typeof age.id === 'number' &&
+      gender.id !== null &&
       city.name.trim() !== '' &&
-      learnSkills.length > 0
-    ) {
-      const data = {
-        name,
-        age: age.id,
-        gender: gender.id,
-        city: city.name,
-        learnSkill: learnSkillsData
-      };
+      learnSkillsData.length > 0;
 
-      dispatch(setRegistrationStepData(data));
-      console.log(store.getState());
-      setCurrentPage((current) => current + 1);
-    }
+    if (!isValid) return;
+
+    
+    const data = {
+      name,
+      age: age.id,
+      gender: gender.id,
+      city: city.name,
+      learnSkill: learnSkillsData
+    };
+
+    dispatch(setRegistrationStepData(data));
+    setCurrentPage((current) => current + 1);
+    console.log(store.getState());
   };
-  /*
-  useEffect(() => {
-    dispatch(clearErrorMessage());
-  }, []);
-*/
+
   return (
     <RegisterAboutYouUI
       name = {name}

@@ -203,7 +203,7 @@ export async function registerUser(userData: Omit<TUser, 'id'>): Promise<TUser> 
 
     const data: TUser = await response.json();
 
-    localStorage.setItem('current-user', JSON.stringify(data));
+    localStorage.setItem('current-user', JSON.stringify(data.userId));
     return data;
   } catch (error) {
     console.error('Ошибка при решистрации пользователя ', error);

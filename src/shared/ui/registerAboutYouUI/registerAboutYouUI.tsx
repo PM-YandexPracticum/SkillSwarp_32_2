@@ -118,7 +118,7 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
       });
     };
 
-  const renderCheckboxes = (options: DropdownOption<string>[]) => {
+  const renderSkills = (options: DropdownOption<string>[]) => {
     return options.map((option: DropdownOption<string>) => (
       <li key={option.id}>
         <CheckboxUI
@@ -198,7 +198,7 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
                     option.name.toLowerCase().includes(filter.toLowerCase())
                   );
 
-                  return <>{renderCheckboxes(filteredOptions)}</>;
+                  return <>{renderSkills(filteredOptions)}</>;
                 }}
                 </DropdownUI>
             </div>

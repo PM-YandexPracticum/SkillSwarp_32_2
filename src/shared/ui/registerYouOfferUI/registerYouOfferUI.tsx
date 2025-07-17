@@ -10,43 +10,43 @@ import { DropdownUI } from '../dropdownUI';
 import type { DropdownOption } from '../dropdownUI/type';
 import { CheckboxUI } from '../checkboxUI';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
-import type { TMainSkillFilter } from '@/shared/global-types';
-
-const categories: DropdownOption<string, TMainSkillFilter>[] = MAIN_FILTERS_MOCK.map(option => ({
-  id: option.id,
-  name: option.title,
-  data: option,
-}));
 
 export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
+  skill,
+  setSkill,
   offer,
   setOffer,
-  category,
-  setCategory,
   description,
   setDescription,
   handleSubmit,
   handleBack
 }) => {
+  const skills: DropdownOption<string>[] = MAIN_FILTERS_MOCK.flatMap(filter =>
+    filter.subFilters.map(subFilter => ({
+      id: subFilter.id,
+      name: subFilter.title
+    }))
+  );
+
   const handleCheckboxes = (id: string) => {
-    setCategory((prev) => {
+    setSkill((prev) => {
       if (prev.some(item => item.id === id)) {
         return prev.filter(item => item.id !== id);
       };
 
-      const option = categories.find(option => option.id === id);
+      const option = skills.find(option => option.id === id);
       if (!option) return prev;
       return [...prev, option];
     });
   };
 
-  const renderCategories = (options: DropdownOption<string, TMainSkillFilter>[]) => {
-    return options.map((option: DropdownOption<string, TMainSkillFilter>) => (
+  const renderSkills = (options: DropdownOption<string>[]) => {
+    return options.map((option: DropdownOption<string>) => (
       <li key={option.id}>
         <CheckboxUI
           label={option.name}
           value={option.id}
-          checked={category.some((item) => item.id === option.id)}
+          checked={skill.some((item) => item.id === option.id)}
           onChange={() => handleCheckboxes(option.id)}
         />
       </li>
@@ -77,20 +77,20 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
             />
             <div className={styles.dropdownBlock}>
               <p>Выберите категорию</p>
-              <DropdownUI<string, TMainSkillFilter>
+              <DropdownUI 
                 withFilter={true} 
                 isMultiSelect={true} 
-                value={category} 
-                placeholder='Выберите категорию навыка'
+                value={skill} 
+                placeholder='Выберите'
               >
                 {({ filter }) => {
-                  const filteredOptions = categories.filter((option) =>
+                  const filteredOptions = skills.filter((option) =>
                     option.name.toLowerCase().includes(filter.toLowerCase())
                   );
 
-                  return <>{renderCategories(filteredOptions)}</>;
+                  return <>{renderSkills(filteredOptions)}</>;
                 }}
-              </DropdownUI>              
+                </DropdownUI>           
             </div>
             <InputUI
               label='Опишите, что вы предлагаете'

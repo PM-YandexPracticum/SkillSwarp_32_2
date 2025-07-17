@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TCard, TUser } from '@/shared/global-types';
-import { loginUser, registerUser } from '@/api/skill-swap-api';
+import { checkUserAuth, loginUser, registerUser } from '@/api/skill-swap-api';
 
 interface UserState {
   user: TUser | null;
@@ -59,6 +59,23 @@ export const loginUserThunk = createAsyncThunk<
     }
   }
 );
+
+export const checkAuthThunk = createAsyncThunk<
+  TUser | null,
+  void,
+  { rejectValue: string }
+>('checkAuthThunk', async (_, { dispatch, rejectWithValue }) => {
+  try {
+    const user = await checkUserAuth();
+    if (user) {
+      dispatch(setUser(user));
+      return user;
+    }
+    return null;
+  } catch (error) {
+    return rejectWithValue(`Ошибка при проверке авторизации: ${error}`);
+  }
+});
 
 const userSlice = createSlice({
   name: 'user',
@@ -146,7 +163,10 @@ const userSlice = createSlice({
       })
       .addCase(registerUserThunk.rejected, (state, action) => {
         state.errorMessage = action.payload || 'Ошибка регистрации';
-      });
+      })
+      .addCase(checkAuthThunk.rejected, (state, action) => {
+        state.errorMessage = action.payload || 'Ошибка авторизации';
+  });
     }
 });
 
