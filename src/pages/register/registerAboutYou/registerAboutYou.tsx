@@ -1,6 +1,7 @@
 import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
 import { /*useEffect,*/ useState } from 'react';
 import { RegisterAboutYouUI } from '@/shared/ui';
+// import type { setStateProps } from '../type';
 import type { setStateProps } from '../type';
 //import { useDispatch, useSelector } from '../../services/store';
 //import { useLocation, useNavigate } from 'react-router-dom';
@@ -23,6 +24,8 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
     e.preventDefault();
     setCurrentPage((current) => current + 1);
     /*  const data = { email, password };
+    setCurrentPage((current) => current + 1);
+    /*  const data = { email, password };
 
     dispatch(fetchLoginUser(data)).then(() => {
       navigate(from);
@@ -34,5 +37,12 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
     dispatch(clearErrorMessage());
   }, []);
 */
-  return <RegisterAboutYouUI name={name} setName={setName} handleSubmit={handleSubmit} handleBack={handleBack} />;
+  return (
+    <RegisterAboutYouUI
+      name={name}
+      setName={setName}
+      handleSubmit={handleSubmit}
+      handleBack={handleBack}
+    />
+  );
 };

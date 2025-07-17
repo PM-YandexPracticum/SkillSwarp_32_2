@@ -26,8 +26,8 @@ export const SkillPage: FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [location]);
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>
@@ -35,8 +35,8 @@ export const SkillPage: FC = () => {
         <ButtonUI type='link' to='/' className={styles.button}>
           <ArrowLeftSVG color='var(--grey-deep-color)' />
           {/* TODO Пока заглушка. Как будет готов, заменить на компонент */}
-        <span> Главная / </span> <span>{card.teachSkill[0].type} / </span> <span>{card.teachSkill[0].subType} / </span> <span>{card.teachSkill[0].title}</span>
-         
+          <span> Главная / </span> <span>{card.teachSkill[0].type} / </span>{' '}
+          <span>{card.teachSkill[0].subType} / </span> <span>{card.teachSkill[0].title}</span>
         </ButtonUI>
         <div className={styles.skill_content}>
           <UserCard card={card} type='full' />
