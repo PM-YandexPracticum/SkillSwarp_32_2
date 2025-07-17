@@ -1,12 +1,12 @@
 import styles from './skill-page.module.css';
 import { UserCard } from '@/widgets';
-import { type FC } from 'react';
+import { useEffect, type FC } from 'react';
 import { ArrowLeftSVG } from '@/assets/svg';
 import { ButtonUI } from '@/shared/ui';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 import { SameOffers } from '@/widgets/same-offers';
 import { SkillCard } from '@/widgets/skill-card';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
 
 export const SkillPage: FC = () => {
@@ -22,6 +22,12 @@ export const SkillPage: FC = () => {
   // const prevPageHandler = useCallback(() => {
   //   if (currentPage > 0) setCurrentPage(currentPage - 1);
   // }, [currentPage]);
+
+  const location = useLocation();
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location]);
 
   return (
     <>
