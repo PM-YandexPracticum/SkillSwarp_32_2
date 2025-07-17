@@ -69,8 +69,6 @@ export const MAIN_FILTERS_MOCK: TMainSkillFilter[] = [
   },
   {
     id: '4',
-<<<<<<< HEAD
-=======
     type: 'home',
     title: 'Дом и уют',
     src: '/#',
@@ -85,17 +83,10 @@ export const MAIN_FILTERS_MOCK: TMainSkillFilter[] = [
   },
   {
     id: '5',
->>>>>>> 5ca1805 (Выпадающая панель всех навыков)
     type: 'lifestyle',
     title: 'Здоровье и лайфстайл',
     src: '/#',
     subFilters: [
-<<<<<<< HEAD
-      { title: 'Йога и медитация', id: '4-0', type: 'yoga', status: false },
-      { title: 'Питание и ЗОЖ', id: '4-1', type: 'nutrition', status: false },
-      { title: 'Ментальное здоровье', id: '4-2', type: 'mental-health', status: false },
-      { title: 'Осознанность', id: '4-3', type: 'mindfulness', status: false },
-=======
       { title: 'Йога и медитация', id: '5-0', type: 'yoga', status: false },
       { title: 'Питание и ЗОЖ', id: '5-1', type: 'nutrition', status: false },
       { title: 'Ментальное здоровье', id: '5-2', type: 'mental-health', status: false },
@@ -103,18 +94,6 @@ export const MAIN_FILTERS_MOCK: TMainSkillFilter[] = [
       { title: 'Физические тренировки', id: '5-4', type: 'fitness', status: false },
       { title: 'Сон и восстановление', id: '5-5', type: 'sleep', status: false },
       { title: 'Баланс жизни и работы', id: '5-6', type: 'work-life-balance', status: false },
->>>>>>> 5ca1805 (Выпадающая панель всех навыков)
     ],
   },
-  {
-    id: '5',
-    type: 'home',
-    title: 'Дом и уют',
-    src: '/#',
-    subFilters: [
-      { title: 'Уборки и организация', id: '5-0', type: 'cleaning ', status: false },
-      { title: 'Домашние финансы', id: '5-1', type: 'home-finances', status: false },
-      { title: 'Приготовление еды', id: '5-2', type: 'cooking', status: false },
-    ],
-  }
 ];
