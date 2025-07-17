@@ -22,3 +22,8 @@ export { UserFramedSVG } from './user-framed';
 export { StarSVG } from './star';
 export { OutgoingSVG } from './outgoing';
 export { IncomingSVG } from './incoming';
+export { BriefcaseSVG } from './briefcase';
+export { HomeSVG } from './home';
+export { PaletteSVG } from './palette';
+export { GlobalSVG } from './global';
+export { HealthSVG } from './health';

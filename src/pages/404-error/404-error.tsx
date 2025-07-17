@@ -18,7 +18,9 @@ export const Error404: FC = () => {
       <div className={styles.wrapper}>
         <div className={styles.text}>
           <h2 className={styles.title}>Страница не найдена</h2>
-          <p>К сожалению, эта страница недоступна. Вернитесь на главную страницу или попробуйте позже</p>
+          <p>
+            К сожалению, эта страница недоступна. Вернитесь на главную страницу или попробуйте позже
+          </p>
         </div>
         <div className={styles.buttons}>
           <ButtonUI

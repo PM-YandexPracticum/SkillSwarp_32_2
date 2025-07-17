@@ -1,7 +1,6 @@
 import { PreloaderUI } from '@/shared/ui';
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-
 type TProtectedRoute = {
   isPublic?: boolean;
   children: React.ReactNode;
