@@ -32,6 +32,7 @@ export const Main: FC = () => {
   const skillsState = useSelector(getSkillsState);
   const citiesState = useSelector(getCitiesState);
   const cardsState = useSelector(getCardsState);
+  console.log(cardsState)
 
   // const cards = filterCards(CARDS_DATA, {
   //   education: educationState,
@@ -41,11 +42,11 @@ export const Main: FC = () => {
   // });
 
   const cards = filterCards(cardsState, {
-      education: educationState,
-      gender: genderState,
-      skills: skillsState,
-      cities: citiesState,
-    });
+    education: educationState,
+    gender: genderState,
+    skills: skillsState,
+    cities: citiesState,
+  });
 
   const checkFiltersState = checkAllActiveFilters(
     skillsState,
@@ -138,18 +139,24 @@ export const Main: FC = () => {
         />
       </div>
       {checkFiltersState ? (
-        <div className={styles.card_blocks}>
-          {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
-          {cards.length > 0 ? (
-            <CardListUI
-              title={`Подходящие предложения: ${cards.length}`}
-              handleSort={() => {}} // пока заглушка
-              cards={cards}
-            />
-          ) : (
+        cards.length > 0 ? (
+          <div className={styles.card_blocks}>
+            {activeFilters.length > 0 && (
+              <>
+                <EnabledFiltersBlock filters={activeFilters} />
+                <CardListUI
+                  title={`Подходящие предложения: ${cards.length}`}
+                  handleSort={() => {}} // пока заглушка
+                  cards={cards}
+                />
+              </>
+            )}
+          </div>
+        ) : (
+          <div className={styles.card_blocks}>
             <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
-          )}
-        </div>
+          </div>
+        )
       ) : (
         <div className={styles.card_blocks}>
           <CardListUI title='Популярное' handleOpen={() => {}} cards={cardsPopular} />
