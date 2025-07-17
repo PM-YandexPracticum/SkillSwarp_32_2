@@ -43,7 +43,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1672617600000,
     likes: ['user-8', 'user-15'],
-    src: '/user-2.jpg',
+    src: 'https://img.freepik.com/free-photo/smiling-portrait-studio-woman_1303-2289.jpg?semt=ais_hybrid&w=740',
     skillImages: [
       {link: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4383d076526965.5c6c70a23dec6.jpg'},
       {link: 'https://i.pinimg.com/originals/36/22/48/362248a6e89153763d6377bdd5ff9593.jpg'},
@@ -67,7 +67,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1672704000000,
     likes: ['user-10'],
-    src: '/user-3.jpg',
+    src: 'https://1fotostudiya.ru/wp-content/uploads/2018/07/1000-redfox-6dac144f4bd61734ab8f39dde6a63b4c.jpeg',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=21a79cd8da681e37987b0c78508bdebd_l-4935356-images-thumbs&n=13'},
       {link: 'https://smoleducentre.ru/wp-content/uploads/2023/09/a5npkrgr9q0.jpg'},
@@ -93,7 +93,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1672790400000,
     likes: ['user-7', 'user-18'],
-    src: '/user-4.jpg',
+    src: 'https://avatars.mds.yandex.net/get-yapic/23186/xB5NVbroHODxPbWhhwcAPnSvVIA-1/orig',
     skillImages: [
       {link: 'https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_677c087e60cfc04bcacaeff2_677c0934b998c46e089648c0/scale_1200'},
       {link: 'https://static.insales-cdn.com/files/1/2368/5310784/original/77654556.jpg'},
@@ -117,7 +117,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1672876800000,
     likes: ['user-3', 'user-9', 'user-20'],
-    src: '/user-5.jpg',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfM3dnBlurlz9DFk7HogBRLpO20atwfZdKZA&s',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=e909447cb419ca0fd7096f0700ef4e2ec9537a67-9289753-images-thumbs&n=13'},
       {link: 'https://avatars.mds.yandex.net/i?id=50472c4d235b3378910155b238b7cd98_sr-4825091-images-thumbs&n=13'},
@@ -143,7 +143,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1672963200000,
     likes: ['user-11', 'user-14'],
-    src: '/user-6.jpg',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw8o9w9GosmDTfv9eNvkb7MAzHXKEJSO8jjA&s',
     skillImages: [
       {link: 'https://samokat-fitnes.ru/wp-content/uploads/2023/03/krugovye-trenirovki.jpg'},
       {link: 'https://urgaps.ru/uplfile/news_image/iStock-927929836.jpg'},
@@ -167,7 +167,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1673049600000,
     likes: ['user-2', 'user-19'],
-    src: '/user-7.jpg',
+    src: 'https://35photo.pro/photos_series/1455/1455389.jpg',
     skillImages: [
       {link: 'https://i.pinimg.com/originals/8a/7c/80/8a7c80222be5a495964019810c3f8259.jpg'},
       {link: 'https://i.pinimg.com/originals/02/57/cf/0257cf546953e74b3cb3d3cd7f724a53.jpg'},
@@ -193,7 +193,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1673136000000,
     likes: ['user-4', 'user-16'],
-    src: '/user-8.jpg',
+    src: 'https://www.fotoprizer.ru/img/143576_orig.jpg',
     skillImages: [
       {link: 'https://cf3.ppt-online.org/files3/slide/o/oyFTg7GZEp5HWtsRfDxnbqeaIzUj3lL0rmPV2S/slide-0.jpg'},
       {link: 'https://russa.amaks-kurort.ru/upload/sanatoriy-staraya-russa/rest-programs/kanikuly/video.jpg'},
@@ -219,7 +219,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1673222400000,
     likes: ['user-13'],
-    src: '/user-9.jpg',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8I1DWOnOvXkFdTBYes2hgR3ZAGk1LkZL6Hw&s',
     skillImages: [
       {link: 'https://sun1-97.userapi.com/s/v1/if1/TK_wql-fE_S4Ne3GfTySzkSPGJkAHlk0PBNIZXqmCy7jFYPfEuj-d_ZqD1Ct4h1dfcxMplC0.jpg?size=2160x2160&quality=96&crop=0,0,2160,2160&ava=1'},
       {link: 'https://kaluga.rpa-mu.ru/Media/kaluga/novosti/2024/12_2024/deutsch-bersetzung-deutsch-deutsche-sprachhandgezogene-gekritzel-und-c-beschriften-137764738-1-1.jpg'},
@@ -247,7 +247,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1673308800000,
     likes: ['user-1', 'user-17'],
-    src: '/user-10.jpg',
+    src: 'https://barber-shop.su/wp-content/uploads/2022/08/muzhskie-strizhki-dlya-zhenshhin119.jpg',
     skillImages: [
       {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQLXDzpL6u7jD0XVt71mkY3z4PXxONKo4DcNTTTCvetT9O6YCIf--NRHfZ69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
     ]
@@ -270,7 +270,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1673395200000,
     likes: ['user-6', 'user-22'],
-    src: '/user-11.jpg',
+    src: 'https://www.cinemafia.ru/upload/images/2016/07/30%20%D0%B4%D0%BE%2030%20%D0%BC%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BA%D0%B8/Ryan%20Guzman.jpg',
     skillImages: [
       {link: 'https://c1.35photo.pro/photos_temp/sizes/560/2801484_1500n.jpg'},
       {link: 'https://wallpaper.forfun.com/fetch/80/805775d8c30b52a3f01d2ff6a0222c53.jpeg'},
@@ -295,7 +295,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1673481600000,
     likes: ['user-3', 'user-25'],
-    src: '/user-12.jpg',
+    src: 'https://litemf.com/ru/journal/wp-content/uploads/2021/12/Sumki.jpg',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=eac6b101c24eb4b9137dde41c02d9f254575a441-5232282-images-thumbs&n=13'},
       {link: 'https://careertest.ru/static/img/professions/brend-menedzher-og.jpg'},
@@ -319,7 +319,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1673568000000,
     likes: ['user-9', 'user-30'],
-    src: '/user-13.jpg',
+    src: 'https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=38f4b1c313ff961bd97505d14b8c3462683bf9b3-9181142-images-thumbs&n=13'},
       {link: 'https://i.ytimg.com/vi/UXM0O8ln564/maxresdefault.jpg'},
@@ -345,7 +345,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1673654400000,
     likes: ['user-5', 'user-21'],
-    src: '/user-14.jpg',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8XwsvYxG6jpBccGZ0xmBRTcNBDDi5N5lBzA&s',
     skillImages: [
       {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQKSH_oLqq7jPwWQl61Wge328JVRWLeYpSc4WGGHvd4zFO6YCJfOuJSXbb69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
       {link: 'https://i.pinimg.com/originals/ad/6f/6d/ad6f6daeee5b3c31623e20e17c072075.jpg'},
@@ -371,7 +371,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1673740800000,
     likes: ['user-12', 'user-24'],
-    src: '/user-15.jpg',
+    src: 'https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg',
     skillImages: [
       {link: 'https://beseller.by/assets/images/b2b-2024/b2b-03.jpg'},
     ]
@@ -393,7 +393,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1673827200000,
     likes: ['user-8', 'user-17'],
-    src: '/user-16.jpg',
+    src: 'https://cdn1.ozonusercontent.com/s3/club-storage/images/article_image_752x940/689/c500/5cda7163-ba6f-451a-b844-03fd1e7aa45c.jpeg',
     skillImages: [
       {link: 'https://static.tildacdn.com/tild3730-3239-4039-b564-313434623039/15_1.jpg'},
       {link: 'https://lavali.ru/wp-content/uploads/2/5/f/25f3cac6f579ed9d2739fd12d3e9893b.jpeg'},
@@ -416,7 +416,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1673913600000,
     likes: ['user-10', 'user-16'],
-    src: '/user-17.jpg',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70i1E7J7xaJ1sVJEO9C_SSrYQEMA-Rg8FOg&s',
     skillImages: [
       {link: 'https://imageproxy.wolt.com/venue/6710cf37efd86536b9432517/5aaf8432-8c67-11ef-9958-8aec63cdb56a_shutterstock_2261748829.jpg'},
       {link: 'https://scdn.chibbis.ru/live/banners/8b19b2ec44f2ee572a77d5b6f1352dc4.png'},
@@ -441,7 +441,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1674000000000,
     likes: ['user-4', 'user-19'],
-    src: '/user-18.jpg',
+    src: 'https://cdn.trinixy.ru/pics4/20100430/beautiful_faces_01.jpg',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=302432c0d8a53e9b8710e696201f6fbf_l-5234556-images-thumbs&n=13'},
       {link: 'https://avatars.mds.yandex.net/i?id=91d6d0a1784470e5ae43fd5428d2792b_l-5310620-images-thumbs&n=13'},
@@ -466,7 +466,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1674086400000,
     likes: ['user-7', 'user-18'],
-    src: '/user-19.jpg',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuPmQtGv3BznMHQ2YgNoG9FSrfRKewAZ8K1A&s',
     skillImages: [
       {link: 'https://avatars.dzeninfra.ru/get-zen_doc/9859611/pub_64b83b8786aede2bda85c5be_64b83b8f86aede2bda85c98c/scale_1200'},
       {link: 'https://i.vuzopedia.ru/storage/app/uploads/public/677/a66/d1d/677a66d1d6636955205921.jpg'},
@@ -489,7 +489,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1674172800000,
     likes: ['user-5', 'user-15'],
-    src: '/user-20.jpg',
+    src: 'https://salon-eliza.ru/wp-content/uploads/2020/03/zhenskiye-pricheski-saloneliza-21.jpg',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=6f05e214253c7b255acc3cdba471638f_l-12932496-images-thumbs&n=13'},
       {link: 'https://frankfurt.apollo.olxcdn.com/v1/files/2n2yjjytvt8h-UZ/image;s=1000x700'},
@@ -515,7 +515,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1674259200000,
     likes: ['user-14', 'user-23'],
-    src: '/user-21.jpg',
+    src: 'https://st5.depositphotos.com/72897924/61841/i/450/depositphotos_618415412-stock-photo-close-handsome-adult-man-beard.jpg',
     skillImages: [
       {link: 'https://i.pinimg.com/originals/7b/1e/55/7b1e553fe6e0af2ed9aa0e4964ea24a7.jpg'},
       {link: 'https://i.vuzopedia.ru/storage/app/uploads/public/673/c55/afa/673c55afaf54a785114272.jpg'},
@@ -539,7 +539,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1674345600000,
     likes: ['user-11', 'user-27'],
-    src: '/user-22.jpg',
+    src: 'https://cdn.fishki.net/upload/post/2019/09/29/3100992/tn/9-1.jpg',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=271dfd9c098ee303322f7ba857363403_l-5257871-images-thumbs&n=13'},
       {link: 'https://cs13.pikabu.ru/post_img/2023/02/05/2/og_og_167556032729852231.jpg'},
@@ -565,7 +565,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1674432000000,
     likes: ['user-21'],
-    src: '/user-23.jpg',
+    src: 'https://marc-o-polo.ru/upload/resize_cache/iblock/4f1/1200_850_1/xgvcq5gj8i74tumca4fx00wggx2jg46z.webp',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=9342d0d4e4e0b2689891edcb50b92a7b_l-5858292-images-thumbs&n=13'},
       {link: 'https://shkolamoskva.ru/wp-content/uploads/2023/01/shutterstock_1049339822-scaled.jpg'},
@@ -590,7 +590,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1674518400000,
     likes: ['user-15', 'user-28'],
-    src: '/user-24.jpg',
+    src: 'https://i.pinimg.com/736x/4d/71/3b/4d713bf199e60d7564c96146a730aa0a.jpg',
     skillImages: [
       {link: 'https://cf4.ppt-online.org/files4/slide/d/dBYDtSKTN28lVWsg1PJxvaXQyrUiMO5ku0Cec4/slide-0.jpg'},
       {link: 'https://prezentacii.org/upload/cloud/19/06/152067/images/screen10.jpg'},
@@ -614,7 +614,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1674604800000,
     likes: ['user-12', 'user-30'],
-    src: '/user-25.jpg',
+    src: 'https://avatars.mds.yandex.net/get-yapic/65952/WjsBnhtGBT6kAknZY3xjyYe2pCc-1/orig',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=d62ab61278189bc4b0527a11fd1fbc00_l-5221728-images-thumbs&n=13'},
       {link: 'https://avatars.mds.yandex.net/i?id=afeddb40e59067a3c7294ede1c779367a96f82a3-5234033-images-thumbs&n=13'},
@@ -639,7 +639,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1674691200000,
     likes: ['user-17', 'user-29'],
-    src: '/user-26.jpg',
+    src: 'https://i.pinimg.com/originals/1b/b5/61/1bb56134fa8c2eb9606d5b464cf81c51.jpg',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=63394e3043c724767c201cca11b9ae92_l-5734795-images-thumbs&n=13'},
       {link: 'https://i.pinimg.com/736x/25/1d/e8/251de86c432f498ae46857263079280c.jpg'},
@@ -663,7 +663,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1674777600000,
     likes: ['user-22', 'user-18'],
-    src: '/user-27.jpg',
+    src: 'https://avatars.mds.yandex.net/get-ydo/2784159/2a0000017260a8da7e86e5c864774e345cb5/diploma',
     skillImages: [
       {link: 'https://coddyschool.com/upload/iblock/83b/2_rus_min-_1_.jpg'},
       {link: 'https://trashbox.ru/ifiles/2010550_eea656_logo/vk-vydelit-granty-dlya-podderzhki-otechestvennyh-blogerov-eto-pomozhet-konkurirovat-s-youtube-1.jpg'},
@@ -688,7 +688,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1674864000000,
     likes: ['user-24', 'user-5'],
-    src: '/user-28.jpg',
+    src: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQf3X2oej-v2ClDVl00TxN2DtbUxeOJYBae9PWHCjZsjIgtMmNKbvfTmrS8oQ7hWHS8ab4Db8F_GC2UTG4wjlWwyMg9cjU3stEnnQ-CqQWNZE5UwNDlzLLFx3owGgFx7VFZeLH2j24xRctvIrVRs84lYi89iegLtgrjlg-l8whPPhucr7OzvHLbJNyAAulLBK6OWwibpx6_Cox3bFDOtqlRWHd4sk_kukvLpKr2XTFEYSQpd8gkQTmJ6BXFrnlPxznUEu8_fHu2FaGfB0ihxgqsSttHlOcSOg1BfiKdRjWg2Jy9PvLK4v4Nxa4q_9YwQiUtrfnDpUL6zmuYwKhzzgGwE5gjcfc28ZotXQ_EIkxMZsxdwBshVbVGzrdlUkE7ZxWWvT37ByX-AkEq5XMXeM_l52u5QiOKt4lp0AlmNgMJs5WebPY5NzvcK5QIySUHBy-KXM0Q45x1DYEwYJnMci3d2fnz9sskM07AaSS61v0HIeKrdImjhDFPpdtNZHjHwP4ckiAxNzz63O1Qi06mT0ijipeJE-oSNEQB-OTRg30lF9-z-r6HZjKMAKrnPBD-yKpsrXUNr4O-xq2UwmC6QkG32p7jt7m-cViqWs7BpQdP740aS1JgXH1DAn1imIC65pfQ8Tozz-V1jgqp6XKTtcejZeF9B63BOkKh28ehscTGcxrc7LO_vLASaJuGwGwNxelMWUIYYpm9ggxzaZLBfCZYl3Ly9circ44Hbyr8lzAJISIoPwHly3LGYh4CL7nKQTDc0uhzt7t306KTCITqAk9pxFfLW6BSt0FCfGpQh_YsFJ-w9X0IbjRHh2IgtNnxiKkqb_jGJw6wxu0dSGEySEJ_WxWqNLh-_1Xs2wENZMMGJIdbw9LvX_RJzTNmnYt-JRFYvzb5iu11C4QrK3ZbtQVibOM9i-8BekHkXgCrfoFHMZVd7w',
     skillImages: [
       {link: 'https://sun9-19.userapi.com/impg/dgkIvysNYcu62R9AXN0OfxOhuFK24Fdsz1szRg/4tQv4scYLZM.jpg?size=1000x525&quality=95&sign=0eb4b05e4b0b54a37e48a2fb31cc0d6c&type=album'},
       {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQJnKjpLz9vD6kCVRz2jtC3WwNBEfYLdxUIIOCGSiP5TNO6YCPeeePS3Hb69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
@@ -711,7 +711,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1674950400000,
     likes: ['user-19', 'user-26'],
-    src: '/user-29.jpg',
+    src: 'https://puzzleit.ru/files/puzzles/209/208540/_original.jpg',
     skillImages: [
       {link: 'https://zhengazeta.ru/wp-content/uploads/2018/07/risovanie.jpg'},
       {link: 'https://prostor31.ru/attachments/cf9b888940a2b885dfa15bc434083c1f3db20a7a/store/crop/0/0/535/380/800/0/0/0/70327664d47df4d11697199c61d464f43832055fd8f6f1744163bdefcf65/70327664d47df4d11697199c61d464f43832055fd8f6f1744163bdefcf65.jpeg.jpg'},
@@ -735,7 +735,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1675036800000,
     likes: ['user-13', 'user-25'],
-    src: '/user-30.jpg',
+    src: 'https://avatars.mds.yandex.net/i?id=82a4b2f263da384278f2bfe895b0f8d2_l-3374823-images-thumbs&n=13',
     skillImages: [
       {link: 'https://departamentar.ucoz.ru/FOTO/2023/2/1646466317_74-kartinkin-net-p-kartinki-po-finansov.jpg'},
     ]
@@ -759,7 +759,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1675123200000,
     likes: ['user-21', 'user-33'],
-    src: '/user-31.jpg',
+    src: 'https://35photo.pro/photos_main/123/617329.jpg',
     skillImages: [
       {link: 'https://smartprogress.do/uploadImages/001457169.jpg'},
       {link: 'https://propokupki.ru/_files/a/0/a049ad56eae0745ed398ba57427170f3.png'},
@@ -785,7 +785,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1675209600000,
     likes: ['user-12', 'user-22'],
-    src: '/user-32.jpg',
+    src: 'https://avatars.mds.yandex.net/i?id=f39a806f62d492e61924c218c9d435cb_l-5288159-images-thumbs&n=13',
     skillImages: [
       {link: 'https://freelance.boutique/portfolio/img/106624'},
       {link: 'https://investstable.ru/wp-content/uploads/2020/05/09.png'},
@@ -810,7 +810,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1675296000000,
     likes: ['user-31', 'user-35'],
-    src: '/user-33.jpg',
+    src: 'https://avatars.mds.yandex.net/get-yapic/31078/S4PkHEBwIPsaNyq7Pt9JYtRd8w-1/orig',
     skillImages: [
       {link: 'https://sun1-97.userapi.com/s/v1/if1/TK_wql-fE_S4Ne3GfTySzkSPGJkAHlk0PBNIZXqmCy7jFYPfEuj-d_ZqD1Ct4h1dfcxMplC0.jpg?size=2160x2160&quality=96&crop=0,0,2160,2160&ava=1'},
       {link: 'https://kaluga.rpa-mu.ru/Media/kaluga/novosti/2024/12_2024/deutsch-bersetzung-deutsch-deutsche-sprachhandgezogene-gekritzel-und-c-beschriften-137764738-1-1.jpg'},
@@ -838,7 +838,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1675382400000,
     likes: ['user-24', 'user-36'],
-    src: '/user-34.jpg',
+    src: 'https://photo3.wambacdn.net/30/88/13/1813318803/2187866837_huge.jpg?hash=fWiId3_15348oZtgcdB5HQ&expires=64060578000&updated=1701500566',
     skillImages: [
       {link: 'https://i.pinimg.com/736x/a4/46/cf/a446cf302c15fc01bda9d16e6cec4a5d.jpg'},
       {link: 'https://cs.pikabu.ru/post_img/big/2013/07/28/1/1374961016_947049945.jpg'},
@@ -865,7 +865,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1675468800000,
     likes: ['user-33', 'user-38'],
-    src: '/user-35.jpg',
+    src: 'https://i.pinimg.com/originals/fe/db/3e/fedb3e1e39aaee3fa56dd8879827c194.gif',
     skillImages: [
       {link: 'https://neiros.ru/img/time-management/taym-menedzhment-pozvolyaet.png'},
     ]
@@ -887,7 +887,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1675555200000,
     likes: ['user-34', 'user-40'],
-    src: '/user-36.jpg',
+    src: 'https://i.artfile.ru/1920x1290_1497873_[www.ArtFile.ru].jpg',
     skillImages: [
       {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQeiP_9L39uGSlDVoi1D4f3WEOVkWMLt0EJo6BGH2N5mVO6YCId-aITXbb69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c'},
       {link: 'https://perform-better.com.au/wp-content/uploads/2018/01/FUNCTIONAL-TRAINING-WHAT-IS-IT-WHY-SHOULD-I-DO-IT.jpg'},
@@ -911,7 +911,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1675641600000,
     likes: ['user-27', 'user-39'],
-    src: '/user-37.jpg',
+    src: 'https://photo2.wambacdn.net/25/14/83/1805384152/2161374169_huge.jpg?hash=BVq6zJ2lgtYczGKyuSLYfQ&expires=64060578000&updated=1683605377',
     skillImages: [
       {link: 'https://avatars.mds.yandex.net/i?id=ef301f93474dd5230aeb1dae9d30f8db_l-12168264-images-thumbs&n=13'},
       {link: 'https://media.wavescdn.com/images/blog/1280/2024/what-is-mastering-why-is-it-important-in-music.jpg?fit=max&ixlib=imgixjs-3.6.1'},
@@ -935,7 +935,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1675728000000,
     likes: ['user-35'],
-    src: '/user-38.jpg',
+    src: 'https://i.pinimg.com/736x/ef/1e/c2/ef1ec2397971da974f3ff2348d87f02d.jpg',
     skillImages:  [
       {link: 'https://wallpapers.com/images/hd/cancer-zodiac-sign-1920-x-1080-603n4noypvpm7m0k.jpg'},
       {link: 'https://posta-magazine.ru/wp-content/uploads/old/images/stories/flexicontent2/03_solar_horoscope_2017_Posta-Magazine.jpg'},
@@ -959,7 +959,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'female',
     createdAt: 1675814400000,
     likes: ['user-37', 'user-20'],
-    src: '/user-39.jpg',
+    src: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQf3T0pur-vjb3ClVwgW5C3DkKAhWJeIlXd4LUHyre6DNO6YCEfOePRXDZ69Rh1zWHr-LhBK0N7T7kV3nkkxUv7F9TmdjZ1s1Pj0INLYc6A8YqSDh5z1v1Gib0lEgj2aNgae_H6gO29wQtnZLOb_0qrIup2Q2iIuMmjmw0ttgTNcNfe5Te59fMdahpDRKmFwiOHXUUTL5wygc29JB3BsqhSkXXxMQiusUOBIyK10b6G4a1pfcCigzKOK5zCo_aIArcTEGB0Pr-7kGQYh8TmioIvAlqIGmFRugLENODXh_ItVNUz_zuIpzpCh2crMV-1B-JuLv5Np4U4D-0VBSk6xon6VJ_stjYzOBoi0gFCYQVEaI0RB9Mmnr0MA_nq14T74JPVPHu_Ryv7Cgqn4fcfNIEqI2n8BW5LfcLlFoMvdUFH-57Z6n8xPj9RaZtHQ2wOhqFNWkhUI1UwRUkxpZNK9iySGHD6_IbiOo_CY-Q30v8BJKWvMA4qSTMGLFsKIzmGSfBf2Sy7srm8GSYXR4goDY8vDBPInKcdf0pB-6PZQ75g0BmyOj9FZPyMDehqMdN7DSMqJjhBpU3xg60SzC_6AMdy1F1rsfc2v1EhW0AF6kwFYUUUyxkhVHyNgnusm4MzKFNesDA8Syp_xwLhY33bcQ9hrqI0DqCM-gUq1gxt9QTBcBUXqXC_N3Zbq12BRuMGB6SF1cUXKl49S0K06xhL9S8dWLA9-oike0LMYyS0mXdHa-Ym98tlAvILrZXKY_HEyXfS1mN4MXPwVCHdCUhqRcVvjxaLGCmce8FI-OPaTH3v2B95vfeC7DWDTess816wha4kJnjIL0x5ia7aTaSzg8ayWlAtMDj6fpVokEpEYsyKYsweBFclUXdJQf0k1Y_5bVteNb6-iS63x8Agan-b_U2h7qFxi2eGNUCrlIPs9owEeBvdZI',
     skillImages: [
       {link: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQeyn19bKu7DDzXlVxhmhI3WxZXkDfft1QcdTWGHyJ5TEks86LfbqPS2rf84U_hGXW8ab4Db8F_GC2UTG4wjlWzHNh_fm2rrlZnnotAbwQKaEfdClfjnLdBzqZkloW4PFBXf3J_zu51xs1jL7XZuAeipa2_xuME-wGuncTs-wrCu9yeorC-_zyX4RVLSmxFhegHk4OdI5N_Cox0aVnOtWAamLg2f8_hvIIN6aS72XOP4akvNYKlArFAYtdLb_CJCLBW2Sq3cXF8Gy7Sj4TpBgKiTx6Nn-cTMAXMeOxeA7wu1xA7P_YLK_rCiO_g_dd5D-giLjPGrIY_S-PUiChzBA22XFjsPrb7sFWln8gLZcQKLsyUy1VhlbeKCj9jFYx1aRgXNfg7ASv5y0Uo4PJT_cBk42a-BmZAf8plHMVvcUzEeBmV5D0w_f_Sa54CTWMNDSPL34AcJ5S6gcj2o17D8mzTmnyy805vN8aJKS2-0r4BrSLjdsJjgLIB5RJDqb1HgHpXUS1wufGzFWWVw02lyY6kSJfPkCdf_oLBeOIXQzrom9VzujlIJT6OxWssfBJ9wivk4LlJ7YazhekVzCC1CA9-ldSsOX_9cJPrF0jJ4sPLK0vfyNwg0jzDSzarEEC_btLWtHm5R2f-A43oa34YfsxlZ6u2QOTKu4_rV0ikuUcKv55SK_2_v3-X7RWJgyACgyqC1ULa4ZE1iUnza9FOsWXYl3K5dgDkNsWKpm1-FbgP62MueMKjA_mJo10AIHqCzzGWXKy-ebF7V-USTkLqCg1uBNrIWmmfvMqLOGESAL5mGtH4szoIJjFNSmMqt5W1BaMt7_lKq0Q-TmGYwiD1gYV_Hd6v8f52ORDq18bEpEIE54obgRcqk7RDxDUiGo_xatfdcLo_zynyycjga_uW_A5hr6t0ge3I-wOplwin_MLNtVEXqo'},
       {link: 'https://avatars.mds.yandex.net/i?id=1111d3e6dd29afa337d0b2ec490fd939fc393f82-12820356-images-thumbs&n=13'},
@@ -984,7 +984,7 @@ export const CARDS_DATA: TCard[] = [
     gender: 'male',
     createdAt: 1675900800000,
     likes: ['user-36', 'user-25'],
-    src: '/user-40.jpg',
+    src: 'https://sun9-16.userapi.com/impg/WZu7pCW7Jh3-U1vyCofsE9KrxrdgL4zB-xIrjw/NSjTd7irM9I.jpg?size=710x1024&quality=96&sign=296b54dc32491a9051fcd0dfd629b435&c_uniq_tag=SMWTPgMSgtswBYFnRDVU6kb_DA49zPEvMCwZisfgMQo&type=album',
     skillImages: [
       {link: 'https://staroporubzhskoe-r64.gosweb.gosuslugi.ru/netcat_files/37/44/547a7b241083edaa7b3e981a928b2e9b.jpg'},
       {link: 'https://vladimir.ruc.su/upload/medialibrary/7ed/3abffi3ejc7dotgumiv96smeyf1iwkb3.jpg'},
