@@ -2,7 +2,7 @@ import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
 import { /*useEffect,*/ useState } from 'react';
 import { RegisterYouOfferUI } from '@/shared/ui';
 import type { setStateProps } from '../type';
-import type { setStateProps } from '../type';
+// import type { setStateProps } from '../type';
 //import { useDispatch, useSelector } from '../../services/store';
 //import { useLocation, useNavigate } from 'react-router-dom';
 
