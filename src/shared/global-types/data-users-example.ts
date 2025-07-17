@@ -12,7 +12,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Опытный менеджер, ищу возможности для профессионального роста',
     incoming: [],
     outgoing: [],
-    image: '/user-1.jpg',
+    image: 'https://photo2.wambacdn.net/25/14/83/1805384152/2161374169_huge.jpg?hash=BVq6zJ2lgtYczGKyuSLYfQ&expires=64060578000&updated=1683605377',
     likes: ['user-5', 'user-12'],
   },
   {
@@ -26,7 +26,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Дизайнер с опытом, хочу расширить свои навыки',
     incoming: [],
     outgoing: [],
-    image: '/user-2.jpg',
+    image: 'https://img.freepik.com/free-photo/smiling-portrait-studio-woman_1303-2289.jpg?semt=ais_hybrid&w=740',
     likes: ['user-8', 'user-15'],
   },
   {
@@ -40,7 +40,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Преподаватель языка, увлекаюсь психологией',
     incoming: [],
     outgoing: [],
-    image: '/user-3.jpg',
+    image: 'https://1fotostudiya.ru/wp-content/uploads/2018/07/1000-redfox-6dac144f4bd61734ab8f39dde6a63b4c.jpeg',
     likes: ['user-10'],
   },
   // Продолжение списка...
@@ -55,7 +55,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Финансист, веду здоровый образ жизни',
     incoming: [],
     outgoing: [],
-    image: '/user-4.jpg',
+    image: 'https://avatars.mds.yandex.net/get-yapic/23186/xB5NVbroHODxPbWhhwcAPnSvVIA-1/orig',
     likes: ['user-7', 'user-18'],
   },
   {
@@ -69,7 +69,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Разработчик, изучаю новые технологии и языки',
     incoming: [],
     outgoing: [],
-    image: '/user-5.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfM3dnBlurlz9DFk7HogBRLpO20atwfZdKZA&s',
     likes: ['user-3', 'user-9', 'user-20'],
   },
   {
@@ -83,7 +83,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Профессиональный тренер, увлекаюсь здоровым образом жизни',
     incoming: [],
     outgoing: [],
-    image: '/user-6.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw8o9w9GosmDTfv9eNvkb7MAzHXKEJSO8jjA&s',
     likes: ['user-11', 'user-14'],
   },
   {
@@ -97,7 +97,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Шеф-повар, изучаю кухни разных стран',
     incoming: [],
     outgoing: [],
-    image: '/user-7.jpg',
+    image: 'https://35photo.pro/photos_series/1455/1455389.jpg',
     likes: ['user-2', 'user-19'],
   },
   {
@@ -111,7 +111,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Видеограф, создаю креативный контент',
     incoming: [],
     outgoing: [],
-    image: '/user-8.jpg',
+    image: 'https://www.fotoprizer.ru/img/143576_orig.jpg',
     likes: ['user-4', 'user-16'],
   },
   {
@@ -125,7 +125,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Лингвист, увлекаюсь восточной культурой',
     incoming: [],
     outgoing: [],
-    image: '/user-9.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8I1DWOnOvXkFdTBYes2hgR3ZAGk1LkZL6Hw&s',
     likes: ['user-13'],
   },
   {
@@ -139,7 +139,7 @@ export const USERS_DATA: TUser[] = [
     description: 'HR-специалист, развиваюсь в международном направлении',
     incoming: [],
     outgoing: [],
-    image: '/user-10.jpg',
+    image: 'https://barber-shop.su/wp-content/uploads/2022/08/muzhskie-strizhki-dlya-zhenshhin119.jpg',
     likes: ['user-1', 'user-17'],
   },
   // Продолжение до 40 пользователей...
@@ -154,7 +154,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Фотограф, работаю в портретном жанре',
     incoming: [],
     outgoing: [],
-    image: '/user-11.jpg',
+    image: 'https://www.cinemafia.ru/upload/images/2016/07/30%20%D0%B4%D0%BE%2030%20%D0%BC%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BA%D0%B8/Ryan%20Guzman.jpg',
     likes: ['user-6', 'user-22'],
   },
   {
@@ -168,7 +168,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Маркетолог, развиваю личные бренды',
     incoming: [],
     outgoing: [],
-    image: '/user-12.jpg',
+    image: 'https://litemf.com/ru/journal/wp-content/uploads/2021/12/Sumki.jpg',
     likes: ['user-3', 'user-25'],
   },
   {
@@ -182,7 +182,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Преподаватель японского, увлекаюсь культурой',
     incoming: [],
     outgoing: [],
-    image: '/user-13.jpg',
+    image: 'https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg',
     likes: ['user-9', 'user-30'],
   },
   {
@@ -196,7 +196,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Организатор пространства, помогаю наводить порядок',
     incoming: [],
     outgoing: [],
-    image: '/user-14.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8XwsvYxG6jpBccGZ0xmBRTcNBDDi5N5lBzA&s',
     likes: ['user-5', 'user-21'],
   },
   {
@@ -210,7 +210,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Менеджер по продажам, развиваю навыки презентации',
     incoming: [],
     outgoing: [],
-    image: '/user-15.jpg',
+    image: 'https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg',
     likes: ['user-12', 'user-24'],
   },
   {
@@ -224,7 +224,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Инструктор йоги, изучаю восточную медицину',
     incoming: [],
     outgoing: [],
-    image: '/user-16.jpg',
+    image: 'https://cdn1.ozonusercontent.com/s3/club-storage/images/article_image_752x940/689/c500/5cda7163-ba6f-451a-b844-03fd1e7aa45c.jpeg',
     likes: ['user-8', 'user-17'],
   },
   {
@@ -238,7 +238,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Шеф-повар, специализируюсь на итальянских блюдах',
     incoming: [],
     outgoing: [],
-    image: '/user-17.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70i1E7J7xaJ1sVJEO9C_SSrYQEMA-Rg8FOg&s',
     likes: ['user-10', 'user-16'],
   },
   {
@@ -252,7 +252,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Музыкант, создаю электронные треки',
     incoming: [],
     outgoing: [],
-    image: '/user-18.jpg',
+    image: 'https://cdn.trinixy.ru/pics4/20100430/beautiful_faces_01.jpg',
     likes: ['user-4', 'user-19'],
   },
   {
@@ -266,7 +266,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Психолог, специализируюсь на когнитивных методиках',
     incoming: [],
     outgoing: [],
-    image: '/user-19.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuPmQtGv3BznMHQ2YgNoG9FSrfRKewAZ8K1A&s',
     likes: ['user-7', 'user-18'],
   },
   {
@@ -280,7 +280,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Преподаватель испанского, люблю латиноамериканскую культуру',
     incoming: [],
     outgoing: [],
-    image: '/user-20.jpg',
+    image: 'https://salon-eliza.ru/wp-content/uploads/2020/03/zhenskiye-pricheski-saloneliza-21.jpg',
     likes: ['user-5', 'user-15'],
   },
   // Остальные пользователи 21-40...
@@ -295,7 +295,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Синолог, изучаю традиционные китайские практики',
     incoming: [],
     outgoing: [],
-    image: '/user-21.jpg',
+    image: 'https://st5.depositphotos.com/72897924/61841/i/450/depositphotos_618415412-stock-photo-close-handsome-adult-man-beard.jpg',
     likes: ['user-14', 'user-23'],
   },
   {
@@ -309,7 +309,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Иллюстратор, работаю в цифровом формате',
     incoming: [],
     outgoing: [],
-    image: '/user-22.jpg',
+    image: 'https://cdn.fishki.net/upload/post/2019/09/29/3100992/tn/9-1.jpg',
     likes: ['user-11', 'user-27'],
   },
   {
@@ -323,7 +323,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Преподаватель французского, увлекаюсь литературой',
     incoming: [],
     outgoing: [],
-    image: '/user-23.jpg',
+    image: 'https://marc-o-polo.ru/upload/resize_cache/iblock/4f1/1200_850_1/xgvcq5gj8i74tumca4fx00wggx2jg46z.webp',
     likes: ['user-21'],
   },
   {
@@ -337,7 +337,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Психолог, помогаю улучшить коммуникативные навыки',
     incoming: [],
     outgoing: [],
-    image: '/user-24.jpg',
+    image: 'https://i.pinimg.com/736x/4d/71/3b/4d713bf199e60d7564c96146a730aa0a.jpg',
     likes: ['user-15', 'user-28'],
   },
   {
@@ -351,7 +351,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Аналитик данных, развиваюсь в области AI',
     incoming: [],
     outgoing: [],
-    image: '/user-25.jpg',
+    image: 'https://avatars.mds.yandex.net/get-yapic/65952/WjsBnhtGBT6kAknZY3xjyYe2pCc-1/orig',
     likes: ['user-12', 'user-30'],
   },
   {
@@ -365,7 +365,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Нутрициолог, помогаю сбалансировать рацион',
     incoming: [],
     outgoing: [],
-    image: '/user-26.jpg',
+    image: 'https://i.pinimg.com/originals/1b/b5/61/1bb56134fa8c2eb9606d5b464cf81c51.jpg',
     likes: ['user-17', 'user-29'],
   },
   {
@@ -379,7 +379,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Видеоблогер, создаю образовательный контент',
     incoming: [],
     outgoing: [],
-    image: '/user-27.jpg',
+    image: 'https://avatars.mds.yandex.net/get-ydo/2784159/2a0000017260a8da7e86e5c864774e345cb5/diploma',
     likes: ['user-22', 'user-18'],
   },
   {
@@ -393,7 +393,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Преподаватель английского для технических специалистов',
     incoming: [],
     outgoing: [],
-    image: '/user-28.jpg',
+    image: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQf3X2oej-v2ClDVl00TxN2DtbUxeOJYBae9PWHCjZsjIgtMmNKbvfTmrS8oQ7hWHS8ab4Db8F_GC2UTG4wjlWwyMg9cjU3stEnnQ-CqQWNZE5UwNDlzLLFx3owGgFx7VFZeLH2j24xRctvIrVRs84lYi89iegLtgrjlg-l8whPPhucr7OzvHLbJNyAAulLBK6OWwibpx6_Cox3bFDOtqlRWHd4sk_kukvLpKr2XTFEYSQpd8gkQTmJ6BXFrnlPxznUEu8_fHu2FaGfB0ihxgqsSttHlOcSOg1BfiKdRjWg2Jy9PvLK4v4Nxa4q_9YwQiUtrfnDpUL6zmuYwKhzzgGwE5gjcfc28ZotXQ_EIkxMZsxdwBshVbVGzrdlUkE7ZxWWvT37ByX-AkEq5XMXeM_l52u5QiOKt4lp0AlmNgMJs5WebPY5NzvcK5QIySUHBy-KXM0Q45x1DYEwYJnMci3d2fnz9sskM07AaSS61v0HIeKrdImjhDFPpdtNZHjHwP4ckiAxNzz63O1Qi06mT0ijipeJE-oSNEQB-OTRg30lF9-z-r6HZjKMAKrnPBD-yKpsrXUNr4O-xq2UwmC6QkG32p7jt7m-cViqWs7BpQdP740aS1JgXH1DAn1imIC65pfQ8Tozz-V1jgqp6XKTtcejZeF9B63BOkKh28ehscTGcxrc7LO_vLASaJuGwGwNxelMWUIYYpm9ggxzaZLBfCZYl3Ly9circ44Hbyr8lzAJISIoPwHly3LGYh4CL7nKQTDc0uhzt7t306KTCITqAk9pxFfLW6BSt0FCfGpQh_YsFJ-w9X0IbjRHh2IgtNnxiKkqb_jGJw6wxu0dSGEySEJ_WxWqNLh-_1Xs2wENZMMGJIdbw9LvX_RJzTNmnYt-JRFYvzb5iu11C4QrK3ZbtQVibOM9i-8BekHkXgCrfoFHMZVd7w',
     likes: ['user-24', 'user-5'],
   },
   {
@@ -407,7 +407,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Арт-терапевт, работаю с детьми и взрослыми',
     incoming: [],
     outgoing: [],
-    image: '/user-29.jpg',
+    image: 'https://puzzleit.ru/files/puzzles/209/208540/_original.jpg',
     likes: ['user-19', 'user-26'],
   },
   {
@@ -421,7 +421,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Финансовый консультант, помогаю с инвестициями',
     incoming: [],
     outgoing: [],
-    image: '/user-30.jpg',
+    image: 'https://avatars.mds.yandex.net/i?id=82a4b2f263da384278f2bfe895b0f8d2_l-3374823-images-thumbs&n=13',
     likes: ['user-13', 'user-25'],
   },
   // Пользователи 31-40...
@@ -436,7 +436,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Тренер по развитию памяти и скорочтению',
     incoming: [],
     outgoing: [],
-    image: '/user-31.jpg',
+    image: 'https://35photo.pro/photos_main/123/617329.jpg',
     likes: ['user-21', 'user-33'],
   },
   {
@@ -450,7 +450,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Специалист по визуальным коммуникациям',
     incoming: [],
     outgoing: [],
-    image: '/user-32.jpg',
+    image: 'https://avatars.mds.yandex.net/i?id=f39a806f62d492e61924c218c9d435cb_l-5288159-images-thumbs&n=13',
     likes: ['user-12', 'user-22'],
   },
   {
@@ -464,7 +464,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Преподаватель немецкого с историческим образованием',
     incoming: [],
     outgoing: [],
-    image: '/user-33.jpg',
+    image: 'https://avatars.mds.yandex.net/get-yapic/31078/S4PkHEBwIPsaNyq7Pt9JYtRd8w-1/orig',
     likes: ['user-31', 'user-35'],
   },
   {
@@ -478,7 +478,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Художник, преподаю основы академического рисунка',
     incoming: [],
     outgoing: [],
-    image: '/user-34.jpg',
+    image: 'https://photo3.wambacdn.net/30/88/13/1813318803/2187866837_huge.jpg?hash=fWiId3_15348oZtgcdB5HQ&expires=64060578000&updated=1701500566',
     likes: ['user-24', 'user-36'],
   },
   {
@@ -492,7 +492,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Коуч по продуктивности и управлению временем',
     incoming: [],
     outgoing: [],
-    image: '/user-35.jpg',
+    image: 'https://i.pinimg.com/originals/fe/db/3e/fedb3e1e39aaee3fa56dd8879827c194.gif',
     likes: ['user-33', 'user-38'],
   },
   {
@@ -506,7 +506,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Фитнес-тренер, специализируюсь на функциональных тренировках',
     incoming: [],
     outgoing: [],
-    image: '/user-36.jpg',
+    image: 'https://i.artfile.ru/1920x1290_1497873_[www.ArtFile.ru].jpg',
     likes: ['user-34', 'user-40'],
   },
   {
@@ -520,7 +520,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Саунд-дизайнер, работаю с электронной музыкой',
     incoming: [],
     outgoing: [],
-    image: '/user-37.jpg',
+    image: 'https://photo2.wambacdn.net/25/14/83/1805384152/2161374169_huge.jpg?hash=BVq6zJ2lgtYczGKyuSLYfQ&expires=64060578000&updated=1683605377',
     likes: ['user-27', 'user-39'],
   },
   {
@@ -534,7 +534,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Астролог, изучаю взаимосвязь звезд и характера',
     incoming: [],
     outgoing: [],
-    image: '/user-38.jpg',
+    image: 'https://i.pinimg.com/736x/ef/1e/c2/ef1ec2397971da974f3ff2348d87f02d.jpg',
     likes: ['user-35'],
   },
   {
@@ -548,7 +548,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Кондитер, специализируюсь на французских десертах',
     incoming: [],
     outgoing: [],
-    image: '/user-39.jpg',
+    image: 'https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQf3T0pur-vjb3ClVwgW5C3DkKAhWJeIlXd4LUHyre6DNO6YCEfOePRXDZ69Rh1zWHr-LhBK0N7T7kV3nkkxUv7F9TmdjZ1s1Pj0INLYc6A8YqSDh5z1v1Gib0lEgj2aNgae_H6gO29wQtnZLOb_0qrIup2Q2iIuMmjmw0ttgTNcNfe5Te59fMdahpDRKmFwiOHXUUTL5wygc29JB3BsqhSkXXxMQiusUOBIyK10b6G4a1pfcCigzKOK5zCo_aIArcTEGB0Pr-7kGQYh8TmioIvAlqIGmFRugLENODXh_ItVNUz_zuIpzpCh2crMV-1B-JuLv5Np4U4D-0VBSk6xon6VJ_stjYzOBoi0gFCYQVEaI0RB9Mmnr0MA_nq14T74JPVPHu_Ryv7Cgqn4fcfNIEqI2n8BW5LfcLlFoMvdUFH-57Z6n8xPj9RaZtHQ2wOhqFNWkhUI1UwRUkxpZNK9iySGHD6_IbiOo_CY-Q30v8BJKWvMA4qSTMGLFsKIzmGSfBf2Sy7srm8GSYXR4goDY8vDBPInKcdf0pB-6PZQ75g0BmyOj9FZPyMDehqMdN7DSMqJjhBpU3xg60SzC_6AMdy1F1rsfc2v1EhW0AF6kwFYUUUyxkhVHyNgnusm4MzKFNesDA8Syp_xwLhY33bcQ9hrqI0DqCM-gUq1gxt9QTBcBUXqXC_N3Zbq12BRuMGB6SF1cUXKl49S0K06xhL9S8dWLA9-oike0LMYyS0mXdHa-Ym98tlAvILrZXKY_HEyXfS1mN4MXPwVCHdCUhqRcVvjxaLGCmce8FI-OPaTH3v2B95vfeC7DWDTess816wha4kJnjIL0x5ia7aTaSzg8ayWlAtMDj6fpVokEpEYsyKYsweBFclUXdJQf0k1Y_5bVteNb6-iS63x8Agan-b_U2h7qFxi2eGNUCrlIPs9owEeBvdZI',
     likes: ['user-37', 'user-20'],
   },
   {
@@ -562,7 +562,7 @@ export const USERS_DATA: TUser[] = [
     description: 'Предприниматель, делюсь опытом ведения бизнеса',
     incoming: [],
     outgoing: [],
-    image: '/user-40.jpg',
+    image: 'https://sun9-16.userapi.com/impg/WZu7pCW7Jh3-U1vyCofsE9KrxrdgL4zB-xIrjw/NSjTd7irM9I.jpg?size=710x1024&quality=96&sign=296b54dc32491a9051fcd0dfd629b435&c_uniq_tag=SMWTPgMSgtswBYFnRDVU6kb_DA49zPEvMCwZisfgMQo&type=album',
     likes: ['user-36', 'user-25'],
   },
 ];
