@@ -95,7 +95,8 @@ export const filterCards = (cards: TCard[], filterStore: FilterState): TCard[] =
 // сортировка по популярности
 
 export const sortByPopular = (cards: TCard[], count?: number): TCard[] => {
-  const sorted = cards.sort((a, b) => b.likes.length - a.likes.length);
+  //const sorted = cards.sort((a, b) => b.likes.length - a.likes.length);
+  const sorted = [...cards].sort((a, b) => b.likes.length - a.likes.length);
   if (!count) return sorted;
   return sorted.filter((__, index) => index < count);
 };
@@ -103,7 +104,8 @@ export const sortByPopular = (cards: TCard[], count?: number): TCard[] => {
 // сортировка по новизне
 
 export const sortByNewest = (cards: TCard[], count?: number): TCard[] => {
-  const sorted = cards.sort((a, b) => b.createdAt - a.createdAt);
+  //const sorted = cards.sort((a, b) => b.createdAt - a.createdAt);
+  const sorted = [...cards].sort((a, b) => b.createdAt - a.createdAt);
   if (!count) return sorted;
   return sorted.filter((__, index) => index < count);
 };
@@ -130,7 +132,8 @@ export const sortByRecommendedSkills = (
   userCard: TCard,
   count?: number
 ): TCard[] => {
-  const sorted = cards.sort((first, second) => {
+  //const sorted = cards.sort((first, second) => {
+  const sorted = [...cards].sort((first, second) => {
     const countMatches = (card: TCard) => {
       return card.teachSkill.filter((skill) =>
         userCard.learnSkill.some(
