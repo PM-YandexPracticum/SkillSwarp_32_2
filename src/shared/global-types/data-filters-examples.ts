@@ -25,7 +25,7 @@ export const MAIN_FILTERS_MOCK: TMainSkillFilter[] = [
     subFilters: [
       { title: 'Рисование и иллюстрация', id: '1-0', type: 'drawing', status: false },
       { title: 'Фотография', id: '1-1', type: 'photo', status: false },
-      { title: 'Видеомонтаж', id: '1-2', type: 'video-editing', status: false },
+      { title: 'Монтаж', id: '1-2', type: 'mounting', status: false },
       { title: 'Музыка и звук', id: '1-3', type: 'music', status: false },
       { title: 'Актёрское мастерство', id: '1-4', type: 'acting', status: false },
       { title: 'Креативное письмо', id: '1-5', type: 'creative-writing', status: false },
