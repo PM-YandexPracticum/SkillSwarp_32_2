@@ -63,7 +63,7 @@ export const NotificationUI = (props: TNotificationUIProps) => {
         <p className={styles.date}>{dateText}</p>
       </div>
       {!isRead && (
-        <ButtonUI type='link' className={styles.button} to='/profile'>
+        <ButtonUI type='link' className={styles.button} to={`/skill/:${offer.userId}`}>
           <span>Перейти</span>
         </ButtonUI>
       )}
