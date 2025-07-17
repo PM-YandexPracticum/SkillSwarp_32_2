@@ -2,7 +2,7 @@ import { fetchCardsData } from '@/api';
 import type { TCard } from '@/shared/global-types';
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-export const getCards = createAsyncThunk('categories/get', fetchCardsData);
+export const getCards = createAsyncThunk('cards/get', fetchCardsData);
 
 interface TInitialState {
   cards: TCard[];
