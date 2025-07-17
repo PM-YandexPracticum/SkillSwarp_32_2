@@ -10,7 +10,7 @@ interface UserState {
   offer: TCard | null;
   offersSent: { userId: string; status: string }[];
   offersReceived: { userId: string; status: string }[];
-  registrationData: Partial<TUser>;
+  registrationData: Partial<TUser & TCard>;
   errorMessage: string | null;
 }
 

@@ -104,6 +104,7 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
         name: subFilter.title
       }))
     );
+    
 
   const handleCheckboxes = (id: string) => {
       setSkill((prev) => {

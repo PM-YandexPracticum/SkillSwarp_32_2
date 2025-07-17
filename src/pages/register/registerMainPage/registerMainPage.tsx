@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { RegisterUI } from '@/shared/ui/registerUI';
 import type { setStateProps } from '../type';
 import store, { useDispatch, useSelector } from '@/services/store/store';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { clearErrorMessage, selectError, setError, setRegistrationStepData } from '@/services/slices/userSlice';
 
 export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
@@ -12,11 +12,11 @@ export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
 
   const dispatch = useDispatch();
   const error = useSelector(selectError);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    setCurrentPage((current) => current + 1);
+    
 
 
     if (!email.trim() || !password.trim()) {
@@ -26,8 +26,8 @@ export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
 
     dispatch(setRegistrationStepData({ mail: email, password }));
     console.log(store.getState());
-
-    navigate('/register/about');
+    setCurrentPage((current) => current + 1);
+    // navigate('/register/about');
   };
 
   useEffect(() => {
