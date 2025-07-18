@@ -1,4 +1,6 @@
+// src/shared/ui/userCardUI/user-card.tsx
 import type { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { formatAge } from '../../lib/helpers/helpers';
 import type { UserCardUIProps } from './types';
 import { SkillItemUI } from '../skillItemUI';
@@ -14,6 +16,8 @@ export const UserCardUI: FC<UserCardUIProps> = ({
   type,
   setLike,
 }) => {
+  const navigate = useNavigate();
+
   // метод по созданию списка навыков. Будет лучше если он будет лежать здесь
   // решил что сам метод останется тут, но сам компонент навыка я сделал отдельным компонентом
   const renderSkills = (skills: TSkill[], limit = 2) => {
@@ -32,6 +36,12 @@ export const UserCardUI: FC<UserCardUIProps> = ({
       </>
     );
   };
+
+  // Обработчик клика по кнопке "Подробнее" - просто переходим на страницу навыка
+  const handleDetailClick = () => {
+    navigate(`/skill/${card.userId}`);
+  };
+
   return (
     <article className={styles.card}>
       <div className={styles.info}>
@@ -61,7 +71,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({
         </div>
       </div>
       {type === 'short' && (
-        <ButtonUI type='link' to={`/skill/${card.userId}` }className={styles.button_link}>
+        <ButtonUI type='button' onClick={handleDetailClick} className={styles.button_link}>
           Подробнее
         </ButtonUI>
       )}

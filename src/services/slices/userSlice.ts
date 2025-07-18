@@ -1,3 +1,4 @@
+// src/services/slices/userSlice.ts
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TCard, TUser } from '@/shared/global-types';
 
@@ -24,6 +25,14 @@ const initialState: UserState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
+  selectors: {
+    // Селекторы для проверки авторизации
+    getIsAuthenticated: (state) => state.isAuth,
+    getUserData: (state) => state.user,
+    getLikedCards: (state) => state.likedCards,
+    getOffersSent: (state) => state.offersSent,
+    getOffersReceived: (state) => state.offersReceived,
+  },
   reducers: {
     setUser(state, action: PayloadAction<TUser>) {
       state.user = action.payload;
@@ -81,5 +90,14 @@ export const {
   addSentOffer,
   addReceivedOffer,
 } = userSlice.actions;
+
+// Экспортируем селекторы
+export const {
+  getIsAuthenticated,
+  getUserData,
+  getLikedCards,
+  getOffersSent,
+  getOffersReceived,
+} = userSlice.selectors;
 
 export default userSlice.reducer;
