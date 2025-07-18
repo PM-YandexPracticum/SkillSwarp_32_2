@@ -109,13 +109,13 @@ export const filterSlice = createSlice({
     removeEducationFilter: (state) => {
       state.education = state.education.map((item) => ({
         ...item,
-        status: item.value === null,
+        status: item.value === 'empty',
       }));
     },
     removeGenderFilter: (state) => {
       state.gender = state.gender.map((item) => ({
         ...item,
-        status: item.value === null,
+        status: item.value === 'empty',
       }));
     },
     removeSkillsFilter: (state, action: PayloadAction<string>) => {
