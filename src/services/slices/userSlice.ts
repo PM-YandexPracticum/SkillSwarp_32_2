@@ -41,6 +41,8 @@ const initialState: UserState = {
   registrationError: false,
 };
 
+// Thunks
+
 export const registerUserThunk = createAsyncThunk<TUser, TUser, { rejectValue: string }>(
   'registerUserThunk',
   async (userData, { rejectWithValue }) => {
@@ -84,22 +86,21 @@ export const checkAuthThunk = createAsyncThunk<TUser, void, { rejectValue: strin
   }
 );
 
-export const checkUserExist = createAsyncThunk<boolean, { mail: string }, { rejectValue: string }>(
-  'auth/checkUserExist',
-  async ({ mail }, { rejectWithValue }) => {
-    try {
-      const userData = await checkRegistration(mail); // просто возвращаем true/false
-
-      if (userData.length == 0) {
-        console.log(userData[0]);
-        return false;
-      }
-      return true;
-    } catch (error) {
-      return rejectWithValue(`Ошибка при проверке пользователя: ${error}`);
+export const checkUserExist = createAsyncThunk<
+  boolean,
+  { mail: string },
+  { rejectValue: string }
+>('auth/checkUserExist', async ({ mail }, { rejectWithValue }) => {
+  try {
+    const userData = await checkRegistration(mail);
+    if (userData.length === 0) {
+      return false;
     }
+    return true;
+  } catch (error) {
+    return rejectWithValue(`Ошибка при проверке пользователя: ${error}`);
   }
-);
+});
 
 export const likeCardThunk = createAsyncThunk<
   void,
@@ -107,10 +108,9 @@ export const likeCardThunk = createAsyncThunk<
   { rejectValue: string }
 >('likeCardThunk', async ({ cardId, userId }, { rejectWithValue }) => {
   try {
-    // console.log('Текущий пользователь',userId, 'Карточка которую тыкаем',cardId)
     await postLikeCard(cardId, userId);
   } catch (error) {
-    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+    return rejectWithValue(`Ошибка при лайке карточки: ${error}`);
   }
 });
 
@@ -120,10 +120,9 @@ export const disLikeCardThunk = createAsyncThunk<
   { rejectValue: string }
 >('disLikeCardThunk', async ({ cardId, userId }, { rejectWithValue }) => {
   try {
-    // console.log('Текущий пользователь',userId, 'Карточка которую тыкаем',cardId)
     await postDislikeCard(cardId, userId);
   } catch (error) {
-    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+    return rejectWithValue(`Ошибка при дизлайке карточки: ${error}`);
   }
 });
 
@@ -136,13 +135,27 @@ export const saveLikedCardThunk = createAsyncThunk<
     const result = await postSaveLikedCard(userData, userId);
     return result.likes;
   } catch (error) {
-    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+    return rejectWithValue(`Ошибка при сохранении лайков: ${error}`);
   }
 });
+
+// Slice
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
+  selectors: {
+    getIsAuthenticated: (state) => state.isAuth,
+    getUserData: (state) => state.user,
+    getLikedCards: (state) => state.user.likes,
+    getOffersSent: (state) => state.user.outgoing,
+    getOffersReceived: (state) => state.user.incoming,
+    selectUserData: (state) => state.user,
+    selectRegistrationData: (state) => state.registrationData,
+    selectError: (state) => state.errorMessage,
+    selectRegistrationError: (state) => state.registrationError,
+    selectLikes: (state) => state.user?.likes,
+  },
   reducers: {
     logout(state) {
       state.user = initialState.user;
@@ -158,15 +171,9 @@ const userSlice = createSlice({
     clearRegistrationData(state) {
       state.registrationData = {};
     },
-    toggleLike(state, action: PayloadAction<Partial<string>>) {
+    toggleLike(state, action: PayloadAction<string>) {
       if (state.user.likes.includes(action.payload)) {
-        return {
-          ...state,
-          user: {
-            ...state.user,
-            likes: state.user.likes.filter((id) => id !== action.payload),
-          },
-        };
+        state.user.likes = state.user.likes.filter((id) => id !== action.payload);
       } else {
         state.user.likes = [...state.user.likes, action.payload];
       }
@@ -178,13 +185,6 @@ const userSlice = createSlice({
       const { field, value } = action.payload;
       state.user[field] = value;
     },
-  },
-  selectors: {
-    selectUserData: (state) => state.user,
-    selectRegistrationData: (state) => state.registrationData,
-    selectError: (state) => state.errorMessage,
-    selectRegistrationError: (state) => state.registrationError,
-    selectLikes: (state) => state.user?.likes,
   },
   extraReducers: (builder) => {
     builder
@@ -220,21 +220,20 @@ const userSlice = createSlice({
       })
       .addCase(checkUserExist.fulfilled, (state, action) => {
         state.registrationError = action.payload;
-        console.log(state.registrationError);
       })
       .addCase(checkUserExist.pending, () => {
-        // написать что-то и сделать что то со state
+        // TODO: Добавить обработку pending состояния
       })
       .addCase(checkUserExist.rejected, () => {
-        // написать что-то и сделать что то со state
+        // TODO: Добавить обработку ошибки
       })
       .addCase(saveLikedCardThunk.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.user.likes = action.payload;
       });
   },
 });
 
+// Actions
 export const {
   logout,
   setRegistrationStepData,
@@ -243,7 +242,13 @@ export const {
   updateUserField,
 } = userSlice.actions;
 
+// Selectors
 export const {
+  getIsAuthenticated,
+  getUserData,
+  getLikedCards,
+  getOffersSent,
+  getOffersReceived,
   selectRegistrationData,
   selectError,
   selectUserData,

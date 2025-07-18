@@ -1,3 +1,4 @@
+// src/widgets/userCard/user-card.tsx
 import { UserCardUI } from '@/shared/ui/userCardUI/user-card';
 import type { FC } from 'react';
 import type { UserCardProps } from './type';
