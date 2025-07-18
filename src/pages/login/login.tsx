@@ -1,9 +1,9 @@
 import type { FC, SyntheticEvent } from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LoginUI } from '@/shared/ui/loginUI';
 import { useDispatch, useSelector } from '../../services/store';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { clearErrorMessage, loginUserThunk, selectError, setError } from '@/services/slices/userSlice';
+import { loginUserThunk, selectError } from '@/services/slices/userSlice';
 
 export const Login: FC = () => {
   const [email, setEmail] = useState('');
@@ -19,7 +19,6 @@ export const Login: FC = () => {
     e.preventDefault();
 
     if (!email.trim() || !password.trim()) {
-      dispatch(setError('Введите email и пароль'));
       return;
     }
 
@@ -32,10 +31,6 @@ export const Login: FC = () => {
         }
       });
   };
-
-  useEffect(() => {
-    dispatch(clearErrorMessage());
-  }, []);
 
   return (
     <LoginUI

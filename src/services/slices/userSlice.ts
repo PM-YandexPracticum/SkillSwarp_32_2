@@ -30,10 +30,9 @@ export const registerUserThunk = createAsyncThunk<
   TUser,
   TUser,
   { rejectValue: string }
->('registerUserThunk', async (userData, { dispatch, rejectWithValue }) => {
+>('registerUserThunk', async (userData, { rejectWithValue }) => {
   try {
     const user = await registerUser(userData);
-    dispatch(setUser(user));
     return user;
   } catch (error) {
     return rejectWithValue(`Ошибка при регистрации: ${error}`);
@@ -46,13 +45,12 @@ export const loginUserThunk = createAsyncThunk<
   { rejectValue: string }
 >(
   'loginUser',
-  async ({ email, password }, { dispatch, rejectWithValue }) => {
+  async ({ email, password }, { rejectWithValue }) => {
     try {
       const user = await loginUser(email, password);
       if (!user) {
         return rejectWithValue('Неверный email или пароль');
       }
-      dispatch(setUser(user));
       return user;
     } catch (error) {
       return rejectWithValue(`Ошибка при входе: ${error}`);
@@ -64,11 +62,11 @@ export const checkAuthThunk = createAsyncThunk<
   TUser | null,
   void,
   { rejectValue: string }
->('checkAuthThunk', async (_, { dispatch, rejectWithValue }) => {
+>('checkAuthThunk', async (_, { rejectWithValue }) => {
   try {
     const user = await checkUserAuth();
     if (user) {
-      dispatch(setUser(user));
+      const user = await checkUserAuth();
       return user;
     }
     return null;
@@ -124,9 +122,6 @@ const userSlice = createSlice({
     addReceivedOffer(state, action: PayloadAction<{ userId: string; status: string }>) {
       state.offersReceived.push(action.payload);
     },
-    setError(state, action: PayloadAction<string>) {
-      state.errorMessage = action.payload;
-    },
     setRegistrationStepData(state, action: PayloadAction<Partial<TUser>>) {
       state.registrationData = {
         ...state.registrationData,
@@ -136,9 +131,6 @@ const userSlice = createSlice({
     clearRegistrationData(state) {
       state.registrationData = {};
     },
-    clearErrorMessage(state) {
-      state.errorMessage = null;
-    }
   },
   selectors: {
     selectRegistrationData: (state) => state.registrationData, 
@@ -156,6 +148,9 @@ const userSlice = createSlice({
         state.user = action.payload;
         state.isAuth = true;
       })
+      .addCase(registerUserThunk.pending, (state) => {
+        state.errorMessage = null;
+      })
       .addCase(registerUserThunk.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isAuth = true;
@@ -163,6 +158,12 @@ const userSlice = createSlice({
       })
       .addCase(registerUserThunk.rejected, (state, action) => {
         state.errorMessage = action.payload || 'Ошибка регистрации';
+      })
+      .addCase(checkAuthThunk.pending, (state) => {
+        state.errorMessage = null;
+      })
+      .addCase(checkAuthThunk.fulfilled, (state, action) => {
+        state.user = action.payload;
       })
       .addCase(checkAuthThunk.rejected, (state, action) => {
         state.errorMessage = action.payload || 'Ошибка авторизации';
@@ -179,10 +180,8 @@ export const {
   removeLikedCard,
   addSentOffer,
   addReceivedOffer,
-  setError,
   setRegistrationStepData,
   clearRegistrationData,
-  clearErrorMessage
 } = userSlice.actions;
 
 export const {
