@@ -122,3 +122,7 @@ export interface TCityFilter extends TCity {
   type: string;
   status: boolean;
 }
+
+// для сортировки карточек по новизне
+
+export type SortType = 'default' | 'newest';

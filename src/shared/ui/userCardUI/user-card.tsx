@@ -9,11 +9,7 @@ import { ButtonUI } from '../buttonUI';
 import clsx from 'clsx';
 import type { TSkill } from '@/shared/global-types';
 
-export const UserCardUI: FC<UserCardUIProps> = ({
-  card,
-  type,
-  setLike,
-}) => {
+export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike }) => {
   // метод по созданию списка навыков. Будет лучше если он будет лежать здесь
   // решил что сам метод останется тут, но сам компонент навыка я сделал отдельным компонентом
   const renderSkills = (skills: TSkill[], limit = 2) => {
@@ -23,12 +19,20 @@ export const UserCardUI: FC<UserCardUIProps> = ({
     return (
       <>
         {firstSkills.map((skill, index) => (
-          <SkillItemUI type={skill.type} key={index} className={clsx(styles.skill_item, styles[skill.type])}>
+          <SkillItemUI
+            type={skill.type}
+            key={index}
+            className={clsx(styles.skill_item, styles[skill.type])}
+          >
             {skill.title}
           </SkillItemUI>
         ))}
 
-        {restCount > 0 && <div className={clsx(styles.skill_item, styles.other, styles.plus)}>{`+${restCount}`}</div>}
+        {restCount > 0 && (
+          <div
+            className={clsx(styles.skill_item, styles.other, styles.plus)}
+          >{`+${restCount}`}</div>
+        )}
       </>
     );
   };
@@ -52,16 +56,16 @@ export const UserCardUI: FC<UserCardUIProps> = ({
       {type === 'full' && <p className={styles.user_description}>{card.description}</p>}
       <div className={styles.skills_section}>
         <div className={styles.skills_container}>
-          <span className={styles.skills_text}>Может научить</span>
+          <span className={styles.skills_text}>Может научить:</span>
           <ul className={styles.skills_list}>{renderSkills(card.teachSkill, 2)}</ul>
         </div>
         <div className={styles.skills_container}>
-          <span className={styles.skills_text}>Хочет научиться</span>
+          <span className={styles.skills_text}>Хочет научиться:</span>
           <ul className={styles.skills_list}>{renderSkills(card.learnSkill, 2)}</ul>
         </div>
       </div>
       {type === 'short' && (
-        <ButtonUI type='link' to={`/skill/${card.userId}` }className={styles.button_link}>
+        <ButtonUI type='link' to={`/skill/${card.userId}`} className={styles.button_link}>
           Подробнее
         </ButtonUI>
       )}

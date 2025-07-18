@@ -41,7 +41,7 @@ export const EnabledFiltersBlock = ({ filters }: EnabledFiltersBlockProps) => {
             className={styles.button}
           >
             <span>{filter.title}</span>
-            <CrossSVG />
+            <CrossSVG color='currentColor' />
           </ButtonUI>
         );
       })}

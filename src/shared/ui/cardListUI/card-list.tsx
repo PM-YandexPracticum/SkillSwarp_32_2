@@ -12,6 +12,7 @@ export const CardListUI: FC<CardListProps> = ({
   cards,
   handleOpen,
   handleSort,
+  sortType,
   loading,
 }) => {
   return (
@@ -23,16 +24,18 @@ export const CardListUI: FC<CardListProps> = ({
           <ButtonUI className={styles.button} type='button' onClick={handleOpen}>
             <span className={styles.button_text}>Смотреть все</span>
             <div className={styles.button_image}>
-              <ChevronRightSVG />
+              <ChevronRightSVG color='currentColor' />
             </div>
           </ButtonUI>
         )}
         {handleSort && (
           <ButtonUI className={styles.button} type='button' onClick={handleSort}>
             <div className={styles.button_image}>
-              <SortSVG />
+              <SortSVG color='currentColor' />
             </div>
-            <span className={styles.button_text}>Сначала новые</span>
+            <span className={styles.button_text}>
+              {sortType === 'newest' ? 'Сначала старые' : 'Сначала новые'}
+            </span>
           </ButtonUI>
         )}
       </div>
