@@ -2,12 +2,13 @@ import styles from './skill-page.module.css';
 import { UserCard } from '@/widgets';
 import { useEffect, type FC } from 'react';
 import { ArrowLeftSVG } from '@/assets/svg';
-import { ButtonUI } from '@/shared/ui';
-import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
+import { ButtonUI, PreloaderUI } from '@/shared/ui';
 import { SameOffers } from '@/widgets/same-offers';
 import { SkillCard } from '@/widgets/skill-card';
 import { useLocation, useParams } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from '@/services/store';
+import { getCardsState, getCardsLoadingState } from '@/services/slices';
+import { filterSameOffers } from '@/shared/lib/helpers/helpers';
 
 export const SkillPage: FC = () => {
   const { userId } = useParams();
@@ -15,9 +16,10 @@ export const SkillPage: FC = () => {
   // const user = useSelector(userSelectors.userDataSelector); // поиск юзера в виджете юзеркард
   // const dispatch = useDispatch();
 
-  // Заглушки. Надо будет осуществить фильтрацию /db/skill-cards.json по card.teachSkill
-  const sameOffers = CARDS_DATA;
-  const card = CARDS_DATA.find((card) => card.userId === userId) || CARDS_DATA[0];
+  const cardsState = useSelector(getCardsState);
+  const loading = useSelector(getCardsLoadingState);
+  const card = cardsState.find((card) => card.userId === userId)!;
+  const sameOffers = filterSameOffers(card, cardsState);
 
   // const prevPageHandler = useCallback(() => {
   //   if (currentPage > 0) setCurrentPage(currentPage - 1);
@@ -44,7 +46,13 @@ export const SkillPage: FC = () => {
         </div>
         <div className={styles.same_offers}>
           <h1>Похожие предложения</h1>
-          <SameOffers cardsData={sameOffers} />
+          {loading ? (
+            <PreloaderUI />
+          ) : sameOffers.length ? (
+            <SameOffers cardsData={sameOffers} />
+          ) : (
+            <h2 className={styles.no_results_title}>Ничего не найдено</h2>
+          )}
         </div>
       </main>
     </>

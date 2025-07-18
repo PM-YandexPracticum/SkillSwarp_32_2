@@ -23,7 +23,7 @@ const cardsSlice = createSlice({
   initialState,
   selectors: {
     getCardsState: (state) => state.cards,
-    getLoadingState: (state) => state.loading,
+    getCardsLoadingState: (state) => state.loading,
   },
   reducers: {
     removeCard: (state, action: PayloadAction<string>) => {
@@ -96,6 +96,6 @@ const cardsSlice = createSlice({
   },
 });
 
-export const { getCardsState, getLoadingState } = cardsSlice.selectors;
+export const { getCardsState, getCardsLoadingState } = cardsSlice.selectors;
 export const { addCard, changeCard, removeCard } = cardsSlice.actions;
 export default cardsSlice.reducer;

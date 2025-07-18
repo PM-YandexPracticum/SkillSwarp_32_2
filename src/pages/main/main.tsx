@@ -14,7 +14,7 @@ import {
   getSkillsState,
   toggleCityFilter,
   getCardsState,
-  getLoadingState,
+  getCardsLoadingState,
 } from '@/services/slices';
 import { EnabledFiltersBlock } from '@/widgets/enabled-filters-block';
 import {
@@ -32,7 +32,7 @@ export const Main: FC = () => {
   const skillsState = useSelector(getSkillsState);
   const citiesState = useSelector(getCitiesState);
   const cardsState = useSelector(getCardsState);
-  const loading = useSelector(getLoadingState);
+  const loading = useSelector(getCardsLoadingState);
 
   const [sortType, setSortType] = useState<SortType>('default');
 
