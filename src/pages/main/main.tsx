@@ -1,8 +1,8 @@
-import { type FC } from 'react';
+import { useState, type FC } from 'react';
 import styles from './main.module.css';
 import { CardListUI } from '@/shared/ui';
 import { FilterBlock } from '@/widgets';
-import type { commonFilterType, TMainSkillFilter } from '@/shared/global-types';
+import type { commonFilterType, SortType, TMainSkillFilter } from '@/shared/global-types';
 import { useDispatch, useSelector } from '@/services/store';
 import {
   toggleEducationFilter,
@@ -16,7 +16,6 @@ import {
   getCardsState,
   getLoadingState,
 } from '@/services/slices';
-// import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
 import { EnabledFiltersBlock } from '@/widgets/enabled-filters-block';
 import {
   checkAllActiveFilters,
@@ -35,12 +34,7 @@ export const Main: FC = () => {
   const cardsState = useSelector(getCardsState);
   const loading = useSelector(getLoadingState);
 
-  // const cards = filterCards(CARDS_DATA, {
-  //   education: educationState,
-  //   gender: genderState,
-  //   skills: skillsState,
-  //   cities: citiesState,
-  // });
+  const [sortType, setSortType] = useState<SortType>('default');
 
   const cards = filterCards(cardsState, {
     education: educationState,
@@ -48,6 +42,8 @@ export const Main: FC = () => {
     skills: skillsState,
     cities: citiesState,
   });
+
+  const sortedCards = sortType === 'newest' ? sortByNewest(cards) : cards;
 
   const checkFiltersState = checkAllActiveFilters(
     skillsState,
@@ -78,11 +74,9 @@ export const Main: FC = () => {
     dispatch(toggleCityFilter(data));
   };
 
-  // Веременно оставлю тут массивы карточек для отображения
-
-  // const cardsPopular = sortByPopular(CARDS_DATA, 3);
-  // const cardsNew = sortByNewest(CARDS_DATA, 3);
-  // const cardsRecommendedChaos = sorByRecommendedChaos(CARDS_DATA);
+  const sortCards = () => {
+    setSortType(sortType === 'newest' ? 'default' : 'newest');
+  };
 
   const cardsPopular = sortByPopular(cardsState, 3);
   const cardsNew = sortByNewest(cardsState, 3);
@@ -145,8 +139,9 @@ export const Main: FC = () => {
           {cards.length > 0 ? (
             <CardListUI
               title={`Подходящие предложения: ${cards.length}`}
-              handleSort={() => {}} // пока заглушка
-              cards={cards}
+              handleSort={sortCards}
+              sortType={sortType}
+              cards={sortedCards}
             />
           ) : (
             <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
