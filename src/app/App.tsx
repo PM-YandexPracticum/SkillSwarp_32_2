@@ -13,7 +13,12 @@ import { ProfileOutgoing } from '@/pages/profile-outgoing-page';
 import { AppHeader } from '@/widgets/app-header';
 import { getCards, getCategories, getCities } from '@/services/slices';
 import { useEffect } from 'react';
-import { useDispatch } from '@/services/store';
+import { useDispatch, useSelector } from '@/services/store';
+import { Popular } from '@/pages/popular';
+import { Newest } from '@/pages/newest';
+import { Recommended } from '@/pages/recommended';
+import { sortByPopular, sortByNewest } from '@/shared/lib/helpers/helpers';
+import type { RootState } from '@/services/store';
 
 function App() {
   // решил скопировать работу модалок из бургерной :)
@@ -27,6 +32,9 @@ function App() {
   const location = useLocation();
   const state = location.state as { backgroundLocation?: Location };
   const backgroundLocation = state?.backgroundLocation;
+  const cardsState = useSelector((state: RootState) => state.cards.cards);
+  const cardsPopular = sortByPopular(cardsState, 22);
+  const cardsNew = sortByNewest(cardsState, 20);
 
   return (
     <>
@@ -43,6 +51,9 @@ function App() {
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/profile/incoming' element={<ProfileIncoming />} />
         <Route path='/profile/outgoing' element={<ProfileOutgoing />} />
+        <Route path='/popular' element={<Popular cards={cardsPopular} />} />
+        <Route path='/newest' element={<Newest cards={cardsNew} />} />
+        <Route path='/recommended' element={<Recommended cards={cardsState} />} />
         {/* сюда добавляйте компоненты для тестирования */}
         <Route path='/test' element={<Test />} />
       </Routes>

@@ -151,12 +151,17 @@ export const Main: FC = () => {
         <div className={styles.card_blocks}>
           <CardListUI
             title='Популярное'
-            handleOpen={() => {}}
+            handleOpen='/popular'
             cards={cardsPopular}
             loading={loading}
           />
-          <CardListUI title='Новое' handleOpen={() => {}} cards={cardsNew} loading={loading} />
-          <CardListUI title='Рекомендуем' cards={cardsRecommendedChaos} loading={loading} />
+          <CardListUI title='Новое' handleOpen='/newest' cards={cardsNew} loading={loading} />
+          <CardListUI
+            title='Рекомендуем'
+            handleOpen='/recommended'
+            cards={cardsRecommendedChaos}
+            loading={loading}
+          />
         </div>
       )}
     </main>
