@@ -5,7 +5,7 @@ import { BriefcaseSVG, BookSVG, HomeSVG, PaletteSVG, GlobalSVG, HealthSVG } from
 import type { SVGType } from '@/assets/svg/svg.type';
 import type { AllSkillsProps } from './type';
 
-export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef }) => {
+export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef, onSelect }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,6 +27,34 @@ export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef 
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [onClose, headerRef]);
+
+  const handleSelect = (id: string) => {
+    const updatedFilters = mainFilters.map((mainFilter) => {
+      // Проверяем, есть ли искомый `subFilterId` в текущем `mainFilter.subFilters`
+      const hasTargetSubFilter = mainFilter.subFilters.some((subFilter) => subFilter.id === id);
+
+      if (!hasTargetSubFilter) {
+        return mainFilter; // Если нет, возвращаем без изменений
+      }
+
+      // Если есть, создаем новый массив `subFilters` с обновленным `status`
+      const updatedSubFilters = mainFilter.subFilters.map((subFilter) => {
+        if (subFilter.id === id) {
+          return { ...subFilter, status: true }; // Меняем `status` на `true`
+        }
+        return subFilter;
+      });
+
+      // Возвращаем обновленный `mainFilter` с новыми `subFilters`
+      return {
+        ...mainFilter,
+        subFilters: updatedSubFilters,
+      };
+    });
+
+    onSelect(updatedFilters);
+    onClose();
+  };
 
   const iconsMap: Record<string, FC<SVGType>> = {
     business: BriefcaseSVG,
@@ -51,7 +79,11 @@ export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef 
             <ul className={styles.allSkillsModal__group}>
               {subFilters.map(({ title: skillTitle, id }) => (
                 <li key={id} className={styles.allSkillsModal__item}>
-                  <ButtonUI type='button' onClick={onClose} className={styles.allSkillsModal__btn}>
+                  <ButtonUI
+                    type='button'
+                    onClick={() => handleSelect(id)}
+                    className={styles.allSkillsModal__btn}
+                  >
                     {skillTitle}
                   </ButtonUI>
                 </li>

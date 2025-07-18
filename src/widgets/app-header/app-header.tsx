@@ -2,14 +2,16 @@ import { useRef, useState, type FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
 import { AllSkills } from '@/shared/ui';
-import { useSelector } from 'react-redux';
-import { getSkillsState} from '@/services/slices';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSkillsState, toggleSkillsFilter } from '@/services/slices';
+import type { TMainSkillFilter } from '@/shared/global-types';
 
 // import { useSelector } from '@/services/store';
 // import { userSelectors } from '@/services/slices/user';
 // import { USERS_DATA } from '@/shared/global-types/data-users-example';
 
 export const AppHeader: FC = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -39,6 +41,10 @@ export const AppHeader: FC = () => {
     setIsAllSkillsVisible(false);
   };
 
+  const handleSelectFilter = (data: TMainSkillFilter[]) => {
+    dispatch(toggleSkillsFilter(data));
+  };
+
   return (
     <>
       <header ref={headerRef}>
@@ -53,7 +59,12 @@ export const AppHeader: FC = () => {
         />
       </header>
       {isAllSkillsVisible && (
-        <AllSkills onClose={handleCloseSkills} mainFilters={skillList} headerRef={headerRef} />
+        <AllSkills
+          onClose={handleCloseSkills}
+          mainFilters={skillList}
+          headerRef={headerRef}
+          onSelect={handleSelectFilter}
+        />
       )}
     </>
   );
