@@ -29,11 +29,9 @@ export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef,
   }, [onClose, headerRef]);
 
   const handleSelect = (id: string) => {
-    const updatedFilters =  mainFilters.map((mainFilter) => {
+    const updatedFilters = mainFilters.map((mainFilter) => {
       // Проверяем, есть ли искомый `subFilterId` в текущем `mainFilter.subFilters`
-      const hasTargetSubFilter = mainFilter.subFilters.some(
-        (subFilter) => subFilter.id === id
-      );
+      const hasTargetSubFilter = mainFilter.subFilters.some((subFilter) => subFilter.id === id);
 
       if (!hasTargetSubFilter) {
         return mainFilter; // Если нет, возвращаем без изменений
@@ -54,8 +52,8 @@ export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef,
       };
     });
 
-    onSelect(updatedFilters)
-    onClose()
+    onSelect(updatedFilters);
+    onClose();
   };
 
   const iconsMap: Record<string, FC<SVGType>> = {
@@ -81,7 +79,11 @@ export const AllSkills: FC<AllSkillsProps> = ({ onClose, mainFilters, headerRef,
             <ul className={styles.allSkillsModal__group}>
               {subFilters.map(({ title: skillTitle, id }) => (
                 <li key={id} className={styles.allSkillsModal__item}>
-                  <ButtonUI type='button' onClick={() => handleSelect(id)} className={styles.allSkillsModal__btn}>
+                  <ButtonUI
+                    type='button'
+                    onClick={() => handleSelect(id)}
+                    className={styles.allSkillsModal__btn}
+                  >
                     {skillTitle}
                   </ButtonUI>
                 </li>
