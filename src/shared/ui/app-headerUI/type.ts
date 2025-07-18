@@ -1,29 +1,22 @@
-// type.ts
-export interface TAppHeaderUIProps {
-  onSkillsClick: () => void;
-  onToggleTheme: () => void; // Исправил опечатку в типе
-  onNotificationClick?: () => void;
-  onLikeClick?: () => void;
-  onClearButtonClick: () => void;
-  
-  // Новые пропсы для поиска с саджестом
-  onSearch?: (query: string) => void;
-  searchSuggestions?: Array<{
-    id: string;
-    title: string;
-    category?: string;
-  }>;
-  onSuggestionClick?: (suggestion: {
-    id: string;
-    title: string;
-    category?: string;
-  }) => void;
-  searchValue?: string;
-  onSearchValueChange?: (value: string) => void;
-  
-  user?: {
-    name: string;
-    image: string;
-  };
-  isLoginOrRegister?: boolean;
+// src/shared/ui/app-headerUI/type.ts
+import type { TUser } from '@/shared/global-types';
+
+interface SearchSuggestion {
+  id: string;
+  title: string;
+  type: 'category' | 'skill';
+  categoryType?: string;
 }
+
+export type HeaderUserData = Pick<TUser, 'name' | 'image'>;
+
+export type TAppHeaderUIProps = {
+  onSkillsClick: () => void;
+  onToggleTheme: () => void;
+  onNotificationClick?: () => void; // Делаю опциональными
+  onLikeClick?: () => void; // Делаю опциональными
+  onClearButtonClick: () => void;
+  onSearch?: (suggestion: SearchSuggestion) => void; // Использую правильный тип
+  user: HeaderUserData | undefined;
+  isLoginOrRegister: boolean;
+};

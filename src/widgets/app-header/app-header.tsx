@@ -6,7 +6,14 @@ import { AllSkills } from '@/shared/ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSkillsState, toggleSkillsFilter } from '@/services/slices';
 import type { TMainSkillFilter } from '@/shared/global-types';
-import type { SearchSuggestion } from '@/shared/ui/search-fieldUI/type';
+
+// Определяю тип SearchSuggestion локально, чтобы избежать проблем с импортами
+interface SearchSuggestion {
+  id: string;
+  title: string;
+  type: 'category' | 'skill';
+  categoryType?: string;
+}
 
 export const AppHeader: FC = () => {
   const dispatch = useDispatch();
@@ -40,13 +47,11 @@ export const AppHeader: FC = () => {
 
   const handleClearSearch = () => {
     // Сбрасываем все фильтры при очистке поиска
-    // Можно добавить отдельный экшен для сброса только поиска
-    console.log('Очистка поиска');
+    // TODO: Добавить логику сброса поиска
   };
 
   const handleSearch = (suggestion: SearchSuggestion) => {
     // Обрабатываем выбор из поиска
-    console.log('Выбран элемент поиска:', suggestion);
     
     if (suggestion.type === 'category') {
       // Если выбрана категория, активируем все навыки в этой категории
@@ -75,14 +80,22 @@ export const AppHeader: FC = () => {
     }
   };
 
+  const handleNotificationClick = () => {
+    // TODO: Добавить логику обработки уведомлений
+  };
+
+  const handleLikeClick = () => {
+    // TODO: Добавить логику обработки лайков
+  };
+
   return (
     <>
       <header ref={headerRef}>
         <AppHeaderUI
           onSkillsClick={toggleAllSkills}
           onToggleTheme={() => {}}
-          onNotificationClick={() => {}}
-          onLikeClick={() => {}}
+          onNotificationClick={handleNotificationClick}
+          onLikeClick={handleLikeClick}
           onClearButtonClick={handleClearSearch}
           onSearch={handleSearch}
           user={user}
