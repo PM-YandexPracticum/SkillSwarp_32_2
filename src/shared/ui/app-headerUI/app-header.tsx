@@ -11,10 +11,16 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
   (
     {
       onSkillsClick,
-      onToggleTheme: onToogleTheme,
+      onToggleTheme: onToogleTheme, // Сохраняем опечатку из dev ветки
       onNotificationClick,
       onLikeClick,
       onClearButtonClick,
+      // Добавляем новые пропсы для поиска с саджестом
+      onSearch,
+      searchSuggestions,
+      onSuggestionClick,
+      searchValue,
+      onSearchValueChange,
       user,
       isLoginOrRegister,
     },
@@ -38,11 +44,19 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
                 <ChevronDownSVG />
               </ButtonUI>
             </div>
-            <SearchFieldUI onReset={onClearButtonClick} />
+            <SearchFieldUI 
+              onReset={onClearButtonClick}
+              // Добавляем пропсы для саджеста
+              onSearch={onSearch}
+              suggestions={searchSuggestions}
+              onSuggestionClick={onSuggestionClick}
+              value={searchValue}
+              onValueChange={onSearchValueChange}
+            />
             <div className={styles.header_part_right}>
               <ButtonUI
                 type='button'
-                onClick={onToogleTheme}
+                onClick={onToogleTheme} // Используем название с опечаткой из dev ветки
                 className={styles.button}
                 aria-label='Переключение цветовой темы'
               >

@@ -1,3 +1,4 @@
+// src/widgets/app-header/app-header.tsx
 import { useRef, useState, type FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
@@ -5,10 +6,7 @@ import { AllSkills } from '@/shared/ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSkillsState, toggleSkillsFilter } from '@/services/slices';
 import type { TMainSkillFilter } from '@/shared/global-types';
-
-// import { useSelector } from '@/services/store';
-// import { userSelectors } from '@/services/slices/user';
-// import { USERS_DATA } from '@/shared/global-types/data-users-example';
+import type { SearchSuggestion } from '@/shared/ui/search-fieldUI/type';
 
 export const AppHeader: FC = () => {
   const dispatch = useDispatch();
@@ -19,10 +17,6 @@ export const AppHeader: FC = () => {
   const isLoginOrRegister = ['/login', '/register'].includes(currentPath);
 
   // TODO найти пользователя как добавят селектор в слайс юзера
-  // const user = useSelector(userSelectors.userDataSelector);
-
-  // TODO Для проверки
-  // const user = USERS_DATA[7];
   const user = {
     name: 'Мария',
     image:
@@ -30,7 +24,6 @@ export const AppHeader: FC = () => {
   };
 
   const headerRef = useRef<HTMLElement>(null);
-
   const [isAllSkillsVisible, setIsAllSkillsVisible] = useState(false);
 
   const toggleAllSkills = () => {
@@ -45,6 +38,43 @@ export const AppHeader: FC = () => {
     dispatch(toggleSkillsFilter(data));
   };
 
+  const handleClearSearch = () => {
+    // Сбрасываем все фильтры при очистке поиска
+    // Можно добавить отдельный экшен для сброса только поиска
+    console.log('Очистка поиска');
+  };
+
+  const handleSearch = (suggestion: SearchSuggestion) => {
+    // Обрабатываем выбор из поиска
+    console.log('Выбран элемент поиска:', suggestion);
+    
+    if (suggestion.type === 'category') {
+      // Если выбрана категория, активируем все навыки в этой категории
+      const updatedFilters = skillList.map(category => 
+        category.id === suggestion.id
+          ? {
+              ...category,
+              subFilters: category.subFilters.map(skill => ({
+                ...skill,
+                status: true
+              }))
+            }
+          : category
+      );
+      dispatch(toggleSkillsFilter(updatedFilters));
+    } else {
+      // Если выбран конкретный навык, активируем только его
+      const updatedFilters = skillList.map(category => ({
+        ...category,
+        subFilters: category.subFilters.map(skill => ({
+          ...skill,
+          status: skill.id === suggestion.id ? true : skill.status
+        }))
+      }));
+      dispatch(toggleSkillsFilter(updatedFilters));
+    }
+  };
+
   return (
     <>
       <header ref={headerRef}>
@@ -53,7 +83,8 @@ export const AppHeader: FC = () => {
           onToggleTheme={() => {}}
           onNotificationClick={() => {}}
           onLikeClick={() => {}}
-          onClearButtonClick={() => {}}
+          onClearButtonClick={handleClearSearch}
+          onSearch={handleSearch}
           user={user}
           isLoginOrRegister={isLoginOrRegister}
         />
