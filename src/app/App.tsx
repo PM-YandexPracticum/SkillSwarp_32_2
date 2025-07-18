@@ -33,7 +33,7 @@ function App() {
   const state = location.state as { backgroundLocation?: Location };
   const backgroundLocation = state?.backgroundLocation;
   const cardsState = useSelector((state: RootState) => state.cards.cards);
-  const cardsPopular = sortByPopular(cardsState, 22);
+  const cardsPopular = sortByPopular(cardsState, 20);
   const cardsNew = sortByNewest(cardsState, 20);
 
   return (
