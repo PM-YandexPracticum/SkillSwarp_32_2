@@ -6,7 +6,6 @@ import type { setStateProps } from '../type';
 import { setRegistrationStepData } from '@/services/slices/userSlice';
 import store, { useDispatch } from '@/services/store/store';
 import type { genderType } from '@/shared/global-types';
-// import { useNavigate } from 'react-router-dom';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { makeSkillsArray } from '../helpers';
 
