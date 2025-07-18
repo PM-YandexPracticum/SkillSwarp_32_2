@@ -1,5 +1,12 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { TCard, TUser } from '@/shared/global-types';
+import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import type { TCard, TLoginData, TUser } from '@/shared/global-types';
+import {
+  checkUserAuth,
+  editUserData,
+  loginUser as fetchUserData,
+  logoutUser,
+  registerUser,
+} from '@/api';
 
 interface UserState {
   user: TUser | null;
@@ -21,26 +28,64 @@ const initialState: UserState = {
   offersReceived: [],
 };
 
+export const loginUser = createAsyncThunk('user/login', async (data: TLoginData, { rejectWithValue }) => {
+  try {
+    const UserData = await fetchUserData(data.mail, data.password);
+    if (!UserData) throw new Error('ошибка в получении данных пользователя');
+    return UserData;
+  } catch (error) {
+    return rejectWithValue(error);
+  }
+});
+
+export const registerUserData = createAsyncThunk(
+  'user/register',
+  async (data: Omit<TUser, 'id'>, { rejectWithValue }) => {
+    try {
+      const userData = await registerUser(data);
+      return userData;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const logoutUserData = createAsyncThunk('user/logout', async (__, { rejectWithValue }) => {
+  try {
+    const data = await logoutUser();
+    return data;
+  } catch (error) {
+    return rejectWithValue(error);
+  }
+});
+
+export const auhtoriseTry = createAsyncThunk('user/authorise', async (__, { rejectWithValue }) => {
+  try {
+    const data = await checkUserAuth();
+    return data;
+  } catch (error) {
+    return rejectWithValue(error);
+  }
+});
+
+export const editUser = createAsyncThunk(
+  'user/edit',
+  async (data: Omit<TUser, 'id'>, { rejectWithValue }) => {
+    try {
+      const userId = localStorage.getItem('current-user');
+      if (!userId) throw new Error('ошибка в изменении данных пльзователя');
+      const userData = await editUserData(data, userId);
+      return userData;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser(state, action: PayloadAction<TUser>) {
-      state.user = action.payload;
-      state.isAuth = true;
-      state.likedCards = action.payload.likes || [];
-      state.offersReceived = action.payload.incoming || [];
-      state.offersSent = action.payload.outgoing || [];
-    },
-    logout(state) {
-      state.user = null;
-      state.isAuth = false;
-      state.likedCards = [];
-      state.skill = null;
-      state.offer = null;
-      state.offersSent = [];
-      state.offersReceived = [];
-    },
     setSkill(state, action: PayloadAction<TCard>) {
       state.skill = action.payload;
     },
@@ -69,11 +114,43 @@ const userSlice = createSlice({
       state.offersReceived.push(action.payload);
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isAuth = true;
+        state.likedCards = action.payload.likes || [];
+        state.offersReceived = action.payload.incoming || [];
+        state.offersSent = action.payload.outgoing || [];
+      })
+      .addCase(registerUserData.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isAuth = true;
+        state.likedCards = [];
+        state.skill = null;
+        state.offer = null;
+        state.offersSent = [];
+        state.offersReceived = [];
+      })
+      .addCase(logoutUserData.fulfilled, (state) => {
+        state.user = null;
+        state.isAuth = false;
+      })
+      .addCase(auhtoriseTry.fulfilled, (state, action) => {
+        state.user = action.payload;
+        if (action.payload) {
+          state.isAuth = true;
+        } else {
+          state.isAuth = false;
+        }
+      })
+      .addCase(editUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+      });
+  },
 });
 
 export const {
-  setUser,
-  logout,
   setSkill,
   setOffer,
   addLikedCard,
