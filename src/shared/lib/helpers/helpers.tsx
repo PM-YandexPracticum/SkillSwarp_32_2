@@ -32,10 +32,9 @@ export const formatAge = (age: number) => {
 
 //временный интерфейс для типизпции
 
-
 // Фильтрация по городам
 export const filterByCities = (cards: TCard[], cities: TCityFilter[]) => {
-  const selectedCityTitle = cities.filter(city => city.status).map(city => city.title);
+  const selectedCityTitle = cities.filter((city) => city.status).map((city) => city.title);
   if (selectedCityTitle.length === 0) return cards;
 
   return cards.filter((card) => selectedCityTitle.includes(card.city));
@@ -59,9 +58,9 @@ export const filterByCategories = (
   const toggledEducationStatus = educationFilters.find((filter) => filter.status)?.value;
 
   skillFilters.forEach((skill) => {
-    skill.subFilters.forEach((subfilter) => {
-      if (subfilter.status) {
-        toggledSubSkills.push(subfilter);
+    skill.subFilters.forEach((subFilter) => {
+      if (subFilter.status) {
+        toggledSubSkills.push(subFilter);
       }
     });
   });
@@ -84,6 +83,29 @@ export const filterByCategories = (
   }
 };
 
+// Фильтрация похожих предложений
+
+export const filterSameOffers = (currentCard: TCard, cards: TCard[]): TCard[] => {
+  return cards.filter((card) => {
+    if (card.id === currentCard.id) return false;
+
+    const currentTeachTypes = currentCard.teachSkill.map((skill) => skill.type);
+    const cardTeachTypes = card.teachSkill.map((skill) => skill.type);
+
+    const teachTypeMatch = currentTeachTypes.every((type) => cardTeachTypes.includes(type));
+
+    if (!teachTypeMatch) return false;
+
+    const currentLearnTypes = currentCard.learnSkill.map((skill) => skill.type);
+    const cardLearnTypes = card.learnSkill.map((skill) => skill.type);
+
+    const learnTypeMatch = currentLearnTypes.every((type) => cardLearnTypes.includes(type));
+
+    if (!learnTypeMatch) return false;
+
+    return true;
+  });
+};
 
 // Главная функция
 export const filterCards = (cards: TCard[], filterStore: FilterState): TCard[] => {
