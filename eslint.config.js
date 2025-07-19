@@ -9,6 +9,7 @@ import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import { globalIgnores } from 'eslint/config';
+import vitest from 'eslint-plugin-vitest';
 
 export default [
   globalIgnores([
@@ -61,6 +62,16 @@ export default [
         version: 'detect',
       },
     },
+  },
+  {
+    files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
+    plugins: { vitest },
+    languageOptions: {
+      globals: {
+        ...vitest.environments.globals.globals,
+      },
+    },
+    rules: {},
   },
   ...storybook.configs['flat/recommended'],
 ];
