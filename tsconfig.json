@@ -18,6 +18,10 @@
     "paths": {
       "@data-types/*": ["src/shared/global-types/data-types/*"],
       "@data-types": ["src/shared/global-types/data-types"]
-    }
+    },
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ]
   }
 }
