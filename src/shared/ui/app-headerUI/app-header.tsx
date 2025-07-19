@@ -1,3 +1,4 @@
+// src/shared/ui/app-headerUI/app-header.tsx
 import { forwardRef } from 'react';
 import styles from './app-header.module.css';
 import type { TAppHeaderUIProps } from './type';
@@ -11,10 +12,11 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
   (
     {
       onSkillsClick,
-      onToggleTheme: onToogleTheme,
+      onToggleTheme,
       onNotificationClick,
       onLikeClick,
       onClearButtonClick,
+      onSearch,
       user,
       isLoginOrRegister,
     },
@@ -22,7 +24,6 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
   ) => (
     <header className={styles.header} ref={ref}>
       <nav className={styles.nav}>
-        {/* ToDo: Заменить по готовности кнопки на компоненты */}
         <ButtonUI type='link' className={styles.logo} to='/'>
           <LogoVG size='40' />
           <span>SkillSwap</span>
@@ -38,11 +39,11 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
                 <ChevronDownSVG />
               </ButtonUI>
             </div>
-            <SearchFieldUI onReset={onClearButtonClick} />
+            <SearchFieldUI onReset={onClearButtonClick} onSearch={onSearch} />
             <div className={styles.header_part_right}>
               <ButtonUI
                 type='button'
-                onClick={onToogleTheme}
+                onClick={onToggleTheme}
                 className={styles.button}
                 aria-label='Переключение цветовой темы'
               >
@@ -51,12 +52,17 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
               {user ? (
                 <div className={styles.header_logged_in}>
                   <div className={styles.icons}>
-                    <ButtonUI type='button' onClick={onNotificationClick} className={styles.button}>
-                      <NotificationSVG />
-                    </ButtonUI>
-                    <ButtonUI type='button' onClick={onLikeClick} className={styles.button}>
-                      <LikeSVG />
-                    </ButtonUI>
+                    {/* Условный рендеринг для опциональных пропсов */}
+                    {onNotificationClick && (
+                      <ButtonUI type='button' onClick={onNotificationClick} className={styles.button}>
+                        <NotificationSVG />
+                      </ButtonUI>
+                    )}
+                    {onLikeClick && (
+                      <ButtonUI type='button' onClick={onLikeClick} className={styles.button}>
+                        <LikeSVG />
+                      </ButtonUI>
+                    )}
                   </div>
                   <ButtonUI type='link' className={styles.button} to='/profile'>
                     <p>{user.name}</p>
