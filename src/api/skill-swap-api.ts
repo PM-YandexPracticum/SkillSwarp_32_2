@@ -9,19 +9,19 @@ async function fetchData<T>(API_URI: string): Promise<T[]> {
     // const citiesRaw = sessionStorage.getItem(API_URI);
 
     // if (!citiesRaw) {
-      const response = await fetch(`${API_URL}/${API_URI}`, {
-        method: 'GET',
-        headers: {
-          'Content-type': 'application/json',
-        },
-      });
+    const response = await fetch(`${API_URL}/${API_URI}`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+      },
+    });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data: T[] = await response.json();
-      sessionStorage.setItem(API_URI, JSON.stringify(data));
-      return data;
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data: T[] = await response.json();
+    sessionStorage.setItem(API_URI, JSON.stringify(data));
+    return data;
     // }
 
     // return JSON.parse(citiesRaw) as T[];
@@ -160,7 +160,7 @@ export async function postDislikeCard(cardId: string, userId: string): Promise<v
 
   const card: TCard = await response.json();
 
-  const updatedLikes = card.likes.filter(like => like !== userId);
+  const updatedLikes = card.likes.filter((like) => like !== userId);
 
   const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
     method: 'PATCH',
@@ -227,7 +227,7 @@ export async function loginUser(mail: string, password: string) {
   if (data.length === 0) {
     return null;
   }
-  localStorage.setItem('current-user', JSON.stringify(data[0].userId));
+  localStorage.setItem('current-user', data[0].id);
   return data[0];
 }
 
@@ -385,6 +385,17 @@ export async function getUserById(id: string): Promise<TUser> {
     console.error('Ошибка при получении карточек:', error);
     throw error;
   }
+}
+
+export async function checkRegistration(mail: string): Promise<TUser[]> {
+  const response = await fetch(`${API_URL}/users?mail=${mail}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+    const data: TUser[] = await response.json();
+    return data;
 }
 
 // export async function getSkillCardById(id: string) {

@@ -12,9 +12,9 @@ import { HugeUserAccountSVG } from '@/assets/svg/huge-user-account';
 import type { DropdownOption } from '../dropdownUI/type';
 import { DropdownUI } from '../dropdownUI';
 import { CheckboxUI } from '../checkboxUI';
-import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
-import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 import type { genderType } from '@/shared/global-types';
+import { useSelector } from 'react-redux';
+import { getCitiesState, getSkillsState } from '@/services/slices';
 
 const ages: DropdownOption<number | undefined>[] = [
   { id: 16, name: '16' },
@@ -50,9 +50,8 @@ const ages: DropdownOption<number | undefined>[] = [
 ];
 
 const genders: DropdownOption<genderType>[] = [
-  {id: 'male', name: 'Мужской'},
-  {id: 'female', name: 'Женский'},
-  {id: null, name: 'Не указан'}
+  { id: 'male', name: 'Мужской' },
+  { id: 'female', name: 'Женский' },
 ];
 
 export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
@@ -67,10 +66,10 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   skill,
   setSkill,
   handleSubmit,
-  handleBack
+  handleBack,
 }) => {
   const renderAgeOptions = () => {
-    return ages.map(age => (
+    return ages.map((age) => (
       <li key={age.id} onClick={() => setAge(age)}>
         {age.name}
       </li>
@@ -78,45 +77,44 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   };
 
   const renderGenderOptions = () => {
-    return genders.map(gender => (
+    return genders.map((gender) => (
       <li key={gender.id} onClick={() => setGender(gender)}>
         {gender.name}
       </li>
     ));
   };
 
-  const cities: DropdownOption<string>[] = CITIES_MOCK.map(city => ({
+  const cities: DropdownOption<string>[] = useSelector(getCitiesState).map((city) => ({
     id: city.id,
     name: city.title,
   }));
 
   const renderCityOptions = (filteredCities: DropdownOption<string>[]) => {
-    return filteredCities.map(city => (
+    return filteredCities.map((city) => (
       <li key={city.id} onClick={() => setCity(city)}>
         {city.name}
       </li>
     ));
   };
 
-  const skills: DropdownOption<string>[] = MAIN_FILTERS_MOCK.flatMap(filter =>
-      filter.subFilters.map(subFilter => ({
-        id: subFilter.id,
-        name: subFilter.title
-      }))
-    );
-    
+  const skills: DropdownOption<string>[] = useSelector(getSkillsState).flatMap((filter) =>
+    filter.subFilters.map((subFilter) => ({
+      id: subFilter.id,
+      name: subFilter.title,
+    }))
+  );
 
   const handleCheckboxes = (id: string) => {
-      setSkill((prev) => {
-        if (prev.some(filter => filter.id === id)) {
-          return prev.filter(filter => filter.id !== id);
-        };
+    setSkill((prev) => {
+      if (prev.some((filter) => filter.id === id)) {
+        return prev.filter((filter) => filter.id !== id);
+      }
 
-        const option = skills.find(option => option.id === id);
-        if (!option) return prev;
-        return [...prev, option];
-      });
-    };
+      const option = skills.find((option) => option.id === id);
+      if (!option) return prev;
+      return [...prev, option];
+    });
+  };
 
   const renderSkills = (options: DropdownOption<string>[]) => {
     return options.map((option: DropdownOption<string>) => (
@@ -128,29 +126,23 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
           onChange={() => handleCheckboxes(option.id)}
         />
       </li>
-      )
-    );
+    ));
   };
-  
+
   return (
     <main className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.ProgressBar}>
-          <ProgressBar steps={3} current={2}>
-          </ProgressBar>
+          <ProgressBar steps={3} current={2}></ProgressBar>
         </div>
         <div className={styles.general}>
-          <form
-            className={styles.general_column}
-            name='aboutYou'
-            onSubmit={handleSubmit}
-          >
-          <div className={styles.img_profile}>
-            <UserCircleSVG size='60px'/>
-            <div className={styles.img_Plus}>
-              <PlusCircleSVG size='24px' />
+          <form className={styles.general_column} name='aboutYou' onSubmit={handleSubmit}>
+            <div className={styles.img_profile}>
+              <UserCircleSVG size='60px' />
+              <div className={styles.img_Plus}>
+                <PlusCircleSVG size='24px' />
+              </div>
             </div>
-          </div> 
             <InputUI
               label='Имя'
               type='text'
@@ -161,36 +153,36 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
               error={false}
               errorText=''
             />
-            <div className={styles.gentwo}>              
+            <div className={styles.gentwo}>
               <div className={styles.dropdownBlock}>
                 <p>Возраст</p>
-                <DropdownUI 
-                    withFilter={false} 
-                    isMultiSelect={false} 
-                    value={age} 
-                    placeholder='Не указан'
-                  >
+                <DropdownUI
+                  withFilter={false}
+                  isMultiSelect={false}
+                  value={age}
+                  placeholder='Не указан'
+                >
                   {() => renderAgeOptions()}
                 </DropdownUI>
               </div>
               <div className={styles.dropdownBlock}>
                 <p>Пол</p>
-                <DropdownUI 
-                    withFilter={false} 
-                    isMultiSelect={false} 
-                    value={gender} 
-                    placeholder='Не указан'
-                  >
+                <DropdownUI
+                  withFilter={false}
+                  isMultiSelect={false}
+                  value={gender}
+                  placeholder='Не указан'
+                >
                   {() => renderGenderOptions()}
                 </DropdownUI>
               </div>
             </div>
             <div className={styles.dropdownBlock}>
               <p>Выберите навыки, которым хотите научиться</p>
-              <DropdownUI 
-                withFilter={true} 
-                isMultiSelect={true} 
-                value={skill} 
+              <DropdownUI
+                withFilter={true}
+                isMultiSelect={true}
+                value={skill}
                 placeholder='Выберите'
               >
                 {({ filter }) => {
@@ -200,13 +192,13 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
 
                   return <>{renderSkills(filteredOptions)}</>;
                 }}
-                </DropdownUI>
+              </DropdownUI>
             </div>
             <div className={styles.dropdownBlock}>
               <p>Город</p>
-              <DropdownUI 
-                withFilter={true} 
-                isMultiSelect={false} 
+              <DropdownUI
+                withFilter={true}
+                isMultiSelect={false}
                 value={city}
                 placeholder='Выберите ваш город'
               >
@@ -220,24 +212,21 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
               </DropdownUI>
             </div>
             <div className={styles.buttons}>
-              <ButtonUI 
-                type='button' 
+              <ButtonUI
+                type='button'
                 onClick={handleBack}
                 className={classNames(styles.button, styles.message_btn)}
-                >
+              >
                 Назад
               </ButtonUI>
-              <ButtonUI 
-                type='submit' 
-                className={classNames(styles.button, styles.link_btn)}
-                >
+              <ButtonUI type='submit' className={classNames(styles.button, styles.link_btn)}>
                 Продолжить
               </ButtonUI>
-            </div> 
+            </div>
           </form>
           <div className={styles.general_column_img}>
             <div className={styles.img_container}>
-              <HugeUserAccountSVG width = '150px' height = '150px' />
+              <HugeUserAccountSVG width='150px' height='150px' />
             </div>
             <div className={styles.text}>
               <h2 className={styles.title}>Расскажите немного о себе</h2>
@@ -249,4 +238,3 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
     </main>
   );
 };
-

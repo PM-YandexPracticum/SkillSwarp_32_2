@@ -14,12 +14,12 @@ import { EditSVG } from '@/assets/svg';
 export const ProfilePage = () => {
   const [gender, setGender] = useState<'male' | 'female' >(USERS_DATA[0].gender ?? 'male');
 
-  const cities: DropdownOption[] = CITIES_MOCK.map((city: TCity) => ({
+  const cities: DropdownOption<string>[] = CITIES_MOCK.map((city: TCity) => ({
     id: city.id,
     name: city.title,
   }));
 
-  const [selectedCity, setSelectedCity] = useState<DropdownOption | null>(() => {
+  const [selectedCity, setSelectedCity] = useState<DropdownOption<string>| null>(() => {
     const userCityTitle = USERS_DATA[0].city;
     const foundCity = cities.find((city) => city.name === userCityTitle);
     return foundCity ?? null;

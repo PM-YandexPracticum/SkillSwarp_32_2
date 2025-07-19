@@ -96,6 +96,7 @@ export interface TCard {
 
 // тип профиля юзера
 export interface TUser {
+  id: string;
   gender: genderType;
   userId: string;
   name: string;
@@ -125,3 +126,8 @@ export interface TCityFilter extends TCity {
 // для сортировки карточек по новизне
 
 export type SortType = 'default' | 'newest';
+
+export interface TLoginData {
+  mail: string;
+  password: string;
+}

@@ -79,7 +79,7 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
               <p>Выберите категорию</p>
               <DropdownUI 
                 withFilter={true} 
-                isMultiSelect={true} 
+                isMultiSelect={false} 
                 value={skill} 
                 placeholder='Выберите'
               >

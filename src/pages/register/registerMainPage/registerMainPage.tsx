@@ -2,8 +2,12 @@ import type { FC, SyntheticEvent } from 'react';
 import { useState } from 'react';
 import { RegisterUI } from '@/shared/ui/registerUI';
 import type { setStateProps } from '../type';
-import store, { useDispatch, useSelector } from '@/services/store/store';
-import { selectError, setRegistrationStepData } from '@/services/slices/userSlice';
+import { useDispatch, useSelector } from '@/services/store/store';
+import {
+  checkUserExist,
+  selectError,
+  setRegistrationStepData,
+} from '@/services/slices/userSlice';
 
 export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
   const [email, setEmail] = useState('');
@@ -12,18 +16,25 @@ export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
 
-  const handleSubmit = (e: SyntheticEvent) => {
+  const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    
+
     if (!email.trim() || !password.trim()) {
       return;
     }
-
-    dispatch(setRegistrationStepData({ mail: email, password }));
-    console.log(store.getState());
-    setCurrentPage((current) => current + 1);
+    try {
+      const result = await dispatch(checkUserExist({ mail: email })).unwrap();
+      if (result) {
+        console.log('Пользователь уже есть:', result);
+      } else {
+        dispatch(setRegistrationStepData({ mail: email, password }));
+        setCurrentPage((current) => current + 1);
+      }
+    } catch (error) {
+      console.log(error)
+    }
   };
- 
+
   return (
     <RegisterUI
       errorText={error}

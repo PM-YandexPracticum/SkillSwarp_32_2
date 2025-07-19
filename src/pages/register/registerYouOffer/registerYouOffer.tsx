@@ -10,6 +10,7 @@ import { clearRegistrationData, postCardThunk, registerUserThunk, selectRegistra
 import type { TCard, TUser } from '@/shared/global-types';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { makeSkillsArray } from '../helpers';
+import { useNavigate } from 'react-router';
 
 //дописать взаимодействие и дополнить тип
 
@@ -19,6 +20,7 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   const [description, setDescription] = useState('');
   const [file, setFile] = useState('');
 
+  const navigate = useNavigate()
   const registrationData = useSelector(selectRegistrationData);
 
   const dispatch = useDispatch();
@@ -83,6 +85,7 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
     dispatch(registerUserThunk(userData as TUser)).then((resultAction) => {
       if (registerUserThunk.fulfilled.match(resultAction)) {
         dispatch(clearRegistrationData());
+        navigate('/')
       } else {
         console.error('Регистрация не удалась');
       }
