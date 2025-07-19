@@ -21,7 +21,7 @@ export const CardListUI: FC<CardListProps> = ({
       <div className={styles.description}>
         <h3 className={styles.title}>{title}</h3>
         {handleOpen && (
-          <ButtonUI className={styles.button} type='button' onClick={handleOpen}>
+          <ButtonUI className={styles.button} type='link' to={handleOpen}>
             <span className={styles.button_text}>Смотреть все</span>
             <div className={styles.button_image}>
               <ChevronRightSVG color='currentColor' />
