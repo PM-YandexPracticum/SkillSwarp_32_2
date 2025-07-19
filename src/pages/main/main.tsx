@@ -120,7 +120,7 @@ export const Main: FC = () => {
 
   return (
     <main className={styles.main}>
-      <div>
+      <div className={styles.filter_block}>
         <FilterBlock
           educationFilters={educationState}
           cityFilters={citiesState}
@@ -133,37 +133,40 @@ export const Main: FC = () => {
           activeFiltersCount={activeFilters.length}
         />
       </div>
-      {checkFiltersState ? (
-        <div className={styles.card_blocks}>
-          {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
-          {cards.length > 0 ? (
+
+      <div className={styles.card_blocks}>
+        {checkFiltersState ? (
+          <>
+            {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
+            {cards.length > 0 ? (
+              <CardListUI
+                title={`Подходящие предложения: ${cards.length}`}
+                handleSort={sortCards}
+                sortType={sortType}
+                cards={sortedCards}
+              />
+            ) : (
+              <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
+            )}
+          </>
+        ) : (
+          <>
             <CardListUI
-              title={`Подходящие предложения: ${cards.length}`}
-              handleSort={sortCards}
-              sortType={sortType}
-              cards={sortedCards}
+              title='Популярное'
+              handleOpen='/popular'
+              cards={cardsPopular}
+              loading={loading}
             />
-          ) : (
-            <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
-          )}
-        </div>
-      ) : (
-        <div className={styles.card_blocks}>
-          <CardListUI
-            title='Популярное'
-            handleOpen='/popular'
-            cards={cardsPopular}
-            loading={loading}
-          />
-          <CardListUI title='Новое' handleOpen='/newest' cards={cardsNew} loading={loading} />
-          <CardListUI
-            title='Рекомендуем'
-            handleOpen='/recommended'
-            cards={cardsRecommendedChaos}
-            loading={loading}
-          />
-        </div>
-      )}
+            <CardListUI title='Новое' handleOpen='/newest' cards={cardsNew} loading={loading} />
+            <CardListUI
+              title='Рекомендуем'
+              handleOpen='/recommended'
+              cards={cardsRecommendedChaos}
+              loading={loading}
+            />
+          </>
+        )}
+      </div>
     </main>
   );
 };

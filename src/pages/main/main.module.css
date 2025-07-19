@@ -1,17 +1,23 @@
 .main {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 280px 1fr;
   gap: 24px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px 36px;
-  margin-top: 104px; /* На высоту фиксированной шапки */
+  margin-top: 104px;
 }
 
 .card_blocks {
   display: flex;
   flex-direction: column;
-  grid-column: 2/5;
   gap: 40px;
+}
+
+.filter_block {
+  max-height: calc(100vh - 104px);
+  overflow-y: auto;
+  position: sticky;
+  top: 104px;
 }
