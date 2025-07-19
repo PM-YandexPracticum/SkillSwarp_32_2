@@ -68,10 +68,12 @@ export default [
     plugins: { vitest },
     languageOptions: {
       globals: {
-        ...vitest.environments.globals.globals,
+        ...vitest.environments.env.globals,
       },
     },
-    rules: {},
+    rules: {
+      ...vitest.configs.recommended.rules,
+    },
   },
   ...storybook.configs['flat/recommended'],
 ];
