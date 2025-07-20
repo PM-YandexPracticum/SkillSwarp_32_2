@@ -3,7 +3,11 @@ import { useRef, useState } from 'react';
 import { ButtonUI } from '../buttonUI';
 import { NotificationSVG } from '@/assets/svg/notification';
 import { NotificationUI } from '../notificationUI';
-import type { ExtendedOfferSkillType, GroupedNotifications, TNotificationListUIProps } from './type';
+import type {
+  ExtendedOfferSkillType,
+  GroupedNotifications,
+  TNotificationListUIProps,
+} from './type';
 import clsx from 'clsx';
 import React from 'react';
 import { useOutsideClickClose } from './hooks/useOutsideClickClose';
@@ -85,7 +89,6 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
                     <NotificationUI
                       key={notification.userId}
                       offer={notification}
-                      isRead={notification.isRead}
                       typeOfExchange={notification.type}
                       partnerName={partnerName}
                       partnerGender={partnerGender}
