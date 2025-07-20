@@ -4,12 +4,12 @@ import type { ReactNode } from 'react';
 export type TSkillCardProps = {
   card: TCard;
   type: 'edit' | 'received' | 'sent' | 'offer';
-  liked?: boolean;
+  likes?: string[];
   likeHandler: () => void;
 };
 
 export type TSkillCardMenuProps = {
-  liked: boolean;
+  liked: boolean | undefined;
   likeHandler: () => void;
   shareHandler: () => void;
 };

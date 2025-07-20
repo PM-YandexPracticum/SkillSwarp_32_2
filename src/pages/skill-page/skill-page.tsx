@@ -7,7 +7,7 @@ import { SameOffers } from '@/widgets/same-offers';
 import { SkillCard } from '@/widgets/skill-card';
 import { useLocation, useParams } from 'react-router-dom';
 import { useSelector } from '@/services/store';
-import { getCardsState, getCardsLoadingState } from '@/services/slices';
+import { getCardsState, getCardsLoadingState, selectLikes } from '@/services/slices';
 import { filterSameOffers } from '@/shared/lib/helpers/helpers';
 
 export const SkillPage: FC = () => {
@@ -15,6 +15,7 @@ export const SkillPage: FC = () => {
   // const [currentPage, setCurrentPage] = useState(0);
   // const user = useSelector(userSelectors.userDataSelector); // поиск юзера в виджете юзеркард
   // const dispatch = useDispatch();
+  const likes = useSelector(selectLikes)
 
   const cardsState = useSelector(getCardsState);
   const loading = useSelector(getCardsLoadingState);
@@ -42,7 +43,7 @@ export const SkillPage: FC = () => {
         </ButtonUI>
         <div className={styles.skill_content}>
           <UserCard card={card} type='full' />
-          <SkillCard card={card} type='offer' likeHandler={() => {}} />
+          <SkillCard card={card} type='offer' likeHandler={() => {}} likes={likes}/>
         </div>
         <div className={styles.same_offers}>
           <h1>Похожие предложения</h1>

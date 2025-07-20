@@ -9,7 +9,7 @@ import { ButtonUI } from '../buttonUI';
 import clsx from 'clsx';
 import type { TSkill } from '@/shared/global-types';
 
-export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike }) => {
+export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike, isLiked }) => {
   // метод по созданию списка навыков. Будет лучше если он будет лежать здесь
   // решил что сам метод останется тут, но сам компонент навыка я сделал отдельным компонентом
   const renderSkills = (skills: TSkill[], limit = 2) => {
@@ -48,7 +48,11 @@ export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike }) => {
         </div>
         {type === 'short' && (
           <ButtonUI type='button' onClick={setLike} className={styles.button_like}>
-            <LikeSVG width='24px' height='24px' />
+            {isLiked ? (
+              <LikeSVG width='24px' height='24px' color='var(--accent-redesigned)'/>
+            ) : (
+              <LikeSVG width='24px' height='24px' />
+            )}
           </ButtonUI>
         )}
       </div>

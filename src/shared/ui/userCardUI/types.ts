@@ -9,4 +9,5 @@ export interface UserCardUIProps {
   setLike: () => void;
   card: TCard;
   type: 'full' | 'short';
+  isLiked: boolean | undefined;
 }

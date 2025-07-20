@@ -103,6 +103,7 @@ const userSlice = createSlice({
     selectRegistrationData: (state) => state.registrationData,
     selectError: (state) => state.errorMessage,
     selectRegistrationError: (state) => state.registrationError,
+    selectLikes: (state) => state.user?.likes
   },
   extraReducers: (builder) => {
     builder
@@ -155,7 +156,7 @@ export const {
   clearRegistrationData,
 } = userSlice.actions;
 
-export const { selectRegistrationData, selectError, selectUserData, selectRegistrationError } =
+export const { selectRegistrationData, selectError, selectUserData, selectRegistrationError, selectLikes } =
   userSlice.selectors;
 
 export default userSlice.reducer;
