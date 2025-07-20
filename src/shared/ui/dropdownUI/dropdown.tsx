@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { DropdownUIProps } from './type';
 import styles from './dropdown.module.css';
 import { InputUI } from '../inputUI';
-import { ChevronDownSVG, ShevronUpSVG } from '@/assets/svg';
+import { ChevronDownSVG, ChevronUpSVG } from '@/assets/svg';
 
 // value = выбранная опция или список опций
 // withFilter = текстовый фильтра
@@ -73,7 +73,7 @@ export const DropdownUI = ({
           aria-label='Открыть или закрыть список'
           aria-pressed={isOpen ? true : false} 
         >
-          {isOpen ? <ShevronUpSVG /> : <ChevronDownSVG />}
+          {isOpen ? <ChevronUpSVG /> : <ChevronDownSVG />}
         </button>
         {withFilter ? (
           isOpen ? (
