@@ -10,7 +10,7 @@
       "@data-types/*": ["src/shared/global-types/data-types/*"],
       "@data-types": ["src/shared/global-types/data-types"]
     },
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "node", "vitest/globals", "@testing-library/jest-dom", "@testing-library/react"],
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
     "useDefineForClassFields": true,
