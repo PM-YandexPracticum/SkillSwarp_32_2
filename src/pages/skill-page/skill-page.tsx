@@ -9,6 +9,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { useSelector } from '@/services/store';
 import { getCardsState, getCardsLoadingState } from '@/services/slices';
 import { filterSameOffers } from '@/shared/lib/helpers/helpers';
+import { Footer } from '@/shared/ui/footer';
 
 export const SkillPage: FC = () => {
   const { userId } = useParams();
@@ -55,6 +56,7 @@ export const SkillPage: FC = () => {
           )}
         </div>
       </main>
+      <Footer />
     </>
   );
 };

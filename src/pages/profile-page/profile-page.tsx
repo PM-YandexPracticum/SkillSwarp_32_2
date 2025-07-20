@@ -10,9 +10,10 @@ import styles from './profile-page.module.css';
 import { ProfileForm } from '@/shared/ui/profileForm';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { EditSVG } from '@/assets/svg';
+import { Footer } from '@/shared/ui/footer';
 
 export const ProfilePage = () => {
-  const [gender, setGender] = useState<'male' | 'female' >(USERS_DATA[0].gender ?? 'male');
+  const [gender, setGender] = useState<'male' | 'female'>(USERS_DATA[0].gender ?? 'male');
 
   const cities: DropdownOption[] = CITIES_MOCK.map((city: TCity) => ({
     id: city.id,
@@ -26,34 +27,38 @@ export const ProfilePage = () => {
   });
 
   return (
-    <main className={styles.main}>
-      <div className={styles.profile}>
-        <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
-          <ProfileMenu />
-        </div>
+    <>
+      {' '}
+      <main className={styles.main}>
+        <div className={styles.profile}>
+          <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
+            <ProfileMenu />
+          </div>
 
-        <div
-          className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
-        >
-          <ProfileForm
-            gender={gender}
-            setGender={setGender}
-            selectedCity={selectedCity}
-            setSelectedCity={setSelectedCity}
-            cities={cities}
-          />
+          <div
+            className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
+          >
+            <ProfileForm
+              gender={gender}
+              setGender={setGender}
+              selectedCity={selectedCity}
+              setSelectedCity={setSelectedCity}
+              cities={cities}
+            />
 
-          <div className={styles.profile__avatar}>
-            <ProfileAvatar userAvatar={profile} />
-            <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
-              Изменить фото
-              <span className={styles['change-photo-svg']}>
-                <EditSVG />
-              </span>
-            </ButtonUI>
+            <div className={styles.profile__avatar}>
+              <ProfileAvatar userAvatar={profile} />
+              <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
+                Изменить фото
+                <span className={styles['change-photo-svg']}>
+                  <EditSVG />
+                </span>
+              </ButtonUI>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 };

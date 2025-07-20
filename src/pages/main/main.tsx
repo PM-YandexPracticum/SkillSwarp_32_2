@@ -24,6 +24,7 @@ import {
   sortByNewest,
   sortByPopular,
 } from '@/shared/lib/helpers/helpers';
+import { Footer } from '@/shared/ui/footer';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -119,54 +120,58 @@ export const Main: FC = () => {
   ];
 
   return (
-    <main className={styles.main}>
-      <div className={styles.filter_block}>
-        <FilterBlock
-          educationFilters={educationState}
-          cityFilters={citiesState}
-          skillFilters={skillsState}
-          genderFilters={genderState}
-          onSkillChange={getSkillFilterValue}
-          onCityChange={onCityChange}
-          onEducationChange={onEducationChange}
-          onGenderChange={onGenderChange}
-          activeFiltersCount={activeFilters.length}
-        />
-      </div>
+    <>
+      {' '}
+      <main className={styles.main}>
+        <div className={styles.filter_block}>
+          <FilterBlock
+            educationFilters={educationState}
+            cityFilters={citiesState}
+            skillFilters={skillsState}
+            genderFilters={genderState}
+            onSkillChange={getSkillFilterValue}
+            onCityChange={onCityChange}
+            onEducationChange={onEducationChange}
+            onGenderChange={onGenderChange}
+            activeFiltersCount={activeFilters.length}
+          />
+        </div>
 
-      <div className={styles.card_blocks}>
-        {checkFiltersState ? (
-          <>
-            {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
-            {cards.length > 0 ? (
+        <div className={styles.card_blocks}>
+          {checkFiltersState ? (
+            <>
+              {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
+              {cards.length > 0 ? (
+                <CardListUI
+                  title={`Подходящие предложения: ${cards.length}`}
+                  handleSort={sortCards}
+                  sortType={sortType}
+                  cards={sortedCards}
+                />
+              ) : (
+                <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
+              )}
+            </>
+          ) : (
+            <>
               <CardListUI
-                title={`Подходящие предложения: ${cards.length}`}
-                handleSort={sortCards}
-                sortType={sortType}
-                cards={sortedCards}
+                title='Популярное'
+                handleOpen='/popular'
+                cards={cardsPopular}
+                loading={loading}
               />
-            ) : (
-              <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
-            )}
-          </>
-        ) : (
-          <>
-            <CardListUI
-              title='Популярное'
-              handleOpen='/popular'
-              cards={cardsPopular}
-              loading={loading}
-            />
-            <CardListUI title='Новое' handleOpen='/newest' cards={cardsNew} loading={loading} />
-            <CardListUI
-              title='Рекомендуем'
-              handleOpen='/recommended'
-              cards={cardsRecommendedChaos}
-              loading={loading}
-            />
-          </>
-        )}
-      </div>
-    </main>
+              <CardListUI title='Новое' handleOpen='/newest' cards={cardsNew} loading={loading} />
+              <CardListUI
+                title='Рекомендуем'
+                handleOpen='/recommended'
+                cards={cardsRecommendedChaos}
+                loading={loading}
+              />
+            </>
+          )}
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 };

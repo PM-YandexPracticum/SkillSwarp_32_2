@@ -20,4 +20,5 @@
   overflow-y: auto;
   position: sticky;
   top: 104px;
+  overflow-x: hidden;
 }
