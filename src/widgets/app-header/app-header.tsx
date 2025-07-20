@@ -28,7 +28,7 @@ export const AppHeader: FC = () => {
 
   // TODO Для проверки
   // const user = USERS_DATA[7];
-  const user = useSelector(selectUserData)
+  const user = useSelector(selectUserData);
   
 
   const headerRef = useRef<HTMLElement>(null);

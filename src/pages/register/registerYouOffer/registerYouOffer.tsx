@@ -20,7 +20,7 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   const [description, setDescription] = useState('');
   const [file, setFile] = useState('');
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const registrationData = useSelector(selectRegistrationData);
 
   const dispatch = useDispatch();
@@ -84,10 +84,11 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
 
     // Жесткий костыль. Исправить типизацию !!!
 
+    // @ts-expect-error ПОПРАВИТЬ
     dispatch(registerUserThunk(userData as TUser)).then((resultAction) => {
       if (registerUserThunk.fulfilled.match(resultAction)) {
         dispatch(clearRegistrationData());
-        navigate('/')
+        navigate('/');
       } else {
         console.error('Регистрация не удалась');
       }

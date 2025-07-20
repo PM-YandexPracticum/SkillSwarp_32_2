@@ -31,7 +31,7 @@ export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
         setCurrentPage((current) => current + 1);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
