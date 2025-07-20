@@ -73,7 +73,6 @@ export const Test: FC = () => {
           isRead: false
           // isRead: true
         }}
-        isRead = {false}
         partnerName = 'Татьяна'
         // typeOfExchange = 'incoming'
         typeOfExchange = 'outgoing'

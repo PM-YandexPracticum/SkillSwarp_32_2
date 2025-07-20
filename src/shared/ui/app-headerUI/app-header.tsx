@@ -14,7 +14,6 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
     {
       onSkillsClick,
       onToggleTheme,
-      onNotificationClick,
       onLikeClick,
       onClearButtonClick,
       onSearch,
@@ -53,12 +52,8 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
               {user.id != '' ? (
                 <div className={styles.header_logged_in}>
                   <div className={styles.icons}>
+                    <NotificationListUI user={user} />
                     {/* Условный рендеринг для опциональных пропсов */}
-                    {onNotificationClick && (
-                      <ButtonUI type='button' onClick={onNotificationClick} className={styles.button}>
-                        <NotificationSVG />
-                      </ButtonUI>
-                    )}
                     {onLikeClick && (
                       <ButtonUI type='button' onClick={onLikeClick} className={styles.button}>
                         <LikeSVG />

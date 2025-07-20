@@ -5,7 +5,6 @@ import { ButtonUI } from '../buttonUI';
 
 export const NotificationUI = (props: TNotificationUIProps) => {
   const { offer, partnerName, typeOfExchange, partnerGender } = props;
-  // const { offer, isRead, partnerName, typeOfExchange, partnerGender } = props;
 
   const currentDate: Date = new Date();
   const notificationDate = new Date(offer.createdAt);
