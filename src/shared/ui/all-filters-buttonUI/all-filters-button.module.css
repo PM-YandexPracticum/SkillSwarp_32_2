@@ -1,0 +1,14 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--interaction-color);
+}
+
+.chevron {
+  transition: transform 0.2s ease-in-out;
+}
+
+.button[data-is-expanded='true'] .chevron {
+  transform: rotate(180deg);
+}

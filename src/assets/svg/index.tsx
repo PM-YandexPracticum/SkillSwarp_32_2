@@ -14,7 +14,7 @@ export { EyeSVG } from './eye';
 export { BookSVG } from './book';
 export { ChevronDownSVG } from './chevron-down';
 export { ChevronRightSVG } from './chevron-right';
-export { ShevronUpSVG } from './chevron-up';
+export { ChevronUpSVG } from './chevron-up';
 export { LogoVG } from './logo';
 export { EditSVG } from './edit';
 export { LikeSVG } from './like';

@@ -1,1 +1,1 @@
-export { ShevronUpSVG } from './chevron-up';
+export { ChevronUpSVG } from './chevron-up';

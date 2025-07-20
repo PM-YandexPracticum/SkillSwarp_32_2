@@ -1,7 +1,8 @@
-import { type FC } from 'react';
+import { useState, type FC } from 'react';
 import { CheckboxUI } from '../checkboxUI';
 import styles from './checkbox-group.module.css';
 import type { TSkillSubFilter } from '@/shared/global-types';
+import { AllFiltersButtonUI } from '../all-filters-buttonUI';
 
 export type TCityFilter = {
   id: string;
@@ -16,24 +17,29 @@ type CheckboxGroupUIProps = {
   onSelect: (id: string) => void; // Теперь передаем только ID измененного элемента
 };
 
-export const CheckboxGroupUI: FC<CheckboxGroupUIProps> = ({ 
-  title, 
-  filters, 
-  onSelect 
-}) => {
+const VISIBLE_CITIES_COUNT = 5;
+
+export const CheckboxGroupUI: FC<CheckboxGroupUIProps> = ({ title, filters, onSelect }) => {
   // Полностью убрали локальное состояние
   // Работаем напрямую с переданными фильтрами из стора
+
+  const [isExpanded, setIsExpanded] = useState(false);
+  const visibleFilters = isExpanded ? filters : filters.slice(0, VISIBLE_CITIES_COUNT);
 
   const handleCheckboxChange = (id: string) => {
     // Просто передаем ID измененного элемента
     onSelect(id);
   };
 
+  const toggleExpanded = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
   return (
     <div className={styles.container}>
       {title && <h3 className={styles.title}>{title}</h3>}
       <div className={styles.checkbox_list}>
-        {filters.map((filter) => (
+        {visibleFilters.map((filter) => (
           <CheckboxUI
             key={filter.id}
             label={filter.title}
@@ -42,6 +48,7 @@ export const CheckboxGroupUI: FC<CheckboxGroupUIProps> = ({
             onChange={() => handleCheckboxChange(filter.id)}
           />
         ))}
+        <AllFiltersButtonUI title='Все города' onClick={toggleExpanded} isExpanded={isExpanded} />
       </div>
     </div>
   );

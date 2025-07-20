@@ -4,9 +4,16 @@ import { Link } from 'react-router-dom';
 
 // пропсы будут добавляться уже непосредственно в родительском компоненте
 
-export const ButtonUI: FC<ButtonUIProps> = ({ type, onClick, children, className, to }) => {
+export const ButtonUI: FC<ButtonUIProps> = ({
+  type,
+  onClick,
+  children,
+  className,
+  to,
+  ...props
+}) => {
   return type === 'button' ? (
-    <button  className={className} onClick={onClick} type='button'>
+    <button className={className} onClick={onClick} type='button' {...props}>
       {children}
     </button>
   ) : type === 'link' ? (
