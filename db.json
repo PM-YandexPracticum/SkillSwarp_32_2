@@ -790,7 +790,7 @@
       "description": "Предлагаю всем пойти и начать спасать Нью-Йорк",
       "incoming": [],
       "outgoing": [],
-      "image": "",
+      "image": "#",
       "likes": []
     },
     {
@@ -805,7 +805,7 @@
       "description": "фывфывфывфыв",
       "incoming": [],
       "outgoing": [],
-      "image": "",
+      "image": "#",
       "likes": []
     }
   ],
@@ -3028,7 +3028,7 @@
       "gender": "male",
       "createdAt": 1752959158318,
       "likes": [],
-      "src": "",
+      "src": "#",
       "skillImages": []
     },
     {
@@ -3061,7 +3061,7 @@
       "gender": "male",
       "createdAt": 1752960357169,
       "likes": [],
-      "src": "",
+      "src": "#",
       "skillImages": []
     }
   ],
