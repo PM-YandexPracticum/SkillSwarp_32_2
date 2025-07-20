@@ -68,6 +68,7 @@ export interface offerSkillType {
   userId: string;
   status: offerStatus;
   createdAt: number;
+  isRead: boolean;
 }
 
 export type TImage = {

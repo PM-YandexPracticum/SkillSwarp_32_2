@@ -5,8 +5,9 @@ import type { TAppHeaderUIProps } from './type';
 import { ButtonUI } from '../buttonUI';
 import { LikeSVG } from '@/assets/svg/like';
 import { ChevronDownSVG, CrossSVG, LogoVG, MoonSVG } from '@/assets/svg';
-import { NotificationSVG } from '@/assets/svg/notification';
+// import { NotificationSVG } from '@/assets/svg/notification';
 import { SearchFieldUI } from '../search-fieldUI';
+import { NotificationListUI } from '../notificationListUI';
 
 export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
   (
