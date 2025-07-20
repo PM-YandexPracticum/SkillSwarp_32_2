@@ -18,6 +18,6 @@ export type TAppHeaderUIProps = {
   onClearButtonClick: () => void;
   onSearch?: (suggestion: SearchSuggestion) => void; // Использую правильный тип
   // user: HeaderUserData | undefined;
-  user: TUser | null;
+  user: TUser;
   isLoginOrRegister: boolean;
 };

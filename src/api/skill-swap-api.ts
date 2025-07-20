@@ -20,7 +20,7 @@ async function fetchData<T>(API_URI: string): Promise<T[]> {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data: T[] = await response.json();
-    sessionStorage.setItem(API_URI, JSON.stringify(data));
+    // sessionStorage.setItem(API_URI, JSON.stringify(data));
     return data;
     // }
 
@@ -122,12 +122,15 @@ export async function postLikeCard(cardId: string, userId: string): Promise<void
   const API_URI = 'cards';
 
   const response = await fetch(`${API_URL}/${API_URI}/${cardId}`);
+  
   if (!response.ok) throw new Error('Ошибка при получении карточки');
 
   const card = await response.json();
   const currentLikes: string[] = card.likes || [];
 
   const updatedLikes = [...currentLikes, userId];
+  // console.log('Карточка которую лайкаем',cardId,'Пользователь которого лайкаем', userId)
+  // console.log(updatedLikes);
 
   const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
     method: 'PATCH',
@@ -136,19 +139,20 @@ export async function postLikeCard(cardId: string, userId: string): Promise<void
   });
 
   if (!updateRes.ok) throw new Error('Ошибка при обновлении лайков');
+}
 
-  const cachedDataRaw = sessionStorage.getItem(API_URI);
-  if (cachedDataRaw) {
-    try {
-      const cachedData: TCard[] = JSON.parse(cachedDataRaw);
-      const updatedData = cachedData.map((card) =>
-        card.id === cardId ? { ...card, likes: updatedLikes } : card
-      );
-      sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
-    } catch (error) {
-      console.warn('Ошибка при парсинге sessionStorage:', error);
-    }
-  }
+export async function postSaveLikedCard(userData: TUser, userId: string): Promise<TUser> {
+  const API_URI = 'users';
+  const updateRes = await fetch(`${API_URL}/${API_URI}/${userId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ likes: userData.likes }),
+  });
+
+
+  if (!updateRes.ok) throw new Error('Ошибка при обновлении лайков');
+  const result:TUser =  await updateRes.json();
+  return result;
 }
 
 //дизлайк карточки
@@ -161,7 +165,8 @@ export async function postDislikeCard(cardId: string, userId: string): Promise<v
   const card: TCard = await response.json();
 
   const updatedLikes = card.likes.filter((like) => like !== userId);
-
+  // console.log('Карточка которую ДИЗлайкаем', cardId, 'Пользователя которого ДИЗлайкаем', userId)
+  // console.log(updatedLikes);
   const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
@@ -170,18 +175,18 @@ export async function postDislikeCard(cardId: string, userId: string): Promise<v
 
   if (!updateRes.ok) throw new Error('Ошибка при обновлении лайков');
 
-  const cachedDataRaw = sessionStorage.getItem(API_URI);
-  if (cachedDataRaw) {
-    try {
-      const cachedData: TCard[] = JSON.parse(cachedDataRaw);
-      const updatedData = cachedData.map((card) =>
-        card.id === cardId ? { ...card, likes: updatedLikes } : card
-      );
-      sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
-    } catch (error) {
-      console.warn('Ошибка при парсинге sessionStorage:', error);
-    }
-  }
+  // const cachedDataRaw = sessionStorage.getItem(API_URI);
+  // if (cachedDataRaw) {
+  //   try {
+  //     const cachedData: TCard[] = JSON.parse(cachedDataRaw);
+  //     const updatedData = cachedData.map((card) =>
+  //       card.id === cardId ? { ...card, likes: updatedLikes } : card
+  //     );
+  //     sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
+  //   } catch (error) {
+  //     console.warn('Ошибка при парсинге sessionStorage:', error);
+  //   }
+  // }
 }
 
 // отдельные операции с юзером
@@ -394,8 +399,8 @@ export async function checkRegistration(mail: string): Promise<TUser[]> {
       'Content-Type': 'application/json',
     },
   });
-    const data: TUser[] = await response.json();
-    return data;
+  const data: TUser[] = await response.json();
+  return data;
 }
 
 // export async function getSkillCardById(id: string) {

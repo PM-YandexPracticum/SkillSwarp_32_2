@@ -1,9 +1,17 @@
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TCard, TUser } from '@/shared/global-types';
-import { checkRegistration, checkUserAuth, loginUser, registerUser } from '@/api/skill-swap-api';
+import {
+  checkRegistration,
+  checkUserAuth,
+  loginUser,
+  postDislikeCard,
+  postLikeCard,
+  postSaveLikedCard,
+  registerUser,
+} from '@/api/skill-swap-api';
 
 interface UserState {
-  user: TUser | null;
+  user: TUser;
   isAuth: boolean;
   registrationData: Partial<TUser & TCard>;
   errorMessage: string | null;
@@ -11,11 +19,25 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  user: null,
+  user: {
+    id: '',
+    gender: 'male',
+    userId: '',
+    name: '',
+    city: 'Москва',
+    age: 0,
+    mail: '',
+    password: '',
+    description: '',
+    incoming: [],
+    outgoing: [],
+    image: '/#',
+    likes: [],
+  },
   isAuth: false,
   registrationData: {},
   errorMessage: null,
-  registrationError: false,
+  registrationError: false
 };
 
 export const registerUserThunk = createAsyncThunk<TUser, TUser, { rejectValue: string }>(
@@ -46,16 +68,15 @@ export const loginUserThunk = createAsyncThunk<
   }
 });
 
-export const checkAuthThunk = createAsyncThunk<TUser | null, void, { rejectValue: string }>(
+export const checkAuthThunk = createAsyncThunk<TUser, void, { rejectValue: string }>(
   'checkAuthThunk',
   async (_, { rejectWithValue }) => {
     try {
       const user = await checkUserAuth();
-      if (user) {
-        const user = await checkUserAuth();
-        return user;
+      if (!user) {
+        return rejectWithValue('Неверный email или пароль');
       }
-      return null;
+      return user;
     } catch (error) {
       return rejectWithValue(`Ошибка при проверке авторизации: ${error}`);
     }
@@ -79,12 +100,51 @@ export const checkUserExist = createAsyncThunk<boolean, { mail: string }, { reje
   }
 );
 
+export const likeCardThunk = createAsyncThunk<
+  void,
+  { cardId: string; userId: string },
+  { rejectValue: string }
+>('likeCardThunk', async ({ cardId, userId }, { rejectWithValue }) => {
+  try {
+    // console.log('Текущий пользователь',userId, 'Карточка которую тыкаем',cardId)
+    await postLikeCard(cardId, userId);
+  } catch (error) {
+    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+  }
+});
+
+export const disLikeCardThunk = createAsyncThunk<
+  void,
+  { cardId: string; userId: string },
+  { rejectValue: string }
+>('disLikeCardThunk', async ({ cardId, userId }, { rejectWithValue }) => {
+  try {
+    // console.log('Текущий пользователь',userId, 'Карточка которую тыкаем',cardId)
+    await postDislikeCard(cardId, userId);
+  } catch (error) {
+    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+  }
+});
+
+export const saveLikedCardThunk = createAsyncThunk<
+ string[],
+  { userData: TUser; userId: string },
+  { rejectValue: string }
+>('saveLikeCardThunk', async ({ userData, userId }, { rejectWithValue }) => {
+  try {
+    const result = await postSaveLikedCard(userData, userId);
+    return result.likes;
+  } catch (error) {
+    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+  }
+});
+
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
     logout(state) {
-      state.user = null;
+      state.user = initialState.user;
       state.isAuth = false;
       localStorage.removeItem('current-user');
     },
@@ -97,13 +157,26 @@ const userSlice = createSlice({
     clearRegistrationData(state) {
       state.registrationData = {};
     },
+    toggleLike(state, action: PayloadAction<Partial<string>>) {
+      if (state.user.likes.includes(action.payload)) {
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            likes: state.user.likes.filter((id) => id !== action.payload),
+          },
+        };
+      } else {
+        state.user.likes = [...state.user.likes, action.payload];
+      }
+    },
   },
   selectors: {
     selectUserData: (state) => state.user,
     selectRegistrationData: (state) => state.registrationData,
     selectError: (state) => state.errorMessage,
     selectRegistrationError: (state) => state.registrationError,
-    selectLikes: (state) => state.user?.likes
+    selectLikes: (state) => state.user?.likes,
   },
   extraReducers: (builder) => {
     builder
@@ -146,17 +219,22 @@ const userSlice = createSlice({
       })
       .addCase(checkUserExist.rejected, () => {
         // написать что-то и сделать что то со state
+      })
+      .addCase(saveLikedCardThunk.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.user.likes = action.payload;
       });
   },
 });
 
-export const {
-  logout,
-  setRegistrationStepData,
-  clearRegistrationData,
-} = userSlice.actions;
+export const { logout, setRegistrationStepData, clearRegistrationData, toggleLike } = userSlice.actions;
 
-export const { selectRegistrationData, selectError, selectUserData, selectRegistrationError, selectLikes } =
-  userSlice.selectors;
+export const {
+  selectRegistrationData,
+  selectError,
+  selectUserData,
+  selectRegistrationError,
+  selectLikes,
+} = userSlice.selectors;
 
 export default userSlice.reducer;

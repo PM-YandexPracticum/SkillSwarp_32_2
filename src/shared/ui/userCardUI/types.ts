@@ -6,7 +6,7 @@ export interface skill {
 }
 
 export interface UserCardUIProps {
-  setLike: () => void;
+  setLike: (cardId:string) => void;
   card: TCard;
   type: 'full' | 'short';
   isLiked: boolean | undefined;

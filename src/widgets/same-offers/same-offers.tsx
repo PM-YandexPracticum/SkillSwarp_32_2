@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ButtonUI } from '@/shared/ui';
 import { ChevronRightSVG } from '@/assets/svg';
 import { UserCard } from '../userCard';
+import { selectUserData } from '@/services/slices';
+import { useSelector } from 'react-redux';
 
 const mediaQueries = {
   fourCards: { query: '(min-width: 1420px)', count: 4 },
@@ -15,6 +17,7 @@ const mediaQueries = {
 export const SameOffers  = ({cardsData}: TSameOffersProps) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [cardsVisible, setCardsVisible] = useState(1);
+  const user = useSelector(selectUserData);
 
   const widthChangeHandler = (e: MediaQueryListEvent | MediaQueryList) => {
     if (!e.matches) return;
@@ -71,7 +74,7 @@ export const SameOffers  = ({cardsData}: TSameOffersProps) => {
       : styles.container
     }>
       {currentCards.map((card, index) => (
-          <UserCard card={card} type='short' key={index}/>
+          <UserCard card={card} type='short' key={index} user={user}/>
           
           //   Тут конфликты с типами в карточке и UserCardUI.
           //   Нужно будет заменить потом, когда стандартизируется.

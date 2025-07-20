@@ -23,7 +23,9 @@ export const Popular: React.FC<PopularProps> = ({ cards }) => {
 
       <div className={styles['card-list']}>
         {popularCards.map((card) => (
-          <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} />
+
+          // Поправить локигку! 
+          <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} isLiked={false}/>
         ))}
       </div>
     </div>

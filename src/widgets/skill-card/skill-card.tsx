@@ -17,7 +17,7 @@ export const SkillCard = ({
     navigator.clipboard.writeText(url);
   }, []);
 
-  const isLiked = likes?.includes(card.userId)
+  const isLiked = likes?.includes(card.userId);
 
   const offerHandler = useCallback(() => {}, []);
 

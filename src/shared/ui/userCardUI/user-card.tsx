@@ -47,7 +47,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike, isLiked }
           <span className={styles.data_other}>{`${card.city}, ${formatAge(card.age)}`}</span>
         </div>
         {type === 'short' && (
-          <ButtonUI type='button' onClick={setLike} className={styles.button_like}>
+          <ButtonUI type='button' onClick={() => setLike(card.id)} className={styles.button_like}>
             {isLiked ? (
               <LikeSVG width='24px' height='24px' color='var(--accent-redesigned)'/>
             ) : (

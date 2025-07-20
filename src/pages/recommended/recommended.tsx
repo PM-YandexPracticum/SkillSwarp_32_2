@@ -15,7 +15,6 @@ export const Recommended: React.FC<RecommendedProps> = ({ cards, userCard }) => 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <div className={styles['main']}>
       <div className={styles['menu']}>
@@ -27,7 +26,8 @@ export const Recommended: React.FC<RecommendedProps> = ({ cards, userCard }) => 
 
       <div className={styles['card-list']}>
         {recommendedCards.map((card) => (
-          <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} />
+          // ПОРАВИТЬ ЛОГИКУ
+          <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} isLiked={false}/>
         ))}
       </div>
     </div>
