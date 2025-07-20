@@ -82,6 +82,8 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
       skillImages: [],
     };
 
+    // Жесткий костыль. Исправить типизацию !!!
+
     dispatch(registerUserThunk(userData as TUser)).then((resultAction) => {
       if (registerUserThunk.fulfilled.match(resultAction)) {
         dispatch(clearRegistrationData());
