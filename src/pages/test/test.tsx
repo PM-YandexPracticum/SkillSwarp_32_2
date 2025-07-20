@@ -12,8 +12,6 @@ import { getUserById } from '../../api/skill-swap-api';
 // import { AllSkills } from '@/shared/ui';
 import { type FC } from 'react';
 import { ButtonUI } from '@/shared/ui';
-// import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
-import { SkillPage } from '../skill-page';
 import { NotificationUI } from '@/shared/ui/notificationUI';
 
 export const Test: FC = () => {
