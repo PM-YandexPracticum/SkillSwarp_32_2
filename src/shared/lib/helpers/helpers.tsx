@@ -65,7 +65,7 @@ export const filterByCategories = (
     });
   });
 
-  if (!toggledSubSkills.length && toggledEducationStatus === null) return cards;
+  if (!toggledSubSkills.length && toggledEducationStatus === 'empty') return cards;
 
   const matchSkill = (cardSkills: { subType: string }[]) =>
     cardSkills.some((skill) =>
@@ -113,7 +113,6 @@ export const filterCards = (cards: TCard[], filterStore: FilterState): TCard[] =
   filteredCards = filterByCities(filteredCards, filterStore.cities);
   filteredCards = filterByGender(filteredCards, filterStore.gender);
   filteredCards = filterByCategories(filteredCards, filterStore.skills, filterStore.education);
-
   return filteredCards;
 };
 

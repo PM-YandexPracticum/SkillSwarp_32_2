@@ -11,7 +11,7 @@ import { ProfilePage } from '@/pages/profile-page';
 import { ProfileIncoming } from '@/pages/profile-incoming-page';
 import { ProfileOutgoing } from '@/pages/profile-outgoing-page';
 import { AppHeader } from '@/widgets/app-header';
-import { getCards, getCategories, getCities } from '@/services/slices';
+import { checkAuthThunk, getCards, getCategories, getCities } from '@/services/slices';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from '@/services/store';
 import { Popular } from '@/pages/popular';
@@ -27,6 +27,7 @@ function App() {
     dispatch(getCategories());
     dispatch(getCities());
     dispatch(getCards());
+    dispatch(checkAuthThunk());
   }, [dispatch]);
 
   const location = useLocation();

@@ -49,7 +49,7 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
               >
                 <MoonSVG />
               </ButtonUI>
-              {user ? (
+              {user.id != '' ? (
                 <div className={styles.header_logged_in}>
                   <div className={styles.icons}>
                     {/* Условный рендеринг для опциональных пропсов */}

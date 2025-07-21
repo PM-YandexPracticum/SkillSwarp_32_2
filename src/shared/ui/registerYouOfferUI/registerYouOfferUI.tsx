@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import styles from './registerYouOffer.module.css';
 import type { registerYouOfferUIProps } from './type';
 import { InputUI } from '../inputUI';
@@ -12,42 +12,41 @@ import { CheckboxUI } from '../checkboxUI';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 
 export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
+  skill,
+  setSkill,
   offer,
   setOffer,
-  //category,
- // setCategory,
   description,
   setDescription,
   handleSubmit,
   handleBack
 }) => {
-  
-const options: DropdownOption[] = MAIN_FILTERS_MOCK.map(option => ({
-      id: option.id,
-      name: option.title,
-    }));
+  const skills: DropdownOption<string>[] = MAIN_FILTERS_MOCK.flatMap(filter =>
+    filter.subFilters.map(subFilter => ({
+      id: subFilter.id,
+      name: subFilter.title
+    }))
+  );
 
-const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
-
-const handleCheckboxes = (id: string) => {
-    setCheckboxes((prev) => {
+  const handleCheckboxes = (id: string) => {
+    setSkill((prev) => {
       if (prev.some(item => item.id === id)) {
         return prev.filter(item => item.id !== id);
       };
 
-      const option = options.find(option => option.id === id);
+      const option = skills.find(option => option.id === id);
       if (!option) return prev;
       return [...prev, option];
     });
   };
 
-const renderCheckboxes = (options: DropdownOption[]) => {
-    return options.map((option: DropdownOption) => (
+  const renderSkills = (options: DropdownOption<string>[]) => {
+    return options.map((option: DropdownOption<string>) => (
       <li key={option.id}>
         <CheckboxUI
           label={option.name}
           value={option.id}
-          checked={checkboxes.some((item) => item.id === option.id)}
+          checked={skill.some((item) => item.id === option.id)}
           onChange={() => handleCheckboxes(option.id)}
         />
       </li>
@@ -80,18 +79,18 @@ const renderCheckboxes = (options: DropdownOption[]) => {
               <p>Выберите категорию</p>
               <DropdownUI 
                 withFilter={true} 
-                isMultiSelect={true} 
-                value={checkboxes} 
-                placeholder='Выберите категорию навыка'
+                isMultiSelect={false} 
+                value={skill} 
+                placeholder='Выберите'
               >
                 {({ filter }) => {
-                  const filteredOptions = options.filter((option) =>
+                  const filteredOptions = skills.filter((option) =>
                     option.name.toLowerCase().includes(filter.toLowerCase())
                   );
 
-                  return <>{renderCheckboxes(filteredOptions)}</>;
+                  return <>{renderSkills(filteredOptions)}</>;
                 }}
-              </DropdownUI>              
+                </DropdownUI>           
             </div>
             <InputUI
               label='Опишите, что вы предлагаете'

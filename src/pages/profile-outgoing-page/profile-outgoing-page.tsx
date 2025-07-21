@@ -5,8 +5,11 @@ import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { UserCard } from '@/widgets';
 import { USERS_DATA } from '@/shared/global-types/data-users-example';
 import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
+import { selectUserData } from '@/services/slices';
+import { useSelector } from 'react-redux';
 
 export const ProfileOutgoing = () => {
+  const user = useSelector(selectUserData);
   return (
     <main className={styles.main}>
       <div className={styles.profile}>
@@ -32,8 +35,8 @@ export const ProfileOutgoing = () => {
         <div
           className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-menu--applications']}`}
         >
-          <UserCard card={CARDS_DATA[10]} type={'short'} />
-          <UserCard card={CARDS_DATA[20]} type={'short'} />
+          <UserCard card={CARDS_DATA[10]} type={'short'} user={user}/>
+          <UserCard card={CARDS_DATA[20]} type={'short'} user={user}/>
         </div>
       </div>
     </main>

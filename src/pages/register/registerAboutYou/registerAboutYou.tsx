@@ -1,20 +1,22 @@
-import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
-import { /*useEffect,*/ useState } from 'react';
+import type { FC, SyntheticEvent } from 'react';
+import { useState } from 'react';
 import { RegisterAboutYouUI } from '@/shared/ui';
 // import type { setStateProps } from '../type';
 import type { setStateProps } from '../type';
-//import { useDispatch, useSelector } from '../../services/store';
-//import { useLocation, useNavigate } from 'react-router-dom';
-
-//дописать взаимодействие и дополнить тип
+import { setRegistrationStepData } from '@/services/slices/userSlice';
+import store, { useDispatch } from '@/services/store/store';
+import type { genderType } from '@/shared/global-types';
+import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
+import { makeSkillsArray } from '../helpers';
 
 export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
-  const [name, setName] = useState('');
-  //раскоментить когда будет взаимодействие с апи
-  //const dispatch = useDispatch();
-  //const navigate = useNavigate();
-  //const location = useLocation();
-  //const from = location.state?.from || { pathname: '/' };
+  const [name, setName] = useState(''); 
+  const [age, setAge] = useState<DropdownOption<number | undefined>>({ id: undefined , name: '' });
+  const [gender, setGender] = useState<DropdownOption<genderType>>({ id: 'female', name: '' });
+  const [city, setCity] = useState<DropdownOption<string>>({ id: '', name: '' });
+  const [learnSkills, setLearnSkills] = useState<DropdownOption<string>[]>([]);
+
+  const dispatch = useDispatch();
 
   const handleBack = () => {
     setCurrentPage((current) => current - 1);
@@ -22,27 +24,45 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    setCurrentPage((current) => current + 1);
-    /*  const data = { email, password };
-    setCurrentPage((current) => current + 1);
-    /*  const data = { email, password };
 
-    dispatch(fetchLoginUser(data)).then(() => {
-      navigate(from);
-    });
-    */
+    const learnSkillsData = makeSkillsArray(learnSkills);
+
+    const isValid =
+      name.trim() !== '' &&
+      typeof age.id === 'number' &&
+      gender.id !== null &&
+      city.name.trim() !== '' &&
+      learnSkillsData.length > 0;
+
+    if (!isValid) return;
+
+    
+    const data = {
+      name,
+      age: age.id,
+      gender: gender.id,
+      city: city.name,
+      learnSkill: learnSkillsData
+    };
+
+    dispatch(setRegistrationStepData(data));
+    setCurrentPage((current) => current + 1);
+    console.log(store.getState());
   };
-  /*
-  useEffect(() => {
-    dispatch(clearErrorMessage());
-  }, []);
-*/
+
   return (
     <RegisterAboutYouUI
-      name={name}
-      setName={setName}
+      name = {name}
+      setName = {setName}
+      gender = {gender}
+      setGender = {setGender}
+      age = {age}
+      setAge = {setAge}
+      city = {city}
+      setCity = {setCity}
+      skill = {learnSkills}
+      setSkill = {setLearnSkills}
       handleSubmit={handleSubmit}
-      handleBack={handleBack}
-    />
+      handleBack={handleBack} />
   );
 };

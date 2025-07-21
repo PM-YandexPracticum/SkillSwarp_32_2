@@ -1,10 +1,11 @@
 import type { Dispatch, SetStateAction, SyntheticEvent } from 'react';
+import type { DropdownOption } from '../dropdownUI/type';
 
 export type registerYouOfferUIProps =  {
   offer: string;
   setOffer: Dispatch<SetStateAction<string>>;
-  //category: DropdownOption[];
-  //setCategory: Dispatch<SetStateAction<DropdownOption | DropdownOption[]>>;
+  skill: DropdownOption<string>[];
+  setSkill: Dispatch<SetStateAction<DropdownOption<string>[]>>;
   description: string;
   setDescription: Dispatch<SetStateAction<string>>;
   file: string;

@@ -14,6 +14,7 @@ export const CardListUI: FC<CardListProps> = ({
   handleSort,
   sortType,
   loading,
+  user,
 }) => {
   return (
     <div className={styles.list}>
@@ -44,7 +45,7 @@ export const CardListUI: FC<CardListProps> = ({
       ) : (
         <ul className={styles.container}>
           {cards.map((card, index) => (
-            <UserCard type='short' key={index} card={card} />
+            <UserCard type='short' key={index} card={card}  user={user}/>
           ))}
         </ul>
       )}

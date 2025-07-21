@@ -12,6 +12,7 @@ export const Newest: React.FC<NewestProps> = ({ cards }) => {
     window.scrollTo(0, 0);
   }, []);
 
+
   return (
     <div className={styles['main']}>
       <div className={styles['menu']}>
@@ -23,7 +24,8 @@ export const Newest: React.FC<NewestProps> = ({ cards }) => {
 
       <div className={styles['card-list']}>
         {newestCards.map((card) => (
-          <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} />
+          // Поправить логику! Прокинуть лайки. Мб изменить компонент, у нас есть КАРДЛИСТ
+          <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} isLiked={false}/>
         ))}
       </div>
     </div>

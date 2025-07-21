@@ -15,6 +15,7 @@ import {
   toggleCityFilter,
   getCardsState,
   getCardsLoadingState,
+  selectUserData,
 } from '@/services/slices';
 import { EnabledFiltersBlock } from '@/widgets/enabled-filters-block';
 import {
@@ -27,6 +28,7 @@ import {
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
+  const user = useSelector(selectUserData);
   const educationState = useSelector(getEducationState);
   const genderState = useSelector(getGenderState);
   const skillsState = useSelector(getSkillsState);
@@ -144,6 +146,7 @@ export const Main: FC = () => {
                 handleSort={sortCards}
                 sortType={sortType}
                 cards={sortedCards}
+                user={user}
               />
             ) : (
               <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
@@ -156,13 +159,21 @@ export const Main: FC = () => {
               handleOpen='/popular'
               cards={cardsPopular}
               loading={loading}
+              user={user}
             />
-            <CardListUI title='Новое' handleOpen='/newest' cards={cardsNew} loading={loading} />
+            <CardListUI
+              title='Новое'
+              handleOpen='/newest'
+              cards={cardsNew}
+              loading={loading}
+              user={user}
+            />
             <CardListUI
               title='Рекомендуем'
               handleOpen='/recommended'
               cards={cardsRecommendedChaos}
               loading={loading}
+              user={user}
             />
           </>
         )}

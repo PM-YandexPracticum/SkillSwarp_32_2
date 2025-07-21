@@ -3,11 +3,12 @@
     {
       "gender": "male",
       "id": "user-1",
+      "userId": "user-1",
       "name": "Владислав",
       "city": "Владивосток",
       "age": 30,
       "mail": "vlad@mail.ru",
-      "password": "Wasd321",
+      "password": "asdf",
       "description": "Описание",
       "incoming": [
         {
@@ -25,38 +26,11 @@
           "status": "pending"
         }
       ],
-      "image": "./#"
-    },
-    {
-      "gender": "female",
-      "id": "user-2",
-      "name": "Екатерина",
-      "city": "Москва",
-      "age": 24,
-      "mail": "katya@mail.ru",
-      "password": "Qwerty123!",
-      "description": "Описание",
-      "incoming": [
-        {
-          "userId": "user-0",
-          "status": "pending"
-        }
-      ],
-      "outgoing": [
-        {
-          "userId": "user-12",
-          "status": "pending"
-        },
-        {
-          "userId": "user-20",
-          "status": "pending"
-        },
-        {
-          "userId": "user-28",
-          "status": "pending"
-        }
-      ],
-      "image": "./#"
+      "image": "./#",
+      "likes": [
+        "user-12",
+        "user-5"
+      ]
     },
     {
       "id": "0001",
@@ -71,7 +45,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://photo2.wambacdn.net/25/14/83/1805384152/2161374169_huge.jpg?hash=BVq6zJ2lgtYczGKyuSLYfQ&expires=64060578000&updated=1683605377",
-      "likes": ["user-5", "user-12"]
+      "likes": [
+        "user-5",
+        "user-12"
+      ]
     },
     {
       "gender": "female",
@@ -86,7 +63,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://img.freepik.com/free-photo/smiling-portrait-studio-woman_1303-2289.jpg?semt=ais_hybrid&w=740",
-      "likes": ["user-8", "user-15"]
+      "likes": [
+        "user-8",
+        "user-15"
+      ]
     },
     {
       "gender": "male",
@@ -101,7 +81,9 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://1fotostudiya.ru/wp-content/uploads/2018/07/1000-redfox-6dac144f4bd61734ab8f39dde6a63b4c.jpeg",
-      "likes": ["user-10"]
+      "likes": [
+        "user-10"
+      ]
     },
     {
       "gender": "female",
@@ -116,7 +98,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://avatars.mds.yandex.net/get-yapic/23186/xB5NVbroHODxPbWhhwcAPnSvVIA-1/orig",
-      "likes": ["user-7", "user-18"]
+      "likes": [
+        "user-7",
+        "user-18"
+      ]
     },
     {
       "gender": "male",
@@ -131,7 +116,11 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfM3dnBlurlz9DFk7HogBRLpO20atwfZdKZA&s",
-      "likes": ["user-3", "user-9", "user-20"]
+      "likes": [
+        "user-3",
+        "user-9",
+        "user-20"
+      ]
     },
     {
       "gender": "female",
@@ -146,7 +135,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw8o9w9GosmDTfv9eNvkb7MAzHXKEJSO8jjA&s",
-      "likes": ["user-11", "user-14"]
+      "likes": [
+        "user-11",
+        "user-14"
+      ]
     },
     {
       "gender": "male",
@@ -161,7 +153,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://35photo.pro/photos_series/1455/1455389.jpg",
-      "likes": ["user-2", "user-19"]
+      "likes": [
+        "user-2",
+        "user-19"
+      ]
     },
     {
       "gender": "female",
@@ -176,7 +171,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://www.fotoprizer.ru/img/143576_orig.jpg",
-      "likes": ["user-4", "user-16"]
+      "likes": [
+        "user-4",
+        "user-16"
+      ]
     },
     {
       "gender": "male",
@@ -191,7 +189,9 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8I1DWOnOvXkFdTBYes2hgR3ZAGk1LkZL6Hw&s",
-      "likes": ["user-13"]
+      "likes": [
+        "user-13"
+      ]
     },
     {
       "gender": "female",
@@ -206,7 +206,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://barber-shop.su/wp-content/uploads/2022/08/muzhskie-strizhki-dlya-zhenshhin119.jpg",
-      "likes": ["user-1", "user-17"]
+      "likes": [
+        "user-1",
+        "user-17"
+      ]
     },
     {
       "gender": "male",
@@ -221,7 +224,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://www.cinemafia.ru/upload/images/2016/07/30%20%D0%B4%D0%BE%2030%20%D0%BC%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BA%D0%B8/Ryan%20Guzman.jpg",
-      "likes": ["user-6", "user-22"]
+      "likes": [
+        "user-6",
+        "user-22"
+      ]
     },
     {
       "gender": "female",
@@ -236,7 +242,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://litemf.com/ru/journal/wp-content/uploads/2021/12/Sumki.jpg",
-      "likes": ["user-3", "user-25"]
+      "likes": [
+        "user-3",
+        "user-25"
+      ]
     },
     {
       "gender": "male",
@@ -251,7 +260,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg",
-      "likes": ["user-9", "user-30"]
+      "likes": [
+        "user-9",
+        "user-30"
+      ]
     },
     {
       "gender": "female",
@@ -266,7 +278,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8XwsvYxG6jpBccGZ0xmBRTcNBDDi5N5lBzA&s",
-      "likes": ["user-5", "user-21"]
+      "likes": [
+        "user-5",
+        "user-21"
+      ]
     },
     {
       "gender": "male",
@@ -281,7 +296,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg",
-      "likes": ["user-12", "user-24"]
+      "likes": [
+        "user-12",
+        "user-24"
+      ]
     },
     {
       "gender": "female",
@@ -296,7 +314,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://cdn1.ozonusercontent.com/s3/club-storage/images/article_image_752x940/689/c500/5cda7163-ba6f-451a-b844-03fd1e7aa45c.jpeg",
-      "likes": ["user-8", "user-17"]
+      "likes": [
+        "user-8",
+        "user-17"
+      ]
     },
     {
       "gender": "male",
@@ -311,7 +332,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70i1E7J7xaJ1sVJEO9C_SSrYQEMA-Rg8FOg&s",
-      "likes": ["user-10", "user-16"]
+      "likes": [
+        "user-10",
+        "user-16"
+      ]
     },
     {
       "gender": "female",
@@ -326,7 +350,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://cdn.fishki.net/upload/post/2019/09/29/3100992/tn/9-1.jpg",
-      "likes": ["user-4", "user-19"]
+      "likes": [
+        "user-4",
+        "user-19"
+      ]
     },
     {
       "gender": "male",
@@ -341,7 +368,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuPmQtGv3BznMHQ2YgNoG9FSrfRKewAZ8K1A&s",
-      "likes": ["user-7", "user-18"]
+      "likes": [
+        "user-7",
+        "user-18"
+      ]
     },
     {
       "gender": "female",
@@ -356,7 +386,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://salon-eliza.ru/wp-content/uploads/2020/03/zhenskiye-pricheski-saloneliza-21.jpg",
-      "likes": ["user-5", "user-15"]
+      "likes": [
+        "user-5",
+        "user-15"
+      ]
     },
     {
       "gender": "male",
@@ -371,7 +404,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://st5.depositphotos.com/72897924/61841/i/450/depositphotos_618415412-stock-photo-close-handsome-adult-man-beard.jpg",
-      "likes": ["user-14", "user-23"]
+      "likes": [
+        "user-14",
+        "user-23"
+      ]
     },
     {
       "gender": "female",
@@ -386,7 +422,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://cdn.fishki.net/upload/post/2019/09/29/3100992/tn/9-1.jpg",
-      "likes": ["user-11", "user-27"]
+      "likes": [
+        "user-11",
+        "user-27"
+      ]
     },
     {
       "gender": "male",
@@ -401,7 +440,9 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://marc-o-polo.ru/upload/resize_cache/iblock/4f1/1200_850_1/xgvcq5gj8i74tumca4fx00wggx2jg46z.webp",
-      "likes": ["user-21"]
+      "likes": [
+        "user-21"
+      ]
     },
     {
       "gender": "female",
@@ -416,7 +457,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://i.pinimg.com/736x/4d/71/3b/4d713bf199e60d7564c96146a730aa0a.jpg",
-      "likes": ["user-15", "user-28"]
+      "likes": [
+        "user-15",
+        "user-28"
+      ]
     },
     {
       "gender": "male",
@@ -431,7 +475,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://avatars.mds.yandex.net/get-yapic/65952/WjsBnhtGBT6kAknZY3xjyYe2pCc-1/orig",
-      "likes": ["user-12", "user-30"]
+      "likes": [
+        "user-12",
+        "user-30"
+      ]
     },
     {
       "gender": "female",
@@ -446,7 +493,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://i.pinimg.com/originals/1b/b5/61/1bb56134fa8c2eb9606d5b464cf81c51.jpg",
-      "likes": ["user-17", "user-29"]
+      "likes": [
+        "user-17",
+        "user-29"
+      ]
     },
     {
       "gender": "male",
@@ -461,7 +511,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://avatars.mds.yandex.net/get-ydo/2784159/2a0000017260a8da7e86e5c864774e345cb5/diploma",
-      "likes": ["user-22", "user-18"]
+      "likes": [
+        "user-22",
+        "user-18"
+      ]
     },
     {
       "gender": "female",
@@ -476,7 +529,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQf3X2oej-v2ClDVl00TxN2DtbUxeOJYBae9PWHCjZsjIgtMmNKbvfTmrS8oQ7hWHS8ab4Db8F_GC2UTG4wjlWwyMg9cjU3stEnnQ-CqQWNZE5UwNDlzLLFx3owGgFx7VFZeLH2j24xRctvIrVRs84lYi89iegLtgrjlg-l8whPPhucr7OzvHLbJNyAAulLBK6OWwibpx6_Cox3bFDOtqlRWHd4sk_kukvLpKr2XTFEYSQpd8gkQTmJ6BXFrnlPxznUEu8_fHu2FaGfB0ihxgqsSttHlOcSOg1BfiKdRjWg2Jy9PvLK4v4Nxa4q_9YwQiUtrfnDpUL6zmuYwKhzzgGwE5gjcfc28ZotXQ_EIkxMZsxdwBshVbVGzrdlUkE7ZxWWvT37ByX-AkEq5XMXeM_l52u5QiOKt4lp0AlmNgMJs5WebPY5NzvcK5QIySUHBy-KXM0Q45x1DYEwYJnMci3d2fnz9sskM07AaSS61v0HIeKrdImjhDFPpdtNZHjHwP4ckiAxNzz63O1Qi06mT0ijipeJE-oSNEQB-OTRg30lF9-z-r6HZjKMAKrnPBD-yKpsrXUNr4O-xq2UwmC6QkG32p7jt7m-cViqWs7BpQdP740aS1JgXH1DAn1imIC65pfQ8Tozz-V1jgqp6XKTtcejZeF9B63BOkKh28ehscTGcxrc7LO_vLASaJuGwGwNxelMWUIYYpm9ggxzaZLBfCZYl3Ly9circ44Hbyr8lzAJISIoPwHly3LGYh4CL7nKQTDc0uhzt7t306KTCITqAk9pxFfLW6BSt0FCfGpQh_YsFJ-w9X0IbjRHh2IgtNnxiKkqb_jGJw6wxu0dSGEySEJ_WxWqNLh-_1Xs2wENZMMGJIdbw9LvX_RJzTNmnYt-JRFYvzb5iu11C4QrK3ZbtQVibOM9i-8BekHkXgCrfoFHMZVd7w",
-      "likes": ["user-24", "user-5"]
+      "likes": [
+        "user-24",
+        "user-5"
+      ]
     },
     {
       "gender": "female",
@@ -491,7 +547,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://puzzleit.ru/files/puzzles/209/208540/_original.jpg",
-      "likes": ["user-19", "user-26"]
+      "likes": [
+        "user-19",
+        "user-26"
+      ]
     },
     {
       "gender": "male",
@@ -506,7 +565,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://avatars.mds.yandex.net/i?id=82a4b2f263da384278f2bfe895b0f8d2_l-3374823-images-thumbs&n=13",
-      "likes": ["user-13", "user-25"]
+      "likes": [
+        "user-13",
+        "user-25"
+      ]
     },
     {
       "gender": "female",
@@ -521,7 +583,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://35photo.pro/photos_main/123/617329.jpg",
-      "likes": ["user-21", "user-33"]
+      "likes": [
+        "user-21",
+        "user-33"
+      ]
     },
     {
       "gender": "male",
@@ -536,7 +601,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://avatars.mds.yandex.net/i?id=f39a806f62d492e61924c218c9d435cb_l-5288159-images-thumbs&n=13",
-      "likes": ["user-34", "user-37"]
+      "likes": [
+        "user-34",
+        "user-37"
+      ]
     },
     {
       "gender": "male",
@@ -551,7 +619,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg",
-      "likes": ["user-31", "user-36"]
+      "likes": [
+        "user-31",
+        "user-36"
+      ]
     },
     {
       "gender": "female",
@@ -566,7 +637,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8XwsvYxG6jpBccGZ0xmBRTcNBDDi5N5lBzA&s",
-      "likes": ["user-32", "user-38"]
+      "likes": [
+        "user-32",
+        "user-38"
+      ]
     },
     {
       "gender": "male",
@@ -581,7 +655,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg",
-      "likes": ["user-34", "user-39"]
+      "likes": [
+        "user-34",
+        "user-39"
+      ]
     },
     {
       "gender": "female",
@@ -596,7 +673,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://cdn1.ozonusercontent.com/s3/club-storage/images/article_image_752x940/689/c500/5cda7163-ba6f-451a-b844-03fd1e7aa45c.jpeg",
-      "likes": ["user-33", "user-40"]
+      "likes": [
+        "user-33",
+        "user-40"
+      ]
     },
     {
       "gender": "male",
@@ -611,7 +691,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70i1E7J7xaJ1sVJEO9C_SSrYQEMA-Rg8FOg&s",
-      "likes": ["user-32", "user-36"]
+      "likes": [
+        "user-32",
+        "user-36"
+      ]
     },
     {
       "gender": "female",
@@ -626,7 +709,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://cdn.fishki.net/upload/post/2019/09/29/3100992/tn/9-1.jpg",
-      "likes": ["user-34", "user-37"]
+      "likes": [
+        "user-34",
+        "user-37"
+      ]
     },
     {
       "gender": "male",
@@ -641,7 +727,10 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuPmQtGv3BznMHQ2YgNoG9FSrfRKewAZ8K1A&s",
-      "likes": ["user-35", "user-38"]
+      "likes": [
+        "user-35",
+        "user-38"
+      ]
     },
     {
       "gender": "female",
@@ -656,7 +745,40 @@
       "incoming": [],
       "outgoing": [],
       "image": "https://salon-eliza.ru/wp-content/uploads/2020/03/zhenskiye-pricheski-saloneliza-21.jpg",
-      "likes": ["user-36", "user-39"]
+      "likes": [
+        "user-36",
+        "user-39"
+      ]
+    },
+    {
+      "id": "5de8",
+      "gender": "male",
+      "userId": "127ee619-eb78-4a88-9339-c08675aefc26",
+      "name": "Человек-паук",
+      "city": "Москва",
+      "age": 20,
+      "mail": "vlad@mail.rua",
+      "password": "asdasdasd",
+      "description": "Предлагаю всем пойти и начать спасать Нью-Йорк",
+      "incoming": [],
+      "outgoing": [],
+      "image": "#",
+      "likes": []
+    },
+    {
+      "id": "2854",
+      "gender": "male",
+      "userId": "ed68325a-ead3-413e-b714-0e299d7d6d7b",
+      "name": "asd",
+      "city": "Санкт-Петербург",
+      "age": 17,
+      "mail": "vlad@mail.ruaasdasdasd",
+      "password": "asdasdasd",
+      "description": "фывфывфывфыв",
+      "incoming": [],
+      "outgoing": [],
+      "image": "#",
+      "likes": []
     }
   ],
   "skill-cards": [
@@ -936,13 +1058,33 @@
       "id": "card-1",
       "userId": "user-1",
       "teachSkill": [
-        { "title": "Управление проектами", "type": "business", "subType": "team-management" }
+        {
+          "title": "Управление проектами",
+          "type": "business",
+          "subType": "team-management"
+        }
       ],
       "learnSkill": [
-        { "title": "Основы маркетинга", "type": "business", "subType": "marketing" },
-        { "title": "Деловой английский", "type": "languages", "subType": "english" },
-        { "title": "Фотография для начинающих", "type": "art", "subType": "photo" },
-        { "title": "Основы композиции", "type": "art", "subType": "drawing" }
+        {
+          "title": "Основы маркетинга",
+          "type": "business",
+          "subType": "marketing"
+        },
+        {
+          "title": "Деловой английский",
+          "type": "languages",
+          "subType": "english"
+        },
+        {
+          "title": "Фотография для начинающих",
+          "type": "art",
+          "subType": "photo"
+        },
+        {
+          "title": "Основы композиции",
+          "type": "art",
+          "subType": "drawing"
+        }
       ],
       "name": "Александр",
       "city": "Москва",
@@ -951,7 +1093,10 @@
       "fullDescription": "Я научу вас эффективно управлять проектами любой сложности. Расскажу о методах Agile и Waterfall, помогу освоить инструменты планирования. Поделюсь секретами управления командой и распределения задач. Научу оценивать риски и минимизировать потери времени. Вы сможете уверенно вести проекты от идеи до реализации.",
       "gender": "male",
       "createdAt": 1672531200000,
-      "likes": ["user-5", "user-12"],
+      "likes": [
+        "user-5",
+        "user-12"
+      ],
       "src": "https://s0.rbk.ru/v6_top_pics/media/img/6/57/756781333421576.webp",
       "skillImages": [
         {
@@ -963,16 +1108,32 @@
         {
           "link": "https://pics.rbc.ru/v2_companies_s3/resized/960xH/media/company_press_release_image/2dd4563b-d8a8-410b-8880-3a57ef1d99eb.jpg"
         },
-        { "link": "https://webcatcher.ru/wp-content/uploads/2019/07/1-pm.jpg" }
+        {
+          "link": "https://webcatcher.ru/wp-content/uploads/2019/07/1-pm.jpg"
+        }
       ]
     },
     {
       "id": "card-2",
       "userId": "user-2",
-      "teachSkill": [{ "title": "Графический дизайн", "type": "art", "subType": "drawing" }],
+      "teachSkill": [
+        {
+          "title": "Графический дизайн",
+          "type": "art",
+          "subType": "drawing"
+        }
+      ],
       "learnSkill": [
-        { "title": "Фотография для начинающих", "type": "art", "subType": "photo" },
-        { "title": "Основы композиции", "type": "art", "subType": "drawing" }
+        {
+          "title": "Фотография для начинающих",
+          "type": "art",
+          "subType": "photo"
+        },
+        {
+          "title": "Основы композиции",
+          "type": "art",
+          "subType": "drawing"
+        }
       ],
       "name": "Екатерина",
       "city": "Санкт-Петербург",
@@ -981,13 +1142,18 @@
       "fullDescription": "Научу вас создавать профессиональные дизайн-макеты в Figma и Adobe Photoshop. Расскажу о принципах цветовой гармонии и типографики. Покажу, как работать с брифом и ожиданиями заказчика. Научу создавать логотипы и фирменный стиль. Поделюсь лайфхаками для быстрого роста в профессии.",
       "gender": "female",
       "createdAt": 1672617600000,
-      "likes": ["user-8", "user-15"],
+      "likes": [
+        "user-8",
+        "user-15"
+      ],
       "src": "https://img.freepik.com/free-photo/smiling-portrait-studio-woman_1303-2289.jpg?semt=ais_hybrid&w=740",
       "skillImages": [
         {
           "link": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4383d076526965.5c6c70a23dec6.jpg"
         },
-        { "link": "https://i.pinimg.com/originals/36/22/48/362248a6e89153763d6377bdd5ff9593.jpg" },
+        {
+          "link": "https://i.pinimg.com/originals/36/22/48/362248a6e89153763d6377bdd5ff9593.jpg"
+        },
         {
           "link": "https://media.licdn.com/dms/image/D4D12AQGhbKEvaWZyBg/article-cover_image-shrink_720_1280/0/1693215554687?e=2147483647&v=beta&t=ROQgoILrNpT9kR9CYULHyyYUKXvY671f-qS2P8IXW1o"
         }
@@ -997,11 +1163,23 @@
       "id": "card-3",
       "userId": "user-3",
       "teachSkill": [
-        { "title": "Разговорный английский", "type": "languages", "subType": "english" }
+        {
+          "title": "Разговорный английский",
+          "type": "languages",
+          "subType": "english"
+        }
       ],
       "learnSkill": [
-        { "title": "Деловой французский", "type": "languages", "subType": "french" },
-        { "title": "Основы психологии", "type": "education", "subType": "personal-development" }
+        {
+          "title": "Деловой французский",
+          "type": "languages",
+          "subType": "french"
+        },
+        {
+          "title": "Основы психологии",
+          "type": "education",
+          "subType": "personal-development"
+        }
       ],
       "name": "Михаил",
       "city": "Новосибирск",
@@ -1010,13 +1188,17 @@
       "fullDescription": "Помогу вам преодолеть языковой барьер и заговорить на английском свободно. Научу понимать нюансы произношения и использовать идиомы. Расскажу, как быстро расширить словарный запас. Поделюсь методиками запоминания сложных грамматических правил. Смоделируем реальные ситуации общения для практики.",
       "gender": "male",
       "createdAt": 1672704000000,
-      "likes": ["user-10"],
+      "likes": [
+        "user-10"
+      ],
       "src": "https://1fotostudiya.ru/wp-content/uploads/2018/07/1000-redfox-6dac144f4bd61734ab8f39dde6a63b4c.jpeg",
       "skillImages": [
         {
           "link": "https://avatars.mds.yandex.net/i?id=21a79cd8da681e37987b0c78508bdebd_l-4935356-images-thumbs&n=13"
         },
-        { "link": "https://smoleducentre.ru/wp-content/uploads/2023/09/a5npkrgr9q0.jpg" },
+        {
+          "link": "https://smoleducentre.ru/wp-content/uploads/2023/09/a5npkrgr9q0.jpg"
+        },
         {
           "link": "https://avatars.mds.yandex.net/i?id=5b86581e81bdeed90d31131d4b32ae78b427fa60-4612093-images-thumbs&n=13"
         },
@@ -1032,11 +1214,23 @@
       "id": "card-4",
       "userId": "user-4",
       "teachSkill": [
-        { "title": "Финансовое планирование", "type": "home", "subType": "home-finances" }
+        {
+          "title": "Финансовое планирование",
+          "type": "home",
+          "subType": "home-finances"
+        }
       ],
       "learnSkill": [
-        { "title": "Приготовление здоровой пищи", "type": "home", "subType": "cooking" },
-        { "title": "Основы йоги", "type": "lifestyle", "subType": "yoga" }
+        {
+          "title": "Приготовление здоровой пищи",
+          "type": "home",
+          "subType": "cooking"
+        },
+        {
+          "title": "Основы йоги",
+          "type": "lifestyle",
+          "subType": "yoga"
+        }
       ],
       "name": "Ольга",
       "city": "Екатеринбург",
@@ -1045,25 +1239,44 @@
       "fullDescription": "Научу вас грамотно распределять бюджет и достигать финансовых целей. Расскажу о методах учёта доходов и расходов. Покажу, как создать \"финансовую подушку безопасности\". Научу инвестировать с минимальными рисками. Поделюсь инструментами для долгосрочного финансового планирования.",
       "gender": "female",
       "createdAt": 1672790400000,
-      "likes": ["user-7", "user-18"],
+      "likes": [
+        "user-7",
+        "user-18"
+      ],
       "src": "https://avatars.mds.yandex.net/get-yapic/23186/xB5NVbroHODxPbWhhwcAPnSvVIA-1/orig",
       "skillImages": [
         {
           "link": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_677c087e60cfc04bcacaeff2_677c0934b998c46e089648c0/scale_1200"
         },
-        { "link": "https://static.insales-cdn.com/files/1/2368/5310784/original/77654556.jpg" },
-        { "link": "https://static36.tgcnt.ru/posts/_0/d8/d80f9d7e90e33284e0083b35828930ad.jpg" }
+        {
+          "link": "https://static.insales-cdn.com/files/1/2368/5310784/original/77654556.jpg"
+        },
+        {
+          "link": "https://static36.tgcnt.ru/posts/_0/d8/d80f9d7e90e33284e0083b35828930ad.jpg"
+        }
       ]
     },
     {
       "id": "card-5",
       "userId": "user-5",
       "teachSkill": [
-        { "title": "Основы программирования", "type": "education", "subType": "training" }
+        {
+          "title": "Основы программирования",
+          "type": "education",
+          "subType": "training"
+        }
       ],
       "learnSkill": [
-        { "title": "Китайский язык для начинающих", "type": "languages", "subType": "chinese" },
-        { "title": "Управление временем", "type": "education", "subType": "personal-development" }
+        {
+          "title": "Китайский язык для начинающих",
+          "type": "languages",
+          "subType": "chinese"
+        },
+        {
+          "title": "Управление временем",
+          "type": "education",
+          "subType": "personal-development"
+        }
       ],
       "name": "Дмитрий",
       "city": "Казань",
@@ -1072,7 +1285,14 @@
       "fullDescription": "Помогу сделать первые шаги в программировании на Python и JavaScript. Объясню основы алгоритмов и структур данных. Научу писать чистый и поддерживаемый код. Покажу, как решать типовые задачи на популярных платформах. Подготовлю к первому собеседованию в IT-компании.",
       "gender": "male",
       "createdAt": 1672876800000,
-      "likes": ["user-3", "user-9", "user-20"],
+      "likes": [
+        "user-3",
+        "user-9",
+        "user-20",
+        "user-5",
+        "",
+        "user-1"
+      ],
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfM3dnBlurlz9DFk7HogBRLpO20atwfZdKZA&s",
       "skillImages": [
         {
@@ -1081,18 +1301,38 @@
         {
           "link": "https://avatars.mds.yandex.net/i?id=50472c4d235b3378910155b238b7cd98_sr-4825091-images-thumbs&n=13"
         },
-        { "link": "https://cdn1.ozone.ru/multimedia/1027110821.jpg" },
-        { "link": "https://cdn1.ozone.ru/s3/multimedia-1-k/7029959744.jpg" },
-        { "link": "https://cdn1.ozone.ru/s3/multimedia-1-k/7029959744.jpg" }
+        {
+          "link": "https://cdn1.ozone.ru/multimedia/1027110821.jpg"
+        },
+        {
+          "link": "https://cdn1.ozone.ru/s3/multimedia-1-k/7029959744.jpg"
+        },
+        {
+          "link": "https://cdn1.ozone.ru/s3/multimedia-1-k/7029959744.jpg"
+        }
       ]
     },
     {
       "id": "card-6",
       "userId": "user-6",
-      "teachSkill": [{ "title": "Фитнес-тренировки", "type": "lifestyle", "subType": "nutrition" }],
+      "teachSkill": [
+        {
+          "title": "Фитнес-тренировки",
+          "type": "lifestyle",
+          "subType": "nutrition"
+        }
+      ],
       "learnSkill": [
-        { "title": "Медитация для начинающих", "type": "lifestyle", "subType": "mindfulness" },
-        { "title": "Основы здорового питания", "type": "lifestyle", "subType": "nutrition" }
+        {
+          "title": "Медитация для начинающих",
+          "type": "lifestyle",
+          "subType": "mindfulness"
+        },
+        {
+          "title": "Основы здорового питания",
+          "type": "lifestyle",
+          "subType": "nutrition"
+        }
       ],
       "name": "Анна",
       "city": "Нижний Новгород",
@@ -1101,11 +1341,18 @@
       "fullDescription": "Научу правильно выполнять упражнения без риска травм. Составлю индивидуальную программу тренировок под ваши цели. Расскажу о работе разных групп мышц и их развитии. Покажу техники дыхания для повышения эффективности занятий. Помогу выработать привычку к регулярным тренировкам.",
       "gender": "female",
       "createdAt": 1672963200000,
-      "likes": ["user-11", "user-14"],
+      "likes": [
+        "user-11",
+        "user-14"
+      ],
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw8o9w9GosmDTfv9eNvkb7MAzHXKEJSO8jjA&s",
       "skillImages": [
-        { "link": "https://samokat-fitnes.ru/wp-content/uploads/2023/03/krugovye-trenirovki.jpg" },
-        { "link": "https://urgaps.ru/uplfile/news_image/iStock-927929836.jpg" },
+        {
+          "link": "https://samokat-fitnes.ru/wp-content/uploads/2023/03/krugovye-trenirovki.jpg"
+        },
+        {
+          "link": "https://urgaps.ru/uplfile/news_image/iStock-927929836.jpg"
+        },
         {
           "link": "https://d39l2hkdp2esp1.cloudfront.net/img/photo/139243/139243_00_2x.jpg?20180124024514"
         }
@@ -1114,10 +1361,24 @@
     {
       "id": "card-7",
       "userId": "user-7",
-      "teachSkill": [{ "title": "Французская кухня", "type": "home", "subType": "cooking" }],
+      "teachSkill": [
+        {
+          "title": "Французская кухня",
+          "type": "home",
+          "subType": "cooking"
+        }
+      ],
       "learnSkill": [
-        { "title": "Итальянский язык", "type": "languages", "subType": "other" },
-        { "title": "Фуд-фотография", "type": "art", "subType": "photo" }
+        {
+          "title": "Итальянский язык",
+          "type": "languages",
+          "subType": "other"
+        },
+        {
+          "title": "Фуд-фотография",
+          "type": "art",
+          "subType": "photo"
+        }
       ],
       "name": "Сергей",
       "city": "Челябинск",
@@ -1126,23 +1387,50 @@
       "fullDescription": "Научу готовить классические французские блюда с идеальной техникой. Расскажу секреты приготовления нежного суфле и воздушных круассанов. Покажу, как работать с тестом и соусами как профессиональный повар. Научу подбирать вина к блюдам. Поделюсь рецептами, проверенными в мишленовских ресторанах.",
       "gender": "male",
       "createdAt": 1673049600000,
-      "likes": ["user-2", "user-19"],
+      "likes": [
+        "user-2",
+        "user-19"
+      ],
       "src": "https://35photo.pro/photos_series/1455/1455389.jpg",
       "skillImages": [
-        { "link": "https://i.pinimg.com/originals/8a/7c/80/8a7c80222be5a495964019810c3f8259.jpg" },
-        { "link": "https://i.pinimg.com/originals/02/57/cf/0257cf546953e74b3cb3d3cd7f724a53.jpg" },
-        { "link": "https://i.pinimg.com/originals/b7/ac/60/b7ac60885dadff22ded80ba61f5d8371.jpg" },
-        { "link": "https://i.pinimg.com/originals/e1/bf/72/e1bf723db11eb2a27283787152c9366b.jpg" },
-        { "link": "https://i.pinimg.com/originals/b7/ac/60/b7ac60885dadff22ded80ba61f5d8371.jpg" }
+        {
+          "link": "https://i.pinimg.com/originals/8a/7c/80/8a7c80222be5a495964019810c3f8259.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/02/57/cf/0257cf546953e74b3cb3d3cd7f724a53.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/b7/ac/60/b7ac60885dadff22ded80ba61f5d8371.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/e1/bf/72/e1bf723db11eb2a27283787152c9366b.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/b7/ac/60/b7ac60885dadff22ded80ba61f5d8371.jpg"
+        }
       ]
     },
     {
       "id": "card-8",
       "userId": "user-8",
-      "teachSkill": [{ "title": "Основы видеомонтажа", "type": "art", "subType": "mounting" }],
+      "teachSkill": [
+        {
+          "title": "Основы видеомонтажа",
+          "type": "art",
+          "subType": "mounting"
+        }
+      ],
       "learnSkill": [
-        { "title": "Создание музыки", "type": "art", "subType": "music" },
-        { "title": "Продвижение в соцсетях", "type": "business", "subType": "marketing" }
+        {
+          "title": "Создание музыки",
+          "type": "art",
+          "subType": "music"
+        },
+        {
+          "title": "Продвижение в соцсетях",
+          "type": "business",
+          "subType": "marketing"
+        }
       ],
       "name": "Мария",
       "city": "Самара",
@@ -1151,7 +1439,10 @@
       "fullDescription": "Научу монтировать видео в Adobe Premiere Pro на профессиональном уровне. Расскажу о принципах построения драматургии в роликах. Покажу, как работать с цветокоррекцией и звуком. Научу создавать плавные переходы и эффекты. Поделюсь лайфхаками для быстрого монтажа качественного контента.",
       "gender": "female",
       "createdAt": 1673136000000,
-      "likes": ["user-4", "user-16"],
+      "likes": [
+        "user-4",
+        "user-16"
+      ],
       "src": "https://www.fotoprizer.ru/img/143576_orig.jpg",
       "skillImages": [
         {
@@ -1160,18 +1451,38 @@
         {
           "link": "https://russa.amaks-kurort.ru/upload/sanatoriy-staraya-russa/rest-programs/kanikuly/video.jpg"
         },
-        { "link": "https://frankfurt.apollo.olxcdn.com/v1/files/oj3a43mepuvj-KZ/image;s=1000x700" },
-        { "link": "https://i.pinimg.com/originals/81/00/42/81004291bf53a8f8d2df1831bcbca317.jpg" },
-        { "link": "https://frankfurt.apollo.olxcdn.com/v1/files/oj3a43mepuvj-KZ/image;s=1000x700" }
+        {
+          "link": "https://frankfurt.apollo.olxcdn.com/v1/files/oj3a43mepuvj-KZ/image;s=1000x700"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/81/00/42/81004291bf53a8f8d2df1831bcbca317.jpg"
+        },
+        {
+          "link": "https://frankfurt.apollo.olxcdn.com/v1/files/oj3a43mepuvj-KZ/image;s=1000x700"
+        }
       ]
     },
     {
       "id": "card-9",
       "userId": "user-9",
-      "teachSkill": [{ "title": "Немецкий язык", "type": "languages", "subType": "german" }],
+      "teachSkill": [
+        {
+          "title": "Немецкий язык",
+          "type": "languages",
+          "subType": "german"
+        }
+      ],
       "learnSkill": [
-        { "title": "Японская каллиграфия", "type": "art", "subType": "drawing" },
-        { "title": "Основы нейробиологии", "type": "education", "subType": "cognitive-skills" }
+        {
+          "title": "Японская каллиграфия",
+          "type": "art",
+          "subType": "drawing"
+        },
+        {
+          "title": "Основы нейробиологии",
+          "type": "education",
+          "subType": "cognitive-skills"
+        }
       ],
       "name": "Артем",
       "city": "Омск",
@@ -1180,7 +1491,9 @@
       "fullDescription": "Помогу освоить немецкий язык с нуля до уровня B1. Научу правильному произношению и построению предложений. Расскажу о культурных особенностях общения в Германии. Поделюсь методиками быстрого запоминания слов. Подготовлю к сдаче экзаменов Goethe-Institut.",
       "gender": "male",
       "createdAt": 1673222400000,
-      "likes": ["user-13"],
+      "likes": [
+        "user-13"
+      ],
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8I1DWOnOvXkFdTBYes2hgR3ZAGk1LkZL6Hw&s",
       "skillImages": [
         {
@@ -1192,21 +1505,41 @@
         {
           "link": "https://static.wixstatic.com/media/4fa500_ff2393e2f3504f5db4ed744b79dede4a~mv2.jpg/v1/fill/w_4800,h_3200,al_c,q_90/a%20chalkboard%20with%20the%20question%20sprechen%20sie%20deutsch_%20do%20you%20speak%20german_%20written%20in%20germa.jpg"
         },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" }
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        }
       ]
     },
     {
       "id": "card-10",
       "userId": "user-10",
       "teachSkill": [
-        { "title": "Управление персоналом", "type": "business", "subType": "team-management" }
+        {
+          "title": "Управление персоналом",
+          "type": "business",
+          "subType": "team-management"
+        }
       ],
       "learnSkill": [
-        { "title": "Эффективные переговоры", "type": "business", "subType": "sales" },
-        { "title": "Испанский язык", "type": "languages", "subType": "spanish" }
+        {
+          "title": "Эффективные переговоры",
+          "type": "business",
+          "subType": "sales"
+        },
+        {
+          "title": "Испанский язык",
+          "type": "languages",
+          "subType": "spanish"
+        }
       ],
       "name": "Виктория",
       "city": "Ростов-на-Дону",
@@ -1215,7 +1548,10 @@
       "fullDescription": "Научу методам подбора и мотивации персонала. Расскажу, как проводить собеседования и оценивать кандидатов. Поделюсь техниками решения конфликтов в коллективе. Научу создавать систему KPI для сотрудников. Расскажу о современных тенденциях в управлении командой.",
       "gender": "female",
       "createdAt": 1673308800000,
-      "likes": ["user-1", "user-17"],
+      "likes": [
+        "user-1",
+        "user-17"
+      ],
       "src": "https://barber-shop.su/wp-content/uploads/2022/08/muzhskie-strizhki-dlya-zhenshhin119.jpg",
       "skillImages": [
         {
@@ -1226,10 +1562,24 @@
     {
       "id": "card-11",
       "userId": "user-11",
-      "teachSkill": [{ "title": "Фотопортрет", "type": "art", "subType": "photo" }],
+      "teachSkill": [
+        {
+          "title": "Фотопортрет",
+          "type": "art",
+          "subType": "photo"
+        }
+      ],
       "learnSkill": [
-        { "title": "Обработка в Lightroom", "type": "art", "subType": "photo" },
-        { "title": "Психология восприятия", "type": "education", "subType": "cognitive-skills" }
+        {
+          "title": "Обработка в Lightroom",
+          "type": "art",
+          "subType": "photo"
+        },
+        {
+          "title": "Психология восприятия",
+          "type": "education",
+          "subType": "cognitive-skills"
+        }
       ],
       "name": "Андрей",
       "city": "Москва",
@@ -1238,24 +1588,47 @@
       "fullDescription": "Научу создавать профессиональные портреты с естественным светом. Расскажу секреты работы с моделью и выгодных ракурсов. Покажу как подчеркнуть индивидуальность человека в кадре. Научу базовой ретуши кожи без потери текстуры. Поделюсь техниками создания атмосферных портретов в разных локациях.",
       "gender": "male",
       "createdAt": 1673395200000,
-      "likes": ["user-6", "user-22"],
+      "likes": [
+        "user-6",
+        "user-22"
+      ],
       "src": "https://www.cinemafia.ru/upload/images/2016/07/30%20%D0%B4%D0%BE%2030%20%D0%BC%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BA%D0%B8/Ryan%20Guzman.jpg",
       "skillImages": [
-        { "link": "https://c1.35photo.pro/photos_temp/sizes/560/2801484_1500n.jpg" },
-        { "link": "https://wallpaper.forfun.com/fetch/80/805775d8c30b52a3f01d2ff6a0222c53.jpeg" },
+        {
+          "link": "https://c1.35photo.pro/photos_temp/sizes/560/2801484_1500n.jpg"
+        },
+        {
+          "link": "https://wallpaper.forfun.com/fetch/80/805775d8c30b52a3f01d2ff6a0222c53.jpeg"
+        },
         {
           "link": "https://avatars.mds.yandex.net/get-shedevrum/13972232/img_a7bc161d558211efa4ec46f0d608bafb/orig"
         },
-        { "link": "https://35photo.pro/photos_main/741/3707166.jpg" }
+        {
+          "link": "https://35photo.pro/photos_main/741/3707166.jpg"
+        }
       ]
     },
     {
       "id": "card-12",
       "userId": "user-12",
-      "teachSkill": [{ "title": "Бренд-менеджмент", "type": "business", "subType": "brand" }],
+      "teachSkill": [
+        {
+          "title": "Бренд-менеджмент",
+          "type": "business",
+          "subType": "brand"
+        }
+      ],
       "learnSkill": [
-        { "title": "Копирайтинг", "type": "business", "subType": "marketing" },
-        { "title": "Китайский язык", "type": "languages", "subType": "chinese" }
+        {
+          "title": "Копирайтинг",
+          "type": "business",
+          "subType": "marketing"
+        },
+        {
+          "title": "Китайский язык",
+          "type": "languages",
+          "subType": "chinese"
+        }
       ],
       "name": "Елена",
       "city": "Санкт-Петербург",
@@ -1264,23 +1637,44 @@
       "fullDescription": "Научу создавать сильный личный бренд с нуля. Расскажу как позиционировать себя на рынке. Поделюсь техниками формирования уникального стиля. Научу упаковывать экспертность в соцсетях. Расскажу как монетизировать личный бренд без потери доверия аудитории.",
       "gender": "female",
       "createdAt": 1673481600000,
-      "likes": ["user-3", "user-25"],
+      "likes": [
+        "user-3",
+        "user-25"
+      ],
       "src": "https://litemf.com/ru/journal/wp-content/uploads/2021/12/Sumki.jpg",
       "skillImages": [
         {
           "link": "https://avatars.mds.yandex.net/i?id=eac6b101c24eb4b9137dde41c02d9f254575a441-5232282-images-thumbs&n=13"
         },
-        { "link": "https://careertest.ru/static/img/professions/brend-menedzher-og.jpg" },
-        { "link": "https://udpo.info/img/27605521_1200/og.jpg" }
+        {
+          "link": "https://careertest.ru/static/img/professions/brend-menedzher-og.jpg"
+        },
+        {
+          "link": "https://udpo.info/img/27605521_1200/og.jpg"
+        }
       ]
     },
     {
       "id": "card-13",
       "userId": "user-13",
-      "teachSkill": [{ "title": "Японский язык", "type": "languages", "subType": "japanese" }],
+      "teachSkill": [
+        {
+          "title": "Японский язык",
+          "type": "languages",
+          "subType": "japanese"
+        }
+      ],
       "learnSkill": [
-        { "title": "Каллиграфия", "type": "art", "subType": "drawing" },
-        { "title": "Ментальная арифметика", "type": "education", "subType": "cognitive-skills" }
+        {
+          "title": "Каллиграфия",
+          "type": "art",
+          "subType": "drawing"
+        },
+        {
+          "title": "Ментальная арифметика",
+          "type": "education",
+          "subType": "cognitive-skills"
+        }
       ],
       "name": "Кирилл",
       "city": "Новосибирск",
@@ -1289,31 +1683,50 @@
       "fullDescription": "Научу основам японского языка с нуля. Расскажу особенности всех трех азбук (хирагана, катакана, кандзи). Поделюсь техниками запоминания иероглифов. Научу вести простые диалоги на бытовые темы. Расскажу о культурных особенностях общения в Японии.",
       "gender": "male",
       "createdAt": 1673568000000,
-      "likes": ["user-9", "user-30"],
+      "likes": [
+        "user-9",
+        "user-30"
+      ],
       "src": "https://static.alltime.ru/obj/article/image-blog/Stil_dlya_muzhchin_30/Stil_dlya_muzhchin_30_1.jpg",
       "skillImages": [
         {
           "link": "https://avatars.mds.yandex.net/i?id=38f4b1c313ff961bd97505d14b8c3462683bf9b3-9181142-images-thumbs&n=13"
         },
-        { "link": "https://i.ytimg.com/vi/UXM0O8ln564/maxresdefault.jpg" },
+        {
+          "link": "https://i.ytimg.com/vi/UXM0O8ln564/maxresdefault.jpg"
+        },
         {
           "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Toshimana_playing_shamisen_02.jpg/1200px-Toshimana_playing_shamisen_02.jpg"
         },
         {
           "link": "https://static.tildacdn.com/tild6438-6130-4133-a166-396261366330/luxurious-cherry-blo.jpeg"
         },
-        { "link": "https://i.pinimg.com/originals/ac/3b/86/ac3b86dfcabde337a010dfcd49bf8646.jpg" }
+        {
+          "link": "https://i.pinimg.com/originals/ac/3b/86/ac3b86dfcabde337a010dfcd49bf8646.jpg"
+        }
       ]
     },
     {
       "id": "card-14",
       "userId": "user-14",
       "teachSkill": [
-        { "title": "Организация пространства", "type": "home", "subType": "cleaning" }
+        {
+          "title": "Организация пространства",
+          "type": "home",
+          "subType": "cleaning"
+        }
       ],
       "learnSkill": [
-        { "title": "Минимализм", "type": "lifestyle", "subType": "mindfulness" },
-        { "title": "Фэн-шуй", "type": "home", "subType": "other" }
+        {
+          "title": "Минимализм",
+          "type": "lifestyle",
+          "subType": "mindfulness"
+        },
+        {
+          "title": "Фэн-шуй",
+          "type": "home",
+          "subType": "other"
+        }
       ],
       "name": "Наталья",
       "city": "Екатеринбург",
@@ -1322,25 +1735,50 @@
       "fullDescription": "Научу системам организации пространства в доме. Расскажу как избавиться от хлама без сожалений. Поделюсь техниками хранения вещей в малогабаритных квартирах. Научу создавать функциональные зоны в любом помещении. Расскажу как поддерживать порядок без ежедневных уборок.",
       "gender": "female",
       "createdAt": 1673654400000,
-      "likes": ["user-5", "user-21"],
+      "likes": [
+        "user-5",
+        "user-21"
+      ],
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8XwsvYxG6jpBccGZ0xmBRTcNBDDi5N5lBzA&s",
       "skillImages": [
         {
           "link": "https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQKSH_oLqq7jPwWQl61Wge328JVRWLeYpSc4WGGHvd4zFO6YCJfOuJSXbb69Rh1zWHr-LhBK0N7T7kWCmlmyRNnC1OmdbK3dVJk3IrCq0mGoY8WB8InWnmPWLwrFct_KVhe-Pf2je01ysLgozEZsEGkb-E7SKPBsMsuHsovuwfAM5mSIP5yvXYT61zKjCKDRq5HXUUQKpUyggT25NKPfyhXl7w3fAbjNQFKo6-zk_QHoiWg9wIsQrtI5BVAaDMAD73ZHu85tnPzUGwWggEsgYIuCFIFHK-S_4tKO2xRhvbsndH8snpCpTsLyqokspWwDiarq3YB7wU4xeETSun1icg3FVBkdPH8f5JkmgGLaksEqI_dw1sg2XBCDfRrX0E75p3S9X-9Qqq_jwUm5foYcMTg6yrwyaJCOo0o3Q8k_YpOMVrXqnU7unlbY5cGwCECQqmC1gGS4JI_xQg_5hYL86nZHPizvI_mPszE7yR_0LTBICbhcMckhPaGbN9B4DTHxz0WEKR--rq_n-AQhYhujkJixtUIHKHbvw2Md6kZAzmvkxWw__6OJP4PB2nifB8_TyYnZXzAqw3-yePbg2W1jgEx1ZYq_HE--JWln4bAacJF7wSUglLo3LyICj6q3sC5oNHVPbd9ySb0DAknYTcQNkZqL29-gi-J8obmGojjMkrBc9qSLP6wdDpU7Z5PyuPEhKwN3oCXKB2yhgE06xgAdudSHfuwM88m-crKqWWy3rQBo21pNohnDTFDI5SA7bUJB33eUiT5d7XwXGPaycVpRAyihJ1CXCLe_IkC9q2SCjrvkBpzcPaI73nHwOErc188CeSqrvRNpQ2-QGnaC2-2RoC6nBUrPP8zvhRqU0cEIAlProwUDVFh1nPGDjuhGgM_KJ_Z9_J1yaN6jssjqTfS909ob-M8Qm-KtwMhEEemswhO8tka6c"
         },
-        { "link": "https://i.pinimg.com/originals/ad/6f/6d/ad6f6daeee5b3c31623e20e17c072075.jpg" },
-        { "link": "https://i.pinimg.com/736x/11/20/d6/1120d6cad9f8461e313ededd21ea5585.jpg" },
-        { "link": "https://i.pinimg.com/736x/92/42/2e/92422e9a2b91260f706dff965b860328.jpg" },
-        { "link": "https://i.pinimg.com/originals/65/b3/a2/65b3a2ef1c08f5c2e085c905fc6bab0e.jpg" }
+        {
+          "link": "https://i.pinimg.com/originals/ad/6f/6d/ad6f6daeee5b3c31623e20e17c072075.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/736x/11/20/d6/1120d6cad9f8461e313ededd21ea5585.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/736x/92/42/2e/92422e9a2b91260f706dff965b860328.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/65/b3/a2/65b3a2ef1c08f5c2e085c905fc6bab0e.jpg"
+        }
       ]
     },
     {
       "id": "card-15",
       "userId": "user-15",
-      "teachSkill": [{ "title": "Продажи в B2B", "type": "business", "subType": "sales" }],
+      "teachSkill": [
+        {
+          "title": "Продажи в B2B",
+          "type": "business",
+          "subType": "sales"
+        }
+      ],
       "learnSkill": [
-        { "title": "Публичные выступления", "type": "business", "subType": "brand" },
-        { "title": "Основы бухгалтерии", "type": "home", "subType": "home-finances" }
+        {
+          "title": "Публичные выступления",
+          "type": "business",
+          "subType": "brand"
+        },
+        {
+          "title": "Основы бухгалтерии",
+          "type": "home",
+          "subType": "home-finances"
+        }
       ],
       "name": "Павел",
       "city": "Казань",
@@ -1349,17 +1787,38 @@
       "fullDescription": "Научу стратегиям продаж в сегменте B2B. Расскажу как выстраивать долгосрочные отношения с клиентами. Поделюсь техниками ведения сложных переговоров. Научу составлять коммерческие предложения. Расскажу как увеличить средний чек и повторные продажи.",
       "gender": "male",
       "createdAt": 1673740800000,
-      "likes": ["user-12", "user-24"],
+      "likes": [
+        "user-12",
+        "user-24"
+      ],
       "src": "https://img.freepik.com/free-photo/male-leaning-fist-looking-camera_23-2148179010.jpg",
-      "skillImages": [{ "link": "https://beseller.by/assets/images/b2b-2024/b2b-03.jpg" }]
+      "skillImages": [
+        {
+          "link": "https://beseller.by/assets/images/b2b-2024/b2b-03.jpg"
+        }
+      ]
     },
     {
       "id": "card-16",
       "userId": "user-16",
-      "teachSkill": [{ "title": "Йога для начинающих", "type": "lifestyle", "subType": "yoga" }],
+      "teachSkill": [
+        {
+          "title": "Йога для начинающих",
+          "type": "lifestyle",
+          "subType": "yoga"
+        }
+      ],
       "learnSkill": [
-        { "title": "Аюрведа", "type": "lifestyle", "subType": "nutrition" },
-        { "title": "Основы анатомии", "type": "education", "subType": "training" }
+        {
+          "title": "Аюрведа",
+          "type": "lifestyle",
+          "subType": "nutrition"
+        },
+        {
+          "title": "Основы анатомии",
+          "type": "education",
+          "subType": "training"
+        }
       ],
       "name": "Алиса",
       "city": "Нижний Новгород",
@@ -1368,10 +1827,15 @@
       "fullDescription": "Научу базовым асанам и правильному дыханию. Расскажу как избежать травм при самостоятельных занятиях. Поделюсь техниками расслабления и медитации. Научу составлять индивидуальные комплексы упражнений. Расскажу о философии йоги и ее влиянии на качество жизни.",
       "gender": "female",
       "createdAt": 1673827200000,
-      "likes": ["user-8", "user-17"],
+      "likes": [
+        "user-8",
+        "user-17"
+      ],
       "src": "https://cdn1.ozonusercontent.com/s3/club-storage/images/article_image_752x940/689/c500/5cda7163-ba6f-451a-b844-03fd1e7aa45c.jpeg",
       "skillImages": [
-        { "link": "https://static.tildacdn.com/tild3730-3239-4039-b564-313434623039/15_1.jpg" },
+        {
+          "link": "https://static.tildacdn.com/tild3730-3239-4039-b564-313434623039/15_1.jpg"
+        },
         {
           "link": "https://lavali.ru/wp-content/uploads/2/5/f/25f3cac6f579ed9d2739fd12d3e9893b.jpeg"
         }
@@ -1380,10 +1844,24 @@
     {
       "id": "card-17",
       "userId": "user-17",
-      "teachSkill": [{ "title": "Итальянская кухня", "type": "home", "subType": "cooking" }],
+      "teachSkill": [
+        {
+          "title": "Итальянская кухня",
+          "type": "home",
+          "subType": "cooking"
+        }
+      ],
       "learnSkill": [
-        { "title": "Виноделие", "type": "lifestyle", "subType": "other" },
-        { "title": "Фотография еды", "type": "art", "subType": "photo" }
+        {
+          "title": "Виноделие",
+          "type": "lifestyle",
+          "subType": "other"
+        },
+        {
+          "title": "Фотография еды",
+          "type": "art",
+          "subType": "photo"
+        }
       ],
       "name": "Иван",
       "city": "Челябинск",
@@ -1392,26 +1870,47 @@
       "fullDescription": "Научу готовить настоящую пасту и ризотто как в Италии. Расскажу секреты идеального соуса песто. Поделюсь техниками работы с тестом для пиццы. Научу выбирать правильные ингредиенты. Расскажу как сервировать блюда в итальянском стиле.",
       "gender": "male",
       "createdAt": 1673913600000,
-      "likes": ["user-10", "user-16"],
+      "likes": [
+        "user-10",
+        "user-16"
+      ],
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70i1E7J7xaJ1sVJEO9C_SSrYQEMA-Rg8FOg&s",
       "skillImages": [
         {
           "link": "https://imageproxy.wolt.com/venue/6710cf37efd86536b9432517/5aaf8432-8c67-11ef-9958-8aec63cdb56a_shutterstock_2261748829.jpg"
         },
-        { "link": "https://scdn.chibbis.ru/live/banners/8b19b2ec44f2ee572a77d5b6f1352dc4.png" },
+        {
+          "link": "https://scdn.chibbis.ru/live/banners/8b19b2ec44f2ee572a77d5b6f1352dc4.png"
+        },
         {
           "link": "https://media.zenfs.com/en/kolr_springfield_articles_251/1164723e5228b07874d263fd2e97c7bf"
         },
-        { "link": "https://img.championat.com/i/23/69/1532012369592993080.jpg" }
+        {
+          "link": "https://img.championat.com/i/23/69/1532012369592993080.jpg"
+        }
       ]
     },
     {
       "id": "card-18",
       "userId": "user-18",
-      "teachSkill": [{ "title": "Создание электронной музыки", "type": "art", "subType": "music" }],
+      "teachSkill": [
+        {
+          "title": "Создание электронной музыки",
+          "type": "art",
+          "subType": "music"
+        }
+      ],
       "learnSkill": [
-        { "title": "Звукорежиссура", "type": "art", "subType": "music" },
-        { "title": "Продвижение артистов", "type": "business", "subType": "marketing" }
+        {
+          "title": "Звукорежиссура",
+          "type": "art",
+          "subType": "music"
+        },
+        {
+          "title": "Продвижение артистов",
+          "type": "business",
+          "subType": "marketing"
+        }
       ],
       "name": "София",
       "city": "Самара",
@@ -1420,7 +1919,10 @@
       "fullDescription": "Научу основам работы в Ableton Live и FL Studio. Расскажу как создавать биты и мелодии. Поделюсь техниками сведения и мастеринга. Научу работать с MIDI-контроллерами. Расскажу как развивать музыкальный слух и чувство ритма.",
       "gender": "female",
       "createdAt": 1674000000000,
-      "likes": ["user-4", "user-19"],
+      "likes": [
+        "user-4",
+        "user-19"
+      ],
       "src": "https://cdn.trinixy.ru/pics4/20100430/beautiful_faces_01.jpg",
       "skillImages": [
         {
@@ -1432,18 +1934,32 @@
         {
           "link": "https://cdn.sanity.io/images/cc7exehk/production/c003f01d2a995801659db509c89b6dc2572e850e-4767x3086.jpg?fit=crop&auto=format"
         },
-        { "link": "https://files.soniccdn.com/images/articles/original/42277.jpg" }
+        {
+          "link": "https://files.soniccdn.com/images/articles/original/42277.jpg"
+        }
       ]
     },
     {
       "id": "card-19",
       "userId": "user-19",
       "teachSkill": [
-        { "title": "Ментальное здоровье", "type": "lifestyle", "subType": "mental-health" }
+        {
+          "title": "Ментальное здоровье",
+          "type": "lifestyle",
+          "subType": "mental-health"
+        }
       ],
       "learnSkill": [
-        { "title": "Арт-терапия", "type": "art", "subType": "drawing" },
-        { "title": "Нейропсихология", "type": "education", "subType": "cognitive-skills" }
+        {
+          "title": "Арт-терапия",
+          "type": "art",
+          "subType": "drawing"
+        },
+        {
+          "title": "Нейропсихология",
+          "type": "education",
+          "subType": "cognitive-skills"
+        }
       ],
       "name": "Денис",
       "city": "Омск",
@@ -1452,7 +1968,10 @@
       "fullDescription": "Научу техникам управления стрессом и тревожностью. Расскажу как развивать эмоциональный интеллект. Поделюсь упражнениями для улучшения концентрации. Научу методам самодиагностики психического состояния. Расскажу как выстраивать здоровые границы в отношениях.",
       "gender": "male",
       "createdAt": 1674086400000,
-      "likes": ["user-7", "user-18"],
+      "likes": [
+        "user-7",
+        "user-18"
+      ],
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuPmQtGv3BznMHQ2YgNoG9FSrfRKewAZ8K1A&s",
       "skillImages": [
         {
@@ -1466,10 +1985,24 @@
     {
       "id": "card-20",
       "userId": "user-20",
-      "teachSkill": [{ "title": "Испанский язык", "type": "languages", "subType": "spanish" }],
+      "teachSkill": [
+        {
+          "title": "Испанский язык",
+          "type": "languages",
+          "subType": "spanish"
+        }
+      ],
       "learnSkill": [
-        { "title": "Фламенко", "type": "art", "subType": "other" },
-        { "title": "Латиноамериканская кухня", "type": "home", "subType": "cooking" }
+        {
+          "title": "Фламенко",
+          "type": "art",
+          "subType": "other"
+        },
+        {
+          "title": "Латиноамериканская кухня",
+          "type": "home",
+          "subType": "cooking"
+        }
       ],
       "name": "Анастасия",
       "city": "Ростов-на-Дону",
@@ -1478,23 +2011,44 @@
       "fullDescription": "Научу свободно общаться на бытовые темы на испанском. Расскажу особенности произношения в разных странах. Поделюсь техниками быстрого расширения словарного запаса. Научу понимать испанские песни и фильмы. Расскажу о культурных особенностях испаноязычных стран.",
       "gender": "female",
       "createdAt": 1674172800000,
-      "likes": ["user-5", "user-15"],
+      "likes": [
+        "user-5",
+        "user-15"
+      ],
       "src": "https://salon-eliza.ru/wp-content/uploads/2020/03/zhenskiye-pricheski-saloneliza-21.jpg",
       "skillImages": [
         {
           "link": "https://avatars.mds.yandex.net/i?id=6f05e214253c7b255acc3cdba471638f_l-12932496-images-thumbs&n=13"
         },
-        { "link": "https://frankfurt.apollo.olxcdn.com/v1/files/2n2yjjytvt8h-UZ/image;s=1000x700" },
-        { "link": "https://i.ytimg.com/vi/VDmTHkXtOz8/maxresdefault.jpg" }
+        {
+          "link": "https://frankfurt.apollo.olxcdn.com/v1/files/2n2yjjytvt8h-UZ/image;s=1000x700"
+        },
+        {
+          "link": "https://i.ytimg.com/vi/VDmTHkXtOz8/maxresdefault.jpg"
+        }
       ]
     },
     {
       "id": "card-21",
       "userId": "user-21",
-      "teachSkill": [{ "title": "Китайский язык", "type": "languages", "subType": "chinese" }],
+      "teachSkill": [
+        {
+          "title": "Китайский язык",
+          "type": "languages",
+          "subType": "chinese"
+        }
+      ],
       "learnSkill": [
-        { "title": "Китайская каллиграфия", "type": "art", "subType": "drawing" },
-        { "title": "Тайцзицюань", "type": "lifestyle", "subType": "yoga" }
+        {
+          "title": "Китайская каллиграфия",
+          "type": "art",
+          "subType": "drawing"
+        },
+        {
+          "title": "Тайцзицюань",
+          "type": "lifestyle",
+          "subType": "yoga"
+        }
       ],
       "name": "Георгий",
       "city": "Москва",
@@ -1503,23 +2057,44 @@
       "fullDescription": "Научу основам китайского языка и тонам. Расскажу как запоминать иероглифы с помощью мнемотехник. Поделюсь техниками правильного произношения. Научу вести простые диалоги. Расскажу о культурных особенностях Китая и деловом этикете.",
       "gender": "male",
       "createdAt": 1674259200000,
-      "likes": ["user-14", "user-23"],
+      "likes": [
+        "user-14",
+        "user-23"
+      ],
       "src": "https://st5.depositphotos.com/72897924/61841/i/450/depositphotos_618415412-stock-photo-close-handsome-adult-man-beard.jpg",
       "skillImages": [
-        { "link": "https://i.pinimg.com/originals/7b/1e/55/7b1e553fe6e0af2ed9aa0e4964ea24a7.jpg" },
+        {
+          "link": "https://i.pinimg.com/originals/7b/1e/55/7b1e553fe6e0af2ed9aa0e4964ea24a7.jpg"
+        },
         {
           "link": "https://i.vuzopedia.ru/storage/app/uploads/public/673/c55/afa/673c55afaf54a785114272.jpg"
         },
-        { "link": "https://www.vyatsu.ru/uploads/2021/12/02/seminar_kitay.png" }
+        {
+          "link": "https://www.vyatsu.ru/uploads/2021/12/02/seminar_kitay.png"
+        }
       ]
     },
     {
       "id": "card-22",
       "userId": "user-22",
-      "teachSkill": [{ "title": "Цифровая иллюстрация", "type": "art", "subType": "drawing" }],
+      "teachSkill": [
+        {
+          "title": "Цифровая иллюстрация",
+          "type": "art",
+          "subType": "drawing"
+        }
+      ],
       "learnSkill": [
-        { "title": "Анимация", "type": "art", "subType": "mounting" },
-        { "title": "UI/UX дизайн", "type": "business", "subType": "brand" }
+        {
+          "title": "Анимация",
+          "type": "art",
+          "subType": "mounting"
+        },
+        {
+          "title": "UI/UX дизайн",
+          "type": "business",
+          "subType": "brand"
+        }
       ],
       "name": "Валерия",
       "city": "Санкт-Петербург",
@@ -1528,13 +2103,18 @@
       "fullDescription": "Научу создавать иллюстрации в Procreate и Adobe Illustrator. Расскажу о принципах композиции и цветовых сочетаниях. Поделюсь техниками разработки персонажей. Научу работать с графическими планшетами. Расскажу как создать портфолио и найти первых клиентов.",
       "gender": "female",
       "createdAt": 1674345600000,
-      "likes": ["user-11", "user-27"],
+      "likes": [
+        "user-11",
+        "user-27"
+      ],
       "src": "https://cdn.fishki.net/upload/post/2019/09/29/3100992/tn/9-1.jpg",
       "skillImages": [
         {
           "link": "https://avatars.mds.yandex.net/i?id=271dfd9c098ee303322f7ba857363403_l-5257871-images-thumbs&n=13"
         },
-        { "link": "https://cs13.pikabu.ru/post_img/2023/02/05/2/og_og_167556032729852231.jpg" },
+        {
+          "link": "https://cs13.pikabu.ru/post_img/2023/02/05/2/og_og_167556032729852231.jpg"
+        },
         {
           "link": "https://avatars.mds.yandex.net/i?id=4261a334e06086c33f37ff7519c7c7b64e411ea5-5876025-images-thumbs&n=13"
         },
@@ -1549,14 +2129,24 @@
     {
       "id": "card-23",
       "userId": "user-23",
-      "teachSkill": [{ "title": "Французский язык", "type": "languages", "subType": "french" }],
+      "teachSkill": [
+        {
+          "title": "Французский язык",
+          "type": "languages",
+          "subType": "french"
+        }
+      ],
       "learnSkill": [
         {
           "title": "Французская литература",
           "type": "education",
           "subType": "personal-development"
         },
-        { "title": "Виноделие", "type": "lifestyle", "subType": "other" }
+        {
+          "title": "Виноделие",
+          "type": "lifestyle",
+          "subType": "other"
+        }
       ],
       "name": "Артур",
       "city": "Новосибирск",
@@ -1565,7 +2155,9 @@
       "fullDescription": "Научу правильному французскому произношению. Расскажу особенности грамматики и спряжения глаголов. Поделюсь техниками понимания на слух. Научу читать французскую литературу в оригинале. Расскажу о культурных особенностях разных регионов Франции.",
       "gender": "male",
       "createdAt": 1674432000000,
-      "likes": ["user-21"],
+      "likes": [
+        "user-21"
+      ],
       "src": "https://marc-o-polo.ru/upload/resize_cache/iblock/4f1/1200_850_1/xgvcq5gj8i74tumca4fx00wggx2jg46z.webp",
       "skillImages": [
         {
@@ -1580,11 +2172,23 @@
       "id": "card-24",
       "userId": "user-24",
       "teachSkill": [
-        { "title": "Психология общения", "type": "education", "subType": "personal-development" }
+        {
+          "title": "Психология общения",
+          "type": "education",
+          "subType": "personal-development"
+        }
       ],
       "learnSkill": [
-        { "title": "НЛП-практики", "type": "education", "subType": "cognitive-skills" },
-        { "title": "Ораторское мастерство", "type": "business", "subType": "brand" }
+        {
+          "title": "НЛП-практики",
+          "type": "education",
+          "subType": "cognitive-skills"
+        },
+        {
+          "title": "Ораторское мастерство",
+          "type": "business",
+          "subType": "brand"
+        }
       ],
       "name": "Юлия",
       "city": "Екатеринбург",
@@ -1593,13 +2197,18 @@
       "fullDescription": "Научу техникам активного слушания и эмпатии. Расскажу как располагать к себе людей. Поделюсь секретами невербального общения. Научу выходить из конфликтных ситуаций. Расскажу как выражать мысли четко и убедительно.",
       "gender": "female",
       "createdAt": 1674518400000,
-      "likes": ["user-15", "user-28"],
+      "likes": [
+        "user-15",
+        "user-28"
+      ],
       "src": "https://i.pinimg.com/736x/4d/71/3b/4d713bf199e60d7564c96146a730aa0a.jpg",
       "skillImages": [
         {
           "link": "https://cf4.ppt-online.org/files4/slide/d/dBYDtSKTN28lVWsg1PJxvaXQyrUiMO5ku0Cec4/slide-0.jpg"
         },
-        { "link": "https://prezentacii.org/upload/cloud/19/06/152067/images/screen10.jpg" },
+        {
+          "link": "https://prezentacii.org/upload/cloud/19/06/152067/images/screen10.jpg"
+        },
         {
           "link": "https://goods-photos.static1-sima-land.com/items/4558491/0/1600.jpg?v=1600927098"
         }
@@ -1608,10 +2217,24 @@
     {
       "id": "card-25",
       "userId": "user-25",
-      "teachSkill": [{ "title": "Анализ данных", "type": "education", "subType": "training" }],
+      "teachSkill": [
+        {
+          "title": "Анализ данных",
+          "type": "education",
+          "subType": "training"
+        }
+      ],
       "learnSkill": [
-        { "title": "Машинное обучение", "type": "education", "subType": "cognitive-skills" },
-        { "title": "Деловой английский", "type": "languages", "subType": "english" }
+        {
+          "title": "Машинное обучение",
+          "type": "education",
+          "subType": "cognitive-skills"
+        },
+        {
+          "title": "Деловой английский",
+          "type": "languages",
+          "subType": "english"
+        }
       ],
       "name": "Роман",
       "city": "Казань",
@@ -1620,7 +2243,10 @@
       "fullDescription": "Научу основам работы с Python для анализа данных. Расскажу как визуализировать данные в Tableau. Поделюсь техниками очистки и подготовки данных. Научу строить прогнозные модели. Расскажу как интерпретировать результаты анализа для бизнеса.",
       "gender": "male",
       "createdAt": 1674604800000,
-      "likes": ["user-12", "user-30"],
+      "likes": [
+        "user-12",
+        "user-30"
+      ],
       "src": "https://avatars.mds.yandex.net/get-yapic/65952/WjsBnhtGBT6kAknZY3xjyYe2pCc-1/orig",
       "skillImages": [
         {
@@ -1632,16 +2258,32 @@
         {
           "link": "https://avatars.mds.yandex.net/i?id=89195ef14b20117eb252a0ae0c33310b_l-3481291-images-thumbs&n=13"
         },
-        { "link": "https://storage.myseldon.com/news-pict-59/5928C2CEBA3CED5BCE0FCC21E82343E9" }
+        {
+          "link": "https://storage.myseldon.com/news-pict-59/5928C2CEBA3CED5BCE0FCC21E82343E9"
+        }
       ]
     },
     {
       "id": "card-26",
       "userId": "user-26",
-      "teachSkill": [{ "title": "Здоровое питание", "type": "lifestyle", "subType": "nutrition" }],
+      "teachSkill": [
+        {
+          "title": "Здоровое питание",
+          "type": "lifestyle",
+          "subType": "nutrition"
+        }
+      ],
       "learnSkill": [
-        { "title": "Фитнес-тренировки", "type": "lifestyle", "subType": "yoga" },
-        { "title": "Приготовление смузи", "type": "home", "subType": "cooking" }
+        {
+          "title": "Фитнес-тренировки",
+          "type": "lifestyle",
+          "subType": "yoga"
+        },
+        {
+          "title": "Приготовление смузи",
+          "type": "home",
+          "subType": "cooking"
+        }
       ],
       "name": "Евгения",
       "city": "Нижний Новгород",
@@ -1650,13 +2292,18 @@
       "fullDescription": "Научу составлять сбалансированный рацион под ваши цели. Расскажу как считать КБЖУ без стресса. Поделюсь рецептами полезных и вкусных блюд. Научу разбираться в составе продуктов. Расскажу как поддерживать режим питания в путешествиях.",
       "gender": "female",
       "createdAt": 1674691200000,
-      "likes": ["user-17", "user-29"],
+      "likes": [
+        "user-17",
+        "user-29"
+      ],
       "src": "https://i.pinimg.com/originals/1b/b5/61/1bb56134fa8c2eb9606d5b464cf81c51.jpg",
       "skillImages": [
         {
           "link": "https://avatars.mds.yandex.net/i?id=63394e3043c724767c201cca11b9ae92_l-5734795-images-thumbs&n=13"
         },
-        { "link": "https://i.pinimg.com/736x/25/1d/e8/251de86c432f498ae46857263079280c.jpg" },
+        {
+          "link": "https://i.pinimg.com/736x/25/1d/e8/251de86c432f498ae46857263079280c.jpg"
+        },
         {
           "link": "https://storage.googleapis.com/alami-prod-website-wp-stateless/2022/03/009ae358-18.jpg"
         }
@@ -1665,10 +2312,24 @@
     {
       "id": "card-27",
       "userId": "user-27",
-      "teachSkill": [{ "title": "Видеоблогинг", "type": "art", "subType": "mounting" }],
+      "teachSkill": [
+        {
+          "title": "Видеоблогинг",
+          "type": "art",
+          "subType": "mounting"
+        }
+      ],
       "learnSkill": [
-        { "title": "Операторское мастерство", "type": "art", "subType": "photo" },
-        { "title": "Продвижение в YouTube", "type": "business", "subType": "marketing" }
+        {
+          "title": "Операторское мастерство",
+          "type": "art",
+          "subType": "photo"
+        },
+        {
+          "title": "Продвижение в YouTube",
+          "type": "business",
+          "subType": "marketing"
+        }
       ],
       "name": "Максим",
       "city": "Челябинск",
@@ -1677,26 +2338,47 @@
       "fullDescription": "Научу создавать качественный видеоконтент с нуля. Расскажу как писать сценарии для роликов. Поделюсь техниками съемки на смартфон. Научу базовому монтажу в мобильных приложениях. Расскажу как продвигать канал и набирать аудиторию.",
       "gender": "male",
       "createdAt": 1674777600000,
-      "likes": ["user-22", "user-18"],
+      "likes": [
+        "user-22",
+        "user-18"
+      ],
       "src": "https://avatars.mds.yandex.net/get-ydo/2784159/2a0000017260a8da7e86e5c864774e345cb5/diploma",
       "skillImages": [
-        { "link": "https://coddyschool.com/upload/iblock/83b/2_rus_min-_1_.jpg" },
+        {
+          "link": "https://coddyschool.com/upload/iblock/83b/2_rus_min-_1_.jpg"
+        },
         {
           "link": "https://trashbox.ru/ifiles/2010550_eea656_logo/vk-vydelit-granty-dlya-podderzhki-otechestvennyh-blogerov-eto-pomozhet-konkurirovat-s-youtube-1.jpg"
         },
         {
           "link": "https://yandex-images.clstorage.net/GxLd54118/793f45xcg7rs/5HaMWny23CM5Cv4fgIq072LKxdIa2OJBXZMXaj46b-5nKgQkNy021P2mkLUwndfYlScofQHnCL4Tdzt5SOebrYTHDa9d47hzfb6f6nCLpQ6yntYRyN7BUv7F9TmdjZ1s1Pj0INLYc6A8YqSDh5z1v1Gib0lEgj2aNgae_H6gO29wQtnZLOb_0qrIup2Q2iIuMmjmw0ttgTNcNfe5Te59fMdahpDRKmFwiOHXUUTL5wygc29JB3BsqhSkXXxMQiusUOBIyK10b6G4a1pfcCigzKOK5zCo_aIArcTEGB0Pr-7kGQYh8TmioIvAlqIGmFRugLENODXh_ItVNUz_zuIpzpCh2crMV-1B-JuLv5Np4U4D-0VBSk6xon6VJ_stjYzOBoi0gFCYQVEaI0RB9Mmnr0MA_nq14T74JPVPHu_Ryv7Cgqn4fcfNIEqI2n8BW5LfcLlFoMvdUFH-57Z6n8xPj9RaZtHQ2wOhqFNWkhUI1UwRUkxpZNK9iySGHD6_IbiOo_CY-Q30v8BJKWvMA4qSTMGLFsKIzmGSfBf2Sy7srm8GSYXR4goDY8vDBPInKcdf0pB-6PZQ75g0BmyOj9FZPyMDehqMdN7DSMqJjhBpU3xg60SzC_6AMdy1F1rsfc2v1EhW0AF6kwFYUUUyxkhVHyNgnusm4MzKFNesDA8Syp_xwLhY33bcQ9hrqI0DqCM-gUq1gxt9QTBcBUXqXC_N3Zbq12BRuMGB6SF1cUXKl49S0K06xhL9S8dWLA9-oike0LMYyS0mXdHa-Ym98tlAvILrZXKY_HEyXfS1mN4MXPwVCHdCUhqRcVvjxaLGCmce8FI-OPaTH3v2B95vfeC7DWDTess816wha4kJnjIL0x5ia7aTaSzg8ayWlAtMDj6fpVokEpEYsyKYsweBFclUXdJQf0k1Y_5bVteNb6-iS63x8Agan-b_U2h7qFxi2eGNUCrlIPs9owEeBvdZI"
         },
-        { "link": "https://piano.by/images/forNews/mic_for_audio_and_vlogging.jpg" }
+        {
+          "link": "https://piano.by/images/forNews/mic_for_audio_and_vlogging.jpg"
+        }
       ]
     },
     {
       "id": "card-28",
       "userId": "user-28",
-      "teachSkill": [{ "title": "Английский для IT", "type": "languages", "subType": "english" }],
+      "teachSkill": [
+        {
+          "title": "Английский для IT",
+          "type": "languages",
+          "subType": "english"
+        }
+      ],
       "learnSkill": [
-        { "title": "Техническое письмо", "type": "education", "subType": "training" },
-        { "title": "Основы программирования", "type": "education", "subType": "cognitive-skills" }
+        {
+          "title": "Техническое письмо",
+          "type": "education",
+          "subType": "training"
+        },
+        {
+          "title": "Основы программирования",
+          "type": "education",
+          "subType": "cognitive-skills"
+        }
       ],
       "name": "Арина",
       "city": "Самара",
@@ -1705,7 +2387,10 @@
       "fullDescription": "Научу техническому английскому для разработчиков. Расскажу как читать документацию и Stack Overflow. Поделюсь лексикой для собеседований в IT-компаниях. Научу писать профессиональные emails. Расскажу как участвовать в конференциях и митапах.",
       "gender": "female",
       "createdAt": 1674864000000,
-      "likes": ["user-24", "user-5"],
+      "likes": [
+        "user-24",
+        "user-5"
+      ],
       "src": "https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQf3X2oej-v2ClDVl00TxN2DtbUxeOJYBae9PWHCjZsjIgtMmNKbvfTmrS8oQ7hWHS8ab4Db8F_GC2UTG4wjlWwyMg9cjU3stEnnQ-CqQWNZE5UwNDlzLLFx3owGgFx7VFZeLH2j24xRctvIrVRs84lYi89iegLtgrjlg-l8whPPhucr7OzvHLbJNyAAulLBK6OWwibpx6_Cox3bFDOtqlRWHd4sk_kukvLpKr2XTFEYSQpd8gkQTmJ6BXFrnlPxznUEu8_fHu2FaGfB0ihxgqsSttHlOcSOg1BfiKdRjWg2Jy9PvLK4v4Nxa4q_9YwQiUtrfnDpUL6zmuYwKhzzgGwE5gjcfc28ZotXQ_EIkxMZsxdwBshVbVGzrdlUkE7ZxWWvT37ByX-AkEq5XMXeM_l52u5QiOKt4lp0AlmNgMJs5WebPY5NzvcK5QIySUHBy-KXM0Q45x1DYEwYJnMci3d2fnz9sskM07AaSS61v0HIeKrdImjhDFPpdtNZHjHwP4ckiAxNzz63O1Qi06mT0ijipeJE-oSNEQB-OTRg30lF9-z-r6HZjKMAKrnPBD-yKpsrXUNr4O-xq2UwmC6QkG32p7jt7m-cViqWs7BpQdP740aS1JgXH1DAn1imIC65pfQ8Tozz-V1jgqp6XKTtcejZeF9B63BOkKh28ehscTGcxrc7LO_vLASaJuGwGwNxelMWUIYYpm9ggxzaZLBfCZYl3Ly9circ44Hbyr8lzAJISIoPwHly3LGYh4CL7nKQTDc0uhzt7t306KTCITqAk9pxFfLW6BSt0FCfGpQh_YsFJ-w9X0IbjRHh2IgtNnxiKkqb_jGJw6wxu0dSGEySEJ_WxWqNLh-_1Xs2wENZMMGJIdbw9LvX_RJzTNmnYt-JRFYvzb5iu11C4QrK3ZbtQVibOM9i-8BekHkXgCrfoFHMZVd7w",
       "skillImages": [
         {
@@ -1719,10 +2404,24 @@
     {
       "id": "card-29",
       "userId": "user-29",
-      "teachSkill": [{ "title": "Арт-терапия", "type": "art", "subType": "drawing" }],
+      "teachSkill": [
+        {
+          "title": "Арт-терапия",
+          "type": "art",
+          "subType": "drawing"
+        }
+      ],
       "learnSkill": [
-        { "title": "Детская психология", "type": "education", "subType": "personal-development" },
-        { "title": "Сказкотерапия", "type": "education", "subType": "other" }
+        {
+          "title": "Детская психология",
+          "type": "education",
+          "subType": "personal-development"
+        },
+        {
+          "title": "Сказкотерапия",
+          "type": "education",
+          "subType": "other"
+        }
       ],
       "name": "Вероника",
       "city": "Омск",
@@ -1731,10 +2430,15 @@
       "fullDescription": "Научу техникам арт-терапии для снятия стресса. Расскажу как анализировать рисунки. Поделюсь упражнениями для развития креативности. Научу проводить сессии с детьми. Расскажу как использовать искусство для самопознания.",
       "gender": "female",
       "createdAt": 1674950400000,
-      "likes": ["user-19", "user-26"],
+      "likes": [
+        "user-19",
+        "user-26"
+      ],
       "src": "https://puzzleit.ru/files/puzzles/209/208540/_original.jpg",
       "skillImages": [
-        { "link": "https://zhengazeta.ru/wp-content/uploads/2018/07/risovanie.jpg" },
+        {
+          "link": "https://zhengazeta.ru/wp-content/uploads/2018/07/risovanie.jpg"
+        },
         {
           "link": "https://prostor31.ru/attachments/cf9b888940a2b885dfa15bc434083c1f3db20a7a/store/crop/0/0/535/380/800/0/0/0/70327664d47df4d11697199c61d464f43832055fd8f6f1744163bdefcf65/70327664d47df4d11697199c61d464f43832055fd8f6f1744163bdefcf65.jpeg.jpg"
         },
@@ -1747,11 +2451,23 @@
       "id": "card-30",
       "userId": "user-30",
       "teachSkill": [
-        { "title": "Финансовая грамотность", "type": "home", "subType": "home-finances" }
+        {
+          "title": "Финансовая грамотность",
+          "type": "home",
+          "subType": "home-finances"
+        }
       ],
       "learnSkill": [
-        { "title": "Инвестиции", "type": "home", "subType": "home-finances" },
-        { "title": "Экономическая психология", "type": "education", "subType": "cognitive-skills" }
+        {
+          "title": "Инвестиции",
+          "type": "home",
+          "subType": "home-finances"
+        },
+        {
+          "title": "Экономическая психология",
+          "type": "education",
+          "subType": "cognitive-skills"
+        }
       ],
       "name": "Константин",
       "city": "Ростов-на-Дону",
@@ -1760,7 +2476,10 @@
       "fullDescription": "Научу основам финансового планирования. Расскажу как создать резервный фонд. Поделюсь стратегиями накопления. Научу оценивать риски инвестиций. Расскажу как защитить капитал от инфляции.",
       "gender": "male",
       "createdAt": 1675036800000,
-      "likes": ["user-13", "user-25"],
+      "likes": [
+        "user-13",
+        "user-25"
+      ],
       "src": "https://avatars.mds.yandex.net/i?id=82a4b2f263da384278f2bfe895b0f8d2_l-3374823-images-thumbs&n=13",
       "skillImages": [
         {
@@ -1771,10 +2490,24 @@
     {
       "id": "card-31",
       "userId": "user-31",
-      "teachSkill": [{ "title": "Скорочтение", "type": "education", "subType": "training" }],
+      "teachSkill": [
+        {
+          "title": "Скорочтение",
+          "type": "education",
+          "subType": "training"
+        }
+      ],
       "learnSkill": [
-        { "title": "Мнемотехники", "type": "education", "subType": "cognitive-skills" },
-        { "title": "Конспектирование", "type": "education", "subType": "personal-development" }
+        {
+          "title": "Мнемотехники",
+          "type": "education",
+          "subType": "cognitive-skills"
+        },
+        {
+          "title": "Конспектирование",
+          "type": "education",
+          "subType": "personal-development"
+        }
       ],
       "name": "Татьяна",
       "city": "Москва",
@@ -1783,11 +2516,18 @@
       "fullDescription": "Научу читать в 2-3 раза быстрее без потери понимания. Расскажу как увеличить поле зрения при чтении. Поделюсь техниками подавления субвокализации. Научу запоминать прочитанное надолго. Расскажу как применять скорочтение для работы и учебы.",
       "gender": "female",
       "createdAt": 1675123200000,
-      "likes": ["user-21", "user-33"],
+      "likes": [
+        "user-21",
+        "user-33"
+      ],
       "src": "https://35photo.pro/photos_main/123/617329.jpg",
       "skillImages": [
-        { "link": "https://smartprogress.do/uploadImages/001457169.jpg" },
-        { "link": "https://propokupki.ru/_files/a/0/a049ad56eae0745ed398ba57427170f3.png" },
+        {
+          "link": "https://smartprogress.do/uploadImages/001457169.jpg"
+        },
+        {
+          "link": "https://propokupki.ru/_files/a/0/a049ad56eae0745ed398ba57427170f3.png"
+        },
         {
           "link": "https://sh96-doneck-r897.gosweb.gosuslugi.ru/netcat_files/205/4279/sk_cht_01.png"
         },
@@ -1802,10 +2542,24 @@
     {
       "id": "card-32",
       "userId": "user-32",
-      "teachSkill": [{ "title": "Создание презентаций", "type": "business", "subType": "brand" }],
+      "teachSkill": [
+        {
+          "title": "Создание презентаций",
+          "type": "business",
+          "subType": "brand"
+        }
+      ],
       "learnSkill": [
-        { "title": "Сторителлинг", "type": "business", "subType": "marketing" },
-        { "title": "Дизайн слайдов", "type": "art", "subType": "drawing" }
+        {
+          "title": "Сторителлинг",
+          "type": "business",
+          "subType": "marketing"
+        },
+        {
+          "title": "Дизайн слайдов",
+          "type": "art",
+          "subType": "drawing"
+        }
       ],
       "name": "Игорь",
       "city": "Санкт-Петербург",
@@ -1814,26 +2568,47 @@
       "fullDescription": "Научу создавать эффектные презентации в PowerPoint и Keynote. Расскажу принципы визуального сторителлинга. Поделюсь техниками структурирования информации. Научу работать с инфографикой. Расскажу как удерживать внимание аудитории.",
       "gender": "male",
       "createdAt": 1675209600000,
-      "likes": ["user-12", "user-22"],
+      "likes": [
+        "user-12",
+        "user-22"
+      ],
       "src": "https://avatars.mds.yandex.net/i?id=f39a806f62d492e61924c218c9d435cb_l-5288159-images-thumbs&n=13",
       "skillImages": [
-        { "link": "https://freelance.boutique/portfolio/img/106624" },
-        { "link": "https://investstable.ru/wp-content/uploads/2020/05/09.png" },
+        {
+          "link": "https://freelance.boutique/portfolio/img/106624"
+        },
+        {
+          "link": "https://investstable.ru/wp-content/uploads/2020/05/09.png"
+        },
         {
           "link": "https://art-nto.ru/800/600/https/cf3.ppt-online.org/files3/slide/7/7eKw2INHx6AS4oPqWO85jY3ifhvLrt9U1kBsR0/slide-25.jpg"
         },
-        { "link": "https://cdn-edge.kwork.ru/pics/t3/08/25551165-63fe1c70a2ed5.jpg" }
+        {
+          "link": "https://cdn-edge.kwork.ru/pics/t3/08/25551165-63fe1c70a2ed5.jpg"
+        }
       ]
     },
     {
       "id": "card-33",
       "userId": "user-33",
       "teachSkill": [
-        { "title": "Немецкий для начинающих", "type": "languages", "subType": "german" }
+        {
+          "title": "Немецкий для начинающих",
+          "type": "languages",
+          "subType": "german"
+        }
       ],
       "learnSkill": [
-        { "title": "История Германии", "type": "education", "subType": "personal-development" },
-        { "title": "Деловая переписка", "type": "business", "subType": "sales" }
+        {
+          "title": "История Германии",
+          "type": "education",
+          "subType": "personal-development"
+        },
+        {
+          "title": "Деловая переписка",
+          "type": "business",
+          "subType": "sales"
+        }
       ],
       "name": "Людмила",
       "city": "Новосибирск",
@@ -1842,7 +2617,10 @@
       "fullDescription": "Научу основам немецкой грамматики и лексики. Расскажу как правильно произносить сложные звуки. Поделюсь техниками запоминания артиклей. Научу вести простые диалоги. Расскажу о культурных особенностях немецкоязычных стран.",
       "gender": "female",
       "createdAt": 1675296000000,
-      "likes": ["user-31", "user-35"],
+      "likes": [
+        "user-31",
+        "user-35"
+      ],
       "src": "https://avatars.mds.yandex.net/get-yapic/31078/S4PkHEBwIPsaNyq7Pt9JYtRd8w-1/orig",
       "skillImages": [
         {
@@ -1854,19 +2632,41 @@
         {
           "link": "https://static.wixstatic.com/media/4fa500_ff2393e2f3504f5db4ed744b79dede4a~mv2.jpg/v1/fill/w_4800,h_3200,al_c,q_90/a%20chalkboard%20with%20the%20question%20sprechen%20sie%20deutsch_%20do%20you%20speak%20german_%20written%20in%20germa.jpg"
         },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" },
-        { "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg" }
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/0d/ba/a4/0dbaa44d659ee5accdcd900226ab3b76.jpg"
+        }
       ]
     },
     {
       "id": "card-34",
       "userId": "user-34",
-      "teachSkill": [{ "title": "Основы живописи", "type": "art", "subType": "drawing" }],
+      "teachSkill": [
+        {
+          "title": "Основы живописи",
+          "type": "art",
+          "subType": "drawing"
+        }
+      ],
       "learnSkill": [
-        { "title": "История искусства", "type": "education", "subType": "personal-development" },
-        { "title": "Керамика", "type": "art", "subType": "other" }
+        {
+          "title": "История искусства",
+          "type": "education",
+          "subType": "personal-development"
+        },
+        {
+          "title": "Керамика",
+          "type": "art",
+          "subType": "other"
+        }
       ],
       "name": "Вадим",
       "city": "Екатеринбург",
@@ -1875,14 +2675,27 @@
       "fullDescription": "Научу основам композиции и перспективы. Расскажу как работать с разными материалами. Поделюсь техниками смешивания цветов. Научу видеть пропорции и объем. Расскажу как развить художественное видение.",
       "gender": "male",
       "createdAt": 1675382400000,
-      "likes": ["user-24", "user-36"],
+      "likes": [
+        "user-24",
+        "user-36"
+      ],
       "src": "https://photo3.wambacdn.net/30/88/13/1813318803/2187866837_huge.jpg?hash=fWiId3_15348oZtgcdB5HQ&expires=64060578000&updated=1701500566",
       "skillImages": [
-        { "link": "https://i.pinimg.com/736x/a4/46/cf/a446cf302c15fc01bda9d16e6cec4a5d.jpg" },
-        { "link": "https://cs.pikabu.ru/post_img/big/2013/07/28/1/1374961016_947049945.jpg" },
-        { "link": "https://i.pinimg.com/originals/b3/3c/66/b33c6615de7a10cddf50173a8cc7dbae.png" },
-        { "link": "https://i.pinimg.com/originals/9b/49/6c/9b496c4356a70aa745fa71e7501f61a1.jpg" },
-        { "link": "https://cdn.culture.ru/images/b0a812b1-f279-5d36-ae72-3da2dc07d196" },
+        {
+          "link": "https://i.pinimg.com/736x/a4/46/cf/a446cf302c15fc01bda9d16e6cec4a5d.jpg"
+        },
+        {
+          "link": "https://cs.pikabu.ru/post_img/big/2013/07/28/1/1374961016_947049945.jpg"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/b3/3c/66/b33c6615de7a10cddf50173a8cc7dbae.png"
+        },
+        {
+          "link": "https://i.pinimg.com/originals/9b/49/6c/9b496c4356a70aa745fa71e7501f61a1.jpg"
+        },
+        {
+          "link": "https://cdn.culture.ru/images/b0a812b1-f279-5d36-ae72-3da2dc07d196"
+        },
         {
           "link": "https://avatars.mds.yandex.net/get-mpic/12585941/2a00000195f6f9ccf1955b21189e8f4b74a5/orig"
         }
@@ -1892,11 +2705,23 @@
       "id": "card-35",
       "userId": "user-35",
       "teachSkill": [
-        { "title": "Тайм-менеджмент", "type": "education", "subType": "personal-development" }
+        {
+          "title": "Тайм-менеджмент",
+          "type": "education",
+          "subType": "personal-development"
+        }
       ],
       "learnSkill": [
-        { "title": "Продуктивность", "type": "education", "subType": "training" },
-        { "title": "Управление стрессом", "type": "lifestyle", "subType": "mental-health" }
+        {
+          "title": "Продуктивность",
+          "type": "education",
+          "subType": "training"
+        },
+        {
+          "title": "Управление стрессом",
+          "type": "lifestyle",
+          "subType": "mental-health"
+        }
       ],
       "name": "Ангелина",
       "city": "Казань",
@@ -1905,19 +2730,38 @@
       "fullDescription": "Научу эффективно планировать день и неделю. Расскажу как расставлять приоритеты. Поделюсь техниками борьбы с прокрастинацией. Научу делегировать задачи. Расскажу как сохранять баланс между работой и отдыхом.",
       "gender": "female",
       "createdAt": 1675468800000,
-      "likes": ["user-33", "user-38"],
+      "likes": [
+        "user-33",
+        "user-38"
+      ],
       "src": "https://i.pinimg.com/originals/fe/db/3e/fedb3e1e39aaee3fa56dd8879827c194.gif",
       "skillImages": [
-        { "link": "https://neiros.ru/img/time-management/taym-menedzhment-pozvolyaet.png" }
+        {
+          "link": "https://neiros.ru/img/time-management/taym-menedzhment-pozvolyaet.png"
+        }
       ]
     },
     {
       "id": "card-36",
       "userId": "user-36",
-      "teachSkill": [{ "title": "Функциональный тренинг", "type": "lifestyle", "subType": "yoga" }],
+      "teachSkill": [
+        {
+          "title": "Функциональный тренинг",
+          "type": "lifestyle",
+          "subType": "yoga"
+        }
+      ],
       "learnSkill": [
-        { "title": "Спортивная диетология", "type": "lifestyle", "subType": "nutrition" },
-        { "title": "Анатомия движения", "type": "education", "subType": "training" }
+        {
+          "title": "Спортивная диетология",
+          "type": "lifestyle",
+          "subType": "nutrition"
+        },
+        {
+          "title": "Анатомия движения",
+          "type": "education",
+          "subType": "training"
+        }
       ],
       "name": "Станислав",
       "city": "Нижний Новгород",
@@ -1926,7 +2770,10 @@
       "fullDescription": "Научу правильной технике выполнения упражнений. Расскажу как составить программу тренировок. Поделюсь техниками работы с собственным весом. Научу предотвращать травмы. Расскажу как мотивировать себя на регулярные занятия.",
       "gender": "male",
       "createdAt": 1675555200000,
-      "likes": ["user-34", "user-40"],
+      "likes": [
+        "user-34",
+        "user-40"
+      ],
       "src": "https://i.artfile.ru/1920x1290_1497873_[www.ArtFile.ru].jpg",
       "skillImages": [
         {
@@ -1943,10 +2790,24 @@
     {
       "id": "card-37",
       "userId": "user-37",
-      "teachSkill": [{ "title": "Основы саунд-дизайна", "type": "art", "subType": "music" }],
+      "teachSkill": [
+        {
+          "title": "Основы саунд-дизайна",
+          "type": "art",
+          "subType": "music"
+        }
+      ],
       "learnSkill": [
-        { "title": "Запись вокала", "type": "art", "subType": "music" },
-        { "title": "Сведение треков", "type": "art", "subType": "mounting" }
+        {
+          "title": "Запись вокала",
+          "type": "art",
+          "subType": "music"
+        },
+        {
+          "title": "Сведение треков",
+          "type": "art",
+          "subType": "mounting"
+        }
       ],
       "name": "Александра",
       "city": "Челябинск",
@@ -1955,7 +2816,10 @@
       "fullDescription": "Научу основам работы в Ableton Live. Расскажу как создавать звуковые эффекты. Поделюсь техниками сэмплирования. Научу обрабатывать вокал. Расскажу как создавать атмосферные звуковые ландшафты.",
       "gender": "female",
       "createdAt": 1675641600000,
-      "likes": ["user-27", "user-39"],
+      "likes": [
+        "user-27",
+        "user-39"
+      ],
       "src": "https://photo2.wambacdn.net/25/14/83/1805384152/2161374169_huge.jpg?hash=BVq6zJ2lgtYczGKyuSLYfQ&expires=64060578000&updated=1683605377",
       "skillImages": [
         {
@@ -1973,11 +2837,23 @@
       "id": "card-38",
       "userId": "user-38",
       "teachSkill": [
-        { "title": "Основы астрологии", "type": "lifestyle", "subType": "mindfulness" }
+        {
+          "title": "Основы астрологии",
+          "type": "lifestyle",
+          "subType": "mindfulness"
+        }
       ],
       "learnSkill": [
-        { "title": "Нумерология", "type": "lifestyle", "subType": "other" },
-        { "title": "Психология личности", "type": "education", "subType": "personal-development" }
+        {
+          "title": "Нумерология",
+          "type": "lifestyle",
+          "subType": "other"
+        },
+        {
+          "title": "Психология личности",
+          "type": "education",
+          "subType": "personal-development"
+        }
       ],
       "name": "Борис",
       "city": "Самара",
@@ -1986,7 +2862,9 @@
       "fullDescription": "Научу основам натальной астрологии. Расскажу как составлять космограмму. Поделюсь техниками интерпретации аспектов. Научу работать с астрологическими домами. Расскажу как применять астрологию для самопознания.",
       "gender": "male",
       "createdAt": 1675728000000,
-      "likes": ["user-35"],
+      "likes": [
+        "user-35"
+      ],
       "src": "https://i.pinimg.com/736x/ef/1e/c2/ef1ec2397971da974f3ff2348d87f02d.jpg",
       "skillImages": [
         {
@@ -2003,10 +2881,24 @@
     {
       "id": "card-39",
       "userId": "user-39",
-      "teachSkill": [{ "title": "Французская выпечка", "type": "home", "subType": "cooking" }],
+      "teachSkill": [
+        {
+          "title": "Французская выпечка",
+          "type": "home",
+          "subType": "cooking"
+        }
+      ],
       "learnSkill": [
-        { "title": "Декорирование тортов", "type": "art", "subType": "drawing" },
-        { "title": "Фуд-стайлинг", "type": "art", "subType": "photo" }
+        {
+          "title": "Декорирование тортов",
+          "type": "art",
+          "subType": "drawing"
+        },
+        {
+          "title": "Фуд-стайлинг",
+          "type": "art",
+          "subType": "photo"
+        }
       ],
       "name": "Элина",
       "city": "Омск",
@@ -2015,7 +2907,10 @@
       "fullDescription": "Научу готовить воздушные круассаны с идеальной слоистостью. Покажу секреты приготовления нежного тарт Татен с карамелизированными яблоками. Расскажу, как работать с миндальным тестом для изысканных пирожных. Научу создавать стабильные муссы и крем-чибоу. Поделюсь профессиональными техниками работы с кондитерским мешком и насадками.",
       "gender": "female",
       "createdAt": 1675814400000,
-      "likes": ["user-37", "user-20"],
+      "likes": [
+        "user-37",
+        "user-20"
+      ],
       "src": "https://yandex-images.clstorage.net/GxLd54118/793f45gpMuqN/wJJpi1k2HSIcylrvsIvRihI6dNa7yfIxSQf3T0pur-vjb3ClVwgW5C3DkKAhWJeIlXd4LUHyre6DNO6YCEfOePRXDZ69Rh1zWHr-LhBK0N7T7kV3nkkxUv7F9TmdjZ1s1Pj0INLYc6A8YqSDh5z1v1Gib0lEgj2aNgae_H6gO29wQtnZLOb_0qrIup2Q2iIuMmjmw0ttgTNcNfe5Te59fMdahpDRKmFwiOHXUUTL5wygc29JB3BsqhSkXXxMQiusUOBIyK10b6G4a1pfcCigzKOK5zCo_aIArcTEGB0Pr-7kGQYh8TmioIvAlqIGmFRugLENODXh_ItVNUz_zuIpzpCh2crMV-1B-JuLv5Np4U4D-0VBSk6xon6VJ_stjYzOBoi0gFCYQVEaI0RB9Mmnr0MA_nq14T74JPVPHu_Ryv7Cgqn4fcfNIEqI2n8BW5LfcLlFoMvdUFH-57Z6n8xPj9RaZtHQ2wOhqFNWkhUI1UwRUkxpZNK9iySGHD6_IbiOo_CY-Q30v8BJKWvMA4qSTMGLFsKIzmGSfBf2Sy7srm8GSYXR4goDY8vDBPInKcdf0pB-6PZQ75g0BmyOj9FZPyMDehqMdN7DSMqJjhBpU3xg60SzC_6AMdy1F1rsfc2v1EhW0AF6kwFYUUUyxkhVHyNgnusm4MzKFNesDA8Syp_xwLhY33bcQ9hrqI0DqCM-gUq1gxt9QTBcBUXqXC_N3Zbq12BRuMGB6SF1cUXKl49S0K06xhL9S8dWLA9-oike0LMYyS0mXdHa-Ym98tlAvILrZXKY_HEyXfS1mN4MXPwVCHdCUhqRcVvjxaLGCmce8FI-OPaTH3v2B95vfeC7DWDTess816wha4kJnjIL0x5ia7aTaSzg8ayWlAtMDj6fpVokEpEYsyKYsweBFclUXdJQf0k1Y_5bVteNb6-iS63x8Agan-b_U2h7qFxi2eGNUCrlIPs9owEeBvdZI",
       "skillImages": [
         {
@@ -2036,11 +2931,23 @@
       "id": "card-40",
       "userId": "user-40",
       "teachSkill": [
-        { "title": "Основы предпринимательства", "type": "business", "subType": "sales" }
+        {
+          "title": "Основы предпринимательства",
+          "type": "business",
+          "subType": "sales"
+        }
       ],
       "learnSkill": [
-        { "title": "Управление рисками", "type": "business", "subType": "team-management" },
-        { "title": "Юридические аспекты бизнеса", "type": "education", "subType": "training" }
+        {
+          "title": "Управление рисками",
+          "type": "business",
+          "subType": "team-management"
+        },
+        {
+          "title": "Юридические аспекты бизнеса",
+          "type": "education",
+          "subType": "training"
+        }
       ],
       "name": "Глеб",
       "city": "Ростов-на-Дону",
@@ -2049,7 +2956,10 @@
       "fullDescription": "Научу составлять бизнес-план и считать unit-экономику. Расскажу, как выбрать прибыльную нишу и проанализировать конкурентов. Поделюсь техниками привлечения первых клиентов без бюджета. Научу формировать ценностное предложение и УТП. Расскажу, как избежать типичных ошибок начинающих предпринимателей и выстроить устойчивую бизнес-модель.",
       "gender": "male",
       "createdAt": 1675900800000,
-      "likes": ["user-36", "user-25"],
+      "likes": [
+        "user-36",
+        "user-25"
+      ],
       "src": "https://sun9-16.userapi.com/impg/WZu7pCW7Jh3-U1vyCofsE9KrxrdgL4zB-xIrjw/NSjTd7irM9I.jpg?size=710x1024&quality=96&sign=296b54dc32491a9051fcd0dfd629b435&c_uniq_tag=SMWTPgMSgtswBYFnRDVU6kb_DA49zPEvMCwZisfgMQo&type=album",
       "skillImages": [
         {
@@ -2062,6 +2972,72 @@
           "link": "https://sun1-21.userapi.com/impg/jxgx0W5tjTlQAoLm3zoJzQzOlmLIVzN_GTItXQ/GdETON2wgzo.jpg?size=520x0&quality=95&sign=f78132891d42c4ccaa3b06b03db127a1"
         }
       ]
+    },
+    {
+      "id": "3e0e",
+      "userId": "127ee619-eb78-4a88-9339-c08675aefc26",
+      "teachSkill": [
+        {
+          "title": "Личный бренд",
+          "type": "business",
+          "subType": "brand"
+        }
+      ],
+      "learnSkill": [
+        {
+          "title": "Маркетинг и реклама",
+          "type": "business",
+          "subType": "marketing"
+        },
+        {
+          "title": "Продажи и переговоры",
+          "type": "business",
+          "subType": "sales"
+        }
+      ],
+      "name": "Человек-паук",
+      "city": "Москва",
+      "age": 20,
+      "description": "Предлагаю всем пойти и начать спасать Нью-Йорк",
+      "fullDescription": "",
+      "gender": "male",
+      "createdAt": 1752959158318,
+      "likes": [],
+      "src": "#",
+      "skillImages": []
+    },
+    {
+      "id": "d6b7",
+      "userId": "ed68325a-ead3-413e-b714-0e299d7d6d7b",
+      "teachSkill": [
+        {
+          "title": "Управление командой",
+          "type": "business",
+          "subType": "team-management"
+        }
+      ],
+      "learnSkill": [
+        {
+          "title": "Управление командой",
+          "type": "business",
+          "subType": "team-management"
+        },
+        {
+          "title": "Маркетинг и реклама",
+          "type": "business",
+          "subType": "marketing"
+        }
+      ],
+      "name": "asd",
+      "city": "Санкт-Петербург",
+      "age": 17,
+      "description": "фывфывфывфыв",
+      "fullDescription": "",
+      "gender": "male",
+      "createdAt": 1752960357169,
+      "likes": [],
+      "src": "#",
+      "skillImages": []
     }
   ],
   "cities": [
@@ -2179,9 +3155,24 @@
           "type": "team-management",
           "status": false
         },
-        { "title": "Маркетинг и реклама", "id": "0-1", "type": "marketing", "status": false },
-        { "title": "Продажи и переговоры", "id": "0-2", "type": "sales", "status": false },
-        { "title": "Личный бренд", "id": "0-3", "type": "brand", "status": false }
+        {
+          "title": "Маркетинг и реклама",
+          "id": "0-1",
+          "type": "marketing",
+          "status": false
+        },
+        {
+          "title": "Продажи и переговоры",
+          "id": "0-2",
+          "type": "sales",
+          "status": false
+        },
+        {
+          "title": "Личный бренд",
+          "id": "0-3",
+          "type": "brand",
+          "status": false
+        }
       ]
     },
     {
@@ -2190,10 +3181,30 @@
       "title": "Творчество и искусство",
       "src": "/#",
       "subFilters": [
-        { "title": "Рисование и иллюстрация", "id": "1-0", "type": "drawing", "status": false },
-        { "title": "Фотография", "id": "1-1", "type": "photo", "status": false },
-        { "title": "Монтаж", "id": "1-2", "type": "mounting", "status": false },
-        { "title": "Музыка и звук", "id": "1-3", "type": "music", "status": false }
+        {
+          "title": "Рисование и иллюстрация",
+          "id": "1-0",
+          "type": "drawing",
+          "status": false
+        },
+        {
+          "title": "Фотография",
+          "id": "1-1",
+          "type": "photo",
+          "status": false
+        },
+        {
+          "title": "Монтаж",
+          "id": "1-2",
+          "type": "mounting",
+          "status": false
+        },
+        {
+          "title": "Музыка и звук",
+          "id": "1-3",
+          "type": "music",
+          "status": false
+        }
       ]
     },
     {
@@ -2202,12 +3213,42 @@
       "title": "Иностранные языки",
       "src": "/#",
       "subFilters": [
-        { "title": "Английский", "id": "2-0", "type": "english", "status": false },
-        { "title": "Французский", "id": "2-1", "type": "french", "status": false },
-        { "title": "Испанский", "id": "2-2", "type": "spanish", "status": false },
-        { "title": "Немецкий", "id": "2-3", "type": "german", "status": false },
-        { "title": "Китайский", "id": "2-4", "type": "chinese", "status": false },
-        { "title": "Японский", "id": "2-5", "type": "japanese", "status": false }
+        {
+          "title": "Английский",
+          "id": "2-0",
+          "type": "english",
+          "status": false
+        },
+        {
+          "title": "Французский",
+          "id": "2-1",
+          "type": "french",
+          "status": false
+        },
+        {
+          "title": "Испанский",
+          "id": "2-2",
+          "type": "spanish",
+          "status": false
+        },
+        {
+          "title": "Немецкий",
+          "id": "2-3",
+          "type": "german",
+          "status": false
+        },
+        {
+          "title": "Китайский",
+          "id": "2-4",
+          "type": "chinese",
+          "status": false
+        },
+        {
+          "title": "Японский",
+          "id": "2-5",
+          "type": "japanese",
+          "status": false
+        }
       ]
     },
     {
@@ -2222,7 +3263,12 @@
           "type": "personal-development",
           "status": false
         },
-        { "title": "Навыки обучения", "id": "3-1", "type": "training", "status": false },
+        {
+          "title": "Навыки обучения",
+          "id": "3-1",
+          "type": "training",
+          "status": false
+        },
         {
           "title": "Когнитивные навыки",
           "id": "3-2",
@@ -2237,10 +3283,30 @@
       "title": "Здоровье и лайфстайл",
       "src": "/#",
       "subFilters": [
-        { "title": "Йога и медитация", "id": "4-0", "type": "yoga", "status": false },
-        { "title": "Питание и ЗОЖ", "id": "4-1", "type": "nutrition", "status": false },
-        { "title": "Ментальное здоровье", "id": "4-2", "type": "mental-health", "status": false },
-        { "title": "Осознанность", "id": "4-3", "type": "mindfulness", "status": false }
+        {
+          "title": "Йога и медитация",
+          "id": "4-0",
+          "type": "yoga",
+          "status": false
+        },
+        {
+          "title": "Питание и ЗОЖ",
+          "id": "4-1",
+          "type": "nutrition",
+          "status": false
+        },
+        {
+          "title": "Ментальное здоровье",
+          "id": "4-2",
+          "type": "mental-health",
+          "status": false
+        },
+        {
+          "title": "Осознанность",
+          "id": "4-3",
+          "type": "mindfulness",
+          "status": false
+        }
       ]
     },
     {
@@ -2249,9 +3315,24 @@
       "title": "Дом и уют",
       "src": "/#",
       "subFilters": [
-        { "title": "Уборки и организация", "id": "5-0", "type": "cleaning ", "status": false },
-        { "title": "Домашние финансы", "id": "5-1", "type": "home-finances", "status": false },
-        { "title": "Приготовление еды", "id": "5-2", "type": "cooking", "status": false }
+        {
+          "title": "Уборки и организация",
+          "id": "5-0",
+          "type": "cleaning ",
+          "status": false
+        },
+        {
+          "title": "Домашние финансы",
+          "id": "5-1",
+          "type": "home-finances",
+          "status": false
+        },
+        {
+          "title": "Приготовление еды",
+          "id": "5-2",
+          "type": "cooking",
+          "status": false
+        }
       ]
     }
   ]
