@@ -6,7 +6,7 @@ import type { setStateProps } from '../type';
 //import { useLocation, useNavigate } from 'react-router-dom';
 import store from '@/services/store/store';
 import { useDispatch, useSelector } from '@/services/store';
-import { clearRegistrationData, postCardThunk, registerUserThunk, selectRegistrationData, setRegistrationStepData } from '@/services/slices';
+import { clearRegistrationData, postCardThunk, registerUserThunk, selectRegistrationData } from '@/services/slices';
 import type { TCard, TUser } from '@/shared/global-types';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { makeSkillsArray } from '../helpers';
@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router';
 export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   const [offer, setOffer] = useState('');
   const [teachSkill, setTeachSkill] = useState<DropdownOption<string>[]>([]);
-  const [description, setDescription] = useState('');
+  const [fullDescription, setfullDescription] = useState('');
   const [file, setFile] = useState('');
 
   const navigate = useNavigate();
@@ -33,12 +33,9 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
 
-    dispatch(setRegistrationStepData({ description, image: file }));
+    const teachSkillsData = makeSkillsArray(teachSkill);    
 
-    const teachSkillsData = makeSkillsArray(teachSkill);
-    
-
-    const { learnSkill, name, age, city, gender, mail, password } = registrationData;
+    const { learnSkill, name, age, city, gender, mail, password, description } = registrationData;
 
     const userId = self.crypto.randomUUID();
 
@@ -74,7 +71,7 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
       city,
       age,
       description,
-      fullDescription: '',
+      fullDescription,
       gender,
       createdAt: Date.now(),
       likes: [],
@@ -108,8 +105,8 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
       setOffer={setOffer}
       skill={teachSkill}
       setSkill={setTeachSkill}
-      description={description}
-      setDescription={setDescription}
+      fullDescription={fullDescription}
+      setfullDescription={setfullDescription}
       handleSubmit={handleSubmit}
       file={file}
       setFile={setFile}

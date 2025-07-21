@@ -118,7 +118,7 @@ export const ProfileForm: FC<ProfileFormProps> = ({
           label='О себе'
           type='textarea'
           onChange={(e) => setDescription(e.target.value)}
-          value={description}
+          value={description ?? ''}
           name='description'
         />
         <span className={styles['edit-wrapper']}>
