@@ -24,16 +24,16 @@ export const CardListUI: FC<CardListProps> = ({
         {handleOpen && (
           <ButtonUI className={styles.button} type='link' to={handleOpen}>
             <span className={styles.button_text}>Смотреть все</span>
-            <div className={styles.button_image}>
+            <span className={styles.button_image}>
               <ChevronRightSVG color='currentColor' />
-            </div>
+            </span>
           </ButtonUI>
         )}
         {handleSort && (
           <ButtonUI className={styles.button} type='button' onClick={handleSort}>
-            <div className={styles.button_image}>
+            <span className={styles.button_image}>
               <SortSVG color='currentColor' />
-            </div>
+            </span>
             <span className={styles.button_text}>
               {sortType === 'newest' ? 'Сначала старые' : 'Сначала новые'}
             </span>

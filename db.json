@@ -781,6 +781,51 @@
       "outgoing": [],
       "image": "#",
       "likes": []
+    },
+    {
+      "id": "8480",
+      "gender": "female",
+      "userId": "5a235f90-dc8f-4d1b-be74-e57177407e6a",
+      "name": "Ирина",
+      "city": "Нижний Новгород",
+      "age": 21,
+      "mail": "test@test.ru",
+      "password": "123",
+      "description": "Hello, world!",
+      "incoming": [],
+      "outgoing": [],
+      "image": "",
+      "likes": []
+    },
+    {
+      "id": "e644",
+      "gender": "male",
+      "userId": "ea1ecf13-ad05-4127-bc7c-0603939c108f",
+      "name": "g",
+      "city": "Санкт-Петербург",
+      "age": 16,
+      "mail": "me@yandex.ru",
+      "password": "123",
+      "description": "",
+      "incoming": [],
+      "outgoing": [],
+      "image": "",
+      "likes": []
+    },
+    {
+      "id": "b528",
+      "gender": "male",
+      "userId": "b6c5b233-3c1b-4237-83d2-176eb072f0ab",
+      "name": "h",
+      "city": "Екатеринбург",
+      "age": 17,
+      "mail": "mev@yandex.ru",
+      "password": "123",
+      "description": "",
+      "incoming": [],
+      "outgoing": [],
+      "image": "",
+      "likes": []
     }
   ],
   "skill-cards": [
@@ -3041,6 +3086,109 @@
       "createdAt": 1752960357169,
       "likes": [],
       "src": "#",
+      "skillImages": []
+    },
+    {
+      "id": "1ac0",
+      "userId": "5a235f90-dc8f-4d1b-be74-e57177407e6a",
+      "teachSkill": [
+        {
+          "title": "Навыки обучения",
+          "type": "education",
+          "subType": "learning-skills"
+        }
+      ],
+      "learnSkill": [
+        {
+          "title": "Музыка и звук",
+          "type": "art",
+          "subType": "music"
+        },
+        {
+          "title": "Когнитивные техники",
+          "type": "education",
+          "subType": "cognitive-techniques"
+        },
+        {
+          "title": "Ментальное здоровье",
+          "type": "lifestyle",
+          "subType": "mental-health"
+        }
+      ],
+      "name": "Ирина",
+      "city": "Нижний Новгород",
+      "age": 21,
+      "description": "Hello, world!",
+      "fullDescription": "",
+      "gender": "female",
+      "createdAt": 1753099463722,
+      "likes": [],
+      "src": "",
+      "skillImages": []
+    },
+    {
+      "id": "cc18",
+      "userId": "ea1ecf13-ad05-4127-bc7c-0603939c108f",
+      "teachSkill": [],
+      "learnSkill": [
+        {
+          "title": "Управление командой",
+          "type": "business",
+          "subType": "team-management"
+        },
+        {
+          "title": "Маркетинг и реклама",
+          "type": "business",
+          "subType": "marketing"
+        },
+        {
+          "title": "Продажи и переговоры",
+          "type": "business",
+          "subType": "sales"
+        }
+      ],
+      "name": "g",
+      "city": "Санкт-Петербург",
+      "age": 16,
+      "description": "",
+      "fullDescription": "",
+      "gender": "male",
+      "createdAt": 1753101884188,
+      "likes": [],
+      "src": "",
+      "skillImages": []
+    },
+    {
+      "id": "22e0",
+      "userId": "b6c5b233-3c1b-4237-83d2-176eb072f0ab",
+      "teachSkill": [
+        {
+          "title": "Японский",
+          "type": "languages",
+          "subType": "japanese"
+        }
+      ],
+      "learnSkill": [
+        {
+          "title": "Личный бренд",
+          "type": "business",
+          "subType": "brand"
+        },
+        {
+          "title": "Продажи и переговоры",
+          "type": "business",
+          "subType": "sales"
+        }
+      ],
+      "name": "h",
+      "city": "Екатеринбург",
+      "age": 17,
+      "description": "",
+      "fullDescription": "",
+      "gender": "male",
+      "createdAt": 1753102104845,
+      "likes": [],
+      "src": "",
       "skillImages": []
     }
   ],
