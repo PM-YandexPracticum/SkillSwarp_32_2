@@ -746,8 +746,10 @@
       "outgoing": [],
       "image": "https://salon-eliza.ru/wp-content/uploads/2020/03/zhenskiye-pricheski-saloneliza-21.jpg",
       "likes": [
+        "user-39",
+        "user-12",
         "user-36",
-        "user-39"
+        "user-4"
       ]
     },
     {
@@ -1241,7 +1243,8 @@
       "createdAt": 1672790400000,
       "likes": [
         "user-7",
-        "user-18"
+        "user-18",
+        "user-40"
       ],
       "src": "https://avatars.mds.yandex.net/get-yapic/23186/xB5NVbroHODxPbWhhwcAPnSvVIA-1/orig",
       "skillImages": [
@@ -1639,7 +1642,8 @@
       "createdAt": 1673481600000,
       "likes": [
         "user-3",
-        "user-25"
+        "user-25",
+        "user-40"
       ],
       "src": "https://litemf.com/ru/journal/wp-content/uploads/2021/12/Sumki.jpg",
       "skillImages": [
