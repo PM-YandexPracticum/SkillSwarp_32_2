@@ -11,6 +11,7 @@ export type DropdownUIProps<T, D = undefined> = {
   withFilter?: boolean;
   isMultiSelect?: boolean;
   placeholder?: string;
+  onSelect?: (option: DropdownOption<T>) => void;
   children: (props: {
     filter: string,
   }) => ReactNode;

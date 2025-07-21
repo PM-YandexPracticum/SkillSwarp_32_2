@@ -18,19 +18,28 @@
 .menu__btn {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  font-size: 16px;
-  font-family: 'Roboto', 'Jost', sans-serif;
+  align-items: center;
+  gap: 8px;
   border: 1px solid var(--accent-background);
   border-radius: 12px;
-  padding: 12px;
+  padding: 12px 26px;
   background-color: var(--accent-background);
   transition: border 0.3s ease;
   cursor: pointer;
 }
 
 .menu__btn:hover {
-  border: 1px solid var(--interaction-color);
+  border-color: rgba(37, 48, 23, 0.75);
+  color: rgba(37, 48, 23, 0.75);
+}
+
+.menu__btn:active {
+  border-color: inherit;
+  color: inherit;
+}
+
+.chevron {
+  transform: rotate(180deg);
 }
 
 .card-list {

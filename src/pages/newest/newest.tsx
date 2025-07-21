@@ -4,6 +4,7 @@ import { sortByNewest } from '../../shared/lib/helpers/helpers';
 import { UserCardUI } from '@/shared/ui/userCardUI';
 import { ButtonUI } from '@/shared/ui';
 import type { NewestProps } from './type';
+import { ChevronRightSVG } from '@/assets/svg';
 
 export const Newest: React.FC<NewestProps> = ({ cards }) => {
   const newestCards = sortByNewest(cards, 20);
@@ -18,7 +19,10 @@ export const Newest: React.FC<NewestProps> = ({ cards }) => {
       <div className={styles['menu']}>
         <h2 className={styles['menu__title']}>Новое</h2>
         <ButtonUI className={styles['menu__btn']} type='link' to='/'>
-          Вернуться назад
+          <span className={styles.chevron}>
+            <ChevronRightSVG color='currentColor' />
+          </span>
+          <span>Вернуться назад</span>
         </ButtonUI>
       </div>
 
