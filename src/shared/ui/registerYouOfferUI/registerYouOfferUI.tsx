@@ -16,8 +16,8 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
   setSkill,
   offer,
   setOffer,
-  description,
-  setDescription,
+  fullDescription,
+  setfullDescription,
   handleSubmit,
   handleBack
 }) => {
@@ -96,9 +96,9 @@ export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
               label='Опишите, что вы предлагаете'
               type='textarea'
               placeholder='Здесь можно описать любые значимые подробности, относящиеся к вашему навыку'
-              onChange={(e) => setDescription(e.target.value)}
-              value={description}
-              name='description'
+              onChange={(e) => setfullDescription(e.target.value)}
+              value={fullDescription}
+              name='fullDescription'
               rows={2}
             />
             <div className={styles.DropDrag}>

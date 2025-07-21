@@ -15,6 +15,7 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
   const [gender, setGender] = useState<DropdownOption<genderType>>({ id: 'female', name: '' });
   const [city, setCity] = useState<DropdownOption<string>>({ id: '', name: '' });
   const [learnSkills, setLearnSkills] = useState<DropdownOption<string>[]>([]);
+  const [description, setDescription] = useState('');
 
   const dispatch = useDispatch();
 
@@ -24,7 +25,7 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-
+    dispatch(setRegistrationStepData({ description}));
     const learnSkillsData = makeSkillsArray(learnSkills);
 
     const isValid =
@@ -35,14 +36,14 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
       learnSkillsData.length > 0;
 
     if (!isValid) return;
-
     
     const data = {
       name,
       age: age.id,
       gender: gender.id,
       city: city.name,
-      learnSkill: learnSkillsData
+      learnSkill: learnSkillsData,
+      description
     };
 
     dispatch(setRegistrationStepData(data));
@@ -62,6 +63,8 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
       setCity = {setCity}
       skill = {learnSkills}
       setSkill = {setLearnSkills}
+      description={description}
+      setDescription={setDescription}
       handleSubmit={handleSubmit}
       handleBack={handleBack} />
   );

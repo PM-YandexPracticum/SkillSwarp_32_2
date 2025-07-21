@@ -29,6 +29,7 @@ const initialState: UserState = {
     mail: '',
     password: '',
     description: '',
+    fullDescription: '',
     incoming: [],
     outgoing: [],
     image: '/#',

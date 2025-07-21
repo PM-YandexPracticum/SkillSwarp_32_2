@@ -85,7 +85,7 @@ export interface TCard {
   name: string;
   city: string;
   age: number;
-  description: string;
+  description?: string;
   fullDescription: string;
   gender: genderType;
   createdAt: number;
@@ -105,6 +105,7 @@ export interface TUser {
   mail: string;
   password: string;
   description: string;
+  fullDescription: string;
   incoming: offerSkillType[];
   outgoing: offerSkillType[];
   image: string;
