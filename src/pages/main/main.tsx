@@ -152,6 +152,23 @@ export const Main: FC = () => {
               <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
             )}
           </>
+        ) : user.id ? (
+          <>
+            <CardListUI
+              title='Точное совпадение'
+              handleOpen='/popular'
+              cards={cardsPopular}
+              loading={loading}
+              user={user}
+            />
+            <CardListUI
+              title='Новые идеи'
+              handleOpen='/newest'
+              cards={cardsNew}
+              loading={loading}
+              user={user}
+            />
+          </>
         ) : (
           <>
             <CardListUI
@@ -168,15 +185,15 @@ export const Main: FC = () => {
               loading={loading}
               user={user}
             />
-            <CardListUI
-              title='Рекомендуем'
-              handleOpen='/recommended'
-              cards={cardsRecommendedChaos}
-              loading={loading}
-              user={user}
-            />
           </>
         )}
+        <CardListUI
+          title='Рекомендуем'
+          handleOpen='/recommended'
+          cards={cardsRecommendedChaos}
+          loading={loading}
+          user={user}
+        />
       </div>
     </main>
   );
