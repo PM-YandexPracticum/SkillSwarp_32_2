@@ -14,6 +14,8 @@ export type registerAboutYouUIProps =  {
   setCity: Dispatch<SetStateAction<DropdownOption<string>>>;
   skill: DropdownOption<string>[];
   setSkill: Dispatch<SetStateAction<DropdownOption<string>[]>>;
+  description: string;
+  setDescription: Dispatch<SetStateAction<string>>;
   handleSubmit: (e: SyntheticEvent) => void;
   handleBack: () => void;
 };

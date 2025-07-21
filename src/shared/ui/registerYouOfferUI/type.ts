@@ -6,8 +6,8 @@ export type registerYouOfferUIProps =  {
   setOffer: Dispatch<SetStateAction<string>>;
   skill: DropdownOption<string>[];
   setSkill: Dispatch<SetStateAction<DropdownOption<string>[]>>;
-  description: string;
-  setDescription: Dispatch<SetStateAction<string>>;
+  fullDescription: string;
+  setfullDescription: Dispatch<SetStateAction<string>>;
   file: string;
   setFile: Dispatch<SetStateAction<string>>;
   handleSubmit: (e: SyntheticEvent) => void;

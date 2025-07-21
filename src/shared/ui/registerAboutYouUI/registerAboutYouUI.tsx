@@ -65,6 +65,8 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   setCity,
   skill,
   setSkill,
+  description,
+  setDescription,
   handleSubmit,
   handleBack,
 }) => {
@@ -211,6 +213,15 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
                 }}
               </DropdownUI>
             </div>
+            <InputUI
+              label='Расскажите о себе'
+              type='textarea'
+              placeholder='Здесь можно немного о себе рассказать'
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
+              name='description'
+              rows={2}
+            />
             <div className={styles.buttons}>
               <ButtonUI
                 type='button'
