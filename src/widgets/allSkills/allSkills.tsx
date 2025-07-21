@@ -1,6 +1,6 @@
 import { useEffect, useRef, type FC } from 'react';
 import styles from './allSkills.module.css';
-import { ButtonUI } from '../buttonUI';
+import { ButtonUI } from '../../shared/ui/buttonUI';
 import { BriefcaseSVG, BookSVG, HomeSVG, PaletteSVG, GlobalSVG, HealthSVG } from '@/assets/svg';
 import type { SVGType } from '@/assets/svg/svg.type';
 import type { AllSkillsProps } from './type';

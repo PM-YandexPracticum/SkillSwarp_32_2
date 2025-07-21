@@ -1,47 +1,46 @@
 import { useState, type FC } from 'react';
 import styles from './registerYouOffer.module.css';
-import type { registerYouOfferUIProps } from './type';
-import { InputUI } from '../inputUI';
-import { ButtonUI } from '../buttonUI';
+import type { registerYouOfferProps } from './type';
+import { InputUI } from '../../shared/ui/inputUI';
+import { ButtonUI } from '../../shared/ui/buttonUI';
 import classNames from 'classnames';
 import { DropDrag, ProgressBar } from '@/widgets';
 import { HugeTeachingSVG } from '@/assets/svg/huge-teaching';
-import { DropdownUI } from '../dropdownUI';
-import type { DropdownOption } from '../dropdownUI/type';
-import { CheckboxUI } from '../checkboxUI';
+import { DropdownUI } from '../../shared/ui/dropdownUI';
+import type { DropdownOption } from '../../shared/ui/dropdownUI/type';
+import { CheckboxUI } from '../../shared/ui/checkboxUI';
 import { MAIN_FILTERS_MOCK } from '@/shared/global-types/data-filters-examples';
 
-export const RegisterYouOfferUI: FC<registerYouOfferUIProps> = ({
+export const RegisterYouOffer: FC<registerYouOfferProps> = ({
   offer,
   setOffer,
   //category,
- // setCategory,
+  // setCategory,
   description,
   setDescription,
   handleSubmit,
-  handleBack
+  handleBack,
 }) => {
-  
-const options: DropdownOption[] = MAIN_FILTERS_MOCK.map(option => ({
-      id: option.id,
-      name: option.title,
-    }));
+  const options: DropdownOption[] = MAIN_FILTERS_MOCK.map((option) => ({
+    id: option.id,
+    name: option.title,
+  }));
 
-const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
+  const [checkboxes, setCheckboxes] = useState<DropdownOption[]>([]);
 
-const handleCheckboxes = (id: string) => {
+  const handleCheckboxes = (id: string) => {
     setCheckboxes((prev) => {
-      if (prev.some(item => item.id === id)) {
-        return prev.filter(item => item.id !== id);
-      };
+      if (prev.some((item) => item.id === id)) {
+        return prev.filter((item) => item.id !== id);
+      }
 
-      const option = options.find(option => option.id === id);
+      const option = options.find((option) => option.id === id);
       if (!option) return prev;
       return [...prev, option];
     });
   };
 
-const renderCheckboxes = (options: DropdownOption[]) => {
+  const renderCheckboxes = (options: DropdownOption[]) => {
     return options.map((option: DropdownOption) => (
       <li key={option.id}>
         <CheckboxUI
@@ -51,23 +50,17 @@ const renderCheckboxes = (options: DropdownOption[]) => {
           onChange={() => handleCheckboxes(option.id)}
         />
       </li>
-      )
-    );
+    ));
   };
-  
+
   return (
     <main className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.ProgressBar}>
-          <ProgressBar steps={3} current={3}>
-          </ProgressBar>
+          <ProgressBar steps={3} current={3}></ProgressBar>
         </div>
         <div className={styles.general}>
-          <form
-            className={styles.general_column}
-            name='youOffer'
-            onSubmit={handleSubmit}
-          >
+          <form className={styles.general_column} name='youOffer' onSubmit={handleSubmit}>
             <InputUI
               label='Назовите ваше предложение'
               type='text'
@@ -78,10 +71,10 @@ const renderCheckboxes = (options: DropdownOption[]) => {
             />
             <div className={styles.dropdownBlock}>
               <p>Выберите категорию</p>
-              <DropdownUI 
-                withFilter={true} 
-                isMultiSelect={true} 
-                value={checkboxes} 
+              <DropdownUI
+                withFilter={true}
+                isMultiSelect={true}
+                value={checkboxes}
                 placeholder='Выберите категорию навыка'
               >
                 {({ filter }) => {
@@ -91,7 +84,7 @@ const renderCheckboxes = (options: DropdownOption[]) => {
 
                   return <>{renderCheckboxes(filteredOptions)}</>;
                 }}
-              </DropdownUI>              
+              </DropdownUI>
             </div>
             <InputUI
               label='Опишите, что вы предлагаете'
@@ -106,24 +99,21 @@ const renderCheckboxes = (options: DropdownOption[]) => {
               <DropDrag />
             </div>
             <div className={styles.buttons}>
-              <ButtonUI 
-                type='button' 
+              <ButtonUI
+                type='button'
                 onClick={handleBack}
                 className={classNames(styles.button, styles.message_btn)}
-                >
+              >
                 Назад
               </ButtonUI>
-              <ButtonUI 
-                type='submit' 
-                className={classNames(styles.button, styles.link_btn)}
-                >
+              <ButtonUI type='submit' className={classNames(styles.button, styles.link_btn)}>
                 Продолжить
               </ButtonUI>
-            </div> 
+            </div>
           </form>
           <div className={styles.general_column_img}>
             <div className={styles.img_container}>
-              <HugeTeachingSVG width = '150px' height = '150px' />
+              <HugeTeachingSVG width='150px' height='150px' />
             </div>
             <div className={styles.text}>
               <h2 className={styles.title}>Укажите, чем вы готовы поделиться</h2>
@@ -135,4 +125,3 @@ const renderCheckboxes = (options: DropdownOption[]) => {
     </main>
   );
 };
-

@@ -1,6 +1,6 @@
 import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
 import { /*useEffect,*/ useState } from 'react';
-import { RegisterYouOfferUI } from '@/shared/ui';
+import { RegisterYouOffer } from '@/widgets/registerYouOffer';
 import type { setStateProps } from '../type';
 // import type { setStateProps } from '../type';
 //import { useDispatch, useSelector } from '../../services/store';
@@ -8,7 +8,7 @@ import type { setStateProps } from '../type';
 
 //дописать взаимодействие и дополнить тип
 
-export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
+export const RegisterYouOfferPage: FC<setStateProps> = ({ setCurrentPage }) => {
   const [offer, setOffer] = useState('');
   const [description, setDescription] = useState('');
   const [file, setFile] = useState('');
@@ -34,7 +34,7 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
   }, []);
 */
   return (
-    <RegisterYouOfferUI
+    <RegisterYouOffer
       offer={offer}
       setOffer={setOffer}
       description={description}

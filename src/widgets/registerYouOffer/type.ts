@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction, SyntheticEvent } from 'react';
 
-export type registerYouOfferUIProps =  {
+export type registerYouOfferProps = {
   offer: string;
   setOffer: Dispatch<SetStateAction<string>>;
   //category: DropdownOption[];
@@ -10,5 +10,5 @@ export type registerYouOfferUIProps =  {
   file: string;
   setFile: Dispatch<SetStateAction<string>>;
   handleSubmit: (e: SyntheticEvent) => void;
-  handleBack: () => void
+  handleBack: () => void;
 };

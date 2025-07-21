@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
+import { ProfileMenu } from '@/widgets/profileMenu/profileMenu';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { ButtonUI } from '@/shared/ui';
 import { USERS_DATA } from '@/shared/global-types/data-users-example';
@@ -12,7 +12,7 @@ import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { EditSVG } from '@/assets/svg';
 
 export const ProfilePage = () => {
-  const [gender, setGender] = useState<'male' | 'female' >(USERS_DATA[0].gender ?? 'male');
+  const [gender, setGender] = useState<'male' | 'female'>(USERS_DATA[0].gender ?? 'male');
 
   const cities: DropdownOption[] = CITIES_MOCK.map((city: TCity) => ({
     id: city.id,

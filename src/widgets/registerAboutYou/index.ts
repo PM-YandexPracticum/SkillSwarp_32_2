@@ -1,0 +1,1 @@
+export { RegisterAboutYou } from './registerAboutYou';

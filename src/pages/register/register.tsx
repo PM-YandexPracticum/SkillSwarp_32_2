@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { useState } from 'react';
 import { RegisterMainPage } from './registerMainPage/registerMainPage';
-import { RegisterAboutYou } from './registerAboutYou/registerAboutYou';
-import { RegisterYouOffer } from './registerYouOffer/registerYouOffer';
+import { RegisterAboutYouPage } from './registerAboutYouPage/registerAboutYouPage';
+import { RegisterYouOfferPage } from './registerYouOfferPage/registerYouOfferPage';
 
 export const Register: FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,9 +12,9 @@ export const Register: FC = () => {
       {currentPage === 1 ? (
         <RegisterMainPage setCurrentPage={setCurrentPage} />
       ) : currentPage === 2 ? (
-        <RegisterAboutYou setCurrentPage={setCurrentPage} />
+        <RegisterAboutYouPage setCurrentPage={setCurrentPage} />
       ) : (
-        <RegisterYouOffer setCurrentPage={setCurrentPage} />
+        <RegisterYouOfferPage setCurrentPage={setCurrentPage} />
       )}
     </>
   );

@@ -1,3 +1,3 @@
 export { Register } from './register';
-export { RegisterAboutYou } from './registerAboutYou/registerAboutYou';
-export { RegisterYouOffer} from './registerYouOffer/registerYouOffer';
+export { RegisterAboutYouPage } from './registerAboutYouPage/registerAboutYouPage';
+export { RegisterYouOfferPage } from './registerYouOfferPage/registerYouOfferPage';

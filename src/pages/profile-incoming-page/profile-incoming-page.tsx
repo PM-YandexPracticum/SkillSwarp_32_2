@@ -1,6 +1,6 @@
 import profile from '../../images/profile-example.png';
 import styles from '@/pages/profile-page/profile-page.module.css';
-import { ProfileMenu } from '@/shared/ui/profileMenuUI';
+import { ProfileMenu } from '@/widgets/profileMenu';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { UserCard } from '@/widgets';
 import { USERS_DATA } from '@/shared/global-types/data-users-example';

@@ -1,25 +1,25 @@
 // Import компонента и типов
-import { RegisterAboutYouUI } from '@/shared/ui/registerAboutYouUI';
+import { RegisterAboutYou } from '@/widgets/registerAboutYou';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // Метаданные истории
 const meta: Meta = {
-  title: 'Example/registerAboutYouUI',
-  component: RegisterAboutYouUI,
+  title: 'Example/registerAboutYou',
+  component: RegisterAboutYou,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
-  }
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultregisterAboutYouUI: Story = {
-  args:{
+export const DefaultregisterAboutYou: Story = {
+  args: {
     label: '',
     value: '',
     checked: 'false',
     onChange: () => {},
-  }
+  },
 };

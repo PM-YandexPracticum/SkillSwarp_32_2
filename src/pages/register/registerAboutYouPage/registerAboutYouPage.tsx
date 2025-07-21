@@ -1,6 +1,6 @@
 import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
 import { /*useEffect,*/ useState } from 'react';
-import { RegisterAboutYouUI } from '@/shared/ui';
+import { RegisterAboutYou } from '@/widgets/registerAboutYou';
 // import type { setStateProps } from '../type';
 import type { setStateProps } from '../type';
 //import { useDispatch, useSelector } from '../../services/store';
@@ -8,7 +8,7 @@ import type { setStateProps } from '../type';
 
 //дописать взаимодействие и дополнить тип
 
-export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
+export const RegisterAboutYouPage: FC<setStateProps> = ({ setCurrentPage }) => {
   const [name, setName] = useState('');
   //раскоментить когда будет взаимодействие с апи
   //const dispatch = useDispatch();
@@ -38,7 +38,7 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
   }, []);
 */
   return (
-    <RegisterAboutYouUI
+    <RegisterAboutYou
       name={name}
       setName={setName}
       handleSubmit={handleSubmit}

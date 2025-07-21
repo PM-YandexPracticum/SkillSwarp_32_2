@@ -9,7 +9,7 @@ import {
   UserFramedSVG,
 } from '@/assets/svg';
 import { NavLink, useLocation } from 'react-router-dom';
-import { ButtonUI } from '../buttonUI';
+import { ButtonUI } from '../../shared/ui/buttonUI';
 import { useNavigate } from 'react-router-dom';
 
 export const ProfileMenu = () => {
