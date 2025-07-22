@@ -5,7 +5,6 @@ import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { ButtonUI } from '@/shared/ui';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import type { TCity } from '@/shared/global-types/data-types';
-import profile from '@/images/profile-avatar.png';
 import styles from './profile-page.module.css';
 import { ProfileForm } from '@/shared/ui/profileForm';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
@@ -76,7 +75,7 @@ export const ProfilePage = () => {
           />
 
           <div className={styles.profile__avatar}>
-            <ProfileAvatar userAvatar={profile} />
+            <ProfileAvatar userAvatar={user.image} />{' '}
             <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
               Изменить фото
               <span className={styles['change-photo-svg']}>
