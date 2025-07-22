@@ -31,7 +31,7 @@ export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
         setCurrentPage((current) => current + 1);
       }
     } catch (err) {
-      // console.log(err);
+      console.error('Ошибка при проверке пользователя:', err);
     }
   };
 
