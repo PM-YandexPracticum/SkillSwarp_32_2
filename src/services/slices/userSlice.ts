@@ -1,3 +1,4 @@
+// src/services/slices/userSlice.ts
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TCard, TUser } from '@/shared/global-types';
 import {
@@ -8,7 +9,9 @@ import {
   postLikeCard,
   postSaveLikedCard,
   registerUser,
+  editUserData,
 } from '@/api/skill-swap-api';
+import { USERS_DATA } from '@/shared/global-types/data-users-example';
 
 interface UserState {
   user: TUser;
@@ -16,10 +19,43 @@ interface UserState {
   registrationData: Partial<TUser & TCard>;
   errorMessage: string | null;
   registrationError: boolean;
+  loading: boolean;
 }
 
+// Тестовый пользователь для разработки
+const testUser: TUser = {
+  ...USERS_DATA[0],
+  likes: ['user-2', 'user-5', 'user-8'],
+  incoming: [
+    {
+      userId: 'user-3',
+      status: 'pending',
+      createdAt: Date.now() - 86400000, // 1 день назад
+    },
+    {
+      userId: 'user-7',
+      status: 'fulfilled', 
+      createdAt: Date.now() - 172800000, // 2 дня назад
+    }
+  ],
+  outgoing: [
+    {
+      userId: 'user-12',
+      status: 'pending',
+      createdAt: Date.now() - 43200000, // 12 часов назад
+    },
+    {
+      userId: 'user-15',
+      status: 'rejected',
+      createdAt: Date.now() - 259200000, // 3 дня назад
+    }
+  ]
+};
+
 const initialState: UserState = {
-  user: {
+  // Для разработки используем тестового пользователя
+  // В продакшене должен быть пустой пользователь
+  user: process.env.NODE_ENV === 'development' ? testUser : {
     id: '',
     gender: 'male',
     userId: '',
@@ -35,12 +71,14 @@ const initialState: UserState = {
     image: '/#',
     likes: [],
   },
-  isAuth: false,
+  isAuth: process.env.NODE_ENV === 'development' ? true : false, // Авторизован для разработки
   registrationData: {},
   errorMessage: null,
   registrationError: false,
+  loading: false,
 };
 
+// Existing thunks...
 export const registerUserThunk = createAsyncThunk<TUser, TUser, { rejectValue: string }>(
   'registerUserThunk',
   async (userData, { rejectWithValue }) => {
@@ -75,7 +113,7 @@ export const checkAuthThunk = createAsyncThunk<TUser, void, { rejectValue: strin
     try {
       const user = await checkUserAuth();
       if (!user) {
-        return rejectWithValue('Неверный email или пароль');
+        return rejectWithValue('Пользователь не авторизован');
       }
       return user;
     } catch (error) {
@@ -84,22 +122,34 @@ export const checkAuthThunk = createAsyncThunk<TUser, void, { rejectValue: strin
   }
 );
 
-export const checkUserExist = createAsyncThunk<boolean, { mail: string }, { rejectValue: string }>(
-  'auth/checkUserExist',
-  async ({ mail }, { rejectWithValue }) => {
-    try {
-      const userData = await checkRegistration(mail); // просто возвращаем true/false
-
-      if (userData.length == 0) {
-        console.log(userData[0]);
-        return false;
-      }
-      return true;
-    } catch (error) {
-      return rejectWithValue(`Ошибка при проверке пользователя: ${error}`);
+export const checkUserExist = createAsyncThunk<
+  boolean,
+  { mail: string },
+  { rejectValue: string }
+>('auth/checkUserExist', async ({ mail }, { rejectWithValue }) => {
+  try {
+    const userData = await checkRegistration(mail);
+    if (userData.length === 0) {
+      return false;
     }
+    return true;
+  } catch (error) {
+    return rejectWithValue(`Ошибка при проверке пользователя: ${error}`);
   }
-);
+});
+
+export const editUserDataThunk = createAsyncThunk<
+  TUser,
+  { userData: Omit<TUser, 'id'>; userId: string },
+  { rejectValue: string }
+>('user/editUserData', async ({ userData, userId }, { rejectWithValue }) => {
+  try {
+    const updatedUser = await editUserData(userData, userId);
+    return updatedUser;
+  } catch (error) {
+    return rejectWithValue(`Ошибка при обновлении данных пользователя: ${error}`);
+  }
+});
 
 export const likeCardThunk = createAsyncThunk<
   void,
@@ -107,10 +157,9 @@ export const likeCardThunk = createAsyncThunk<
   { rejectValue: string }
 >('likeCardThunk', async ({ cardId, userId }, { rejectWithValue }) => {
   try {
-    // console.log('Текущий пользователь',userId, 'Карточка которую тыкаем',cardId)
     await postLikeCard(cardId, userId);
   } catch (error) {
-    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+    return rejectWithValue(`Ошибка при лайке карточки: ${error}`);
   }
 });
 
@@ -120,10 +169,9 @@ export const disLikeCardThunk = createAsyncThunk<
   { rejectValue: string }
 >('disLikeCardThunk', async ({ cardId, userId }, { rejectWithValue }) => {
   try {
-    // console.log('Текущий пользователь',userId, 'Карточка которую тыкаем',cardId)
     await postDislikeCard(cardId, userId);
   } catch (error) {
-    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+    return rejectWithValue(`Ошибка при дизлайке карточки: ${error}`);
   }
 });
 
@@ -136,13 +184,27 @@ export const saveLikedCardThunk = createAsyncThunk<
     const result = await postSaveLikedCard(userData, userId);
     return result.likes;
   } catch (error) {
-    return rejectWithValue(`Ошибка при регистрации: ${error}`);
+    return rejectWithValue(`Ошибка при сохранении лайков: ${error}`);
   }
 });
 
+// Slice
 const userSlice = createSlice({
   name: 'user',
   initialState,
+  selectors: {
+    getIsAuthenticated: (state) => state.isAuth,
+    getUserData: (state) => state.user,
+    getLikedCards: (state) => state.user.likes,
+    getOffersSent: (state) => state.user.outgoing,
+    getOffersReceived: (state) => state.user.incoming,
+    selectUserData: (state) => state.user,
+    selectRegistrationData: (state) => state.registrationData,
+    selectError: (state) => state.errorMessage,
+    selectRegistrationError: (state) => state.registrationError,
+    selectLikes: (state) => state.user?.likes,
+    selectLoading: (state) => state.loading,
+  },
   reducers: {
     logout(state) {
       state.user = initialState.user;
@@ -158,15 +220,9 @@ const userSlice = createSlice({
     clearRegistrationData(state) {
       state.registrationData = {};
     },
-    toggleLike(state, action: PayloadAction<Partial<string>>) {
+    toggleLike(state, action: PayloadAction<string>) {
       if (state.user.likes.includes(action.payload)) {
-        return {
-          ...state,
-          user: {
-            ...state.user,
-            likes: state.user.likes.filter((id) => id !== action.payload),
-          },
-        };
+        state.user.likes = state.user.likes.filter((id) => id !== action.payload);
       } else {
         state.user.likes = [...state.user.likes, action.payload];
       }
@@ -178,77 +234,119 @@ const userSlice = createSlice({
       const { field, value } = action.payload;
       state.user[field] = value;
     },
-  },
-  selectors: {
-    selectUserData: (state) => state.user,
-    selectRegistrationData: (state) => state.registrationData,
-    selectError: (state) => state.errorMessage,
-    selectRegistrationError: (state) => state.registrationError,
-    selectLikes: (state) => state.user?.likes,
+    clearError(state) {
+      state.errorMessage = null;
+    },
+    // Добавляем экшен для установки тестового пользователя
+    setTestUser(state) {
+      state.user = testUser;
+      state.isAuth = true;
+    },
   },
   extraReducers: (builder) => {
     builder
+      // Login
       .addCase(loginUserThunk.pending, (state) => {
         state.errorMessage = null;
+        state.loading = true;
       })
       .addCase(loginUserThunk.rejected, (state, action) => {
         state.errorMessage = action.payload || 'Что-то пошло не так';
+        state.loading = false;
       })
       .addCase(loginUserThunk.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isAuth = true;
+        state.loading = false;
       })
+      
+      // Register
       .addCase(registerUserThunk.pending, (state) => {
         state.errorMessage = null;
+        state.loading = true;
       })
       .addCase(registerUserThunk.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isAuth = true;
         state.registrationData = {};
+        state.loading = false;
       })
       .addCase(registerUserThunk.rejected, (state, action) => {
         state.errorMessage = action.payload || 'Ошибка регистрации';
+        state.loading = false;
       })
+      
+      // Check Auth
       .addCase(checkAuthThunk.pending, (state) => {
         state.errorMessage = null;
+        state.loading = true;
       })
       .addCase(checkAuthThunk.fulfilled, (state, action) => {
         state.user = action.payload;
+        state.isAuth = true;
+        state.loading = false;
       })
       .addCase(checkAuthThunk.rejected, (state, action) => {
         state.errorMessage = action.payload || 'Ошибка авторизации';
+        state.loading = false;
       })
+      
+      // Check User Exist
       .addCase(checkUserExist.fulfilled, (state, action) => {
         state.registrationError = action.payload;
-        console.log(state.registrationError);
       })
-      .addCase(checkUserExist.pending, () => {
-        // написать что-то и сделать что то со state
+      .addCase(checkUserExist.pending, (state) => {
+        state.loading = true;
       })
-      .addCase(checkUserExist.rejected, () => {
-        // написать что-то и сделать что то со state
+      .addCase(checkUserExist.rejected, (state) => {
+        state.loading = false;
       })
+      
+      // Edit User Data
+      .addCase(editUserDataThunk.pending, (state) => {
+        state.loading = true;
+        state.errorMessage = null;
+      })
+      .addCase(editUserDataThunk.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.loading = false;
+      })
+      .addCase(editUserDataThunk.rejected, (state, action) => {
+        state.errorMessage = action.payload || 'Ошибка при обновлении профиля';
+        state.loading = false;
+      })
+      
+      // Save Liked Card
       .addCase(saveLikedCardThunk.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.user.likes = action.payload;
       });
   },
 });
 
+// Actions
 export const {
   logout,
   setRegistrationStepData,
   clearRegistrationData,
   toggleLike,
   updateUserField,
+  clearError,
+  setTestUser,
 } = userSlice.actions;
 
+// Selectors
 export const {
+  getIsAuthenticated,
+  getUserData,
+  getLikedCards,
+  getOffersSent,
+  getOffersReceived,
   selectRegistrationData,
   selectError,
   selectUserData,
   selectRegistrationError,
   selectLikes,
+  selectLoading,
 } = userSlice.selectors;
 
 export default userSlice.reducer;

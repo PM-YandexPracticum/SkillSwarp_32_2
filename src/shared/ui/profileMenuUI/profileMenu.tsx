@@ -1,3 +1,4 @@
+// src/shared/ui/profileMenuUI/profileMenu.tsx
 import styles from './profileMenu.module.css';
 import {
   HomeSVG,
@@ -11,22 +12,39 @@ import {
 import { NavLink, useLocation } from 'react-router-dom';
 import { ButtonUI } from '../buttonUI';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { logout } from '@/services/slices';
+import { useDispatch, useSelector } from 'react-redux';
+import { 
+  logout, 
+  // selectUserData, 
+  getOffersSent, 
+  getOffersReceived, 
+  getLikedCards 
+} from '@/services/slices';
 
 export const ProfileMenu = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Получаю данные для счетчиков из Redux store
+  // const user = useSelector(selectUserData);
+  const outgoingOffers = useSelector(getOffersSent);
+  const incomingOffers = useSelector(getOffersReceived);
+  const likedCards = useSelector(getLikedCards);
 
   const isActive = (path: string) => location.pathname === path;
-
-  const navigate = useNavigate();
 
   const smoothScrolling = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/login');
+    smoothScrolling();
   };
 
   return (
@@ -40,6 +58,9 @@ export const ProfileMenu = () => {
           <IncomingSVG />
           <NavLink to='/profile/incoming' className={styles.button} onClick={smoothScrolling}>
             Входящие заявки
+            {incomingOffers.length > 0 && (
+              <span className={styles.counter}>{incomingOffers.length}</span>
+            )}
           </NavLink>
         </li>
 
@@ -51,6 +72,9 @@ export const ProfileMenu = () => {
           <OutgoingSVG />
           <NavLink to='/profile/outgoing' className={styles.button} onClick={smoothScrolling}>
             Исходящие заявки
+            {outgoingOffers.length > 0 && (
+              <span className={styles.counter}>{outgoingOffers.length}</span>
+            )}
           </NavLink>
         </li>
 
@@ -69,7 +93,9 @@ export const ProfileMenu = () => {
         </li>
 
         <li
-          className={`${styles['profile-menu__item']} ${isActive('/profile') ? styles.active : ''}`}
+          className={`${styles['profile-menu__item']} ${
+            isActive('/profile') ? styles.active : ''
+          }`}
         >
           <UserFramedSVG />
           <NavLink to='/profile' className={styles.button}>
@@ -77,31 +103,23 @@ export const ProfileMenu = () => {
           </NavLink>
         </li>
 
-        <li className={styles['profile-menu__item']}>
+        <li
+          className={`${styles['profile-menu__item']} ${
+            isActive('/profile/favorites') ? styles.active : ''
+          }`}
+        >
           <LikeSVG />
-          <NavLink to='#' className={styles.button}>
+          <NavLink to='/profile/favorites' className={styles.button}>
             Избранное
+            {likedCards.length > 0 && (
+              <span className={styles.counter}>{likedCards.length}</span>
+            )}
           </NavLink>
         </li>
 
-        <li className={`${styles['profile-menu__item']} `}>
+        <li className={`${styles['profile-menu__item']}`}>
           <HomeSVG />
-          <ButtonUI
-            type='button'
-            onClick={() => {
-              {
-                dispatch(logout());
-                /* Вписать сюда логику разлогина, когда таковая появится */
-                // Логика должна быть обёрнута в проверку в духе:
-                // if (логика разлогина === 'success') {
-                // navigate('/login');
-                // smoothScrolling();
-                // }
-              }
-              navigate('/login');
-              smoothScrolling();
-            }}
-          >
+          <ButtonUI type='button' onClick={handleLogout}>
             Выйти из аккаунта
           </ButtonUI>
         </li>

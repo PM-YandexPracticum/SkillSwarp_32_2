@@ -1,4 +1,4 @@
-// src/pages/profile-incoming-page/profile-incoming-page.tsx
+// src/pages/profile-favorites-page/profile-favorites-page.tsx
 import { useMemo } from 'react';
 import profile from '@/images/profile-avatar.png';
 import styles from '@/pages/profile-page/profile-page.module.css';
@@ -6,21 +6,19 @@ import { ProfileMenu } from '@/shared/ui/profileMenuUI';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { UserCard } from '@/widgets';
 import { useSelector } from '@/services/store';
-import { selectUserData, getOffersReceived } from '@/services/slices';
+import { selectUserData, getLikedCards } from '@/services/slices';
 import { getCardsState } from '@/services/slices/cardSlice';
 import { PreloaderUI } from '@/shared/ui';
 
-export const ProfileIncoming = () => {
+export const ProfileFavorites = () => {
   const user = useSelector(selectUserData);
-  const incomingOffers = useSelector(getOffersReceived);
+  const likedCardIds = useSelector(getLikedCards);
   const allCards = useSelector(getCardsState);
 
-  // Получаем карточки для входящих заявок
-  const incomingCards = useMemo(() => {
-    return incomingOffers
-      .map(offer => allCards.find(card => card.userId === offer.userId))
-      .filter(Boolean); // Убираем undefined значения
-  }, [incomingOffers, allCards]);
+  // Получаем карточки для избранного
+  const favoriteCards = useMemo(() => {
+    return allCards.filter(card => likedCardIds.includes(card.userId));
+  }, [likedCardIds, allCards]);
 
   const userName = user?.name || 'Имя';
   const userAge = user?.age || 'Возраст';
@@ -55,16 +53,17 @@ export const ProfileIncoming = () => {
         >
           <div className={styles.applications_container}>
             <h3 className={styles.applications_title}>
-              Входящие заявки ({incomingCards.length})
+              Избранное ({favoriteCards.length})
             </h3>
             
-            {incomingCards.length === 0 ? (
+            {favoriteCards.length === 0 ? (
               <div className={styles.empty_state}>
-                <p>У вас пока нет входящих заявок</p>
+                <p>У вас пока нет избранных карточек</p>
+                <p>Лайкните карточки пользователей, чтобы они появились здесь</p>
               </div>
             ) : (
               <div className={styles.cards_grid}>
-                {incomingCards.map((card) => (
+                {favoriteCards.map((card) => (
                   <UserCard key={card.id} card={card} type={'short'} user={user} />
                 ))}
               </div>
