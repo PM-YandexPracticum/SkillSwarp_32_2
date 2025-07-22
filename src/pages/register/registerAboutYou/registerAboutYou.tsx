@@ -48,7 +48,7 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
 
     dispatch(setRegistrationStepData(data));
     setCurrentPage((current) => current + 1);
-    console.log(store.getState());
+    // console.log(store.getState());
   };
 
   return (

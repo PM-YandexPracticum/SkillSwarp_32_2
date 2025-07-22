@@ -1,5 +1,6 @@
 // src/pages/profile-page/profile-page.tsx
-import { useMemo, useState } from 'react';
+
+import React, { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from '@/services/store';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';

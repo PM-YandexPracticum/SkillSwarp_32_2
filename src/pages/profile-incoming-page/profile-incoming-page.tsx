@@ -1,34 +1,23 @@
 // src/pages/profile-incoming-page/profile-incoming-page.tsx
-import { useMemo } from 'react';
 import profile from '@/images/profile-avatar.png';
 import styles from '@/pages/profile-page/profile-page.module.css';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { UserCard } from '@/widgets';
-import { useSelector } from '@/services/store';
-import { selectUserData, getOffersReceived } from '@/services/slices';
-import { getCardsState } from '@/services/slices/cardSlice';
-import { PreloaderUI } from '@/shared/ui';
+import { CARDS_DATA } from '@/shared/global-types/data-cards-example';
+import { useSelector } from 'react-redux';
+import { selectUserData } from '@/services/slices';
 
 export const ProfileIncoming = () => {
   const user = useSelector(selectUserData);
-  const incomingOffers = useSelector(getOffersReceived);
-  const allCards = useSelector(getCardsState);
-
-  // Получаем карточки для входящих заявок
-  const incomingCards = useMemo(() => {
-    return incomingOffers
-      .map(offer => allCards.find(card => card.userId === offer.userId))
-      .filter(Boolean); // Убираем undefined значения
-  }, [incomingOffers, allCards]);
 
   const userName = user?.name || 'Имя';
   const userAge = user?.age || 'Возраст';
   const userCity = user?.city || 'Город';
 
-  if (!user.id) {
-    return <PreloaderUI />;
-  }
+  // Найдем карточки и добавим проверку на undefined
+  const card1 = CARDS_DATA[10];
+  const card2 = CARDS_DATA[11];
 
   return (
     <main className={styles.main}>
@@ -53,23 +42,8 @@ export const ProfileIncoming = () => {
         <div
           className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-menu--applications']}`}
         >
-          <div className={styles.applications_container}>
-            <h3 className={styles.applications_title}>
-              Входящие заявки ({incomingCards.length})
-            </h3>
-            
-            {incomingCards.length === 0 ? (
-              <div className={styles.empty_state}>
-                <p>У вас пока нет входящих заявок</p>
-              </div>
-            ) : (
-              <div className={styles.cards_grid}>
-                {incomingCards.map((card) => (
-                  <UserCard key={card.id} card={card} type={'short'} user={user} />
-                ))}
-              </div>
-            )}
-          </div>
+          {card1 && <UserCard card={card1} type={'short'} user={user} />}
+          {card2 && <UserCard card={card2} type={'short'} user={user} />}
         </div>
       </div>
     </main>

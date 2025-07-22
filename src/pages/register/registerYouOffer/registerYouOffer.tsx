@@ -93,8 +93,8 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
 
     dispatch(postCardThunk(cardData));
     
-    console.log(store.getState());
-    console.log(cardData);
+    //console.log(store.getState());
+    //console.log(cardData);
 
     setCurrentPage((current) => current + 1);
   };

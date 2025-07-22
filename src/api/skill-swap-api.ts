@@ -129,8 +129,6 @@ export async function postLikeCard(cardId: string, userId: string): Promise<void
   const currentLikes: string[] = card.likes || [];
 
   const updatedLikes = [...currentLikes, userId];
-  // console.log('Карточка которую лайкаем',cardId,'Пользователь которого лайкаем', userId)
-  // console.log(updatedLikes);
 
   const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
     method: 'PATCH',

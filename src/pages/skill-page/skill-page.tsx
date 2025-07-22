@@ -24,7 +24,7 @@ export const SkillPage: FC = () => {
 
   const cardsState = useSelector(getCardsState);
   const loading = useSelector(getCardsLoadingState);
-  console.log(cardsState);
+  // console.log(cardsState);
 
   if (cardsState.length === 0) {
     return <PreloaderUI></PreloaderUI>;
