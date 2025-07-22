@@ -37,7 +37,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike, isLiked }
     );
   };
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${type === 'full' && styles.card_full}`}>
       <div className={styles.info}>
         <div className={styles.profile_image_container}>
           <img className={styles.profile_image} src={card.src} alt='фотография пользователя' />
@@ -58,12 +58,12 @@ export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike, isLiked }
       </div>
       {/* заметил что карточка по сути переиспользуется на странице выбранных карточек, добавил проверку там где надо*/}
       {type === 'full' && <p className={styles.user_description}>{card.description}</p>}
-      <div className={styles.skills_section}>
-        <div className={styles.skills_container}>
+      <div className={`${styles.skills_section} ${type === 'full' && styles.skills_section_full}`}>
+        <div className={`${styles.skills_container} ${type === 'full' && styles.skills_container_full}`}>
           <span className={styles.skills_text}>Может научить:</span>
           <ul className={styles.skills_list}>{renderSkills(card.teachSkill, 2)}</ul>
         </div>
-        <div className={styles.skills_container}>
+        <div className={`${styles.skills_container} ${type === 'full' && styles.skills_container_full}`}>
           <span className={styles.skills_text}>Хочет научиться:</span>
           <ul className={styles.skills_list}>{renderSkills(card.learnSkill, 2)}</ul>
         </div>
