@@ -1,6 +1,6 @@
 // src/pages/profile-page/profile-page.tsx
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from '@/services/store';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
@@ -14,7 +14,6 @@ import { EditSVG } from '@/assets/svg';
 import {
   selectUserData,
   updateUserField,
-  editUserDataThunk,
   selectLoading,
   getIsAuthenticated,
 } from '@/services/slices/userSlice';
@@ -47,7 +46,7 @@ export const ProfilePage = () => {
 
   // ТЕПЕРЬ МОЖНО ДЕЛАТЬ УСЛОВНЫЕ ВОЗВРАТЫ
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to='/login' replace />;
   }
 
   if (loading) {

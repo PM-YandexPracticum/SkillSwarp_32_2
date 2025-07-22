@@ -5,30 +5,25 @@ const API_URL = 'http://localhost:3001';
 // общая функция-конструктор для получения данных
 
 async function fetchData<T>(API_URI: string): Promise<T[]> {
-  try {
-    // const citiesRaw = sessionStorage.getItem(API_URI);
+  // const citiesRaw = sessionStorage.getItem(API_URI);
 
-    // if (!citiesRaw) {
-    const response = await fetch(`${API_URL}/${API_URI}`, {
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
+  // if (!citiesRaw) {
+  const response = await fetch(`${API_URL}/${API_URI}`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data: T[] = await response.json();
-    // sessionStorage.setItem(API_URI, JSON.stringify(data));
-    return data;
-    // }
-
-    // return JSON.parse(citiesRaw) as T[];
-  } catch (error) {
-    console.error('Ошибка при получении списка городов ', error);
-    throw error;
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
+  const data: T[] = await response.json();
+  // sessionStorage.setItem(API_URI, JSON.stringify(data));
+  return data;
+  // }
+
+  // return JSON.parse(citiesRaw) as T[];
 }
 
 // GET - запросы
@@ -72,38 +67,33 @@ export const fetchCardsData = () => fetchData<TCard>('cards');
 // Общая функция конструктор на POST запросы
 
 async function postData<T>(elementData: Omit<T, 'id'>, API_URI: string): Promise<T> {
-  try {
-    const response = await fetch(`${API_URL}/${API_URI}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(elementData),
-    });
+  const response = await fetch(`${API_URL}/${API_URI}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(elementData),
+  });
 
-    if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status}`);
-    }
-    const dataRaw = sessionStorage.getItem(API_URI);
-    const data: T = await response.json();
-    let dataArray: T[] = [];
-
-    if (dataRaw) {
-      try {
-        dataArray = JSON.parse(dataRaw) as T[];
-      } catch (e) {
-        console.warn(`Не удалось распарсить sessionStorage для ${API_URI}`, e);
-      }
-    }
-
-    dataArray.push(data);
-    sessionStorage.setItem(API_URI, JSON.stringify(dataArray));
-
-    return data;
-  } catch (error) {
-    console.error('Возникла ошибка ', error);
-    throw error;
+  if (!response.ok) {
+    throw new Error(`Ошибка HTTP: ${response.status}`);
   }
+  const dataRaw = sessionStorage.getItem(API_URI);
+  const data: T = await response.json();
+  let dataArray: T[] = [];
+
+  if (dataRaw) {
+    try {
+      dataArray = JSON.parse(dataRaw) as T[];
+    } catch {
+      // console.warn(`Не удалось распарсить sessionStorage для ${API_URI}`, e);
+    }
+  }
+
+  dataArray.push(data);
+  sessionStorage.setItem(API_URI, JSON.stringify(dataArray));
+
+  return data;
 }
 
 // POST - запросы
@@ -163,8 +153,6 @@ export async function postDislikeCard(cardId: string, userId: string): Promise<v
   const card: TCard = await response.json();
 
   const updatedLikes = card.likes.filter((like) => like !== userId);
-  // console.log('Карточка которую ДИЗлайкаем', cardId, 'Пользователя которого ДИЗлайкаем', userId)
-  // console.log(updatedLikes);
   const updateRes = await fetch(`${API_URL}/${API_URI}/${cardId}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
@@ -191,27 +179,22 @@ export async function postDislikeCard(cardId: string, userId: string): Promise<v
 
 //регистрация
 export async function registerUser(userData: Omit<TUser, 'id'>): Promise<TUser> {
-  try {
-    const response = await fetch(`${API_URL}/users`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
+  const response = await fetch(`${API_URL}/users`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  });
 
-    if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status}`);
-    }
-
-    const data: TUser = await response.json();
-
-    localStorage.setItem('current-user', JSON.stringify(data.userId));
-    return data;
-  } catch (error) {
-    console.error('Ошибка при решистрации пользователя ', error);
-    throw error;
+  if (!response.ok) {
+    throw new Error(`Ошибка HTTP: ${response.status}`);
   }
+
+  const data: TUser = await response.json();
+
+  localStorage.setItem('current-user', JSON.stringify(data.userId));
+  return data;
 }
 
 //логин
@@ -274,23 +257,18 @@ export async function editUserData(userdata: Omit<TUser, 'id'>, userId: string) 
 //вспомогательная функция для получения данных юзера
 
 async function getUser(id: string): Promise<TUser> {
-  try {
-    const response = await fetch(`${API_URL}/users/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status}`);
-    }
-
-    const data: TUser = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Ошибка при получени данных пользователя ', error);
-    throw error;
+  const response = await fetch(`${API_URL}/users/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`Ошибка HTTP: ${response.status}`);
   }
+
+  const data: TUser = await response.json();
+  return data;
 }
 
 // Проверка авторизации
@@ -315,27 +293,22 @@ async function deleteData<T extends { id: string | number }>(
   API_URI: string,
   id: string
 ): Promise<void> {
-  try {
-    const response = await fetch(`${API_URL}/${API_URI}/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  const response = await fetch(`${API_URL}/${API_URI}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status}`);
-    }
+  if (!response.ok) {
+    throw new Error(`Ошибка HTTP: ${response.status}`);
+  }
 
-    const dataRaw = sessionStorage.getItem(API_URI);
-    if (dataRaw) {
-      const data: T[] = JSON.parse(dataRaw);
-      const updatedData = data.filter((el) => el.id !== id);
-      sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
-    }
-  } catch (error) {
-    console.error('Ошибка при удалении данных ', error);
-    throw error;
+  const dataRaw = sessionStorage.getItem(API_URI);
+  if (dataRaw) {
+    const data: T[] = JSON.parse(dataRaw);
+    const updatedData = data.filter((el) => el.id !== id);
+    sessionStorage.setItem(API_URI, JSON.stringify(updatedData));
   }
 }
 
@@ -350,44 +323,34 @@ export const deleteCard = (id: string) => deleteData<TCard>('cards', id);
 
 // Это лишь примеры, надо все переписать
 export async function addUser(userData: Omit<TUser, 'id'>): Promise<TUser> {
-  try {
-    const response = await fetch(`${API_URL}/users`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
+  const response = await fetch(`${API_URL}/users`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  });
 
-    if (!response.ok) {
-      throw new Error(`Ошибка HTTP: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Ошибка при добавлении пользователя:', error);
-    throw error; // Пробрасываем ошибку для обработки в компоненте
+  if (!response.ok) {
+    throw new Error(`Ошибка HTTP: ${response.status}`);
   }
+
+  return await response.json();
 }
 
 export async function getUserById(id: string): Promise<TUser> {
-  try {
-    const response = await fetch(`${API_URL}/users/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  const response = await fetch(`${API_URL}/users/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data: TUser = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Ошибка при получении карточек:', error);
-    throw error;
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
+  const data: TUser = await response.json();
+  return data;
 }
 
 export async function checkRegistration(mail: string): Promise<TUser[]> {
