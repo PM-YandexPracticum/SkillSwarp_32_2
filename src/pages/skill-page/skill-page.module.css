@@ -25,10 +25,10 @@
 .skill_content {
   width: 100%;
   display: grid;
-  grid-template-columns: 440px 1fr;
+  grid-template-columns: 324px 1fr;
   gap: 24px;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 .same_offers {
