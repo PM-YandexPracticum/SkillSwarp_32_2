@@ -11,10 +11,15 @@ import type {
 import clsx from 'clsx';
 import React from 'react';
 import { useOutsideClickClose } from './hooks/useOutsideClickClose';
+import { getCardsState, selectUserData } from '@/services/slices';
+import { useSelector } from 'react-redux';
+import type { TCard } from '@/shared/global-types';
 
 export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const incoming = useSelector(selectUserData).incoming
+  const cards = useSelector(getCardsState)
 
   // TODO Заглушки. После доработок слайсов заменить на поиск данных по userId
   const partnerName = 'Татьяна';
@@ -36,6 +41,12 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
     ...user.incoming.map((n) => ({ ...n, type: 'incoming' }) as ExtendedOfferSkillType),
     ...user.outgoing.map((n) => ({ ...n, type: 'outgoing' }) as ExtendedOfferSkillType),
   ];
+
+const incomingUsers: TCard[] = incoming.flatMap(offer => 
+  cards.filter(card => card.userId === offer.userId)
+);
+
+  console.log(incomingUsers)
 
   const groupedNotifications: GroupedNotifications = allNotifications.reduce(
     (acc, notification) => {
@@ -90,7 +101,7 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
                       key={notification.userId}
                       offer={notification}
                       typeOfExchange={notification.type}
-                      partnerName={partnerName}
+                      partnerName={incomingUsers[0].name}
                       partnerGender={partnerGender}
                     />
                   ))}

@@ -27,7 +27,11 @@
         }
       ],
       "image": "./#",
-      "likes": ["user-12", "user-5"]
+      "likes": [
+        "user-12",
+        "user-5",
+        "user-11"
+      ]
     },
     {
       "id": "0001",
@@ -1480,8 +1484,12 @@
       "fullDescription": "Научу создавать профессиональные портреты с естественным светом. Расскажу секреты работы с моделью и выгодных ракурсов. Покажу как подчеркнуть индивидуальность человека в кадре. Научу базовой ретуши кожи без потери текстуры. Поделюсь техниками создания атмосферных портретов в разных локациях.",
       "gender": "male",
       "createdAt": 1673395200000,
-      "likes": ["user-6", "user-22"],
-      "src": "https://randomuser.me/api/portraits/men/39.jpg",
+      "likes": [
+        "user-6",
+        "user-22",
+        "user-1"
+      ],
+      "src": "https://www.cinemafia.ru/upload/images/2016/07/30%20%D0%B4%D0%BE%2030%20%D0%BC%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BA%D0%B8/Ryan%20Guzman.jpg",
       "skillImages": [
         {
           "link": "https://c1.35photo.pro/photos_temp/sizes/560/2801484_1500n.jpg"
