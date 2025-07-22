@@ -1,24 +1,10 @@
-// src/api/__tests__/skill-swap-api.test.ts
 import { describe, it, beforeEach, vi, expect } from 'vitest';
 import {
   fetchCitiesData,
-  fetchCategoriesData,
-  fetchCardsData,
   postCard,
-  postLikeCard,
-  postDislikeCard,
-  postSaveLikedCard,
-  registerUser,
   loginUser,
-  logoutUser,
-  editUserData,
-  checkUserAuth,
-  deleteCard,
-  addUser,
-  getUserById,
-  checkRegistration,
 } from '../skill-swap-api';
-import type { TCard, TUser, TCity, TMainSkillFilter } from '@/shared/global-types';
+import type { TCard, TUser, TCity } from '@/shared/global-types';
 
 const mockFetch = vi.fn();
 global.fetch = mockFetch;
@@ -89,21 +75,24 @@ describe('API: postCard', () => {
   };
 
   it('успешно создаёт карточку и кэширует её', async () => {
-    const dataToPost = { ...mockCard };
-    delete (dataToPost as any).id;
+    const { id, ...dataToPost } = mockCard;
 
     mockSessionStorage.getItem.mockReturnValue(null);
     mockFetch.mockResolvedValueOnce({ ok: true, json: async () => mockCard });
 
     const result = await postCard(dataToPost);
     expect(result).toEqual(mockCard);
-    expect(mockFetch).toHaveBeenCalledWith('http://localhost:3001/cards', expect.objectContaining({ method: 'POST' }));
+    expect(mockFetch).toHaveBeenCalledWith(
+      'http://localhost:3001/cards',
+      expect.objectContaining({ method: 'POST' })
+    );
     expect(mockSessionStorage.setItem).toHaveBeenCalled();
   });
 
   it('выбрасывает ошибку при неудачном запросе', async () => {
     mockFetch.mockResolvedValueOnce({ ok: false, status: 400 });
-    await expect(postCard({ ...mockCard, id: undefined as any })).rejects.toThrow('Ошибка HTTP: 400');
+    const { id, ...dataToPost } = mockCard;
+    await expect(postCard(dataToPost)).rejects.toThrow('Ошибка HTTP: 400');
   });
 });
 
