@@ -24,7 +24,7 @@ const initialState: UserState = {
     gender: 'male',
     userId: '',
     name: '',
-    city: 'Москва',
+    city: 'Город',
     age: 0,
     mail: '',
     password: '',
@@ -38,7 +38,7 @@ const initialState: UserState = {
   isAuth: false,
   registrationData: {},
   errorMessage: null,
-  registrationError: false
+  registrationError: false,
 };
 
 export const registerUserThunk = createAsyncThunk<TUser, TUser, { rejectValue: string }>(
@@ -128,7 +128,7 @@ export const disLikeCardThunk = createAsyncThunk<
 });
 
 export const saveLikedCardThunk = createAsyncThunk<
- string[],
+  string[],
   { userData: TUser; userId: string },
   { rejectValue: string }
 >('saveLikeCardThunk', async ({ userData, userId }, { rejectWithValue }) => {
@@ -170,6 +170,13 @@ const userSlice = createSlice({
       } else {
         state.user.likes = [...state.user.likes, action.payload];
       }
+    },
+    updateUserField<K extends keyof TUser>(
+      state: UserState,
+      action: PayloadAction<{ field: K; value: TUser[K] }>
+    ) {
+      const { field, value } = action.payload;
+      state.user[field] = value;
     },
   },
   selectors: {
@@ -228,7 +235,13 @@ const userSlice = createSlice({
   },
 });
 
-export const { logout, setRegistrationStepData, clearRegistrationData, toggleLike } = userSlice.actions;
+export const {
+  logout,
+  setRegistrationStepData,
+  clearRegistrationData,
+  toggleLike,
+  updateUserField,
+} = userSlice.actions;
 
 export const {
   selectRegistrationData,
