@@ -74,9 +74,24 @@ describe('API: postCard', () => {
     skillImages: [],
   };
 
-  it('успешно создаёт карточку и кэширует её', async () => {
-    const { id: _removed, ...dataToPost } = mockCard;
+  // Создание объекта без поля id вручную
+  const dataToPost = {
+    userId: mockCard.userId,
+    name: mockCard.name,
+    age: mockCard.age,
+    city: mockCard.city,
+    gender: mockCard.gender,
+    description: mockCard.description,
+    fullDescription: mockCard.fullDescription,
+    teachSkill: mockCard.teachSkill,
+    learnSkill: mockCard.learnSkill,
+    createdAt: mockCard.createdAt,
+    likes: mockCard.likes,
+    src: mockCard.src,
+    skillImages: mockCard.skillImages,
+  };
 
+  it('успешно создаёт карточку и кэширует её', async () => {
     mockSessionStorage.getItem.mockReturnValue(null);
     mockFetch.mockResolvedValueOnce({ ok: true, json: async () => mockCard });
 
@@ -90,7 +105,6 @@ describe('API: postCard', () => {
   });
 
   it('выбрасывает ошибку при неудачном запросе', async () => {
-    const { id: _removed, ...dataToPost } = mockCard;
     mockFetch.mockResolvedValueOnce({ ok: false, status: 400 });
     await expect(postCard(dataToPost)).rejects.toThrow('Ошибка HTTP: 400');
   });
