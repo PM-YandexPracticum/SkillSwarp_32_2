@@ -1,33 +1,37 @@
-import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
-import { /*useEffect,*/ useState } from 'react';
+import type { FC, SyntheticEvent } from 'react';
+import { useState } from 'react';
 import { LoginUI } from '@/shared/ui/loginUI';
-//import { useDispatch, useSelector } from '../../services/store';
-//import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from '../../services/store';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { loginUserThunk, selectError } from '@/services/slices/userSlice';
 
 export const Login: FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  //раскоментить когда будет взаимодействие с апи
-  //const dispatch = useDispatch();
-  const error = '';//useSelector(selectError);
-  //const navigate = useNavigate();
-  //const location = useLocation();
-  //const from = location.state?.from || { pathname: '/' };
+  
+  const dispatch = useDispatch();
+  const error = useSelector(selectError);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || { pathname: '/' };
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-  /*  const data = { email, password };
 
-    dispatch(fetchLoginUser(data)).then(() => {
-      navigate(from);
-    });
-    */
+    if (!email.trim() || !password.trim()) {
+      return;
+    }
+
+    const data = { email, password };
+
+    dispatch(loginUserThunk(data))
+      .then((action) => {
+        if (loginUserThunk.fulfilled.match(action)) {
+          navigate(from);
+        }
+      });
   };
-/*
-  useEffect(() => {
-    dispatch(clearErrorMessage());
-  }, []);
-*/
+
   return (
     <LoginUI
       errorText={error}

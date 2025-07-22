@@ -9,7 +9,7 @@ import styles from './skill-card.module.css';
 export const SkillCardMenu = React.memo(({likeHandler, liked, shareHandler}: TSkillCardMenuProps) => (
   <div className={styles.menu}>
     <ButtonUI className={styles['button-share']} type='button' onClick={likeHandler}>
-      <LikeSVG contour='currentColor' color={liked ? 'currentColor' : 'transparent'} />
+      <LikeSVG contour='currentColor' color={liked ? 'var(--accent-redesigned)' : 'transparent'} />
     </ButtonUI>
     <ButtonUI className={styles['button-share']} type='button' onClick={shareHandler}>
       <ShareSVG color='currentColor' />

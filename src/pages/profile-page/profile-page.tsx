@@ -1,30 +1,53 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
+import { useDispatch, useSelector } from '@/services/store';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
 import { ButtonUI } from '@/shared/ui';
-import { USERS_DATA } from '@/shared/global-types/data-users-example';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import type { TCity } from '@/shared/global-types/data-types';
-import profile from '../../images/profile-example.png';
 import styles from './profile-page.module.css';
 import { ProfileForm } from '@/shared/ui/profileForm';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { EditSVG } from '@/assets/svg';
+import { selectUserData, updateUserField } from '@/services/slices/userSlice';
 import { Footer } from '@/shared/ui/footer';
 
 export const ProfilePage = () => {
-  const [gender, setGender] = useState<'male' | 'female'>(USERS_DATA[0].gender ?? 'male');
+  const dispatch = useDispatch();
+  const user = useSelector(selectUserData);
 
-  const cities: DropdownOption[] = CITIES_MOCK.map((city: TCity) => ({
-    id: city.id,
-    name: city.title,
-  }));
+  const cities: DropdownOption<string>[] = useMemo(
+    () =>
+      CITIES_MOCK.map((city: TCity) => ({
+        id: city.id,
+        name: city.title,
+      })),
+    []
+  );
 
-  const [selectedCity, setSelectedCity] = useState<DropdownOption | null>(() => {
-    const userCityTitle = USERS_DATA[0].city;
-    const foundCity = cities.find((city) => city.name === userCityTitle);
-    return foundCity ?? null;
-  });
+  const selectedCity = useMemo(() => {
+    return (
+      cities.find((city) => city.name === user.city) ?? {
+        id: '',
+        name: user.city,
+      }
+    );
+  }, [user.city, cities]);
+
+  const setSelectedCity = (city: DropdownOption<string>) =>
+    dispatch(updateUserField({ field: 'city', value: city.name }));
+
+  const setGender = (gender: 'male' | 'female') =>
+    dispatch(updateUserField({ field: 'gender', value: gender }));
+
+  const setName = (name: string) => dispatch(updateUserField({ field: 'name', value: name }));
+
+  const setMail = (mail: string) => dispatch(updateUserField({ field: 'mail', value: mail }));
+
+  const setAge = (age: number) => dispatch(updateUserField({ field: 'age', value: age }));
+
+  const setDescription = (description: string) =>
+    dispatch(updateUserField({ field: 'description', value: description }));
 
   return (
     <>
@@ -39,15 +62,23 @@ export const ProfilePage = () => {
             className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
           >
             <ProfileForm
-              gender={gender}
+              gender={user.gender}
               setGender={setGender}
               selectedCity={selectedCity}
               setSelectedCity={setSelectedCity}
               cities={cities}
+              mail={user.mail}
+              setMail={setMail}
+              name={user.name}
+              setName={setName}
+              age={user.age}
+              setAge={setAge}
+              description={user.description}
+              setDescription={setDescription}
             />
 
             <div className={styles.profile__avatar}>
-              <ProfileAvatar userAvatar={profile} />
+              <ProfileAvatar userAvatar={user.image} />{' '}
               <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
                 Изменить фото
                 <span className={styles['change-photo-svg']}>

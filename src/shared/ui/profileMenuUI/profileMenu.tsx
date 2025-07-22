@@ -11,8 +11,11 @@ import {
 import { NavLink, useLocation } from 'react-router-dom';
 import { ButtonUI } from '../buttonUI';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '@/services/slices';
 
 export const ProfileMenu = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -87,6 +90,7 @@ export const ProfileMenu = () => {
             type='button'
             onClick={() => {
               {
+                dispatch(logout());
                 /* Вписать сюда логику разлогина, когда таковая появится */
                 // Логика должна быть обёрнута в проверку в духе:
                 // if (логика разлогина === 'success') {

@@ -1,4 +1,4 @@
-import type { SortType, TCard } from '@/shared/global-types';
+import type { SortType, TCard, TUser } from '@/shared/global-types';
 
 export interface CardListProps {
   cards: TCard[];
@@ -7,4 +7,5 @@ export interface CardListProps {
   handleSort?: () => void;
   sortType?: SortType;
   loading?: boolean;
+  user: TUser;
 }

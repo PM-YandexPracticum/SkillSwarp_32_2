@@ -71,8 +71,7 @@ export const LoginUI: FC<LoginUIProps> = ({
           </div>
           <div className={styles.buttons}>
             <ButtonUI 
-              type='button' 
-              onClick={()=>{}}
+              type='submit' 
               className={classNames(styles.button, styles.link_btn)}
               >
               Войти

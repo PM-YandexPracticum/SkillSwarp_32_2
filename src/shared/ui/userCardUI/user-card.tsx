@@ -9,7 +9,7 @@ import { ButtonUI } from '../buttonUI';
 import clsx from 'clsx';
 import type { TSkill } from '@/shared/global-types';
 
-export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike }) => {
+export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike, isLiked }) => {
   // метод по созданию списка навыков. Будет лучше если он будет лежать здесь
   // решил что сам метод останется тут, но сам компонент навыка я сделал отдельным компонентом
   const renderSkills = (skills: TSkill[], limit = 2) => {
@@ -37,7 +37,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike }) => {
     );
   };
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${type === 'full' && styles.card_full}`}>
       <div className={styles.info}>
         <div className={styles.profile_image_container}>
           <img className={styles.profile_image} src={card.src} alt='фотография пользователя' />
@@ -47,19 +47,23 @@ export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike }) => {
           <span className={styles.data_other}>{`${card.city}, ${formatAge(card.age)}`}</span>
         </div>
         {type === 'short' && (
-          <ButtonUI type='button' onClick={setLike} className={styles.button_like}>
-            <LikeSVG width='24px' height='24px' />
+          <ButtonUI type='button' onClick={() => setLike(card.id)} className={styles.button_like}>
+            {isLiked ? (
+              <LikeSVG width='24px' height='24px' color='var(--accent-redesigned)'/>
+            ) : (
+              <LikeSVG width='24px' height='24px' />
+            )}
           </ButtonUI>
         )}
       </div>
       {/* заметил что карточка по сути переиспользуется на странице выбранных карточек, добавил проверку там где надо*/}
       {type === 'full' && <p className={styles.user_description}>{card.description}</p>}
-      <div className={styles.skills_section}>
-        <div className={styles.skills_container}>
+      <div className={`${styles.skills_section} ${type === 'full' && styles.skills_section_full}`}>
+        <div className={`${styles.skills_container} ${type === 'full' && styles.skills_container_full}`}>
           <span className={styles.skills_text}>Может научить:</span>
           <ul className={styles.skills_list}>{renderSkills(card.teachSkill, 2)}</ul>
         </div>
-        <div className={styles.skills_container}>
+        <div className={`${styles.skills_container} ${type === 'full' && styles.skills_container_full}`}>
           <span className={styles.skills_text}>Хочет научиться:</span>
           <ul className={styles.skills_list}>{renderSkills(card.learnSkill, 2)}</ul>
         </div>

@@ -1,37 +1,40 @@
-import type { FC, SyntheticEvent /*useEffect,*/ } from 'react';
-import { /*useEffect,*/ useState } from 'react';
+import type { FC, SyntheticEvent } from 'react';
+import { useState } from 'react';
 import { RegisterUI } from '@/shared/ui/registerUI';
 import type { setStateProps } from '../type';
-//import { useDispatch, useSelector } from '../../services/store';
-//import { useLocation, useNavigate } from 'react-router-dom';
-
-//дописать взаимодействие и дополнить тип
+import { useDispatch, useSelector } from '@/services/store/store';
+import {
+  checkUserExist,
+  selectError,
+  setRegistrationStepData,
+} from '@/services/slices/userSlice';
 
 export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  //раскоментить когда будет взаимодействие с апи
-  //const dispatch = useDispatch();
-  const error = ''; //useSelector(selectError);
-  //const navigate = useNavigate();
-  //const location = useLocation();
-  //const from = location.state?.from || { pathname: '/' };
 
-  const handleSubmit = (e: SyntheticEvent) => {
+  const dispatch = useDispatch();
+  const error = useSelector(selectError);
+
+  const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    setCurrentPage((current) => current + 1);
-    /*  const data = { email, password };
 
-    dispatch(fetchLoginUser(data)).then(() => {
-      navigate(from);
-    });
-    */
+    if (!email.trim() || !password.trim()) {
+      return;
+    }
+    try {
+      const result = await dispatch(checkUserExist({ mail: email })).unwrap();
+      if (result) {
+        console.log('Пользователь уже есть:', result);
+      } else {
+        dispatch(setRegistrationStepData({ mail: email, password }));
+        setCurrentPage((current) => current + 1);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
-  /*
-  useEffect(() => {
-    dispatch(clearErrorMessage());
-  }, []);
-*/
+
   return (
     <RegisterUI
       errorText={error}

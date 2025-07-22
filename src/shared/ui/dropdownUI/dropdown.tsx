@@ -12,13 +12,13 @@ import { ChevronDownSVG, ChevronUpSVG } from '@/assets/svg';
 //            в DropdownUI. Функция получает актуальное значение filter, для
 //            фильтрации списка опций родителем. Функция должна возвращать ReactNode,
 //            который отрендеритсят внутри дропдауна. 
-export const DropdownUI = ({
-    value, 
-    withFilter, 
-    isMultiSelect, 
-    placeholder, 
-    children,
-  }: DropdownUIProps) => {
+export const DropdownUI = <T,D>({
+  value, 
+  withFilter, 
+  isMultiSelect, 
+  placeholder, 
+  children,
+}: DropdownUIProps<T, D>) => {
   const [isOpen, setIsOpen] = useState(false);
   const [filter, setFilter] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);

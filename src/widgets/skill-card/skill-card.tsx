@@ -8,7 +8,7 @@ import { SkillImageGalleryUI } from '@/shared/ui';
 
 export const SkillCard = ({
     card, 
-    liked = false,
+    likes,
     type = 'offer',
     likeHandler,
   }: TSkillCardProps) => {
@@ -16,6 +16,8 @@ export const SkillCard = ({
     const url = location.href;
     navigator.clipboard.writeText(url);
   }, []);
+
+  const isLiked = likes?.includes(card.userId);
 
   const offerHandler = useCallback(() => {}, []);
 
@@ -43,7 +45,7 @@ export const SkillCard = ({
   return (
     <div className={styles.container}>
       <SkillCardMenu 
-        liked={liked} 
+        liked={isLiked} 
         likeHandler={likeHandler} 
         shareHandler={shareHandler}
       />

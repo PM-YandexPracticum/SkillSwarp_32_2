@@ -4,6 +4,7 @@ import { sorByRecommendedChaos, sortByRecommendedSkills } from '@/shared/lib/hel
 import { UserCardUI } from '@/shared/ui/userCardUI';
 import { ButtonUI } from '@/shared/ui';
 import type { RecommendedProps } from './type';
+import { ChevronRightSVG } from '@/assets/svg';
 import { Footer } from '@/shared/ui/footer';
 
 export const Recommended: React.FC<RecommendedProps> = ({ cards, userCard }) => {
@@ -16,7 +17,6 @@ export const Recommended: React.FC<RecommendedProps> = ({ cards, userCard }) => 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <>
       {' '}
@@ -24,13 +24,17 @@ export const Recommended: React.FC<RecommendedProps> = ({ cards, userCard }) => 
         <div className={styles['menu']}>
           <h2 className={styles['menu__title']}>Рекомендуемое</h2>
           <ButtonUI className={styles['menu__btn']} type='link' to='/'>
-            Вернуться назад
+            <span className={styles.chevron}>
+              <ChevronRightSVG color='currentColor' />
+            </span>
+            <span>Вернуться назад</span>
           </ButtonUI>
         </div>
 
         <div className={styles['card-list']}>
           {recommendedCards.map((card) => (
-            <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} />
+            // ПОРАВИТЬ ЛОГИКУ
+            <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} isLiked={false} />
           ))}
         </div>
       </div>
