@@ -18,4 +18,5 @@ export * from './profileMenuUI';
 export * from './allSkills';
 export * from './skill-image-galleryUI';
 export * from './modalUI';
+export * from './wayUI';
 export * from './popoverUi';
