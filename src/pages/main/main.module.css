@@ -1,7 +1,8 @@
 .main {
-  display: grid;
+  /*
+  display: grid;  
   grid-template-columns: 280px 1fr;
-  gap: 24px;
+  gap: 24px;*/
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -13,11 +14,13 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-left: 360px;
 }
 
 .filter_block {
-  max-height: calc(100vh - 104px);
+  max-height: 80%;
   overflow-y: auto;
-  position: sticky;
+  scrollbar-width: none;
+  position: fixed;
   top: 104px;
 }

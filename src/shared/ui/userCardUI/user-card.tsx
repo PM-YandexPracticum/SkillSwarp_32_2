@@ -37,7 +37,7 @@ export const UserCardUI: FC<UserCardUIProps> = ({ card, type, setLike, isLiked }
     );
   };
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${type === 'short' ? styles.mincard : ''}`}>
       <div className={styles.info}>
         <div className={styles.profile_image_container}>
           <img className={styles.profile_image} src={card.src} alt='фотография пользователя' />

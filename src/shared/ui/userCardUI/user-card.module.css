@@ -4,12 +4,16 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
-  width: 324px;
+  width: 100%;/*324px;*/
   border-radius: 12px;
   padding: 20px;
   overflow: hidden;
   word-wrap: break-word;
   background-color: var(--accent-background);
+}
+
+.mincard {
+  width: 324px;
 }
 
 .info {
