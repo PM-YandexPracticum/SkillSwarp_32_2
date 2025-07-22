@@ -1,8 +1,6 @@
-import { useState, type FC } from 'react';
+import type { FC } from 'react';
 import { InputUI, ButtonUI } from '@/shared/ui';
-
 import styles from './profileForm.module.css';
-import { USERS_DATA } from '@/shared/global-types/data-users-example';
 import { DropdownUI } from '../dropdownUI';
 import { EditSVG } from '@/assets/svg';
 import type { ProfileFormProps } from './type';
@@ -13,13 +11,15 @@ export const ProfileForm: FC<ProfileFormProps> = ({
   selectedCity,
   setSelectedCity,
   cities,
+  mail,
+  setMail,
+  name,
+  setName,
+  age,
+  setAge,
+  description,
+  setDescription,
 }) => {
-  const [mail, setMail] = useState(USERS_DATA[0].mail);
-  const [name, setName] = useState(USERS_DATA[0].name);
-  const [age, setAge] = useState(USERS_DATA[0].age);
-  const [description, setDescription] = useState(USERS_DATA[0].description);
-  // Вместо USERS_DATA[0] будут данные из сервера. Так же и в остальных файлах
-
   return (
     <div className={styles['profile-form-container']}>
       <div className={styles['input-wrapper']}>
