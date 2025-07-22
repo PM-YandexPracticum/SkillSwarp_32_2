@@ -23,23 +23,10 @@ import { Navigate } from 'react-router-dom';
 export const ProfilePage = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUserData);
-  const loading = useSelector(selectLoading);
   const isAuthenticated = useSelector(getIsAuthenticated);
-  const [isEditing, setIsEditing] = useState(false);
-  const [avatar, setAvatar] = useState<string>(user.image || '');
+  const loading = useSelector(selectLoading);
 
-  if (!isAuthenticated) {
-    return <Navigate to='/login' replace />;
-  }
-
-  if (loading) {
-    return <PreloaderUI />;
-  }
-
-  if (!user.id && !loading) {
-    return <Navigate to='/login' replace />;
-  }
-
+  // ВСЕ ХУКИ ДОЛЖНЫ БЫТЬ ЗДЕСЬ, ДО ЛЮБЫХ УСЛОВИЙ!
   const cities: DropdownOption<string>[] = useMemo(
     () =>
       CITIES_MOCK.map((city: TCity) => ({
@@ -53,10 +40,19 @@ export const ProfilePage = () => {
     return (
       cities.find((city) => city.name === user.city) ?? {
         id: '',
-        name: user.city || 'Выберите город',
+        name: user.city,
       }
     );
   }, [user.city, cities]);
+
+  // ТЕПЕРЬ МОЖНО ДЕЛАТЬ УСЛОВНЫЕ ВОЗВРАТЫ
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (loading) {
+    return <PreloaderUI />;
+  }
 
   const setSelectedCity = (city: DropdownOption<string>) =>
     dispatch(updateUserField({ field: 'city', value: city.name }));
@@ -72,52 +68,6 @@ export const ProfilePage = () => {
 
   const setDescription = (description: string) =>
     dispatch(updateUserField({ field: 'description', value: description }));
-
-  const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const result = e.target?.result as string;
-        setAvatar(result);
-        dispatch(updateUserField({ field: 'image', value: result }));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleSaveProfile = async () => {
-    try {
-      await dispatch(
-        editUserDataThunk({
-          userData: {
-            name: user.name,
-            age: user.age,
-            mail: user.mail,
-            password: user.password,
-            city: user.city,
-            description: user.description || '',
-            gender: user.gender,
-            image: avatar,
-            incoming: user.incoming,
-            outgoing: user.outgoing,
-            userId: user.userId,
-            fullDescription: user.fullDescription,
-            likes: user.likes,
-          },
-          userId: user.id,
-        })
-      ).unwrap();
-      setIsEditing(false);
-    } catch (error) {
-      console.error('Ошибка при сохранении профиля:', error);
-    }
-  };
-
-  const handleCancelEdit = () => {
-    setAvatar(user.image || '');
-    setIsEditing(false);
-  };
 
   return (
     <main className={styles.main}>
@@ -141,73 +91,18 @@ export const ProfilePage = () => {
             setName={setName}
             age={user.age}
             setAge={setAge}
-            description={user.description || ''}
+            description={user.description}
             setDescription={setDescription}
           />
 
           <div className={styles.profile__avatar}>
-            <ProfileAvatar userAvatar={avatar} />
-
-            {isEditing ? (
-              <>
-                <label htmlFor='avatar-upload' className={styles['change-photo-btn']}>
-                  Изменить фото
-                  <span className={styles['change-photo-svg']}>
-                    <EditSVG />
-                  </span>
-                  <input
-                    id='avatar-upload'
-                    type='file'
-                    accept='image/*'
-                    onChange={handleAvatarChange}
-                    style={{ display: 'none' }}
-                  />
-                </label>
-
-                <div className={styles.edit_buttons}>
-                  <ButtonUI
-                    type='button'
-                    onClick={handleSaveProfile}
-                    className={styles['save-btn']}
-                    disabled={loading}
-                  >
-                    {loading ? 'Сохранение...' : 'Сохранить'}
-                  </ButtonUI>
-                  <ButtonUI
-                    type='button'
-                    onClick={handleCancelEdit}
-                    className={styles['cancel-btn']}
-                    disabled={loading}
-                  >
-                    Отмена
-                  </ButtonUI>
-                </div>
-              </>
-            ) : (
-              <>
-                <label htmlFor='avatar-upload-view' className={styles['change-photo-btn']}>
-                  Изменить фото
-                  <span className={styles['change-photo-svg']}>
-                    <EditSVG />
-                  </span>
-                  <input
-                    id='avatar-upload-view'
-                    type='file'
-                    accept='image/*'
-                    onChange={handleAvatarChange}
-                    style={{ display: 'none' }}
-                  />
-                </label>
-
-                <ButtonUI
-                  type='button'
-                  onClick={() => setIsEditing(true)}
-                  className={styles['edit-btn']}
-                >
-                  Редактировать профиль
-                </ButtonUI>
-              </>
-            )}
+            <ProfileAvatar userAvatar={user.image} />
+            <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
+              Изменить фото
+              <span className={styles['change-photo-svg']}>
+                <EditSVG />
+              </span>
+            </ButtonUI>
           </div>
         </div>
       </div>

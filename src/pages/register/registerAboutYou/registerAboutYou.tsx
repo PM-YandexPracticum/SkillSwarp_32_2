@@ -4,7 +4,6 @@ import { RegisterAboutYouUI } from '@/shared/ui';
 // import type { setStateProps } from '../type';
 import type { setStateProps } from '../type';
 import { setRegistrationStepData } from '@/services/slices/userSlice';
-import store, { useDispatch } from '@/services/store/store';
 import type { genderType } from '@/shared/global-types';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { makeSkillsArray } from '../helpers';
@@ -48,7 +47,6 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
 
     dispatch(setRegistrationStepData(data));
     setCurrentPage((current) => current + 1);
-    // console.log(store.getState());
   };
 
   return (
