@@ -1,29 +1,20 @@
 import styles from './notificationList.module.css';
 import { useRef, useState } from 'react';
-import { ButtonUI } from '../buttonUI';
+import { ButtonUI } from '@/shared/ui';
 import { NotificationSVG } from '@/assets/svg/notification';
-import { NotificationUI } from '../notificationUI';
-import type {
-  ExtendedOfferSkillType,
-  GroupedNotifications,
-  TNotificationListUIProps,
-} from './type';
+import { NotificationUI } from '@/shared/ui/notificationUI';
+import type { ExtendedOfferSkillType, GroupedNotifications, TNotificationListProps } from './type';
 import clsx from 'clsx';
 import React from 'react';
 import { useOutsideClickClose } from './hooks/useOutsideClickClose';
-import { getCardsState, selectUserData } from '@/services/slices';
+import { getCardsState } from '@/services/slices';
 import { useSelector } from 'react-redux';
-import type { TCard } from '@/shared/global-types';
+import { getCardForUserId } from '@/shared/lib/helpers/helpers';
 
-export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user }) => {
+export const NotificationList: React.FC<TNotificationListProps> = ({ user }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const rootRef = useRef<HTMLDivElement>(null);
-  const incoming = useSelector(selectUserData).incoming;
   const cards = useSelector(getCardsState);
-
-  // TODO Заглушки. После доработок слайсов заменить на поиск данных по userId
-  // const partnerName = 'Татьяна';
-  const partnerGender = 'female';
 
   // Обработчик клика вне выпадающего окна
   useOutsideClickClose({
@@ -42,12 +33,7 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
     ...user.outgoing.map((n) => ({ ...n, type: 'outgoing' }) as ExtendedOfferSkillType),
   ];
 
-  const incomingUsers: TCard[] = incoming.flatMap((offer) =>
-    cards.filter((card) => card.userId === offer.userId)
-  );
-
-  console.log(incomingUsers);
-
+  // Группируем уведомления в группы Новые и Просмотренные
   const groupedNotifications: GroupedNotifications = allNotifications.reduce(
     (acc, notification) => {
       const isNew = !notification.isRead;
@@ -56,6 +42,12 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
     },
     { new: [], read: [] } as { new: ExtendedOfferSkillType[]; read: ExtendedOfferSkillType[] }
   );
+
+  // Берем только первые 2 элемента в каждой группе (для рендера)
+  const limitedNotifications: GroupedNotifications = {
+    new: groupedNotifications.new.slice(0, 2),
+    read: groupedNotifications.read.slice(0, 2)
+  };
 
   return (
     <div className={styles.notifications} ref={rootRef} data-is-active={isOpen}>
@@ -73,7 +65,7 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
       </ButtonUI>
       {isOpen && (
         <div className={styles.notifications_list}>
-          {Object.entries(groupedNotifications).map(([group, notifs]) => (
+          {Object.entries(limitedNotifications).map(([group, notifs]) => (
             <div key={group} className={styles.notifications_group}>
               <div className={styles.notifications_heading}>
                 <h3 className={styles.notifications_title}>
@@ -101,8 +93,8 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
                       key={notification.userId}
                       offer={notification}
                       typeOfExchange={notification.type}
-                      partnerName={incomingUsers[0].name}
-                      partnerGender={partnerGender}
+                      partnerName={getCardForUserId(notification.userId, cards)?.name || ''}
+                      partnerGender={getCardForUserId(notification.userId, cards)?.gender || 'male'}
                     />
                   ))}
                 </ul>

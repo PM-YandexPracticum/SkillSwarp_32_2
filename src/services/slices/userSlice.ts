@@ -200,11 +200,10 @@ const userSlice = createSlice({
   initialState,
   selectors: {
     getIsAuthenticated: (state) => state.isAuth,
-    getUserData: (state) => state.user,
+    selectUserData: (state) => state.user,
     getLikedCards: (state) => state.user.likes,
     getOffersSent: (state) => state.user.outgoing,
     getOffersReceived: (state) => state.user.incoming,
-    selectUserData: (state) => state.user,
     selectRegistrationData: (state) => state.registrationData,
     selectError: (state) => state.errorMessage,
     selectRegistrationError: (state) => state.registrationError,
@@ -338,13 +337,12 @@ export const {
 // Selectors
 export const {
   getIsAuthenticated,
-  getUserData,
+  selectUserData,
   getLikedCards,
   getOffersSent,
   getOffersReceived,
   selectRegistrationData,
   selectError,
-  selectUserData,
   selectRegistrationError,
   selectLikes,
   selectLoading,

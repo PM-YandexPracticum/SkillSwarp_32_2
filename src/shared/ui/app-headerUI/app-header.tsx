@@ -5,9 +5,8 @@ import type { TAppHeaderUIProps } from './type';
 import { ButtonUI } from '../buttonUI';
 import { LikeSVG } from '@/assets/svg/like';
 import { ChevronDownSVG, CrossSVG, LogoVG, MoonSVG } from '@/assets/svg';
-// import { NotificationSVG } from '@/assets/svg/notification';
 import { SearchFieldUI } from '../search-fieldUI';
-import { NotificationListUI } from '../notificationListUI';
+import { NotificationList } from '@/widgets/notificationList';
 
 export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
   (
@@ -52,7 +51,7 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
               {user.id != '' ? (
                 <div className={styles.header_logged_in}>
                   <div className={styles.icons}>
-                    <NotificationListUI user={user} />
+                    <NotificationList user={user} />
                     {/* Условный рендеринг для опциональных пропсов */}
                     {onLikeClick && (
                       <ButtonUI type='button' onClick={onLikeClick} className={styles.button}>

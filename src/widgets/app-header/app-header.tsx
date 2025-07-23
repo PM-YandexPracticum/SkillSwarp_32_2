@@ -23,13 +23,7 @@ export const AppHeader: FC = () => {
   const skillList = useSelector(getSkillsState);
   const isLoginOrRegister = ['/login', '/register'].includes(currentPath);
 
-  // TODO найти пользователя как добавят селектор в слайс юзера
-  // const user = useSelector(userSelectors.userDataSelector);
-
-  // TODO Для проверки
-  // const user = USERS_DATA[7];
   const user = useSelector(selectUserData);
-  
 
   const headerRef = useRef<HTMLElement>(null);
   const [isAllSkillsVisible, setIsAllSkillsVisible] = useState(false);
