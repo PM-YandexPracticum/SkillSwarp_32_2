@@ -5,6 +5,7 @@ import { UserCardUI } from '@/shared/ui/userCardUI';
 import { ButtonUI } from '@/shared/ui';
 import type { RecommendedProps } from './type';
 import { ChevronRightSVG } from '@/assets/svg';
+import { Footer } from '@/shared/ui/footer';
 
 export const Recommended: React.FC<RecommendedProps> = ({ cards, userCard }) => {
   const recommendedCards = userCard
@@ -17,23 +18,27 @@ export const Recommended: React.FC<RecommendedProps> = ({ cards, userCard }) => 
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className={styles['main']}>
-      <div className={styles['menu']}>
-        <h2 className={styles['menu__title']}>Рекомендуемое</h2>
-        <ButtonUI className={styles['menu__btn']} type='link' to='/'>
-          <span className={styles.chevron}>
-            <ChevronRightSVG color='currentColor' />
-          </span>
-          <span>Вернуться назад</span>
-        </ButtonUI>
-      </div>
+    <>
+      {' '}
+      <div className={styles['main']}>
+        <div className={styles['menu']}>
+          <h2 className={styles['menu__title']}>Рекомендуемое</h2>
+          <ButtonUI className={styles['menu__btn']} type='link' to='/'>
+            <span className={styles.chevron}>
+              <ChevronRightSVG color='currentColor' />
+            </span>
+            <span>Вернуться назад</span>
+          </ButtonUI>
+        </div>
 
-      <div className={styles['card-list']}>
-        {recommendedCards.map((card) => (
-          // ПОРАВИТЬ ЛОГИКУ
-          <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} isLiked={false}/>
-        ))}
+        <div className={styles['card-list']}>
+          {recommendedCards.map((card) => (
+            // ПОРАВИТЬ ЛОГИКУ
+            <UserCardUI key={card.id} card={card} type='short' setLike={() => {}} isLiked={false} />
+          ))}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };

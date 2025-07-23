@@ -6,7 +6,6 @@ import { Register, RegisterAboutYou, RegisterYouOffer } from '@/pages/register';
 import { Error404 } from '@/pages/404-error';
 import { SkillPage } from '@/pages/skill-page';
 import { Test } from '@/pages/test';
-import { Footer } from '@/shared/ui/footer';
 import { ProfilePage } from '@/pages/profile-page';
 import { ProfileIncoming } from '@/pages/profile-incoming-page';
 import { ProfileOutgoing } from '@/pages/profile-outgoing-page';
@@ -68,8 +67,6 @@ function App() {
       </Routes>
       {/* роуты модалок. будут добавляться по мере разрастания приложения */}
       {backgroundLocation ?? <Routes location={location}></Routes>}
-      <Footer />
-      {/* По макету Footer не на всех страницах - так что его нужно вставлять вручную, там где он есть */}
     </>
   );
 }

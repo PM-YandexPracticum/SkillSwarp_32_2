@@ -7,6 +7,7 @@ import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
 import { ProfileForm } from '@/shared/ui/profileForm';
 import { PhotoUploadUI } from '@/shared/ui/photoUploadUI';
 import { ButtonUI, PreloaderUI } from '@/shared/ui';
+import { Footer } from '@/shared/ui/footer';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import type { TCity } from '@/shared/global-types/data-types';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
@@ -90,41 +91,44 @@ export const ProfilePage = () => {
   };
 
   return (
-    <main className={styles.main}>
-      <div className={styles.profile}>
-        <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
-          <ProfileMenu />
-        </div>
+    <>
+      <main className={styles.main}>
+        <div className={styles.profile}>
+          <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
+            <ProfileMenu />
+          </div>
 
-        <div
-          className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
-        >
-          <ProfileForm
-            gender={user.gender}
-            setGender={setGender}
-            selectedCity={selectedCity}
-            setSelectedCity={setSelectedCity}
-            cities={cities}
-            mail={user.mail}
-            setMail={setMail}
-            name={user.name}
-            setName={setName}
-            age={user.age}
-            setAge={setAge}
-            description={user.description}
-            setDescription={setDescription}
-          />
-
-          <div className={styles.profile__avatar}>
-            <PhotoUploadUI
-              currentPhoto={user.image !== '/#' ? user.image : undefined}
-              onPhotoChange={handlePhotoChange}
-              disabled={loading}
-              maxSizeInMB={5}
+          <div
+            className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
+          >
+            <ProfileForm
+              gender={user.gender}
+              setGender={setGender}
+              selectedCity={selectedCity}
+              setSelectedCity={setSelectedCity}
+              cities={cities}
+              mail={user.mail}
+              setMail={setMail}
+              name={user.name}
+              setName={setName}
+              age={user.age}
+              setAge={setAge}
+              description={user.description}
+              setDescription={setDescription}
             />
+
+            <div className={styles.profile__avatar}>
+              <PhotoUploadUI
+                currentPhoto={user.image !== '/#' ? user.image : undefined}
+                onPhotoChange={handlePhotoChange}
+                disabled={loading}
+                maxSizeInMB={5}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 };
