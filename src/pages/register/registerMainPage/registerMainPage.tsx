@@ -25,7 +25,7 @@ export const RegisterMainPage: FC<setStateProps> = ({ setCurrentPage }) => {
     try {
       const result = await dispatch(checkUserExist({ mail: email })).unwrap();
       if (result) {
-        // console.log('Пользователь уже есть:', result);
+        // Пользователь уже существует
       } else {
         dispatch(setRegistrationStepData({ mail: email, password }));
         setCurrentPage((current) => current + 1);

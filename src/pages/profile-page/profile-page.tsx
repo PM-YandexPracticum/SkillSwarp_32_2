@@ -1,12 +1,12 @@
 // src/pages/profile-page/profile-page.tsx
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useDispatch, useSelector } from '@/services/store';
 import { Navigate } from 'react-router-dom';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
 import { ProfileForm } from '@/shared/ui/profileForm';
 import { PhotoUploadUI } from '@/shared/ui/photoUploadUI';
-import { ButtonUI, PreloaderUI } from '@/shared/ui';
+import { PreloaderUI } from '@/shared/ui';
 import { Footer } from '@/shared/ui/footer';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import type { TCity } from '@/shared/global-types/data-types';
@@ -24,8 +24,6 @@ export const ProfilePage = () => {
   const user = useSelector(selectUserData);
   const isAuthenticated = useSelector(getIsAuthenticated);
   const loading = useSelector(selectLoading);
-
-  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
   // ВСЕ ХУКИ ДОЛЖНЫ БЫТЬ ЗДЕСЬ, ДО ЛЮБЫХ УСЛОВИЙ!
   const cities: DropdownOption<string>[] = useMemo(
@@ -48,7 +46,7 @@ export const ProfilePage = () => {
 
   // ТЕПЕРЬ МОЖНО ДЕЛАТЬ УСЛОВНЫЕ ВОЗВРАТЫ
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to='/login' replace />;
   }
 
   if (loading) {
@@ -57,37 +55,30 @@ export const ProfilePage = () => {
 
   const setSelectedCity = (city: DropdownOption<string>) => {
     dispatch(updateUserField({ field: 'city', value: city.name }));
-    setHasUnsavedChanges(true);
   };
 
   const setGender = (gender: 'male' | 'female') => {
     dispatch(updateUserField({ field: 'gender', value: gender }));
-    setHasUnsavedChanges(true);
   };
 
   const setName = (name: string) => {
     dispatch(updateUserField({ field: 'name', value: name }));
-    setHasUnsavedChanges(true);
   };
 
   const setMail = (mail: string) => {
     dispatch(updateUserField({ field: 'mail', value: mail }));
-    setHasUnsavedChanges(true);
   };
 
   const setAge = (age: number) => {
     dispatch(updateUserField({ field: 'age', value: age }));
-    setHasUnsavedChanges(true);
   };
 
   const setDescription = (description: string) => {
     dispatch(updateUserField({ field: 'description', value: description }));
-    setHasUnsavedChanges(true);
   };
 
   const handlePhotoChange = (photo: string | null) => {
     dispatch(updateUserField({ field: 'image', value: photo || '/#' }));
-    setHasUnsavedChanges(true);
   };
 
   return (
