@@ -10,6 +10,11 @@
   overflow: hidden;
   word-wrap: break-word;
   background-color: var(--accent-background);
+  height: 100%;
+}
+
+.card_full {
+  padding: 32px;
 }
 
 .mincard {
@@ -69,6 +74,9 @@
 
 .user_description {
   color: var(--text-redesigned);
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  flex-grow: 1;
 }
 
 .skills_section {
@@ -77,10 +85,18 @@
   gap: 16px;
 }
 
+.skills_section_full {
+  gap: 28px;
+}
+
 .skills_container {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.skills_container_full {
+  gap: 18px;
 }
 
 .skills_text {
