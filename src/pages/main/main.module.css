@@ -16,8 +16,9 @@
 }
 
 .filter_block {
-  max-height: calc(100vh - 104px);
+  max-height: calc(80vh - 104px);
   overflow-y: auto;
   position: sticky;
+  scrollbar-width: none;
   top: 104px;
 }
