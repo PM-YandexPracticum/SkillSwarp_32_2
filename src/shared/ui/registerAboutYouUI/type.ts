@@ -1,9 +1,8 @@
 import type { Dispatch, SetStateAction, SyntheticEvent } from 'react';
 import type { DropdownOption } from '../dropdownUI/type';
 import type { genderType } from '@/shared/global-types';
-//import type { DropdownOption } from '../dropdownUI/type';
 
-export type registerAboutYouUIProps =  {
+export type registerAboutYouUIProps = {
   name: string;
   setName: Dispatch<SetStateAction<string>>;
   gender: DropdownOption<genderType>;
@@ -16,6 +15,8 @@ export type registerAboutYouUIProps =  {
   setSkill: Dispatch<SetStateAction<DropdownOption<string>[]>>;
   description: string;
   setDescription: Dispatch<SetStateAction<string>>;
+  photo: string;
+  setPhoto: Dispatch<SetStateAction<string>>;
   handleSubmit: (e: SyntheticEvent) => void;
   handleBack: () => void;
 };
