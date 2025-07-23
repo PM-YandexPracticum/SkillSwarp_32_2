@@ -79,6 +79,7 @@ const initialState: UserState = {
 };
 
 // Existing thunks...
+
 export const registerUserThunk = createAsyncThunk<TUser, TUser, { rejectValue: string }>(
   'registerUserThunk',
   async (userData, { rejectWithValue }) => {
@@ -150,6 +151,7 @@ export const editUserDataThunk = createAsyncThunk<
     return rejectWithValue(`Ошибка при обновлении данных пользователя: ${error}`);
   }
 });
+
 
 export const likeCardThunk = createAsyncThunk<
   void,
@@ -259,7 +261,6 @@ const userSlice = createSlice({
         state.isAuth = true;
         state.loading = false;
       })
-      
       // Register
       .addCase(registerUserThunk.pending, (state) => {
         state.errorMessage = null;
@@ -275,7 +276,6 @@ const userSlice = createSlice({
         state.errorMessage = action.payload || 'Ошибка регистрации';
         state.loading = false;
       })
-      
       // Check Auth
       .addCase(checkAuthThunk.pending, (state) => {
         state.errorMessage = null;
@@ -290,7 +290,6 @@ const userSlice = createSlice({
         state.errorMessage = action.payload || 'Ошибка авторизации';
         state.loading = false;
       })
-      
       // Check User Exist
       .addCase(checkUserExist.fulfilled, (state, action) => {
         state.registrationError = action.payload;
@@ -301,7 +300,6 @@ const userSlice = createSlice({
       .addCase(checkUserExist.rejected, (state) => {
         state.loading = false;
       })
-      
       // Edit User Data
       .addCase(editUserDataThunk.pending, (state) => {
         state.loading = true;
@@ -315,7 +313,6 @@ const userSlice = createSlice({
         state.errorMessage = action.payload || 'Ошибка при обновлении профиля';
         state.loading = false;
       })
-      
       // Save Liked Card
       .addCase(saveLikedCardThunk.fulfilled, (state, action) => {
         state.user.likes = action.payload;

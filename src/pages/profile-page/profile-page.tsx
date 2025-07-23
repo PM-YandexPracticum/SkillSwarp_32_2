@@ -18,6 +18,7 @@ import {
   getIsAuthenticated,
 } from '@/services/slices/userSlice';
 import { Navigate } from 'react-router-dom';
+import { Footer } from '@/shared/ui/footer';
 
 export const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -69,31 +70,31 @@ export const ProfilePage = () => {
     dispatch(updateUserField({ field: 'description', value: description }));
 
   return (
-    <main className={styles.main}>
-      <div className={styles.profile}>
-        <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
-          <ProfileMenu />
-        </div>
+    <>
+      <main className={styles.main}>
+        <div className={styles.profile}>
+          <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
+            <ProfileMenu />
+          </div>
 
-        <div
-          className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
-        >
-          <ProfileForm
-            gender={user.gender}
-            setGender={setGender}
-            selectedCity={selectedCity}
-            setSelectedCity={setSelectedCity}
-            cities={cities}
-            mail={user.mail}
-            setMail={setMail}
-            name={user.name}
-            setName={setName}
-            age={user.age}
-            setAge={setAge}
-            description={user.description}
-            setDescription={setDescription}
-          />
-
+          <div
+            className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
+          >
+            <ProfileForm
+              gender={user.gender}
+              setGender={setGender}
+              selectedCity={selectedCity}
+              setSelectedCity={setSelectedCity}
+              cities={cities}
+              mail={user.mail}
+              setMail={setMail}
+              name={user.name}
+              setName={setName}
+              age={user.age}
+              setAge={setAge}
+              description={user.description}
+              setDescription={setDescription}
+            />
           <div className={styles.profile__avatar}>
             <ProfileAvatar userAvatar={user.image} />
             <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
@@ -104,7 +105,8 @@ export const ProfilePage = () => {
             </ButtonUI>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 };
