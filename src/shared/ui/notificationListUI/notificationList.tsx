@@ -18,11 +18,11 @@ import type { TCard } from '@/shared/global-types';
 export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const rootRef = useRef<HTMLDivElement>(null);
-  const incoming = useSelector(selectUserData).incoming
-  const cards = useSelector(getCardsState)
+  const incoming = useSelector(selectUserData).incoming;
+  const cards = useSelector(getCardsState);
 
   // TODO Заглушки. После доработок слайсов заменить на поиск данных по userId
-  const partnerName = 'Татьяна';
+  // const partnerName = 'Татьяна';
   const partnerGender = 'female';
 
   // Обработчик клика вне выпадающего окна
@@ -42,11 +42,11 @@ export const NotificationListUI: React.FC<TNotificationListUIProps> = ({ user })
     ...user.outgoing.map((n) => ({ ...n, type: 'outgoing' }) as ExtendedOfferSkillType),
   ];
 
-const incomingUsers: TCard[] = incoming.flatMap(offer => 
-  cards.filter(card => card.userId === offer.userId)
-);
+  const incomingUsers: TCard[] = incoming.flatMap((offer) =>
+    cards.filter((card) => card.userId === offer.userId)
+  );
 
-  console.log(incomingUsers)
+  console.log(incomingUsers);
 
   const groupedNotifications: GroupedNotifications = allNotifications.reduce(
     (acc, notification) => {
