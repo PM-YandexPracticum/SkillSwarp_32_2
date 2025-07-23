@@ -10,7 +10,6 @@ import {
   registerUser,
   editUserData,
 } from '@/api/skill-swap-api';
-import { USERS_DATA } from '@/shared/global-types/data-users-example';
 
 interface UserState {
   user: TUser;
@@ -21,70 +20,33 @@ interface UserState {
   loading: boolean;
 }
 
-// Тестовый пользователь для разработки
-const testUser: TUser = {
-  ...USERS_DATA[0],
-  likes: ['user-2', 'user-5', 'user-8'],
-  incoming: [
-    {
-      userId: 'user-3',
-      status: 'pending',
-      createdAt: Date.now() - 86400000,
-      isRead: false,
-    },
-    {
-      userId: 'user-7',
-      status: 'fulfilled',
-      createdAt: Date.now() - 172800000,
-      isRead: false,
-    },
-  ],
-  outgoing: [
-    {
-      userId: 'user-12',
-      status: 'pending',
-      createdAt: Date.now() - 43200000,
-      isRead: false,
-    },
-    {
-      userId: 'user-15',
-      status: 'rejected',
-      createdAt: Date.now() - 259200000,
-      isRead: false,
-    },
-  ],
+const initialUser: TUser = {
+  id: '',
+  userId: '',
+  gender: 'male',
+  name: '',
+  city: 'Город',
+  age: 0,
+  mail: '',
+  password: '',
+  description: '',
+  fullDescription: '',
+  incoming: [],
+  outgoing: [],
+  image: '/#',
+  likes: [],
 };
 
 const initialState: UserState = {
-  // Для разработки используем тестового пользователя
-  // В продакшене должен быть пустой пользователь
-  user:
-    process.env.NODE_ENV === 'development'
-      ? testUser
-      : {
-          id: '',
-          gender: 'male',
-          userId: '',
-          name: '',
-          city: 'Город',
-          age: 0,
-          mail: '',
-          password: '',
-          description: '',
-          fullDescription: '',
-          incoming: [],
-          outgoing: [],
-          image: '/#',
-          likes: [],
-        },
-  isAuth: process.env.NODE_ENV === 'development' ? true : false, // Авторизован для разработки
+  user: initialUser,
+  isAuth: false,
   registrationData: {},
   errorMessage: null,
   registrationError: false,
   loading: false,
 };
 
-// Existing thunks...
+// Thunks
 
 export const registerUserThunk = createAsyncThunk<TUser, TUser, { rejectValue: string }>(
   'registerUserThunk',
@@ -134,10 +96,7 @@ export const checkUserExist = createAsyncThunk<boolean, { mail: string }, { reje
   async ({ mail }, { rejectWithValue }) => {
     try {
       const userData = await checkRegistration(mail);
-      if (userData.length === 0) {
-        return false;
-      }
-      return true;
+      return userData.length > 0;
     } catch (error) {
       return rejectWithValue(`Ошибка при проверке пользователя: ${error}`);
     }
@@ -195,6 +154,7 @@ export const saveLikedCardThunk = createAsyncThunk<
 });
 
 // Slice
+
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -213,22 +173,7 @@ const userSlice = createSlice({
   },
   reducers: {
     logout(state) {
-      state.user = {
-        id: '',
-        userId: '',
-        gender: 'male',
-        name: '',
-        city: '',
-        age: 0,
-        mail: '',
-        password: '',
-        description: '',
-        fullDescription: '',
-        incoming: [],
-        outgoing: [],
-        image: '',
-        likes: [],
-      };
+      state.user = initialUser;
       state.isAuth = false;
       localStorage.removeItem('current-user');
     },
@@ -258,15 +203,29 @@ const userSlice = createSlice({
     clearError(state) {
       state.errorMessage = null;
     },
-    // Добавляем экшен для установки тестового пользователя
+    // Если всё ещё нужно будет тестировать - замена тест юзеру, который хардкодился при загрузке страницы
     setTestUser(state) {
-      state.user = testUser;
+      state.user = {
+        id: '999999999',
+        userId: 'user-dev',
+        gender: 'male',
+        name: 'User',
+        city: 'Москва',
+        age: 30,
+        mail: 'dev@example.com',
+        password: '123456',
+        description: 'Test user',
+        fullDescription: 'Full description',
+        incoming: [],
+        outgoing: [],
+        image: '/#',
+        likes: [],
+      };
       state.isAuth = true;
     },
   },
   extraReducers: (builder) => {
     builder
-      // Login
       .addCase(loginUserThunk.pending, (state) => {
         state.errorMessage = null;
         state.loading = true;
@@ -280,7 +239,7 @@ const userSlice = createSlice({
         state.isAuth = true;
         state.loading = false;
       })
-      // Register
+
       .addCase(registerUserThunk.pending, (state) => {
         state.errorMessage = null;
         state.loading = true;
@@ -295,7 +254,7 @@ const userSlice = createSlice({
         state.errorMessage = action.payload || 'Ошибка регистрации';
         state.loading = false;
       })
-      // Check Auth
+
       .addCase(checkAuthThunk.pending, (state) => {
         state.errorMessage = null;
         state.loading = true;
@@ -309,7 +268,7 @@ const userSlice = createSlice({
         state.errorMessage = action.payload || 'Ошибка авторизации';
         state.loading = false;
       })
-      // Check User Exist
+
       .addCase(checkUserExist.fulfilled, (state, action) => {
         state.registrationError = action.payload;
       })
@@ -319,7 +278,7 @@ const userSlice = createSlice({
       .addCase(checkUserExist.rejected, (state) => {
         state.loading = false;
       })
-      // Edit User Data
+
       .addCase(editUserDataThunk.pending, (state) => {
         state.loading = true;
         state.errorMessage = null;
@@ -332,14 +291,13 @@ const userSlice = createSlice({
         state.errorMessage = action.payload || 'Ошибка при обновлении профиля';
         state.loading = false;
       })
-      // Save Liked Card
+
       .addCase(saveLikedCardThunk.fulfilled, (state, action) => {
         state.user.likes = action.payload;
       });
   },
 });
 
-// Actions
 export const {
   logout,
   setRegistrationStepData,
