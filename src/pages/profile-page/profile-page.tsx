@@ -95,14 +95,15 @@ export const ProfilePage = () => {
               description={user.description}
               setDescription={setDescription}
             />
-          <div className={styles.profile__avatar}>
-            <ProfileAvatar userAvatar={user.image} />
-            <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
-              Изменить фото
-              <span className={styles['change-photo-svg']}>
-                <EditSVG />
-              </span>
-            </ButtonUI>
+            <div className={styles.profile__avatar}>
+              <ProfileAvatar userAvatar={user.image} />
+              <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
+                Изменить фото
+                <span className={styles['change-photo-svg']}>
+                  <EditSVG />
+                </span>
+              </ButtonUI>
+            </div>
           </div>
         </div>
       </main>

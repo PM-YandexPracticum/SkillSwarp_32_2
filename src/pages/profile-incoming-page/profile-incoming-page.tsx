@@ -40,11 +40,12 @@ export const ProfileIncoming = () => {
               <ProfileMenu />
             </div>
           </div>
-        <div
-          className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-menu--applications']}`}
-        >
-          {card1 && <UserCard card={card1} type={'short'} user={user} />}
-          {card2 && <UserCard card={card2} type={'short'} user={user} />}
+          <div
+            className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-menu--applications']}`}
+          >
+            {card1 && <UserCard card={card1} type={'short'} user={user} />}
+            {card2 && <UserCard card={card2} type={'short'} user={user} />}
+          </div>
         </div>
       </main>
       <Footer />
