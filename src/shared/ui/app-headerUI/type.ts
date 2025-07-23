@@ -8,12 +8,9 @@ interface SearchSuggestion {
   categoryType?: string;
 }
 
-export type HeaderUserData = Pick<TUser, 'name' | 'image'>;
-
 export type TAppHeaderUIProps = {
   onSkillsClick: () => void;
   onToggleTheme: () => void;
-  onNotificationClick?: () => void; // Делаю опциональными
   onLikeClick?: () => void; // Делаю опциональными
   onClearButtonClick: () => void;
   onSearch?: (suggestion: SearchSuggestion) => void; // Использую правильный тип

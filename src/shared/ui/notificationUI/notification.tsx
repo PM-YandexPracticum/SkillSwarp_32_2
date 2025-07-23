@@ -4,7 +4,8 @@ import { IdeaSVG } from '@/assets/svg';
 import { ButtonUI } from '../buttonUI';
 
 export const NotificationUI = (props: TNotificationUIProps) => {
-  const { offer, isRead, partnerName, typeOfExchange, partnerGender } = props;
+  const { offer, partnerName, typeOfExchange, partnerGender } = props;
+
   const currentDate: Date = new Date();
   const notificationDate = new Date(offer.createdAt);
   const timeDifference = currentDate.getTime() - notificationDate.getTime();
@@ -43,7 +44,7 @@ export const NotificationUI = (props: TNotificationUIProps) => {
           : shortFormattedDate;
 
   return (
-    <div className={styles.content}>
+    <li className={styles.content}>
       <div className={styles.notification}>
         <IdeaSVG size='40' />
         <div className={styles.message}>
@@ -62,11 +63,11 @@ export const NotificationUI = (props: TNotificationUIProps) => {
         </div>
         <p className={styles.date}>{dateText}</p>
       </div>
-      {!isRead && (
+      {!offer.isRead && (
         <ButtonUI type='link' className={styles.button} to={`/skill/:${offer.userId}`}>
           <span>Перейти</span>
         </ButtonUI>
       )}
-    </div>
+    </li>
   );
 };

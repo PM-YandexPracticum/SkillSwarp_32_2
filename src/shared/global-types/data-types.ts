@@ -68,6 +68,7 @@ export interface offerSkillType {
   userId: string;
   status: offerStatus;
   createdAt: number;
+  isRead: boolean;
 }
 
 export type TImage = {
@@ -132,3 +133,4 @@ export interface TLoginData {
   mail: string;
   password: string;
 }
+export type THeaderUserData = Pick<TUser, 'name' | 'image' | 'incoming' | 'outgoing'>;

@@ -12,8 +12,6 @@ import { getUserById } from '../../api/skill-swap-api';
 // import { AllSkills } from '@/shared/ui';
 import { type FC } from 'react';
 import { ButtonUI } from '@/shared/ui';
-// import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
-import { SkillPage } from '../skill-page';
 import { NotificationUI } from '@/shared/ui/notificationUI';
 
 export const Test: FC = () => {
@@ -65,16 +63,16 @@ export const Test: FC = () => {
         // user={{ name: 'Мария', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}
       /> */}
       {/* <AllSkills /> */}
-      <SkillPage />
       <NotificationUI 
         offer = {{
           userId: 'user-3',
           // status: 'pending',
           status: 'fulfilled',
           // status: 'rejected',
-          createdAt: 1752065629156
+          createdAt: 1752065629156,
+          isRead: false
+          // isRead: true
         }}
-        isRead = {false}
         partnerName = 'Татьяна'
         // typeOfExchange = 'incoming'
         typeOfExchange = 'outgoing'

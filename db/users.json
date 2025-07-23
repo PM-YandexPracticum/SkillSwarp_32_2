@@ -12,19 +12,22 @@
       {
         "userId": "user-3",
         "status": "pending",
-        "createdAt": 1752065629156
+        "createdAt": 1752065629156,
+        "isRead": true
       },
       {
         "userId": "user-4",
         "status": "pending",
-        "createdAt": 1752065679448
+        "createdAt": 1752065679448,
+        "isRead": false
       }
     ],
     "outgoing": [
       {
         "userId": "user-5",
         "status": "pending",
-        "createdAt": 1752065691824
+        "createdAt": 1752065691824,
+        "isRead": false
       }
     ],
     "image": "./#"
@@ -42,24 +45,28 @@
       {
         "userId": "user-0",
         "status": "pending",
-        "createdAt": 1752065701827
+        "createdAt": 1752065701827,
+        "isRead": false
       }
     ],
     "outgoing": [
       {
         "userId": "user-12",
         "status": "pending",
-        "createdAt": 1752065708418
+        "createdAt": 1752065708418,
+        "isRead": true
       },
       {
         "userId": "user-20",
         "status": "pending",
-        "createdAt": 1752065701827
+        "createdAt": 1752065701827,
+        "isRead": false
       },
       {
         "userId": "user-28",
         "status": "pending",
-        "createdAt": 1752065691824
+        "createdAt": 1752065691824,
+        "isRead": true
       }
     ],
     "image": "./#"

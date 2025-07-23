@@ -53,36 +53,32 @@ export const AppHeader: FC = () => {
 
   const handleSearch = (suggestion: SearchSuggestion) => {
     // Обрабатываем выбор из поиска
-    
+
     if (suggestion.type === 'category') {
       // Если выбрана категория, активируем все навыки в этой категории
-      const updatedFilters = skillList.map(category => 
+      const updatedFilters = skillList.map((category) =>
         category.id === suggestion.id
           ? {
               ...category,
-              subFilters: category.subFilters.map(skill => ({
+              subFilters: category.subFilters.map((skill) => ({
                 ...skill,
-                status: true
-              }))
+                status: true,
+              })),
             }
           : category
       );
       dispatch(toggleSkillsFilter(updatedFilters));
     } else {
       // Если выбран конкретный навык, активируем только его
-      const updatedFilters = skillList.map(category => ({
+      const updatedFilters = skillList.map((category) => ({
         ...category,
-        subFilters: category.subFilters.map(skill => ({
+        subFilters: category.subFilters.map((skill) => ({
           ...skill,
-          status: skill.id === suggestion.id ? true : skill.status
-        }))
+          status: skill.id === suggestion.id ? true : skill.status,
+        })),
       }));
       dispatch(toggleSkillsFilter(updatedFilters));
     }
-  };
-
-  const handleNotificationClick = () => {
-    // TODO: Добавить логику обработки уведомлений
   };
 
   const handleLikeClick = () => {
@@ -95,7 +91,6 @@ export const AppHeader: FC = () => {
         <AppHeaderUI
           onSkillsClick={toggleAllSkills}
           onToggleTheme={() => {}}
-          onNotificationClick={handleNotificationClick}
           onLikeClick={handleLikeClick}
           onClearButtonClick={handleClearSearch}
           onSearch={handleSearch}

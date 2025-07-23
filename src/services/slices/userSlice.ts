@@ -30,24 +30,28 @@ const testUser: TUser = {
     {
       userId: 'user-3',
       status: 'pending',
-      createdAt: Date.now() - 86400000, // 1 день назад
+      createdAt: Date.now() - 86400000,
+      isRead: false
     },
     {
       userId: 'user-7',
-      status: 'fulfilled', 
-      createdAt: Date.now() - 172800000, // 2 дня назад
+      status: 'fulfilled',
+      createdAt: Date.now() - 172800000,
+      isRead: false
     }
   ],
   outgoing: [
     {
       userId: 'user-12',
       status: 'pending',
-      createdAt: Date.now() - 43200000, // 12 часов назад
+      createdAt: Date.now() - 43200000,
+      isRead: false
     },
     {
       userId: 'user-15',
       status: 'rejected',
-      createdAt: Date.now() - 259200000, // 3 дня назад
+      createdAt: Date.now() - 259200000,
+      isRead: false
     }
   ]
 };
