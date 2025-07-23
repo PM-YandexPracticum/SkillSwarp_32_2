@@ -13,12 +13,12 @@ import {
   getCardsLoadingState,
   selectLikes,
   selectUserData,
+  getIsAuthenticated,
 } from '@/services/slices';
 import { filterSameOffers } from '@/shared/lib/helpers/helpers';
 import { Footer } from '@/shared/ui/footer';
 
 // Импортируем селектор для проверки авторизации
-const getIsAuthenticated = (state: any) => state.user?.isAuth || false;
 
 export const SkillPage: FC = () => {
   const location = useLocation();
