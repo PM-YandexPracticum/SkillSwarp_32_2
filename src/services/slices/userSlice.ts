@@ -1,4 +1,3 @@
-// src/services/slices/userSlice.ts
 import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { TCard, TUser } from '@/shared/global-types';
 import {
@@ -31,50 +30,53 @@ const testUser: TUser = {
       userId: 'user-3',
       status: 'pending',
       createdAt: Date.now() - 86400000,
-      isRead: false
+      isRead: false,
     },
     {
       userId: 'user-7',
       status: 'fulfilled',
       createdAt: Date.now() - 172800000,
-      isRead: false
-    }
+      isRead: false,
+    },
   ],
   outgoing: [
     {
       userId: 'user-12',
       status: 'pending',
       createdAt: Date.now() - 43200000,
-      isRead: false
+      isRead: false,
     },
     {
       userId: 'user-15',
       status: 'rejected',
       createdAt: Date.now() - 259200000,
-      isRead: false
-    }
-  ]
+      isRead: false,
+    },
+  ],
 };
 
 const initialState: UserState = {
   // Для разработки используем тестового пользователя
   // В продакшене должен быть пустой пользователь
-  user: process.env.NODE_ENV === 'development' ? testUser : {
-    id: '',
-    gender: 'male',
-    userId: '',
-    name: '',
-    city: 'Город',
-    age: 0,
-    mail: '',
-    password: '',
-    description: '',
-    fullDescription: '',
-    incoming: [],
-    outgoing: [],
-    image: '/#',
-    likes: [],
-  },
+  user:
+    process.env.NODE_ENV === 'development'
+      ? testUser
+      : {
+          id: '',
+          gender: 'male',
+          userId: '',
+          name: '',
+          city: 'Город',
+          age: 0,
+          mail: '',
+          password: '',
+          description: '',
+          fullDescription: '',
+          incoming: [],
+          outgoing: [],
+          image: '/#',
+          likes: [],
+        },
   isAuth: process.env.NODE_ENV === 'development' ? true : false, // Авторизован для разработки
   registrationData: {},
   errorMessage: null,
@@ -127,21 +129,20 @@ export const checkAuthThunk = createAsyncThunk<TUser, void, { rejectValue: strin
   }
 );
 
-export const checkUserExist = createAsyncThunk<
-  boolean,
-  { mail: string },
-  { rejectValue: string }
->('auth/checkUserExist', async ({ mail }, { rejectWithValue }) => {
-  try {
-    const userData = await checkRegistration(mail);
-    if (userData.length === 0) {
-      return false;
+export const checkUserExist = createAsyncThunk<boolean, { mail: string }, { rejectValue: string }>(
+  'auth/checkUserExist',
+  async ({ mail }, { rejectWithValue }) => {
+    try {
+      const userData = await checkRegistration(mail);
+      if (userData.length === 0) {
+        return false;
+      }
+      return true;
+    } catch (error) {
+      return rejectWithValue(`Ошибка при проверке пользователя: ${error}`);
     }
-    return true;
-  } catch (error) {
-    return rejectWithValue(`Ошибка при проверке пользователя: ${error}`);
   }
-});
+);
 
 export const editUserDataThunk = createAsyncThunk<
   TUser,
@@ -155,7 +156,6 @@ export const editUserDataThunk = createAsyncThunk<
     return rejectWithValue(`Ошибка при обновлении данных пользователя: ${error}`);
   }
 });
-
 
 export const likeCardThunk = createAsyncThunk<
   void,
@@ -213,7 +213,22 @@ const userSlice = createSlice({
   },
   reducers: {
     logout(state) {
-      state.user = initialState.user;
+      state.user = {
+        id: '',
+        userId: '',
+        gender: 'male',
+        name: '',
+        city: '',
+        age: 0,
+        mail: '',
+        password: '',
+        description: '',
+        fullDescription: '',
+        incoming: [],
+        outgoing: [],
+        image: '',
+        likes: [],
+      };
       state.isAuth = false;
       localStorage.removeItem('current-user');
     },
