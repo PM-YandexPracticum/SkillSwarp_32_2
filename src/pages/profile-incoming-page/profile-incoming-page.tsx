@@ -1,3 +1,4 @@
+// src/pages/profile-incoming-page/profile-incoming-page.tsx
 import profile from '@/images/profile-avatar.png';
 import styles from '@/pages/profile-page/profile-page.module.css';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI';
@@ -14,6 +15,10 @@ export const ProfileIncoming = () => {
   const userName = user?.name || 'Имя';
   const userAge = user?.age || 'Возраст';
   const userCity = user?.city || 'Город';
+
+  // Найдем карточки и добавим проверку на undefined
+  const card1 = CARDS_DATA[10];
+  const card2 = CARDS_DATA[11];
 
   return (
     <>
@@ -35,12 +40,11 @@ export const ProfileIncoming = () => {
               <ProfileMenu />
             </div>
           </div>
-
           <div
             className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-menu--applications']}`}
           >
-            <UserCard card={CARDS_DATA[10]} type={'short'} user={user} />
-            <UserCard card={CARDS_DATA[11]} type={'short'} user={user} />
+            {card1 && <UserCard card={card1} type={'short'} user={user} />}
+            {card2 && <UserCard card={card2} type={'short'} user={user} />}
           </div>
         </div>
       </main>

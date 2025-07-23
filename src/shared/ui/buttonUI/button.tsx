@@ -10,18 +10,34 @@ export const ButtonUI: FC<ButtonUIProps> = ({
   children,
   className,
   to,
+  disabled,
   ...props
 }) => {
   return type === 'button' ? (
-    <button className={className} onClick={onClick} type='button' {...props}>
+    <button 
+      className={className} 
+      onClick={onClick} 
+      type='button' 
+      disabled={disabled}
+      {...props}
+    >
       {children}
     </button>
   ) : type === 'link' ? (
-    <Link to={to || '#'} className={className}>
+    <Link 
+      to={to || '#'} 
+      className={className}
+      style={disabled ? { pointerEvents: 'none', opacity: 0.5 } : undefined}
+    >
       {children}
     </Link>
   ) : (
-    <button className={className} type='submit'>
+    <button 
+      className={className} 
+      type='submit'
+      disabled={disabled}
+      {...props}
+    >
       {children}
     </button>
   );

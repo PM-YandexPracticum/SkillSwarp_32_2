@@ -1,21 +1,32 @@
+// src/pages/profile-page/profile-page.tsx
+
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from '@/services/store';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
 import { ProfileAvatar } from '@/shared/ui/profileAvatar';
-import { ButtonUI } from '@/shared/ui';
+import { ButtonUI, PreloaderUI } from '@/shared/ui';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import type { TCity } from '@/shared/global-types/data-types';
 import styles from './profile-page.module.css';
 import { ProfileForm } from '@/shared/ui/profileForm';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { EditSVG } from '@/assets/svg';
-import { selectUserData, updateUserField } from '@/services/slices/userSlice';
+import {
+  selectUserData,
+  updateUserField,
+  selectLoading,
+  getIsAuthenticated,
+} from '@/services/slices/userSlice';
+import { Navigate } from 'react-router-dom';
 import { Footer } from '@/shared/ui/footer';
 
 export const ProfilePage = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUserData);
+  const isAuthenticated = useSelector(getIsAuthenticated);
+  const loading = useSelector(selectLoading);
 
+  // ВСЕ ХУКИ ДОЛЖНЫ БЫТЬ ЗДЕСЬ, ДО ЛЮБЫХ УСЛОВИЙ!
   const cities: DropdownOption<string>[] = useMemo(
     () =>
       CITIES_MOCK.map((city: TCity) => ({
@@ -33,6 +44,15 @@ export const ProfilePage = () => {
       }
     );
   }, [user.city, cities]);
+
+  // ТЕПЕРЬ МОЖНО ДЕЛАТЬ УСЛОВНЫЕ ВОЗВРАТЫ
+  if (!isAuthenticated) {
+    return <Navigate to='/login' replace />;
+  }
+
+  if (loading) {
+    return <PreloaderUI />;
+  }
 
   const setSelectedCity = (city: DropdownOption<string>) =>
     dispatch(updateUserField({ field: 'city', value: city.name }));
@@ -75,9 +95,8 @@ export const ProfilePage = () => {
               description={user.description}
               setDescription={setDescription}
             />
-
             <div className={styles.profile__avatar}>
-              <ProfileAvatar userAvatar={user.image} />{' '}
+              <ProfileAvatar userAvatar={user.image} />
               <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
                 Изменить фото
                 <span className={styles['change-photo-svg']}>

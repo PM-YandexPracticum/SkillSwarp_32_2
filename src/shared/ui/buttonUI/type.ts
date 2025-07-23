@@ -10,6 +10,7 @@ interface ButtonAsButton {
   children?: ReactNode;
   className?: string;
   to?: never;
+  disabled?: boolean;
 }
 
 interface ButtonAsLink {
@@ -18,6 +19,7 @@ interface ButtonAsLink {
   children?: ReactNode;
   className?: string;
   to: string;
+  disabled?: boolean;
 }
 
 interface ButtonAsSubmit {
@@ -26,6 +28,7 @@ interface ButtonAsSubmit {
   children?: ReactNode;
   className?: string;
   to?: string;
+  disabled?: boolean;
 }
 
 export type ButtonUIProps = ButtonAsButton | ButtonAsLink | ButtonAsSubmit;

@@ -4,7 +4,6 @@ import { RegisterYouOfferUI } from '@/shared/ui';
 import type { setStateProps } from '../type';
 //import { useDispatch, useSelector } from '../../services/store';
 //import { useLocation, useNavigate } from 'react-router-dom';
-import store from '@/services/store/store';
 import { useDispatch, useSelector } from '@/services/store';
 import { clearRegistrationData, postCardThunk, registerUserThunk, selectRegistrationData } from '@/services/slices';
 import type { TCard, TUser } from '@/shared/global-types';
@@ -87,14 +86,11 @@ export const RegisterYouOffer: FC<setStateProps> = ({ setCurrentPage }) => {
         dispatch(clearRegistrationData());
         navigate('/');
       } else {
-        console.error('Регистрация не удалась');
+        // console.error('Регистрация не удалась');
       }
     });
 
     dispatch(postCardThunk(cardData));
-    
-    console.log(store.getState());
-    console.log(cardData);
 
     setCurrentPage((current) => current + 1);
   };
