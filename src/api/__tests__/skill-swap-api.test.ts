@@ -1,0 +1,148 @@
+import { describe, it, beforeEach, vi, expect } from 'vitest';
+import {
+  fetchCitiesData,
+  postCard,
+  loginUser,
+} from '../skill-swap-api';
+import type { TCard, TUser, TCity } from '@/shared/global-types';
+
+const mockFetch = vi.fn();
+global.fetch = mockFetch;
+
+const mockSessionStorage = {
+  getItem: vi.fn(),
+  setItem: vi.fn(),
+  removeItem: vi.fn(),
+  clear: vi.fn(),
+};
+
+const mockLocalStorage = {
+  getItem: vi.fn(),
+  setItem: vi.fn(),
+  removeItem: vi.fn(),
+  clear: vi.fn(),
+};
+
+Object.defineProperty(window, 'sessionStorage', {
+  value: mockSessionStorage,
+});
+
+Object.defineProperty(window, 'localStorage', {
+  value: mockLocalStorage,
+});
+
+beforeEach(() => {
+  vi.clearAllMocks();
+});
+
+describe('API: fetchCitiesData', () => {
+  it('успешно возвращает список городов', async () => {
+    const mockData: TCity[] = [{ id: '1', title: 'Москва' }];
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => mockData });
+
+    const result = await fetchCitiesData();
+    expect(result).toEqual(mockData);
+    expect(mockFetch).toHaveBeenCalledWith('http://localhost:3001/cities', expect.any(Object));
+  });
+
+  it('выбрасывает ошибку при статусе != ok', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: false, status: 500 });
+    await expect(fetchCitiesData()).rejects.toThrow('HTTP error! status: 500');
+  });
+
+  it('выбрасывает ошибку при сетевой ошибке', async () => {
+    mockFetch.mockRejectedValueOnce(new Error('Network error'));
+    await expect(fetchCitiesData()).rejects.toThrow('Network error');
+  });
+});
+
+describe('API: postCard', () => {
+  const mockCard: TCard = {
+    id: '1',
+    userId: 'user-1',
+    name: 'User',
+    age: 30,
+    city: 'Москва',
+    gender: 'male',
+    description: '',
+    fullDescription: '',
+    teachSkill: [],
+    learnSkill: [],
+    createdAt: Date.now(),
+    likes: [],
+    src: '',
+    skillImages: [],
+  };
+
+  // Создание объекта без поля id вручную
+  const dataToPost = {
+    userId: mockCard.userId,
+    name: mockCard.name,
+    age: mockCard.age,
+    city: mockCard.city,
+    gender: mockCard.gender,
+    description: mockCard.description,
+    fullDescription: mockCard.fullDescription,
+    teachSkill: mockCard.teachSkill,
+    learnSkill: mockCard.learnSkill,
+    createdAt: mockCard.createdAt,
+    likes: mockCard.likes,
+    src: mockCard.src,
+    skillImages: mockCard.skillImages,
+  };
+
+  it('успешно создаёт карточку и кэширует её', async () => {
+    mockSessionStorage.getItem.mockReturnValue(null);
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => mockCard });
+
+    const result = await postCard(dataToPost);
+    expect(result).toEqual(mockCard);
+    expect(mockFetch).toHaveBeenCalledWith(
+      'http://localhost:3001/cards',
+      expect.objectContaining({ method: 'POST' })
+    );
+    expect(mockSessionStorage.setItem).toHaveBeenCalled();
+  });
+
+  it('выбрасывает ошибку при неудачном запросе', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: false, status: 400 });
+    await expect(postCard(dataToPost)).rejects.toThrow('Ошибка HTTP: 400');
+  });
+});
+
+describe('API: loginUser', () => {
+  const mockUser: TUser = {
+    id: '1',
+    userId: '1',
+    name: 'Test',
+    age: 30,
+    city: 'Москва',
+    gender: 'male',
+    mail: 'test@test.com',
+    password: '123456',
+    description: '',
+    fullDescription: '',
+    image: '',
+    incoming: [],
+    outgoing: [],
+    likes: [],
+  };
+
+  it('успешно логинит пользователя', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => [mockUser] });
+    const result = await loginUser('test@test.com', '123456');
+    expect(result).toEqual(mockUser);
+    expect(mockLocalStorage.setItem).toHaveBeenCalledWith('current-user', mockUser.id);
+  });
+
+  it('возвращает null если пользователь не найден', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => [] });
+    const result = await loginUser('none@test.com', 'wrong');
+    expect(result).toBeNull();
+  });
+
+  it('выбрасывает ошибку при плохом запросе', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: false, status: 500 });
+    await expect(loginUser('test@test.com', '123456')).rejects.toThrow('Ошибка HTTP: 500');
+  });
+});
