@@ -18,6 +18,7 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
       onSearch,
       user,
       isLoginOrRegister,
+      isAuthenticated
     },
     ref
   ) => (
@@ -48,7 +49,7 @@ export const AppHeaderUI = forwardRef<HTMLElement, TAppHeaderUIProps>(
               >
                 <MoonSVG />
               </ButtonUI>
-              {user.id != '' ? (
+              {isAuthenticated ? (
                 <div className={styles.header_logged_in}>
                   <div className={styles.icons}>
                     <NotificationList user={user} />

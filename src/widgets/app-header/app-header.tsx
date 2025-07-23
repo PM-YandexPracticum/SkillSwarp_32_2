@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { AppHeaderUI } from '@/shared/ui/app-headerUI/app-header';
 import { AllSkills } from '@/shared/ui';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSkillsState, selectUserData, toggleSkillsFilter } from '@/services/slices';
+import { getIsAuthenticated, getSkillsState, selectUserData, toggleSkillsFilter } from '@/services/slices';
 import type { TMainSkillFilter } from '@/shared/global-types';
 
 // Определяю тип SearchSuggestion локально, чтобы избежать проблем с импортами
@@ -20,6 +20,7 @@ export const AppHeader: FC = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
+  const isAuthenticated = useSelector(getIsAuthenticated);
   const skillList = useSelector(getSkillsState);
   const isLoginOrRegister = ['/login', '/register'].includes(currentPath);
 
@@ -90,6 +91,7 @@ export const AppHeader: FC = () => {
           onSearch={handleSearch}
           user={user}
           isLoginOrRegister={isLoginOrRegister}
+          isAuthenticated={isAuthenticated}
         />
       </header>
       {isAllSkillsVisible && (

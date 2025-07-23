@@ -1,5 +1,5 @@
 // src/shared/ui/app-headerUI/type.ts
-import type { TUser } from '@/shared/global-types';
+import type { THeaderUserData } from '@/shared/global-types';
 
 interface SearchSuggestion {
   id: string;
@@ -14,7 +14,8 @@ export type TAppHeaderUIProps = {
   onLikeClick?: () => void; // Делаю опциональными
   onClearButtonClick: () => void;
   onSearch?: (suggestion: SearchSuggestion) => void; // Использую правильный тип
-  // user: HeaderUserData | undefined;
-  user: TUser;
+  user: THeaderUserData;
+  // user: TUser;
   isLoginOrRegister: boolean;
+  isAuthenticated: boolean;
 };
