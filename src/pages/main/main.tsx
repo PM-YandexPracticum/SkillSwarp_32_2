@@ -25,6 +25,7 @@ import {
   sortByNewest,
   sortByPopular,
 } from '@/shared/lib/helpers/helpers';
+import { Footer } from '@/shared/ui/footer';
 
 export const Main: FC = () => {
   const dispatch = useDispatch();
@@ -121,80 +122,84 @@ export const Main: FC = () => {
   ];
 
   return (
-    <main className={styles.main}>
-      <div className={styles.filter_block}>
-        <FilterBlock
-          educationFilters={educationState}
-          cityFilters={citiesState}
-          skillFilters={skillsState}
-          genderFilters={genderState}
-          onSkillChange={getSkillFilterValue}
-          onCityChange={onCityChange}
-          onEducationChange={onEducationChange}
-          onGenderChange={onGenderChange}
-          activeFiltersCount={activeFilters.length}
-        />
-      </div>
+    <>
+      {' '}
+      <main className={styles.main}>
+        <div className={styles.filter_block}>
+          <FilterBlock
+            educationFilters={educationState}
+            cityFilters={citiesState}
+            skillFilters={skillsState}
+            genderFilters={genderState}
+            onSkillChange={getSkillFilterValue}
+            onCityChange={onCityChange}
+            onEducationChange={onEducationChange}
+            onGenderChange={onGenderChange}
+            activeFiltersCount={activeFilters.length}
+          />
+        </div>
 
-      <div className={styles.card_blocks}>
-        {checkFiltersState ? (
-          <>
-            {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
-            {cards.length > 0 ? (
+        <div className={styles.card_blocks}>
+          {checkFiltersState ? (
+            <>
+              {activeFilters.length > 0 && <EnabledFiltersBlock filters={activeFilters} />}
+              {cards.length > 0 ? (
+                <CardListUI
+                  title={`Подходящие предложения: ${cards.length}`}
+                  handleSort={sortCards}
+                  sortType={sortType}
+                  cards={sortedCards}
+                  user={user}
+                />
+              ) : (
+                <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
+              )}
+            </>
+          ) : user.id ? (
+            <>
               <CardListUI
-                title={`Подходящие предложения: ${cards.length}`}
-                handleSort={sortCards}
-                sortType={sortType}
-                cards={sortedCards}
+                title='Точное совпадение'
+                handleOpen='/popular'
+                cards={cardsPopular}
+                loading={loading}
                 user={user}
               />
-            ) : (
-              <h2 className={styles.noResultsTitle}>Ничего не найдено по вашему запросу</h2>
-            )}
-          </>
-        ) : user.id ? (
-          <>
-            <CardListUI
-              title='Точное совпадение'
-              handleOpen='/popular'
-              cards={cardsPopular}
-              loading={loading}
-              user={user}
-            />
-            <CardListUI
-              title='Новые идеи'
-              handleOpen='/newest'
-              cards={cardsNew}
-              loading={loading}
-              user={user}
-            />
-          </>
-        ) : (
-          <>
-            <CardListUI
-              title='Популярное'
-              handleOpen='/popular'
-              cards={cardsPopular}
-              loading={loading}
-              user={user}
-            />
-            <CardListUI
-              title='Новое'
-              handleOpen='/newest'
-              cards={cardsNew}
-              loading={loading}
-              user={user}
-            />
-          </>
-        )}
-        <CardListUI
-          title='Рекомендуем'
-          handleOpen='/recommended'
-          cards={cardsRecommendedChaos}
-          loading={loading}
-          user={user}
-        />
-      </div>
-    </main>
+              <CardListUI
+                title='Новые идеи'
+                handleOpen='/newest'
+                cards={cardsNew}
+                loading={loading}
+                user={user}
+              />
+            </>
+          ) : (
+            <>
+              <CardListUI
+                title='Популярное'
+                handleOpen='/popular'
+                cards={cardsPopular}
+                loading={loading}
+                user={user}
+              />
+              <CardListUI
+                title='Новое'
+                handleOpen='/newest'
+                cards={cardsNew}
+                loading={loading}
+                user={user}
+              />
+            </>
+          )}
+          <CardListUI
+            title='Рекомендуем'
+            handleOpen='/recommended'
+            cards={cardsRecommendedChaos}
+            loading={loading}
+            user={user}
+          />
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 };

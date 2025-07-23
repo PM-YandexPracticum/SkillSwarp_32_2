@@ -10,6 +10,7 @@ import { ProfileForm } from '@/shared/ui/profileForm';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
 import { EditSVG } from '@/assets/svg';
 import { selectUserData, updateUserField } from '@/services/slices/userSlice';
+import { Footer } from '@/shared/ui/footer';
 
 export const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -49,42 +50,45 @@ export const ProfilePage = () => {
     dispatch(updateUserField({ field: 'description', value: description }));
 
   return (
-    <main className={styles.main}>
-      <div className={styles.profile}>
-        <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
-          <ProfileMenu />
-        </div>
+    <>
+      <main className={styles.main}>
+        <div className={styles.profile}>
+          <div className={`${styles['profile__column']} ${styles['profile__column-menu']}`}>
+            <ProfileMenu />
+          </div>
 
-        <div
-          className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
-        >
-          <ProfileForm
-            gender={user.gender}
-            setGender={setGender}
-            selectedCity={selectedCity}
-            setSelectedCity={setSelectedCity}
-            cities={cities}
-            mail={user.mail}
-            setMail={setMail}
-            name={user.name}
-            setName={setName}
-            age={user.age}
-            setAge={setAge}
-            description={user.description}
-            setDescription={setDescription}
-          />
+          <div
+            className={`${styles['profile__column']} ${styles['profile__column-main']} ${styles['profile__column-main--gap']}`}
+          >
+            <ProfileForm
+              gender={user.gender}
+              setGender={setGender}
+              selectedCity={selectedCity}
+              setSelectedCity={setSelectedCity}
+              cities={cities}
+              mail={user.mail}
+              setMail={setMail}
+              name={user.name}
+              setName={setName}
+              age={user.age}
+              setAge={setAge}
+              description={user.description}
+              setDescription={setDescription}
+            />
 
-          <div className={styles.profile__avatar}>
-            <ProfileAvatar userAvatar={user.image} />{' '}
-            <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
-              Изменить фото
-              <span className={styles['change-photo-svg']}>
-                <EditSVG />
-              </span>
-            </ButtonUI>
+            <div className={styles.profile__avatar}>
+              <ProfileAvatar userAvatar={user.image} />{' '}
+              <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
+                Изменить фото
+                <span className={styles['change-photo-svg']}>
+                  <EditSVG />
+                </span>
+              </ButtonUI>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 };
