@@ -7,8 +7,14 @@ import { SameOffers } from '@/widgets/same-offers';
 import { SkillCard } from '@/widgets/skill-card';
 import { useLocation, useParams } from 'react-router-dom';
 import { useSelector } from '@/services/store';
-import { getCardsState, getCardsLoadingState, selectLikes, selectUserData } from '@/services/slices';
+import {
+  getCardsState,
+  getCardsLoadingState,
+  selectLikes,
+  selectUserData,
+} from '@/services/slices';
 import { filterSameOffers } from '@/shared/lib/helpers/helpers';
+import { Footer } from '@/shared/ui/footer';
 
 export const SkillPage: FC = () => {
   const location = useLocation();
@@ -46,7 +52,7 @@ export const SkillPage: FC = () => {
           <span>{card.teachSkill[0].subType} / </span> <span>{card.teachSkill[0].title}</span>
         </ButtonUI>
         <div className={styles.skill_content}>
-          <UserCard card={card} type='full' user={user}/>
+          <UserCard card={card} type='full' user={user} />
           <SkillCard card={card} type='offer' likeHandler={() => {}} likes={likes} />
         </div>
         <div className={styles.same_offers}>
@@ -60,6 +66,7 @@ export const SkillPage: FC = () => {
           )}
         </div>
       </main>
+      <Footer />
     </>
   );
 };
