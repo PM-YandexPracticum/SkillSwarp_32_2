@@ -133,4 +133,4 @@ export interface TLoginData {
   mail: string;
   password: string;
 }
-export type THeaderUserData = Pick<TUser, 'name' | 'image' | 'incoming' | 'outgoing'>;
+export type THeaderUserData = Pick<TUser, 'name' | 'image' | 'incoming' | 'outgoing' | 'likes'>;

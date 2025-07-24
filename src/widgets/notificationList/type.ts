@@ -1,6 +1,6 @@
 import type { offerSkillType, THeaderUserData } from '@/shared/global-types';
 
-export type TNotificationListUIProps = {
+export type TNotificationListProps = {
   user: THeaderUserData;
 };
 

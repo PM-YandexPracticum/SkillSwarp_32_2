@@ -1,1 +1,0 @@
-export { NotificationListUI } from './notificationList';

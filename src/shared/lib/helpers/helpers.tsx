@@ -207,3 +207,8 @@ export const checkAllActiveFilters = (
     checkActiveCityFilter(cityFilters)
   );
 };
+
+// Поиск карточки по id пользователя
+export const getCardForUserId = (id: string, cards: TCard[]): TCard | null => {
+  return cards.find((card) => card.userId === id) || null;
+};
