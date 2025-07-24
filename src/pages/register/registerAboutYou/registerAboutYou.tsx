@@ -2,7 +2,6 @@ import type { FC, SyntheticEvent } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { RegisterAboutYouUI } from '@/shared/ui';
-// import type { setStateProps } from '../type';
 import type { setStateProps } from '../type';
 import { setRegistrationStepData } from '@/services/slices/userSlice';
 import type { genderType } from '@/shared/global-types';
@@ -16,6 +15,7 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
   const [city, setCity] = useState<DropdownOption<string>>({ id: '', name: '' });
   const [learnSkills, setLearnSkills] = useState<DropdownOption<string>[]>([]);
   const [description, setDescription] = useState('');
+  const [photo, setPhoto] = useState(''); // Добавляем состояние для фото
 
   const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(setRegistrationStepData({ description }));
+    
     const learnSkillsData = makeSkillsArray(learnSkills);
 
     const isValid =
@@ -43,7 +43,8 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
       gender: gender.id,
       city: city.name,
       learnSkill: learnSkillsData,
-      description
+      description,
+      image: photo || '/#' // Добавляем фото в данные, если нет фото - используем заглушку
     };
 
     dispatch(setRegistrationStepData(data));
@@ -64,6 +65,8 @@ export const RegisterAboutYou: FC<setStateProps> = ({ setCurrentPage }) => {
       setSkill={setLearnSkills}
       description={description}
       setDescription={setDescription}
+      photo={photo}
+      setPhoto={setPhoto}
       handleSubmit={handleSubmit}
       handleBack={handleBack}
     />

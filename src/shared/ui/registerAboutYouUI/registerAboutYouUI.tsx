@@ -5,9 +5,7 @@ import { InputUI } from '../inputUI';
 import { ButtonUI } from '../buttonUI';
 import classNames from 'classnames';
 import { ProgressBar } from '@/widgets';
-
-import { UserCircleSVG } from '@/assets/svg/user-circle';
-import { PlusCircleSVG } from '@/assets/svg/plus-circle';
+import { PhotoUploadUI } from '../photoUploadUI';
 import { HugeUserAccountSVG } from '@/assets/svg/huge-user-account';
 import type { DropdownOption } from '../dropdownUI/type';
 import { DropdownUI } from '../dropdownUI';
@@ -67,6 +65,8 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
   setSkill,
   description,
   setDescription,
+  photo,
+  setPhoto,
   handleSubmit,
   handleBack,
 }) => {
@@ -131,6 +131,10 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
     ));
   };
 
+  const handlePhotoChange = (photoData: string | null) => {
+    setPhoto(photoData || '');
+  };
+
   return (
     <main className={styles.container}>
       <div className={styles.wrapper}>
@@ -139,12 +143,15 @@ export const RegisterAboutYouUI: FC<registerAboutYouUIProps> = ({
         </div>
         <div className={styles.general}>
           <form className={styles.general_column} name='aboutYou' onSubmit={handleSubmit}>
-            <div className={styles.img_profile}>
-              <UserCircleSVG size='60px' />
-              <div className={styles.img_Plus}>
-                <PlusCircleSVG size='24px' />
-              </div>
+            {/* Заменяем старый блок с иконкой на PhotoUploadUI */}
+            <div className={styles.photo_upload_container}>
+              <PhotoUploadUI
+                currentPhoto={photo}
+                onPhotoChange={handlePhotoChange}
+                maxSizeInMB={5}
+              />
             </div>
+            
             <InputUI
               label='Имя'
               type='text'

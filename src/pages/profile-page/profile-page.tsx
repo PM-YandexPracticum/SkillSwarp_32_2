@@ -2,23 +2,22 @@
 
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from '@/services/store';
+import { Navigate } from 'react-router-dom';
 import { ProfileMenu } from '@/shared/ui/profileMenuUI/profileMenu';
-import { ProfileAvatar } from '@/shared/ui/profileAvatar';
-import { ButtonUI, PreloaderUI } from '@/shared/ui';
+import { ProfileForm } from '@/shared/ui/profileForm';
+import { PhotoUploadUI } from '@/shared/ui/photoUploadUI';
+import { PreloaderUI } from '@/shared/ui';
+import { Footer } from '@/shared/ui/footer';
 import { CITIES_MOCK } from '@/shared/global-types/data-cities-examples';
 import type { TCity } from '@/shared/global-types/data-types';
-import styles from './profile-page.module.css';
-import { ProfileForm } from '@/shared/ui/profileForm';
 import type { DropdownOption } from '@/shared/ui/dropdownUI/type';
-import { EditSVG } from '@/assets/svg';
 import {
   selectUserData,
   updateUserField,
   selectLoading,
   getIsAuthenticated,
 } from '@/services/slices/userSlice';
-import { Navigate } from 'react-router-dom';
-import { Footer } from '@/shared/ui/footer';
+import styles from './profile-page.module.css';
 
 export const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -54,20 +53,33 @@ export const ProfilePage = () => {
     return <PreloaderUI />;
   }
 
-  const setSelectedCity = (city: DropdownOption<string>) =>
+  const setSelectedCity = (city: DropdownOption<string>) => {
     dispatch(updateUserField({ field: 'city', value: city.name }));
+  };
 
-  const setGender = (gender: 'male' | 'female') =>
+  const setGender = (gender: 'male' | 'female') => {
     dispatch(updateUserField({ field: 'gender', value: gender }));
+  };
 
-  const setName = (name: string) => dispatch(updateUserField({ field: 'name', value: name }));
+  const setName = (name: string) => {
+    dispatch(updateUserField({ field: 'name', value: name }));
+  };
 
-  const setMail = (mail: string) => dispatch(updateUserField({ field: 'mail', value: mail }));
+  const setMail = (mail: string) => {
+    dispatch(updateUserField({ field: 'mail', value: mail }));
+  };
 
-  const setAge = (age: number) => dispatch(updateUserField({ field: 'age', value: age }));
+  const setAge = (age: number) => {
+    dispatch(updateUserField({ field: 'age', value: age }));
+  };
 
-  const setDescription = (description: string) =>
+  const setDescription = (description: string) => {
     dispatch(updateUserField({ field: 'description', value: description }));
+  };
+
+  const handlePhotoChange = (photo: string | null) => {
+    dispatch(updateUserField({ field: 'image', value: photo || '/#' }));
+  };
 
   return (
     <>
@@ -95,14 +107,14 @@ export const ProfilePage = () => {
               description={user.description}
               setDescription={setDescription}
             />
+
             <div className={styles.profile__avatar}>
-              <ProfileAvatar userAvatar={user.image} />
-              <ButtonUI className={styles['change-photo-btn']} type='button' onClick={() => {}}>
-                Изменить фото
-                <span className={styles['change-photo-svg']}>
-                  <EditSVG />
-                </span>
-              </ButtonUI>
+              <PhotoUploadUI
+                currentPhoto={user.image !== '/#' ? user.image : undefined}
+                onPhotoChange={handlePhotoChange}
+                disabled={loading}
+                maxSizeInMB={5}
+              />
             </div>
           </div>
         </div>

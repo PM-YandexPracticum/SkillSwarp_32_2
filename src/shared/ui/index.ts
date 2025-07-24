@@ -19,3 +19,4 @@ export * from './allSkills';
 export * from './skill-image-galleryUI';
 export * from './modalUI';
 export * from './popoverUi';
+export * from './photoUploadUI';
